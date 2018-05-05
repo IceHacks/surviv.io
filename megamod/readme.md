@@ -15,8 +15,8 @@ This is not the normal UserScript, it is not even a UserScript. Do not install m
 ### Windows, Mac, and Linux
 1. Install Telerik Fiddler (https://www.telerik.com/download/fiddler)
 2. Download `main.js` from this folder. Copy the full download location.
-3. Open Fiddler. Open the AutoResponder tab (it has a lightning bold next to it).
-4. Click `Add Rule`. Click the new rule
+3. Open Fiddler. Open the AutoResponder tab (it has a lightning bold next to it) make sure to tick `Enable Rules` and `Unmatched requests passthrough`.
+4. Click `Add Rule`. Click the new rule.
 5. In the rule editor (below the rules) replace `StringToMatch...` with `REGEX:http:\/\/surviv\.io\/js\/app\..*?\.js`
 6. Still in the rule editor replace `Local file to return or *Action to exucute` with the `main.js` download location.
 
