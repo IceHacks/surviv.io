@@ -7991,7 +7991,7 @@ webpackJsonp([0], {
 							width: 5
 						},
 						img: {
-							sprite: "img/map/map-building-warehouse-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
@@ -8156,7 +8156,7 @@ webpackJsonp([0], {
 							width: 4
 						},
 						img: {
-							sprite: "img/map/map-building-shack-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
@@ -8269,7 +8269,7 @@ webpackJsonp([0], {
 						scopeIn: [M.createAabbExtents(E.create(0, 1.45), E.create(3.6, 3.2))],
 						scopeOut: [M.createAabbExtents(E.create(0, 1.4), E.create(3.8, 3.4))],
 						img: {
-							sprite: "img/map/map-building-outhouse-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
@@ -8618,7 +8618,7 @@ webpackJsonp([0], {
 						scopeIn: [M.createAabbExtents(E.create(0, 0), E.create(4.5, 6))],
 						scopeOut: [M.createAabbExtents(E.create(0, 0), E.create(4.5, 6))],
 						img: {
-							sprite: "img/map/map-building-panicroom-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 6250335
@@ -8762,7 +8762,7 @@ webpackJsonp([0], {
 							fadeRate: 6
 						},
 						img: {
-							sprite: "img/map/map-building-barn-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
@@ -9173,7 +9173,7 @@ webpackJsonp([0], {
 							fadeRate: 6
 						},
 						img: {
-							sprite: "img/map/map-building-bank-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
@@ -9504,7 +9504,7 @@ webpackJsonp([0], {
 						scopeIn: [M.createAabbExtents(E.create(-3.5, 0), E.create(9.25, 10.5))],
 						scopeOut: [M.createAabbExtents(E.create(-3.5, 0), E.create(10, 10.5))],
 						img: {
-							sprite: "img/map/map-building-vault-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 6250335
@@ -9696,7 +9696,7 @@ webpackJsonp([0], {
 							fadeRate: 6
 						},
 						img: {
-							sprite: "img/map/map-building-police-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
@@ -10273,7 +10273,7 @@ webpackJsonp([0], {
 							fadeRate: 6
 						},
 						img: {
-							sprite: "img/map/map-building-house-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
@@ -10593,7 +10593,7 @@ webpackJsonp([0], {
 						scopeIn: [M.createAabbExtents(E.create(0, 0), E.create(5, 3))],
 						scopeOut: [M.createAabbExtents(E.create(0, 0), E.create(5, 3))],
 						img: {
-							sprite: "img/map/map-building-saferoom-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 6250335
@@ -10703,7 +10703,7 @@ webpackJsonp([0], {
 							fadeRate: 6
 						},
 						img: {
-							sprite: "img/map/map-building-mansion-ceiling.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
@@ -11594,22 +11594,22 @@ webpackJsonp([0], {
 				container_01: g({
 					open: !1,
 					tint: 3560807,
-					ceilingSprite: "map-building-container-ceiling-01.svg"
+					ceilingSprite: ""
 				}),
 				container_02: g({
 					open: !1,
 					tint: 3560807,
-					ceilingSprite: "map-building-container-ceiling-02.svg"
+					ceilingSprite: ""
 				}),
 				container_03: g({
 					open: !1,
 					tint: 3560807,
-					ceilingSprite: "map-building-container-ceiling-03.svg"
+					ceilingSprite: ""
 				}),
 				container_04: g({
 					open: !0,
 					tint: 3560807,
-					ceilingSprite: "map-building-container-open-ceiling-01.svg"
+					ceilingSprite: ""
 				}),
 				loot_tier_1: {
 					type: "loot_spawner",
