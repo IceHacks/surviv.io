@@ -4,7 +4,7 @@ This is a WIP Surviv.io mod. It is a modification of the latest Surviv.io app so
 * Increasable zoom
 * Auto-aim
 
-This is not the normal UserScript, it is not even a UserScript. Do not install modded versions of this as they could break Surviv.io or your Computer. Heed my warnings.
+This is not the normal UserScript, it is not even a UserScript. Do not install modded versions of this as they could break Surviv.io or your Computer. Heed my warnings. Make sure to "watch" this so you can see the updates when they come out.
 
 # Features
 * Bigger view: 2x Scopes are now 4x Scopes and so on. Some bugs still need to be fixed
