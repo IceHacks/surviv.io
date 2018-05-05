@@ -2581,7 +2581,7 @@ webpackJsonp([0], {
 				"1xscope": {
 					name: "1x Scope",
 					type: "scope",
-					level: 1,
+					level: 15,
 					rad: 1,
 					lootImg: {
 						sprite: "img/loot/loot-scope-00.svg",
@@ -6187,7 +6187,7 @@ webpackJsonp([0], {
 					beach: !1
 				},
 				img: {
-					sprite: "img/map/map-bush-01.svg",
+					sprite: "img/map/map-bush-res-01.svg",
 					residue: "img/map/map-bush-res-01.svg",
 					scale: .5,
 					alpha: .97,
@@ -7647,7 +7647,7 @@ webpackJsonp([0], {
 						beach: !1
 					},
 					img: {
-						sprite: "img/map/map-tree-03.svg",
+						sprite: "img/map/map-tree-res.svg",
 						residue: "img/map/map-tree-res.svg",
 						scale: .7,
 						alpha: 1,
@@ -7685,7 +7685,7 @@ webpackJsonp([0], {
 						scale: 2.25
 					},
 					img: {
-						sprite: "img/map/map-tree-03.svg",
+						sprite: "img/map/map-tree-res.svg",
 						residue: "img/map/map-tree-res.svg",
 						scale: 1,
 						alpha: 1,
