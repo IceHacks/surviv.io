@@ -8,6 +8,8 @@ This is not the normal UserScript, it is not even a UserScript. Do not install m
 
 # Features
 * Bigger view: 2x Scopes are now 4x Scopes and so on. Some bugs still need to be fixed
+* No roofs: See what's in there before you are (includes vaults)
+* No hiding spots: Trees and bushes be gone! See everything before it sees you
 
 # Installation
 ### Windows, Mac, and Linux
@@ -21,3 +23,6 @@ This is not the normal UserScript, it is not even a UserScript. Do not install m
 **Note**: there may be slight variation on the OS's I tested this on Windows 10, I have not confirmed it to work on MacOS or LinuxOS.
 
 **Note**: every time Surviv.io get's updated check here for the latest version. (Current Surviv Version: 4-26-18 Mansion)
+
+Hope you enjoy,
+IceHacks
