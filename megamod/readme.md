@@ -18,5 +18,6 @@ This is not the normal UserScript, it is not even a UserScript. Do not install m
 5. In the rule editor (below the rules) replace `StringToMatch...` with `REGEX:http:\/\/surviv\.io\/js\/app\..*?\.js`
 6. Still in the rule editor replace `Local file to return or *Action to exucute` with the `main.js` download location.
 
-Note: there may be slight variation on the OS's I tested this on Windows 10, I have not confirmed it to work on MacOS or LinuxOS.
-Note: every time Surviv.io get's updated check here for the latest version. (Current Surviv Version: 4-26-18|Mansion)
+**Note**: there may be slight variation on the OS's I tested this on Windows 10, I have not confirmed it to work on MacOS or LinuxOS.
+
+**Note**: every time Surviv.io get's updated check here for the latest version. (Current Surviv Version: 4-26-18 Mansion)
