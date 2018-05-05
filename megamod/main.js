@@ -38002,7 +38002,7 @@ webpackJsonp([0], {
 				Layout: n,
 				debug: !1,
 				dev: !1,
-				pixelRatio: 2,
+				pixelRatio: window.devicePixelRatio,
 				layout: a ? n.Sm : n.Lg,
 				mobile: a,
 				tablet: r,
