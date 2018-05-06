@@ -7,9 +7,10 @@ This is a WIP Surviv.io mod. It is a modification of the latest Surviv.io app so
 This is not the normal UserScript, it is not even a UserScript. Do not install modded versions of this as they could break Surviv.io or your Computer. Heed my warnings. Make sure to "watch" this so you can see the updates when they come out.
 
 # Features
-* Bigger view: 2x Scopes are now 4x Scopes and so on. Some bugs still need to be fixed
-* No roofs: See what's in there before you are (includes vaults)
-* No hiding spots: Trees and bushes be gone! See everything before it sees you
+* Bigger view: 2x Scopes are now 4x Scopes and so on. Some bugs still need to be fixed (5/3/2018)
+* No roofs: See what's in there before you are (includes vaults) (5/4/2018)
+* No hiding spots: Trees and bushes be gone! See everything before it sees you (5/4/2018)
+* No smoking: Spot those little rascals with the absence of their precious smoke (5/5/2018)
 
 # Installation
 ### Windows, Mac, and Linux
