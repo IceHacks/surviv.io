@@ -11981,7 +11981,7 @@ webpackJsonp([0], {
 			m = function() {
 				function e() {
 					a(this, e);
-					var t = ["img/particles/part-smoke-02.svg", "img/particles/part-smoke-03.svg"];
+					var t = ["", ""];
 					this.active = !1, this.zIdx = 0, this.sprite = n.Sprite.fromImage(t[Math.floor(Math.random() * t.length)]), this.sprite.anchor = new n.Point(.5, .5), this.sprite.visible = !1
 				}
 				return r(e, [{
