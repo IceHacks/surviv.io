@@ -21,6 +21,7 @@ This is not the normal UserScript, it is not even a UserScript. Do not install m
 5. In the rule editor (below the rules) replace `StringToMatch...` with `REGEX:http:\/\/surviv\.io\/js\/app\..*?\.js`
 6. Still in the rule editor replace `Local file to return or *Action to exucute` with the `main.js` download location.
 7. Leave Fiddler open and play Surviv.io (Fiddler must be open for this to work)
+8. Clear cache for Surviv.io (`ctrl+F5` on FireFox) (do this everytime you open Fiddler)
 
 **Note**: there may be slight variation on the OS's I tested this on Windows 10, I have not confirmed it to work on MacOS or LinuxOS.
 
