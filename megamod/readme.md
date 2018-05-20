@@ -1,3 +1,5 @@
+# CURRENTL NOT WORKING AS SURVIV.IO UPDATED. ON VACATION, BUT WILL TRY TO GET IT FIXED ASAP
+
 # About
 This is a WIP Surviv.io mod. It is a modification of the latest Surviv.io app source. I hope to add these things to it:
 * 15x Scope at beggining of game (buggy right now)
