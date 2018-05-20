@@ -1,4 +1,4 @@
-#MegaMod (Cobra Bunker Update)
+# MegaMod (Cobra Bunker Update)
 Thanks to DragonFlyerHD for this new update and installation guide (I am currently busy with life). It has everything it had before but it works with the Surviv.io Cobra Bunker update. I still plan to add...
 
 * Aimbot
@@ -9,7 +9,9 @@ Thanks to DragonFlyerHD for this new update and installation guide (I am current
 2. Go to the Resource Override settings and fill in the following settings:\
 Tab URL:  `*surviv.io*`\
 From:  `http://surviv.io/js/app.*.js` To:`http://rawgit.com/IceHacks/surviv.io/master/megamod/main.js`
-3. Go to [surviv.io](http://surviv.io/) and hit **CTRL** + **F5**
+3. Go to [surviv.io](http://surviv.io/) and hit `CTRL` + `F5`
+
+(this works only on Chrome, if you want it for another browser ask for the instructions in an issue)
 
 ## Features:
 * No roofs or ceilings
