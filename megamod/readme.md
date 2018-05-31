@@ -1,3 +1,5 @@
+Stay tuned for Autoloot + more!
+
 # MegaMod (Cobra Bunker Update)
 Thanks to DragonFlyerHD for this new update and installation guide (I am currently busy with life). It has everything it had before but it works with the Surviv.io Cobra Bunker update. I still plan to add...
 
