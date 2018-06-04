@@ -35,7 +35,7 @@ webpackJsonp([0], {
 				Waiting: 1,
 				Moving: 2
 			},
-			protocolVersion: 26,
+			protocolVersion: 27,
 			map: {
 				baseWidth: 512,
 				baseHeight: 512,
@@ -169,11 +169,23 @@ webpackJsonp([0], {
 					tracerLength: .8
 				},
 				bullet_mosin: {
-					damage: 64,
+					damage: 72,
 					obstacleDamage: 1.5,
 					falloff: .95,
 					distance: 500,
 					speed: 178,
+					variance: 0,
+					shrapnel: !1,
+					tracerColor: "762mm",
+					tracerWidth: .16,
+					tracerLength: .8
+				},
+				bullet_sv98: {
+					damage: 80,
+					obstacleDamage: 1.5,
+					falloff: .96,
+					distance: 520,
+					speed: 182,
 					variance: 0,
 					shrapnel: !1,
 					tracerColor: "762mm",
@@ -193,7 +205,7 @@ webpackJsonp([0], {
 					tracerLength: .8
 				},
 				bullet_shotgun: {
-					damage: 12,
+					damage: 12.5,
 					obstacleDamage: 1,
 					falloff: .3,
 					speed: 66,
@@ -419,6 +431,54 @@ webpackJsonp([0], {
 						rad: 16,
 						border: !0,
 						tint: 16303476
+					},
+					sound: {
+						pickup: "clothes_pickup_01"
+					}
+				},
+				outfitAqua: {
+					name: "Aquatic Avenger",
+					type: "skin",
+					subtype: "normal",
+					rad: 1,
+					skinImg: {
+						baseTint: 47778,
+						baseSprite: "img/player/player-base-01.svg",
+						baseScale: 1,
+						handTint: 65502,
+						handSprite: "img/player/player-hands-01.svg",
+						backpackTint: 536620
+					},
+					lootImg: {
+						sprite: "img/loot/loot-shirt-01.svg",
+						scale: .2,
+						rad: 16,
+						border: !0,
+						tint: 47778
+					},
+					sound: {
+						pickup: "clothes_pickup_01"
+					}
+				},
+				outfitCoral: {
+					name: "Coral Guise",
+					type: "skin",
+					subtype: "normal",
+					rad: 1,
+					skinImg: {
+						baseTint: 16736103,
+						baseSprite: "img/player/player-base-01.svg",
+						baseScale: 1,
+						handTint: 16746895,
+						handSprite: "img/player/player-hands-01.svg",
+						backpackTint: 16772298
+					},
+					lootImg: {
+						sprite: "img/loot/loot-shirt-01.svg",
+						scale: .2,
+						rad: 16,
+						border: !0,
+						tint: 16736103
 					},
 					sound: {
 						pickup: "clothes_pickup_01"
@@ -1422,7 +1482,7 @@ webpackJsonp([0], {
 					}
 				},
 				mosin: {
-					name: "Mosin Nagant",
+					name: "Mosin-Nagant",
 					type: "gun",
 					fireMode: "single",
 					reloadMode: "single",
@@ -1442,13 +1502,13 @@ webpackJsonp([0], {
 					shotSpread: 1,
 					bulletCount: 1,
 					bulletType: "bullet_mosin",
-					headshotMult: 2,
+					headshotMult: 1.5,
 					speed: {
 						equip: 0,
 						attack: 0
 					},
 					lootImg: {
-						sprite: "img/loot/loot-weapon-enfield.svg",
+						sprite: "img/loot/loot-weapon-mosin.svg",
 						scale: .3,
 						rad: 25,
 						border: !0,
@@ -1477,6 +1537,63 @@ webpackJsonp([0], {
 						pickup: "gun_pickup_01",
 						empty: "empty_fire_02",
 						deploy: "mosin_cycle_01"
+					}
+				},
+				sv98: {
+					name: "SV-98",
+					type: "gun",
+					fireMode: "single",
+					reloadMode: "mag",
+					caseTiming: "shoot",
+					ammo: "762mm",
+					ammoSpawnCount: 30,
+					maxClip: 10,
+					maxReload: 10,
+					reloadTime: 2.7,
+					fireDelay: 1.5,
+					switchDelay: 1,
+					pullDelay: .8,
+					barrelLength: 3.5,
+					rad: 1.25,
+					recoilTime: 1e10,
+					moveSpread: 2.5,
+					shotSpread: 1,
+					bulletCount: 1,
+					bulletType: "bullet_sv98",
+					headshotMult: 1.5,
+					speed: {
+						equip: 0,
+						attack: 0
+					},
+					lootImg: {
+						sprite: "img/loot/loot-weapon-sv98.svg",
+						scale: .3,
+						rad: 25,
+						border: !0,
+						tint: 65280
+					},
+					worldImg: {
+						sprite: "img/guns/gun-long-01.svg",
+						scale: {
+							x: .5,
+							y: .5
+						},
+						tint: 6654279,
+						hands: 2,
+						leftHandOffset: 8,
+						recoil: 5.25
+					},
+					particle: {
+						shellScale: 1.8,
+						shellOffset: .6
+					},
+					sound: {
+						shoot: "sv98_01",
+						reload: "sv98_reload_01",
+						cycle: "sv98_cycle_01",
+						pickup: "gun_pickup_01",
+						empty: "empty_fire_02",
+						deploy: "sv98_cycle_01"
 					}
 				},
 				m39: {
@@ -1555,7 +1672,7 @@ webpackJsonp([0], {
 					shotSpread: 10,
 					bulletCount: 9,
 					bulletType: "bullet_shotgun",
-					headshotMult: 2,
+					headshotMult: 1.5,
 					lootImg: {
 						sprite: "img/loot/loot-weapon-pumpshotgun.svg",
 						scale: .3,
@@ -1612,7 +1729,7 @@ webpackJsonp([0], {
 					shotSpread: 10,
 					bulletCount: 9,
 					bulletType: "bullet_shotgun",
-					headshotMult: 2,
+					headshotMult: 1.5,
 					speed: {
 						equip: 0,
 						attack: 0
@@ -1667,7 +1784,7 @@ webpackJsonp([0], {
 					shotSpread: 10,
 					bulletCount: 9,
 					bulletType: "bullet_shotgun",
-					headshotMult: 2,
+					headshotMult: 1.5,
 					speed: {
 						equip: 0,
 						attack: 0
@@ -2623,7 +2740,7 @@ webpackJsonp([0], {
 					level: 2,
 					damageReduction: .38,
 					rad: 1,
-					tint: 5921370,
+					tint: 4934475,
 					lootImg: {
 						sprite: "img/loot/loot-chest-02.svg",
 						scale: .2,
@@ -2734,7 +2851,7 @@ webpackJsonp([0], {
 					}
 				}
 			},
-			scopeZoomRadius: {
+      scopeZoomRadius: {
 				"1xscope": 32,
 				"2xscope": 42,
 				"4xscope": 58,
@@ -3074,7 +3191,7 @@ webpackJsonp([0], {
 			for (var t in g.items)
 				if (g.items.hasOwnProperty(t)) {
 					var a = g.items[t].type;
-					"heal" != a && "boost" != a && "ammo" != a || g.items[t].hideUi || e.push(t)
+					"heal" != a && "boost" != a && "ammo" != a || e.push(t)
 				}
 			return e
 		}
@@ -3174,7 +3291,7 @@ webpackJsonp([0], {
 				});
 				this.health = 100, this.boost = 0, this.downed = !1
 			},
-			z = function() {
+			I = function() {
 				function e(t) {
 					var a = this;
 					o(this, e), this.localization = t, this.oldState = new C, this.newState = new C, this.frameCount = 0, this.dom = {
@@ -3248,21 +3365,21 @@ webpackJsonp([0], {
 						var S = _[w],
 							P = n("ui-loot-" + S);
 						if (P) {
-							var z = {
+							var I = {
 								lootType: S,
 								div: P,
 								count: P.getElementsByClassName("ui-loot-count")[0],
 								image: P.getElementsByClassName("ui-loot-image")[0],
 								overlay: P.getElementsByClassName("ui-loot-overlay")[0]
 							};
-							this.dom.loot.push(z)
+							this.dom.loot.push(I)
 						}
 					}
-					for (var I = p(), D = 0; D < I.length; D++) {
-						var A = I[D],
-							O = n("ui-armor-" + A),
+					for (var z = p(), A = 0; A < z.length; A++) {
+						var D = z[A],
+							O = n("ui-armor-" + D),
 							L = {
-								gearType: A,
+								gearType: D,
 								div: O,
 								level: O.getElementsByClassName("ui-armor-level")[0],
 								image: O.getElementsByClassName("ui-armor-image")[0]
@@ -3270,7 +3387,7 @@ webpackJsonp([0], {
 						this.dom.gear.push(L)
 					}
 					this.uiEvents = [], this.eventListeners = [];
-					var B = function(e, t, i) {
+					var E = function(e, t, i) {
 						a.eventListeners.push({
 							event: e,
 							elem: t,
@@ -3278,7 +3395,7 @@ webpackJsonp([0], {
 						}), t.addEventListener(e, i)
 					};
 					this.itemActions = [];
-					for (var E = function(e, t, i, o) {
+					for (var B = function(e, t, i, o) {
 							a.itemActions.push({
 								action: e,
 								type: t,
@@ -3287,31 +3404,31 @@ webpackJsonp([0], {
 								actionQueued: !1,
 								actionTime: 0
 							})
-						}, F = 0; F < this.dom.weapons.length; F++) E("use", "weapon", F, this.dom.weapons[F].div), E("drop", "weapon", F, this.dom.weapons[F].div);
+						}, F = 0; F < this.dom.weapons.length; F++) B("use", "weapon", F, this.dom.weapons[F].div), B("drop", "weapon", F, this.dom.weapons[F].div);
 					for (var R = 0; R < this.dom.scopes.length; R++) {
 						var j = this.dom.scopes[R];
-						E("use", "scope", j.scopeType, j.div), "1xscope" != j.scopeType && E("drop", "loot", j.scopeType, j.div)
+						B("use", "scope", j.scopeType, j.div), "1xscope" != j.scopeType && B("drop", "loot", j.scopeType, j.div)
 					}
 					for (var N = 0; N < this.dom.loot.length; N++) {
 						var q = this.dom.loot[N],
-							G = g.items[q.lootType];
-						"heal" != G.type && "boost" != G.type || E("use", "loot", q.lootType, q.div), E("drop", "loot", q.lootType, q.div)
+							U = g.items[q.lootType];
+						"heal" != U.type && "boost" != U.type || B("use", "loot", q.lootType, q.div), B("drop", "loot", q.lootType, q.div)
 					}
-					for (var U = 0; U < this.dom.gear.length; U++) {
-						var V = this.dom.gear[U];
-						"backpack" != V.gearType && E("drop", "loot", V.gearType, V.div)
+					for (var G = 0; G < this.dom.gear.length; G++) {
+						var V = this.dom.gear[G];
+						"backpack" != V.gearType && B("drop", "loot", V.gearType, V.div)
 					}
 					for (var H = 0; H < this.itemActions.length; H++) ! function(e) {
 						var t = a.itemActions[e];
-						B("mousedown", t.div, function(e) {
+						E("mousedown", t.div, function(e) {
 							("use" == t.action && r(e) || "drop" == t.action && s(e)) && (e.stopPropagation(), t.actionQueued = !0)
-						}), B("mouseup", t.div, function(e) {
+						}), E("mouseup", t.div, function(e) {
 							t.actionQueued && ("use" == t.action && r(e) || "drop" == t.action && s(e)) && (e.stopPropagation(), a.pushAction(t), t.actionQueued = !1)
-						}), B("touchstart", t.div, function(e) {
+						}), E("touchstart", t.div, function(e) {
 							e.changedTouches.length > 0 && (e.stopPropagation(), t.actionQueued = !0, t.actionTime = (new Date).getTime(), t.touchOsId = e.changedTouches[0].identifier)
-						}), B("touchend", t.div, function(e) {
+						}), E("touchend", t.div, function(e) {
 							(new Date).getTime() - t.actionTime < T && t.actionQueued && "use" == t.action && a.pushAction(t), t.actionQueued = !1
-						}), B("touchcancel", t.div, function(e) {
+						}), E("touchcancel", t.div, function(e) {
 							t.actionQueued = !1
 						})
 					}(H);
@@ -3371,47 +3488,47 @@ webpackJsonp([0], {
 						}
 						r.health = t.netData.dead ? 0 : y.max(t.localData.health, 1), r.boost = t.localData.boost, r.downed = t.netData.downed;
 						var C = P.None,
-							z = null,
-							I = !0;
+							I = null,
+							z = !0;
 						if (!t.netData.dead) {
-							for (var D = null, A = 0, O = n.obstaclePool.getPool(), L = 0; L < O.length; L++) {
-								var B = O[L];
-								if (B.active && !B.dead && x.sameLayer(B.layer, t.layer)) {
-									var E = B.getInteraction();
-									if (E) {
-										var F = h.intersectCircle(B.collider, t.netData.pos, E.rad);
-										F && F.pen >= A && (D = B, A = F.pen)
+							for (var A = null, D = 0, O = n.obstaclePool.getPool(), L = 0; L < O.length; L++) {
+								var E = O[L];
+								if (E.active && !E.dead && x.sameLayer(E.layer, t.layer)) {
+									var B = E.getInteraction();
+									if (B) {
+										var F = h.intersectCircle(E.collider, t.netData.pos, B.rad);
+										F && F.pen >= D && (A = E, D = F.pen)
 									}
 								}
 							}
-							D && !t.netData.downed && (C = P.Object, z = D, I = !0);
+							A && !t.netData.downed && (C = P.Object, I = A, z = !0);
 							var R = o.getClosestLoot();
 							if (R && !t.netData.downed) {
 								var j = g.items[R.name],
 									N = t.hasWeaponInSlot(g.WeaponSlot.Primary),
 									q = t.hasWeaponInSlot(g.WeaponSlot.Secondary),
-									G = N && q,
-									U = "gun" != j.type || !G || "gun" == t.equippedWeaponType();
-								(U || k.layout == k.Layout.Sm) && (C = P.Loot, z = R), I = U && (!r.touch || "gun" == j.type || "skin" == j.type)
+									U = N && q,
+									G = "gun" != j.type || !U || "gun" == t.equippedWeaponType();
+								(G || k.layout == k.Layout.Sm) && (C = P.Loot, I = R), z = G && (!r.touch || "gun" == j.type || "skin" == j.type)
 							}
 							if (t.netData.actionType == f.None && !t.netData.downed)
 								for (var V = i.getPlayerInfo(t.__id).teamId, H = i.playerPool.getPool(), W = 0; W < H.length; W++) {
 									var K = H[W],
 										X = i.getPlayerInfo(K.__id).teamId;
 									if (!K.sentinel && K.__id != t.__id && V == X && (K.netData.downed && !K.netData.dead && K.netData.actionType != f.Revive)) {
-										var Z = v.length(v.sub(K.netData.pos, t.netData.pos));
-										Z < g.player.reviveMaxRange && x.sameLayer(K.layer, t.layer) && (C = P.Revive, z = t, I = !0)
+										var Y = v.length(v.sub(K.netData.pos, t.netData.pos));
+										Y < g.player.reviveMaxRange && x.sameLayer(K.layer, t.layer) && (C = P.Revive, I = t, z = !0)
 									}
 								}
-							t.netData.actionType == f.Revive && t.netData.downed && (C = P.None, z = null, I = !1), (t.netData.actionType == f.UseItem || t.netData.actionType == f.Revive && !t.netData.downed) && (C = P.Cancel, z = null, I = !0)
+							t.netData.actionType == f.Revive && t.netData.downed && (C = P.None, I = null, z = !1), (t.netData.actionType == f.UseItem || t.netData.actionType == f.Revive && !t.netData.downed) && (C = P.Cancel, I = null, z = !0)
 						}
-						r.interaction.type = C, r.interaction.text = this.getInteractionText(C, z), r.interaction.key = this.getInteractionKey(C), r.interaction.usable = I && !a;
-						for (var Y = 0; Y < t.localData.weapons.length; Y++) {
-							var J = t.localData.weapons[Y],
-								Q = r.weapons[Y];
+						r.interaction.type = C, r.interaction.text = this.getInteractionText(C, I), r.interaction.key = this.getInteractionKey(C), r.interaction.usable = z && !a;
+						for (var Z = 0; Z < t.localData.weapons.length; Z++) {
+							var J = t.localData.weapons[Z],
+								Q = r.weapons[Z];
 							Q.name = J.name, Q.ammo = J.ammo, "" != J.name && "throwable" == g.items[J.name].type && (Q.ammo = t.localData.inventory[J.name]);
 							var $ = Q.equipped;
-							Q.equipped = Y == t.localData.curWeapIdx, Q.selectable = "" != J.name && !a;
+							Q.equipped = Z == t.localData.curWeapIdx, Q.selectable = "" != J.name && !a;
 							var ee = Q.equipped ? 1 : .6,
 								te = ee - Q.opacity,
 								ae = y.min(te, y.sign(te) * e / .15);
@@ -3509,25 +3626,25 @@ webpackJsonp([0], {
 						}
 						e.interaction.type && (a.interaction.div.style.display = t.interaction.type == P.None ? "none" : "flex"), e.interaction.text && (a.interaction.text.innerHTML = t.interaction.text), e.interaction.key && (a.interaction.key.innerHTML = t.touch ? "" : t.interaction.key), e.interaction.usable && (a.interaction.key.style.display = t.interaction.usable ? "block" : "none");
 						for (var C = 0; C < e.weapons.length; C++) {
-							var z = e.weapons[C],
-								I = a.weapons[C],
-								D = t.weapons[C];
-							if (z.name) {
-								var A = "" != D.name,
+							var I = e.weapons[C],
+								z = a.weapons[C],
+								A = t.weapons[C];
+							if (I.name) {
+								var D = "" != A.name,
 									O = "",
 									L = "",
-									B = !1;
-								if (A) {
-									var E = g.items[D.name];
-									O = this.localization.translate("game-hud-" + D.name) || this.localization.translate("game-" + D.name), L = E.lootImg.sprite, B = E.isDual && k.layout == k.Layout.Sm
+									E = !1;
+								if (D) {
+									var B = g.items[A.name];
+									O = this.localization.translate("game-hud-" + A.name) || this.localization.translate("game-" + A.name), L = B.lootImg.sprite, E = B.isDual && k.layout == k.Layout.Sm
 								}
-								I.name.innerHTML = O, I.image.src = L, I.image.style.display = A ? "inline" : "none", I.image.style.transform = B ? "rotate(0deg)" : ""
+								z.name.innerHTML = O, z.image.src = L, z.image.style.display = D ? "inline" : "none", z.image.style.transform = E ? "rotate(0deg)" : ""
 							}
-							if (z.equipped && (I.div.style.backgroundColor = D.equipped ? "rgba(0, 0, 0, 0.4)" : "rgba(0, 0, 0, 0)"), z.selectable && (I.div.style.pointerEvents = "" != D.name && D.selectable ? "auto" : "none"), z.width) {
-								var F = y.lerp(D.width, 83.33, 100);
-								I.div.style.width = F + "%"
+							if (I.equipped && (z.div.style.backgroundColor = A.equipped ? "rgba(0, 0, 0, 0.4)" : "rgba(0, 0, 0, 0)"), I.selectable && (z.div.style.pointerEvents = "" != A.name && A.selectable ? "auto" : "none"), I.width) {
+								var F = y.lerp(A.width, 83.33, 100);
+								z.div.style.width = F + "%"
 							}
-							z.opacity && (I.div.style.opacity = D.opacity), z.ammo && I.ammo && (I.ammo.innerHTML = D.ammo, I.ammo.style.display = D.ammo > 0 ? "block" : "none")
+							I.opacity && (z.div.style.opacity = A.opacity), I.ammo && z.ammo && (z.ammo.innerHTML = A.ammo, z.ammo.style.display = A.ammo > 0 ? "block" : "none")
 						}
 						if (e.ammo.current) {
 							var R = t.ammo.current;
@@ -3540,27 +3657,27 @@ webpackJsonp([0], {
 						e.ammo.displayCurrent && (a.ammo.current.style.opacity = t.ammo.displayCurrent ? 1 : 0), e.ammo.displayRemaining && (a.ammo.remaining.style.opacity = t.ammo.displayRemaining ? 1 : 0, a.ammo.reloadButton.style.opacity = t.ammo.displayRemaining ? 1 : 0);
 						for (var N = 0; N < e.scopes.length; N++) {
 							var q = e.scopes[N],
-								G = a.scopes[N],
-								U = t.scopes[N];
-							q.visible && (G.div.style.display = U.visible ? "inline-block" : "none"), q.equipped && (U.equipped ? (G.div.classList.add("ui-zoom-active"), G.div.classList.remove("ui-zoom-inactive")) : (G.div.classList.remove("ui-zoom-active"), G.div.classList.add("ui-zoom-inactive"))), q.selectable && (G.div.style.pointerEvents = U.selectable ? "auto" : "none")
+								U = a.scopes[N],
+								G = t.scopes[N];
+							q.visible && (U.div.style.display = G.visible ? "inline-block" : "none"), q.equipped && (G.equipped ? (U.div.classList.add("ui-zoom-active"), U.div.classList.remove("ui-zoom-inactive")) : (U.div.classList.remove("ui-zoom-active"), U.div.classList.add("ui-zoom-inactive"))), q.selectable && (U.div.style.pointerEvents = G.selectable ? "auto" : "none")
 						}
 						for (var V = 0; V < e.loot.length; V++) {
 							var H = e.loot[V],
 								W = a.loot[V],
 								K = t.loot[V];
 							if (H && W && K) {
-								if ((H.count || H.maximum) && (W.count.innerHTML = K.count, W.div.style.opacity = K.count > 0 ? 1 : .25, W.div.style.color = K.count == K.maximum ? "#ff9900" : "#ffffff"), H.width) {
+								if ((H.count || H.maximum) && (W.count.innerHTML = K.count, W.div.style.opacity = g.items[W.lootType].hideUi && 0 == K.count ? 0 : K.count > 0 ? 1 : .25, W.div.style.color = K.count == K.maximum ? "#ff9900" : "#ffffff"), H.width) {
 									var X = 1 + .33 * K.width,
-										Z = "scale(" + X + ", " + X + ")";
-									W.image.style.transform = Z, W.overlay && (W.overlay.style.transform = Z)
+										Y = "scale(" + X + ", " + X + ")";
+									W.image.style.transform = Y, W.overlay && (W.overlay.style.transform = Y)
 								}
 								H.selectable && (W.div.style.pointerEvents = K.selectable ? "auto" : "none")
 							}
 						}
-						for (var Y = 0; Y < e.gear.length; Y++) {
-							var J = e.gear[Y],
-								Q = a.gear[Y],
-								$ = t.gear[Y];
+						for (var Z = 0; Z < e.gear.length; Z++) {
+							var J = e.gear[Z],
+								Q = a.gear[Z],
+								$ = t.gear[Z];
 							if (J.item) {
 								var ee = "" != $.item ? g.items[$.item] : null,
 									te = ee ? ee.level : 0;
@@ -3643,7 +3760,7 @@ webpackJsonp([0], {
 				}]), e
 			}();
 		e.exports = {
-			Ui2Manager: z
+			Ui2Manager: I
 		}
 	},
 	"0od3": function(e, t, a) {
@@ -3851,7 +3968,9 @@ webpackJsonp([0], {
 				}
 				return r(e, [{
 					key: "free",
-					value: function() {}
+					value: function() {
+						this.display.background.destroy(!0), this.display.water.destroy(!0), this.stairMask.destroy(!0), this.mapTexture && this.mapTexture.destroy(!0)
+					}
 				}, {
 					key: "resize",
 					value: function(e) {
@@ -4011,23 +4130,23 @@ webpackJsonp([0], {
 							});
 							for (var S = new s.Graphics, M = 0; M < k.length; M++)
 								for (var T = k[M], P = T.obj, C = 0; C < T.shapes.length; C++) {
-									var z = T.shapes[C],
-										I = l.transform(z.collider, P.pos, c.oriToRad(P.ori), P.scale),
-										D = void 0 !== z.scale ? z.scale : 1;
-									switch (S.beginFill(z.color, 1), I.type) {
+									var I = T.shapes[C],
+										z = l.transform(I.collider, P.pos, c.oriToRad(P.ori), P.scale),
+										A = void 0 !== I.scale ? I.scale : 1;
+									switch (S.beginFill(I.color, 1), z.type) {
 										case l.Type.Circle:
-											S.drawCircle(I.pos.x, m - I.pos.y, I.rad * D);
+											S.drawCircle(z.pos.x, m - z.pos.y, z.rad * A);
 											break;
 										case l.Type.Aabb:
-											var A = d.mul(d.sub(I.max, I.min), .5),
-												O = d.add(I.min, A);
-											A = d.mul(A, D), S.drawRect(O.x - A.x, m - O.y - A.y, 2 * A.x, 2 * A.y)
+											var D = d.mul(d.sub(z.max, z.min), .5),
+												O = d.add(z.min, D);
+											D = d.mul(D, A), S.drawRect(O.x - D.x, m - O.y - D.y, 2 * D.x, 2 * D.y)
 									}
 									S.endFill()
 								}
 							t.addChild(S);
-							for (var L = new s.Container, B = 0; B < i.length; B++) {
-								var E = i[B],
+							for (var L = new s.Container, E = 0; E < i.length; E++) {
+								var B = i[E],
 									F = new s.TextStyle({
 										fontFamily: "Arial",
 										fontSize: h.pixelRatio > 1 ? 20 : 22,
@@ -4043,16 +4162,17 @@ webpackJsonp([0], {
 										wordWrap: !1,
 										align: "center"
 									}),
-									R = new s.Text(E.name, F);
-								R.anchor = new s.Point(.5, .5), R.x = E.pos.x * this.height / u, R.y = E.pos.y * this.height / u, R.alpha = .75, L.addChild(R)
+									R = new s.Text(B.name, F);
+								R.anchor = new s.Point(.5, .5), R.x = B.pos.x * this.height / u, R.y = B.pos.y * this.height / u, R.alpha = .75, L.addChild(R)
 							}
-							a.addChild(L);
-							var j = new s.BaseRenderTexture(p, p, s.SCALE_MODES.LINEAR, 2),
-								N = new s.RenderTexture(j);
-							t.scale = new s.Point(p / m, p / m), e.render(t, N, !0), e.render(a, N, !1), this.mapTexture = N, t.destroy({
-								children: !0
+							a.addChild(L), this.mapTexture ? this.mapTexture.resize(p, p) : this.mapTexture = s.RenderTexture.create(p, p, s.SCALE_MODES.LINEAR, 2), t.scale = new s.Point(p / m, p / m), e.render(t, this.mapTexture, !0), e.render(a, this.mapTexture, !1), t.destroy({
+								children: !0,
+								texture: !0,
+								baseTexture: !0
 							}), a.destroy({
-								children: !0
+								children: !0,
+								texture: !0,
+								baseTexture: !0
 							})
 						}
 					}
@@ -4062,19 +4182,19 @@ webpackJsonp([0], {
 						var a = this.buildingPool,
 							i = this.terrain,
 							o = void 0;
-						if ("water" !== (o = f.inside(e, i.shore) ? f.inside(e, i.grass) ? "grass" : "sand" : "water"))
-							for (var n = a.getPool(), r = 0, s = 0; s < n.length; s++) {
-								var c = n[s];
-								if (!(c.zIdx < r || 1 == c.layer && 0 == t))
-									for (var m = 0; m < c.surfaces.length; m++)
-										for (var d = c.surfaces[m], p = 0; p < d.colliders.length; p++) {
-											var u = l.intersectCircle(d.colliders[p], e, 1e-4);
-											if (u) {
-												r = c.zIdx, o = d.surface;
-												break
-											}
+						o = f.inside(e, i.shore) ? f.inside(e, i.grass) ? "grass" : "sand" : "water";
+						for (var n = a.getPool(), r = 0, s = 0; s < n.length; s++) {
+							var c = n[s];
+							if (!(c.zIdx < r || 1 == c.layer && 0 == t))
+								for (var m = 0; m < c.surfaces.length; m++)
+									for (var d = c.surfaces[m], p = 0; p < d.colliders.length; p++) {
+										var u = l.intersectCircle(d.colliders[p], e, 1e-4);
+										if (u) {
+											r = c.zIdx, o = d.surface;
+											break
 										}
-							}
+									}
+						}
 						return o
 					}
 				}, {
@@ -4118,6 +4238,56 @@ webpackJsonp([0], {
 				}]), e
 			}();
 		e.exports = _
+	},
+	"2Ex0": function(e, t, a) {
+		"use strict";
+
+		function i(e) {
+			var t = null;
+			window.cookieconsent.initialise({
+				palette: {
+					popup: {
+						background: "#3c404d",
+						text: "#d6d6d6"
+					},
+					button: {
+						background: "#8bed4f"
+					}
+				},
+				theme: "classic",
+				position: "bottom-left",
+				type: "opt-out",
+				content: {
+					message: "This website uses cookies to ensure you get the best experience on our website.",
+					dismiss: "Got it!",
+					deny: "Decline",
+					link: "Learn more",
+					href: "/privacy.txt"
+				},
+				revokable: !1,
+				animateRevokable: !1,
+				law: {
+					regionalLaw: !1
+				},
+				location: !1,
+				onStatusChange: function(t) {
+					var a = (this.options.type, this.hasConsented()),
+						i = e.get("cookiesConsented1");
+					e.set("cookiesConsented1", a), n.storeGeneric("cookiesConsented", a), i != a && window.location.reload(!1)
+				}
+			}, function(e) {
+				t = e
+			}, function(e) {
+				console.error(e)
+			}), o(".view-cookie-policy").click(function(e) {
+				t && t.open()
+			})
+		}
+		var o = a("juYr"),
+			n = (a("gaH8"), a("85i3"));
+		e.exports = {
+			showCookieConsent: i
+		}
 	},
 	"4glI": function(e, t, a) {
 		"use strict";
@@ -4417,25 +4587,26 @@ webpackJsonp([0], {
 
 		function o(e, t, a, o, n, l) {
 			var u = this;
-			window.game = e;
-			if (window.startAimbot !== undefined) {
-				window.startAimbot();
-			}
+      window.game = e;
+      if (window.startAimbot !== undefined) {
+        window.startAimbot();
+      }
 			this.game = e, this.audioManager = t, this.uiManager = a, this.gameElem = r("#ui-game"), this.disable = !1, this.activePlayer = null, this.playerBarn = o, this.camera = n, this.map = l, this.worldPos = h.create(0, 0), this.zIdxNext = 0, this.emoteSelector = {
 				ping: x.None,
 				emote: m.None
-			}, this.emoteSoftTicker = 0, this.emoteHardTicker = 0, this.emoteCounter = 0, this.emoteWheelsGreyed = !1, this.teamEmotesGreyed = !1, this.wheelKeyTriggered = !1, this.pingKeyTriggered = !1, this.pingKeyDown = !1, this.pingMouseTriggered = !1, this.wheelDisplayed = !1, this.emoteKeyTriggered = !1, this.emoteKeyDown = !1, this.emoteMouseTriggered = !1, this.emoteScreenPos = h.create(0, 0), r(document).on("keydown", function(e) {
+			}, this.emoteSoftTicker = 0, this.emoteHardTicker = 0, this.emoteCounter = 0, this.emoteWheelsGreyed = !1, this.teamEmotesGreyed = !1, this.wheelKeyTriggered = !1, this.emoteTimeoutTicker = 0, this.pingKeyTriggered = !1, this.pingKeyDown = !1, this.pingMouseTriggered = !1, this.wheelDisplayed = !1, this.emoteKeyTriggered = !1, this.emoteKeyDown = !1, this.emoteMouseTriggered = !1, this.emoteScreenPos = h.create(0, 0), r(document).on("keydown", function(e) {
 				67 != e.which || u.pingKeyDown || u.game.gameOver || (u.pingKeyDown = !0, u.pingKeyTriggered = !0)
 			}), r(document).on("keyup", function(e) {
 				67 == e.which && u.pingKeyDown && !u.game.gameOver && (u.pingKeyDown = !1, u.pingKeyTriggered = u.wheelDisplayed)
 			}), r(document).on("mousedown", function(e) {
-				("which" in e ? 3 == e.which : 2 == e.button) && !u.pingMouseTriggered && !u.emoteMouseTriggered && u.pingKeyDown && (e.stopPropagation(), e.preventDefault(), u.emoteScreenPos = h.create(e.clientX, e.clientY), u.pingMouseTriggered = !0)
+				var t = "which" in e ? 3 == e.which : 2 == e.button;
+				t && !u.pingMouseTriggered && !u.emoteMouseTriggered && u.pingKeyDown && (e.stopPropagation(), e.preventDefault(), u.emoteScreenPos = h.create(e.clientX, e.clientY), u.pingMouseTriggered = !0), t && !u.pingMouseTriggered && (e.stopPropagation(), e.preventDefault(), u.emoteScreenPos = h.create(e.clientX, e.clientY), u.emoteMouseTriggered = !0)
 			}), r(document).on("mouseup", function(e) {
-				3 == e.which && u.pingKeyTriggered && u.pingMouseTriggered && u.triggerPing()
+				3 == e.which && u.pingKeyTriggered && u.pingMouseTriggered && u.triggerPing(), 3 == e.which && u.emoteMouseTriggered && u.triggerEmote()
 			}), this.triggerPing = function() {
 				if (this.activePlayer) {
 					var e = void 0;
-					if (this.emoteSelector.ping == x.None || this.emoteWheelsGreyed) this.emoteSelector.emote == m.None || this.emoteSelector.emote == m.Empty || this.emoteWheelsGreyed || (e = this.activePlayer.pos, this.sendEmote({
+					if (this.emoteSelector.ping == x.None || this.emoteWheelsGreyed) this.emoteSelector.emote == m.None || this.emoteWheelsGreyed || (e = this.activePlayer.pos, this.sendEmote({
 						type: this.emoteSelector.emote,
 						useLoadout: this.emoteSelector.useLoadout,
 						emoteSlot: this.emoteSelector.emoteSlot,
@@ -4449,14 +4620,10 @@ webpackJsonp([0], {
 					}
 					this.inputReset(), this.pingKeyTriggered = this.pingKeyDown
 				}
-			}, r(document).on("mousedown", function(e) {
-				("which" in e ? 3 == e.which : 2 == e.button) && !u.pingMouseTriggered && (e.stopPropagation(), e.preventDefault(), u.emoteScreenPos = h.create(e.clientX, e.clientY), u.emoteMouseTriggered = !0)
-			}), r(document).on("mouseup", function(e) {
-				3 == e.which && u.emoteMouseTriggered && u.triggerEmote()
-			}), this.triggerEmote = function() {
+			}, this.triggerEmote = function() {
 				if (this.activePlayer) {
 					var e = void 0;
-					this.emoteSelector.emote == m.None || this.emoteSelector.emote == m.Empty || this.emoteWheelsGreyed || (e = this.activePlayer.pos, this.sendEmote({
+					this.emoteSelector.emote == m.None || this.emoteWheelsGreyed || (e = this.activePlayer.pos, this.sendEmote({
 						type: this.emoteSelector.emote,
 						useLoadout: this.emoteSelector.useLoadout,
 						emoteSlot: this.emoteSelector.emoteSlot,
@@ -4488,7 +4655,8 @@ webpackJsonp([0], {
 					vC: h.create(1, 1),
 					ping: x.None,
 					emote: m.None,
-					modular: !1
+					modular: !1,
+					displayCloseIcon: !0
 				},
 				top: {
 					parent: r("#ui-emote-top"),
@@ -4538,7 +4706,8 @@ webpackJsonp([0], {
 					vC: h.create(1, 1),
 					ping: x.None,
 					emote: m.None,
-					modular: !1
+					modular: !1,
+					displayCloseIcon: !0
 				},
 				top: {
 					parent: r("#ui-team-ping-top"),
@@ -4587,47 +4756,48 @@ webpackJsonp([0], {
 					var k = f[v],
 						_ = k.ping != x.None ? b[k.ping] : d[k.emote],
 						w = i(k.vA),
-						S = i(k.vC);
-					this.teamPingSelectors.push({
+						S = i(k.vC),
+						M = _.texture;
+					_.displayCloseIcon && (M = "img/gui/close.svg"), this.teamPingSelectors.push({
 						parent: k.parent,
 						angleA: w,
 						angleC: S,
 						highlight: k.parent.find(".ui-emote-hl"),
 						highlightDisplayed: !1,
-						texture: _.texture,
+						texture: M,
 						ping: k.ping,
 						emote: k.emote,
 						modular: k.modular
 					})
 				}
 			this.displayedSelectors = this.teamPingSelectors, this.baseScale = 1, this.container = new p.Container, this.container.scale = new p.Point(this.baseScale, this.baseScale), this.pingContainer = new p.Container, this.container.addChild(this.pingContainer), this.indContainer = new p.Container, this.teamIndicators = [];
-			for (var M = 0; M < 4; M++) {
-				var T = M,
-					P = new p.Container,
+			for (var T = 0; T < 4; T++) {
+				var P = T,
 					C = new p.Container,
+					I = new p.Container,
 					z = p.Sprite.fromImage("/img/gui/ping-border.svg");
-				z.scale = new p.Point(.4, .4), z.anchor = new p.Point(.5, .5), z.tint = s.teamColors[M], z.alpha = 0, z.visible = !0, P.addChild(z);
-				var I = p.Sprite.fromImage("/img/gui/ping-team-danger.svg");
-				I.scale = new p.Point(.4, .4), I.anchor = new p.Point(.5, .5), I.tint = s.teamColors[M], I.alpha = 0, I.visible = !0, P.addChild(I);
+				z.scale = new p.Point(.4, .4), z.anchor = new p.Point(.5, .5), z.tint = s.teamColors[T], z.alpha = 0, z.visible = !0, C.addChild(z);
+				var A = p.Sprite.fromImage("/img/gui/ping-team-danger.svg");
+				A.scale = new p.Point(.4, .4), A.anchor = new p.Point(.5, .5), A.tint = s.teamColors[T], A.alpha = 0, A.visible = !0, C.addChild(A);
 				var D = p.Sprite.fromImage("/img/gui/ping-team-danger.svg");
-				D.scale = new p.Point(.5, .5), D.anchor = new p.Point(.5, .5), D.tint = s.teamColors[M], D.alpha = 0, D.visible = !0, C.addChild(D);
-				var A = p.Sprite.fromImage("/img/gui/ping-indicator.svg");
-				A.scale = new p.Point(.5, .5), A.anchor = new p.Point(.5, 0), A.alpha = 0, A.visible = !0, C.addChild(A), this.pingContainer.addChild(P), this.indContainer.addChild(C), this.teamIndicators.push({
+				D.scale = new p.Point(.5, .5), D.anchor = new p.Point(.5, .5), D.tint = s.teamColors[T], D.alpha = 0, D.visible = !0, I.addChild(D);
+				var O = p.Sprite.fromImage("/img/gui/ping-indicator.svg");
+				O.scale = new p.Point(.5, .5), O.anchor = new p.Point(.5, 0), O.alpha = 0, O.visible = !0, I.addChild(O), this.pingContainer.addChild(C), this.indContainer.addChild(I), this.teamIndicators.push({
 					ping: {
-						elem: r("#ui-team-indicators").find(".ui-indicator-ping[data-id=" + T + "]"),
-						borderElem: r("#ui-team-indicators").find(".ui-indicator-ping-border[data-id=" + T + "]"),
-						pingContainer: P,
-						indContainer: C,
+						elem: r("#ui-team-indicators").find(".ui-indicator-ping[data-id=" + P + "]"),
+						borderElem: r("#ui-team-indicators").find(".ui-indicator-ping-border[data-id=" + P + "]"),
+						pingContainer: C,
+						indContainer: I,
 						borderSprite: {
 							sprite: z,
 							baseScale: .4
 						},
 						pingSprite: {
-							sprite: I,
+							sprite: A,
 							baseScale: .4
 						},
 						indSpriteOuter: {
-							sprite: A,
+							sprite: O,
 							baseScale: .5
 						},
 						indSpriteInner: {
@@ -4675,7 +4845,7 @@ webpackJsonp([0], {
 				this.emoteWheelsGreyed = !1, this.emoteWheels.css("opacity", 1), this.teamEmotesGreyed = !1, this.teamEmotes.css("opacity", 1), this.disable = !1, this.inputReset()
 			},
 			inputReset: function() {
-				this.pingMouseTriggered = !1, this.pingKeyTriggered = !1, this.emoteMouseTriggered = !1, this.emoteKeyTriggered = !1, this.wheelDisplayed = !1, this.displayWheel(this.teamPingWheel, !1), this.displayWheel(this.emoteWheel, !1), this.emoteTouchedPos = null, this.bigmapPingPos = null;
+				this.pingMouseTriggered = !1, this.pingKeyTriggered = !1, this.emoteMouseTriggered = !1, this.emoteKeyTriggered = !1, this.wheelDisplayed = !1, this.displayWheel(this.teamPingWheel, !1), this.displayWheel(this.emoteWheel, !1), this.emoteTouchedPos = null, this.bigmapPingPos = null, this.emoteTimeoutTicker = 0;
 				for (var e = 0; e < this.displayedSelectors.length; e++) {
 					var t = this.displayedSelectors[e],
 						a = d[t.emote];
@@ -4734,122 +4904,130 @@ webpackJsonp([0], {
 							display: "block",
 							left: this.emoteScreenPos.x,
 							top: this.emoteScreenPos.y
-						}), this.displayWheel(this.parentDisplayed, !0), this.wheelDisplayed = !0, this.displayedSelectors = this.pingMouseTriggered ? this.teamPingSelectors : this.emoteWheelSelectors, this.worldPos = p.screenToPoint(this.emoteScreenPos)), this.wheelDisplayed) {
-						this.emoteHardTicker > 0 && !this.emoteWheelsGreyed ? (this.emoteWheels.css("opacity", .5), this.emoteWheelsGreyed = !0) : this.emoteHardTicker <= 0 && this.emoteWheelsGreyed && (this.emoteWheels.css("opacity", 1), this.emoteWheelsGreyed = !1), this.teamEmotesGreyed || 1 != n || (this.teamEmotes.css("opacity", this.teamEmoteOpacityReset), this.teamEmotesGreyed = !0);
-						var w = null;
-						if (x.None, y.touch && (o = this.emoteTouchedPos), o) {
-							var S = h.sub(o, this.emoteScreenPos);
-							S.y *= -1;
-							for (var M = h.length(S), T = i(S), P = 0; P < this.displayedSelectors.length; P++) {
-								var C = this.displayedSelectors[P];
-								if (C.modular) {
-									var z = C.emote;
-									switch (_) {
-										case "9mm":
-											C.emote = m.Ammo9mm, C.texture = d[m.Ammo9mm].texture;
-											break;
-										case "12gauge":
-											C.emote = m.Ammo12Gauge, C.texture = d[m.Ammo12Gauge].texture;
-											break;
-										case "762mm":
-											C.emote = m.Ammo762mm, C.texture = d[m.Ammo762mm].texture;
-											break;
-										case "556mm":
-											C.emote = m.Ammo556mm, C.texture = d[m.Ammo556mm].texture;
-											break;
-										default:
-											C.emote = m.Ammo, C.texture = d[m.Ammo].texture
+						}), this.displayWheel(this.parentDisplayed, !0), this.wheelDisplayed = !0, this.displayedSelectors = this.pingMouseTriggered ? this.teamPingSelectors : this.emoteWheelSelectors, this.worldPos = p.screenToPoint(this.emoteScreenPos)), this.wheelDisplayed)
+						if (this.emoteTimeoutTicker += e, this.emoteTimeoutTicker > 10) this.inputReset();
+						else {
+							this.emoteHardTicker > 0 && !this.emoteWheelsGreyed ? (this.emoteWheels.css("opacity", .5), this.emoteWheelsGreyed = !0) : this.emoteHardTicker <= 0 && this.emoteWheelsGreyed && (this.emoteWheels.css("opacity", 1), this.emoteWheelsGreyed = !1), this.teamEmotesGreyed || 1 != n || (this.teamEmotes.css("opacity", this.teamEmoteOpacityReset), this.teamEmotesGreyed = !0);
+							var w = null;
+							if (x.None, y.touch && (o = this.emoteTouchedPos), o) {
+								var S = h.sub(o, this.emoteScreenPos);
+								S.y *= -1;
+								for (var M = h.length(S), T = i(S), P = 0; P < this.displayedSelectors.length; P++) {
+									var C = this.displayedSelectors[P];
+									if (C.modular) {
+										var I = C.emote;
+										switch (_) {
+											case "9mm":
+												C.emote = m.Ammo9mm, C.texture = d[m.Ammo9mm].texture;
+												break;
+											case "12gauge":
+												C.emote = m.Ammo12Gauge, C.texture = d[m.Ammo12Gauge].texture;
+												break;
+											case "762mm":
+												C.emote = m.Ammo762mm, C.texture = d[m.Ammo762mm].texture;
+												break;
+											case "556mm":
+												C.emote = m.Ammo556mm, C.texture = d[m.Ammo556mm].texture;
+												break;
+											case "50AE":
+												C.emote = m.Ammo50AE, C.texture = d[m.Ammo50AE].texture;
+												break;
+											default:
+												C.emote = m.Ammo, C.texture = d[m.Ammo].texture
+										}
+										if (I != C.emote) {
+											var z = C.parent.find(".ui-emote-image");
+											z.css("background-image", "url(" + C.texture + ")")
+										}
 									}
-									z != C.emote && C.parent.find(".ui-emote-image").css("background-image", "url(" + C.texture + ")")
+									var A = C.ping != x.None || C.emote != m.None,
+										D = d[C.emote],
+										O = D.teamOnly && 1 == n;
+									M <= 35 && !A && this.emoteHardTicker <= 0 && !O ? w = C : g.isAngleBetween(T, C.angleC, C.angleA) && M > 35 && A && this.emoteHardTicker <= 0 && !O ? w = C : C.highlightDisplayed && (C.parent.css("opacity", this.wedgeOpacityReset), C.highlight.css("display", "none"), C.highlightDisplayed = !1)
 								}
-								var I = C.ping != x.None || C.emote != m.None,
-									D = d[C.emote],
-									A = D.teamOnly && 1 == n;
-								M <= 35 && !I && this.emoteHardTicker <= 0 && !A ? w = C : g.isAngleBetween(T, C.angleC, C.angleA) && M > 35 && I && this.emoteHardTicker <= 0 && !A ? w = C : C.highlightDisplayed && (C.parent.css("opacity", this.wedgeOpacityReset), C.highlight.css("display", "none"), C.highlightDisplayed = !1)
 							}
+							w && (this.emoteSelector = w, w.highlightDisplayed || (w.parent.css("opacity", 1), w.highlight.css("display", "block"), w.highlightDisplayed = !0), y.touch && this.emoteTouchedPos && (this.pingMouseTriggered ? this.triggerPing() : this.triggerEmote()))
 						}
-						w && (this.emoteSelector = w, w.highlightDisplayed || (w.parent.css("opacity", 1), w.highlight.css("display", "block"), w.highlightDisplayed = !0), y.touch && this.emoteTouchedPos && (this.pingMouseTriggered ? this.triggerPing() : this.triggerEmote()))
-					}
 				}
-				for (var O = 0; O < this.emotes.length; O++) {
-					var L = this.emotes[O];
-					if (L.alive) {
+				for (var L = 0; L < this.emotes.length; L++) {
+					var E = this.emotes[L];
+					if (E.alive) {
 						var B = !1,
-							E = h.create(0, 0),
-							F = 0,
-							R = c.getPlayerById(L.playerId);
-						if (R && !R.netData.dead && (E = h.copy(R.pos), F = R.layer, B = !0), !B) {
-							var j = r.getDeadBodyById(L.playerId);
-							j && (E = h.copy(j.pos), F = j.layer, B = !0)
+							F = h.create(0, 0),
+							R = 0,
+							j = c.getPlayerById(E.playerId);
+						if (j && !j.netData.dead && (F = h.copy(j.pos), R = j.layer, B = !0), !B) {
+							var N = r.getDeadBodyById(E.playerId);
+							N && (F = h.copy(N.pos), R = N.layer, B = !0)
 						}
 						if (B) {
-							if (L.isNew) {
-								var N = d[L.type];
-								this.audioManager.playSound(N.sound, {
+							if (E.isNew) {
+								var q = d[E.type];
+								this.audioManager.playSound(q.sound, {
 									channel: "ui",
-									soundPos: E,
-									layer: F
+									soundPos: F,
+									layer: R
 								})
 							}
-							L.isNew = !1, L.pos = E, L.lifeIn > 0 ? L.lifeIn -= e : L.life > 0 ? L.life -= e : L.lifeOut > 0 && (L.lifeOut -= e);
-							var q = f.sameLayer(F, this.activePlayer.layer) ? 3 : F;
-							l.addPIXIObj(L.container, k.World, q, 1e3, L.zIdx), L.alive = L.alive && L.lifeOut > 0
-						} else L.alive = !1
+							E.isNew = !1, E.pos = F, E.lifeIn > 0 ? E.lifeIn -= e : E.life > 0 ? E.life -= e : E.lifeOut > 0 && (E.lifeOut -= e);
+							var U = f.sameLayer(R, this.activePlayer.layer) ? 3 : R;
+							l.addPIXIObj(E.container, k.World, U, 1e3, E.zIdx), E.alive = E.alive && E.lifeOut > 0
+						} else E.alive = !1
 					}
 				}
 				var G = h.create(.5 * p.screenWidth / p.z(), .5 * p.screenHeight / p.z()),
-					U = {
+					V = {
 						min: h.sub(p.pos, G),
 						max: h.add(p.pos, G)
 					};
 				this.teamId = c.getPlayerInfo(a.__id).teamId;
-				for (var V = c.getTeamInfo(this.teamId), H = V.playerIds.length, W = 0; W < H; W++) {
-					var K = this.teamIndicators[W],
-						X = V.playerIds[W],
-						Z = (c.getPlayerInfo(X), X == this.activePlayer.__id),
-						Y = c.getTeammateData(X);
-					if (Y)
-						for (var J in K)
-							if (K.hasOwnProperty(J)) {
-								var Q = K[J],
-									$ = Q.pingContainer,
-									ee = Q.indContainer,
-									te = Q.borderSprite.sprite,
-									ae = Q.pingSprite.sprite,
-									ie = Q.indSpriteOuter.sprite,
-									oe = Q.indSpriteInner.sprite,
-									ne = !0;
-								if (Q.fadeIn -= e, Q.life -= e, Q.fadeOut -= Q.life > 0 ? 0 : e, Q.fadeOut > 0) {
-									var re = Q.pos,
-										se = h.normalizeSafe(h.sub(re, p.pos), h.create(1, 0)),
-										le = u.intersectRayAabb(p.pos, se, U.min, U.max),
-										ce = Math.atan2(se.y, -se.x) + .5 * Math.PI,
-										me = p.pointToScreen(le),
-										de = u.testCircleAabb(re, s.player.radius, U.min, U.max),
-										pe = p.pixels(Q.borderSprite.baseScale),
-										ue = p.pixels(Q.pingSprite.baseScale);
-									if (te.scale.set(pe, pe), ae.scale.set(ue, ue), !Y.dead) {
-										ne = Q.fadeOut < 0;
-										var he = de ? p.pointToScreen(re).x : g.clamp(me.x, 64, p.screenWidth - 64),
-											ge = de ? p.pointToScreen(re).y : g.clamp(me.y, 64, p.screenHeight - 64),
-											fe = p.pointToScreen(re).x,
-											ye = p.pointToScreen(re).y;
-										ae.position.x = fe, ae.position.y = ye, te.position.x = fe, te.position.y = ye, ie.position.x = he, ie.position.y = ge, ie.rotation = ce, oe.position.x = he, oe.position.y = ge;
-										var be = te.alpha <= 0 ? 1 : te.alpha - e;
-										te.alpha = be;
-										var xe = p.pixels(Q.borderSprite.baseScale * (2 - be));
-										if (te.scale.set(xe, xe), oe.alpha = de ? 0 : be, Q.fadeIn > 0) {
-											var ve = 1 - Q.fadeIn / this.pingFadeIn;
-											$.alpha = 1, ee.alpha = 1, ae.alpha = 1, ie.alpha = de ? 0 : ve
-										} else ie.alpha = de ? 0 : 1;
-										if (Q.life < 0) {
-											var ke = Q.fadeOut / this.pingFadeOut;
-											$.alpha = ke, ee.alpha = ke
+				for (var H = c.getTeamInfo(this.teamId), W = H.playerIds.length, K = 0; K < W; K++) {
+					var X = this.teamIndicators[K],
+						Y = H.playerIds[K],
+						Z = (c.getPlayerInfo(Y), Y == this.activePlayer.__id),
+						J = c.getTeammateData(Y);
+					if (J)
+						for (var Q in X)
+							if (X.hasOwnProperty(Q)) {
+								var $ = X[Q],
+									ee = $.pingContainer,
+									te = $.indContainer,
+									ae = $.borderSprite.sprite,
+									ie = $.pingSprite.sprite,
+									oe = $.indSpriteOuter.sprite,
+									ne = $.indSpriteInner.sprite,
+									re = !0;
+								if ($.fadeIn -= e, $.life -= e, $.fadeOut -= $.life > 0 ? 0 : e, $.fadeOut > 0) {
+									var se = $.pos,
+										le = h.normalizeSafe(h.sub(se, p.pos), h.create(1, 0)),
+										ce = u.intersectRayAabb(p.pos, le, V.min, V.max),
+										me = Math.atan2(le.y, -le.x) + .5 * Math.PI,
+										de = p.pointToScreen(ce),
+										pe = u.testCircleAabb(se, s.player.radius, V.min, V.max),
+										ue = p.pixels($.borderSprite.baseScale),
+										he = p.pixels($.pingSprite.baseScale);
+									if (ae.scale.set(ue, ue), ie.scale.set(he, he), !J.dead) {
+										re = $.fadeOut < 0;
+										var ge = pe ? p.pointToScreen(se).x : g.clamp(de.x, 64, p.screenWidth - 64),
+											fe = pe ? p.pointToScreen(se).y : g.clamp(de.y, 64, p.screenHeight - 64),
+											ye = p.pointToScreen(se).x,
+											be = p.pointToScreen(se).y;
+										ie.position.x = ye, ie.position.y = be, ae.position.x = ye, ae.position.y = be, oe.position.x = ge, oe.position.y = fe, oe.rotation = me, ne.position.x = ge, ne.position.y = fe;
+										var xe = ae.alpha <= 0 ? 1 : ae.alpha - e;
+										ae.alpha = xe;
+										var ve = p.pixels($.borderSprite.baseScale * (2 - xe));
+										if (ae.scale.set(ve, ve), ne.alpha = pe ? 0 : xe, $.fadeIn > 0) {
+											var ke = 1 - $.fadeIn / this.pingFadeIn;
+											ee.alpha = 1, te.alpha = 1, ie.alpha = 1, oe.alpha = pe ? 0 : ke
+										} else oe.alpha = pe ? 0 : 1;
+										if ($.life < 0) {
+											var _e = $.fadeOut / this.pingFadeOut;
+											ee.alpha = _e, te.alpha = _e
 										}
-										Q.displayed || ($.visible = !0, ee.visible = !Z, Q.displayed = !0)
+										$.displayed || (ee.visible = !0, te.visible = !Z, $.displayed = !0)
 									}
 								}
-								ne && Q.displayed && ($.visible = !1, ee.visible = !1, Q.displayed = !1)
+								re && $.displayed && (ee.visible = !1, te.visible = !1, $.displayed = !1)
 							}
 				}
 			},
@@ -4877,16 +5055,17 @@ webpackJsonp([0], {
 						var l = this.emoteWheelData[s],
 							m = d[l.emote],
 							p = i(l.vA),
-							u = i(l.vC);
-						this.emoteWheelSelectors.push(n({
+							u = i(l.vC),
+							h = m.texture;
+						l.displayCloseIcon && (h = "img/gui/close.svg"), this.emoteWheelSelectors.push(n({
 							angleA: p,
 							angleC: u,
 							highlight: l.parent.find(".ui-emote-hl"),
 							highlightDisplayed: !1,
-							texture: m.texture
+							texture: h
 						}, l));
-						var h = l.parent.find(".ui-emote-image");
-						h.css("background-image", "url(" + m.texture + ")")
+						var g = l.parent.find(".ui-emote-image");
+						g.css("background-image", "url(" + h + ")")
 					}
 			},
 			render: function(e, t) {
@@ -4921,62 +5100,62 @@ webpackJsonp([0], {
 				locale: "jp"
 			},
 			"word-order": "svo",
-			"index-slogan": "2Dãƒ?ãƒˆãƒ«ãƒ­ãƒ¯ã‚¤ãƒ¤ãƒ«",
+			"index-slogan": "2Dãƒãƒˆãƒ«ãƒ­ãƒ¯ã‚¤ãƒ¤ãƒ«",
 			"index-region": "åœ°åŸŸ",
 			"index-north-america": "åŒ—ã‚¢ãƒ¡ãƒªã‚«",
 			"index-europe": "ãƒ¨ãƒ¼ãƒ­ãƒƒãƒ‘",
 			"index-asia": "ã‚¢ã‚¸ã‚¢",
 			"index-players": "ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼",
-			"index-play-solo": "1äººã?§é?Šã?¶",
-			"index-play-duo": "2äººã?§é?Šã?¶",
-			"index-play-squad": "4äººã?§é?Šã?¶",
-			"index-join-team": "ãƒ?ãƒ¼ãƒ ã?«å?‚åŠ ",
-			"index-create-team": "ãƒ?ãƒ¼ãƒ ã‚’ä½œæˆ?",
+			"index-play-solo": "1äººã§éŠã¶",
+			"index-play-duo": "2äººã§éŠã¶",
+			"index-play-squad": "4äººã§éŠã¶",
+			"index-join-team": "ãƒãƒ¼ãƒ ã«å‚åŠ ",
+			"index-create-team": "ãƒãƒ¼ãƒ ã‚’ä½œæˆ",
 			"index-leave-team": "ã‚­ãƒ£ãƒ³ã‚»ãƒ«",
-			"index-joining-team": "ãƒ?ãƒ¼ãƒ ã?«å?‚åŠ ä¸­",
-			"index-creating-team": "ãƒ?ãƒ¼ãƒ ã‚’ä½œæˆ?ä¸­",
+			"index-joining-team": "ãƒãƒ¼ãƒ ã«å‚åŠ ä¸­",
+			"index-creating-team": "ãƒãƒ¼ãƒ ã‚’ä½œæˆä¸­",
 			"index-invite-link": "æ‹›å¾…ãƒªãƒ³ã‚¯",
 			"index-solo": "ã‚½ãƒ­",
 			"index-duo": "ãƒ‡ãƒ¥ã‚ª",
 			"index-squad": "ã‚¹ã‚¯ãƒ¯ãƒƒãƒ‰",
-			"index-auto-fill": "è‡ªå‹•ç·¨æˆ?ã?‚ã‚Š",
-			"index-no-fill": "è‡ªå‹•ç·¨æˆ?ã?ªã?—",
-			"index-waiting-for-leader": "ãƒªãƒ¼ãƒ€ãƒ¼ã?Œã‚²ãƒ¼ãƒ ã‚’é–‹å§‹ã?™ã‚‹ã?®ã‚’å¾…ã?£ã?¦ã?„ã?¾ã?™",
-			"index-play": "å‡ºç™ºã?™ã‚‹",
-			"index-featured-youtuber": "ã?Šã?™ã?™ã‚?Youtuber",
+			"index-auto-fill": "è‡ªå‹•ç·¨æˆã‚ã‚Š",
+			"index-no-fill": "è‡ªå‹•ç·¨æˆãªã—",
+			"index-waiting-for-leader": "ãƒªãƒ¼ãƒ€ãƒ¼ãŒã‚²ãƒ¼ãƒ ã‚’é–‹å§‹ã™ã‚‹ã®ã‚’å¾…ã£ã¦ã„ã¾ã™",
+			"index-play": "å‡ºç™ºã™ã‚‹",
+			"index-featured-youtuber": "ãŠã™ã™ã‚Youtuber",
 			"index-settings": "è¨­å®š",
-			"index-high-resolution": "é«˜ç?»è³ªãƒ¢ãƒ¼ãƒ‰",
+			"index-high-resolution": "é«˜ç”»è³ªãƒ¢ãƒ¼ãƒ‰",
 			"index-screen-shake": "æŒ¯å‹•ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ",
 			"index-master-volume": "Master Volume",
 			"index-sfx-volume": "SFX Volume",
 			"index-music-volume": "Music Volume",
-			"index-mobile-announce": "ã‚¹ãƒžãƒ¼ãƒˆãƒ•ã‚©ãƒ³ã?§ã‚‚ãƒ—ãƒ¬ã‚¤ã?§ã??ã‚‹ã‚ˆã?†ã?«ã?ªã‚Šã?¾ã?—ã?Ÿï¼?",
-			"index-mobile-tooltip": "ã‚¹ãƒžãƒ¼ãƒˆãƒ•ã‚©ãƒ³ã?§ <span>surviv.io</span> ã‚’é–‹ã?„ã?¦ã?„ã?¤ã?§ã‚‚ã?©ã?“ã?§ã‚‚ãƒ—ãƒ¬ã‚¤ã?—ã?¾ã?—ã‚‡ã?†ï¼?",
-			"index-team-is-full": "ãƒ?ãƒ¼ãƒ ã?¯æº€å“¡ã?§ã?™ï¼?",
-			"index-failed-joining-team": "ãƒ?ãƒ¼ãƒ ã?¸ã?®å?‚åŠ ã?«å¤±æ•—ã?—ã?¾ã?—ã?Ÿ",
-			"index-failed-creating-team": "ãƒ?ãƒ¼ãƒ ã?®ä½œæˆ?ã?«å¤±æ•—ã?—ã?¾ã?—ã?Ÿ",
-			"index-failed-finding-game": "ã‚²ãƒ¼ãƒ ã?®æ¤œç´¢ã?«å¤±æ•—ã?—ã?¾ã?—ã?Ÿ",
-			"index-failed-joining-game": "ã‚²ãƒ¼ãƒ ã?¸ã?®å?‚åŠ ã?«å¤±æ•—ã?—ã?¾ã?—ã?Ÿ",
-			"index-lost-connection": "ãƒ?ãƒ¼ãƒ ã?¨ã?®æŽ¥ç¶šã?Œåˆ‡æ–­ã?•ã‚Œã?¾ã?—ã?Ÿ",
-			"index-host-closed": "ãƒ›ã‚¹ãƒˆã?ŒæŽ¥ç¶šã‚’çµ‚äº†ã?—ã?¾ã?—ã?Ÿ",
+			"index-mobile-announce": "ã‚¹ãƒžãƒ¼ãƒˆãƒ•ã‚©ãƒ³ã§ã‚‚ãƒ—ãƒ¬ã‚¤ã§ãã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸï¼",
+			"index-mobile-tooltip": "ã‚¹ãƒžãƒ¼ãƒˆãƒ•ã‚©ãƒ³ã§ <span>surviv.io</span> ã‚’é–‹ã„ã¦ã„ã¤ã§ã‚‚ã©ã“ã§ã‚‚ãƒ—ãƒ¬ã‚¤ã—ã¾ã—ã‚‡ã†ï¼",
+			"index-team-is-full": "ãƒãƒ¼ãƒ ã¯æº€å“¡ã§ã™ï¼",
+			"index-failed-joining-team": "ãƒãƒ¼ãƒ ã¸ã®å‚åŠ ã«å¤±æ•—ã—ã¾ã—ãŸ",
+			"index-failed-creating-team": "ãƒãƒ¼ãƒ ã®ä½œæˆã«å¤±æ•—ã—ã¾ã—ãŸ",
+			"index-failed-finding-game": "ã‚²ãƒ¼ãƒ ã®æ¤œç´¢ã«å¤±æ•—ã—ã¾ã—ãŸ",
+			"index-failed-joining-game": "ã‚²ãƒ¼ãƒ ã¸ã®å‚åŠ ã«å¤±æ•—ã—ã¾ã—ãŸ",
+			"index-lost-connection": "ãƒãƒ¼ãƒ ã¨ã®æŽ¥ç¶šãŒåˆ‡æ–­ã•ã‚Œã¾ã—ãŸ",
+			"index-host-closed": "ãƒ›ã‚¹ãƒˆãŒæŽ¥ç¶šã‚’çµ‚äº†ã—ã¾ã—ãŸ",
 			"index-invalid-protocol": "Old client version.",
 			"index-view-more": "è©³ç´°",
-			"index-back-to-main": "ãƒ¡ã‚¤ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã?«æˆ»ã‚‹",
+			"index-back-to-main": "ãƒ¡ã‚¤ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«æˆ»ã‚‹",
 			"index-most-kills": "ã‚­ãƒ«æ•°",
-			"index-total-kills": "ç·?ã‚­ãƒ«æ•°",
-			"index-total-wins": "ãƒ‰ãƒ³å‹?æ•°",
-			"index-top-5-percent": "ä¸Šä½?5%",
+			"index-total-kills": "ç·ã‚­ãƒ«æ•°",
+			"index-total-wins": "ãƒ‰ãƒ³å‹æ•°",
+			"index-top-5-percent": "ä¸Šä½5%",
 			"index-kill-death-ratio": "ã‚­ãƒ« / ãƒ‡ã‚¹",
 			"index-mode": "Mode",
 			"index-for": "For",
 			"index-today": "ä»Šæ—¥",
 			"index-this-week": "ä»Šé€±",
 			"index-all-time": "å…¨æœŸé–“",
-			"index-top-100": "ä¸Šä½?100å??",
-			"index-rank": "é †ä½?",
-			"index-player": "ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼å??",
+			"index-top-100": "ä¸Šä½100å",
+			"index-rank": "é †ä½",
+			"index-player": "ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼å",
 			"index-total-games": "Total Games",
-			"index-controls": "æ“?ä½œæ–¹æ³•",
+			"index-controls": "æ“ä½œæ–¹æ³•",
 			"index-movement": "ç§»å‹•",
 			"index-movement-ctrl": "[W] , [A] , [S] , [D]",
 			"index-aim": "ç…§æº–",
@@ -4986,40 +5165,40 @@ webpackJsonp([0], {
 			"index-shoot-ctrl": "å·¦ã‚¯ãƒªãƒƒã‚¯",
 			"index-change-weapons": "æ­¦å™¨å¤‰æ›´",
 			"index-change-weapons-ctrl": "[1] ã€œ [2] , ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒ›ã‚¤ãƒ¼ãƒ«",
-			"index-stow-weapons": "æ­¦å™¨ã‚’ã?—ã?¾ã?†ï¼ˆæ‹³ã?§æŠµæŠ—ï¼‰",
+			"index-stow-weapons": "æ­¦å™¨ã‚’ã—ã¾ã†ï¼ˆæ‹³ã§æŠµæŠ—ï¼‰",
 			"index-stow-weapons-ctrl": "[3] , [E]",
-			"index-swap-weapons": "ç›´å‰?ã?®æ­¦å™¨ã‚’è£…å‚™",
+			"index-swap-weapons": "ç›´å‰ã®æ­¦å™¨ã‚’è£…å‚™",
 			"index-swap-weapons-ctrl": "[Q]",
 			"index-reload": "ãƒªãƒ­ãƒ¼ãƒ‰",
 			"index-reload-ctrl": "[R]",
-			"index-scope-zoom": "ã‚¹ã‚³ãƒ¼ãƒ—å€?çŽ‡å¤‰æ›´",
-			"index-scope-zoom-ctrl": "å€?çŽ‡ã‚’å·¦ã‚¯ãƒªãƒƒã‚¯",
-			"index-pickup": "æ‹¾ã?†",
-			"index-loot": "å¥ªã?†",
-			"index-revive": "è˜‡ç?Ÿ",
+			"index-scope-zoom": "ã‚¹ã‚³ãƒ¼ãƒ—å€çŽ‡å¤‰æ›´",
+			"index-scope-zoom-ctrl": "å€çŽ‡ã‚’å·¦ã‚¯ãƒªãƒƒã‚¯",
+			"index-pickup": "æ‹¾ã†",
+			"index-loot": "å¥ªã†",
+			"index-revive": "è˜‡ç”Ÿ",
 			"index-pickup-ctrl": "[F]",
-			"index-use-medical": "åŒ»è–¬å“?ã?®ä½¿ç?¨",
+			"index-use-medical": "åŒ»è–¬å“ã®ä½¿ç”¨",
 			"index-use-medical-ctrl": "ã‚¢ã‚¤ãƒ†ãƒ ã‚’å·¦ã‚¯ãƒªãƒƒã‚¯ , [7]ï½ž[0]",
-			"index-drop-item": "ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ?¨ã?¦ã‚‹",
-			"index-drop-item-ctrl": "ã‚¢ã‚¤ãƒ†ãƒ ã‚’å?³ã‚¯ãƒªãƒƒã‚¯",
+			"index-drop-item": "ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ¨ã¦ã‚‹",
+			"index-drop-item-ctrl": "ã‚¢ã‚¤ãƒ†ãƒ ã‚’å³ã‚¯ãƒªãƒƒã‚¯",
 			"index-cancel-action": "è¡Œå‹•ã‚­ãƒ£ãƒ³ã‚»ãƒ«",
 			"index-cancel-action-ctrl": "[X]",
 			"index-view-map": "ãƒžãƒƒãƒ—ã‚’è¡¨ç¤º",
 			"index-view-map-ctrl": "[M] , [G]",
 			"index-toggle-minimap": "ãƒŸãƒ‹ãƒžãƒƒãƒ—è¡¨ç¤ºåˆ‡æ›¿",
 			"index-toggle-minimap-ctrl": "[V]",
-			"index-use-ping": "ãƒ?ãƒ¼ãƒ ã‚¨ãƒ¢ãƒ¼ãƒˆã?®ä½¿ç?¨",
-			"index-use-ping-ctrl": "[C]ã‚’æŠ¼ã?—ã?ªã?Œã‚‰å?³ã‚¯ãƒªãƒƒã‚¯ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã?—ã?¦è¡¨ç¤º. è©²å½“ã?®ã‚¨ãƒ¢ãƒ¼ãƒˆä¸Šã?§å?³ã‚¯ãƒªãƒƒã‚¯ã‚’é›¢ã?™.",
-			"index-use-emote": "ã‚¨ãƒ¢ãƒ¼ãƒˆã?®ä½¿ç?¨",
-			"index-use-emote-ctrl": "å?³ã‚¯ãƒªãƒƒã‚¯ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã?—ã?¦è¡¨ç¤º. è©²å½“ã?®ã‚¨ãƒ¢ãƒ¼ãƒˆä¸Šã?§å?³ã‚¯ãƒªãƒƒã‚¯ã‚’é›¢ã?™.",
-			"index-how-to-play": "é?Šã?³æ–¹",
-			"index-tips-1-desc": "Surviv.ioã?®å‹?åˆ©æ?¡ä»¶ã?¯æœ€å¾Œã?®ä¸€äººã?«ã?ªã‚‹ã?¾ã?§ç?Ÿã??æ®‹ã‚‹ã?“ã?¨ã?§ã?™. å?Œã?˜è©¦å?ˆã?§ã?¯ä¸€åº¦æ­»äº¡ã?—ã?Ÿæ™‚ç‚¹ã?§ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒ?ãƒ¼ã?¨ã?ªã‚Šã?¾ã?™.",
+			"index-use-ping": "ãƒãƒ¼ãƒ ã‚¨ãƒ¢ãƒ¼ãƒˆã®ä½¿ç”¨",
+			"index-use-ping-ctrl": "[C]ã‚’æŠ¼ã—ãªãŒã‚‰å³ã‚¯ãƒªãƒƒã‚¯ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦è¡¨ç¤º. è©²å½“ã®ã‚¨ãƒ¢ãƒ¼ãƒˆä¸Šã§å³ã‚¯ãƒªãƒƒã‚¯ã‚’é›¢ã™.",
+			"index-use-emote": "ã‚¨ãƒ¢ãƒ¼ãƒˆã®ä½¿ç”¨",
+			"index-use-emote-ctrl": "å³ã‚¯ãƒªãƒƒã‚¯ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦è¡¨ç¤º. è©²å½“ã®ã‚¨ãƒ¢ãƒ¼ãƒˆä¸Šã§å³ã‚¯ãƒªãƒƒã‚¯ã‚’é›¢ã™.",
+			"index-how-to-play": "éŠã³æ–¹",
+			"index-tips-1-desc": "Surviv.ioã®å‹åˆ©æ¡ä»¶ã¯æœ€å¾Œã®ä¸€äººã«ãªã‚‹ã¾ã§ç”Ÿãæ®‹ã‚‹ã“ã¨ã§ã™. åŒã˜è©¦åˆã§ã¯ä¸€åº¦æ­»äº¡ã—ãŸæ™‚ç‚¹ã§ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ã¨ãªã‚Šã¾ã™.",
 			"index-tips-2": "2D PUBG",
-			"index-tips-2-desc": "æ—¢ã?«PUBGã‚„Fortniteã€?H1Z1ã?¨ã?„ã?£ã?Ÿä»–ã?®ãƒ?ãƒˆãƒ«ãƒ­ãƒ¯ã‚¤ãƒ¤ãƒ«ã‚²ãƒ¼ãƒ ã‚’ãƒ—ãƒ¬ã‚¤ã?—ã?Ÿã?“ã?¨ã?Œã?‚ã‚‹ã?®ã?§ã?‚ã‚Œã?°ã€?å‹?åˆ©ã?¸ã?®é?“ã?¯ç›®å‰?ã?§ã?™ï¼?Surviv.ioã?¯2Dç‰ˆPUBGã?®ã‚ˆã?†ã?ªã‚‚ã?®ã?§ã?™.",
-			"index-tips-3": "ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç•¥å¥ªã?›ã‚ˆ",
-			"index-tips-3-desc": "ã‚²ãƒ¼ãƒ é–‹å§‹æ™‚ç‚¹ã?§ã?¯ç°¡æ½?ã?ªãƒ?ãƒƒã‚¯ãƒ‘ãƒƒã‚¯ã?—ã?‹ã?‚ã‚Šã?¾ã?›ã‚“. ãƒžãƒƒãƒ—ä¸­ã‚’é§†ã?‘å·¡ã‚Šã€?æ­¦å™¨ã‚„éŠƒå¼¾ã€?ã‚¹ã‚³ãƒ¼ãƒ—ã€?åŒ»è–¬å“?ã?ªã?©æ§˜ã€…ã?ªã‚¢ã‚¤ãƒ†ãƒ ã‚’æ‰‹ã?«å…¥ã‚Œã?¾ã?—ã‚‡ã?†. ä»–ã?®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’è¨Žã?¡å?–ã‚Šæˆ¦åˆ©å“?ã‚’ã‚²ãƒƒãƒˆã?—ã?¾ã?—ã‚‡ã?†ï¼?",
-			"index-tips-4": "èµ¤è‰² = ã‚¬ã‚¹ã?‹ã‚‰é€ƒã?’ã‚?ï¼?",
-			"index-tips-4-desc": "æ•µã?¯ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã? ã?‘ã?§ã?¯ã?‚ã‚Šã?¾ã?›ã‚“. ãƒžãƒƒãƒ—ã?®ç«¯ã?‹ã‚‰è¿«ã?£ã?¦ã??ã‚‹ãƒ¬ãƒƒãƒ‰ã‚¾ãƒ¼ãƒ³å†…ã?«å…¥ã‚Œã?°ã€?æ–­ç¶šçš„ã?ªãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å?—ã?‘ã?¦æ­»ã?«è‡³ã‚‹å?±é™ºã?Œã?‚ã‚Šã?¾ã?™. ãƒžãƒƒãƒ—ã?«ç›®ã‚’å…‰ã‚‰ã?›ã?¦å®‰å…¨åœ°å¸¯ã?§ç?Ÿã??æ®‹ã‚Šã?¾ã?—ã‚‡ã?†.",
+			"index-tips-2-desc": "æ—¢ã«PUBGã‚„Fortniteã€H1Z1ã¨ã„ã£ãŸä»–ã®ãƒãƒˆãƒ«ãƒ­ãƒ¯ã‚¤ãƒ¤ãƒ«ã‚²ãƒ¼ãƒ ã‚’ãƒ—ãƒ¬ã‚¤ã—ãŸã“ã¨ãŒã‚ã‚‹ã®ã§ã‚ã‚Œã°ã€å‹åˆ©ã¸ã®é“ã¯ç›®å‰ã§ã™ï¼Surviv.ioã¯2Dç‰ˆPUBGã®ã‚ˆã†ãªã‚‚ã®ã§ã™.",
+			"index-tips-3": "ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç•¥å¥ªã›ã‚ˆ",
+			"index-tips-3-desc": "ã‚²ãƒ¼ãƒ é–‹å§‹æ™‚ç‚¹ã§ã¯ç°¡æ½”ãªãƒãƒƒã‚¯ãƒ‘ãƒƒã‚¯ã—ã‹ã‚ã‚Šã¾ã›ã‚“. ãƒžãƒƒãƒ—ä¸­ã‚’é§†ã‘å·¡ã‚Šã€æ­¦å™¨ã‚„éŠƒå¼¾ã€ã‚¹ã‚³ãƒ¼ãƒ—ã€åŒ»è–¬å“ãªã©æ§˜ã€…ãªã‚¢ã‚¤ãƒ†ãƒ ã‚’æ‰‹ã«å…¥ã‚Œã¾ã—ã‚‡ã†. ä»–ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’è¨Žã¡å–ã‚Šæˆ¦åˆ©å“ã‚’ã‚²ãƒƒãƒˆã—ã¾ã—ã‚‡ã†ï¼",
+			"index-tips-4": "èµ¤è‰² = ã‚¬ã‚¹ã‹ã‚‰é€ƒã’ã‚ï¼",
+			"index-tips-4-desc": "æ•µã¯ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã ã‘ã§ã¯ã‚ã‚Šã¾ã›ã‚“. ãƒžãƒƒãƒ—ã®ç«¯ã‹ã‚‰è¿«ã£ã¦ãã‚‹ãƒ¬ãƒƒãƒ‰ã‚¾ãƒ¼ãƒ³å†…ã«å…¥ã‚Œã°ã€æ–­ç¶šçš„ãªãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ã¦æ­»ã«è‡³ã‚‹å±é™ºãŒã‚ã‚Šã¾ã™. ãƒžãƒƒãƒ—ã«ç›®ã‚’å…‰ã‚‰ã›ã¦å®‰å…¨åœ°å¸¯ã§ç”Ÿãæ®‹ã‚Šã¾ã—ã‚‡ã†.",
 			"index-movement-ctrl-touch": "Left stick",
 			"index-aim-ctrl-touch": "Right stick",
 			"index-shoot-ctrl-touch": "Drag right stick outside stick border",
@@ -5033,89 +5212,89 @@ webpackJsonp([0], {
 			"index-view-map-ctrl-touch": "Tap minimap",
 			"index-use-ping-ctrl-touch": "View map and tap anywhere on map",
 			"index-use-emote-ctrl-touch": "Tap surviv icon",
-			"game-alive": "ç?Ÿå­˜",
+			"game-alive": "ç”Ÿå­˜",
 			"game-reloading": "ãƒªãƒ­ãƒ¼ãƒ‰ä¸­",
-			"game-using": "ä½¿ç?¨ä¸­",
-			"game-reviving": "è˜‡ç?Ÿä¸­",
-			"game-revive-teammate": "ãƒ?ãƒ¼ãƒ ãƒ¡ã‚¤ãƒˆã‚’è˜‡ç?Ÿ",
+			"game-using": "ä½¿ç”¨ä¸­",
+			"game-reviving": "è˜‡ç”Ÿä¸­",
+			"game-revive-teammate": "ãƒãƒ¼ãƒ ãƒ¡ã‚¤ãƒˆã‚’è˜‡ç”Ÿ",
 			"game-equip": "è£…å‚™",
 			"game-cancel": "ã‚­ãƒ£ãƒ³ã‚»ãƒ«",
-			"game-open-door": "ãƒ‰ã‚¢ã‚’é–‹ã??",
-			"game-close-door": "ãƒ‰ã‚¢ã‚’é–‰ã‚?ã‚‹",
-			"game-You": "ã?‚ã?ªã?Ÿ",
-			"game-you": "ã?‚ã?ªã?Ÿ",
+			"game-open-door": "ãƒ‰ã‚¢ã‚’é–‹ã",
+			"game-close-door": "ãƒ‰ã‚¢ã‚’é–‰ã‚ã‚‹",
+			"game-You": "ã‚ãªãŸ",
+			"game-you": "ã‚ãªãŸ",
 			"game-themselves": "è‡ªåˆ†è‡ªèº«",
-			"game-yourself": "ã?‚ã?ªã?Ÿè‡ªèº«",
-			"game-you-died": "ã?Œæ­»äº¡ã?—ã?¾ã?—ã?Ÿ",
-			"game-player-died": "ã?Œæ­»äº¡ã?—ã?¾ã?—ã?Ÿ",
-			"game-with": "ä½¿ç?¨ã?—ã?¦",
-			"game-knocked-out": "ã?Œæ°—çµ¶ã?•ã?›ã?¾ã?—ã?Ÿ",
-			"game-killed": "ã?Œæ®ºã?—ã?¾ã?—ã?Ÿ",
-			"game-finally-killed": "ã?¤ã?„ã?«æ®ºã?—ã?¾ã?—ã?Ÿ",
-			"game-finally-bled-out": "ã?¤ã?„ã?«æ?¯çµ¶ã?ˆã?¾ã?—ã?Ÿ",
-			"game-died-outside": "ã?Œã‚»ãƒ¼ãƒ•ã‚¾ãƒ¼ãƒ³ã?®å¤–ã?§æ­»äº¡ã?—ã?¾ã?—ã?Ÿ",
+			"game-yourself": "ã‚ãªãŸè‡ªèº«",
+			"game-you-died": "ãŒæ­»äº¡ã—ã¾ã—ãŸ",
+			"game-player-died": "ãŒæ­»äº¡ã—ã¾ã—ãŸ",
+			"game-with": "ä½¿ç”¨ã—ã¦",
+			"game-knocked-out": "ãŒæ°—çµ¶ã•ã›ã¾ã—ãŸ",
+			"game-killed": "ãŒæ®ºã—ã¾ã—ãŸ",
+			"game-finally-killed": "ã¤ã„ã«æ®ºã—ã¾ã—ãŸ",
+			"game-finally-bled-out": "ã¤ã„ã«æ¯çµ¶ãˆã¾ã—ãŸ",
+			"game-died-outside": "ãŒã‚»ãƒ¼ãƒ•ã‚¾ãƒ¼ãƒ³ã®å¤–ã§æ­»äº¡ã—ã¾ã—ãŸ",
 			"game-the-red-zone": "ãƒ¬ãƒƒãƒ‰ã‚¾ãƒ¼ãƒ³",
-			"game-waiting-for-players": "ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’å¾…ã?£ã?¦ã?„ã?¾ã?™",
+			"game-waiting-for-players": "ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’å¾…ã£ã¦ã„ã¾ã™",
 			"game-spectating": "è¦³æˆ¦ä¸­",
-			"game-red-zone-advances": "ã‚¬ã‚¹æ±šæŸ“ã‚¨ãƒªã‚¢æ‹¡å¤§ã?¾ã?§",
-			"game-red-zone-advancing": "ã‚¬ã‚¹æ±šæŸ“ã‚¨ãƒªã‚¢ã?Œæ‹¡å¤§ä¸­ã€?å®‰å…¨åœ°å¸¯ã?«é€ƒã?’ã?¦ã??ã? ã?•ã?„ï¼?",
+			"game-red-zone-advances": "ã‚¬ã‚¹æ±šæŸ“ã‚¨ãƒªã‚¢æ‹¡å¤§ã¾ã§",
+			"game-red-zone-advancing": "ã‚¬ã‚¹æ±šæŸ“ã‚¨ãƒªã‚¢ãŒæ‹¡å¤§ä¸­ã€å®‰å…¨åœ°å¸¯ã«é€ƒã’ã¦ãã ã•ã„ï¼",
 			"game-seconds": "ç§’",
 			"game-minutes": "åˆ†",
 			"game-minute": "åˆ†",
 			"game-m": "åˆ†",
 			"game-s": "ç§’",
-			"game-not-enough-space": "ã‚¤ãƒ³ãƒ™ãƒ³ãƒˆãƒªã?«ç©ºã??ã?Œã?‚ã‚Šã?¾ã?›ã‚“ï¼?",
-			"game-item-already-owned": "æ—¢ã?«æ‰€æŒ?ã?—ã?¦ã?„ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã?§ã?™ï¼?",
-			"game-item-already-equipped": "æ—¢ã?«è£…å‚™ã?—ã?¦ã?„ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã?§ã?™ï¼?",
-			"game-better-item-equipped": "ã‚ˆã‚Šå„ªã‚Œã?Ÿã‚¢ã‚¤ãƒ†ãƒ ã‚’è£…å‚™ã?—ã?¦ã?„ã?¾ã?™ï¼?",
-			"game-play-new-game": "æ¬¡ã?®è©¦å?ˆã?«å?‚åŠ ã?™ã‚‹",
-			"game-spectate": "è¦³æˆ¦ã?™ã‚‹",
-			"game-full-screen": "å…¨ç?»é?¢è¡¨ç¤º",
+			"game-not-enough-space": "ã‚¤ãƒ³ãƒ™ãƒ³ãƒˆãƒªã«ç©ºããŒã‚ã‚Šã¾ã›ã‚“ï¼",
+			"game-item-already-owned": "æ—¢ã«æ‰€æŒã—ã¦ã„ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã§ã™ï¼",
+			"game-item-already-equipped": "æ—¢ã«è£…å‚™ã—ã¦ã„ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã§ã™ï¼",
+			"game-better-item-equipped": "ã‚ˆã‚Šå„ªã‚ŒãŸã‚¢ã‚¤ãƒ†ãƒ ã‚’è£…å‚™ã—ã¦ã„ã¾ã™ï¼",
+			"game-play-new-game": "æ¬¡ã®è©¦åˆã«å‚åŠ ã™ã‚‹",
+			"game-spectate": "è¦³æˆ¦ã™ã‚‹",
+			"game-full-screen": "å…¨ç”»é¢è¡¨ç¤º",
 			"game-sound": "ãƒŸãƒ¥ãƒ¼ãƒˆ",
-			"game-quit-game": "æ’¤é€€ã?™ã‚‹",
-			"game-return-to-game": "è©¦å?ˆã?«æˆ»ã‚‹",
-			"game-hide-match-stats": "æˆ¦ç¸¾ã‚’é?žè¡¨ç¤º",
+			"game-quit-game": "æ’¤é€€ã™ã‚‹",
+			"game-return-to-game": "è©¦åˆã«æˆ»ã‚‹",
+			"game-hide-match-stats": "æˆ¦ç¸¾ã‚’éžè¡¨ç¤º",
 			"game-view-match-stats": "æˆ¦ç¸¾ã‚’è¡¨ç¤º",
-			"game-previous-teammate": "å‰?ã?®ãƒ?ãƒ¼ãƒ ãƒ¡ã‚¤ãƒˆ",
-			"game-next-teammate": "æ¬¡ã?®ãƒ?ãƒ¼ãƒ ãƒ¡ã‚¤ãƒˆ",
-			"game-leave-game": "è©¦å?ˆã?‹ã‚‰é›¢è„±ã?™ã‚‹",
-			"game-your-results": "ã?‚ã?ªã?Ÿã?®æˆ¦ç¸¾",
-			"game-chicken": "å‹?ã?£ã?Ÿï¼?å‹?ã?£ã?Ÿï¼?å¤•é£¯ã?¯ãƒ‰ãƒ³å‹?ã? ï¼?ï¼?",
-			"game-won-the-game": "ã?Œã‚²ãƒ¼ãƒ ã?«å‹?åˆ©ã?—ã?¾ã?—ã?Ÿ",
-			"game-team-eliminated": "ã?¾ã?‚ã€?ã?“ã‚“ã?ªæ—¥ã‚‚ã?‚ã‚‹ã?®ã?•ï¼?æ¬¡ã?¯ã‚‚ã?†å°‘ã?—ãƒ„ã‚¤ã?¦ã?¾ã?™ã‚ˆã?†ã?«ï¼?",
-			"game-solo-rank": "Solo é †ä½?",
-			"game-duo-rank": "Duo é †ä½?",
-			"game-squad-rank": "Squad é †ä½?",
-			"game-rank": "é †ä½?",
-			"game-team-rank": "ãƒ?ãƒ¼ãƒ é †ä½?",
-			"game-team-kills": "ãƒ?ãƒ¼ãƒ ã‚­ãƒ«æ•°",
+			"game-previous-teammate": "å‰ã®ãƒãƒ¼ãƒ ãƒ¡ã‚¤ãƒˆ",
+			"game-next-teammate": "æ¬¡ã®ãƒãƒ¼ãƒ ãƒ¡ã‚¤ãƒˆ",
+			"game-leave-game": "è©¦åˆã‹ã‚‰é›¢è„±ã™ã‚‹",
+			"game-your-results": "ã‚ãªãŸã®æˆ¦ç¸¾",
+			"game-chicken": "å‹ã£ãŸï¼å‹ã£ãŸï¼å¤•é£¯ã¯ãƒ‰ãƒ³å‹ã ï¼ï¼",
+			"game-won-the-game": "ãŒã‚²ãƒ¼ãƒ ã«å‹åˆ©ã—ã¾ã—ãŸ",
+			"game-team-eliminated": "ã¾ã‚ã€ã“ã‚“ãªæ—¥ã‚‚ã‚ã‚‹ã®ã•ï¼æ¬¡ã¯ã‚‚ã†å°‘ã—ãƒ„ã‚¤ã¦ã¾ã™ã‚ˆã†ã«ï¼",
+			"game-solo-rank": "Solo é †ä½",
+			"game-duo-rank": "Duo é †ä½",
+			"game-squad-rank": "Squad é †ä½",
+			"game-rank": "é †ä½",
+			"game-team-rank": "ãƒãƒ¼ãƒ é †ä½",
+			"game-team-kills": "ãƒãƒ¼ãƒ ã‚­ãƒ«æ•°",
 			"game-kill": "ã‚­ãƒ«æ•°",
 			"game-kills": "ã‚­ãƒ«æ•°",
 			"game-damage-dealt": "ä¸Žãƒ€ãƒ¡ãƒ¼ã‚¸",
 			"game-damage-taken": "è¢«ãƒ€ãƒ¡ãƒ¼ã‚¸",
-			"game-survived": "ç?Ÿå­˜æ™‚é–“",
-			"game-backpack00": "ãƒ?ãƒ¼ãƒ?",
-			"game-backpack01": "ã‚¹ãƒ¢ãƒ¼ãƒ«ãƒ?ãƒƒã‚¯ãƒ‘ãƒƒã‚¯",
-			"game-backpack02": "ãƒ¬ã‚®ãƒ¥ãƒ©ãƒ¼ãƒ?ãƒƒã‚¯ãƒ‘ãƒƒã‚¯",
-			"game-backpack03": "ãƒŸãƒªã‚¿ãƒªãƒ¼ãƒ?ãƒƒã‚¯ãƒ‘ãƒƒã‚¯",
+			"game-survived": "ç”Ÿå­˜æ™‚é–“",
+			"game-backpack00": "ãƒãƒ¼ãƒ",
+			"game-backpack01": "ã‚¹ãƒ¢ãƒ¼ãƒ«ãƒãƒƒã‚¯ãƒ‘ãƒƒã‚¯",
+			"game-backpack02": "ãƒ¬ã‚®ãƒ¥ãƒ©ãƒ¼ãƒãƒƒã‚¯ãƒ‘ãƒƒã‚¯",
+			"game-backpack03": "ãƒŸãƒªã‚¿ãƒªãƒ¼ãƒãƒƒã‚¯ãƒ‘ãƒƒã‚¯",
 			"game-bandage": "åŒ…å¸¯",
-			"game-bandage-tooltip": "å·¦ã‚¯ãƒªãƒƒã‚¯ã?§HPã‚’15å›žå¾©ã?—ã?¾ã?™",
-			"game-healing-tooltip": "75HPä»¥ä¸Šã?®å ´å?ˆã?¯å›žå¾©ã?§ã??ã?¾ã?›ã‚“",
+			"game-bandage-tooltip": "å·¦ã‚¯ãƒªãƒƒã‚¯ã§HPã‚’15å›žå¾©ã—ã¾ã™",
+			"game-healing-tooltip": "75HPä»¥ä¸Šã®å ´åˆã¯å›žå¾©ã§ãã¾ã›ã‚“",
 			"game-healthkit": "æ•‘æ€¥ç®±",
-			"game-healthkit-tooltip": "å·¦ã‚¯ãƒªãƒƒã‚¯ã?§HPã‚’100å›žå¾©ã?—ã?¾ã?™",
+			"game-healthkit-tooltip": "å·¦ã‚¯ãƒªãƒƒã‚¯ã§HPã‚’100å›žå¾©ã—ã¾ã™",
 			"game-soda": "ã‚½ãƒ¼ãƒ€",
-			"game-soda-tooltip": "å·¦ã‚¯ãƒªãƒƒã‚¯ã?§ã‚¢ãƒ‰ãƒ¬ãƒŠãƒªãƒ³ã‚’25å¢—åŠ ã?•ã?›ã?¾ã?™",
-			"game-adrenaline-tooltip": "ã‚¢ãƒ‰ãƒ¬ãƒŠãƒªãƒ³ã?¯HPã‚’æ™‚é–“ã?¨ã?¨ã‚‚ã?«è‡ªå‹•å›žå¾©ã?•ã?›ã?¾ã?™",
+			"game-soda-tooltip": "å·¦ã‚¯ãƒªãƒƒã‚¯ã§ã‚¢ãƒ‰ãƒ¬ãƒŠãƒªãƒ³ã‚’25å¢—åŠ ã•ã›ã¾ã™",
+			"game-adrenaline-tooltip": "ã‚¢ãƒ‰ãƒ¬ãƒŠãƒªãƒ³ã¯HPã‚’æ™‚é–“ã¨ã¨ã‚‚ã«è‡ªå‹•å›žå¾©ã•ã›ã¾ã™",
 			"game-painkiller": "éŽ®ç—›å‰¤",
-			"game-painkiller-tooltip": "å·¦ã‚¯ãƒªãƒƒã‚¯ã?§ã‚¢ãƒ‰ãƒ¬ãƒŠãƒªãƒ³ã‚’50å¢—åŠ ã?•ã?›ã?¾ã?™",
+			"game-painkiller-tooltip": "å·¦ã‚¯ãƒªãƒƒã‚¯ã§ã‚¢ãƒ‰ãƒ¬ãƒŠãƒªãƒ³ã‚’50å¢—åŠ ã•ã›ã¾ã™",
 			"game-9mm": "9mm",
-			"game-9mm-tooltip": "MP5, MAC-10, UMP9, Vector, M9, Glock 18Cç?¨ã?®å¼¾è–¬",
+			"game-9mm-tooltip": "MP5, MAC-10, UMP9, Vector, M9, Glock 18Cç”¨ã®å¼¾è–¬",
 			"game-12gauge": "12 gauge",
-			"game-12gauge-tooltip": "M870, MP220, Saiga-12ç?¨ã?®ã?®å¼¾è–¬",
+			"game-12gauge-tooltip": "M870, MP220, Saiga-12ç”¨ã®ã®å¼¾è–¬",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "AK-47, SCAR-H, DP-28, Mosin Nagant, M39EMR, OT-38ç?¨ã?®å¼¾è–¬",
+			"game-762mm-tooltip": "AK-47, SCAR-H, DP-28, Mosin-Nagant, M39EMR, OT-38ç”¨ã®å¼¾è–¬",
 			"game-556mm": "5.56mm",
-			"game-556mm-tooltip": "FAMAS, HK416, Mk 12 SPR, M249ç?¨ã?®å¼¾è–¬",
+			"game-556mm-tooltip": "FAMAS, HK416, Mk 12 SPR, M249ç”¨ã®å¼¾è–¬",
 			"game-chest01": "ãƒ¬ãƒ™ãƒ«1 ãƒ™ã‚¹ãƒˆ",
 			"game-chest02": "ãƒ¬ãƒ™ãƒ«2 ãƒ™ã‚¹ãƒˆ",
 			"game-chest03": "ãƒ¬ãƒ™ãƒ«3 ãƒ™ã‚¹ãƒˆ",
@@ -5145,7 +5324,7 @@ webpackJsonp([0], {
 			"game-fists": "æ‹³",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -5168,9 +5347,9 @@ webpackJsonp([0], {
 			"game-m249": "M249",
 			"game-frag": "æ‰‹æ¦´å¼¾",
 			"game-hud-frag": "æ‰‹æ¦´å¼¾",
-			"game-smoke": "ã‚¹ãƒ¢ãƒ¼ã‚¯ã‚°ãƒ¬ãƒ?ãƒ¼ãƒ‰",
+			"game-smoke": "ã‚¹ãƒ¢ãƒ¼ã‚¯ã‚°ãƒ¬ãƒãƒ¼ãƒ‰",
 			"game-hud-smoke": "ã‚¹ãƒ¢ãƒ¼ã‚¯",
-			"game-barrel_01": "ãƒ?ãƒ¬ãƒ«",
+			"game-barrel_01": "ãƒãƒ¬ãƒ«",
 			"game-silo_01": "ã‚µã‚¤ãƒ­",
 			"game-oven_01": "ã‚ªãƒ¼ãƒ–ãƒ³"
 		};
@@ -5243,7 +5422,14 @@ webpackJsonp([0], {
 		function i(e, t) {
 			if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
 		}
-		var o = function() {
+
+		function o() {
+			function e() {
+				return Math.floor(Math.random() * Math.pow(2, 32)).toString(16)
+			}
+			return e() + e()
+		}
+		var n = function() {
 				function e(e, t) {
 					for (var a = 0; a < t.length; a++) {
 						var i = t[a];
@@ -5254,12 +5440,12 @@ webpackJsonp([0], {
 					return a && e(t.prototype, a), i && e(t, i), t
 				}
 			}(),
-			n = a("juYr"),
-			r = function() {
+			r = a("juYr"),
+			s = function() {
 				function e() {
-					i(this, e), this.requests = 0, this.enabled = !0, this.throttle = !1, this.throttleTimeout = 0
+					i(this, e), this.instanceId = o(), this.requests = 0, this.enabled = !0, this.throttle = !1, this.throttleTimeout = 0
 				}
-				return o(e, [{
+				return n(e, [{
 					key: "update",
 					value: function() {
 						var e = (new Date).getTime();
@@ -5276,7 +5462,7 @@ webpackJsonp([0], {
 						if (this.enabled) {
 							if (++this.requests > 5) return this.throttleTimeout = (new Date).getTime() + 18e4, void(this.throttle = !0);
 							var a = "https://us-central1-surviv-fa40f.cloudfunctions.net/" + e;
-							t.key = "AIzaSyCrPuZeAQ2-aXZdTwZNwQJdv4rvsTE-2i8", n.ajax({
+							t.key = "AIzaSyCrPuZeAQ2-aXZdTwZNwQJdv4rvsTE-2i8", r.ajax({
 								type: "POST",
 								dataType: "html",
 								url: a,
@@ -5330,10 +5516,10 @@ webpackJsonp([0], {
 					}
 				}]), e
 			}(),
-			s = new r;
+			l = new s;
 		setInterval(function() {
-			s.update()
-		}, 1e3), e.exports = s
+			l.update()
+		}, 1e3), e.exports = l
 	},
 	"8iex": function(e, t, a) {
 		"use strict";
@@ -5522,244 +5708,244 @@ webpackJsonp([0], {
 				locale: "ru"
 			},
 			"word-order": "svo",
-			"index-slogan": "?š?¾Ñ€?¾?»?µ?²Ñ??º?°Ñ? ?‘?¸Ñ‚?²?° ?² 2D",
-			"index-region": "? ?µ?³?¸?¾?½",
-			"index-north-america": "?¡?µ?²?µÑ€?½?°Ñ? ???¼?µÑ€?¸?º?°",
-			"index-europe": "?•?²Ñ€?¾?¿?°",
-			"index-asia": "???·?¸Ñ?",
-			"index-players": "?¸?³Ñ€?¾?º?¾?²",
-			"index-play-solo": "?˜?³Ñ€?°Ñ‚ÑŒ ?¡?¾?»?¾",
-			"index-play-duo": "?˜?³Ñ€?°Ñ‚ÑŒ ?² ??ÑƒÑ?Ñ‚?µ",
-			"index-play-squad": "?˜?³Ñ€?°Ñ‚ÑŒ ?² ?žÑ‚Ñ€Ñ??´",
-			"index-join-team": "?’?¾?¹Ñ‚?¸ ?² ?º?¾?¼?°?½?´Ñƒ",
-			"index-create-team": "?¡?¾?·?´?°Ñ‚ÑŒ ?š?¾?¼?°?½?´Ñƒ",
-			"index-how-to-play": "?š?°?º ?¸?³Ñ€?°Ñ‚ÑŒ",
-			"index-leave-team": "?Ÿ?¾?º?¸?½ÑƒÑ‚ÑŒ ?š?¾?¼?°?½?´Ñƒ",
-			"index-joining-team": "?ŸÑ€?¸Ñ??¾?µ?´?¸?½?µ?½?¸?µ ?º ?š?¾?¼?°?½?´?µ",
-			"index-creating-team": "?¡?¾?·?´?°?½?¸?µ ?š?¾?¼?°?½?´Ñ‹",
-			"index-invite-link": "?¡Ñ?Ñ‹?»?º?°-?¿Ñ€?¸?³?»?°Ñˆ?µ?½?¸?µ",
-			"index-invite-code": "?š?¾?´ ?¿Ñ€?¸?³?»?°Ñˆ?µ?½?¸Ñ?",
-			"index-join-team-help": "?•Ñ?Ñ‚ÑŒ Ñ?Ñ?Ñ‹?»?º?° ?½?° ?º?¾?¼?°?½?´Ñƒ ?¸?»?¸ ?º?¾?´? ???°?¿?¸Ñˆ?¸ ?µ?³?¾ Ñ?ÑŽ?´?°:",
-			"index-solo": "?¡?¾?»?¾",
-			"index-duo": "??ÑƒÑ?Ñ‚",
-			"index-squad": "?žÑ‚Ñ€Ñ??´",
-			"index-auto-fill": "???²Ñ‚?¾?·?°?¿?¾?»?½?µ?½?¸?µ",
-			"index-no-fill": "???µ ?·?°?¿?¾?»?½Ñ?Ñ‚ÑŒ",
-			"index-waiting-for-leader": "?ž?¶?¸?´?°?½?¸?µ ?»?¸?´?µÑ€?°, Ñ‡Ñ‚?¾?±Ñ‹ ?½?°Ñ‡?°Ñ‚ÑŒ ?¸?³Ñ€Ñƒ",
-			"index-play": "?˜?³Ñ€?°Ñ‚ÑŒ",
-			"index-customize-loadout": "???°Ñ?Ñ‚Ñ€?°?¸?²?°?µ?¼Ñ‹?µ Ñ??¼?¾Ñ†?¸?¸",
-			"index-twitter-follow": "?¡?»?µ?´?¾?²?°Ñ‚ÑŒ ?² Twitter",
-			"index-youtube-subscribe": "?Ÿ?¾?´?¿?¸Ñ??°Ñ‚ÑŒÑ?Ñ? ?½?° YouTube",
-			"index-facebook-like": "?›?°?¹?º?½ÑƒÑ‚ÑŒ ?² Facebook",
-			"index-featured-youtuber": "? ?µ?º?¾?¼?µ?½?´Ñƒ?µ?¼Ñ‹?µ ?®Ñ‚Ñƒ?±?µÑ€Ñ‹",
-			"index-streaming-live": "?¡?µ?¹Ñ‡?°Ñ? Ñ?Ñ‚Ñ€?¸?¼Ñ?Ñ‚!",
-			"index-settings": "???°Ñ?Ñ‚Ñ€?¾?¹?º?¸",
-			"index-high-resolution": "?’Ñ‹Ñ??¾?º?¾?µ Ñ€?°?·Ñ€?µÑˆ?µ?½?¸?µ (?¿Ñ€?¾?²?µÑ€ÑŒÑ‚?µ, Ñ‡Ñ‚?¾?±Ñ‹ Ñƒ?²?µ?»?¸Ñ‡?¸Ñ‚ÑŒ ?º?°Ñ‡?µÑ?Ñ‚?²?¾ ?¸?·?¾?±Ñ€?°?¶?µ?½?¸Ñ?)",
-			"index-screen-shake": "??Ñ€?¾?¶?°?½?¸?µ Ñ??ºÑ€?°?½?°",
-			"index-master-volume": "?£Ñ€?¾?²?µ?½ÑŒ ?“Ñ€?¾?¼?º?¾Ñ?Ñ‚?¸",
-			"index-sfx-volume": " ?“Ñ€?¾?¼?º?¾Ñ?Ñ‚ÑŒ ?­Ñ„Ñ„?µ?ºÑ‚?¾?²",
-			"index-music-volume": "?“Ñ€?¾?¼?º?¾Ñ?Ñ‚ÑŒ ?œÑƒ?·Ñ‹?º?¸",
-			"index-mobile-announce": "?¢?µ?¿?µÑ€ÑŒ ?´?¾Ñ?Ñ‚Ñƒ?¿?½?¾ ?½?° ?²?°Ñˆ?¸Ñ… Ñ‚?µ?»?µÑ„?¾?½?°Ñ…!",
-			"index-mobile-tooltip": "?’Ñ‹ ?¼?¾?¶?µÑ‚?µ ?·?°?¹Ñ‚?¸ ?² surviv.io ?½?° Ñ??²?¾Ñ‘?¼ Ñ‚?µ?»?µÑ„?¾?½?µ, ?¸?³Ñ€?°?¹Ñ‚?µ ?² <span>surviv.io</span> ?² ?»ÑŽ?±?¾?¼ ?¼?µÑ?Ñ‚?µ!",
-			"index-version": "?²?µÑ€Ñ??¸Ñ?",
-			"index-privacy": "?š?¾?½Ñ„?¸?´?µ?½Ñ†?¸?°?»ÑŒ?½?¾Ñ?Ñ‚ÑŒ",
-			"index-attributions": "?°Ñ‚Ñ€?¸?±ÑƒÑ†?¸?¸",
-			"index-proxy-sites": "?¿Ñ€?¾?ºÑ??¸ Ñ??°?¹Ñ‚Ñ‹",
-			"index-team-is-full": "?š?¾?¼?°?½?´?° ?·?°?¿?¾?»?½?µ?½?°!",
-			"index-failed-joining-team": "???µ Ñƒ?´?°?»?¾Ñ?ÑŒ ?¿Ñ€?¸Ñ??¾?µ?´?¸?½?¸Ñ‚ÑŒÑ?Ñ? ?º ?º?¾?¼?°?½?´?µ.",
-			"index-failed-creating-team": "???µ Ñƒ?´?°?»?¾Ñ?ÑŒ Ñ??¾?·?´?°Ñ‚ÑŒ ?º?¾?¼?°?½?´Ñƒ.",
-			"index-failed-finding-game": "???µ Ñƒ?´?°?»?¾Ñ?ÑŒ ?½?°?¹Ñ‚?¸ ?¸?³Ñ€Ñƒ.",
-			"index-failed-joining-game": "???µ Ñƒ?´?°?»?¾Ñ?ÑŒ ?¿Ñ€?¸Ñ??¾?µ?´?¸?½?¸Ñ‚ÑŒÑ?Ñ? ?º ?¸?³Ñ€?µ.",
-			"index-lost-connection": "?¡?¾?µ?´?¸?½?µ?½?¸?µ Ñ? ?º?¾?¼?°?½?´?¾?¹ ?¿Ñ€?µÑ€?²?°?»?¾Ñ?ÑŒ.",
-			"index-host-closed": "?¡?¾?µ?´?¸?½?µ?½?¸?µ Ñ? Ñ??µÑ€?²?µÑ€?¾?¼ ?·?°?ºÑ€Ñ‹Ñ‚?¾.",
-			"index-view-more": "?Ÿ?¾Ñ??¼?¾Ñ‚Ñ€?µÑ‚ÑŒ ?µÑ‰Ñ‘",
-			"index-back-to-main": "?’?µÑ€?½ÑƒÑ‚ÑŒÑ?Ñ? ?² ?³?»?°?²?½?¾?µ ?¼?µ?½ÑŽ",
-			"index-most-kills": "???°?¸?±?¾?»ÑŒÑˆ?µ?µ ?º?¾?»-?²?¾ Ñƒ?±?¸?¹Ñ?Ñ‚?²",
-			"index-total-kills": "?’Ñ??µ?³?¾ Ñƒ?±?¸?¹Ñ?Ñ‚?²",
-			"index-total-wins": "?’Ñ??µ?³?¾ ?¿?¾?±?µ?´",
-			"index-top-5-percent": "?ŸÑ€?¾Ñ†?µ?½Ñ‚ ?¢?¾?¿ 5",
-			"index-kill-death-ratio": "?¡?¾?¾Ñ‚?½?¾Ñˆ?µ?½?¸?µ Ñƒ?±?¸?¹Ñ?Ñ‚?²?¾-Ñ??¼?µÑ€Ñ‚ÑŒ",
-			"index-for": "?—?°",
-			"index-today": "?¡?µ?³?¾?´?½Ñ?",
-			"index-this-week": "?­Ñ‚Ñƒ ?½?µ?´?µ?»ÑŽ",
-			"index-all-time": "?’Ñ?Ñ‘ ?²Ñ€?µ?¼Ñ?",
+			"index-slogan": "ÐšÐ¾Ñ€Ð¾Ð»ÐµÐ²ÑÐºÐ°Ñ Ð‘Ð¸Ñ‚Ð²Ð° Ð² 2D",
+			"index-region": "Ð ÐµÐ³Ð¸Ð¾Ð½",
+			"index-north-america": "Ð¡ÐµÐ²ÐµÑ€Ð½Ð°Ñ ÐÐ¼ÐµÑ€Ð¸ÐºÐ°",
+			"index-europe": "Ð•Ð²Ñ€Ð¾Ð¿Ð°",
+			"index-asia": "ÐÐ·Ð¸Ñ",
+			"index-players": "Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð²",
+			"index-play-solo": "Ð˜Ð³Ñ€Ð°Ñ‚ÑŒ Ð¡Ð¾Ð»Ð¾",
+			"index-play-duo": "Ð˜Ð³Ñ€Ð°Ñ‚ÑŒ Ð² Ð”ÑƒÑÑ‚Ðµ",
+			"index-play-squad": "Ð˜Ð³Ñ€Ð°Ñ‚ÑŒ Ð² ÐžÑ‚Ñ€ÑÐ´",
+			"index-join-team": "Ð’Ð¾Ð¹Ñ‚Ð¸ Ð² ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ",
+			"index-create-team": "Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ ÐšÐ¾Ð¼Ð°Ð½Ð´Ñƒ",
+			"index-how-to-play": "ÐšÐ°Ðº Ð¸Ð³Ñ€Ð°Ñ‚ÑŒ",
+			"index-leave-team": "ÐŸÐ¾ÐºÐ¸Ð½ÑƒÑ‚ÑŒ ÐšÐ¾Ð¼Ð°Ð½Ð´Ñƒ",
+			"index-joining-team": "ÐŸÑ€Ð¸ÑÐ¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ Ðº ÐšÐ¾Ð¼Ð°Ð½Ð´Ðµ",
+			"index-creating-team": "Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ ÐšÐ¾Ð¼Ð°Ð½Ð´Ñ‹",
+			"index-invite-link": "Ð¡ÑÑ‹Ð»ÐºÐ°-Ð¿Ñ€Ð¸Ð³Ð»Ð°ÑˆÐµÐ½Ð¸Ðµ",
+			"index-invite-code": "ÐšÐ¾Ð´ Ð¿Ñ€Ð¸Ð³Ð»Ð°ÑˆÐµÐ½Ð¸Ñ",
+			"index-join-team-help": "Ð•ÑÑ‚ÑŒ ÑÑÑ‹Ð»ÐºÐ° Ð½Ð° ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ Ð¸Ð»Ð¸ ÐºÐ¾Ð´? ÐÐ°Ð¿Ð¸ÑˆÐ¸ ÐµÐ³Ð¾ ÑÑŽÐ´Ð°:",
+			"index-solo": "Ð¡Ð¾Ð»Ð¾",
+			"index-duo": "Ð”ÑƒÑÑ‚",
+			"index-squad": "ÐžÑ‚Ñ€ÑÐ´",
+			"index-auto-fill": "ÐÐ²Ñ‚Ð¾Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ",
+			"index-no-fill": "ÐÐµ Ð·Ð°Ð¿Ð¾Ð»Ð½ÑÑ‚ÑŒ",
+			"index-waiting-for-leader": "ÐžÐ¶Ð¸Ð´Ð°Ð½Ð¸Ðµ Ð»Ð¸Ð´ÐµÑ€Ð°, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ Ð¸Ð³Ñ€Ñƒ",
+			"index-play": "Ð˜Ð³Ñ€Ð°Ñ‚ÑŒ",
+			"index-customize-loadout": "ÐÐ°ÑÑ‚Ñ€Ð°Ð¸Ð²Ð°ÐµÐ¼Ñ‹Ðµ ÑÐ¼Ð¾Ñ†Ð¸Ð¸",
+			"index-twitter-follow": "Ð¡Ð»ÐµÐ´Ð¾Ð²Ð°Ñ‚ÑŒ Ð² Twitter",
+			"index-youtube-subscribe": "ÐŸÐ¾Ð´Ð¿Ð¸ÑÐ°Ñ‚ÑŒÑÑ Ð½Ð° YouTube",
+			"index-facebook-like": "Ð›Ð°Ð¹ÐºÐ½ÑƒÑ‚ÑŒ Ð² Facebook",
+			"index-featured-youtuber": "Ð ÐµÐºÐ¾Ð¼ÐµÐ½Ð´ÑƒÐµÐ¼Ñ‹Ðµ Ð®Ñ‚ÑƒÐ±ÐµÑ€Ñ‹",
+			"index-streaming-live": "Ð¡ÐµÐ¹Ñ‡Ð°Ñ ÑÑ‚Ñ€Ð¸Ð¼ÑÑ‚!",
+			"index-settings": "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸",
+			"index-high-resolution": "Ð’Ñ‹ÑÐ¾ÐºÐ¾Ðµ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð¸Ðµ (Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ñ‚ÑŒ ÐºÐ°Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ)",
+			"index-screen-shake": "Ð”Ñ€Ð¾Ð¶Ð°Ð½Ð¸Ðµ ÑÐºÑ€Ð°Ð½Ð°",
+			"index-master-volume": "Ð£Ñ€Ð¾Ð²ÐµÐ½ÑŒ Ð“Ñ€Ð¾Ð¼ÐºÐ¾ÑÑ‚Ð¸",
+			"index-sfx-volume": " Ð“Ñ€Ð¾Ð¼ÐºÐ¾ÑÑ‚ÑŒ Ð­Ñ„Ñ„ÐµÐºÑ‚Ð¾Ð²",
+			"index-music-volume": "Ð“Ñ€Ð¾Ð¼ÐºÐ¾ÑÑ‚ÑŒ ÐœÑƒÐ·Ñ‹ÐºÐ¸",
+			"index-mobile-announce": "Ð¢ÐµÐ¿ÐµÑ€ÑŒ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð¾ Ð½Ð° Ð²Ð°ÑˆÐ¸Ñ… Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°Ñ…!",
+			"index-mobile-tooltip": "Ð’Ñ‹ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð·Ð°Ð¹Ñ‚Ð¸ Ð² surviv.io Ð½Ð° ÑÐ²Ð¾Ñ‘Ð¼ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ðµ, Ð¸Ð³Ñ€Ð°Ð¹Ñ‚Ðµ Ð² <span>surviv.io</span> Ð² Ð»ÑŽÐ±Ð¾Ð¼ Ð¼ÐµÑÑ‚Ðµ!",
+			"index-version": "Ð²ÐµÑ€ÑÐ¸Ñ",
+			"index-privacy": "ÐšÐ¾Ð½Ñ„Ð¸Ð´ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ",
+			"index-attributions": "Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ†Ð¸Ð¸",
+			"index-proxy-sites": "Ð¿Ñ€Ð¾ÐºÑÐ¸ ÑÐ°Ð¹Ñ‚Ñ‹",
+			"index-team-is-full": "ÐšÐ¾Ð¼Ð°Ð½Ð´Ð° Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð°!",
+			"index-failed-joining-team": "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¿Ñ€Ð¸ÑÐ¾ÐµÐ´Ð¸Ð½Ð¸Ñ‚ÑŒÑÑ Ðº ÐºÐ¾Ð¼Ð°Ð½Ð´Ðµ.",
+			"index-failed-creating-team": "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐ¾Ð·Ð´Ð°Ñ‚ÑŒ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ.",
+			"index-failed-finding-game": "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð½Ð°Ð¹Ñ‚Ð¸ Ð¸Ð³Ñ€Ñƒ.",
+			"index-failed-joining-game": "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¿Ñ€Ð¸ÑÐ¾ÐµÐ´Ð¸Ð½Ð¸Ñ‚ÑŒÑÑ Ðº Ð¸Ð³Ñ€Ðµ.",
+			"index-lost-connection": "Ð¡Ð¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ Ñ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð¾Ð¹ Ð¿Ñ€ÐµÑ€Ð²Ð°Ð»Ð¾ÑÑŒ.",
+			"index-host-closed": "Ð¡Ð¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ Ñ ÑÐµÑ€Ð²ÐµÑ€Ð¾Ð¼ Ð·Ð°ÐºÑ€Ñ‹Ñ‚Ð¾.",
+			"index-view-more": "ÐŸÐ¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ ÐµÑ‰Ñ‘",
+			"index-back-to-main": "Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ Ð² Ð³Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ",
+			"index-most-kills": "ÐÐ°Ð¸Ð±Ð¾Ð»ÑŒÑˆÐµÐµ ÐºÐ¾Ð»-Ð²Ð¾ ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²",
+			"index-total-kills": "Ð’ÑÐµÐ³Ð¾ ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²",
+			"index-total-wins": "Ð’ÑÐµÐ³Ð¾ Ð¿Ð¾Ð±ÐµÐ´",
+			"index-top-5-percent": "ÐŸÑ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð¢Ð¾Ð¿ 5",
+			"index-kill-death-ratio": "Ð¡Ð¾Ð¾Ñ‚Ð½Ð¾ÑˆÐµÐ½Ð¸Ðµ ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²Ð¾-ÑÐ¼ÐµÑ€Ñ‚ÑŒ",
+			"index-for": "Ð—Ð°",
+			"index-today": "Ð¡ÐµÐ³Ð¾Ð´Ð½Ñ",
+			"index-this-week": "Ð­Ñ‚Ñƒ Ð½ÐµÐ´ÐµÐ»ÑŽ",
+			"index-all-time": "Ð’ÑÑ‘ Ð²Ñ€ÐµÐ¼Ñ",
 			"index-top-100": "TOP 100",
-			"index-rank": "? ?°?½?³",
-			"index-player": "?˜?³Ñ€?¾?º",
-			"index-total-games": "?’Ñ??µ?³?¾ ?¸?³Ñ€",
-			"index-controls": "?£?¿Ñ€?°?²?»?µ?½?¸?µ",
-			"index-movement": "?Ÿ?µÑ€?µ?¼?µÑ‰?µ?½?¸?µ",
+			"index-rank": "Ð Ð°Ð½Ð³",
+			"index-player": "Ð˜Ð³Ñ€Ð¾Ðº",
+			"index-total-games": "Ð’ÑÐµÐ³Ð¾ Ð¸Ð³Ñ€",
+			"index-controls": "Ð£Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ",
+			"index-movement": "ÐŸÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸Ðµ",
 			"index-movement-ctrl": "W, A, S, D",
-			"index-aim": "?¦?µ?»?¸Ñ‚ÑŒÑ?Ñ?",
-			"index-aim-ctrl": "?œÑ‹ÑˆÑŒ",
-			"index-punch": "?£?´?°Ñ€?¸Ñ‚ÑŒ",
-			"index-shoot": "?’Ñ‹Ñ?Ñ‚Ñ€?µ?»?¸Ñ‚ÑŒ",
-			"index-shoot-ctrl": "?›?µ?²Ñ‹?¹ ?©?µ?»Ñ‡?¾?º",
-			"index-change-weapons": "?¡?¼?µ?½?¸Ñ‚ÑŒ ?žÑ€Ñƒ?¶?¸?µ",
-			"index-change-weapons-ctrl": "1-4 ?¸?»?¸ ?š?¾?»?µÑ??¾ ?ŸÑ€?¾?ºÑ€ÑƒÑ‚?º?¸",
-			"index-stow-weapons": "?£?±Ñ€?°Ñ‚ÑŒ ?¾Ñ€Ñƒ?¶?¸?µ ?¸?· Ñ€Ñƒ?º",
-			"index-stow-weapons-ctrl": "3 ?¸?»?¸ ?•",
-			"index-swap-weapons": "?¡?¼?µ?½?° ?½?° ?ŸÑ€?µ?´Ñ‹?´ÑƒÑ‰?µ?µ ?žÑ€Ñƒ?¶?¸?µ",
+			"index-aim": "Ð¦ÐµÐ»Ð¸Ñ‚ÑŒÑÑ",
+			"index-aim-ctrl": "ÐœÑ‹ÑˆÑŒ",
+			"index-punch": "Ð£Ð´Ð°Ñ€Ð¸Ñ‚ÑŒ",
+			"index-shoot": "Ð’Ñ‹ÑÑ‚Ñ€ÐµÐ»Ð¸Ñ‚ÑŒ",
+			"index-shoot-ctrl": "Ð›ÐµÐ²Ñ‹Ð¹ Ð©ÐµÐ»Ñ‡Ð¾Ðº",
+			"index-change-weapons": "Ð¡Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ ÐžÑ€ÑƒÐ¶Ð¸Ðµ",
+			"index-change-weapons-ctrl": "1-4 Ð¸Ð»Ð¸ ÐšÐ¾Ð»ÐµÑÐ¾ ÐŸÑ€Ð¾ÐºÑ€ÑƒÑ‚ÐºÐ¸",
+			"index-stow-weapons": "Ð£Ð±Ñ€Ð°Ñ‚ÑŒ Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ Ð¸Ð· Ñ€ÑƒÐº",
+			"index-stow-weapons-ctrl": "3 Ð¸Ð»Ð¸ Ð•",
+			"index-swap-weapons": "Ð¡Ð¼ÐµÐ½Ð° Ð½Ð° ÐŸÑ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰ÐµÐµ ÐžÑ€ÑƒÐ¶Ð¸Ðµ",
 			"index-swap-weapons-ctrl": "Q",
-			"index-reload": "?Ÿ?µÑ€?µ?·?°Ñ€Ñ??´?º?°",
+			"index-reload": "ÐŸÐµÑ€ÐµÐ·Ð°Ñ€ÑÐ´ÐºÐ°",
 			"index-reload-ctrl": "R",
-			"index-scope-zoom": "?¡?¼?µ?½?° ?¿Ñ€?¸Ñ†?µ?»?°",
-			"index-scope-zoom-ctrl": "?›?µ?²Ñ‹?¹ Ñ‰?µ?»Ñ‡?¾?º ?½?° ?ŸÑ€?¸Ñ†?µ?»",
-			"index-pickup": "?Ÿ?¾?´?¾?±Ñ€?°Ñ‚ÑŒ ?´?¾?±Ñ‹Ñ‡Ñƒ",
-			"index-loot": "???¾?±Ñ‹Ñ‡Ñƒ",
-			"index-revive": "?¾?¶?¸?²?»?µ?½?¸?µ",
+			"index-scope-zoom": "Ð¡Ð¼ÐµÐ½Ð° Ð¿Ñ€Ð¸Ñ†ÐµÐ»Ð°",
+			"index-scope-zoom-ctrl": "Ð›ÐµÐ²Ñ‹Ð¹ Ñ‰ÐµÐ»Ñ‡Ð¾Ðº Ð½Ð° ÐŸÑ€Ð¸Ñ†ÐµÐ»",
+			"index-pickup": "ÐŸÐ¾Ð´Ð¾Ð±Ñ€Ð°Ñ‚ÑŒ Ð´Ð¾Ð±Ñ‹Ñ‡Ñƒ",
+			"index-loot": "Ð”Ð¾Ð±Ñ‹Ñ‡Ñƒ",
+			"index-revive": "Ð¾Ð¶Ð¸Ð²Ð»ÐµÐ½Ð¸Ðµ",
 			"index-pickup-ctrl": "F",
-			"index-use-medical": "?œ?µ?´?¸Ñ†?¸?½Ñ??º?¸?¹ ?ŸÑ€?µ?´?¼?µÑ‚ change on ?œ?µ?´?¸?º?°?¼?µ?½Ñ‚",
-			"index-use-medical-ctrl": "?›?µ?²Ñ‹?¹ ?©?µ?»Ñ‡?¾?º ?½?° ?ŸÑ€?µ?´?¼?µÑ‚ ?¸?»?¸ Ñ†?¸Ñ„Ñ€Ñ‹ ?¾Ñ‚ 0-7",
-			"index-drop-item": "?’Ñ‹?º?¸?½ÑƒÑ‚ÑŒ ?¿Ñ€?µ?´?¼?µÑ‚",
-			"index-drop-item-ctrl": "?ŸÑ€?°?²Ñ‹?¹ ?©?µ?»Ñ‡?¾?º ?½?° ?ŸÑ€?µ?´?¼?µÑ‚",
-			"index-cancel-action": "?žÑ‚?¼?µ?½?¸Ñ‚ÑŒ ?´?µ?¹Ñ?Ñ‚?²?¸?µ",
+			"index-use-medical": "ÐœÐµÐ´Ð¸Ñ†Ð¸Ð½ÑÐºÐ¸Ð¹ ÐŸÑ€ÐµÐ´Ð¼ÐµÑ‚ change on ÐœÐµÐ´Ð¸ÐºÐ°Ð¼ÐµÐ½Ñ‚",
+			"index-use-medical-ctrl": "Ð›ÐµÐ²Ñ‹Ð¹ Ð©ÐµÐ»Ñ‡Ð¾Ðº Ð½Ð° ÐŸÑ€ÐµÐ´Ð¼ÐµÑ‚ Ð¸Ð»Ð¸ Ñ†Ð¸Ñ„Ñ€Ñ‹ Ð¾Ñ‚ 0-7",
+			"index-drop-item": "Ð’Ñ‹ÐºÐ¸Ð½ÑƒÑ‚ÑŒ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚",
+			"index-drop-item-ctrl": "ÐŸÑ€Ð°Ð²Ñ‹Ð¹ Ð©ÐµÐ»Ñ‡Ð¾Ðº Ð½Ð° ÐŸÑ€ÐµÐ´Ð¼ÐµÑ‚",
+			"index-cancel-action": "ÐžÑ‚Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ",
 			"index-cancel-action-ctrl": "X",
-			"index-view-map": "?Ÿ?¾Ñ??¼?¾Ñ‚Ñ€?µÑ‚ÑŒ ?š?°Ñ€Ñ‚Ñƒ",
-			"index-view-map-ctrl": "M ?¸?»?¸ G",
-			"index-toggle-minimap": "?Ÿ?µÑ€?µ?º?»ÑŽÑ‡?¸Ñ‚ÑŒ Ñ€?µ?¶?¸?¼ ?¿Ñ€?¾Ñ??¼?¾Ñ‚Ñ€?°",
+			"index-view-map": "ÐŸÐ¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ ÐšÐ°Ñ€Ñ‚Ñƒ",
+			"index-view-map-ctrl": "M Ð¸Ð»Ð¸ G",
+			"index-toggle-minimap": "ÐŸÐµÑ€ÐµÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ Ñ€ÐµÐ¶Ð¸Ð¼ Ð¿Ñ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€Ð°",
 			"index-toggle-minimap-ctrl": "V",
-			"index-use-ping": "?˜Ñ??¿?¾?»ÑŒ?·?¾?²?°?½?¸?µ ?º?¾?¼?°?½?´",
-			"index-use-ping-ctrl": "?£?´?µÑ€?¶?¸?²?°Ñ? C ?·?°?¶?°Ñ‚ÑŒ ?ŸÑ€?°?²ÑƒÑŽ ?º?½?¾?¿?ºÑƒ ?¼Ñ‹Ñˆ?¸ ?¸ ?²?¾?´?¸Ñ‚ÑŒ ?¼Ñ‹Ñˆ?º?¾?¹, ?·?°Ñ‚?µ?¼ ?²Ñ‹?±Ñ€?°?² ?º?¾?¼?°?½?´Ñƒ ?¾Ñ‚?¿ÑƒÑ?Ñ‚?¸Ñ‚ÑŒ",
-			"index-use-emote": "?˜Ñ??¿?¾?»ÑŒ?·?¾?²?°?½?¸?µ ?­?¼?¾?´?·?¸",
-			"index-use-emote-ctrl": "?—?°?¶?°Ñ‚ÑŒ ?ŸÑ€?°?²ÑƒÑŽ ?º?½?¾?¿?ºÑƒ ?¼Ñ‹Ñˆ?¸ ?¸ ?²?¾?´?¸Ñ‚ÑŒ ?¼Ñ‹Ñˆ?º?¾?¹, ?·?°Ñ‚?µ?¼ ?¾Ñ‚?¿ÑƒÑ?Ñ‚?¸Ñ‚ÑŒ ?ŸÑ€?°?²ÑƒÑŽ ?º?½?¾?¿?ºÑƒ ?¼Ñ‹Ñˆ?¸",
-			"index-tips-1-desc": "?¦?µ?»ÑŒ surviv.io - ?¾Ñ?Ñ‚?°Ñ‚ÑŒÑ?Ñ? ?¿?¾Ñ??»?µ?´?½?¸?¼ ?²Ñ‹?¶?¸?²Ñˆ?¸?¼. ?’ ?¾?´?½?¾?¼ Ñ€?°Ñƒ?½?´?µ Ñƒ ?²?°Ñ? Ñ‚?¾?»ÑŒ?º?¾ ?¾?´?½?° ?¶?¸?·?½ÑŒ ?¸ ?½?µÑ‚ ?²?¾?·?¼?¾?¶?½?¾Ñ?Ñ‚?¸ ?²?¾?·Ñ€?¾?´?¸Ñ‚ÑŒÑ?Ñ?.",
-			"index-tips-2": "PUBG ?² 2D",
-			"index-tips-2-desc": "?•Ñ??»?¸ ?²Ñ‹ ?¸?³Ñ€?°?»?¸ ?² ?´Ñ€Ñƒ?³?¸?µ ?¸?³Ñ€Ñ‹ ?¶?°?½Ñ€?° ?š?¾Ñ€?¾?»?µ?²Ñ??º?¾?¹ ?‘?¸Ñ‚?²Ñ‹ (Ñ‚?°?º?¸?µ ?º?°?º PUBG, Fortnite ?¸?»?¸ H1Z1), Ñ‚?¾ ?²Ñ‹ Ñƒ?¶?µ ?·?½?°?µÑ‚?µ ?¿Ñ€?°?²?¸?»?°. ?Ÿ?¾ Ñ?ÑƒÑ‚?¸, surviv.io - Ñ?Ñ‚?¾ ?´?²Ñƒ?¼?µÑ€?½Ñ‹?¹ PUBG (Ñ‚?¾?»ÑŒ?º?¾ ?¼?µ?½ÑŒÑˆ?µ ?»?°?³?°?µÑ‚).",
-			"index-tips-3": "?£?±?¸?²?°?¹ ?¸ ?´?¾?±Ñ‹?²?°?¹",
-			"index-tips-3-desc": "?’Ñ‹ ?½?°Ñ‡?½?µÑ‚?µ ?¸?³Ñ€Ñƒ ?±?µ?· ?º?°?º?¸Ñ…-?»?¸?±?¾ ?¿Ñ€?µ?´?¼?µÑ‚?¾?² ?¸?»?¸ ?¾Ñ€Ñƒ?¶?¸Ñ?, Ñƒ ?²?°Ñ? ?µÑ?Ñ‚ÑŒ Ñ‚?¾?»ÑŒ?º?¾ ?¿Ñ€?¾Ñ?Ñ‚?¾?¹ Ñ€ÑŽ?º?·?°?º. ?Ÿ?µÑ€?µ?´?²?¸?³?°?¹Ñ‚?µÑ?ÑŒ ?¿?¾ ?º?°Ñ€Ñ‚?µ, Ñ‡Ñ‚?¾?±Ñ‹ ?½?°?¹Ñ‚?¸ ?¿?¾?»?µ?·?½Ñ‹?µ ?²?µÑ‰?¸: ?¾Ñ€Ñƒ?¶?¸?µ, ?±?¾?µ?¿Ñ€?¸?¿?°Ñ?Ñ‹, ?¿Ñ€?¸Ñ†?µ?»Ñ‹ ?¸ ?¼?µ?´?¸?º?°?¼?µ?½Ñ‚Ñ‹. ?£?±?¸?²?°?¹Ñ‚?µ ?´Ñ€Ñƒ?³?¸Ñ… ?¸?³Ñ€?¾?º?¾?² ?¸ ?·?°?±?¸Ñ€?°?¹Ñ‚?µ Ñ??µ?±?µ ?¸Ñ… ?²?µÑ‰?¸!",
-			"index-tips-4": "?šÑ€?°Ñ??½Ñ‹?¹ - ?¾?¿?°Ñ??½Ñ‹?¹!",
-			"index-tips-4-desc": "??Ñ€Ñƒ?³?¸?µ ?¸?³Ñ€?¾?º?¸ - Ñ?Ñ‚?¾ ?½?µ ?µ?´?¸?½Ñ?Ñ‚?²?µ?½?½?¾?µ, Ñ‡Ñ‚?¾ ?¼?¾?¶?µÑ‚ ?²?°Ñ? Ñ€?°?½?¸Ñ‚ÑŒ. ?Ÿ?¾ Ñ…?¾?´Ñƒ ?¸?³Ñ€Ñ‹ ?šÑ€?°Ñ??½?°Ñ? ?—?¾?½?° ?±Ñƒ?´?µÑ‚ ?½?°?´?²?¸?³?°Ñ‚ÑŒÑ?Ñ? Ñ? ?ºÑ€?°Ñ‘?² ?º?°Ñ€Ñ‚Ñ‹ ?¸ ?½?°?½?¾Ñ??¸Ñ‚ÑŒ ?²Ñ?Ñ‘ ?±?¾?»ÑŒÑˆ?µ ÑƒÑ€?¾?½?°, ?µÑ??»?¸ ?²Ñ‹ ?¾?º?°?¶?µÑ‚?µÑ?ÑŒ ?² ?½?µ?¹. ?¢?°?º Ñ‡Ñ‚?¾ ?¿?¾Ñ??¼?°Ñ‚Ñ€?¸?²?°?¹Ñ‚?µ ?½?° ?º?°Ñ€Ñ‚Ñƒ ?¸ ?±Ñƒ?´ÑŒÑ‚?µ ?¾Ñ?Ñ‚?¾Ñ€?¾?¶?½Ñ‹!",
-			"game-alive": "?’ ?¶?¸?²Ñ‹Ñ…",
-			"game-reloading": "?Ÿ?µÑ€?µ?·?°Ñ€Ñ??´?º?°",
-			"game-using": "?˜Ñ??¿?¾?»ÑŒ?·?¾?²?°?½?¸?µ",
-			"game-reviving": "?’?¾?·Ñ€?¾?¶?´?µ?½?¸?µ",
-			"game-revive-teammate": "?’?¾?·Ñ€?¾?´?¸Ñ‚ÑŒ ?¡?¾ÑŽ?·?½?¸?º?°",
-			"game-equip": "?’?·Ñ?Ñ‚ÑŒ",
-			"game-cancel": "?žÑ‚?¼?µ?½?°",
-			"game-open-door": "?žÑ‚?ºÑ€Ñ‹Ñ‚ÑŒ ?´?²?µÑ€ÑŒ",
-			"game-close-door": "?—?°?ºÑ€Ñ‹Ñ‚ÑŒ ?´?²?µÑ€ÑŒ",
-			"game-You": "?’Ñ‹",
-			"game-you": "?²Ñ‹",
-			"game-themselves": "Ñ??µ?±Ñ?",
-			"game-yourself": "Ñ??µ?±Ñ?",
-			"game-you-died": "Ñƒ?¼?µÑ€?»?¸",
-			"game-player-died": "?£?¼?µÑ€",
-			"game-with": "Ñ? ?¿?¾?¼?¾Ñ‰ÑŒÑŽ",
-			"game-knocked-out": "???¾?º?°ÑƒÑ‚?¸Ñ€?¾?²?°?»",
-			"game-killed": "Ñƒ?±?¸?»?¸",
-			"game-finally-killed": "?½?°?º?¾?½?µÑ† Ñƒ?±?¸?»?¸",
-			"game-finally-bled-out": "?½?°?º?¾?½?µÑ† Ñƒ?¼?µÑ€",
-			"game-died-outside": "Ñƒ?¼?µÑ€ ?·?° ?¿Ñ€?µ?´?µ?»?°?¼?¸ ?±?µ?·?¾?¿?°Ñ??½?¾?¹ ?·?¾?½Ñ‹",
-			"game-the-red-zone": "?šÑ€?°Ñ??½?°Ñ? ?·?¾?½?°",
-			"game-waiting-for-players": "?ž?¶?¸?´?°?½?¸?µ ?¸?³Ñ€?¾?º?¾?²",
-			"game-spectating": "???°?±?»ÑŽ?´?µ?½?¸?µ ?·?°",
-			"game-red-zone-advances": "?šÑ€?°Ñ??½?°Ñ? ?·?¾?½?° ?½?°Ñ?Ñ‚Ñƒ?¿?¸Ñ‚ Ñ‡?µÑ€?µ?·",
-			"game-red-zone-advancing": "?šÑ€?°Ñ??½?°Ñ? ?·?¾?½?° ?½?°Ñ?Ñ‚Ñƒ?¿?°?µÑ‚, ?´?¾?±?µÑ€?¸Ñ‚?µÑ?ÑŒ ?´?¾ ?±?µ?·?¾?¿?°Ñ??½?¾?¹ ?·?¾?½Ñ‹!",
-			"game-seconds": "Ñ??µ?ºÑƒ?½?´Ñ‹",
-			"game-minutes": "?¼?¸?½ÑƒÑ‚Ñ‹",
-			"game-minute": "?¼?¸?½ÑƒÑ‚?°",
-			"game-m": "?¼",
-			"game-s": "Ñ?",
-			"game-not-enough-space": "???µ?´?¾Ñ?Ñ‚?°Ñ‚?¾Ñ‡?½?¾ ?¼?µÑ?Ñ‚?°!",
-			"game-item-already-owned": "?­Ñ‚?¾Ñ‚ ?¿Ñ€?µ?´?¼?µÑ‚ Ñƒ?¶?µ ?µÑ?Ñ‚ÑŒ!",
-			"game-item-already-equipped": "?­Ñ‚?¾Ñ‚ ?¿Ñ€?µ?´?¼?µÑ‚ Ñƒ?¶?µ Ñ??º?¸?¿?¸Ñ€?¾?²?°?½!",
-			"game-better-item-equipped": "?ŸÑ€?µ?´?¼?µÑ‚ ?¿?¾?»ÑƒÑ‡Ñˆ?µ Ñƒ?¶?µ ?µÑ?Ñ‚ÑŒ!",
-			"game-play-new-game": "???°Ñ‡?°Ñ‚ÑŒ ???¾?²ÑƒÑŽ ?˜?³Ñ€Ñƒ",
-			"game-spectate": "???°?±?»ÑŽ?´?°Ñ‚ÑŒ",
-			"game-full-screen": "?Ÿ?¾?»?½Ñ‹?¹ Ñ??ºÑ€?°?½",
-			"game-sound": "?—?²Ñƒ?º",
-			"game-quit-game": "?’Ñ‹?¹Ñ‚?¸ ?¸?· ?˜?³Ñ€Ñ‹",
-			"game-return-to-game": "?’?µÑ€?½ÑƒÑ‚ÑŒÑ?Ñ? ?² ?˜?³Ñ€Ñƒ",
-			"game-hide-match-stats": "?¡?ºÑ€Ñ‹Ñ‚ÑŒ ?¡Ñ‚?°Ñ‚?¸Ñ?Ñ‚?¸?ºÑƒ ?œ?°Ñ‚Ñ‡?°",
-			"game-view-match-stats": "?Ÿ?¾Ñ??¼?¾Ñ‚Ñ€?µÑ‚ÑŒ ?¡Ñ‚?°Ñ‚?¸Ñ?Ñ‚?¸?ºÑƒ ?œ?°Ñ‚Ñ‡?°",
-			"game-previous-teammate": "?ŸÑ€?µ?´Ñ‹?´ÑƒÑ‰?¸?¹ ???°?¿?°Ñ€?½?¸?º",
-			"game-next-teammate": "?¡?»?µ?´ÑƒÑŽÑ‰?¸?¹ ???°?¿?°Ñ€?½?¸?º",
+			"index-use-ping": "Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ðµ ÐºÐ¾Ð¼Ð°Ð½Ð´",
+			"index-use-ping-ctrl": "Ð£Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°Ñ C Ð·Ð°Ð¶Ð°Ñ‚ÑŒ ÐŸÑ€Ð°Ð²ÑƒÑŽ ÐºÐ½Ð¾Ð¿ÐºÑƒ Ð¼Ñ‹ÑˆÐ¸ Ð¸ Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ Ð¼Ñ‹ÑˆÐºÐ¾Ð¹, Ð·Ð°Ñ‚ÐµÐ¼ Ð²Ñ‹Ð±Ñ€Ð°Ð² ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ Ð¾Ñ‚Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ",
+			"index-use-emote": "Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð­Ð¼Ð¾Ð´Ð·Ð¸",
+			"index-use-emote-ctrl": "Ð—Ð°Ð¶Ð°Ñ‚ÑŒ ÐŸÑ€Ð°Ð²ÑƒÑŽ ÐºÐ½Ð¾Ð¿ÐºÑƒ Ð¼Ñ‹ÑˆÐ¸ Ð¸ Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ Ð¼Ñ‹ÑˆÐºÐ¾Ð¹, Ð·Ð°Ñ‚ÐµÐ¼ Ð¾Ñ‚Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ ÐŸÑ€Ð°Ð²ÑƒÑŽ ÐºÐ½Ð¾Ð¿ÐºÑƒ Ð¼Ñ‹ÑˆÐ¸",
+			"index-tips-1-desc": "Ð¦ÐµÐ»ÑŒ surviv.io - Ð¾ÑÑ‚Ð°Ñ‚ÑŒÑÑ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸Ð¼ Ð²Ñ‹Ð¶Ð¸Ð²ÑˆÐ¸Ð¼. Ð’ Ð¾Ð´Ð½Ð¾Ð¼ Ñ€Ð°ÑƒÐ½Ð´Ðµ Ñƒ Ð²Ð°Ñ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð¾Ð´Ð½Ð° Ð¶Ð¸Ð·Ð½ÑŒ Ð¸ Ð½ÐµÑ‚ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ÑÑ‚Ð¸ Ð²Ð¾Ð·Ñ€Ð¾Ð´Ð¸Ñ‚ÑŒÑÑ.",
+			"index-tips-2": "PUBG Ð² 2D",
+			"index-tips-2-desc": "Ð•ÑÐ»Ð¸ Ð²Ñ‹ Ð¸Ð³Ñ€Ð°Ð»Ð¸ Ð² Ð´Ñ€ÑƒÐ³Ð¸Ðµ Ð¸Ð³Ñ€Ñ‹ Ð¶Ð°Ð½Ñ€Ð° ÐšÐ¾Ñ€Ð¾Ð»ÐµÐ²ÑÐºÐ¾Ð¹ Ð‘Ð¸Ñ‚Ð²Ñ‹ (Ñ‚Ð°ÐºÐ¸Ðµ ÐºÐ°Ðº PUBG, Fortnite Ð¸Ð»Ð¸ H1Z1), Ñ‚Ð¾ Ð²Ñ‹ ÑƒÐ¶Ðµ Ð·Ð½Ð°ÐµÑ‚Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°. ÐŸÐ¾ ÑÑƒÑ‚Ð¸, surviv.io - ÑÑ‚Ð¾ Ð´Ð²ÑƒÐ¼ÐµÑ€Ð½Ñ‹Ð¹ PUBG (Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð¼ÐµÐ½ÑŒÑˆÐµ Ð»Ð°Ð³Ð°ÐµÑ‚).",
+			"index-tips-3": "Ð£Ð±Ð¸Ð²Ð°Ð¹ Ð¸ Ð´Ð¾Ð±Ñ‹Ð²Ð°Ð¹",
+			"index-tips-3-desc": "Ð’Ñ‹ Ð½Ð°Ñ‡Ð½ÐµÑ‚Ðµ Ð¸Ð³Ñ€Ñƒ Ð±ÐµÐ· ÐºÐ°ÐºÐ¸Ñ…-Ð»Ð¸Ð±Ð¾ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð¾Ð² Ð¸Ð»Ð¸ Ð¾Ñ€ÑƒÐ¶Ð¸Ñ, Ñƒ Ð²Ð°Ñ ÐµÑÑ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð¿Ñ€Ð¾ÑÑ‚Ð¾Ð¹ Ñ€ÑŽÐºÐ·Ð°Ðº. ÐŸÐµÑ€ÐµÐ´Ð²Ð¸Ð³Ð°Ð¹Ñ‚ÐµÑÑŒ Ð¿Ð¾ ÐºÐ°Ñ€Ñ‚Ðµ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ð°Ð¹Ñ‚Ð¸ Ð¿Ð¾Ð»ÐµÐ·Ð½Ñ‹Ðµ Ð²ÐµÑ‰Ð¸: Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ, Ð±Ð¾ÐµÐ¿Ñ€Ð¸Ð¿Ð°ÑÑ‹, Ð¿Ñ€Ð¸Ñ†ÐµÐ»Ñ‹ Ð¸ Ð¼ÐµÐ´Ð¸ÐºÐ°Ð¼ÐµÐ½Ñ‚Ñ‹. Ð£Ð±Ð¸Ð²Ð°Ð¹Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¸Ñ… Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² Ð¸ Ð·Ð°Ð±Ð¸Ñ€Ð°Ð¹Ñ‚Ðµ ÑÐµÐ±Ðµ Ð¸Ñ… Ð²ÐµÑ‰Ð¸!",
+			"index-tips-4": "ÐšÑ€Ð°ÑÐ½Ñ‹Ð¹ - Ð¾Ð¿Ð°ÑÐ½Ñ‹Ð¹!",
+			"index-tips-4-desc": "Ð”Ñ€ÑƒÐ³Ð¸Ðµ Ð¸Ð³Ñ€Ð¾ÐºÐ¸ - ÑÑ‚Ð¾ Ð½Ðµ ÐµÐ´Ð¸Ð½ÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ðµ, Ñ‡Ñ‚Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ Ð²Ð°Ñ Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ. ÐŸÐ¾ Ñ…Ð¾Ð´Ñƒ Ð¸Ð³Ñ€Ñ‹ ÐšÑ€Ð°ÑÐ½Ð°Ñ Ð—Ð¾Ð½Ð° Ð±ÑƒÐ´ÐµÑ‚ Ð½Ð°Ð´Ð²Ð¸Ð³Ð°Ñ‚ÑŒÑÑ Ñ ÐºÑ€Ð°Ñ‘Ð² ÐºÐ°Ñ€Ñ‚Ñ‹ Ð¸ Ð½Ð°Ð½Ð¾ÑÐ¸Ñ‚ÑŒ Ð²ÑÑ‘ Ð±Ð¾Ð»ÑŒÑˆÐµ ÑƒÑ€Ð¾Ð½Ð°, ÐµÑÐ»Ð¸ Ð²Ñ‹ Ð¾ÐºÐ°Ð¶ÐµÑ‚ÐµÑÑŒ Ð² Ð½ÐµÐ¹. Ð¢Ð°Ðº Ñ‡Ñ‚Ð¾ Ð¿Ð¾ÑÐ¼Ð°Ñ‚Ñ€Ð¸Ð²Ð°Ð¹Ñ‚Ðµ Ð½Ð° ÐºÐ°Ñ€Ñ‚Ñƒ Ð¸ Ð±ÑƒÐ´ÑŒÑ‚Ðµ Ð¾ÑÑ‚Ð¾Ñ€Ð¾Ð¶Ð½Ñ‹!",
+			"game-alive": "Ð’ Ð¶Ð¸Ð²Ñ‹Ñ…",
+			"game-reloading": "ÐŸÐµÑ€ÐµÐ·Ð°Ñ€ÑÐ´ÐºÐ°",
+			"game-using": "Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ðµ",
+			"game-reviving": "Ð’Ð¾Ð·Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð¸Ðµ",
+			"game-revive-teammate": "Ð’Ð¾Ð·Ñ€Ð¾Ð´Ð¸Ñ‚ÑŒ Ð¡Ð¾ÑŽÐ·Ð½Ð¸ÐºÐ°",
+			"game-equip": "Ð’Ð·ÑÑ‚ÑŒ",
+			"game-cancel": "ÐžÑ‚Ð¼ÐµÐ½Ð°",
+			"game-open-door": "ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð´Ð²ÐµÑ€ÑŒ",
+			"game-close-door": "Ð—Ð°ÐºÑ€Ñ‹Ñ‚ÑŒ Ð´Ð²ÐµÑ€ÑŒ",
+			"game-You": "Ð’Ñ‹",
+			"game-you": "Ð²Ñ‹",
+			"game-themselves": "ÑÐµÐ±Ñ",
+			"game-yourself": "ÑÐµÐ±Ñ",
+			"game-you-died": "ÑƒÐ¼ÐµÑ€Ð»Ð¸",
+			"game-player-died": "Ð£Ð¼ÐµÑ€",
+			"game-with": "Ñ Ð¿Ð¾Ð¼Ð¾Ñ‰ÑŒÑŽ",
+			"game-knocked-out": "ÐÐ¾ÐºÐ°ÑƒÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð»",
+			"game-killed": "ÑƒÐ±Ð¸Ð»Ð¸",
+			"game-finally-killed": "Ð½Ð°ÐºÐ¾Ð½ÐµÑ† ÑƒÐ±Ð¸Ð»Ð¸",
+			"game-finally-bled-out": "Ð½Ð°ÐºÐ¾Ð½ÐµÑ† ÑƒÐ¼ÐµÑ€",
+			"game-died-outside": "ÑƒÐ¼ÐµÑ€ Ð·Ð° Ð¿Ñ€ÐµÐ´ÐµÐ»Ð°Ð¼Ð¸ Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ð¾Ð¹ Ð·Ð¾Ð½Ñ‹",
+			"game-the-red-zone": "ÐšÑ€Ð°ÑÐ½Ð°Ñ Ð·Ð¾Ð½Ð°",
+			"game-waiting-for-players": "ÐžÐ¶Ð¸Ð´Ð°Ð½Ð¸Ðµ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð²",
+			"game-spectating": "ÐÐ°Ð±Ð»ÑŽÐ´ÐµÐ½Ð¸Ðµ Ð·Ð°",
+			"game-red-zone-advances": "ÐšÑ€Ð°ÑÐ½Ð°Ñ Ð·Ð¾Ð½Ð° Ð½Ð°ÑÑ‚ÑƒÐ¿Ð¸Ñ‚ Ñ‡ÐµÑ€ÐµÐ·",
+			"game-red-zone-advancing": "ÐšÑ€Ð°ÑÐ½Ð°Ñ Ð·Ð¾Ð½Ð° Ð½Ð°ÑÑ‚ÑƒÐ¿Ð°ÐµÑ‚, Ð´Ð¾Ð±ÐµÑ€Ð¸Ñ‚ÐµÑÑŒ Ð´Ð¾ Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ð¾Ð¹ Ð·Ð¾Ð½Ñ‹!",
+			"game-seconds": "ÑÐµÐºÑƒÐ½Ð´Ñ‹",
+			"game-minutes": "Ð¼Ð¸Ð½ÑƒÑ‚Ñ‹",
+			"game-minute": "Ð¼Ð¸Ð½ÑƒÑ‚Ð°",
+			"game-m": "Ð¼",
+			"game-s": "Ñ",
+			"game-not-enough-space": "ÐÐµÐ´Ð¾ÑÑ‚Ð°Ñ‚Ð¾Ñ‡Ð½Ð¾ Ð¼ÐµÑÑ‚Ð°!",
+			"game-item-already-owned": "Ð­Ñ‚Ð¾Ñ‚ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚ ÑƒÐ¶Ðµ ÐµÑÑ‚ÑŒ!",
+			"game-item-already-equipped": "Ð­Ñ‚Ð¾Ñ‚ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚ ÑƒÐ¶Ðµ ÑÐºÐ¸Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½!",
+			"game-better-item-equipped": "ÐŸÑ€ÐµÐ´Ð¼ÐµÑ‚ Ð¿Ð¾Ð»ÑƒÑ‡ÑˆÐµ ÑƒÐ¶Ðµ ÐµÑÑ‚ÑŒ!",
+			"game-play-new-game": "ÐÐ°Ñ‡Ð°Ñ‚ÑŒ ÐÐ¾Ð²ÑƒÑŽ Ð˜Ð³Ñ€Ñƒ",
+			"game-spectate": "ÐÐ°Ð±Ð»ÑŽÐ´Ð°Ñ‚ÑŒ",
+			"game-full-screen": "ÐŸÐ¾Ð»Ð½Ñ‹Ð¹ ÑÐºÑ€Ð°Ð½",
+			"game-sound": "Ð—Ð²ÑƒÐº",
+			"game-quit-game": "Ð’Ñ‹Ð¹Ñ‚Ð¸ Ð¸Ð· Ð˜Ð³Ñ€Ñ‹",
+			"game-return-to-game": "Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ Ð² Ð˜Ð³Ñ€Ñƒ",
+			"game-hide-match-stats": "Ð¡ÐºÑ€Ñ‹Ñ‚ÑŒ Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÑƒ ÐœÐ°Ñ‚Ñ‡Ð°",
+			"game-view-match-stats": "ÐŸÐ¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÑƒ ÐœÐ°Ñ‚Ñ‡Ð°",
+			"game-previous-teammate": "ÐŸÑ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¹ ÐÐ°Ð¿Ð°Ñ€Ð½Ð¸Ðº",
+			"game-next-teammate": "Ð¡Ð»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ ÐÐ°Ð¿Ð°Ñ€Ð½Ð¸Ðº",
 			"game-spectate-previous": "",
 			"game-spectate-next": "",
-			"game-leave-game": "?Ÿ?¾?º?¸?½ÑƒÑ‚ÑŒ ?˜?³Ñ€Ñƒ",
-			"game-your-results": "?¢?²?¾?¸ ? ?µ?·Ñƒ?»ÑŒÑ‚?°Ñ‚Ñ‹",
-			"game-chicken": "?Ÿ?¾?±?µ?´?°, ?¿?¾?±?µ?´?° ?¿?¾Ñ??»?µ ?¾?±?µ?´?°!",
-			"game-won-the-game": "?²Ñ‹?¸?³Ñ€?°?» ?¸?³Ñ€Ñƒ.",
-			"game-team-eliminated": "?’?°Ñˆ?° ?º?¾?¼?°?½?´?° ?¿?¾Ñ‚?µÑ€?¿?µ?»?° ?¿?¾Ñ€?°?¶?µ?½?¸?µ.",
-			"game-rank": "? ?°?½?³",
-			"game-team-rank": "? ?°?½?³ ?º?¾?¼?°?½?´Ñ‹",
-			"game-team-kills": "?š?¾?¼?°?½?´?½Ñ‹Ñ… Ñƒ?±?¸?¹Ñ?Ñ‚?²",
-			"game-kill": "?£?±?¸?¹Ñ?Ñ‚?²?¾",
-			"game-kills": "?£?±?¸?¹Ñ?Ñ‚?²?°",
-			"game-damage-dealt": "???°?½?µÑ?Ñ‘?½?½Ñ‹?¹ ?£Ñ€?¾?½",
-			"game-damage-taken": "?Ÿ?¾?»ÑƒÑ‡?µ?½?½Ñ‹?¹ ?£Ñ€?¾?½",
-			"game-survived": "?’Ñ‹?¶?¸?»",
-			"game-backpack00": "?Ÿ?°Ñ‚Ñ€?¾?½Ñ‚?°Ñˆ",
-			"game-backpack01": "?œ?°?»?µ?½ÑŒ?º?¸?¹ ? ÑŽ?º?·?°?º",
-			"game-backpack02": "?ž?±Ñ‹Ñ‡?½Ñ‹?¹ ? ÑŽ?º?·?°?º",
-			"game-backpack03": "?’?¾?µ?½?½Ñ‹?¹ ? ÑŽ?º?·?°?º",
-			"game-bandage": "?‘?¸?½Ñ‚",
-			"game-bandage-tooltip": "?›?µ?²Ñ‹?¹ ?©?µ?»Ñ‡?¾?º, Ñ‡Ñ‚?¾?±Ñ‹ ?²?¾Ñ?Ñ?Ñ‚?°?½?¾?²?¸Ñ‚ÑŒ 15 ?·?´?¾Ñ€?¾?²ÑŒÑ?.",
-			"game-healing-tooltip": "???µ ?²?¾Ñ?Ñ‚?°?½?°?²?»?¸?²?°?µÑ‚ ?±?¾?»ÑŒÑˆ?µ 75 ?·?´?¾Ñ€?¾?²ÑŒÑ?.",
-			"game-healthkit": "???¿Ñ‚?µÑ‡?º?°",
-			"game-healthkit-tooltip": "?›?µ?²Ñ‹?¹ ?©?µ?»Ñ‡?¾?º, Ñ‡Ñ‚?¾?±Ñ‹ ?²?¾Ñ?Ñ?Ñ‚?°?½?¾?²?¸Ñ‚ÑŒ 100 ?·?´?¾Ñ€?¾?²ÑŒÑ?.",
-			"game-soda": "?¡?¾?´?°",
-			"game-soda-tooltip": "?›?µ?²Ñ‹?¹ ?©?µ?»Ñ‡?¾?º, Ñ‡Ñ‚?¾?±Ñ‹ Ñƒ?²?µ?»?¸Ñ‡?¸Ñ‚ÑŒ ?°?´Ñ€?µ?½?°?»?¸?½ ?½?° 25.",
-			"game-adrenaline-tooltip": "???´Ñ€?µ?½?°?»?¸?½ Ñ??¾ ?²Ñ€?µ?¼?µ?½?µ?¼ ?²?¾Ñ?Ñ?Ñ‚?°?½?°?²?»?¸?²?°?µÑ‚ ?·?´?¾Ñ€?¾?²ÑŒ?µ.",
-			"game-painkiller": "?¢?°?±?»?µÑ‚?º?¸",
-			"game-painkiller-tooltip": "?›?µ?²Ñ‹?¹ ?©?µ?»Ñ‡?¾?º, Ñ‡Ñ‚?¾?±Ñ‹ Ñƒ?²?µ?»?¸Ñ‡?¸Ñ‚ÑŒ ?°?´Ñ€?µ?½?°?»?¸?½ ?½?° 50.",
-			"game-9mm": "9?¼?¼",
-			"game-9mm-tooltip": "?Ÿ?°Ñ‚Ñ€?¾?½Ñ‹ ?´?»Ñ? M9, Glock, MP5, MAC-10, UMP9 ?¸ Vector.",
-			"game-12gauge": "12 ?º?°?»?¸?±Ñ€",
-			"game-12gauge-tooltip": "?Ÿ?°Ñ‚Ñ€?¾?½Ñ‹ ?´?»Ñ? M870, ?¡?°?¹?³?°-12 ?¸ MP220.",
-			"game-762mm": "7.62?¼?¼",
-			"game-762mm-tooltip": "?Ÿ?°Ñ‚Ñ€?¾?½Ñ‹ ?´?»Ñ? AK-47, SCAR-H, M39, ?’?¸?½Ñ‚?¾?²?º?° ?œ?¾Ñ??¸?½?°, OT-38 ?¸ DP-28.",
-			"game-556mm": "5.56?¼?¼",
-			"game-556mm-tooltip": "?Ÿ?°Ñ‚Ñ€?¾?½Ñ‹ ?´?»Ñ? FAMAS, HK416, Mk 12 ?¸ M249.",
-			"game-chest01": "?–?¸?»?µÑ‚ 1-?¾?³?¾ ÑƒÑ€?¾?²?½Ñ?",
-			"game-chest02": "?–?¸?»?µÑ‚ 2-?¾?³?¾ ÑƒÑ€?¾?²?½Ñ?",
-			"game-chest03": "?–?¸?»?µÑ‚ 3-?¾?³?¾ ÑƒÑ€?¾?²?½Ñ?",
-			"game-helmet01": "?¨?»?µ?¼ 1-?¾?³?¾ ÑƒÑ€?¾?²?½Ñ?",
-			"game-helmet02": "?¨?»?µ?¼ 2-?¾?³?¾ ÑƒÑ€?¾?²?½Ñ?",
-			"game-helmet03": "?¨?»?µ?¼ 3-?¾?³?¾ ÑƒÑ€?¾?²?½Ñ?",
-			"game-1xscope": "1x ?ŸÑ€?¸Ñ†?µ?»",
-			"game-2xscope": "2x ?ŸÑ€?¸Ñ†?µ?»",
-			"game-4xscope": "4x ?ŸÑ€?¸Ñ†?µ?»",
-			"game-8xscope": "8x ?ŸÑ€?¸Ñ†?µ?»",
-			"game-15xscope": "15x ?ŸÑ€?¸Ñ†?µ?»",
-			"game-level-1": "1-?¹ ?£Ñ€.",
-			"game-level-2": "2-?¹ ?£Ñ€.",
-			"game-level-3": "3-?¹ ?£Ñ€.",
-			"game-outfitBase": "?‘?°?·?¾?²?°Ñ? ?­?º?¸?¿?¸Ñ€?¾?²?º?°",
-			"game-outfitRoyalFortune": "?š?¾Ñ€?¾?»?µ?²Ñ??º?°Ñ? Ñƒ?´?°Ñ‡?°",
-			"game-outfitKeyLime": "?›?°?¹?¼?¾?²Ñ‹?¹ ?¾Ñ‚Ñ‚?µ?½?¾?º",
-			"game-outfitCobaltShell": "?š?¾?±?°?»ÑŒÑ‚?¾?²?°Ñ? ?ž?±?¾?»?¾Ñ‡?º?°",
-			"game-outfitCarbonFiber": "?£?³?»?µÑ€?¾?´?½?¾?µ ?²?¾?»?¾?º?½?¾",
-			"game-outfitDarkGloves": "?ŸÑ€?¾Ñ„?µÑ?Ñ??¸?¾?½?°?»",
-			"game-outfitGhillie": "?œ?°Ñ??º?¸Ñ€?¾?²?¾Ñ‡?½Ñ‹?¹ ?º?¾Ñ?Ñ‚ÑŽ?¼",
-			"game-outfitCamo": "?›?µÑ??½?¾?¹ ?º?°?¼ÑƒÑ„?»Ñ??¶",
-			"game-outfitRed": "?œ?¸Ñˆ?µ?½ÑŒ",
-			"game-outfitWhite": "??Ñ€?ºÑ‚?¸Ñ‡?µÑ??º?¸?¹ ?œÑ?Ñ‚?¸Ñ‚?µ?»ÑŒ",
-			"game-outfitWoodland": "?‘?¾?µ?²?¾?¹ ?º?°?¼ÑƒÑ„?»Ñ??¶",
-			"game-outfitJester": "?¨ÑƒÑ‚?¾?²Ñ??º?¾?¹ ???°Ñ€Ñ??´",
-			"game-outfitPrisoner": "???¾?²Ñ‹?¹ ?§Ñ‘Ñ€?½Ñ‹?¹",
-			"game-outfitCasanova": "?¡?°Ñ‚?¸?½?¾?²?°Ñ? ?ºÑƒÑ€Ñ‚?º?°",
-			"game-outfitKhaki": "?Ÿ?¾?»?¾?¶?¸?²Ñˆ?¸?¹ ???°Ñ‡?°?»?¾",
-			"game-fists": "Ñƒ?´?°Ñ€",
+			"game-leave-game": "ÐŸÐ¾ÐºÐ¸Ð½ÑƒÑ‚ÑŒ Ð˜Ð³Ñ€Ñƒ",
+			"game-your-results": "Ð¢Ð²Ð¾Ð¸ Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹",
+			"game-chicken": "ÐŸÐ¾Ð±ÐµÐ´Ð°, Ð¿Ð¾Ð±ÐµÐ´Ð° Ð¿Ð¾ÑÐ»Ðµ Ð¾Ð±ÐµÐ´Ð°!",
+			"game-won-the-game": "Ð²Ñ‹Ð¸Ð³Ñ€Ð°Ð» Ð¸Ð³Ñ€Ñƒ.",
+			"game-team-eliminated": "Ð’Ð°ÑˆÐ° ÐºÐ¾Ð¼Ð°Ð½Ð´Ð° Ð¿Ð¾Ñ‚ÐµÑ€Ð¿ÐµÐ»Ð° Ð¿Ð¾Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ.",
+			"game-rank": "Ð Ð°Ð½Ð³",
+			"game-team-rank": "Ð Ð°Ð½Ð³ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñ‹",
+			"game-team-kills": "ÐšÐ¾Ð¼Ð°Ð½Ð´Ð½Ñ‹Ñ… ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²",
+			"game-kill": "Ð£Ð±Ð¸Ð¹ÑÑ‚Ð²Ð¾",
+			"game-kills": "Ð£Ð±Ð¸Ð¹ÑÑ‚Ð²Ð°",
+			"game-damage-dealt": "ÐÐ°Ð½ÐµÑÑ‘Ð½Ð½Ñ‹Ð¹ Ð£Ñ€Ð¾Ð½",
+			"game-damage-taken": "ÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð½Ñ‹Ð¹ Ð£Ñ€Ð¾Ð½",
+			"game-survived": "Ð’Ñ‹Ð¶Ð¸Ð»",
+			"game-backpack00": "ÐŸÐ°Ñ‚Ñ€Ð¾Ð½Ñ‚Ð°Ñˆ",
+			"game-backpack01": "ÐœÐ°Ð»ÐµÐ½ÑŒÐºÐ¸Ð¹ Ð ÑŽÐºÐ·Ð°Ðº",
+			"game-backpack02": "ÐžÐ±Ñ‹Ñ‡Ð½Ñ‹Ð¹ Ð ÑŽÐºÐ·Ð°Ðº",
+			"game-backpack03": "Ð’Ð¾ÐµÐ½Ð½Ñ‹Ð¹ Ð ÑŽÐºÐ·Ð°Ðº",
+			"game-bandage": "Ð‘Ð¸Ð½Ñ‚",
+			"game-bandage-tooltip": "Ð›ÐµÐ²Ñ‹Ð¹ Ð©ÐµÐ»Ñ‡Ð¾Ðº, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ 15 Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÑ.",
+			"game-healing-tooltip": "ÐÐµ Ð²Ð¾ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ Ð±Ð¾Ð»ÑŒÑˆÐµ 75 Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÑ.",
+			"game-healthkit": "ÐÐ¿Ñ‚ÐµÑ‡ÐºÐ°",
+			"game-healthkit-tooltip": "Ð›ÐµÐ²Ñ‹Ð¹ Ð©ÐµÐ»Ñ‡Ð¾Ðº, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ 100 Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÑ.",
+			"game-soda": "Ð¡Ð¾Ð´Ð°",
+			"game-soda-tooltip": "Ð›ÐµÐ²Ñ‹Ð¹ Ð©ÐµÐ»Ñ‡Ð¾Ðº, Ñ‡Ñ‚Ð¾Ð±Ñ‹ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ñ‚ÑŒ Ð°Ð´Ñ€ÐµÐ½Ð°Ð»Ð¸Ð½ Ð½Ð° 25.",
+			"game-adrenaline-tooltip": "ÐÐ´Ñ€ÐµÐ½Ð°Ð»Ð¸Ð½ ÑÐ¾ Ð²Ñ€ÐµÐ¼ÐµÐ½ÐµÐ¼ Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÐµ.",
+			"game-painkiller": "Ð¢Ð°Ð±Ð»ÐµÑ‚ÐºÐ¸",
+			"game-painkiller-tooltip": "Ð›ÐµÐ²Ñ‹Ð¹ Ð©ÐµÐ»Ñ‡Ð¾Ðº, Ñ‡Ñ‚Ð¾Ð±Ñ‹ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ñ‚ÑŒ Ð°Ð´Ñ€ÐµÐ½Ð°Ð»Ð¸Ð½ Ð½Ð° 50.",
+			"game-9mm": "9Ð¼Ð¼",
+			"game-9mm-tooltip": "ÐŸÐ°Ñ‚Ñ€Ð¾Ð½Ñ‹ Ð´Ð»Ñ M9, Glock, MP5, MAC-10, UMP9 Ð¸ Vector.",
+			"game-12gauge": "12 ÐºÐ°Ð»Ð¸Ð±Ñ€",
+			"game-12gauge-tooltip": "ÐŸÐ°Ñ‚Ñ€Ð¾Ð½Ñ‹ Ð´Ð»Ñ M870, Ð¡Ð°Ð¹Ð³Ð°-12 Ð¸ MP220.",
+			"game-762mm": "7.62Ð¼Ð¼",
+			"game-762mm-tooltip": "ÐŸÐ°Ñ‚Ñ€Ð¾Ð½Ñ‹ Ð´Ð»Ñ AK-47, SCAR-H, M39, Ð’Ð¸Ð½Ñ‚Ð¾Ð²ÐºÐ° ÐœÐ¾ÑÐ¸Ð½Ð°, OT-38 Ð¸ DP-28.",
+			"game-556mm": "5.56Ð¼Ð¼",
+			"game-556mm-tooltip": "ÐŸÐ°Ñ‚Ñ€Ð¾Ð½Ñ‹ Ð´Ð»Ñ FAMAS, HK416, Mk 12 Ð¸ M249.",
+			"game-chest01": "Ð–Ð¸Ð»ÐµÑ‚ 1-Ð¾Ð³Ð¾ ÑƒÑ€Ð¾Ð²Ð½Ñ",
+			"game-chest02": "Ð–Ð¸Ð»ÐµÑ‚ 2-Ð¾Ð³Ð¾ ÑƒÑ€Ð¾Ð²Ð½Ñ",
+			"game-chest03": "Ð–Ð¸Ð»ÐµÑ‚ 3-Ð¾Ð³Ð¾ ÑƒÑ€Ð¾Ð²Ð½Ñ",
+			"game-helmet01": "Ð¨Ð»ÐµÐ¼ 1-Ð¾Ð³Ð¾ ÑƒÑ€Ð¾Ð²Ð½Ñ",
+			"game-helmet02": "Ð¨Ð»ÐµÐ¼ 2-Ð¾Ð³Ð¾ ÑƒÑ€Ð¾Ð²Ð½Ñ",
+			"game-helmet03": "Ð¨Ð»ÐµÐ¼ 3-Ð¾Ð³Ð¾ ÑƒÑ€Ð¾Ð²Ð½Ñ",
+			"game-1xscope": "1x ÐŸÑ€Ð¸Ñ†ÐµÐ»",
+			"game-2xscope": "2x ÐŸÑ€Ð¸Ñ†ÐµÐ»",
+			"game-4xscope": "4x ÐŸÑ€Ð¸Ñ†ÐµÐ»",
+			"game-8xscope": "8x ÐŸÑ€Ð¸Ñ†ÐµÐ»",
+			"game-15xscope": "15x ÐŸÑ€Ð¸Ñ†ÐµÐ»",
+			"game-level-1": "1-Ð¹ Ð£Ñ€.",
+			"game-level-2": "2-Ð¹ Ð£Ñ€.",
+			"game-level-3": "3-Ð¹ Ð£Ñ€.",
+			"game-outfitBase": "Ð‘Ð°Ð·Ð¾Ð²Ð°Ñ Ð­ÐºÐ¸Ð¿Ð¸Ñ€Ð¾Ð²ÐºÐ°",
+			"game-outfitRoyalFortune": "ÐšÐ¾Ñ€Ð¾Ð»ÐµÐ²ÑÐºÐ°Ñ ÑƒÐ´Ð°Ñ‡Ð°",
+			"game-outfitKeyLime": "Ð›Ð°Ð¹Ð¼Ð¾Ð²Ñ‹Ð¹ Ð¾Ñ‚Ñ‚ÐµÐ½Ð¾Ðº",
+			"game-outfitCobaltShell": "ÐšÐ¾Ð±Ð°Ð»ÑŒÑ‚Ð¾Ð²Ð°Ñ ÐžÐ±Ð¾Ð»Ð¾Ñ‡ÐºÐ°",
+			"game-outfitCarbonFiber": "Ð£Ð³Ð»ÐµÑ€Ð¾Ð´Ð½Ð¾Ðµ Ð²Ð¾Ð»Ð¾ÐºÐ½Ð¾",
+			"game-outfitDarkGloves": "ÐŸÑ€Ð¾Ñ„ÐµÑÑÐ¸Ð¾Ð½Ð°Ð»",
+			"game-outfitGhillie": "ÐœÐ°ÑÐºÐ¸Ñ€Ð¾Ð²Ð¾Ñ‡Ð½Ñ‹Ð¹ ÐºÐ¾ÑÑ‚ÑŽÐ¼",
+			"game-outfitCamo": "Ð›ÐµÑÐ½Ð¾Ð¹ ÐºÐ°Ð¼ÑƒÑ„Ð»ÑÐ¶",
+			"game-outfitRed": "ÐœÐ¸ÑˆÐµÐ½ÑŒ",
+			"game-outfitWhite": "ÐÑ€ÐºÑ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ ÐœÑÑ‚Ð¸Ñ‚ÐµÐ»ÑŒ",
+			"game-outfitWoodland": "Ð‘Ð¾ÐµÐ²Ð¾Ð¹ ÐºÐ°Ð¼ÑƒÑ„Ð»ÑÐ¶",
+			"game-outfitJester": "Ð¨ÑƒÑ‚Ð¾Ð²ÑÐºÐ¾Ð¹ ÐÐ°Ñ€ÑÐ´",
+			"game-outfitPrisoner": "ÐÐ¾Ð²Ñ‹Ð¹ Ð§Ñ‘Ñ€Ð½Ñ‹Ð¹",
+			"game-outfitCasanova": "Ð¡Ð°Ñ‚Ð¸Ð½Ð¾Ð²Ð°Ñ ÐºÑƒÑ€Ñ‚ÐºÐ°",
+			"game-outfitKhaki": "ÐŸÐ¾Ð»Ð¾Ð¶Ð¸Ð²ÑˆÐ¸Ð¹ ÐÐ°Ñ‡Ð°Ð»Ð¾",
+			"game-fists": "ÑƒÐ´Ð°Ñ€",
 			"game-ak47": "AK-47",
-			"game-dp28": "???Ÿ-28",
-			"game-mosin": "?’?¸?½Ñ‚?¾?²?º?° ?œ?¾Ñ??¸?½?°",
+			"game-dp28": "Ð”ÐŸ-28",
+			"game-mosin": "Ð’Ð¸Ð½Ñ‚Ð¾Ð²ÐºÐ° ÐœÐ¾ÑÐ¸Ð½Ð°",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
 			"game-ump9": "UMP9",
 			"game-m870": "M870",
 			"game-mp220": "MP220",
-			"game-saiga": "?¡?°?¹?³?°-12",
+			"game-saiga": "Ð¡Ð°Ð¹Ð³Ð°-12",
 			"game-m9": "M9",
 			"game-glock": "Glock 18C",
-			"game-ot38": "?ž?¦-38",
-			"game-frag": "?žÑ??º?¾?»?¾Ñ‡?½?°Ñ? ?“Ñ€?°?½?°Ñ‚?°",
-			"game-hud-frag": "?žÑ??º?¾?»?¾Ñ‡?½?°Ñ?",
-			"game-smoke": "??Ñ‹?¼?¾?²?°Ñ? ?“Ñ€?°?½?°Ñ‚?°",
-			"game-hud-smoke": "??Ñ‹?¼?¾?²?°Ñ?",
-			"game-barrel_01": "?²?·Ñ€Ñ‹?²?¾?¼ ?±?¾Ñ‡?º?¸",
+			"game-ot38": "ÐžÐ¦-38",
+			"game-frag": "ÐžÑÐºÐ¾Ð»Ð¾Ñ‡Ð½Ð°Ñ Ð“Ñ€Ð°Ð½Ð°Ñ‚Ð°",
+			"game-hud-frag": "ÐžÑÐºÐ¾Ð»Ð¾Ñ‡Ð½Ð°Ñ",
+			"game-smoke": "Ð”Ñ‹Ð¼Ð¾Ð²Ð°Ñ Ð“Ñ€Ð°Ð½Ð°Ñ‚Ð°",
+			"game-hud-smoke": "Ð”Ñ‹Ð¼Ð¾Ð²Ð°Ñ",
+			"game-barrel_01": "Ð²Ð·Ñ€Ñ‹Ð²Ð¾Ð¼ Ð±Ð¾Ñ‡ÐºÐ¸",
 			"game-silo_01": "a silo"
 		};
 		e.exports = i
@@ -6222,16 +6408,16 @@ webpackJsonp([0], {
 		}
 
 		function n(e) {
-			var t = E[e];
+			var t = B[e];
 			if ("structure" == t.type) {
 				for (var a = [], i = 0; i < t.layers.length; i++) {
 					var r = t.layers[i],
 						s = o(r.ori),
-						l = A.transform(n(r.type), r.pos, s, 1);
-					a.push(A.toAabb(l))
+						l = D.transform(n(r.type), r.pos, s, 1);
+					a.push(D.toAabb(l))
 				}
-				var c = D.boundingAabb(a);
-				return A.createAabb(c.min, c.max)
+				var c = A.boundingAabb(a);
+				return D.createAabb(c.min, c.max)
 			}
 			if ("building" == t.type) {
 				for (var m = [], d = 0; d < t.floor.surfaces.length; d++) m = m.concat(t.floor.surfaces[d].collision);
@@ -6241,14 +6427,14 @@ webpackJsonp([0], {
 						h = u.type;
 					if ("function" == typeof h && (h = h()), "" != h) {
 						var g = o(u.ori),
-							f = A.transform(n(h), u.pos, g, u.scale);
-						m.push(A.toAabb(f))
+							f = D.transform(n(h), u.pos, g, u.scale);
+						m.push(D.toAabb(f))
 					}
 				}
-				var y = D.boundingAabb(m);
-				return A.createAabb(y.min, y.max)
+				var y = A.boundingAabb(m);
+				return D.createAabb(y.min, y.max)
 			}
-			return I(t.collision), t.collision
+			return z(t.collision), t.collision
 		}
 
 		function r(e, t, a) {
@@ -6267,7 +6453,7 @@ webpackJsonp([0], {
 		}
 
 		function l(e) {
-			return e && "object" === (void 0 === e ? "undefined" : z(e)) && !Array.isArray(e)
+			return e && "object" === (void 0 === e ? "undefined" : I(e)) && !Array.isArray(e)
 		}
 
 		function c(e) {
@@ -6285,7 +6471,7 @@ webpackJsonp([0], {
 				type: a,
 				weight: e[a]
 			});
-			I(t.length > 0);
+			z(t.length > 0);
 			for (var i = 0, o = 0; o < t.length; o++) i += t[o].weight;
 			return function() {
 				for (var e = O.random(0, i), a = 0; e > t[a].weight;) e -= t[a].weight, a++;
@@ -6311,7 +6497,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: .8
 				},
-				collision: A.createCircle(L.create(0, 0), 1.75),
+				collision: D.createCircle(L.create(0, 0), 1.75),
 				height: .5,
 				collidable: !0,
 				destructible: !0,
@@ -6354,7 +6540,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: .75
 				},
-				collision: A.createAabbExtents(L.create(0, 0), L.create(3.5, 1)),
+				collision: D.createAabbExtents(L.create(0, 0), L.create(3.5, 1)),
 				height: .5,
 				collidable: !0,
 				destructible: !0,
@@ -6397,7 +6583,7 @@ webpackJsonp([0], {
 					createMax: 1.2,
 					destroy: 1
 				},
-				collision: A.createCircle(L.create(0, 0), 1.4),
+				collision: D.createCircle(L.create(0, 0), 1.4),
 				height: 10,
 				collidable: !1,
 				destructible: !0,
@@ -6441,7 +6627,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: .9
 				},
-				collision: A.createAabbExtents(L.create(0, 0), L.create(2.25, 1.6)),
+				collision: D.createAabbExtents(L.create(0, 0), L.create(2.25, 1.6)),
 				height: .5,
 				collidable: !0,
 				destructible: !0,
@@ -6484,7 +6670,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: .75
 				},
-				collision: A.createAabbExtents(L.create(0, 0), L.create(2.25, 1.6)),
+				collision: D.createAabbExtents(L.create(0, 0), L.create(2.25, 1.6)),
 				height: .5,
 				collidable: !0,
 				destructible: !0,
@@ -6494,7 +6680,7 @@ webpackJsonp([0], {
 				reflectBullets: !1,
 				loot: [r("tier_chest", 3, 4)],
 				map: {
-					display: !0,
+					display: !1,
 					color: 6697728,
 					scale: .875
 				},
@@ -6536,12 +6722,12 @@ webpackJsonp([0], {
 					scale: 1,
 					ori: 0
 				}, {
-					type: "loot_tier_2",
+					type: e.loot_spawner_01 || "loot_tier_2",
 					pos: L.create(0, 3.25),
 					scale: 1,
 					ori: 0
 				}, {
-					type: m({
+					type: e.loot_spawner_02 || m({
 						loot_tier_1: 2,
 						"": 1
 					}),
@@ -6577,30 +6763,31 @@ webpackJsonp([0], {
 				type: "building",
 				map: {
 					display: !0,
-					color: e.tint,
+					color: e.mapTint || 2703694,
 					scale: 1
 				},
 				terrain: {
 					grass: !0,
 					beach: !0
 				},
+				zIdx: 1,
 				floor: {
 					surfaces: [{
 						type: "container",
-						collision: [e.open ? A.createAabbExtents(L.create(0, 0), L.create(2.5, 11)) : A.createAabbExtents(L.create(0, 0), L.create(2.5, 8))]
+						collision: [e.open ? D.createAabbExtents(L.create(0, 0), L.create(2.5, 11)) : D.createAabbExtents(L.create(0, 0), L.create(2.5, 8))]
 					}],
 					imgs: [{
-						sprite: e.open ? "img/map/map-building-container-open-floor.svg" : "img/map/map-building-container-floor.svg",
+						sprite: e.open ? "img/map/map-building-container-open-floor.svg" : "img/map/map-building-container-floor-01.svg",
 						scale: .5,
 						alpha: 1,
 						tint: e.tint
 					}]
 				},
 				ceiling: {
-					scopeIn: [e.open ? A.createAabbExtents(L.create(0, 0), L.create(2.5, 5.75)) : A.createAabbExtents(L.create(0, 2.25), L.create(2.5, 5.5))],
-					scopeOut: [e.open ? A.createAabbExtents(L.create(0, 0), L.create(2.5, 11)) : A.createAabbExtents(L.create(0, -.5), L.create(2.5, 8.75))],
+					scopeIn: [e.open ? D.createAabbExtents(L.create(0, 0), L.create(2.5, 5.75)) : D.createAabbExtents(L.create(0, 2.25), L.create(2.5, 5.5))],
+					scopeOut: [e.open ? D.createAabbExtents(L.create(0, 0), L.create(2.5, 11)) : D.createAabbExtents(L.create(0, -.5), L.create(2.5, 8.75))],
 					imgs: [{
-						sprite: "img/map/" + e.ceilingSprite,
+						sprite: "",
 						scale: .5,
 						alpha: 1,
 						tint: e.tint
@@ -6618,7 +6805,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: .5
 				},
-				collision: A.createAabbExtents(L.create(0, 0), L.create(2.25, 2.25)),
+				collision: D.createAabbExtents(L.create(0, 0), L.create(2.25, 2.25)),
 				height: .5,
 				collidable: !0,
 				destructible: !0,
@@ -6661,7 +6848,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: 1
 				},
-				collision: A.createAabbExtents(L.create(0, .15), L.create(2.5, 1)),
+				collision: D.createAabbExtents(L.create(0, .15), L.create(2.5, 1)),
 				height: 10,
 				collidable: !0,
 				destructible: !0,
@@ -6705,7 +6892,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: 1
 				},
-				collision: A.createAabbExtents(e.hinge, e.extents),
+				collision: D.createAabbExtents(e.hinge, e.extents),
 				height: 10,
 				collidable: !0,
 				destructible: !0,
@@ -6749,7 +6936,7 @@ webpackJsonp([0], {
 					enter: "none"
 				}
 			};
-			return I(B[e.material]), c(t, B[e.material], e || {})
+			return z(E[e.material]), c(t, E[e.material], e || {})
 		}
 
 		function k(e) {
@@ -6794,7 +6981,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: .75
 				},
-				collision: A.createAabbExtents(L.create(0, .15), L.create(2.5, 1.25)),
+				collision: D.createAabbExtents(L.create(0, .15), L.create(2.5, 1.25)),
 				height: .5,
 				collidable: !0,
 				destructible: !0,
@@ -6837,7 +7024,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: 1
 				},
-				collision: A.createAabbExtents(L.create(0, .15), L.create(1.5, .6)),
+				collision: D.createAabbExtents(L.create(0, .15), L.create(1.5, .6)),
 				height: 10,
 				collidable: !0,
 				destructible: !0,
@@ -6881,7 +7068,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: .8
 				},
-				collision: A.createAabbExtents(L.create(0, 0), L.create(1, 1)),
+				collision: D.createAabbExtents(L.create(0, 0), L.create(1, 1)),
 				height: .5,
 				collidable: !0,
 				destructible: !0,
@@ -6923,7 +7110,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: .8
 				},
-				collision: A.createCircle(L.create(0, .25), 1.18),
+				collision: D.createCircle(L.create(0, .25), 1.18),
 				height: .5,
 				collidable: !0,
 				destructible: !0,
@@ -6966,7 +7153,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: 1
 				},
-				collision: A.createAabbExtents(L.create(0, 0), L.copy(e.extents)),
+				collision: D.createAabbExtents(L.create(0, 0), L.copy(e.extents)),
 				height: 10,
 				isWall: !0,
 				collidable: !0,
@@ -6987,7 +7174,7 @@ webpackJsonp([0], {
 					enter: "none"
 				}
 			};
-			return I(B[e.material]), c(t, B[e.material], e || {})
+			return z(E[e.material]), c(t, E[e.material], e || {})
 		}
 
 		function P(e) {
@@ -6998,7 +7185,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: 1
 				},
-				collision: A.createAabbExtents(L.create(0, 0), L.create(.4, 2)),
+				collision: D.createAabbExtents(L.create(0, 0), L.create(.4, 2)),
 				height: 10,
 				collidable: !0,
 				destructible: !0,
@@ -7034,7 +7221,7 @@ webpackJsonp([0], {
 					createMax: 1,
 					destroy: 1
 				},
-				collision: A.createAabbExtents(L.create(0, 0), L.create(.4, 2)),
+				collision: D.createAabbExtents(L.create(0, 0), L.create(.4, 2)),
 				height: .2,
 				collidable: !0,
 				destructible: !1,
@@ -7058,17 +7245,17 @@ webpackJsonp([0], {
 				}
 			}, e || {})
 		}
-		var z = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+		var I = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
 				return typeof e
 			} : function(e) {
 				return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
 			},
-			I = a("DlZn"),
-			D = a("8iex"),
-			A = a("9xSA"),
+			z = a("DlZn"),
+			A = a("8iex"),
+			D = a("9xSA"),
 			O = a("Tf6H"),
 			L = a("/2+T"),
-			B = {
+			E = {
 				metal: {
 					destructible: !1,
 					reflectBullets: !0,
@@ -7126,7 +7313,7 @@ webpackJsonp([0], {
 					}
 				}
 			},
-			E = {
+			B = {
 				barrel_01: {
 					type: "obstacle",
 					name: "a barrel",
@@ -7135,7 +7322,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: .6
 					},
-					collision: A.createCircle(L.create(0, 0), 1.75),
+					collision: D.createCircle(L.create(0, 0), 1.75),
 					height: .5,
 					collidable: !0,
 					destructible: !0,
@@ -7172,7 +7359,7 @@ webpackJsonp([0], {
 					health: 60
 				}),
 				barrel_03: p({
-					collision: A.createAabbExtents(L.create(0, 0), L.create(1.25, .5)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(1.25, .5)),
 					health: 20,
 					img: {
 						sprite: "img/map/map-barrel-03.svg",
@@ -7181,7 +7368,7 @@ webpackJsonp([0], {
 					}
 				}),
 				barrel_04: p({
-					collision: A.createAabbExtents(L.create(0, 0), L.create(1.25, .5)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(1.25, .5)),
 					health: 20,
 					loot: [r("tier_soviet", 2, 3)],
 					img: {
@@ -7190,6 +7377,45 @@ webpackJsonp([0], {
 						scale: .45
 					}
 				}),
+				bollard_01: {
+					type: "obstacle",
+					scale: {
+						createMin: 1,
+						createMax: 1,
+						destroy: 1
+					},
+					collision: D.createCircle(L.create(0, 0), 1.25),
+					height: .5,
+					collidable: !0,
+					destructible: !1,
+					health: 300,
+					hitParticle: "barrelChip",
+					explodeParticle: "barrelFrag",
+					reflectBullets: !0,
+					loot: [],
+					map: {
+						display: !0,
+						color: 6310464,
+						scale: 1
+					},
+					terrain: {
+						grass: !0,
+						beach: !1
+					},
+					img: {
+						sprite: "img/map/map-bollard-01.svg",
+						scale: .5,
+						alpha: 1,
+						tint: 16777215,
+						zIdx: 10
+					},
+					sound: {
+						bullet: "silo_bullet",
+						punch: "silo_bullet",
+						explode: "barrel_break_01",
+						enter: "none"
+					}
+				},
 				bookshelf_01: u({
 					img: {
 						sprite: "img/map/map-bookshelf-01.svg"
@@ -7241,7 +7467,7 @@ webpackJsonp([0], {
 					loot: [r("tier_chest", 2, 2)]
 				}),
 				control_panel_01: S({
-					collision: A.createAabbExtents(L.create(0, 0), L.create(2.25, 1.7)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(2.25, 1.7)),
 					button: {
 						interactionRad: 1.75,
 						useOnce: !0,
@@ -7256,14 +7482,14 @@ webpackJsonp([0], {
 					}
 				}),
 				control_panel_02: S({
-					collision: A.createAabbExtents(L.create(0, 0), L.create(2.25, 1.7)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(2.25, 1.7)),
 					health: 175,
 					img: {
 						sprite: "img/map/map-control-panel-02.svg"
 					}
 				}),
 				control_panel_03: S({
-					collision: A.createAabbExtents(L.create(0, 0), L.create(1.25, 1.2)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(1.25, 1.2)),
 					health: 150,
 					img: {
 						sprite: "img/map/map-control-panel-03.svg"
@@ -7289,7 +7515,7 @@ webpackJsonp([0], {
 				}),
 				crate_03: b({
 					health: 100,
-					collision: A.createAabbExtents(L.create(0, 0), L.create(1.575, 1.575)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(1.575, 1.575)),
 					loot: [r("tier_throwables", 2, 4)],
 					map: {
 						color: 5066014,
@@ -7323,7 +7549,7 @@ webpackJsonp([0], {
 					}
 				}),
 				crate_05: b({
-					collision: A.createAabbExtents(L.create(0, 0), L.create(2, 2)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(2, 2)),
 					destructible: !1,
 					hitParticle: "goldChip",
 					loot: [],
@@ -7339,7 +7565,7 @@ webpackJsonp([0], {
 					}
 				}),
 				crate_06: b({
-					collision: A.createAabbExtents(L.create(0, 0), L.create(2.25, 1.1)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(2.25, 1.1)),
 					destructible: !1,
 					hitParticle: "greenChip",
 					loot: [],
@@ -7366,7 +7592,7 @@ webpackJsonp([0], {
 				}),
 				crate_08: b({
 					health: 140,
-					loot: [r("tier_surviv", 2, 3), s("outfitKhaki", 1)],
+					loot: [r("tier_surviv", 2, 3)],
 					map: {
 						display: !1
 					},
@@ -7376,6 +7602,23 @@ webpackJsonp([0], {
 					},
 					img: {
 						sprite: "img/map/map-crate-08.svg"
+					},
+					sound: {
+						explode: "crate_break_01"
+					}
+				}),
+				crate_09: b({
+					health: 140,
+					loot: [r("tier_chest", 2, 2), r("tier_conch", 1, 1)],
+					map: {
+						display: !1
+					},
+					terrain: {
+						grass: !0,
+						beach: !1
+					},
+					img: {
+						sprite: "img/map/map-crate-09.svg"
 					},
 					sound: {
 						explode: "crate_break_01"
@@ -7418,12 +7661,6 @@ webpackJsonp([0], {
 					},
 					loot: [r("tier_police", 1, 1)]
 				}),
-				locker_03: w({
-					img: {
-						sprite: "img/map/map-locker-02.svg"
-					},
-					loot: [r("tier_surviv", 1, 1), s("outfitKhaki", 1)]
-				}),
 				oven_01: {
 					type: "obstacle",
 					name: "an oven",
@@ -7432,7 +7669,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: .75
 					},
-					collision: A.createAabbExtents(L.create(0, .15), L.create(1.7, 1.3)),
+					collision: D.createAabbExtents(L.create(0, .15), L.create(1.7, 1.3)),
 					height: .5,
 					collidable: !0,
 					destructible: !0,
@@ -7473,7 +7710,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: .75
 					},
-					collision: A.createAabbExtents(L.create(0, .15), L.create(1.7, 1.25)),
+					collision: D.createAabbExtents(L.create(0, .15), L.create(1.7, 1.25)),
 					height: .5,
 					collidable: !0,
 					destructible: !1,
@@ -7508,12 +7745,17 @@ webpackJsonp([0], {
 				},
 				sandbags_01: {
 					type: "obstacle",
+					map: {
+						display: !0,
+						color: 13278307,
+						scale: 1
+					},
 					scale: {
 						createMin: 1,
 						createMax: 1,
 						destroy: .5
 					},
-					collision: A.createAabbExtents(L.create(0, 0), L.create(3.1, 1.4)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(3.1, 1.4)),
 					height: .5,
 					collidable: !0,
 					destructible: !1,
@@ -7522,11 +7764,6 @@ webpackJsonp([0], {
 					explodeParticle: "barrelFrag",
 					reflectBullets: !1,
 					loot: [],
-					map: {
-						display: !1,
-						color: 16777215,
-						scale: 1.75
-					},
 					img: {
 						sprite: "img/map/map-sandbags-01.svg",
 						scale: .5,
@@ -7541,6 +7778,56 @@ webpackJsonp([0], {
 						enter: "none"
 					}
 				},
+				container_05_collider: T({
+					material: "metal",
+					extents: L.create(2.75, 6)
+				}),
+				container_05: {
+					type: "building",
+					scale: {
+						createMin: 1,
+						createMax: 1,
+						destroy: .5
+					},
+					zIdx: 1,
+					map: {
+						display: !0,
+						color: 11485762,
+						scale: 1
+					},
+					terrain: {
+						grass: !1,
+						beach: !1
+					},
+					floor: {
+						surfaces: [{
+							type: "container",
+							collision: [D.createAabbExtents(L.create(0, 0), L.create(0, 0))]
+						}],
+						imgs: [{
+							sprite: "",
+							scale: .5,
+							alpha: 1,
+							tint: 16777215
+						}]
+					},
+					ceiling: {
+						scopeIn: [D.createAabbExtents(L.create(0, 2.4), L.create(2.5, 5.75))],
+						scopeOut: [D.createAabbExtents(L.create(0, 2.4), L.create(2.5, 5.75))],
+						imgs: [{
+							sprite: "",
+							scale: .5,
+							alpha: 1,
+							tint: 11485762
+						}]
+					},
+					mapObjects: [{
+						type: "container_05_collider",
+						pos: L.create(0, 2.4),
+						scale: 1,
+						ori: 0
+					}]
+				},
 				silo_01: {
 					type: "obstacle",
 					scale: {
@@ -7548,7 +7835,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: 1
 					},
-					collision: A.createCircle(L.create(0, 0), 7.75),
+					collision: D.createCircle(L.create(0, 0), 7.75),
 					height: 10,
 					collidable: !0,
 					destructible: !1,
@@ -7587,7 +7874,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: 1
 					},
-					collision: A.createAabbExtents(L.create(0, 0), L.create(2.5, 2)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(2.5, 2)),
 					height: .5,
 					collidable: !1,
 					destructible: !0,
@@ -7609,7 +7896,7 @@ webpackJsonp([0], {
 						sprite: "img/map/map-stairs-broken-01.svg",
 						residue: "img/map/map-table-res.svg",
 						scale: .5,
-						alpha: .4,
+						alpha: 1,
 						tint: 16777215,
 						zIdx: 60
 					},
@@ -7627,7 +7914,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: .75
 					},
-					collision: A.createAabbExtents(L.create(0, .15), L.create(1.25, 1.25)),
+					collision: D.createAabbExtents(L.create(0, .15), L.create(1.25, 1.25)),
 					height: .5,
 					collidable: !0,
 					destructible: !0,
@@ -7667,7 +7954,7 @@ webpackJsonp([0], {
 						createMax: 1.2,
 						destroy: .5
 					},
-					collision: A.createCircle(L.create(0, 0), 1.6),
+					collision: D.createCircle(L.create(0, 0), 1.6),
 					height: .5,
 					collidable: !0,
 					destructible: !0,
@@ -7707,7 +7994,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: .75
 					},
-					collision: A.createAabbExtents(L.create(0, 0), L.create(2.5, 2)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(2.5, 2)),
 					height: .5,
 					collidable: !1,
 					destructible: !0,
@@ -7729,7 +8016,7 @@ webpackJsonp([0], {
 						sprite: "img/map/map-table-01.svg",
 						residue: "img/map/map-table-res.svg",
 						scale: .5,
-						alpha: .4,
+						alpha: 1,
 						tint: 16777215,
 						zIdx: 60
 					},
@@ -7747,7 +8034,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: .75
 					},
-					collision: A.createAabbExtents(L.create(0, 0), L.create(4.5, 2.5)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(4.5, 2.5)),
 					height: .5,
 					collidable: !1,
 					destructible: !0,
@@ -7769,7 +8056,7 @@ webpackJsonp([0], {
 						sprite: "img/map/map-table-02.svg",
 						residue: "img/map/map-table-res.svg",
 						scale: .5,
-						alpha: .4,
+						alpha: 1,
 						tint: 16777215,
 						zIdx: 60
 					},
@@ -7829,8 +8116,8 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: .5
 					},
-					collision: A.createCircle(L.create(0, 0), 1.55),
-					aabb: A.createAabbExtents(L.create(0, 0), L.create(5.75, 5.75)),
+					collision: D.createCircle(L.create(0, 0), 1.55),
+					aabb: D.createAabbExtents(L.create(0, 0), L.create(5.75, 5.75)),
 					height: 10,
 					collidable: !0,
 					destructible: !0,
@@ -7863,42 +8150,6 @@ webpackJsonp([0], {
 						enter: "none"
 					}
 				},
-				tree_02: {
-					type: "obstacle",
-					scale: {
-						createMin: .8,
-						createMax: 1,
-						destroy: .5
-					},
-					collision: A.createCircle(L.create(0, 0), 4.4),
-					height: 10,
-					collidable: !0,
-					destructible: !1,
-					health: 100,
-					hitParticle: "woodChip",
-					explodeParticle: "woodLog",
-					reflectBullets: !1,
-					loot: [],
-					map: {
-						display: !0,
-						color: 4083758,
-						scale: 2.25
-					},
-					img: {
-						sprite: "img/map/map-tree-03.svg",
-						residue: "img/map/map-tree-res.svg",
-						scale: 1,
-						alpha: .4,
-						tint: 16777215,
-						zIdx: 230
-					},
-					sound: {
-						bullet: "tree_bullet",
-						punch: "tree_bullet",
-						explode: "tree_break_01",
-						enter: "none"
-					}
-				},
 				vat_01: {
 					type: "obstacle",
 					scale: {
@@ -7906,7 +8157,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: .9
 					},
-					collision: A.createCircle(L.create(0, 0), 2),
+					collision: D.createCircle(L.create(0, 0), 2),
 					height: .5,
 					collidable: !0,
 					destructible: !0,
@@ -7946,7 +8197,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: .95
 					},
-					collision: A.createCircle(L.create(0, 0), 3.1),
+					collision: D.createCircle(L.create(0, 0), 3.1),
 					height: .5,
 					collidable: !0,
 					destructible: !1,
@@ -7986,7 +8237,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: .75
 					},
-					collision: A.createAabbExtents(L.create(0, .15), L.create(1.7, 1.25)),
+					collision: D.createAabbExtents(L.create(0, .15), L.create(1.7, 1.25)),
 					height: .5,
 					collidable: !0,
 					destructible: !0,
@@ -8026,7 +8277,7 @@ webpackJsonp([0], {
 						createMax: 1,
 						destroy: 1
 					},
-					collision: A.createAabbExtents(L.create(0, 0), L.create(.4, 2)),
+					collision: D.createAabbExtents(L.create(0, 0), L.create(.4, 2)),
 					height: 10,
 					collidable: !0,
 					destructible: !0,
@@ -8143,7 +8394,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "grass",
-							collision: [A.createAabbExtents(L.create(0, 0), L.create(3, 3))]
+							collision: [D.createAabbExtents(L.create(0, 0), L.create(3, 3))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-hedgehog-01.svg",
@@ -8153,8 +8404,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, 0), L.create(0, 0))],
-						scopeOut: [A.createAabbExtents(L.create(0, 0), L.create(0, 0))],
+						scopeIn: [D.createAabbExtents(L.create(0, 0), L.create(0, 0))],
+						scopeOut: [D.createAabbExtents(L.create(0, 0), L.create(0, 0))],
 						imgs: []
 					},
 					mapObjects: [{
@@ -8177,156 +8428,660 @@ webpackJsonp([0], {
 					material: "metal",
 					extents: L.create(.6, 3.2)
 				}),
-				warehouse_01: {
+				warehouse_01: function(e) {
+					return c({
+						type: "building",
+						map: {
+							display: !0,
+							shapes: [{
+								collider: D.createAabbExtents(L.create(27, 0), L.create(3, 12.25)),
+								color: 10066329
+							}, {
+								collider: D.createAabbExtents(L.create(-27, 0), L.create(3, 12.25)),
+								color: 10066329
+							}, {
+								collider: D.createAabbExtents(L.create(0, 0), L.create(24.5, 12.25)),
+								color: 5915450
+							}]
+						},
+						zIdx: 1,
+						terrain: {
+							grass: !0,
+							beach: !1
+						},
+						floor: {
+							surfaces: [{
+								type: "warehouse",
+								collision: [D.createAabbExtents(L.create(0, 0), L.create(32, 12.5))]
+							}],
+							imgs: [{
+								sprite: "img/map/map-building-warehouse-floor-01.svg",
+								scale: .5,
+								alpha: 1,
+								tint: 16777215
+							}]
+						},
+						ceiling: {
+							scopeIn: [D.createAabbExtents(L.create(0, 0), L.create(24.5, 12.25))],
+							scopeOut: [D.createAabbExtents(L.create(0, 0), L.create(32, 12.5))],
+							vision: {
+								dist: 8,
+								width: 5
+							},
+							imgs: [{
+								sprite: "",
+								scale: .5,
+								alpha: 1,
+								tint: 16777215
+							}]
+						},
+						mapObjects: [{
+							type: "warehouse_wall_side",
+							pos: L.create(0, 11.9),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "warehouse_wall_edge",
+							pos: L.create(-24.4, 8.2),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "warehouse_wall_edge",
+							pos: L.create(24.4, 8.2),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "warehouse_wall_side",
+							pos: L.create(0, -11.9),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "warehouse_wall_edge",
+							pos: L.create(-24.4, -8.2),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "warehouse_wall_edge",
+							pos: L.create(24.4, -8.2),
+							scale: 1,
+							ori: 0
+						}, {
+							type: e.topLeftObs,
+							pos: L.create(-21.25, 8.75),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "crate_04",
+							pos: L.create(-16.25, 8.75),
+							scale: 1,
+							ori: 1
+						}, {
+							type: "crate_01",
+							pos: L.create(-21.25, -8.75),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "barrel_01",
+							pos: L.create(-16.5, -8.75),
+							scale: .9,
+							ori: 0
+						}, {
+							type: e.topRightObs,
+							pos: L.create(21.25, 8.75),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "barrel_01",
+							pos: L.create(16.5, 8.75),
+							scale: .9,
+							ori: 0
+						}, {
+							type: "crate_04",
+							pos: L.create(16.25, -8.75),
+							scale: 1,
+							ori: 1
+						}, {
+							type: e.botRightObs,
+							pos: L.create(21.25, -8.75),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: m({
+								crate_02: 1,
+								crate_01: 3
+							}),
+							pos: L.create(0, 0),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "crate_01",
+							pos: L.create(5, 0),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "crate_01",
+							pos: L.create(-5, 0),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "crate_04",
+							pos: L.create(0, 5),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "crate_04",
+							pos: L.create(0, -5),
+							scale: 1,
+							ori: 0
+						}]
+					}, e || {})
+				}({
+					topLeftObs: "crate_01",
+					topRightObs: "crate_01",
+					botRightObs: "crate_01"
+				}),
+				warehouse_02: function(e) {
+					return c({
+						type: "building",
+						map: {
+							display: !0,
+							shapes: [{
+								collider: D.createAabbExtents(L.create(25, 0), L.create(3, 12.25)),
+								color: 10066329
+							}, {
+								collider: D.createAabbExtents(L.create(-25, 0), L.create(3, 12.25)),
+								color: 10066329
+							}, {
+								collider: D.createAabbExtents(L.create(0, 0), L.create(22.5, 12.25)),
+								color: 2240064
+							}]
+						},
+						zIdx: 1,
+						terrain: {
+							grass: !0,
+							beach: !1
+						},
+						floor: {
+							surfaces: [{
+								type: "warehouse",
+								collision: [D.createAabbExtents(L.create(0, 0), L.create(27.5, 12.5))]
+							}],
+							imgs: [{
+								sprite: "img/map/map-building-warehouse-floor-02.svg",
+								scale: .5,
+								alpha: 1,
+								tint: 16777215
+							}]
+						},
+						ceiling: {
+							scopeIn: [D.createAabbExtents(L.create(0, 0), L.create(22, 12.25))],
+							scopeOut: [D.createAabbExtents(L.create(0, 0), L.create(27.5, 12.5))],
+							vision: {
+								dist: 8,
+								width: 5
+							},
+							imgs: [{
+								sprite: "",
+								scale: .5,
+								alpha: 1,
+								tint: 16777215
+							}]
+						},
+						mapObjects: [{
+							type: "metal_wall_ext_43",
+							pos: L.create(0, 12),
+							scale: 1,
+							ori: 1
+						}, {
+							type: "metal_wall_ext_8",
+							pos: L.create(-21.9, 8.5),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "metal_wall_ext_8",
+							pos: L.create(21.9, 8.5),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "metal_wall_ext_43",
+							pos: L.create(0, -12),
+							scale: 1,
+							ori: 1
+						}, {
+							type: "metal_wall_ext_8",
+							pos: L.create(-21.9, -8.5),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "metal_wall_ext_8",
+							pos: L.create(21.9, -8.5),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "crate_01",
+							pos: L.create(-18.75, 8.75),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "barrel_01",
+							pos: L.create(-14, 8.75),
+							scale: .9,
+							ori: 0
+						}, {
+							type: "crate_06",
+							pos: L.create(-18.75, -6),
+							scale: 1,
+							ori: 0
+						}, {
+							type: m({
+								loot_tier_1: 1,
+								"": 1
+							}),
+							pos: L.create(-19.5, -9.5),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "crate_06",
+							pos: L.create(18.75, 6),
+							scale: 1,
+							ori: 0
+						}, {
+							type: m({
+								loot_tier_1: 1,
+								"": 1
+							}),
+							pos: L.create(19.5, 9.5),
+							scale: 1,
+							ori: 0
+						}, {
+							type: "crate_01",
+							pos: L.create(18.75, -8.75),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "barrel_01",
+							pos: L.create(14, -8.75),
+							scale: .9,
+							ori: 0
+						}, {
+							type: m({
+								crate_08: 24,
+								crate_09: 1
+							}),
+							pos: L.create(0, 0),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "crate_01",
+							pos: L.create(0, 5),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "crate_01",
+							pos: L.create(0, -5),
+							scale: 1,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "crate_06",
+							pos: L.create(4, -5),
+							scale: 1,
+							ori: 1
+						}, {
+							type: "crate_06",
+							pos: L.create(-4, 5),
+							scale: 1,
+							ori: 1
+						}, {
+							type: "barrel_01",
+							pos: L.create(4.5, 0),
+							scale: .9,
+							ori: 0,
+							inheritOri: !1
+						}, {
+							type: "barrel_01",
+							pos: L.create(-4.5, 0),
+							scale: .9,
+							ori: 0,
+							inheritOri: !1
+						}]
+					}, e || {})
+				}({}),
+				warehouse_complex_01: {
 					type: "building",
 					map: {
 						display: !0,
 						shapes: [{
-							collider: A.createAabbExtents(L.create(27, 0), L.create(3, 12.25)),
-							color: 10066329
+							collider: D.createAabbExtents(L.create(26, 70.5), L.create(47, 7.5)),
+							color: 5855577
 						}, {
-							collider: A.createAabbExtents(L.create(-27, 0), L.create(3, 12.25)),
-							color: 10066329
+							collider: D.createAabbExtents(L.create(15.5, 52.5), L.create(57.5, 10.5)),
+							color: 5855577
 						}, {
-							collider: A.createAabbExtents(L.create(0, 0), L.create(24.5, 12.25)),
-							color: 5915450
+							collider: D.createAabbExtents(L.create(33, 11), L.create(75, 31)),
+							color: 5855577
+						}, {
+							collider: D.createAabbExtents(L.create(5, -30), L.create(47, 10)),
+							color: 5855577
+						}, {
+							collider: D.createAabbExtents(L.create(-39.75, 11.25), L.create(2, 51)),
+							color: 16109568
+						}, {
+							collider: D.createCircle(L.create(-39, 55), 1.25),
+							color: 6310464
+						}, {
+							collider: D.createCircle(L.create(-39, 20.5), 1.25),
+							color: 6310464
+						}, {
+							collider: D.createCircle(L.create(-39, 2), 1.25),
+							color: 6310464
+						}, {
+							collider: D.createCircle(L.create(-39, -31.5), 1.25),
+							color: 6310464
+						}, {
+							collider: D.createAabbExtents(L.create(-28, -30), L.create(2, 2)),
+							color: 6697728
+						}, {
+							collider: D.createAabbExtents(L.create(-23, -33), L.create(2, 2)),
+							color: 6697728
+						}, {
+							collider: D.createAabbExtents(L.create(7, 70), L.create(2, 2)),
+							color: 6697728
+						}, {
+							collider: D.createAabbExtents(L.create(12, 72), L.create(2, 2)),
+							color: 6697728
+						}, {
+							collider: D.createCircle(L.create(-26.5, 54.75), 1.75),
+							color: 8026746
+						}, {
+							collider: D.createCircle(L.create(-23.5, 57), 1.75),
+							color: 8026746
+						}, {
+							collider: D.createCircle(L.create(84, -15.5), 1.75),
+							color: 8026746
+						}, {
+							collider: D.createCircle(L.create(40, -35), 1.5),
+							color: 8026746
+						}, {
+							collider: D.createCircle(L.create(65, 61), 1.5),
+							color: 8026746
+						}, {
+							collider: D.createAabbExtents(L.create(44.5, -25), L.create(3.1, 1.4)),
+							color: 13278307
+						}, {
+							collider: D.createAabbExtents(L.create(58, 47.5), L.create(1.4, 3.1)),
+							color: 13278307
 						}]
 					},
 					terrain: {
-						grass: !0,
-						beach: !1
+						grass: !1,
+						beach: !1,
+						waterEdge: L.create(-72, 0)
 					},
+					mapObstacleBounds: [D.createAabbExtents(L.create(26, 70.5), L.create(47, 7.5)), D.createAabbExtents(L.create(15.5, 52.5), L.create(57.5, 10.5)), D.createAabbExtents(L.create(33, 11), L.create(75, 31)), D.createAabbExtents(L.create(5, -30), L.create(47, 10))],
 					floor: {
 						surfaces: [{
-							type: "warehouse",
-							collision: [A.createAabbExtents(L.create(0, 0), L.create(32, 12.5))]
+							type: "asphalt",
+							collision: [D.createAabbExtents(L.create(26, 70.5), L.create(47, 7.5)), D.createAabbExtents(L.create(15.5, 52.5), L.create(57.5, 10.5)), D.createAabbExtents(L.create(33, 11), L.create(75, 31)), D.createAabbExtents(L.create(5, -30), L.create(47, 10))]
 						}],
 						imgs: [{
-							sprite: "img/map/map-building-warehouse-floor.svg",
-							scale: .5,
+							sprite: "img/map/map-complex-warehouse-floor.svg",
+							pos: L.create(33, 19),
+							scale: 1,
 							alpha: 1,
 							tint: 16777215
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, 0), L.create(24.5, 12.25))],
-						scopeOut: [A.createAabbExtents(L.create(0, 0), L.create(32, 12.5))],
-						vision: {
-							dist: 8,
-							width: 5
-						},
-						imgs: [{
-							sprite: "",
-							scale: .5,
-							alpha: 1,
-							tint: 16777215
-						}]
+						scopeIn: [D.createAabbExtents(L.create(0, 0), L.create(0, 0))],
+						scopeOut: [D.createAabbExtents(L.create(0, 0), L.create(0, 0))],
+						imgs: []
 					},
 					mapObjects: [{
-						type: "warehouse_wall_side",
-						pos: L.create(0, 11.9),
-						scale: 1,
-						ori: 0
-					}, {
-						type: "warehouse_wall_edge",
-						pos: L.create(-24.4, 8.2),
-						scale: 1,
-						ori: 0
-					}, {
-						type: "warehouse_wall_edge",
-						pos: L.create(24.4, 8.2),
-						scale: 1,
-						ori: 0
-					}, {
-						type: "warehouse_wall_side",
-						pos: L.create(0, -11.9),
-						scale: 1,
-						ori: 0
-					}, {
-						type: "warehouse_wall_edge",
-						pos: L.create(-24.4, -8.2),
-						scale: 1,
-						ori: 0
-					}, {
-						type: "warehouse_wall_edge",
-						pos: L.create(24.4, -8.2),
-						scale: 1,
-						ori: 0
-					}, {
-						type: "crate_01",
-						pos: L.create(-21.25, 8.75),
-						scale: 1,
-						ori: 0,
-						inheritOri: !1
-					}, {
-						type: "crate_04",
-						pos: L.create(-16.25, 8.75),
-						scale: 1,
-						ori: 1
-					}, {
-						type: "crate_01",
-						pos: L.create(-21.25, -8.75),
-						scale: 1,
-						ori: 0,
-						inheritOri: !1
-					}, {
-						type: "barrel_01",
-						pos: L.create(-16.5, -8.75),
-						scale: .9,
-						ori: 0
-					}, {
-						type: "crate_01",
-						pos: L.create(21.25, 8.75),
-						scale: 1,
-						ori: 0,
-						inheritOri: !1
-					}, {
-						type: "barrel_01",
-						pos: L.create(16.5, 8.75),
-						scale: .9,
-						ori: 0
-					}, {
-						type: "crate_04",
-						pos: L.create(16.25, -8.75),
-						scale: 1,
-						ori: 1
-					}, {
-						type: "crate_01",
-						pos: L.create(21.25, -8.75),
-						scale: 1,
-						ori: 0,
-						inheritOri: !1
-					}, {
-						type: m({
-							crate_02: 1,
-							crate_01: 3
-						}),
-						pos: L.create(0, 0),
-						scale: 1,
-						ori: 0,
-						inheritOri: !1
-					}, {
-						type: "crate_01",
+						type: "warehouse_02",
 						pos: L.create(5, 0),
 						scale: 1,
-						ori: 0,
-						inheritOri: !1
+						ori: 0
+					}, {
+						type: "warehouse_02",
+						pos: L.create(70, 0),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "warehouse_02",
+						pos: L.create(18, 55),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "bollard_01",
+						pos: L.create(-39, 55),
+						scale: 1,
+						ori: 2
+					}, {
+						type: m({
+							container_01: 1,
+							container_02: 1,
+							container_03: 1,
+							container_06: .12
+						}),
+						pos: L.create(-37.5, 38),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "bollard_01",
+						pos: L.create(-39, 20.5),
+						scale: 1,
+						ori: 2
+					}, {
+						type: "bollard_01",
+						pos: L.create(-39, 2),
+						scale: 1,
+						ori: 2
+					}, {
+						type: m({
+							container_01: 1,
+							container_02: 1,
+							container_03: 1,
+							container_06: .12
+						}),
+						pos: L.create(-37.5, -14),
+						scale: 1,
+						ori: 2
+					}, {
+						type: "bollard_01",
+						pos: L.create(-39, -31.5),
+						scale: 1,
+						ori: 2
 					}, {
 						type: "crate_01",
-						pos: L.create(-5, 0),
-						scale: 1,
-						ori: 0,
-						inheritOri: !1
-					}, {
-						type: "crate_04",
-						pos: L.create(0, 5),
+						pos: L.create(-28, -30),
 						scale: 1,
 						ori: 0
 					}, {
-						type: "crate_04",
-						pos: L.create(0, -5),
+						type: "crate_01",
+						pos: L.create(-23, -33),
 						scale: 1,
 						ori: 0
+					}, {
+						type: "container_04",
+						pos: L.create(-11.5, -26.575),
+						scale: 1,
+						ori: 0
+					}, {
+						type: m({
+							container_01: 1,
+							container_02: 1,
+							container_03: 1,
+							container_05: 2,
+							container_06: .12,
+							"": .75
+						}),
+						pos: L.create(-6, -29),
+						scale: 1,
+						ori: 0
+					}, {
+						type: m({
+							container_01: 1,
+							container_02: 1,
+							container_03: 1,
+							container_05: 2,
+							container_06: .12,
+							"": .75
+						}),
+						pos: L.create(9.5, -29),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "container_04",
+						pos: L.create(15, -26.575),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "shack_02",
+						pos: L.create(37, -30),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "sandbags_01",
+						pos: L.create(44.5, -25),
+						scale: 1,
+						ori: 1
+					}, {
+						type: "barrel_01",
+						pos: L.create(84, -15.5),
+						scale: 1,
+						ori: 0
+					}, {
+						type: m({
+							container_01: 1,
+							container_02: 1,
+							container_03: 1,
+							container_05: 2,
+							container_06: .12,
+							"": .75
+						}),
+						pos: L.create(-3, 22),
+						scale: 1,
+						ori: 1
+					}, {
+						type: "container_04",
+						pos: L.create(-5.425, 27.5),
+						scale: 1,
+						ori: 1
+					}, {
+						type: m({
+							container_01: 1,
+							container_02: 1,
+							container_03: 1,
+							container_05: 2,
+							container_06: .12,
+							"": .75
+						}),
+						pos: L.create(-3, 33),
+						scale: 1,
+						ori: 1
+					}, {
+						type: "container_04",
+						pos: L.create(28, 22),
+						scale: 1,
+						ori: 1
+					}, {
+						type: "container_04",
+						pos: L.create(28, 27.5),
+						scale: 1,
+						ori: 1
+					}, {
+						type: "container_04",
+						pos: L.create(28, 33),
+						scale: 1,
+						ori: 1
+					}, {
+						type: m({
+							container_01: 1,
+							container_02: 1,
+							container_03: 1,
+							container_05: 2,
+							container_06: .12,
+							"": .75
+						}),
+						pos: L.create(53, 22),
+						scale: 1,
+						ori: 3
+					}, {
+						type: "container_04",
+						pos: L.create(55.425, 27.5),
+						scale: 1,
+						ori: 1
+					}, {
+						type: m({
+							container_01: 1,
+							container_02: 1,
+							container_03: 1,
+							container_05: 2,
+							container_06: .12,
+							"": .75
+						}),
+						pos: L.create(53, 33),
+						scale: 1,
+						ori: 3
+					}, {
+						type: "container_04",
+						pos: L.create(84, 22),
+						scale: 1,
+						ori: 3
+					}, {
+						type: m({
+							container_01: 1,
+							container_02: 1,
+							container_03: 1,
+							container_05: 2,
+							container_06: .12,
+							"": .75
+						}),
+						pos: L.create(86.425, 27.5),
+						scale: 1,
+						ori: 1
+					}, {
+						type: "barrel_01",
+						pos: L.create(-26.5, 54.75),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "barrel_01",
+						pos: L.create(-23.5, 57),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "crate_01",
+						pos: L.create(7, 70),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "crate_01",
+						pos: L.create(12, 72),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "shack_02",
+						pos: L.create(60, 58),
+						scale: 1,
+						ori: 1
+					}, {
+						type: "sandbags_01",
+						pos: L.create(58, 47.5),
+						scale: 1,
+						ori: 1
 					}]
 				},
 				shack_wall_top: T({
@@ -8367,18 +9122,18 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "shack",
-							collision: [A.createAabbExtents(L.create(0, .9), L.create(5.6, 3.5)), A.createAabbExtents(L.create(3.75, -4), L.create(2.25, 1.5))]
+							collision: [D.createAabbExtents(L.create(0, .9), L.create(5.6, 3.5)), D.createAabbExtents(L.create(3.75, -4), L.create(2.25, 1.5))]
 						}],
 						imgs: [{
-							sprite: "img/map/map-building-shack-floor.svg",
+							sprite: "img/map/map-building-shack-floor-01.svg",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, .9), L.create(5.6, 3.5))],
-						scopeOut: [A.createAabbExtents(L.create(0, .8), L.create(5.9, 3.8))],
+						scopeIn: [D.createAabbExtents(L.create(0, .9), L.create(5.6, 3.5))],
+						scopeOut: [D.createAabbExtents(L.create(0, .8), L.create(5.9, 3.8))],
 						vision: {
 							width: 4
 						},
@@ -8392,7 +9147,7 @@ webpackJsonp([0], {
 							wallCount: 2,
 							particle: "shackFrag",
 							particleCount: 25,
-							residue: "img/map/map-shack-res.svg"
+							residue: "img/map/map-shack-res-01.svg"
 						}
 					},
 					mapObjects: [{
@@ -8443,6 +9198,88 @@ webpackJsonp([0], {
 						ori: 0
 					}]
 				},
+				shack_02: {
+					type: "building",
+					map: {
+						display: !0,
+						color: 4014894,
+						scale: 1
+					},
+					terrain: {
+						grass: !0,
+						beach: !1
+					},
+					zIdx: 1,
+					floor: {
+						surfaces: [{
+							type: "shack",
+							collision: [D.createAabbExtents(L.create(0, 1), L.create(5, 4)), D.createAabbExtents(L.create(3.75, -4), L.create(2.25, 1.5))]
+						}],
+						imgs: [{
+							sprite: "img/map/map-building-shack-floor-02.svg",
+							scale: .5,
+							alpha: 1,
+							tint: 16777215
+						}]
+					},
+					ceiling: {
+						scopeIn: [D.createAabbExtents(L.create(0, 1), L.create(5, 4))],
+						scopeOut: [D.createAabbExtents(L.create(0, 1), L.create(0, 0))],
+						vision: {
+							width: 4
+						},
+						imgs: [{
+							sprite: "",
+							scale: .5,
+							alpha: 1,
+							tint: 16777215
+						}],
+						destroy: {
+							wallCount: 2,
+							particle: "shackFrag",
+							particleCount: 25,
+							residue: "img/map/map-shack-res-02.svg"
+						}
+					},
+					mapObjects: [{
+						type: "barn_wall_int_2",
+						pos: L.create(-3, -2.5),
+						scale: 1,
+						ori: 1
+					}, {
+						type: "barn_wall_int_2",
+						pos: L.create(3, -2.5),
+						scale: 1,
+						ori: 1
+					}, {
+						type: "barn_wall_int_8",
+						pos: L.create(-4.5, 1),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "barn_wall_int_8",
+						pos: L.create(4.5, 1),
+						scale: 1,
+						ori: 0
+					}, {
+						type: "barn_wall_int_8",
+						pos: L.create(0, 4.5),
+						scale: 1,
+						ori: 1
+					}, {
+						type: "barrel_01",
+						pos: L.create(4, -4.5),
+						scale: .8,
+						ori: 0
+					}, {
+						type: m({
+							loot_tier_1: 1
+						}),
+						pos: L.create(0, 1),
+						scale: 1,
+						ori: 0
+					}]
+				},
 				outhouse_wall_top: T({
 					material: "wood",
 					extents: L.create(3.2, .35),
@@ -8481,10 +9318,11 @@ webpackJsonp([0], {
 						grass: !0,
 						beach: !1
 					},
+					zIdx: 1,
 					floor: {
 						surfaces: [{
 							type: "shack",
-							collision: [A.createAabbExtents(L.create(0, 0), L.create(3.8, 5))]
+							collision: [D.createAabbExtents(L.create(0, 0), L.create(3.8, 5))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-building-outhouse-floor.svg",
@@ -8494,8 +9332,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, 1.45), L.create(3.6, 3.2))],
-						scopeOut: [A.createAabbExtents(L.create(0, 1.4), L.create(3.8, 3.4))],
+						scopeIn: [D.createAabbExtents(L.create(0, 1.45), L.create(3.6, 3.2))],
+						scopeOut: [D.createAabbExtents(L.create(0, 1.4), L.create(3.8, 3.4))],
 						imgs: [{
 							sprite: "",
 							scale: .5,
@@ -8600,10 +9438,6 @@ webpackJsonp([0], {
 					material: "brick",
 					extents: L.create(.5, 7)
 				}),
-				brick_wall_ext_15: T({
-					material: "brick",
-					extents: L.create(.5, 7.5)
-				}),
 				brick_wall_ext_16: T({
 					material: "brick",
 					extents: L.create(.5, 8)
@@ -8627,10 +9461,6 @@ webpackJsonp([0], {
 				brick_wall_ext_21: T({
 					material: "brick",
 					extents: L.create(.5, 10.5)
-				}),
-				brick_wall_ext_22: T({
-					material: "brick",
-					extents: L.create(.5, 11)
 				}),
 				brick_wall_ext_23: T({
 					material: "brick",
@@ -8669,14 +9499,6 @@ webpackJsonp([0], {
 					material: "brick",
 					extents: L.create(1.5, 4.5)
 				}),
-				brick_wall_ext_thicker_12: T({
-					material: "brick",
-					extents: L.create(1.5, 6)
-				}),
-				brick_wall_ext_thicker_14: T({
-					material: "brick",
-					extents: L.create(1.5, 7)
-				}),
 				brick_wall_ext_thicker_15: T({
 					material: "brick",
 					extents: L.create(1.5, 7.5)
@@ -8689,14 +9511,6 @@ webpackJsonp([0], {
 					material: "brick",
 					extents: L.create(1.5, 12)
 				}),
-				metal_wall_ext_1: T({
-					material: "metal",
-					extents: L.create(.5, .5)
-				}),
-				metal_wall_ext_2: T({
-					material: "metal",
-					extents: L.create(.5, 1)
-				}),
 				metal_wall_ext_3: T({
 					material: "metal",
 					extents: L.create(.5, 1.5)
@@ -8704,10 +9518,6 @@ webpackJsonp([0], {
 				metal_wall_ext_4: T({
 					material: "metal",
 					extents: L.create(.5, 2)
-				}),
-				metal_wall_ext_5: T({
-					material: "metal",
-					extents: L.create(.5, 2.5)
 				}),
 				metal_wall_ext_6: T({
 					material: "metal",
@@ -8729,45 +9539,17 @@ webpackJsonp([0], {
 					material: "metal",
 					extents: L.create(.5, 5)
 				}),
-				metal_wall_ext_11: T({
-					material: "metal",
-					extents: L.create(.5, 5.5)
-				}),
 				metal_wall_ext_12: T({
 					material: "metal",
 					extents: L.create(.5, 6)
-				}),
-				metal_wall_ext_13: T({
-					material: "metal",
-					extents: L.create(.5, 6.5)
-				}),
-				metal_wall_ext_14: T({
-					material: "metal",
-					extents: L.create(.5, 7)
-				}),
-				metal_wall_ext_15: T({
-					material: "metal",
-					extents: L.create(.5, 7.5)
-				}),
-				metal_wall_ext_16: T({
-					material: "metal",
-					extents: L.create(.5, 8)
-				}),
-				metal_wall_ext_17: T({
-					material: "metal",
-					extents: L.create(.5, 8.5)
 				}),
 				metal_wall_ext_18: T({
 					material: "metal",
 					extents: L.create(.5, 9)
 				}),
-				metal_wall_ext_19: T({
+				metal_wall_ext_43: T({
 					material: "metal",
-					extents: L.create(.5, 9.5)
-				}),
-				metal_wall_ext_20: T({
-					material: "metal",
-					extents: L.create(.5, 10)
+					extents: L.create(.5, 21.5)
 				}),
 				metal_wall_ext_short_6: T({
 					material: "metal",
@@ -8786,10 +9568,6 @@ webpackJsonp([0], {
 				metal_wall_ext_thick_20: T({
 					material: "metal",
 					extents: L.create(1, 10)
-				}),
-				metal_wall_ext_thicker_3: T({
-					material: "metal",
-					extents: L.create(1.5, 1.5)
 				}),
 				metal_wall_ext_thicker_4: T({
 					material: "metal",
@@ -8822,10 +9600,6 @@ webpackJsonp([0], {
 				metal_wall_ext_thicker_11: T({
 					material: "metal",
 					extents: L.create(1.5, 5.5)
-				}),
-				metal_wall_ext_thicker_12: T({
-					material: "metal",
-					extents: L.create(1.5, 6)
 				}),
 				metal_wall_ext_thicker_13: T({
 					material: "metal",
@@ -8862,10 +9636,6 @@ webpackJsonp([0], {
 				metal_wall_ext_thicker_21: T({
 					material: "metal",
 					extents: L.create(1.5, 10.5)
-				}),
-				metal_wall_ext_thicker_22: T({
-					material: "metal",
-					extents: L.create(1.5, 11)
 				}),
 				metal_wall_ext_thicker_23: T({
 					material: "metal",
@@ -8938,7 +9708,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "container",
-							collision: [A.createAabbExtents(L.create(0, 0), L.create(4.5, 6))]
+							collision: [D.createAabbExtents(L.create(0, 0), L.create(4.5, 6))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-building-panicroom-floor.svg",
@@ -8948,8 +9718,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, 0), L.create(4.5, 6))],
-						scopeOut: [A.createAabbExtents(L.create(0, 0), L.create(4.5, 6))],
+						scopeIn: [D.createAabbExtents(L.create(0, 0), L.create(4.5, 6))],
+						scopeOut: [D.createAabbExtents(L.create(0, 0), L.create(4.5, 6))],
 						imgs: [{
 							sprite: "",
 							scale: .5,
@@ -8992,12 +9762,6 @@ webpackJsonp([0], {
 						ori: 0
 					}]
 				},
-				barn_wall_int_1: T({
-					material: "wood",
-					extents: L.create(.5, .5),
-					hitParticle: "ltgreenChip",
-					img: d("img/map/map-wall-01-rounded.svg", 7173701)
-				}),
 				barn_wall_int_2: T({
 					material: "wood",
 					extents: L.create(.5, 1),
@@ -9034,12 +9798,6 @@ webpackJsonp([0], {
 					hitParticle: "ltgreenChip",
 					img: d("img/map/map-wall-08-rounded.svg", 7173701)
 				}),
-				barn_wall_int_9: T({
-					material: "wood",
-					extents: L.create(.5, 4.5),
-					hitParticle: "ltgreenChip",
-					img: d("img/map/map-wall-09-rounded.svg", 7173701)
-				}),
 				barn_wall_int_11: T({
 					material: "wood",
 					extents: L.create(.5, 5.5),
@@ -9063,10 +9821,10 @@ webpackJsonp([0], {
 					map: {
 						display: !0,
 						shapes: [{
-							collider: A.createAabbExtents(L.create(0, 12), L.create(5, 2)),
+							collider: D.createAabbExtents(L.create(0, 12), L.create(5, 2)),
 							color: 12300935
 						}, {
-							collider: A.createAabbExtents(L.create(0, -2), L.create(24.5, 12.8)),
+							collider: D.createAabbExtents(L.create(0, -2), L.create(24.5, 12.8)),
 							color: 3816739
 						}]
 					},
@@ -9078,7 +9836,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "house",
-							collision: [A.createAabbExtents(L.create(0, -2), L.create(25, 13.2)), A.createAabbExtents(L.create(0, 12), L.create(5.5, 2.5))]
+							collision: [D.createAabbExtents(L.create(0, -2), L.create(25, 13.2)), D.createAabbExtents(L.create(0, 12), L.create(5.5, 2.5))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-building-barn-floor.svg",
@@ -9088,8 +9846,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, -2), L.create(24.5, 12.8)), A.createAabbExtents(L.create(0, 12), L.create(5.5, 2.5))],
-						scopeOut: [A.createAabbExtents(L.create(0, -14.5), L.create(5.5, 4)), A.createAabbExtents(L.create(0, 14.5), L.create(5.5, 4))],
+						scopeIn: [D.createAabbExtents(L.create(0, -2), L.create(24.5, 12.8)), D.createAabbExtents(L.create(0, 12), L.create(5.5, 2.5))],
+						scopeOut: [D.createAabbExtents(L.create(0, -14.5), L.create(5.5, 4)), D.createAabbExtents(L.create(0, 14.5), L.create(5.5, 4))],
 						vision: {
 							dist: 5.5,
 							width: 2.75,
@@ -9470,13 +10228,13 @@ webpackJsonp([0], {
 					map: {
 						display: !0,
 						shapes: [{
-							collider: A.createAabbExtents(L.create(-16, 7), L.create(10.75, 11)),
+							collider: D.createAabbExtents(L.create(-16, 7), L.create(10.75, 11)),
 							color: 7820585
 						}, {
-							collider: A.createAabbExtents(L.create(6, 0), L.create(11.5, 18.25)),
+							collider: D.createAabbExtents(L.create(6, 0), L.create(11.5, 18.25)),
 							color: 9989427
 						}, {
-							collider: A.createAabbExtents(L.create(22, 4), L.create(4.5, 7.5)),
+							collider: D.createAabbExtents(L.create(22, 4), L.create(4.5, 7.5)),
 							color: 7820585
 						}]
 					},
@@ -9488,7 +10246,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "tile",
-							collision: [A.createAabbExtents(L.create(6, -1), L.create(11.25, 18.25)), A.createAabbExtents(L.create(21.5, 4), L.create(4.75, 7.25))]
+							collision: [D.createAabbExtents(L.create(6, -1), L.create(11.25, 18.25)), D.createAabbExtents(L.create(21.5, 4), L.create(4.75, 7.25))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-building-bank-floor.svg",
@@ -9498,8 +10256,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(6, -1), L.create(11.25, 18.25)), A.createAabbExtents(L.create(21.5, 4), L.create(4.75, 7.25)), A.createAabbExtents(L.create(-16, 6), L.create(10.25, 11))],
-						scopeOut: [A.createAabbExtents(L.create(6, 1.25), L.create(15.25, 20))],
+						scopeIn: [D.createAabbExtents(L.create(6, -1), L.create(11.25, 18.25)), D.createAabbExtents(L.create(21.5, 4), L.create(4.75, 7.25)), D.createAabbExtents(L.create(-16, 6), L.create(10.25, 11))],
+						scopeOut: [D.createAabbExtents(L.create(6, 1.25), L.create(15.25, 20))],
 						vision: {
 							dist: 5.5,
 							width: 2.75,
@@ -9823,7 +10581,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "container",
-							collision: [A.createAabbExtents(L.create(-3.5, 0), L.create(10, 10.5))]
+							collision: [D.createAabbExtents(L.create(-3.5, 0), L.create(10, 10.5))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-building-vault-floor.svg",
@@ -9833,8 +10591,14 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(-3.5, 0), L.create(9.25, 10.5))],
-						scopeOut: [A.createAabbExtents(L.create(-3.5, 0), L.create(10, 10.5))],
+						scopeIn: [D.createAabbExtents(L.create(-3.5, 0), L.create(9.25, 10.5))],
+						scopeOut: [D.createAabbExtents(L.create(-3.5, 0), L.create(10, 10.5))],
+						vision: {
+							dist: 7,
+							width: 2.75,
+							linger: .5,
+							fadeRate: 6
+						},
 						imgs: [{
 							sprite: "",
 							scale: .5,
@@ -9981,17 +10745,35 @@ webpackJsonp([0], {
 					map: {
 						display: !0,
 						shapes: [{
-							collider: A.createAabbExtents(L.create(-24.5, 8.5), L.create(17.75, 9.75)),
+							collider: D.createAabbExtents(L.create(-21, -8), L.create(21.25, 14)),
+							color: 5855577
+						}, {
+							collider: D.createAabbExtents(L.create(-24.5, 8.5), L.create(17.75, 9.75)),
 							color: 3355970
 						}, {
-							collider: A.createAabbExtents(L.create(-3.5, 12), L.create(3.5, 6.25)),
+							collider: D.createAabbExtents(L.create(-3.5, 12), L.create(3.5, 6.25)),
 							color: 4278620
 						}, {
-							collider: A.createAabbExtents(L.create(10.35, 0), L.create(10.5, 22)),
+							collider: D.createAabbExtents(L.create(10.35, 0), L.create(10.5, 22)),
 							color: 3355970
 						}, {
-							collider: A.createAabbExtents(L.create(31.25, 12.5), L.create(10.75, 9.5)),
+							collider: D.createAabbExtents(L.create(31.25, 12.5), L.create(10.75, 9.5)),
 							color: 3355970
+						}, {
+							collider: D.createAabbExtents(L.create(-3.5, 2.5), L.create(2.25, 2.25)),
+							color: 6310464
+						}, {
+							collider: D.createCircle(L.create(-30.5, -18), 1.5),
+							color: 8026746
+						}, {
+							collider: D.createCircle(L.create(-20.5, -10.5), 1.5),
+							color: 8026746
+						}, {
+							collider: D.createAabbExtents(L.create(-38.5, -7), L.create(1.4, 3.1)),
+							color: 13278307
+						}, {
+							collider: D.createAabbExtents(L.create(-7.5, -19.5), L.create(3.1, 1.4)),
+							color: 13278307
 						}]
 					},
 					terrain: {
@@ -10002,10 +10784,10 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "tile",
-							collision: [A.createAabbExtents(L.create(-24.5, 8.5), L.create(17.75, 9.75)), A.createAabbExtents(L.create(-3.5, 12), L.create(3.5, 6.25)), A.createAabbExtents(L.create(10.35, 0), L.create(10.5, 22)), A.createAabbExtents(L.create(31.25, 12.5), L.create(10.75, 9.5))]
+							collision: [D.createAabbExtents(L.create(-24.5, 8.5), L.create(17.75, 9.75)), D.createAabbExtents(L.create(-3.5, 12), L.create(3.5, 6.25)), D.createAabbExtents(L.create(10.35, 0), L.create(10.5, 22)), D.createAabbExtents(L.create(31.25, 12.5), L.create(10.75, 9.5))]
 						}, {
 							type: "asphalt",
-							collision: [A.createAabbExtents(L.create(-21.5, -13), L.create(21, 11.5)), A.createAabbExtents(L.create(-3.5, 2), L.create(3, 3.5))]
+							collision: [D.createAabbExtents(L.create(-21.5, -13), L.create(21, 11.5)), D.createAabbExtents(L.create(-3.5, 2), L.create(3, 3.5))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-building-police-floor.svg",
@@ -10015,8 +10797,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(-24.5, 8.5), L.create(17.75, 9.75)), A.createAabbExtents(L.create(-3.5, 12), L.create(3.5, 6.25)), A.createAabbExtents(L.create(10.35, 0), L.create(10.5, 22)), A.createAabbExtents(L.create(31.25, 12.5), L.create(10.75, 9.5))],
-						scopeOut: [A.createAabbExtents(L.create(12, 0), L.create(12.75, 26))],
+						scopeIn: [D.createAabbExtents(L.create(-24.5, 8.5), L.create(17.75, 9.75)), D.createAabbExtents(L.create(-3.5, 12), L.create(3.5, 6.25)), D.createAabbExtents(L.create(10.35, 0), L.create(10.5, 22)), D.createAabbExtents(L.create(31.25, 12.5), L.create(10.75, 9.5))],
+						scopeOut: [D.createAabbExtents(L.create(12, 0), L.create(12.75, 26))],
 						vision: {
 							dist: 5.5,
 							width: 2.75,
@@ -10524,12 +11306,6 @@ webpackJsonp([0], {
 						inheritOri: !0
 					}]
 				},
-				house_wall_int_3: T({
-					material: "wood",
-					extents: L.create(.5, 1.5),
-					hitParticle: "tanChip",
-					img: d("img/map/map-wall-03-rounded.svg", 10584424)
-				}),
 				house_wall_int_4: T({
 					material: "wood",
 					extents: L.create(.5, 2),
@@ -10554,12 +11330,6 @@ webpackJsonp([0], {
 					hitParticle: "tanChip",
 					img: d("img/map/map-wall-09-rounded.svg", 10584424)
 				}),
-				house_wall_int_11: T({
-					material: "wood",
-					extents: L.create(.5, 5.5),
-					hitParticle: "tanChip",
-					img: d("img/map/map-wall-11-rounded.svg", 10584424)
-				}),
 				house_column_1: T({
 					material: "concrete",
 					extents: L.create(1, 1),
@@ -10581,7 +11351,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "house",
-							collision: [A.createAabbExtents(L.create(0, 0), L.create(14.5, 13))]
+							collision: [D.createAabbExtents(L.create(0, 0), L.create(14.5, 13))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-building-house-floor.svg",
@@ -10591,8 +11361,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, 0), L.create(14.5, 13))],
-						scopeOut: [A.createAabbExtents(L.create(0, 0), L.create(16.5, 15))],
+						scopeIn: [D.createAabbExtents(L.create(0, 0), L.create(14.5, 13))],
+						scopeOut: [D.createAabbExtents(L.create(0, 0), L.create(16.5, 15))],
 						vision: {
 							dist: 5.5,
 							width: 2.75,
@@ -10822,12 +11592,6 @@ webpackJsonp([0], {
 					hitParticle: "ltgreenChip",
 					img: d("img/map/map-wall-01-rounded.svg", 16768917)
 				}),
-				mansion_wall_int_4: T({
-					material: "wood",
-					extents: L.create(.5, 2),
-					hitParticle: "ltgreenChip",
-					img: d("img/map/map-wall-04-rounded.svg", 16768917)
-				}),
 				mansion_wall_int_5: T({
 					material: "wood",
 					extents: L.create(.5, 2.5),
@@ -10882,12 +11646,6 @@ webpackJsonp([0], {
 					hitParticle: "ltgreenChip",
 					img: d("img/map/map-wall-13-rounded.svg", 16768917)
 				}),
-				mansion_wall_int_14: T({
-					material: "wood",
-					extents: L.create(.5, 7),
-					hitParticle: "ltgreenChip",
-					img: d("img/map/map-wall-14-rounded.svg", 16768917)
-				}),
 				mansion_column_1: T({
 					material: "concrete",
 					extents: L.create(1, 1),
@@ -10909,7 +11667,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "container",
-							collision: [A.createAabbExtents(L.create(0, 0), L.create(6, 4))]
+							collision: [D.createAabbExtents(L.create(0, 0), L.create(6, 4))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-building-saferoom-floor.svg",
@@ -10919,8 +11677,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, 0), L.create(5, 3))],
-						scopeOut: [A.createAabbExtents(L.create(0, 0), L.create(5, 3))],
+						scopeIn: [D.createAabbExtents(L.create(0, 0), L.create(5, 3))],
+						scopeOut: [D.createAabbExtents(L.create(0, 0), L.create(5, 3))],
 						imgs: [{
 							sprite: "",
 							scale: .5,
@@ -10964,19 +11722,19 @@ webpackJsonp([0], {
 					map: {
 						display: !0,
 						shapes: [{
-							collider: A.createAabbExtents(L.create(-1.5, 20.5), L.create(12.5, 4.5)),
+							collider: D.createAabbExtents(L.create(-1.5, 20.5), L.create(12.5, 4.5)),
 							color: 8671554
 						}, {
-							collider: A.createAabbExtents(L.create(-2, -23), L.create(3, 2.5)),
+							collider: D.createAabbExtents(L.create(-2, -23), L.create(3, 2.5)),
 							color: 8671554
 						}, {
-							collider: A.createAabbExtents(L.create(-20.5, -22.5), L.create(10, 2)),
+							collider: D.createAabbExtents(L.create(-20.5, -22.5), L.create(10, 2)),
 							color: 7750457
 						}, {
-							collider: A.createAabbExtents(L.create(28, 1.5), L.create(3.75, 3)),
+							collider: D.createAabbExtents(L.create(28, 1.5), L.create(3.75, 3)),
 							color: 7237230
 						}, {
-							collider: A.createAabbExtents(L.create(-3.5, -2), L.create(28, 18.5)),
+							collider: D.createAabbExtents(L.create(-3.5, -2), L.create(28, 18.5)),
 							color: 6175023
 						}]
 					},
@@ -10988,16 +11746,16 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "tile",
-							collision: [A.createAabbExtents(L.create(-3.5, -2), L.create(28, 18.5)), A.createAabbExtents(L.create(-1.5, 20.5), L.create(12.5, 4.5)), A.createAabbExtents(L.create(0, 0), L.create(20, 20))]
+							collision: [D.createAabbExtents(L.create(-3.5, -2), L.create(28, 18.5)), D.createAabbExtents(L.create(-1.5, 20.5), L.create(12.5, 4.5)), D.createAabbExtents(L.create(0, 0), L.create(20, 20))]
 						}, {
 							type: "asphalt",
-							collision: [A.createAabbExtents(L.create(-21, -17), L.create(11, 8)), A.createAabbExtents(L.create(-23, -6), L.create(8, 3)), A.createAabbExtents(L.create(-2, -24), L.create(2, 3)), A.createAabbExtents(L.create(28, 1.5), L.create(3, 3))]
+							collision: [D.createAabbExtents(L.create(-21, -17), L.create(11, 8)), D.createAabbExtents(L.create(-23, -6), L.create(8, 3)), D.createAabbExtents(L.create(-2, -24), L.create(2, 3)), D.createAabbExtents(L.create(28, 1.5), L.create(3, 3))]
 						}, {
 							type: "grass",
-							collision: [A.createAabbExtents(L.create(-2, 4), L.create(5, 5))]
+							collision: [D.createAabbExtents(L.create(-2, 4), L.create(5, 5))]
 						}, {
 							type: "house",
-							collision: [A.createAabbExtents(L.create(1, 13), L.create(2, 3.25))]
+							collision: [D.createAabbExtents(L.create(1, 13), L.create(2, 3.25))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-building-mansion-floor.svg",
@@ -11007,8 +11765,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(-15, -22.4), L.create(17, 2.2)), A.createAabbExtents(L.create(-3.5, -2), L.create(28, 18.5)), A.createAabbExtents(L.create(-1.5, 20.6), L.create(12, 4.2))],
-						scopeOut: [A.createAabbExtents(L.create(-15, -24.4), L.create(21, 4.2)), A.createAabbExtents(L.create(-3.5, -2), L.create(28, 18.5)), A.createAabbExtents(L.create(-9, 23.1), L.create(5, 6.7))],
+						scopeIn: [D.createAabbExtents(L.create(-15, -22.4), L.create(17, 2.2)), D.createAabbExtents(L.create(-3.5, -2), L.create(28, 18.5)), D.createAabbExtents(L.create(-1.5, 20.6), L.create(12, 4.2))],
+						scopeOut: [D.createAabbExtents(L.create(-15, -24.4), L.create(21, 4.2)), D.createAabbExtents(L.create(-3.5, -2), L.create(28, 18.5)), D.createAabbExtents(L.create(-9, 23.1), L.create(5, 6.7))],
 						vision: {
 							dist: 5.5,
 							width: 2.75,
@@ -11474,7 +12232,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "brick",
-							collision: [A.createAabbExtents(L.create(18, 3), L.create(7, 13)), A.createAabbExtents(L.create(5, 0), L.create(6, 10))]
+							collision: [D.createAabbExtents(L.create(18, 3), L.create(7, 13)), D.createAabbExtents(L.create(5, 0), L.create(6, 10))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-building-mansion-cellar.svg",
@@ -11484,8 +12242,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(18, 3), L.create(7, 13)), A.createAabbExtents(L.create(5, 1.5), L.create(6, 12))],
-						scopeOut: [A.createAabbExtents(L.create(18, 3), L.create(7, 13)), A.createAabbExtents(L.create(5, 1.5), L.create(6, 12))],
+						scopeIn: [D.createAabbExtents(L.create(18, 3), L.create(7, 13)), D.createAabbExtents(L.create(5, 1.5), L.create(6, 12))],
+						scopeOut: [D.createAabbExtents(L.create(18, 3), L.create(7, 13)), D.createAabbExtents(L.create(5, 1.5), L.create(6, 12))],
 						vision: {
 							dist: 5.5,
 							width: 2.75,
@@ -11678,14 +12436,14 @@ webpackJsonp([0], {
 						ori: 0
 					}],
 					stairs: [{
-						collision: A.createAabbExtents(L.create(28, 1.5), L.create(3, 2.55)),
+						collision: D.createAabbExtents(L.create(28, 1.5), L.create(3, 2.55)),
 						downDir: L.create(-1, 0),
 						noCeilingReveal: !0
 					}, {
-						collision: A.createAabbExtents(L.create(1, 13.5), L.create(2, 3.5)),
+						collision: D.createAabbExtents(L.create(1, 13.5), L.create(2, 3.5)),
 						downDir: L.create(0, -1)
 					}],
-					mask: [A.createAabbExtents(L.create(10, -.1), L.create(15, 10.1)), A.createAabbExtents(L.create(17.5, 13.5), L.create(7.5, 3.5))]
+					mask: [D.createAabbExtents(L.create(10, -.1), L.create(15, 10.1)), D.createAabbExtents(L.create(17.5, 13.5), L.create(7.5, 3.5))]
 				},
 				bunker_egg_01: {
 					type: "building",
@@ -11698,11 +12456,11 @@ webpackJsonp([0], {
 						grass: !0,
 						beach: !1
 					},
-					zIdx: 0,
+					zIdx: 2,
 					floor: {
 						surfaces: [{
 							type: "container",
-							collision: [A.createAabbExtents(L.create(0, 7.75), L.create(2, 3.25))]
+							collision: [D.createAabbExtents(L.create(0, 7.75), L.create(2, 3.25))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-bunker-egg-floor-01.svg",
@@ -11712,8 +12470,8 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, 0), L.create(0, 0))],
-						scopeOut: [A.createAabbExtents(L.create(0, 0), L.create(0, 0))],
+						scopeIn: [D.createAabbExtents(L.create(0, 0), L.create(0, 0))],
+						scopeOut: [D.createAabbExtents(L.create(0, 0), L.create(0, 0))],
 						vision: {
 							dist: 5,
 							width: 2.75,
@@ -11779,7 +12537,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "bunker",
-							collision: [A.createAabbExtents(L.create(0, -4.5), L.create(10, 9))]
+							collision: [D.createAabbExtents(L.create(0, -4.5), L.create(10, 9))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-bunker-egg-chamber-floor-01.svg",
@@ -11789,10 +12547,10 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, -4.5), L.create(10, 9))],
-						scopeOut: [A.createAabbExtents(L.create(0, -4.5), L.create(10, 9))],
+						scopeIn: [D.createAabbExtents(L.create(0, -4.5), L.create(10, 9))],
+						scopeOut: [D.createAabbExtents(L.create(0, -4.5), L.create(10, 9))],
 						imgs: [{
-							sprite: "",
+							sprite: "img/map/map-bunker-egg-chamber-ceiling-01.svg",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
@@ -11866,7 +12624,7 @@ webpackJsonp([0], {
 						grass: !0,
 						beach: !1
 					},
-					mapObstacleBounds: [A.createAabbExtents(L.create(0, 5), L.create(7, 12))],
+					mapObstacleBounds: [D.createAabbExtents(L.create(0, 5), L.create(7, 12))],
 					layers: [{
 						type: "bunker_egg_01",
 						pos: L.create(0, 0),
@@ -11877,20 +12635,20 @@ webpackJsonp([0], {
 						ori: 0
 					}],
 					stairs: [{
-						collision: A.createAabbExtents(L.create(0, 8.4), L.create(2, 2.6)),
+						collision: D.createAabbExtents(L.create(0, 8.4), L.create(2, 2.6)),
 						downDir: L.create(0, -1)
 					}],
-					mask: [A.createAabbExtents(L.create(0, -3.7), L.create(10, 9.5))]
+					mask: [D.createAabbExtents(L.create(0, -3.7), L.create(10, 9.5))]
 				},
 				bunker_hydra_01: {
 					type: "building",
 					map: {
 						display: !0,
 						shapes: [{
-							collider: A.createAabbExtents(L.create(20.25, 3.5), L.create(6.25, 5.5)),
+							collider: D.createAabbExtents(L.create(20.25, 3.5), L.create(6.25, 5.5)),
 							color: 2894892
 						}, {
-							collider: A.createAabbExtents(L.create(32.25, 3.5), L.create(6.75, 9.25)),
+							collider: D.createAabbExtents(L.create(32.25, 3.5), L.create(6.75, 9.25)),
 							color: 3815994
 						}]
 					},
@@ -11902,10 +12660,10 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "tile",
-							collision: [A.createAabbExtents(L.create(20.25, 3.5), L.create(6.25, 5.5)), A.createAabbExtents(L.create(32.25, 3.5), L.create(6.75, 9.25))]
+							collision: [D.createAabbExtents(L.create(20.25, 3.5), L.create(6.25, 5.5)), D.createAabbExtents(L.create(32.25, 3.5), L.create(6.75, 9.25))]
 						}, {
 							type: "container",
-							collision: [A.createAabbExtents(L.create(16.25, 3.5), L.create(3.25, 2)), A.createAabbExtents(L.create(-16.5, -90.75), L.create(2, 3.25)), A.createAabbExtents(L.create(40, -50.5), L.create(2, 3.25))]
+							collision: [D.createAabbExtents(L.create(16.25, 3.5), L.create(3.25, 2)), D.createAabbExtents(L.create(-16.5, -90.75), L.create(2, 3.25)), D.createAabbExtents(L.create(40, -50.5), L.create(2, 3.25))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-bunker-hydra-floor-01.svg",
@@ -11934,10 +12692,10 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(19.25, 3.5), L.create(7.25, 5.5)), A.createAabbExtents(L.create(32.25, 3.5), L.create(6.75, 9.25))],
-						scopeOut: [A.createAabbExtents(L.create(19.25, 3.5), L.create(7.25, 5.5)), A.createAabbExtents(L.create(32.25, 3.5), L.create(6.75, 9.25))],
+						scopeIn: [D.createAabbExtents(L.create(19.25, 3.5), L.create(6.25, 5.5)), D.createAabbExtents(L.create(32.25, 3.5), L.create(6.75, 9.25))],
+						scopeOut: [D.createAabbExtents(L.create(19.25, 3.5), L.create(6.25, 5.5)), D.createAabbExtents(L.create(32.25, 3.5), L.create(6.75, 9.25))],
 						imgs: [{
-							sprite: "",
+							sprite: "img/map/map-bunker-hydra-ceiling-01.svg",
 							pos: L.create(25.25, 3.5),
 							scale: .5,
 							alpha: 1,
@@ -12120,7 +12878,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "bunker",
-							collision: [A.createAabbExtents(L.create(3.5, 2), L.create(9.5, 10)), A.createAabbExtents(L.create(-15.5, -79.5), L.create(3, 8)), A.createAabbExtents(L.create(40.5, -62), L.create(9.5, 8))]
+							collision: [D.createAabbExtents(L.create(3.5, 2), L.create(9.5, 10)), D.createAabbExtents(L.create(-15.5, -79.5), L.create(3, 8)), D.createAabbExtents(L.create(40.5, -62), L.create(9.5, 8))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-bunker-hydra-chamber-floor-01.svg",
@@ -12143,22 +12901,22 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(3.5, 2.25), L.create(10, 10)), A.createAabbExtents(L.create(-15, -77), L.create(5.5, 10.5)), A.createAabbExtents(L.create(38, -62), L.create(11.5, 8))],
-						scopeOut: [A.createAabbExtents(L.create(3.5, 2.25), L.create(10, 10)), A.createAabbExtents(L.create(-15, -77), L.create(5.5, 10.5)), A.createAabbExtents(L.create(38, -62), L.create(11.5, 8))],
+						scopeIn: [D.createAabbExtents(L.create(3.5, 2.25), L.create(10, 10)), D.createAabbExtents(L.create(-15, -77), L.create(5.5, 10.5)), D.createAabbExtents(L.create(38, -62), L.create(11.5, 8))],
+						scopeOut: [D.createAabbExtents(L.create(3.5, 2.25), L.create(10, 10)), D.createAabbExtents(L.create(-15, -77), L.create(5.5, 10.5)), D.createAabbExtents(L.create(38, -62), L.create(11.5, 8))],
 						imgs: [{
-							sprite: "",
+							sprite: "img/map/map-bunker-hydra-chamber-ceiling-01.svg",
 							pos: L.create(7, 2),
 							scale: .5,
 							alpha: 1,
 							tint: 6250335
 						}, {
-							sprite: "",
+							sprite: "img/map/map-bunker-hydra-chamber-ceiling-02.svg",
 							pos: L.create(-13.5, -76.5),
 							scale: .5,
 							alpha: 1,
 							tint: 6250335
 						}, {
-							sprite: "",
+							sprite: "img/map/map-bunker-hydra-chamber-ceiling-03.svg",
 							pos: L.create(38, -62),
 							scale: .5,
 							alpha: 1,
@@ -12394,27 +13152,6 @@ webpackJsonp([0], {
 						inheritOri: !0
 					}]
 				},
-				vault_door_hydra: v({
-					material: "metal",
-					hinge: L.create(1, 3.5),
-					extents: L.create(1, 3.5),
-					img: {
-						sprite: "img/map/map-door-02.svg"
-					},
-					door: {
-						interactionRad: 2.5,
-						openSpeed: .23,
-						openOneWay: -1,
-						openDelay: 1,
-						openOnce: !0,
-						spriteAnchor: L.create(.2, 1),
-						sound: {
-							open: "none",
-							close: "none",
-							change: "vault_change_01"
-						}
-					}
-				}),
 				bunker_hydra_compartment_01: {
 					type: "building",
 					map: {
@@ -12430,7 +13167,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "bunker",
-							collision: [A.createAabbExtents(L.create(0, 1), L.create(9.5, 10))]
+							collision: [D.createAabbExtents(L.create(0, 1), L.create(9.5, 10))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-bunker-hydra-compartment-floor-01.svg",
@@ -12440,10 +13177,10 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, 1.25), L.create(10, 10))],
-						scopeOut: [A.createAabbExtents(L.create(0, 1.25), L.create(10, 10))],
+						scopeIn: [D.createAabbExtents(L.create(0, 1.25), L.create(10, 10))],
+						scopeOut: [D.createAabbExtents(L.create(0, 1.25), L.create(10, 10))],
 						imgs: [{
-							sprite: "",
+							sprite: "img/map/map-bunker-hydra-compartment-ceiling-01.svg",
 							pos: L.create(0, 1.25),
 							scale: .5,
 							alpha: 1,
@@ -12547,10 +13284,10 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "bunker",
-							collision: [A.createAabbExtents(L.create(-2.5, 16), L.create(22, 4)), A.createAabbExtents(L.create(-2.5, 9.5), L.create(6, 2.5))]
+							collision: [D.createAabbExtents(L.create(-2.5, 16), L.create(22, 4)), D.createAabbExtents(L.create(-2.5, 9.5), L.create(6, 2.5))]
 						}, {
 							type: "tile",
-							collision: [A.createAabbExtents(L.create(0, -4.5), L.create(25, 17))]
+							collision: [D.createAabbExtents(L.create(0, -4.5), L.create(25, 17))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-bunker-hydra-compartment-floor-02.svg",
@@ -12561,10 +13298,10 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(-2, 3), L.create(22.5, 19.5))],
-						scopeOut: [A.createAabbExtents(L.create(-2, 3), L.create(22.5, 19.5))],
+						scopeIn: [D.createAabbExtents(L.create(-2, 3), L.create(22.5, 19.5))],
+						scopeOut: [D.createAabbExtents(L.create(-2, 3), L.create(22.5, 19.5))],
 						imgs: [{
-							sprite: "",
+							sprite: "img/map/map-bunker-hydra-compartment-ceiling-02.svg",
 							pos: L.create(0, 1),
 							scale: .5,
 							alpha: 1,
@@ -12778,7 +13515,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "bunker",
-							collision: [A.createAabbExtents(L.create(0, 2), L.create(9, 8.75))]
+							collision: [D.createAabbExtents(L.create(0, 2), L.create(9, 8.75))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-bunker-hydra-compartment-floor-03.svg",
@@ -12789,10 +13526,10 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, .75), L.create(10, 7.75))],
-						scopeOut: [A.createAabbExtents(L.create(0, .75), L.create(10, 7.75))],
+						scopeIn: [D.createAabbExtents(L.create(0, .75), L.create(10, 7.75))],
+						scopeOut: [D.createAabbExtents(L.create(0, .75), L.create(10, 7.75))],
 						imgs: [{
-							sprite: "",
+							sprite: "img/map/map-bunker-hydra-compartment-ceiling-03.svg",
 							pos: L.create(0, 1),
 							scale: .5,
 							alpha: 1,
@@ -12847,7 +13584,7 @@ webpackJsonp([0], {
 						grass: !0,
 						beach: !1
 					},
-					mapObstacleBounds: [A.createAabbExtents(L.create(25.5, 3.5), L.create(16, 11.5)), A.createAabbExtents(L.create(-16.5, -89.5), L.create(7, 7.5)), A.createAabbExtents(L.create(40, -47.25), L.create(6.5, 7.25)), A.createAabbExtents(L.create(-5.75, -38.5), L.create(3, 3))],
+					mapObstacleBounds: [D.createAabbExtents(L.create(25.5, 3.5), L.create(16, 11.5)), D.createAabbExtents(L.create(-16.5, -89.5), L.create(7, 7.5)), D.createAabbExtents(L.create(40, -47.25), L.create(6.5, 7.25)), D.createAabbExtents(L.create(-5.75, -38.5), L.create(3, 3))],
 					layers: [{
 						type: "bunker_hydra_01",
 						pos: L.create(0, 0),
@@ -12858,23 +13595,23 @@ webpackJsonp([0], {
 						ori: 0
 					}],
 					stairs: [{
-						collision: A.createAabbExtents(L.create(16.4, 3.5), L.create(2.6, 2)),
+						collision: D.createAabbExtents(L.create(16.4, 3.5), L.create(2.6, 2)),
 						downDir: L.create(-1, 0)
 					}, {
-						collision: A.createAabbExtents(L.create(-16.5, -90.4), L.create(2, 3.1)),
+						collision: D.createAabbExtents(L.create(-16.5, -90.4), L.create(2, 3.1)),
 						downDir: L.create(0, 1)
 					}, {
-						collision: A.createAabbExtents(L.create(40, -50.5), L.create(2, 3.1)),
+						collision: D.createAabbExtents(L.create(40, -50.5), L.create(2, 3.1)),
 						downDir: L.create(0, -1)
 					}],
-					mask: [A.createAabbExtents(L.create(3.5, -7.2), L.create(10.5, 20)), A.createAabbExtents(L.create(-15, -79.75), L.create(5, 8.5)), A.createAabbExtents(L.create(39, -61.85), L.create(12, 9)), A.createAabbExtents(L.create(3.5, -49.2), L.create(23.5, 22)), A.createAabbExtents(L.create(10.5, -76.7), L.create(10, 5.5))]
+					mask: [D.createAabbExtents(L.create(3.5, -7.2), L.create(10.5, 20)), D.createAabbExtents(L.create(-15, -79.75), L.create(5, 8.5)), D.createAabbExtents(L.create(39, -61.85), L.create(12, 9)), D.createAabbExtents(L.create(3.5, -49.2), L.create(23.5, 22)), D.createAabbExtents(L.create(10.5, -76.7), L.create(10, 5.5))]
 				},
 				bunker_storm_01: {
 					type: "building",
 					map: {
 						display: !0,
 						shapes: [{
-							collider: A.createAabbExtents(L.create(0, 10), L.create(3.6, 5.8)),
+							collider: D.createAabbExtents(L.create(0, 10), L.create(3.6, 5.8)),
 							color: 6707790
 						}]
 					},
@@ -12886,10 +13623,10 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "container",
-							collision: [A.createAabbExtents(L.create(0, 7.75), L.create(2, 3.25))]
+							collision: [D.createAabbExtents(L.create(0, 7.75), L.create(2, 3.25))]
 						}, {
 							type: "shack",
-							collision: [A.createAabbExtents(L.create(0, 13.5), L.create(3.75, 2.5)), A.createAabbExtents(L.create(5, 13.75), L.create(1.25, 2.25))]
+							collision: [D.createAabbExtents(L.create(0, 13.5), L.create(3.75, 2.5)), D.createAabbExtents(L.create(5, 13.75), L.create(1.25, 2.25))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-bunker-storm-floor-01.svg",
@@ -12900,13 +13637,13 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(0, 10), L.create(3.5, 5.6))],
-						scopeOut: [A.createAabbExtents(L.create(0, 10), L.create(3.8, 5.9))],
+						scopeIn: [D.createAabbExtents(L.create(0, 10), L.create(3.5, 5.6))],
+						scopeOut: [D.createAabbExtents(L.create(0, 10), L.create(3.8, 5.9))],
 						vision: {
 							width: 4
 						},
 						imgs: [{
-							sprite: "",
+							sprite: "img/map/map-building-shack-ceiling-01.svg",
 							pos: L.create(-1, 10),
 							scale: .5,
 							alpha: 1,
@@ -12993,7 +13730,7 @@ webpackJsonp([0], {
 					floor: {
 						surfaces: [{
 							type: "bunker",
-							collision: [A.createAabbExtents(L.create(8.5, -4.5), L.create(18, 9))]
+							collision: [D.createAabbExtents(L.create(8.5, -4.5), L.create(18, 9))]
 						}],
 						imgs: [{
 							sprite: "img/map/map-bunker-storm-chamber-floor-01.svg",
@@ -13004,10 +13741,10 @@ webpackJsonp([0], {
 						}]
 					},
 					ceiling: {
-						scopeIn: [A.createAabbExtents(L.create(8.5, -4.5), L.create(18, 9.1))],
-						scopeOut: [A.createAabbExtents(L.create(8.5, -4.5), L.create(18, 9.1))],
+						scopeIn: [D.createAabbExtents(L.create(8.5, -4.5), L.create(18, 9.1))],
+						scopeOut: [D.createAabbExtents(L.create(8.5, -4.5), L.create(18, 9.1))],
 						imgs: [{
-							sprite: "",
+							sprite: "img/map/map-bunker-storm-chamber-ceiling-01.svg",
 							pos: L.create(8.5, -1),
 							scale: .5,
 							alpha: 1,
@@ -13154,7 +13891,7 @@ webpackJsonp([0], {
 						grass: !0,
 						beach: !1
 					},
-					mapObstacleBounds: [A.createAabbExtents(L.create(1, 6), L.create(7, 13.5))],
+					mapObstacleBounds: [D.createAabbExtents(L.create(1, 6), L.create(7, 13.5))],
 					layers: [{
 						type: "bunker_storm_01",
 						pos: L.create(0, 0),
@@ -13165,10 +13902,10 @@ webpackJsonp([0], {
 						ori: 0
 					}],
 					stairs: [{
-						collision: A.createAabbExtents(L.create(0, 8.4), L.create(2, 2.6)),
+						collision: D.createAabbExtents(L.create(0, 8.4), L.create(2, 2.6)),
 						downDir: L.create(0, -1)
 					}],
-					mask: [A.createAabbExtents(L.create(8.5, -3.7), L.create(18, 9.5))]
+					mask: [D.createAabbExtents(L.create(8.5, -3.7), L.create(18, 9.5))]
 				},
 				container_wall_top: T({
 					material: "metal",
@@ -13184,17 +13921,17 @@ webpackJsonp([0], {
 				}),
 				container_01: y({
 					open: !1,
-					tint: 3560807,
+					tint: 2703694,
 					ceilingSprite: ""
 				}),
 				container_02: y({
 					open: !1,
-					tint: 3560807,
+					tint: 2703694,
 					ceilingSprite: ""
 				}),
 				container_03: y({
 					open: !1,
-					tint: 3560807,
+					tint: 2703694,
 					ceilingSprite: ""
 				}),
 				container_04: y({
@@ -13202,9 +13939,16 @@ webpackJsonp([0], {
 					tint: 3560807,
 					ceilingSprite: ""
 				}),
+				container_06: y({
+					open: !1,
+					tint: 12227840,
+					ceilingSprite: "",
+					loot_spawner_01: "loot_tier_sv98",
+					loot_spawner_02: "loot_tier_scopes_sniper"
+				}),
 				loot_tier_1: {
 					type: "loot_spawner",
-					collision: A.createCircle(L.create(0, 0), 3),
+					collision: D.createCircle(L.create(0, 0), 3),
 					tier: "tier_world",
 					terrain: {
 						grass: !0,
@@ -13213,7 +13957,7 @@ webpackJsonp([0], {
 				},
 				loot_tier_2: {
 					type: "loot_spawner",
-					collision: A.createCircle(L.create(0, 0), 3),
+					collision: D.createCircle(L.create(0, 0), 3),
 					tier: "tier_container",
 					terrain: {
 						grass: !0,
@@ -13222,7 +13966,7 @@ webpackJsonp([0], {
 				},
 				loot_tier_beach: {
 					type: "loot_spawner",
-					collision: A.createCircle(L.create(0, 0), 3),
+					collision: D.createCircle(L.create(0, 0), 3),
 					tier: "tier_world",
 					terrain: {
 						grass: !1,
@@ -13231,7 +13975,7 @@ webpackJsonp([0], {
 				},
 				loot_tier_vault_floor: {
 					type: "loot_spawner",
-					collision: A.createCircle(L.create(0, 0), 3),
+					collision: D.createCircle(L.create(0, 0), 3),
 					tier: "tier_vault_floor",
 					terrain: {
 						grass: !0,
@@ -13240,7 +13984,7 @@ webpackJsonp([0], {
 				},
 				loot_tier_police_floor: {
 					type: "loot_spawner",
-					collision: A.createCircle(L.create(0, 0), 3),
+					collision: D.createCircle(L.create(0, 0), 3),
 					tier: "tier_police_floor",
 					terrain: {
 						grass: !0,
@@ -13249,8 +13993,26 @@ webpackJsonp([0], {
 				},
 				loot_tier_mansion_floor: {
 					type: "loot_spawner",
-					collision: A.createCircle(L.create(0, 0), 3),
+					collision: D.createCircle(L.create(0, 0), 3),
 					tier: "tier_mansion_floor",
+					terrain: {
+						grass: !0,
+						beach: !0
+					}
+				},
+				loot_tier_sv98: {
+					type: "loot_spawner",
+					collision: D.createCircle(L.create(0, 0), 3),
+					tier: "tier_sv98",
+					terrain: {
+						grass: !0,
+						beach: !0
+					}
+				},
+				loot_tier_scopes_sniper: {
+					type: "loot_spawner",
+					collision: D.createCircle(L.create(0, 0), 3),
+					tier: "tier_scopes_sniper",
 					terrain: {
 						grass: !0,
 						beach: !0
@@ -13288,7 +14050,7 @@ webpackJsonp([0], {
 				}
 			};
 		e.exports = {
-			Defs: E,
+			Defs: B,
 			MinScale: .125,
 			MaxScale: 2.5,
 			oriToRad: o,
@@ -13304,21 +14066,21 @@ webpackJsonp([0], {
 			},
 			"word-order": "sov",
 			"index-slogan": "2D ë°°í‹€ ë¡œì–„",
-			"index-region": "ì›?ë“œ",
-			"index-north-america": "ë¶?ì•„ë©?ë¦¬ì¹´",
+			"index-region": "ì›”ë“œ",
+			"index-north-america": "ë¶ì•„ë©”ë¦¬ì¹´",
 			"index-europe": "ìœ ëŸ½",
 			"index-asia": "ì•„ì‹œì•„",
-			"index-players": "í?Œë ˆì?´ì–´",
-			"index-play-solo": "ì†?ë¡œí•˜ê¸°",
+			"index-players": "í”Œë ˆì´ì–´",
+			"index-play-solo": "ì†”ë¡œí•˜ê¸°",
 			"index-play-duo": "ë“€ì˜¤í•˜ê¸°",
 			"index-play-squad": "ìŠ¤ì¿¼ë“œí•˜ê¸°",
 			"index-create-team": "íŒ€ ë§Œë“¤ê¸°",
-			"index-how-to-play": "ì´ˆë³´ìž? ê°€ì?´ë“œ",
-			"index-leave-team": "íŒ€ì—?ì„œ ë‚˜ê°€ê¸°",
-			"index-joining-team": "íŒ€ ì¡°ì?¸ì¤‘",
-			"index-creating-team": "íŒ€ ë§Œë“œëŠ?ì¤‘",
+			"index-how-to-play": "ì´ˆë³´ìž ê°€ì´ë“œ",
+			"index-leave-team": "íŒ€ì—ì„œ ë‚˜ê°€ê¸°",
+			"index-joining-team": "íŒ€ ì¡°ì¸ì¤‘",
+			"index-creating-team": "íŒ€ ë§Œë“œëŠ”ì¤‘",
 			"index-invite-link": "ì¹œêµ¬ ì´ˆëŒ€",
-			"index-solo": "ì†?ë¡œ",
+			"index-solo": "ì†”ë¡œ",
 			"index-duo": "ë“€ì˜¤",
 			"index-squad": "ìŠ¤ì¿¼ë“œ",
 			"index-auto-fill": "Auto Fill",
@@ -13327,83 +14089,83 @@ webpackJsonp([0], {
 			"index-play": "ì‹œìž‘",
 			"index-featured-youtuber": "ìœ íŠœë²„",
 			"index-settings": "ì„¸íŒ…",
-			"index-high-resolution": "ê³ í™?ì§ˆ (ê·¸ëž˜í?½ì?„ ë†’ìž…ë‹ˆë‹¤)",
-			"index-screen-shake": "í™?ë©´ íš¨ê³¼",
+			"index-high-resolution": "ê³ í™”ì§ˆ (ê·¸ëž˜í”½ì„ ë†’ìž…ë‹ˆë‹¤)",
+			"index-screen-shake": "í™”ë©´ íš¨ê³¼",
 			"index-master-volume": "ì „ì²´ ì‚¬ìš´ë“œ",
-			"index-sfx-volume": "íš¨ê³¼ì?Œ ì‚¬ìš´ë“œ",
-			"index-music-volume": "ì?Œì•… ì‚¬ìš´ë“œ",
-			"index-mobile-announce": "surviv.io ëª¨ë°?ì?¼ ë²„ì „ ì¶œì‹œ!",
-			"index-mobile-tooltip": "ëª¨ë°?ì?¼ì—?ì„œ <span>surviv.io</span>ì—? ì ‘ì†?í•´ì„œ í?Œë ˆì?´í•˜ì„¸ìš?!",
-			"index-team-is-full": "íŒ€ì?´ ê½‰ ì°¾ìŠµë‹ˆë‹¤!",
-			"index-failed-joining-team": "íŒ€ì—? ë“¤ì–´ê°€ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.",
-			"index-failed-creating-team": "íŒ€ì?„ ë§Œë“¤ìˆ˜ ì—†ìŠµë‹ˆë‹¤.",
-			"index-failed-finding-game": "ê²Œìž„ì?„ ì°¾ì§€ ëª»í•˜ì˜€ìŠµë‹ˆë‹¤.",
-			"index-failed-joining-game": "ê²Œìž„ì—? ë“¤ì–´ê°€ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.",
-			"index-lost-connection": "ë„¤íŠ¸ì›Œí?¬ ì—°ê²°ì?´ ë?Šì–´ì§?.",
-			"index-host-closed": "ë„¤íŠ¸ì›Œí?¬ ì—°ê²°ì?´ ë?Šì–´ì§?.",
-			"index-view-more": "ë??ë³´ê¸°",
-			"index-back-to-main": "ë©?ì?¸ ë©?ë‰´ë¡œ",
+			"index-sfx-volume": "íš¨ê³¼ìŒ ì‚¬ìš´ë“œ",
+			"index-music-volume": "ìŒì•… ì‚¬ìš´ë“œ",
+			"index-mobile-announce": "surviv.io ëª¨ë°”ì¼ ë²„ì „ ì¶œì‹œ!",
+			"index-mobile-tooltip": "ëª¨ë°”ì¼ì—ì„œ <span>surviv.io</span>ì— ì ‘ì†í•´ì„œ í”Œë ˆì´í•˜ì„¸ìš”!",
+			"index-team-is-full": "íŒ€ì´ ê½‰ ì°¾ìŠµë‹ˆë‹¤!",
+			"index-failed-joining-team": "íŒ€ì— ë“¤ì–´ê°€ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.",
+			"index-failed-creating-team": "íŒ€ì„ ë§Œë“¤ìˆ˜ ì—†ìŠµë‹ˆë‹¤.",
+			"index-failed-finding-game": "ê²Œìž„ì„ ì°¾ì§€ ëª»í•˜ì˜€ìŠµë‹ˆë‹¤.",
+			"index-failed-joining-game": "ê²Œìž„ì— ë“¤ì–´ê°€ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.",
+			"index-lost-connection": "ë„¤íŠ¸ì›Œí¬ ì—°ê²°ì´ ëŠì–´ì§.",
+			"index-host-closed": "ë„¤íŠ¸ì›Œí¬ ì—°ê²°ì´ ëŠì–´ì§.",
+			"index-view-more": "ë”ë³´ê¸°",
+			"index-back-to-main": "ë©”ì¸ ë©”ë‰´ë¡œ",
 			"index-most-kills": "ìµœë‹¤ í‚¬ìˆ˜",
 			"index-total-kills": "ì „ì²´ í‚¬ìˆ˜",
 			"index-total-wins": "ìŠ¹ë¦¬ íšŸìˆ˜",
 			"index-top-5-percent": "Top 5",
 			"index-kill-death-ratio": "K/D",
 			"index-for": "For",
-			"index-today": "ì˜¤ëŠ˜ ì ?ìˆ˜",
-			"index-this-week": "7 ì?¼ ì ?ìˆ˜",
-			"index-all-time": "All Time ì ?ìˆ˜",
+			"index-today": "ì˜¤ëŠ˜ ì ìˆ˜",
+			"index-this-week": "7 ì¼ ì ìˆ˜",
+			"index-all-time": "All Time ì ìˆ˜",
 			"index-top-100": "TOP 100",
 			"index-rank": "ëž­í‚¹",
-			"index-player": "í?Œë ˆì?´ì–´",
+			"index-player": "í”Œë ˆì´ì–´",
 			"index-total-games": "ì „ì²´ê²Œìž„ íšŸìˆ˜",
 			"index-controls": "ê²Œìž„ ì¡°ìž‘ë²•",
-			"index-movement": "ì?´ë?™",
+			"index-movement": "ì´ë™",
 			"index-movement-ctrl": "W, A, S, D",
 			"index-aim": "ì¡°ì¤€",
 			"index-aim-ctrl": "ë§ˆìš°ìŠ¤",
 			"index-punch": "íŽ€ì¹˜",
 			"index-shoot": "ë°œì‚¬",
-			"index-shoot-ctrl": "ì¢Œí?´ë¦­",
-			"index-change-weapons": "ë¬´ê¸°ë°?ê¾¸ê¸°",
-			"index-change-weapons-ctrl": "1-4 or ìŠ¤í?¬ë¡¤",
+			"index-shoot-ctrl": "ì¢Œí´ë¦­",
+			"index-change-weapons": "ë¬´ê¸°ë°”ê¾¸ê¸°",
+			"index-change-weapons-ctrl": "1-4 or ìŠ¤í¬ë¡¤",
 			"index-stow-weapons": "ë¬´ê¸° ì§‘ì–´ë„£ê¸°",
 			"index-stow-weapons-ctrl": "3 or E",
-			"index-swap-weapons": "ê·¸ì „ ë¬´ê¸°ë¡œ ë°?ê¾¸ê¸°",
+			"index-swap-weapons": "ê·¸ì „ ë¬´ê¸°ë¡œ ë°”ê¾¸ê¸°",
 			"index-swap-weapons-ctrl": "Q",
 			"index-reload": "ë¦¬ë¡œë“œ",
 			"index-reload-ctrl": "R",
-			"index-scope-zoom": "ì¤Œ ì?¸ or ì•„ì›ƒ",
-			"index-scope-zoom-ctrl": "ì¢Œí?´ë¦­ìœ¼ë¡œ ì¤Œ",
-			"index-pickup": "ì¤?ê¸°",
-			"index-loot": "ì¤?ê¸°",
+			"index-scope-zoom": "ì¤Œ ì¸ or ì•„ì›ƒ",
+			"index-scope-zoom-ctrl": "ì¢Œí´ë¦­ìœ¼ë¡œ ì¤Œ",
+			"index-pickup": "ì¤ê¸°",
+			"index-loot": "ì¤ê¸°",
 			"index-revive": "ë¶€í™œ",
 			"index-pickup-ctrl": "F",
-			"index-use-medical": "íž?ë§?",
-			"index-use-medical-ctrl": "ì¢Œí?´ë¦­, 7-0",
-			"index-drop-item": "ì•„ì?´í…œ ë²„ë¦¬ê¸°",
-			"index-drop-item-ctrl": "ìš°í?´ë¦­",
-			"index-cancel-action": "í–‰ë?™ì·¨ì†Œ",
+			"index-use-medical": "ížë§",
+			"index-use-medical-ctrl": "ì¢Œí´ë¦­, 7-0",
+			"index-drop-item": "ì•„ì´í…œ ë²„ë¦¬ê¸°",
+			"index-drop-item-ctrl": "ìš°í´ë¦­",
+			"index-cancel-action": "í–‰ë™ì·¨ì†Œ",
 			"index-cancel-action-ctrl": "X",
-			"index-view-map": "ì§€ë?„ë³´ê¸°",
+			"index-view-map": "ì§€ë„ë³´ê¸°",
 			"index-view-map-ctrl": "M or G",
 			"index-toggle-minimap": "ë¯¸ë‹ˆ ë§µ ì „í™˜",
 			"index-toggle-minimap-ctrl": "V",
 			"index-use-ping": "ë“€ì˜¤/ìŠ¤ì¿¼ë“œ ë©¤ë²„ì™€ ì†Œí†µí•˜ê¸°",
-			"index-use-ping-ctrl": "Cë¥¼ ëˆ„ë¥¸ ìƒ?íƒœì—?ì„œ ìš°í?´ë¦­ì?„ í•˜ê³  ë§ˆìš°ìŠ¤ë¥¼ ë“œëž˜ê·¸í•´ ì?´ëª¨í‹°ì½˜ì?„ ì„ íƒ?í•˜ì„¸ìš?!",
-			"index-use-emote": "ì?´ëª¨í‹°ì½˜ ì‚¬ìš©í•˜ê¸°",
-			"index-use-emote-ctrl": "í™?ë©´ì—? ìš°í?´ë¦­ì?„ ëˆ„ë¥¸ ì±„ ë§ˆìš°ìŠ¤ë¥¼ ë“œëž˜ê·¸í•´ ì?´ëª¨í‹°ì½˜ì?„ ì„ íƒ?í•˜ì„¸ìš?!",
-			"index-tips-1-desc": "surviv.ioì?˜ ëª©í‘œëŠ? ë§ˆì§€ë§‰ 1ì?¸, ë˜?ëŠ? ë“€ì˜¤, ë˜?ëŠ? ìŠ¤ì¿¼ë“œê°€ ë?˜ëŠ? ê²ƒìž…ë‹ˆë‹¤! í•œ ê²Œìž„ë‹¹ ëª©ìˆ¨ì?€ í•œ ê°œ - ì£½ìœ¼ë©´ ë‹¤ì‹œ ë¶€í™œí•  ìˆ˜ ì—†ì–´ìš?!",
+			"index-use-ping-ctrl": "Cë¥¼ ëˆ„ë¥¸ ìƒíƒœì—ì„œ ìš°í´ë¦­ì„ í•˜ê³  ë§ˆìš°ìŠ¤ë¥¼ ë“œëž˜ê·¸í•´ ì´ëª¨í‹°ì½˜ì„ ì„ íƒí•˜ì„¸ìš”!",
+			"index-use-emote": "ì´ëª¨í‹°ì½˜ ì‚¬ìš©í•˜ê¸°",
+			"index-use-emote-ctrl": "í™”ë©´ì— ìš°í´ë¦­ì„ ëˆ„ë¥¸ ì±„ ë§ˆìš°ìŠ¤ë¥¼ ë“œëž˜ê·¸í•´ ì´ëª¨í‹°ì½˜ì„ ì„ íƒí•˜ì„¸ìš”!",
+			"index-tips-1-desc": "surviv.ioì˜ ëª©í‘œëŠ” ë§ˆì§€ë§‰ 1ì¸, ë˜ëŠ” ë“€ì˜¤, ë˜ëŠ” ìŠ¤ì¿¼ë“œê°€ ë˜ëŠ” ê²ƒìž…ë‹ˆë‹¤! í•œ ê²Œìž„ë‹¹ ëª©ìˆ¨ì€ í•œ ê°œ - ì£½ìœ¼ë©´ ë‹¤ì‹œ ë¶€í™œí•  ìˆ˜ ì—†ì–´ìš”!",
 			"index-tips-2": "2D PUBG",
-			"index-tips-2-desc": "PUBG, í?¬íŠ¸ë‚˜ì?´íŠ¸, ë˜?ëŠ? H1Z1ì™€ ê°™ì?€ ë°°í‹€ë¡œì–„ ìž¥ë¥´ì?˜ ê²Œìž„ì?„ ì¢‹ì•„í•˜ì‹ ë‹¤ë©´, ì?´ë¯¸ ë‹¹ì‹ ì?€ surviv.ioì?˜ ì„¸ê³„ì—? ë“¤ì–´ì™€ ìžˆìŠµë‹ˆë‹¤! ì?´ ê²Œìž„ì?€ 2Dë¡œ ë?˜ì–´ ìžˆëŠ? ë°°í‹€ê·¸ë?¼ìš´ë“œë?¼ê³  ìƒ?ê°?í•˜ì‹œë©´ ë?©ë‹ˆë‹¤(ì¡°ê¸ˆ ë?? ì•ˆì •ì ?ì?¸ ì„œë²„ì™€ ë¨¹ê¸° ì‰¬ì›Œì§„ ì¹˜í‚¨ê³¼ í•¨ê»˜ìš?.)",
-			"index-tips-3": "íŒŒë°?ê³¼ ì „íˆ¬",
-			"index-tips-3-desc": "ë‹¹ì‹ ì?´ ì‹œìž‘í•  ë•Œì—?ëŠ? ìž‘ì?€ ê³µê°„ ì™¸ì—?ëŠ? ì•„ë¬´ê²ƒë?„ ì£¼ì–´ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤. ë§µ ê³³ê³³ì?„ ë?Œì•„ë‹¤ë‹ˆë©° ë¬´ê¸°, íƒ„ì•½, ì¡°ì¤€ê²½, ê·¸ë¦¬ê³  ì?˜ë£Œìš© ì•„ì?´í…œì?„ ì°¾ì•„ë‹¤ë‹ˆì„¸ìš?. ë‹¤ë¥¸ í?Œë ˆì?´ì–´ë¥¼ ì‚¬ì‚´í•˜ë©´ ê·¸ í?Œë ˆì?´ì–´ì?˜ ì•„ì?´í…œì?„ ì°¨ì§€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤!",
-			"index-tips-4": "ìž?ê¸°ìž¥ = ì œ 2ì?˜ ì ?!",
-			"index-tips-4-desc": "ë‹¤ë¥¸ í?Œë ˆì?´ì–´ë§Œì?´ ë‹¹ì‹ ì—?ê²Œ ë?°ë¯¸ì§€ë¥¼ ì£¼ëŠ? ê²ƒì?€ ì•„ë‹™ë‹ˆë‹¤. ì‹œê°„ì?´ ì§€ë‚  ë•Œë§ˆë‹¤ ë¹¨ê°„ìƒ‰ ìž?ê¸°ìž¥ì?´ ì ?ì ? ì¢?í˜€ì˜µë‹ˆë‹¤. ìž?ê¸°ìž¥ ì•ˆì—? ìžˆë‹¤ë©´ ê²½ê¸° í›„ë°˜ìœ¼ë¡œ ê°ˆìˆ˜ë¡? ë†’ì?€ ë?°ë¯¸ì§€ë¥¼ ë°›ê²Œ ë?˜ì£ . ì§€ë?„ë¥¼ ë³´ë©° ì•ˆì „ì—? ì‹ ê²½ì“°ì„¸ìš?!",
-			"game-alive": "ìƒ?ì¡´",
+			"index-tips-2-desc": "PUBG, í¬íŠ¸ë‚˜ì´íŠ¸, ë˜ëŠ” H1Z1ì™€ ê°™ì€ ë°°í‹€ë¡œì–„ ìž¥ë¥´ì˜ ê²Œìž„ì„ ì¢‹ì•„í•˜ì‹ ë‹¤ë©´, ì´ë¯¸ ë‹¹ì‹ ì€ surviv.ioì˜ ì„¸ê³„ì— ë“¤ì–´ì™€ ìžˆìŠµë‹ˆë‹¤! ì´ ê²Œìž„ì€ 2Dë¡œ ë˜ì–´ ìžˆëŠ” ë°°í‹€ê·¸ë¼ìš´ë“œë¼ê³  ìƒê°í•˜ì‹œë©´ ë©ë‹ˆë‹¤(ì¡°ê¸ˆ ë” ì•ˆì •ì ì¸ ì„œë²„ì™€ ë¨¹ê¸° ì‰¬ì›Œì§„ ì¹˜í‚¨ê³¼ í•¨ê»˜ìš”.)",
+			"index-tips-3": "íŒŒë°ê³¼ ì „íˆ¬",
+			"index-tips-3-desc": "ë‹¹ì‹ ì´ ì‹œìž‘í•  ë•Œì—ëŠ” ìž‘ì€ ê³µê°„ ì™¸ì—ëŠ” ì•„ë¬´ê²ƒë„ ì£¼ì–´ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤. ë§µ ê³³ê³³ì„ ëŒì•„ë‹¤ë‹ˆë©° ë¬´ê¸°, íƒ„ì•½, ì¡°ì¤€ê²½, ê·¸ë¦¬ê³  ì˜ë£Œìš© ì•„ì´í…œì„ ì°¾ì•„ë‹¤ë‹ˆì„¸ìš”. ë‹¤ë¥¸ í”Œë ˆì´ì–´ë¥¼ ì‚¬ì‚´í•˜ë©´ ê·¸ í”Œë ˆì´ì–´ì˜ ì•„ì´í…œì„ ì°¨ì§€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤!",
+			"index-tips-4": "ìžê¸°ìž¥ = ì œ 2ì˜ ì !",
+			"index-tips-4-desc": "ë‹¤ë¥¸ í”Œë ˆì´ì–´ë§Œì´ ë‹¹ì‹ ì—ê²Œ ë°ë¯¸ì§€ë¥¼ ì£¼ëŠ” ê²ƒì€ ì•„ë‹™ë‹ˆë‹¤. ì‹œê°„ì´ ì§€ë‚  ë•Œë§ˆë‹¤ ë¹¨ê°„ìƒ‰ ìžê¸°ìž¥ì´ ì ì  ì¢í˜€ì˜µë‹ˆë‹¤. ìžê¸°ìž¥ ì•ˆì— ìžˆë‹¤ë©´ ê²½ê¸° í›„ë°˜ìœ¼ë¡œ ê°ˆìˆ˜ë¡ ë†’ì€ ë°ë¯¸ì§€ë¥¼ ë°›ê²Œ ë˜ì£ . ì§€ë„ë¥¼ ë³´ë©° ì•ˆì „ì— ì‹ ê²½ì“°ì„¸ìš”!",
+			"game-alive": "ìƒì¡´",
 			"game-reloading": "ìž¥ì „ì¤‘",
 			"game-using": "ì‚¬ìš©ì¤‘",
 			"game-reviving": "ë¶€í™œì¤‘",
-			"game-revive-teammate": "íŒ€ì›?ë¶€í™œ",
+			"game-revive-teammate": "íŒ€ì›ë¶€í™œ",
 			"game-equip": "ì°©ìš©",
 			"game-cancel": "ì·¨ì†Œ",
 			"game-You": "You",
@@ -13419,77 +14181,77 @@ webpackJsonp([0], {
 			"game-finally-bled-out": "finally bled out",
 			"game-died-outside": "died outside the safe zone",
 			"game-the-red-zone": "The red zone",
-			"game-waiting-for-players": "í?Œë ˆì?´ì–´ ê¸°ë‹¤ë¦¬ëŠ?ì¤‘",
+			"game-waiting-for-players": "í”Œë ˆì´ì–´ ê¸°ë‹¤ë¦¬ëŠì¤‘",
 			"game-spectating": "Spectating",
-			"game-red-zone-advances": "ë¹¨ê°„ êµ¬ì—­ ì›€ì§?ìž…ë‹ˆë‹¤!",
-			"game-red-zone-advancing": "ë¹¨ê°„ êµ¬ì—­ì?´ ì›€ì§?ìž…ë‹ˆë‹¤.  ì•ˆì „ì§€ëŒ€ë¡œ ëŒ€í?¼í•˜ì‹­ì‹œìš?.",
+			"game-red-zone-advances": "ë¹¨ê°„ êµ¬ì—­ ì›€ì§ìž…ë‹ˆë‹¤!",
+			"game-red-zone-advancing": "ë¹¨ê°„ êµ¬ì—­ì´ ì›€ì§ìž…ë‹ˆë‹¤.  ì•ˆì „ì§€ëŒ€ë¡œ ëŒ€í”¼í•˜ì‹­ì‹œìš”.",
 			"game-seconds": "s",
 			"game-minutes": "m",
 			"game-minute": "m",
 			"game-m": "m",
 			"game-s": "s",
-			"game-not-enough-space": "ê³µê°„ì?´ ë¶€ì¡±í•©ë‹ˆë‹¤!",
-			"game-item-already-owned": "ì?´ ë¬¼ê±´ì?€ ì?´ë¯¸ ì†Œìœ  í•˜ê³  ìžˆìŠµë‹ˆë‹¤!",
-			"game-item-already-equipped": "ì?´ ë¬¼ê±´ì?€ ì?´ë¯¸ ì°©ìš© í•˜ê³  ìžˆìŠµë‹ˆë‹¤!",
-			"game-better-item-equipped": "ë?? ì¢‹ì?€ ì•„ì?´í…œì?„ ì°©ìš© í•˜ê³  ìžˆìŠµë‹ˆë‹¤!",
+			"game-not-enough-space": "ê³µê°„ì´ ë¶€ì¡±í•©ë‹ˆë‹¤!",
+			"game-item-already-owned": "ì´ ë¬¼ê±´ì€ ì´ë¯¸ ì†Œìœ  í•˜ê³  ìžˆìŠµë‹ˆë‹¤!",
+			"game-item-already-equipped": "ì´ ë¬¼ê±´ì€ ì´ë¯¸ ì°©ìš© í•˜ê³  ìžˆìŠµë‹ˆë‹¤!",
+			"game-better-item-equipped": "ë” ì¢‹ì€ ì•„ì´í…œì„ ì°©ìš© í•˜ê³  ìžˆìŠµë‹ˆë‹¤!",
 			"game-play-new-game": "ìƒˆë¡œ ì‹œìž‘í•˜ê¸°",
 			"game-spectate": "ê´€ì¤‘ëª¨ë“œ",
-			"game-full-screen": "í’€ ìŠ¤í?¬ë¦°",
+			"game-full-screen": "í’€ ìŠ¤í¬ë¦°",
 			"game-sound": "ì‚¬ìš´ë“œ",
 			"game-quit-game": "ë‚˜ê°€ê¸°",
-			"game-return-to-game": "ë?Œì•„ê°€ê¸°",
-			"game-hide-match-stats": "ê²Œìž„í†µê³„Â ê°?ì¶?ê¸°",
-			"game-view-match-stats": "ê²Œìž„í†µê³„ ë³´ì?´ê¸°",
-			"game-previous-teammate": "ì?´ì „ í?Œë ˆì?´ì–´",
-			"game-next-teammate": "ë‹¤ì?Œ í?Œë ˆì?´ì–´",
+			"game-return-to-game": "ëŒì•„ê°€ê¸°",
+			"game-hide-match-stats": "ê²Œìž„í†µê³„Â ê°ì¶”ê¸°",
+			"game-view-match-stats": "ê²Œìž„í†µê³„ ë³´ì´ê¸°",
+			"game-previous-teammate": "ì´ì „ í”Œë ˆì´ì–´",
+			"game-next-teammate": "ë‹¤ìŒ í”Œë ˆì´ì–´",
 			"game-spectate-previous": "",
 			"game-spectate-next": "",
 			"game-leave-game": "ë‚˜ê°€ê¸°",
 			"game-your-results": "ëž­í‚¹",
-			"game-chicken": "ì?´ê²¼ë‹­! ì˜¤ëŠ˜ ì €ë…?ì?€ ì¹˜í‚¨ì?´ë‹­!",
+			"game-chicken": "ì´ê²¼ë‹­! ì˜¤ëŠ˜ ì €ë…ì€ ì¹˜í‚¨ì´ë‹­!",
 			"game-won-the-game": "ìŠ¹ë¦¬.",
-			"game-team-eliminated": "ê·¸ëŸ´ ìˆ˜ ìžˆì–´. ì?´ëŸ° ë‚ ë?„ ìžˆëŠ? ê±°ì§€ ë­?.",
+			"game-team-eliminated": "ê·¸ëŸ´ ìˆ˜ ìžˆì–´. ì´ëŸ° ë‚ ë„ ìžˆëŠ” ê±°ì§€ ë­.",
 			"game-rank": "ëž­í‚¹",
 			"game-team-rank": "íŒ€ ëž­í‚¹",
 			"game-team-kills": "íŒ€ í‚¬",
 			"game-kill": "í‚¬",
 			"game-kills": "í‚¬",
-			"game-damage-dealt": "ê°€í•œ í?¼í•´ëŸ‰",
-			"game-damage-taken": "ë°›ì?€ í?¼í•´ëŸ‰",
-			"game-survived": "ìƒ?ì¡´ì‹œê°„",
+			"game-damage-dealt": "ê°€í•œ í”¼í•´ëŸ‰",
+			"game-damage-taken": "ë°›ì€ í”¼í•´ëŸ‰",
+			"game-survived": "ìƒì¡´ì‹œê°„",
 			"game-backpack00": "ì£¼ë¨¸ë‹ˆ",
-			"game-backpack01": "ìž‘ì?€ ê°€ë°©",
+			"game-backpack01": "ìž‘ì€ ê°€ë°©",
 			"game-backpack02": "ë³´í†µ ê°€ë°©",
-			"game-backpack03": "êµ°ì?¸ ê°€ë°©",
+			"game-backpack03": "êµ°ì¸ ê°€ë°©",
 			"game-bandage": "ë¶•ëŒ€",
-			"game-bandage-tooltip": "ë ˆí?„íŠ¸ í?´ë¦­ í•˜ì‹œë©´ 15 HP ì¦?ê°€í•©ë‹ˆë‹¤.",
-			"game-healing-tooltip": "75 HP ì?´ìƒ? íž?í• ìˆ˜ ì—†ì??ë‹ˆë‹¤.",
-			"game-healthkit": "êµ¬ê¸‰ ìƒ?ìž?",
-			"game-healthkit-tooltip": "ë ˆí?„íŠ¸ í?´ë¦­ í•˜ì‹œë©´Â 100 HP ì¦?ê°€í•©ë‹ˆë‹¤.",
+			"game-bandage-tooltip": "ë ˆí”„íŠ¸ í´ë¦­ í•˜ì‹œë©´ 15 HP ì¦ê°€í•©ë‹ˆë‹¤.",
+			"game-healing-tooltip": "75 HP ì´ìƒ íží• ìˆ˜ ì—†ìë‹ˆë‹¤.",
+			"game-healthkit": "êµ¬ê¸‰ ìƒìž",
+			"game-healthkit-tooltip": "ë ˆí”„íŠ¸ í´ë¦­ í•˜ì‹œë©´Â 100 HP ì¦ê°€í•©ë‹ˆë‹¤.",
 			"game-soda": "ì†Œë‹¤",
-			"game-soda-tooltip": "ë ˆí?„íŠ¸ í?´ë¦­ í•˜ì‹œë©´ ì•„ë“œë ˆë‚ ë¦° 25 ì¦?ê°€í•©ë‹ˆë‹¤.",
-			"game-adrenaline-tooltip": "ì•„ë“œë ˆë‚ ë¦°ì?€ HP ì§€ì†?ì ?ìœ¼ë¡œ íšŒë³µì‹œí‚´ë‹ˆë‹¤.",
+			"game-soda-tooltip": "ë ˆí”„íŠ¸ í´ë¦­ í•˜ì‹œë©´ ì•„ë“œë ˆë‚ ë¦° 25 ì¦ê°€í•©ë‹ˆë‹¤.",
+			"game-adrenaline-tooltip": "ì•„ë“œë ˆë‚ ë¦°ì€ HP ì§€ì†ì ìœ¼ë¡œ íšŒë³µì‹œí‚´ë‹ˆë‹¤.",
 			"game-painkiller": "ì•Œì•½",
-			"game-painkiller-tooltip": "ë ˆí?„íŠ¸ í?´ë¦­ í•˜ì‹œë©´ ì•„ë“œë ˆë‚ ë¦°Â 50 ì¦?ê°€í•©ë‹ˆë‹¤.",
+			"game-painkiller-tooltip": "ë ˆí”„íŠ¸ í´ë¦­ í•˜ì‹œë©´ ì•„ë“œë ˆë‚ ë¦°Â 50 ì¦ê°€í•©ë‹ˆë‹¤.",
 			"game-9mm": "9mm",
 			"game-9mm-tooltip": "M9, Glock, MP5, MAC-10, UMP9, Vector íƒ„ì•½.",
-			"game-12gauge": "12 ê²Œì?´ì§€",
+			"game-12gauge": "12 ê²Œì´ì§€",
 			"game-12gauge-tooltip": "M870, SAIGA-12, MP220 íƒ„ì•½.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "AK-47, SCAR-H, M39, Mosin Nagant, OT-38, DP-28 íƒ„ì•½.",
+			"game-762mm-tooltip": "AK-47, SCAR-H, M39, Mosin-Nagant, OT-38, DP-28 íƒ„ì•½.",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "FAMAS, HK416, Mk 12, M249 íƒ„ì•½.",
-			"game-chest01": "ì¡°ë?¼ ë ˆë²¨ 1",
-			"game-chest02": "ì¡°ë?¼ ë ˆë²¨ 2",
-			"game-chest03": "ì¡°ë?¼ ë ˆë²¨ 3",
+			"game-chest01": "ì¡°ë¼ ë ˆë²¨ 1",
+			"game-chest02": "ì¡°ë¼ ë ˆë²¨ 2",
+			"game-chest03": "ì¡°ë¼ ë ˆë²¨ 3",
 			"game-helmet01": "í—¬ë©§ ë ˆë²¨ 1",
 			"game-helmet02": "í—¬ë©§ ë ˆë²¨ 2",
 			"game-helmet03": "í—¬ë©§ ë ˆë²¨ 3",
-			"game-1xscope": "1x ìŠ¤ì½?í?„",
-			"game-2xscope": "2x ìŠ¤ì½?í?„",
-			"game-4xscope": "4x ìŠ¤ì½?í?„",
-			"game-8xscope": "8x ìŠ¤ì½?í?„",
-			"game-15xscope": "15x ìŠ¤ì½?í?„",
+			"game-1xscope": "1x ìŠ¤ì½”í”„",
+			"game-2xscope": "2x ìŠ¤ì½”í”„",
+			"game-4xscope": "4x ìŠ¤ì½”í”„",
+			"game-8xscope": "8x ìŠ¤ì½”í”„",
+			"game-15xscope": "15x ìŠ¤ì½”í”„",
 			"game-level-1": "ë ˆë²¨ 1",
 			"game-level-2": "ë ˆë²¨ 2",
 			"game-level-3": "ë ˆë²¨ 3",
@@ -13505,7 +14267,7 @@ webpackJsonp([0], {
 			"game-outfitWhite": "Arctic Avenger",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -13617,7 +14379,7 @@ webpackJsonp([0], {
 								!(l.sameLayer(d.layer, a.layer) || 2 & a.layer) || 1 != d.layer && 2 & a.layer && i.insideStructureMask(r.createCircle(d.pos, 1)) || (h |= 2), o.addPIXIObj(d.sprite, p.World, h, 500, d.zIdx);
 								var g = t.pointToScreen(d.pos),
 									f = t.pixels(2 * d.rad / t.ppu);
-								d.sprite.position.set(g.x, g.y), d.sprite.scale.set(f, f), d.sprite.rotation = d.rot, d.sprite.tint = d.tint, d.sprite.alpha = .2 * u, d.sprite.visible = d.active
+								d.sprite.position.set(g.x, g.y), d.sprite.scale.set(f, f), d.sprite.rotation = d.rot, d.sprite.tint = d.tint, d.sprite.alpha = u, d.sprite.visible = d.active
 							}
 						}
 					}
@@ -13764,11 +14526,11 @@ webpackJsonp([0], {
 							k.interpPos = m.add(k.interpPos, m.mul(T, M));
 							var P = Math.PI * k.interpSpeed,
 								C = l.angleDiff(k.interpRot, this.rot),
-								z = l.sign(C) * P * e;
-							if (Math.abs(C) < Math.abs(z) && (z = C), k.interpRot += z, k.seq != k.seqOld) {
-								var I = s.Defs[this.type],
-									D = I.door.sound.change || "";
-								"" != D && i.playSound(D, {
+								I = l.sign(C) * P * e;
+							if (Math.abs(C) < Math.abs(I) && (I = C), k.interpRot += I, k.seq != k.seqOld) {
+								var z = s.Defs[this.type],
+									A = z.door.sound.change || "";
+								"" != A && i.playSound(A, {
 									channel: "sfx",
 									soundPos: f,
 									layer: this.layer,
@@ -13776,8 +14538,8 @@ webpackJsonp([0], {
 								}), k.seqOld = k.seq
 							}
 							if (k.open != k.wasOpen) {
-								var A = s.Defs[this.type],
-									O = k.open ? A.door.sound.open : A.door.sound.close;
+								var D = s.Defs[this.type],
+									O = k.open ? D.door.sound.open : D.door.sound.close;
 								i.playSound(O, {
 									channel: "sfx",
 									soundPos: f,
@@ -13787,23 +14549,23 @@ webpackJsonp([0], {
 							}
 						}
 						if (p && !h && (t.deadObstacleIds.push(this.__id), this.exploded = !0, this.smokeEmitter && (this.smokeEmitter.stop(), this.smokeEmitter = null), !g)) {
-							for (var L = r.toAabb(this.collider), B = m.mul(m.sub(L.max, L.min), .5), E = m.add(L.min, B), F = Math.floor(c.random(5, 11)), R = 0; R < F; R++) {
+							for (var L = r.toAabb(this.collider), E = m.mul(m.sub(L.max, L.min), .5), B = m.add(L.min, E), F = Math.floor(c.random(5, 11)), R = 0; R < F; R++) {
 								var j = m.mul(m.randomUnit(), c.random(5, 15)),
 									N = Array.isArray(y) ? y[Math.floor(Math.random() * y.length)] : y;
-								a.addParticle(d.Defs[N], this.layer, E, j)
+								a.addParticle(d.Defs[N], this.layer, B, j)
 							}
 							i.playSound(b.explode, {
 								channel: "sfx",
-								soundPos: E,
+								soundPos: B,
 								layer: this.layer,
 								muffled: !0
 							})
 						}
 						if (this.smokeEmitter && (this.smokeEmitter.pos = m.copy(this.pos)), this.sprite.visible) {
 							var q = this.dead ? 5 : this.sprite.zIdx,
-								G = this.__id,
-								U = this.layer;
-							!this.dead && q >= 50 && 0 == this.layer && 0 == o.layer && (q += 100, U |= 2), n.addPIXIObj(this.sprite, u.World, U, q, G), this.isDoor && this.door.casingSprite && n.addPIXIObj(this.door.casingSprite, u.World, U, q + this.door.casingSprite.zIdx, G)
+								U = this.__id,
+								G = this.layer;
+							!this.dead && q >= 50 && 0 == this.layer && 0 == o.layer && (q += 100, G |= 2), n.addPIXIObj(this.sprite, u.World, G, q, U), this.isDoor && this.door.casingSprite && n.addPIXIObj(this.door.casingSprite, u.World, G, q + this.door.casingSprite.zIdx, U)
 						}
 						this.isNew = !1
 					}
@@ -13990,7 +14752,7 @@ webpackJsonp([0], {
 			"index-scope-zoom": "PrzybliÅ¼enie",
 			"index-scope-zoom-ctrl": "Lewy Przycisk Myszy lub PrzybliÅ¼enie",
 			"index-pickup": "PodnieÅ›",
-			"index-loot": "Å?up",
+			"index-loot": "Åup",
 			"index-revive": "WskrzeÅ›",
 			"index-pickup-ctrl": "F",
 			"index-use-medical": "UÅ¼yj przyboru medycznego",
@@ -14093,7 +14855,7 @@ webpackJsonp([0], {
 			"game-12gauge": "Kaliber 12",
 			"game-12gauge-tooltip": "Amunicja dla M870, Saiga-12 i MP220.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "Amunicja dla AK-47, SCAR-H, M39, Mosin Nagant, OT-38 i DP-28.",
+			"game-762mm-tooltip": "Amunicja dla AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 i DP-28.",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "Amunicja dla FAMAS, HK416, Mk 12 i M249.",
 			"game-chest01": "Kamizelka Poziom 1",
@@ -14123,7 +14885,7 @@ webpackJsonp([0], {
 			"game-outfitWoodland": "LeÅ›na Walka",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -15235,7 +15997,7 @@ webpackJsonp([0], {
 			"game-12gauge": "Calibre 12",
 			"game-12gauge-tooltip": "Balles pour M870, Saiga-12 et MP220.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "Balles pour AK-47, SCAR-H, M39, Mosin Nagant, OT-38 et DP-28.",
+			"game-762mm-tooltip": "Balles pour AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 et DP-28.",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "Balles pour FAMAS, HK416, Mk 12 et M249.",
 			"game-chest01": "Veste de niveau 1",
@@ -15265,7 +16027,7 @@ webpackJsonp([0], {
 			"game-outfitWoodland": "Combat de forÃªt",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -15314,7 +16076,8 @@ webpackJsonp([0], {
 			l = r.EmoteData,
 			c = a("85i3"),
 			m = a("Jr6A"),
-			d = function() {
+			d = a("SEs0"),
+			p = function() {
 				function e(t) {
 					i(this, e), this.config = t, this.selectedEmote = {
 						prevSlot: "",
@@ -15335,17 +16098,27 @@ webpackJsonp([0], {
 							locked: "Like to unlock flag emotes!",
 							unlocked: "Flag emotes unlocked!",
 							config: "facebookLike"
+						},
+						account: {
+							locked: "Create an account to unlock emotes!",
+							unlocked: "Account emotes unlocked!"
 						}
 					}
 				}
 				return o(e, [{
 					key: "init",
-					value: function() {
-						var e = this,
-							t = this;
-						n("#customize-emote-wheel, #customize-emote-autos").find(".ui-emote-parent").each(function(t, a) {
+					value: function(e) {
+						var t = this,
+							a = n("#modal-customize");
+						n("#btn-customize").click(function() {
+							return a.finish(), e.loggedIn && t.unlockEmotes("account"), a.css("display", "block"), n("#start-bottom-right").fadeOut(200), d.addModalCloseListener(), !1
+						}), n(".btn-account-change-avatar, .account-avatar").click(function(a) {
+							e.loggedIn && t.populateAvatar(e.profile.avatar)
+						});
+						var i = this;
+						n("#customize-emote-wheel, #customize-emote-autos").find(".ui-emote-parent").each(function(e, a) {
 							var i = n(a),
-								o = e.config.get(i.data("slot")),
+								o = t.config.get(i.data("slot")),
 								r = l[o],
 								s = {
 									img: "",
@@ -15356,34 +16129,40 @@ webpackJsonp([0], {
 								id: o
 							}), i.find(".customize-emote-image").data("id", s.id), i.find(".customize-emote-image").css("background-image", "url(" + s.img + ")")
 						});
-						var a = Object.keys(l);
-						a.sort(function(e, t) {
+						var o = Object.keys(l);
+						o.sort(function(e, t) {
 							return l[e].category - l[t].category || e - t
 						});
-						var i = [];
-						for (var o in s)
-							for (var r = 0; r < a.length; r++) s[o] != a[r] || i.push(o);
-						for (var d = 0; d < a.length; d++) {
-							var p = i[a[d]];
-							if (s.hasOwnProperty(p)) {
-								var u = l[s[p]],
-									h = u.noCustom || !1;
-								if (!u.teamOnly && !h) {
-									var g = !1,
-										f = "";
-									u.twitterFollow && (g = !0, f = "twitter"), u.youtubeSubscribe && (g = !0, f = "youtube"), u.facebookLike && (g = !0, f = "facebook");
-									var y = "customize-list-item";
-									y += g ? " customize-list-item-locked" : " customize-list-item-unlocked";
-									var b = n("<div/>", {
-										class: y,
-										"data-lock-reason": f
+						for (var r = [], p = 0; p < o.length; p++)
+							for (var u in s) s[u] == o[p] && r.push(s[u]);
+						for (var h = 0; h < r.length; h++) {
+							var g = r[h];
+							if (l.hasOwnProperty(g)) {
+								var f = l[g],
+									y = f.noCustom || !1;
+								if (!f.teamOnly && !y) {
+									var b = !1,
+										x = "";
+									f.twitterFollow && (b = !0, x = "twitter"), f.youtubeSubscribe && (b = !0, x = "youtube"), f.facebookLike && (b = !0, x = "facebook"), f.accountLogin && (b = !0, x = "account");
+									var v = "customize-list-item";
+									v += b ? " customize-list-item-locked" : " customize-list-item-unlocked";
+									var k = n("<div/>", {
+										class: v,
+										"data-lock-reason": x
 									});
-									b.append(n("<div/>", {
+									k.append(n("<div/>", {
 										class: "customize-emote-image",
-										style: "background-image: url(" + u.texture + ")",
-										draggable: !g,
-										"data-id": s[p]
-									})), n("#modal-customize-list").append(b)
+										style: "background-image: url(" + f.texture + ")",
+										draggable: !b,
+										"data-id": g
+									})), n("#modal-customize-list").append(k), v = "customize-list-item customize-list-item-unlocked", k = n("<div/>", {
+										class: v
+									}), k.append(n("<div/>", {
+										class: "customize-emote-image",
+										style: "background-image: url(" + f.texture + ")",
+										draggable: !b,
+										"data-id": g
+									})), n("#modal-account-avatar-list").append(k)
 								}
 							}
 						}
@@ -15391,45 +16170,47 @@ webpackJsonp([0], {
 							n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "visible")
 						}, function() {
 							n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "hidden")
-						}), this.selectableSlots = n(".customize-col, .customize-list-item"), this.emoteSlots = n(".customize-col"), this.highlightedSlots = this.emoteSlots.siblings(".ui-emote-hl"), this.highlightOpacityMin = .4, this.emoteSelected = !1, this.selectableSlots.on("mouseup", function() {
-							if (!n(this).hasClass("customize-list-item-locked")) return t.emoteSelected && !n(this).hasClass("customize-list-item") ? void(t.emoteSelected = !1) : void t.selectEmote(n(this))
+						}), this.selectableSlots = n(".customize-col, .customize-list-item"), this.emoteSlots = n(".customize-col"), this.highlightedSlots = this.emoteSlots.siblings(".ui-emote-hl"), this.highlightOpacityMin = .4, this.emoteSelected = !1, n("#btn-account-login-unlock").click(function() {
+							return n("#account-details-guest").trigger("click"), n(".modal").fadeOut(200), !1
+						}), this.selectableSlots.on("mouseup", function() {
+							if (!n(this).hasClass("customize-list-item-locked")) return i.emoteSelected && !n(this).hasClass("customize-list-item") ? void(i.emoteSelected = !1) : void i.selectEmote(n(this))
 						}), this.selectableSlots.on("dragstart", function(e) {
-							if (!n(this).hasClass("customize-list-item-locked") && (t.selectEmote(n(this)), !m.detectIE(!0))) {
-								var a = document.createElement("img");
-								a.src = t.selectedEmote.img.replace("url(", "").replace(")", "").replace(/\"/gi, ""), e.originalEvent.dataTransfer.setDragImage(a, 64, 64)
+							if (!n(this).hasClass("customize-list-item-locked") && (i.selectEmote(n(this)), !m.detectIE(!0))) {
+								var t = document.createElement("img");
+								t.src = i.selectedEmote.img.replace("url(", "").replace(")", "").replace(/\"/gi, ""), e.originalEvent.dataTransfer.setDragImage(t, 64, 64)
 							}
 						}), this.emoteSlots.on("drop", function(e) {
 							e.originalEvent.preventDefault();
-							var a = n(this).parent();
-							t.updateSlot(a, t.selectedEmote.img, t.selectedEmote.id), t.emoteSelected = !1
+							var t = n(this).parent();
+							i.updateSlot(t, i.selectedEmote.img, i.selectedEmote.id), i.emoteSelected = !1
 						}), this.emoteSlots.on("mousedown", function(e) {
-							if (t.emoteSelected) {
+							if (i.emoteSelected) {
 								e.stopPropagation();
-								var a = n(this).parent();
-								t.updateSlot(a, t.selectedEmote.img, t.selectedEmote.id)
+								var t = n(this).parent();
+								i.updateSlot(t, i.selectedEmote.img, i.selectedEmote.id)
 							}
 						}), this.emoteSlots.on("dragover", function(e) {
 							e.originalEvent.preventDefault(), n(this).parent().find(".ui-emote-hl").css("opacity", 1)
 						}), this.emoteSlots.on("dragleave", function(e) {
-							e.originalEvent.preventDefault(), n(this).parent().find(".ui-emote-hl").css("opacity", t.highlightOpacityMin)
+							e.originalEvent.preventDefault(), n(this).parent().find(".ui-emote-hl").css("opacity", i.highlightOpacityMin)
 						}), n(document).on("dragend", function(e) {
-							e.originalEvent.preventDefault(), t.highlightedSlots.css({
+							e.originalEvent.preventDefault(), i.highlightedSlots.css({
 								display: "none",
 								opacity: 0
 							})
 						}), n(".ui-emote-auto-trash").click(function() {
 							var e = n(this).parent();
-							t.updateSlot(e, "", 1)
+							i.updateSlot(e, "", 1)
 						});
-						for (var x in this.unlockTypes)
-							if (this.unlockTypes.hasOwnProperty(x)) {
-								var v = this.unlockTypes[x];
-								this.config.get(v.config) && this.unlockEmotes(x)
+						for (var _ in this.unlockTypes)
+							if (this.unlockTypes.hasOwnProperty(_) && "account" != _) {
+								var w = this.unlockTypes[_];
+								this.config.get(w.config) && this.unlockEmotes(_)
 							}
-						n(".btn-social-unlock").click(function() {
+						n("#btn-twitter-follow-unlock, #btn-youtube-subscribe-unlock, #btn-facebook-like-unlock").click(function() {
 							if (n(this).hasClass("btn-social-unlocked")) return !1;
 							var e = n(this).data("lock-reason");
-							t.unlockEmotes(e), c.storeGeneric("loadouts", "socialUnlock/emotes/" + e)
+							i.unlockEmotes(e), c.storeGeneric("loadouts", "socialUnlock/emotes/" + e)
 						})
 					}
 				}, {
@@ -15460,7 +16241,7 @@ webpackJsonp([0], {
 							this.updateSlot(i, o.css("background-image"), o.data("id"))
 						}
 						var n = e.find(".customize-emote-slot");
-						n.data("id", a), n.css("background-image", t), e.find(".ui-emote-hl").css("display", "none"), this.config.set(e.data("slot"), a), this.selectableSlots.removeClass("customize-list-item-selected"), this.highlightedSlots.css({
+						n.data("id", a), n.css("background-image", t), e.find(".ui-emote-hl").css("display", "none"), "customizeAvatar" != e.attr("data-slot") && this.config.set(e.data("slot"), a), this.selectableSlots.removeClass("customize-list-item-selected"), this.highlightedSlots.css({
 							display: "none",
 							opacity: 0
 						})
@@ -15477,9 +16258,19 @@ webpackJsonp([0], {
 							n('.tooltiptext[data-lock-reason="' + n(this).data("lock-reason") + '"]').css("visibility", "hidden")
 						})
 					}
+				}, {
+					key: "populateAvatar",
+					value: function(e) {
+						var t = "",
+							a = 0,
+							i = l[e];
+						void 0 != i && (t = i.texture, a = e);
+						var o = n("#customize-account-avatar");
+						o.find(".customize-emote-image").data("id", a), o.find(".customize-emote-image").css("background-image", "url(" + t + ")")
+					}
 				}]), e
 			}();
-		e.exports = d
+		e.exports = p
 	},
 	FyxX: function(e, t, a) {
 		"use strict";
@@ -15610,16 +16401,29 @@ webpackJsonp([0], {
 		}
 
 		function o(e) {
-			var t = e.trim();
-			return t.length > _.kNameMaxLen && (t = t.substring(0, _.kNameMaxLen)), t
+			for (var t = e + "=", a = decodeURIComponent(document.cookie), i = a.split(";"), o = 0; o < i.length; o++) {
+				for (var n = i[o];
+					" " == n.charAt(0);) n = n.substring(1);
+				if (0 == n.indexOf(t)) return n.substring(t.length, n.length)
+			}
+			return ""
 		}
 
 		function n(e) {
-			return e ? e.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">") : ""
+			var t = e.trim();
+			return t.length > S.kNameMaxLen && (t = t.substring(0, S.kNameMaxLen)), t
 		}
 
-		function r(e, t, a) {
-			var i = S.getContext("2d");
+		function r(e) {
+			return e.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+		}
+
+		function s(e) {
+			return e.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&")
+		}
+
+		function l(e, t, a) {
+			var i = T.getContext("2d");
 			i.font = t;
 			for (var o = e.length, n = e; o > 0;) {
 				if (i.measureText(n).width <= a) break;
@@ -15628,20 +16432,20 @@ webpackJsonp([0], {
 			return n
 		}
 
-		function s(e) {
+		function c(e) {
 			return void 0 === e ? "undefined" : null === e ? "null" : JSON.stringify(e)
 		}
 
-		function l() {
+		function m() {
 			for (var e = ["localhost", "surviv.io", "surviv2.io", "2dbattleroyale.com", "2dbattleroyale.org"], t = window.location.hostname, a = !1, i = 0; i < e.length; i++)
 				if (-1 != t.indexOf(e[i])) {
 					a = !0;
 					break
 				}
-			return w.dev || a
+			return M.dev || a
 		}
 
-		function c() {
+		function d() {
 			var e = navigator.language || navigator.userLanguage;
 			e = e.toLowerCase();
 			for (var t = ["pt", "de", "es", "fr", "ko", "ru", "en"], a = 0; a < t.length; a++)
@@ -15654,19 +16458,19 @@ webpackJsonp([0], {
 			return ""
 		}
 
-		function m() {
+		function p() {
 			return !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/) && this.detectiOS()
 		}
 
-		function d() {
+		function u() {
 			return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
 		}
 
-		function p() {
-			return d() && 375 == screen.width && 812 == screen.height
+		function h() {
+			return u() && 375 == screen.width && 812 == screen.height
 		}
 
-		function u() {
+		function g() {
 			var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
 				t = window.navigator.userAgent,
 				a = t.indexOf("MSIE "),
@@ -15675,23 +16479,23 @@ webpackJsonp([0], {
 			return a > 0 || i > 0 || e && o > 0
 		}
 
-		function h() {
+		function f() {
 			return window.innerWidth > window.innerHeight || 90 == window.orientation || -90 == window.orientation
 		}
 
-		function g() {
-			return h() ? "landscape" : "portrait"
+		function y() {
+			return f() ? "landscape" : "portrait"
 		}
 
-		function f() {
+		function b() {
 			var e = window.innerWidth,
 				t = window.innerHeight;
-			if (d()) {
-				if (e = screen.width, t = screen.height, h()) {
+			if (u()) {
+				if (e = screen.width, t = screen.height, f()) {
 					var a = t;
 					t = e, e = a
 				}
-				p() && (h() ? e -= 88 : t -= 88)
+				h() && (f() ? e -= 88 : t -= 88)
 			}
 			return {
 				width: e,
@@ -15699,16 +16503,16 @@ webpackJsonp([0], {
 			}
 		}
 
-		function y(e) {
+		function x(e) {
 			var t = document.documentElement;
 			document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement || e ? document.exitFullscreen ? document.exitFullscreen() : document.msExitFullscreen ? document.msExitFullscreen() : document.mozCancelFullScreen ? document.mozCancelFullScreen() : document.webkitExitFullscreen && document.webkitExitFullscreen() : t.requestFullscreen ? t.requestFullscreen() : t.msRequestFullscreen ? (t = document.body, t.msRequestFullscreen()) : t.mozRequestFullScreen ? t.mozRequestFullScreen() : t.webkitRequestFullscreen && t.webkitRequestFullscreen()
 		}
 
-		function b() {
+		function v() {
 			return void 0 !== i("debug") || !1
 		}
 
-		function x(e, t) {
+		function k(e, t) {
 			! function a(i, o) {
 				if (i >= o) return void t("full");
 				var n = function() {
@@ -15716,14 +16520,19 @@ webpackJsonp([0], {
 						a(i + 1, o)
 					}, 250)
 				};
-				k.ajax({
+				w.ajax({
 					type: "POST",
-					url: "/find_game",
+					url: "/api/find_game",
 					data: JSON.stringify(e),
 					contentType: "application/json; charset=utf-8",
 					timeout: 1e4,
 					success: function(e, a) {
-						"full" == e.err ? n() : e.err ? t(e.err) : void 0 === e.hosts || void 0 === e.addrs ? n() : t(null, e)
+						if ("full" == e.err) n();
+						else if (e.err) t(e.err);
+						else {
+							var i = e.res[0];
+							void 0 === i.hosts || void 0 === i.addrs ? n() : t(null, i)
+						}
 					},
 					error: function(e) {
 						n()
@@ -15732,45 +16541,47 @@ webpackJsonp([0], {
 			}(0, 3)
 		}
 
-		function v(e, t, a, i) {
-			var o = "https:" == window.location.protocol,
-				n = o ? "wss:" : "ws:",
-				r = o ? a.hosts : a.addrs;
-			r = r || [];
-			for (var s = [], l = 0; l < r.length; l++) s.push(n + "//" + r[l] + "/play?gid=" + a.gameId);
-			! function a(o) {
+		function _(e, t, a) {
+			var i = "https:" == window.location.protocol,
+				o = i ? "wss:" : "ws:",
+				n = i ? t.hosts : t.addrs;
+			n = n || [];
+			for (var r = [], s = 0; s < n.length; s++) r.push(o + "//" + n[s] + "/play?gid=" + t.gid);
+			! function i(o) {
 				var n = function() {
-					a(o)
+					i(o)
 				};
 				if (o.length > 0) {
 					var r = o.shift();
-					e.tryJoinGame(t, r, n)
-				} else i()
-			}(s)
+					v() && console.log("Joining game", r, t.zone), e.tryJoinGame(t.data, r, n)
+				} else a()
+			}(r)
 		}
-		var k = a("juYr"),
-			_ = a("yp2f"),
-			w = a("zinx"),
-			S = (a("85i3"), document.createElement("canvas"));
+		var w = a("juYr"),
+			S = a("yp2f"),
+			M = a("zinx"),
+			T = (a("85i3"), document.createElement("canvas"));
 		e.exports = {
 			getParameterByName: i,
-			sanitizeNameInput: o,
-			unEntity: n,
-			truncateString: r,
-			varToString: s,
-			authLocation: l,
-			detectLanguage: c,
-			detectiOS: d,
-			detectiPhoneX: p,
-			detectIE: u,
-			detectMobileSafari: m,
-			getOrientation: g,
-			isLandscape: h,
-			getScreenDimensions: f,
-			toggleFullScreen: y,
-			logDebug: b,
-			findGame: x,
-			joinGame: v
+			getCookie: o,
+			sanitizeNameInput: n,
+			htmlEscape: r,
+			htmlUnescape: s,
+			truncateString: l,
+			varToString: c,
+			authLocation: m,
+			detectLanguage: d,
+			detectiOS: u,
+			detectiPhoneX: h,
+			detectIE: g,
+			detectMobileSafari: p,
+			getOrientation: y,
+			isLandscape: f,
+			getScreenDimensions: b,
+			toggleFullScreen: x,
+			logDebug: v,
+			findGame: k,
+			joinGame: _
 		}
 	},
 	K7EQ: function(e, t, a) {
@@ -15952,7 +16763,7 @@ webpackJsonp([0], {
 			"game-12gauge": "12er Kaliber",
 			"game-12gauge-tooltip": "Munition fÃ¼r M870, Saiga-12 und MP220.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "Munition fÃ¼r AK-47, SCAR-H, M39, Mosin Nagant, OT-38 und DP-28.",
+			"game-762mm-tooltip": "Munition fÃ¼r AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 und DP-28.",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "Munition fÃ¼r FAMAS, HK416, Mk 12 und M249.",
 			"game-chest01": "Level 1 Weste",
@@ -15981,7 +16792,7 @@ webpackJsonp([0], {
 			"game-outfitWhite": "Arctic Avenger",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -15996,135 +16807,6 @@ webpackJsonp([0], {
 			"game-silo_01": "a silo"
 		};
 		e.exports = i
-	},
-	LLDW: function(e, t, a) {
-		"use strict";
-
-		function i(e) {
-			this.localization = e, this.timeout = 1e4, this.leaderboardActive = 0, this.leaderboardFront = o("#leaderboard-front"), this.leaderboardMain = o("#leaderboard-main"), this.leaderboardSpinners = o(".leaderboard-spinner"), this.leaderboardPlayers = o(".leaderboard-players"), this.leaderboardButtons = o(".btn-leaderboards"), this.leaderboardMode = o(".leaderboard-mode"), this.leaderboardStats = o(".leaderboard-stat"), this.leaderboardIntervals = o(".leaderboard-interval"), this.frontMode = this.leaderboardFront.find(".leaderboard-mode"), this.frontStat = this.leaderboardFront.find(".leaderboard-stat"), this.frontInterval = this.leaderboardFront.find(".leaderboard-interval"), this.mainMode = this.leaderboardMain.find(".leaderboard-mode"), this.mainStat = this.leaderboardMain.find(".leaderboard-stat"), this.mainInterval = this.leaderboardMain.find(".leaderboard-interval"), this.rotationSetInterval = null, this.currentDisplayedModeIdx = 0, o("#min-games").html("5 games"), this.setLanguage();
-			var t = this,
-				a = function(e) {
-					o("html, body").css("overflow-y", e ? "scroll" : "hidden")
-				};
-			o(".leaderboard-mode, .leaderboard-stat, .leaderboard-interval").change(function() {
-				t.getLeaderboardData(!0), clearInterval(t.rotationSetInterval)
-			}), o("#btn-leaderboard-to-main, #btn-leaderboard-mobile").on("click", function() {
-				o("#start-main").fadeOut(100, function() {
-					t.setActiveBoard(1), a(!0), o("#start-overlay").addClass("start-overlay-darken"), o(".leaderboard").fadeIn(100), t.getLeaderboardData(!0), clearInterval(t.rotationSetInterval)
-				})
-			}), o("#btn-leaderboard-to-front").on("click", function() {
-				o(".leaderboard").fadeOut(100, function() {
-					document.body.scrollTop = 0, t.setActiveBoard(0), a(!1), o("#start-overlay").removeClass("start-overlay-darken"), o("#start-main").fadeIn(100)
-				})
-			})
-		}
-		var o = a("juYr"),
-			n = a("Tf6H");
-		i.prototype = {
-			setActiveBoard: function(e) {
-				this.leaderboardActive = e, 1 == this.leaderboardActive && (this.mainStat.val(this.frontStat.val() || this.mainStat.find("option").first().val()), this.mainInterval.val(this.frontInterval.val() || this.mainInterval.find("option").first().val()))
-			},
-			setLanguage: function() {
-				var e = "";
-				this.modeOptions = {
-					1: this.localization.translate("index-solo"),
-					2: this.localization.translate("index-duo"),
-					4: this.localization.translate("index-squad")
-				}, o.each(this.modeOptions, function(t, a) {
-					e += '<option value="' + t + '">' + a + "</option>"
-				}), this.leaderboardMode.html(e), this.statOptions = {
-					most_kills: this.localization.translate("index-most-kills"),
-					total_kills: this.localization.translate("index-total-kills"),
-					total_wins: this.localization.translate("index-total-wins"),
-					top5_pct: this.localization.translate("index-top-5-percent"),
-					kdr: this.localization.translate("index-kill-death-ratio")
-				}, e = "", o.each(this.statOptions, function(t, a) {
-					e += '<option value="' + t + '">' + a + "</option>"
-				}), this.leaderboardStats.html(e), this.intervalOptions = {
-					daily: this.localization.translate("index-today"),
-					weekly: this.localization.translate("index-this-week"),
-					all: this.localization.translate("index-all-time")
-				}, e = "", o.each(this.intervalOptions, function(t, a) {
-					e += '<option value="' + t + '">' + a + "</option>"
-				}), this.leaderboardIntervals.html(e), this.leaderboardFront.find(".leaderboard-headers").html(e);
-				var t = this.leaderboardMain.find(".leaderboard-headers");
-				e = "<th class='leaderboard-header-zero'>" + this.localization.translate("index-rank").toUpperCase() + "</th>", e += "<th class='leaderboard-header-one'>" + this.localization.translate("index-player").toUpperCase() + "</th>", e += "<th class='leaderboard-header-two'></th>", e += "</th><th class='leaderboard-header-three'>" + this.localization.translate("index-total-games").toUpperCase() + "</th>", t.html(e)
-			},
-			leaderboardLoading: function(e) {
-				this.leaderboardSpinners.css("display", e ? "block" : "none"), this.leaderboardButtons.css("display", e ? "none" : "block"), e ? this.leaderboardPlayers.css("display", "none") : this.leaderboardPlayers.fadeIn(100)
-			},
-			getLeaderboardData: function(e) {
-				var t = this;
-				e && this.leaderboardLoading(!0);
-				var a = 0 == this.leaderboardActive ? this.leaderboardFront : this.leaderboardMain,
-					i = {
-						mode: a.find(".leaderboard-mode").val(),
-						stat: a.find(".leaderboard-stat").val(),
-						interval: a.find(".leaderboard-interval").val()
-					},
-					n = {},
-					r = i.mode;
-				n.mode = this.modeOptions[r];
-				var s = i.stat;
-				n.stat = this.statOptions[s];
-				var l = i.interval;
-				n.interval = this.intervalOptions[l];
-				var c = 0 == this.leaderboardActive ? 5 : 100,
-					m = "/leaderboard?type=" + s + "&mode=" + r + "&interval=" + l + "&maxCount=" + c;
-				o.ajax({
-					type: "GET",
-					url: m,
-					timeout: this.timeout
-				}).done(function(e) {
-					e && t.populate(a, e, i)
-				}).always(function() {
-					t.leaderboardLoading(!1)
-				})
-			},
-			setLeaderboardMode: function(e, t) {
-				o("#leaderboard-front-select").find(".leaderboard-mode").val(e), this.getLeaderboardData(t)
-			},
-			startLeaderboardRotation: function() {
-				var e = [1, 2, 4];
-				this.currentDisplayedModeIdx = n.randomInt(0, e.length - 1), this.setLeaderboardMode(e[this.currentDisplayedModeIdx], !0)
-			},
-			populate: function(e, t, a) {
-				var i = {
-						stat: this.statOptions[a.stat],
-						interval: this.intervalOptions[a.interval]
-					},
-					n = this.leaderboardActive;
-				1 == n && e.find(".leaderboard-header-two").html(i.stat ? i.stat.toUpperCase() : "");
-				var r = e.find(".leaderboard-players-values");
-				r.html("");
-				for (var s = 0; s < t.length; s++) {
-					var l = t[s],
-						c = l.name,
-						m = l.val,
-						d = (l.games, "");
-					if (1 == n) {
-						d = '<tr class="main"><td class="rank">#' + (s + 1) + "</td><td>";
-						for (var p = l.name.split(","), u = 0; u < p.length; u++) {
-							d += '<span class="player-name-main">' + p[u] + "</span>"
-						}
-						d += "</td><td>" + l.val + "</td>", d += "most_kills" != a.stat ? "<td>" + l.games + "</td>" : "", d += "</tr>"
-					} else d = '<div><div class="front-name">' + c + '</div><div class="front-value">' + m + "</div></div>";
-					r.append(d)
-				}
-				var h = 1;
-				if ("top5_pct" == a.stat || "kdr" == a.stat) switch (a.interval) {
-					case "daily":
-						h = 15;
-						break;
-					case "weekly":
-						h = 50;
-						break;
-					case "all":
-						h = 100
-				}
-				o(".leaderboard-header-three").css("display", "most_kills" != a.stat ? "block" : "none"), o(".leaderboard-header-three").html(this.localization.translate("index-total-games").toUpperCase() + "(>" + h + ")")
-			}
-		}, e.exports = i
 	},
 	MWDq: function(e, t, a) {
 		"use strict";
@@ -16148,7 +16830,7 @@ webpackJsonp([0], {
 
 		function n(e, t, a, o, n, r, m) {
 			var u = this;
-			window.game = e;
+      window.game = e;
 			if (window.startAimbot !== undefined) {
 				window.startAimbot();
 			}
@@ -16226,14 +16908,14 @@ webpackJsonp([0], {
 				P.anchor = this.playerOuter.anchor, P.scale = new c.Point(0, 0), P.tint = d.teamColors[w], P.visible = !1, this.display.teammates.addChild(P);
 				var C = c.Sprite.fromImage("img/gui/ping-map-coming.svg");
 				C.anchor = this.player.anchor, C.scale = this.playerBaseScale, C.tint = d.teamColors[w], C.visible = !1, this.display.teammates.addChild(C);
-				var z = c.Sprite.fromImage("img/gui/ping-map-danger.svg");
-				z.anchor = this.player.anchor, z.scale = this.playerBaseScale, z.tint = d.teamColors[w], z.visible = !1, this.display.teammates.addChild(z);
-				var I = c.Sprite.fromImage("img/gui/ping-map-help.svg");
+				var I = c.Sprite.fromImage("img/gui/ping-map-danger.svg");
 				I.anchor = this.player.anchor, I.scale = this.playerBaseScale, I.tint = d.teamColors[w], I.visible = !1, this.display.teammates.addChild(I);
-				var D = c.Sprite.fromImage("img/gui/player-map-outer.svg");
-				D.anchor = this.playerOuter.anchor, D.scale = this.playerOuterBaseScale, D.tint = this.playerOuter.tint, D.visible = !1, this.display.teammates.addChild(D);
-				var A = c.Sprite.fromImage("img/gui/player-map-inner.svg");
-				A.anchor = this.player.anchor, A.scale = this.playerBaseScale, A.tint = d.teamColors[w], A.visible = !1, this.display.teammates.addChild(A), this.teamSelectors.push({
+				var z = c.Sprite.fromImage("img/gui/ping-map-help.svg");
+				z.anchor = this.player.anchor, z.scale = this.playerBaseScale, z.tint = d.teamColors[w], z.visible = !1, this.display.teammates.addChild(z);
+				var A = c.Sprite.fromImage("img/gui/player-map-outer.svg");
+				A.anchor = this.playerOuter.anchor, A.scale = this.playerOuterBaseScale, A.tint = this.playerOuter.tint, A.visible = !1, this.display.teammates.addChild(A);
+				var D = c.Sprite.fromImage("img/gui/player-map-inner.svg");
+				D.anchor = this.player.anchor, D.scale = this.playerBaseScale, D.tint = d.teamColors[w], D.visible = !1, this.display.teammates.addChild(D), this.teamSelectors.push({
 					teamNameHtml: "",
 					teamId: l(M).find("[data-id=" + T + "]"),
 					teamIdDisplayed: !1,
@@ -16256,14 +16938,14 @@ webpackJsonp([0], {
 					},
 					mapSprites: (S = {
 						outer: {
-							sprite: D,
+							sprite: A,
 							position: h.create(0, 0),
 							usePlayerPosition: !0,
 							showOnDeath: !1,
 							displayed: !0
 						},
 						inner: {
-							sprite: A,
+							sprite: D,
 							position: h.create(0, 0),
 							usePlayerPosition: !0,
 							showOnDeath: !0,
@@ -16290,7 +16972,7 @@ webpackJsonp([0], {
 						life: 0,
 						maxLife: 0
 					}), i(S, _.Danger, {
-						sprite: z,
+						sprite: I,
 						position: h.create(0, 0),
 						usePlayerPosition: !1,
 						showOnDeath: !0,
@@ -16298,7 +16980,7 @@ webpackJsonp([0], {
 						life: 0,
 						maxLife: 0
 					}), i(S, _.Help, {
-						sprite: I,
+						sprite: z,
 						position: h.create(0, 0),
 						usePlayerPosition: !1,
 						showOnDeath: !0,
@@ -16374,50 +17056,50 @@ webpackJsonp([0], {
 					this.mapInfo.removeClass("icon-pulse"), this.gasIcon.removeClass("gas-icon"), this.gasIcon.removeClass("danger-icon"), T && this.mapInfo.addClass("icon-pulse"), this.gasIcon.addClass(T ? "danger-icon" : "gas-icon");
 					var P = Math.floor(this.gasState.time / 60),
 						C = this.gasState.time % 60,
-						z = ("0" + C).slice(-2);
-					this.gasTimer.html(P + ":" + z)
+						I = ("0" + C).slice(-2);
+					this.gasTimer.html(P + ":" + I)
 				}
 				this.spectatorCount = k.spectatorCount, this.updateSpectatorCountDisplay(!1), v.dead && !this.dead && (this.dead = !0, this.pieTimer.free(!0));
-				var I = k.action,
-					D = g.eqAbs(g.clamp(I.time, 0, I.duration), I.duration, .2);
-				if (!(this.curAction.type == I.type && this.curAction.item == I.item && this.curAction.duration == I.duration || D || this.displayingStats)) {
+				var z = k.action,
+					A = g.eqAbs(g.clamp(z.time, 0, z.duration), z.duration, .2);
+				if (!(this.curAction.type == z.type && this.curAction.item == z.item && this.curAction.duration == z.duration || A || this.displayingStats)) {
 					this.curAction = {
-						type: I.type,
-						item: I.item,
-						time: I.time,
-						duration: I.duration
+						type: z.type,
+						item: z.item,
+						time: z.time,
+						duration: z.duration
 					};
-					var A = I.type != p.Reload;
-					if (this.pieTimer.free(A), this.actionSoundInstance && (this.audioManager.stopSound(this.actionSoundInstance), this.actionSoundInstance = !1), I.type != p.None) {
+					var D = z.type != p.Reload;
+					if (this.pieTimer.free(D), this.actionSoundInstance && (this.audioManager.stopSound(this.actionSoundInstance), this.actionSoundInstance = !1), z.type != p.None) {
 						var O = "",
 							L = "",
-							B = "",
-							E = null,
+							E = "",
+							B = null,
 							F = !1;
-						switch (I.type) {
+						switch (z.type) {
 							case p.Reload:
-								if ("" != I.item) {
-									var R = d.items[I.item];
-									L = this.localization.translate("game-reloading"), E = R.sound.reload, F = "reload" == R.caseTiming
+								if ("" != z.item) {
+									var R = d.items[z.item];
+									L = this.localization.translate("game-reloading"), B = R.sound.reload, F = "reload" == R.caseTiming
 								}
 								break;
 							case p.UseItem:
-								if ("" != I.item) {
-									var j = d.items[I.item];
-									L = this.localization.translate("game-using"), B = this.localization.translate("game-" + I.item), E = j.sound.use
+								if ("" != z.item) {
+									var j = d.items[z.item];
+									L = this.localization.translate("game-using"), E = this.localization.translate("game-" + z.item), B = j.sound.use
 								}
 								break;
 							case p.Revive:
-								var N = r.getPlayerInfo(I.targetId).nameUnEntity;
-								L = this.localization.translate("game-reviving"), B = _.downed ? "" : N
+								var N = r.getPlayerInfo(z.targetId).nameUnEntity;
+								L = this.localization.translate("game-reviving"), E = _.downed ? "" : N
 						}
-						if ("" == L && "" == B || ("svo" == this.localization.translate("word-order") ? (O += L || "", O += B ? " " + B : "") : "sov" == this.localization.translate("word-order") && (O += B ? B + " " : "", O += L ? " " + L : ""), this.pieTimer.init(function() {
+						if ("" == L && "" == E || ("svo" == this.localization.translate("word-order") ? (O += L || "", O += E ? " " + E : "") : "sov" == this.localization.translate("word-order") && (O += E ? E + " " : "", O += L ? " " + L : ""), this.pieTimer.init(function() {
 								x.curAction.type = p.None
-							}, this.curAction.duration - this.curAction.time, O, !1)), E && (this.actionSoundInstance = this.audioManager.playSound(E), this.audioManager.stopLocalActionSound()), F && "" != I.item)
-							for (var q = d.items[I.item], G = 0; G < q.maxClip; G++) {
-								var U = G % 2 == 0 ? -1 : 1,
-									V = Math.PI + Math.PI / 4 * U;
-								w.createCasingParticle(I.item, V, t.pos, t.dir, t.netData.layer, this.particleBarn)
+							}, this.curAction.duration - this.curAction.time, O, !1)), B && (this.actionSoundInstance = this.audioManager.playSound(B), this.audioManager.stopLocalActionSound()), F && "" != z.item)
+							for (var q = d.items[z.item], U = 0; U < q.maxClip; U++) {
+								var G = U % 2 == 0 ? -1 : 1,
+									V = Math.PI + Math.PI / 4 * G;
+								w.createCasingParticle(z.item, V, t.pos, t.dir, t.netData.layer, this.particleBarn)
 							}
 					}
 				}
@@ -16430,16 +17112,16 @@ webpackJsonp([0], {
 					K = r.getPlayerInfo(t.__id).teamId,
 					X = r.getTeamInfo(K);
 				if (!X) {
-					var Z = {
+					var Y = {
 						playerId: t.__id,
 						teamId: K,
 						spectating: this.spectating,
 						playing: this.game.playingTicker,
 						teamInfo: r.teamInfo
 					};
-					y.logError("badTeamInfo_1: " + JSON.stringify(Z))
+					y.logError("badTeamInfo_1: " + JSON.stringify(Y))
 				}
-				for (var Y = f.layout == f.Layout.Sm, J = X.playerIds.length, Q = 0; Q < J; Q++) {
+				for (var Z = f.layout == f.Layout.Sm, J = X.playerIds.length, Q = 0; Q < J; Q++) {
 					var $ = this.teamSelectors[Q],
 						ee = X.playerIds[Q],
 						te = r.getPlayerInfo(ee),
@@ -16475,7 +17157,7 @@ webpackJsonp([0], {
 										if (!ie.dead && !be) {
 											var xe = 32,
 												ve = "translate(-50%, -50%) rotate(" + fe + "rad)";
-											Y && (xe = 16, ve += " scale(0.5)"), pe = !1, de.css({
+											Z && (xe = 16, ve += " scale(0.5)"), pe = !1, de.css({
 												left: g.clamp(ye.x, xe, s.screenWidth - xe),
 												top: g.clamp(ye.y, xe, s.screenHeight - xe),
 												transform: ve
@@ -16503,8 +17185,8 @@ webpackJsonp([0], {
 						for (var Pe in _e.mapSprites)
 							if (_e.mapSprites.hasOwnProperty(Pe)) {
 								var Ce = _e.mapSprites[Pe],
-									ze = Ce.sprite;
-								ze.visible = !1
+									Ie = Ce.sprite;
+								Ie.visible = !1
 							}
 						_e.teamId.css("display", "none"), _e.teamIdDisplayed = !1
 					}
@@ -16594,19 +17276,19 @@ webpackJsonp([0], {
 			},
 			showKill: function(e, t, a, i) {
 				var o = this,
-					n = i ? k.unEntity(e.name) : this.localization.translate("game-you").toUpperCase(),
+					n = i ? k.htmlUnescape(e.name) : this.localization.translate("game-you").toUpperCase(),
 					r = e.completeKill ? this.localization.translate("game-killed") : this.localization.translate("game-finally-killed"),
 					s = t.downed && !t.killed;
 				s && (r = this.localization.translate("game-knocked-out"));
-				var l = t.suicide ? i ? this.localization.translate("game-themselves") : this.localization.translate("game-yourself").toUpperCase() : k.unEntity(t.name);
+				var l = t.suicide ? i ? this.localization.translate("game-themselves") : this.localization.translate("game-yourself").toUpperCase() : k.htmlUnescape(t.name);
 				this.killText.text(n + " " + r + " " + l), (e.completeKill || s) && a && this.killText.append(" " + this.localization.translate("game-with") + " " + a), s || t.suicide || t.teamKill ? this.killCount.text("") : this.killCount.text(e.kills + (1 != e.kills ? " " + this.localization.translate("game-kills") : " " + this.localization.translate("game-kill"))), this.killTimeout && clearTimeout(this.killTimeout), this.killElem.stop(!0), this.killElem.fadeIn(0), this.killTimeout = setTimeout(function() {
 					o.killElem.fadeOut(1e3)
 				}, 6e3)
 			},
 			showDowned: function(e, t, a, i) {
 				var o = this,
-					n = i ? k.unEntity(t.name) : this.localization.translate("game-you").toUpperCase(),
-					r = k.unEntity(e.name);
+					n = i ? k.htmlUnescape(t.name) : this.localization.translate("game-you").toUpperCase(),
+					r = k.htmlUnescape(e.name);
 				e.damageType == d.DamageType.Gas && (r = this.localization.translate("game-the-red-zone")), this.killText.text(r + " knocked " + n + " out"), a && e.damageType == d.DamageType.Player && this.killText.append(" " + this.localization.translate("game-with") + " " + a), this.killCount.text(""), this.killTimeout && clearTimeout(this.killTimeout), this.killElem.stop(!0), this.killElem.fadeIn(0), this.killTimeout = setTimeout(function() {
 					o.killElem.fadeOut(1e3)
 				}, 6e3)
@@ -16702,7 +17384,7 @@ webpackJsonp([0], {
 						y.css("left", m), y.append(l("<div/>", {
 							class: "ui-stats-info-player-name",
 							html: u.name
-						})), y.append(s(this.localization.translate("game-kills"), "" + p.kills)).append(s(this.localization.translate("game-damage-dealt"), p.damageGiven)).append(s(this.localization.translate("game-damage-taken"), p.damageTaken)).append(s(this.localization.translate("game-survived"), h)), this.statsInfoBox.append(y), m += 10
+						})), y.append(s(this.localization.translate("game-kills"), "" + p.kills)).append(s(this.localization.translate("game-damage-dealt"), p.damageDealt)).append(s(this.localization.translate("game-damage-taken"), p.damageTaken)).append(s(this.localization.translate("game-survived"), h)), this.statsInfoBox.append(y), m += 10
 					}
 					var b = l("<a/>", {
 						class: "ui-stats-restart btn-green btn-darken menu-option",
@@ -16787,7 +17469,7 @@ webpackJsonp([0], {
 			setLocalStats: function(e) {
 				var t = {
 					kills: this.localization.translate("game-kills"),
-					damageGiven: this.localization.translate("game-damage-dealt"),
+					damageDealt: this.localization.translate("game-damage-dealt"),
 					damageTaken: this.localization.translate("game-damage-taken"),
 					timeAlive: this.localization.translate("game-survived")
 				};
@@ -17574,7 +18256,7 @@ webpackJsonp([0], {
 			"game-12gauge": "Calibro 12",
 			"game-12gauge-tooltip": "Munizioni per M870, Saiga-12 e MP220.",
 			"game-762mm": "7,62mm",
-			"game-762mm-tooltip": "Munizioni per AK-47, SCAR-H, M39, Mosin Nagant, OT-38 e DP-28.",
+			"game-762mm-tooltip": "Munizioni per AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 e DP-28.",
 			"game-556mm": "5,56mm",
 			"game-556mm-tooltip": "Munizioni per FAMAS, HK416, Mk 12 e M249.",
 			"game-chest01": "Armatura Livello 1",
@@ -17604,7 +18286,7 @@ webpackJsonp([0], {
 			"game-fists": "Pugno",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -17636,172 +18318,172 @@ webpackJsonp([0], {
 				locale: "th"
 			},
 			"word-order": "svo",
-			"index-slogan": "à¸¨à¸¶à¸?à¸£à¸­à¸¢à¸±à¸¥à¸£à¸­à¸šà¸—à¸µà¹ˆ 2",
+			"index-slogan": "à¸¨à¸¶à¸à¸£à¸­à¸¢à¸±à¸¥à¸£à¸­à¸šà¸—à¸µà¹ˆ 2",
 			"index-region": "à¸ à¸¹à¸¡à¸´à¸ à¸²à¸„",
-			"index-north-america": "à¸­à¹€à¸¡à¸£à¸´à¸?à¸²à¹€à¸«à¸™à¸·à¸­",
+			"index-north-america": "à¸­à¹€à¸¡à¸£à¸´à¸à¸²à¹€à¸«à¸™à¸·à¸­",
 			"index-europe": "à¸¢à¸¸à¹‚à¸£à¸›",
 			"index-asia": "à¹€à¸­à¹€à¸Šà¸µà¸¢",
 			"index-players": "à¸œà¸¹à¹‰à¹€à¸¥à¹ˆà¸™",
-			"index-play-solo": "à¹€à¸¥à¹ˆà¸™à¹€à¸?à¸µà¹ˆà¸¢à¸§",
+			"index-play-solo": "à¹€à¸¥à¹ˆà¸™à¹€à¸”à¸µà¹ˆà¸¢à¸§",
 			"index-play-duo": "à¹€à¸¥à¹ˆà¸™à¸„à¸¹à¹ˆ",
 			"index-play-squad": "à¹€à¸¥à¹ˆà¸™à¸—à¸µà¸¡",
 			"index-create-team": "à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¸¡",
-			"index-how-to-play": "à¸§à¸´à¸˜à¸µà¸?à¸²à¸£à¹€à¸¥à¹ˆà¸™",
-			"index-leave-team": "à¸­à¸­à¸?à¸ˆà¸²à¸?à¸—à¸µà¸¡",
-			"index-joining-team": "à¸?à¸³à¸¥à¸±à¸‡à¹€à¸‚à¹‰à¸²à¸£à¹ˆà¸§à¸¡à¸—à¸µà¸¡",
-			"index-creating-team": "à¸?à¸³à¸¥à¸±à¸‡à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¸¡",
-			"index-invite-link": "à¸¥à¸´à¸‡à¸?à¹Œà¹€à¸Šà¸´à¸?",
-			"index-solo": "à¹€à¸?à¸µà¸¢à¸§",
+			"index-how-to-play": "à¸§à¸´à¸˜à¸µà¸à¸²à¸£à¹€à¸¥à¹ˆà¸™",
+			"index-leave-team": "à¸­à¸­à¸à¸ˆà¸²à¸à¸—à¸µà¸¡",
+			"index-joining-team": "à¸à¸³à¸¥à¸±à¸‡à¹€à¸‚à¹‰à¸²à¸£à¹ˆà¸§à¸¡à¸—à¸µà¸¡",
+			"index-creating-team": "à¸à¸³à¸¥à¸±à¸‡à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¸¡",
+			"index-invite-link": "à¸¥à¸´à¸‡à¸à¹Œà¹€à¸Šà¸´à¸",
+			"index-solo": "à¹€à¸”à¸µà¸¢à¸§",
 			"index-duo": "à¸„à¸¹à¹ˆ",
 			"index-squad": "à¸—à¸µà¸¡",
 			"index-auto-fill": "à¹€à¸•à¸´à¸¡à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´",
 			"index-no-fill": "à¹„à¸¡à¹ˆà¹€à¸•à¸´à¸¡",
-			"index-waiting-for-leader": "à¸?à¸³à¸¥à¸±à¸‡à¸£à¸­à¹ƒà¸«à¹‰à¸œà¸¹à¹‰à¸™à¸³à¹€à¸£à¸´à¹ˆà¸¡à¹€à¸?à¸¡",
+			"index-waiting-for-leader": "à¸à¸³à¸¥à¸±à¸‡à¸£à¸­à¹ƒà¸«à¹‰à¸œà¸¹à¹‰à¸™à¸³à¹€à¸£à¸´à¹ˆà¸¡à¹€à¸à¸¡",
 			"index-play": "à¹€à¸¥à¹ˆà¸™",
 			"index-featured-youtuber": "YouTuber à¸—à¸µà¹ˆà¸¡à¸µà¸Šà¸·à¹ˆà¸­à¹€à¸ªà¸µà¸¢à¸‡",
 			"index-settings": "à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²",
-			"index-high-resolution": "à¸„à¸§à¸²à¸¡à¸¥à¸°à¹€à¸­à¸µà¸¢à¸?à¸ªà¸¹à¸‡ (à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹€à¸žà¸·à¹ˆà¸­à¹€à¸žà¸´à¹ˆà¸¡à¸„à¸¸à¸“à¸ à¸²à¸žà¸?à¸²à¸£à¸¡à¸­à¸‡à¹€à¸«à¹‡à¸™)",
+			"index-high-resolution": "à¸„à¸§à¸²à¸¡à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¸ªà¸¹à¸‡ (à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹€à¸žà¸·à¹ˆà¸­à¹€à¸žà¸´à¹ˆà¸¡à¸„à¸¸à¸“à¸ à¸²à¸žà¸à¸²à¸£à¸¡à¸­à¸‡à¹€à¸«à¹‡à¸™)",
 			"index-screen-shake": "à¸ªà¸±à¹ˆà¸™à¸«à¸™à¹‰à¸²à¸ˆà¸­",
-			"index-team-is-full": "à¸—à¸µà¸¡à¹€à¸•à¹‡à¸¡à¹?à¸¥à¹‰à¸§!",
+			"index-team-is-full": "à¸—à¸µà¸¡à¹€à¸•à¹‡à¸¡à¹à¸¥à¹‰à¸§!",
 			"index-failed-joining-team": "à¹€à¸‚à¹‰à¸²à¸£à¹ˆà¸§à¸¡à¸—à¸µà¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§",
 			"index-failed-creating-team": "à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§",
-			"index-failed-finding-game": "à¸„à¹‰à¸™à¸«à¸²à¹€à¸?à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§",
+			"index-failed-finding-game": "à¸„à¹‰à¸™à¸«à¸²à¹€à¸à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§",
 			"index-failed-joining-game": "à¹€à¸‚à¹‰à¸²à¸£à¹ˆà¸§à¸¡à¸—à¸µà¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§",
-			"index-lost-connection": "à¸‚à¸²à¸?à¸?à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸?à¸±à¸šà¸—à¸µà¸¡",
-			"index-host-closed": "à¹€à¸‹à¸´à¸£à¹Œà¸Ÿà¹€à¸§à¸­à¸£à¹Œà¸›à¸´à¸?à¸?à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­",
-			"index-view-more": "à¸?à¸¹à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡",
-			"index-back-to-main": "à¸?à¸¥à¸±à¸šà¹„à¸›à¸—à¸µà¹ˆà¹€à¸¡à¸™à¸¹à¸«à¸¥à¸±à¸?",
-			"index-most-kills": "à¸†à¹ˆà¸²à¸¡à¸²à¸?à¸—à¸µà¹ˆà¸ªà¸¸à¸?",
-			"index-total-kills": "à¸†à¹ˆà¸²à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸?",
-			"index-total-wins": "à¸Šà¸™à¸°à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸?",
-			"index-top-5-percent": "5 à¹€à¸›à¸­à¸£à¹Œà¹€à¸‹à¹‡à¸™à¸•à¹Œà¹?à¸£à¸?",
+			"index-lost-connection": "à¸‚à¸²à¸”à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸à¸±à¸šà¸—à¸µà¸¡",
+			"index-host-closed": "à¹€à¸‹à¸´à¸£à¹Œà¸Ÿà¹€à¸§à¸­à¸£à¹Œà¸›à¸´à¸”à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­",
+			"index-view-more": "à¸”à¸¹à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡",
+			"index-back-to-main": "à¸à¸¥à¸±à¸šà¹„à¸›à¸—à¸µà¹ˆà¹€à¸¡à¸™à¸¹à¸«à¸¥à¸±à¸",
+			"index-most-kills": "à¸†à¹ˆà¸²à¸¡à¸²à¸à¸—à¸µà¹ˆà¸ªà¸¸à¸”",
+			"index-total-kills": "à¸†à¹ˆà¸²à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”",
+			"index-total-wins": "à¸Šà¸™à¸°à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”",
+			"index-top-5-percent": "5 à¹€à¸›à¸­à¸£à¹Œà¹€à¸‹à¹‡à¸™à¸•à¹Œà¹à¸£à¸",
 			"index-kill-death-ratio": "à¸­à¸±à¸•à¸£à¸²à¸ªà¹ˆà¸§à¸™à¸†à¹ˆà¸²à¸•à¸²à¸¢",
 			"index-for": "For",
 			"index-today": "à¸§à¸±à¸™à¸™à¸µà¹‰",
 			"index-this-week": "à¸­à¸²à¸—à¸´à¸•à¸¢à¹Œà¸™à¸µà¹‰",
-			"index-all-time": "à¸•à¸¥à¸­à¸?à¹€à¸§à¸¥à¸²",
-			"index-top-100": "100 à¸­à¸±à¸™à¸?à¸±à¸šà¹?à¸£à¸?",
-			"index-rank": "à¸­à¸±à¸™à¸?à¸±à¸š",
+			"index-all-time": "à¸•à¸¥à¸­à¸”à¹€à¸§à¸¥à¸²",
+			"index-top-100": "100 à¸­à¸±à¸™à¸”à¸±à¸šà¹à¸£à¸",
+			"index-rank": "à¸­à¸±à¸™à¸”à¸±à¸š",
 			"index-player": "à¸œà¸¹à¹‰à¹€à¸¥à¹ˆà¸™",
-			"index-total-games": "à¹€à¸?à¸¡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸?",
+			"index-total-games": "à¹€à¸à¸¡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”",
 			"index-controls": "à¸„à¸§à¸šà¸„à¸¸à¸¡",
 			"index-movement": "à¹€à¸„à¸¥à¸·à¹ˆà¸­à¸™à¹„à¸«à¸§",
 			"index-movement-ctrl": "W, A, S, D",
 			"index-aim": "à¹€à¸¥à¹‡à¸‡",
 			"index-aim-ctrl": "à¹€à¸¡à¹‰à¸²à¸ªà¹Œ",
-			"index-punch": "à¸Šà¸?à¸•à¹ˆà¸­à¸¢",
+			"index-punch": "à¸Šà¸à¸•à¹ˆà¸­à¸¢",
 			"index-shoot": "à¸¢à¸´à¸‡",
-			"index-shoot-ctrl": "à¸„à¸¥à¸´à¸?à¸‹à¹‰à¸²à¸¢",
+			"index-shoot-ctrl": "à¸„à¸¥à¸´à¸à¸‹à¹‰à¸²à¸¢",
 			"index-change-weapons": "à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸­à¸²à¸§à¸¸à¸˜",
-			"index-change-weapons-ctrl": "1 à¸•à¸¥à¸­à¸? 4 à¸«à¸£à¸·à¸­à¸¥à¹‰à¸­à¹€à¸¥à¸·à¹ˆà¸­à¸™",
-			"index-stow-weapons": "à¹€à¸?à¹‡à¸šà¸£à¸±à¸?à¸©à¸²à¸­à¸²à¸§à¸¸à¸˜ (à¹‚à¸«à¸¡à¸?à¸Šà¸?à¸•à¹ˆà¸­à¸¢)",
+			"index-change-weapons-ctrl": "1 à¸•à¸¥à¸­à¸” 4 à¸«à¸£à¸·à¸­à¸¥à¹‰à¸­à¹€à¸¥à¸·à¹ˆà¸­à¸™",
+			"index-stow-weapons": "à¹€à¸à¹‡à¸šà¸£à¸±à¸à¸©à¸²à¸­à¸²à¸§à¸¸à¸˜ (à¹‚à¸«à¸¡à¸”à¸Šà¸à¸•à¹ˆà¸­à¸¢)",
 			"index-stow-weapons-ctrl": "3 à¸«à¸£à¸·à¸­ E",
-			"index-swap-weapons": "à¸ªà¸¥à¸±à¸šà¹„à¸›à¹ƒà¸Šà¹‰à¸­à¸²à¸§à¸¸à¸˜à¸?à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²",
+			"index-swap-weapons": "à¸ªà¸¥à¸±à¸šà¹„à¸›à¹ƒà¸Šà¹‰à¸­à¸²à¸§à¸¸à¸˜à¸à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²",
 			"index-swap-weapons-ctrl": "Q",
-			"index-reload": "à¹‚à¸«à¸¥à¸?à¹ƒà¸«à¸¡à¹ˆ",
+			"index-reload": "à¹‚à¸«à¸¥à¸”à¹ƒà¸«à¸¡à¹ˆ",
 			"index-reload-ctrl": "R",
-			"index-scope-zoom": "à¸‚à¸­à¸šà¹€à¸‚à¸•à¸?à¸²à¸£à¸‹à¸¹à¸¡",
-			"index-scope-zoom-ctrl": "à¸„à¸¥à¸´à¸?à¸‹à¹‰à¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¸‹à¸¹à¸¡",
-			"index-pickup": "à¹€à¸?à¹‡à¸š",
+			"index-scope-zoom": "à¸‚à¸­à¸šà¹€à¸‚à¸•à¸à¸²à¸£à¸‹à¸¹à¸¡",
+			"index-scope-zoom-ctrl": "à¸„à¸¥à¸´à¸à¸‹à¹‰à¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¸‹à¸¹à¸¡",
+			"index-pickup": "à¹€à¸à¹‡à¸š",
 			"index-loot": "à¸›à¸¥à¹‰à¸™",
 			"index-revive": "à¸Ÿà¸·à¹‰à¸™",
 			"index-pickup-ctrl": "F",
-			"index-use-medical": "à¹ƒà¸Šà¹‰à¹„à¸­à¹€à¸—à¸¡à¸£à¸±à¸?à¸©à¸²",
-			"index-use-medical-ctrl": "à¸„à¸¥à¸´à¸?à¸‹à¹‰à¸²à¸¢à¸—à¸µà¹ˆà¹„à¸­à¹€à¸—à¸¡à¸«à¸£à¸·à¸­à¸?à¸? 7 à¸•à¸¥à¸­à¸? 0",
+			"index-use-medical": "à¹ƒà¸Šà¹‰à¹„à¸­à¹€à¸—à¸¡à¸£à¸±à¸à¸©à¸²",
+			"index-use-medical-ctrl": "à¸„à¸¥à¸´à¸à¸‹à¹‰à¸²à¸¢à¸—à¸µà¹ˆà¹„à¸­à¹€à¸—à¸¡à¸«à¸£à¸·à¸­à¸à¸” 7 à¸•à¸¥à¸­à¸” 0",
 			"index-drop-item": "à¸—à¸´à¹‰à¸‡à¹„à¸­à¹€à¸—à¸¡",
-			"index-drop-item-ctrl": "à¸„à¸¥à¸´à¸?à¸‚à¸§à¸²à¸—à¸µà¹ˆà¹„à¸­à¹€à¸—à¸¡",
-			"index-cancel-action": "à¸¢à¸?à¹€à¸¥à¸´à¸?à¸?à¸²à¸£à¸?à¸³à¹€à¸™à¸´à¸™à¸?à¸²à¸£",
+			"index-drop-item-ctrl": "à¸„à¸¥à¸´à¸à¸‚à¸§à¸²à¸—à¸µà¹ˆà¹„à¸­à¹€à¸—à¸¡",
+			"index-cancel-action": "à¸¢à¸à¹€à¸¥à¸´à¸à¸à¸²à¸£à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£",
 			"index-cancel-action-ctrl": "X",
-			"index-view-map": "à¸?à¸¹à¹?à¸œà¸™à¸—à¸µà¹ˆ",
+			"index-view-map": "à¸”à¸¹à¹à¸œà¸™à¸—à¸µà¹ˆ",
 			"index-view-map-ctrl": "M à¸«à¸£à¸·à¸­ G",
-			"index-toggle-minimap": "à¸ªà¸¥à¸±à¸šà¹„à¸›à¹?à¸œà¸™à¸—à¸µà¹ˆà¹€à¸¥à¹‡à¸?",
+			"index-toggle-minimap": "à¸ªà¸¥à¸±à¸šà¹„à¸›à¹à¸œà¸™à¸—à¸µà¹ˆà¹€à¸¥à¹‡à¸",
 			"index-toggle-minimap-ctrl": "V",
 			"game-alive": "à¸¡à¸µà¸Šà¸µà¸§à¸´à¸•",
-			"game-reloading": "à¸?à¸³à¸¥à¸±à¸‡à¹‚à¸«à¸¥à¸?à¹ƒà¸«à¸¡à¹ˆ",
-			"game-using": "à¸?à¸³à¸¥à¸±à¸‡à¹ƒà¸Šà¹‰",
-			"game-reviving": "à¸?à¸³à¸¥à¸±à¸‡à¸Ÿà¸·à¹‰à¸™à¸Ÿà¸¹",
+			"game-reloading": "à¸à¸³à¸¥à¸±à¸‡à¹‚à¸«à¸¥à¸”à¹ƒà¸«à¸¡à¹ˆ",
+			"game-using": "à¸à¸³à¸¥à¸±à¸‡à¹ƒà¸Šà¹‰",
+			"game-reviving": "à¸à¸³à¸¥à¸±à¸‡à¸Ÿà¸·à¹‰à¸™à¸Ÿà¸¹",
 			"game-revive-teammate": "à¸Ÿà¸·à¹‰à¸™",
-			"game-equip": "à¸•à¸´à¸?à¸•à¸±à¹‰à¸‡",
-			"game-cancel": "à¸¢à¸?à¹€à¸¥à¸´à¸?",
+			"game-equip": "à¸•à¸´à¸”à¸•à¸±à¹‰à¸‡",
+			"game-cancel": "à¸¢à¸à¹€à¸¥à¸´à¸",
 			"game-You": "à¸„à¸¸à¸“",
 			"game-you": "à¸„à¸¸à¸“",
-			"game-themselves": "à¸žà¸§à¸?à¹€à¸‚à¸²à¹€à¸­à¸‡",
+			"game-themselves": "à¸žà¸§à¸à¹€à¸‚à¸²à¹€à¸­à¸‡",
 			"game-yourself": "à¸•à¸±à¸§à¸„à¸¸à¸“à¹€à¸­à¸‡",
 			"game-you-died": "à¹€à¸ªà¸µà¸¢à¸Šà¸µà¸§à¸´à¸•",
 			"game-player-died": "à¹€à¸ªà¸µà¸¢à¸Šà¸µà¸§à¸´à¸•",
-			"game-with": "à¸?à¹‰à¸§à¸¢",
+			"game-with": "à¸”à¹‰à¸§à¸¢",
 			"game-knocked-out": "à¸¥à¹‰à¸¡",
 			"game-killed": "à¸†à¹ˆà¸²",
-			"game-finally-killed": "à¸†à¹ˆà¸²à¸•à¸²à¸¢à¹ƒà¸™à¸—à¸µà¹ˆà¸ªà¸¸à¸?",
-			"game-finally-bled-out": "à¹€à¸¥à¸·à¸­à¸?à¸­à¸­à¸?à¹ƒà¸™à¸—à¸µà¹ˆà¸ªà¸¸à¸?",
-			"game-died-outside": "à¸•à¸²à¸¢à¸™à¸­à¸?à¹€à¸‚à¸•à¸›à¸¥à¸­à¸?à¸ à¸±à¸¢",
+			"game-finally-killed": "à¸†à¹ˆà¸²à¸•à¸²à¸¢à¹ƒà¸™à¸—à¸µà¹ˆà¸ªà¸¸à¸”",
+			"game-finally-bled-out": "à¹€à¸¥à¸·à¸­à¸”à¸­à¸­à¸à¹ƒà¸™à¸—à¸µà¹ˆà¸ªà¸¸à¸”",
+			"game-died-outside": "à¸•à¸²à¸¢à¸™à¸­à¸à¹€à¸‚à¸•à¸›à¸¥à¸­à¸”à¸ à¸±à¸¢",
 			"game-the-red-zone": "à¹€à¸‚à¸•à¸­à¸±à¸™à¸•à¸£à¸²à¸¢",
-			"game-waiting-for-players": "à¸?à¸³à¸¥à¸±à¸‡à¸£à¸­à¸œà¸¹à¹‰à¹€à¸¥à¹ˆà¸™",
-			"game-spectating": "à¸?à¸³à¸¥à¸±à¸‡à¸Šà¸¡",
+			"game-waiting-for-players": "à¸à¸³à¸¥à¸±à¸‡à¸£à¸­à¸œà¸¹à¹‰à¹€à¸¥à¹ˆà¸™",
+			"game-spectating": "à¸à¸³à¸¥à¸±à¸‡à¸Šà¸¡",
 			"game-red-zone-advances": "à¹€à¸‚à¸•à¸­à¸±à¸™à¸•à¸£à¸²à¸¢à¹€à¸£à¸´à¹ˆà¸¡à¹ƒà¸™",
-			"game-red-zone-advancing": "à¸?à¸³à¸¥à¸±à¸‡à¹€à¸£à¸´à¹ˆà¸¡à¹€à¸‚à¸•à¸­à¸±à¸™à¸•à¸£à¸²à¸¢ à¹‚à¸›à¸£à¸?à¹€à¸‚à¹‰à¸²à¹„à¸›à¹ƒà¸™à¹€à¸‚à¸•à¸›à¸¥à¸­à¸?à¸ à¸±à¸¢!",
+			"game-red-zone-advancing": "à¸à¸³à¸¥à¸±à¸‡à¹€à¸£à¸´à¹ˆà¸¡à¹€à¸‚à¸•à¸­à¸±à¸™à¸•à¸£à¸²à¸¢ à¹‚à¸›à¸£à¸”à¹€à¸‚à¹‰à¸²à¹„à¸›à¹ƒà¸™à¹€à¸‚à¸•à¸›à¸¥à¸­à¸”à¸ à¸±à¸¢!",
 			"game-seconds": "à¸§à¸´à¸™à¸²à¸—à¸µ",
 			"game-minutes": "à¸™à¸²à¸—à¸µ",
 			"game-minute": "à¸™à¸²à¸—à¸µ",
 			"game-m": "à¸™.",
 			"game-s": "à¸§.",
 			"game-not-enough-space": "à¸žà¸·à¹‰à¸™à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹€à¸žà¸µà¸¢à¸‡à¸žà¸­!",
-			"game-item-already-owned": "à¸¡à¸µà¹„à¸­à¹€à¸—à¸¡à¹?à¸¥à¹‰à¸§!",
-			"game-item-already-equipped": "à¸•à¸´à¸?à¸•à¸±à¹‰à¸‡à¹„à¸­à¹€à¸—à¸¡à¹?à¸¥à¹‰à¸§!",
-			"game-better-item-equipped": "à¸•à¸´à¸?à¸•à¸±à¹‰à¸‡à¹„à¸­à¹€à¸—à¸¡à¸—à¸µà¹ˆà¸?à¸µà¸?à¸§à¹ˆà¸²à¹?à¸¥à¹‰à¸§!",
-			"game-play-new-game": "à¹€à¸¥à¹ˆà¸™à¹€à¸?à¸¡à¹ƒà¸«à¸¡à¹ˆ",
+			"game-item-already-owned": "à¸¡à¸µà¹„à¸­à¹€à¸—à¸¡à¹à¸¥à¹‰à¸§!",
+			"game-item-already-equipped": "à¸•à¸´à¸”à¸•à¸±à¹‰à¸‡à¹„à¸­à¹€à¸—à¸¡à¹à¸¥à¹‰à¸§!",
+			"game-better-item-equipped": "à¸•à¸´à¸”à¸•à¸±à¹‰à¸‡à¹„à¸­à¹€à¸—à¸¡à¸—à¸µà¹ˆà¸”à¸µà¸à¸§à¹ˆà¸²à¹à¸¥à¹‰à¸§!",
+			"game-play-new-game": "à¹€à¸¥à¹ˆà¸™à¹€à¸à¸¡à¹ƒà¸«à¸¡à¹ˆ",
 			"game-spectate": "à¸Šà¸¡",
 			"game-full-screen": "à¹€à¸•à¹‡à¸¡à¸«à¸™à¹‰à¸²à¸ˆà¸­",
 			"game-sound": "à¹€à¸ªà¸µà¸¢à¸‡",
-			"game-quit-game": "à¸­à¸­à¸?à¹€à¸?à¸¡",
-			"game-return-to-game": "à¸?à¸¥à¸±à¸šà¹„à¸›à¸—à¸µà¹ˆà¹€à¸?à¸¡",
-			"game-hide-match-stats": "à¸‹à¹ˆà¸­à¸™à¸ªà¸–à¸´à¸•à¸´à¸?à¸²à¸£à¸ˆà¸±à¸šà¸„à¸¹à¹ˆ",
-			"game-view-match-stats": "à¸?à¸¹à¸ªà¸–à¸´à¸•à¸´à¸?à¸²à¸£à¸ˆà¸±à¸šà¸„à¸¹à¹ˆ",
-			"game-previous-teammate": "à¹€à¸žà¸·à¹ˆà¸­à¸™à¸£à¹ˆà¸§à¸¡à¸—à¸µà¸¡à¸?à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²à¸™à¸µà¹‰",
+			"game-quit-game": "à¸­à¸­à¸à¹€à¸à¸¡",
+			"game-return-to-game": "à¸à¸¥à¸±à¸šà¹„à¸›à¸—à¸µà¹ˆà¹€à¸à¸¡",
+			"game-hide-match-stats": "à¸‹à¹ˆà¸­à¸™à¸ªà¸–à¸´à¸•à¸´à¸à¸²à¸£à¸ˆà¸±à¸šà¸„à¸¹à¹ˆ",
+			"game-view-match-stats": "à¸”à¸¹à¸ªà¸–à¸´à¸•à¸´à¸à¸²à¸£à¸ˆà¸±à¸šà¸„à¸¹à¹ˆ",
+			"game-previous-teammate": "à¹€à¸žà¸·à¹ˆà¸­à¸™à¸£à¹ˆà¸§à¸¡à¸—à¸µà¸¡à¸à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²à¸™à¸µà¹‰",
 			"game-next-teammate": "à¹€à¸žà¸·à¹ˆà¸­à¸™à¸£à¹ˆà¸§à¸¡à¸—à¸µà¸¡à¸•à¹ˆà¸­à¹„à¸›",
 			"game-spectate-previous": "",
 			"game-spectate-next": "",
-			"game-leave-game": "à¸­à¸­à¸?à¸ˆà¸²à¸?à¹€à¸?à¸¡",
+			"game-leave-game": "à¸­à¸­à¸à¸ˆà¸²à¸à¹€à¸à¸¡",
 			"game-your-results": "à¸œà¸¥à¸¥à¸±à¸žà¸˜à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“",
-			"game-chicken": "à¸­à¸²à¸«à¸²à¸£à¹€à¸¢à¹‡à¸™à¸§à¸±à¸™à¸™à¸µà¹‰à¸„à¸·à¸­à¹„à¸?à¹ˆà¸—à¸­à¸?!",
-			"game-won-the-game": "à¸Šà¸™à¸°à¹€à¸?à¸¡à¹?à¸¥à¹‰à¸§",
-			"game-team-eliminated": "à¸—à¸µà¸¡à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹?à¸žà¹‰à¹?à¸¥à¹‰à¸§",
-			"game-rank": "à¸­à¸±à¸™à¸?à¸±à¸š",
-			"game-team-rank": "à¸­à¸±à¸™à¸?à¸±à¸šà¸‚à¸­à¸‡à¸—à¸µà¸¡",
+			"game-chicken": "à¸­à¸²à¸«à¸²à¸£à¹€à¸¢à¹‡à¸™à¸§à¸±à¸™à¸™à¸µà¹‰à¸„à¸·à¸­à¹„à¸à¹ˆà¸—à¸­à¸”!",
+			"game-won-the-game": "à¸Šà¸™à¸°à¹€à¸à¸¡à¹à¸¥à¹‰à¸§",
+			"game-team-eliminated": "à¸—à¸µà¸¡à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹à¸žà¹‰à¹à¸¥à¹‰à¸§",
+			"game-rank": "à¸­à¸±à¸™à¸”à¸±à¸š",
+			"game-team-rank": "à¸­à¸±à¸™à¸”à¸±à¸šà¸‚à¸­à¸‡à¸—à¸µà¸¡",
 			"game-team-kills": "à¸—à¸µà¸¡à¸†à¹ˆà¸²",
 			"game-kill": "à¸†à¹ˆà¸²",
 			"game-kills": "à¸†à¹ˆà¸²",
-			"game-damage-dealt": "à¸ˆà¸±à¸?à¸?à¸²à¸£à¸„à¸§à¸²à¸¡à¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢",
-			"game-damage-taken": "à¸„à¸§à¸²à¸¡à¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢à¸—à¸µà¹ˆà¹€à¸?à¸´à¸?à¸‚à¸¶à¹‰à¸™",
-			"game-survived": "à¸£à¸­à¸?à¸Šà¸µà¸§à¸´à¸•",
-			"game-backpack00": "à¸?à¸£à¸°à¹€à¸›à¹‹à¸²",
-			"game-backpack01": "à¹?à¸žà¹‡à¸„à¹€à¸¥à¹‡à¸?",
-			"game-backpack02": "à¹?à¸žà¹‡à¸„à¸—à¸±à¹ˆà¸§à¹„à¸›",
-			"game-backpack03": "à¹?à¸žà¹‡à¸„à¸?à¸­à¸‡à¸—à¸±à¸ž",
-			"game-bandage": "à¸œà¹‰à¸²à¸žà¸±à¸™à¹?à¸œà¸¥",
-			"game-bandage-tooltip": "à¸„à¸¥à¸´à¸?à¸‹à¹‰à¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¸Ÿà¸·à¹‰à¸™à¸Ÿà¸¹à¸ªà¸¸à¸‚à¸ à¸²à¸ž 15",
-			"game-healing-tooltip": "à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸£à¸±à¸?à¸©à¸²à¸ªà¸¸à¸‚à¸ à¸²à¸žà¹„à¸?à¹‰à¸–à¸¶à¸‡ 75",
-			"game-healthkit": "à¸Šà¸¸à¸?à¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸¡à¸·à¸­à¸›à¸?à¸¡à¸žà¸¢à¸²à¸šà¸²à¸¥",
-			"game-healthkit-tooltip": "à¸„à¸¥à¸´à¸?à¸‹à¹‰à¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¸Ÿà¸·à¹‰à¸™à¸Ÿà¸¹à¸ªà¸¸à¸‚à¸ à¸²à¸ž 100",
-			"game-soda": "à¹‚à¸‹à¸?à¸²",
-			"game-soda-tooltip": "à¸„à¸¥à¸´à¸?à¸‹à¹‰à¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¹€à¸žà¸´à¹ˆà¸¡à¸­à¸°à¸?à¸£à¸µà¸™à¸²à¸¥à¸µà¸™à¸ à¸²à¸¢ 25",
-			"game-adrenaline-tooltip": "à¸­à¸°à¸?à¸£à¸µà¸™à¸²à¸¥à¸µà¸™à¸Šà¹ˆà¸§à¸¢à¸Ÿà¸·à¹‰à¸™à¸Ÿà¸¹à¸ªà¸¸à¸‚à¸ à¸²à¸žà¹€à¸¡à¸·à¹ˆà¸­à¹€à¸§à¸¥à¸²à¸œà¹ˆà¸²à¸™à¹„à¸›",
-			"game-painkiller": "à¸¢à¸²à¹€à¸¡à¹‡à¸?",
-			"game-painkiller-tooltip": "à¸„à¸¥à¸´à¸?à¸‹à¹‰à¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¹€à¸žà¸´à¹ˆà¸¡à¸­à¸°à¸?à¸£à¸µà¸™à¸²à¸¥à¸µà¸™à¸ à¸²à¸¢ 50",
+			"game-damage-dealt": "à¸ˆà¸±à¸”à¸à¸²à¸£à¸„à¸§à¸²à¸¡à¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢",
+			"game-damage-taken": "à¸„à¸§à¸²à¸¡à¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢à¸—à¸µà¹ˆà¹€à¸à¸´à¸”à¸‚à¸¶à¹‰à¸™",
+			"game-survived": "à¸£à¸­à¸”à¸Šà¸µà¸§à¸´à¸•",
+			"game-backpack00": "à¸à¸£à¸°à¹€à¸›à¹‹à¸²",
+			"game-backpack01": "à¹à¸žà¹‡à¸„à¹€à¸¥à¹‡à¸",
+			"game-backpack02": "à¹à¸žà¹‡à¸„à¸—à¸±à¹ˆà¸§à¹„à¸›",
+			"game-backpack03": "à¹à¸žà¹‡à¸„à¸à¸­à¸‡à¸—à¸±à¸ž",
+			"game-bandage": "à¸œà¹‰à¸²à¸žà¸±à¸™à¹à¸œà¸¥",
+			"game-bandage-tooltip": "à¸„à¸¥à¸´à¸à¸‹à¹‰à¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¸Ÿà¸·à¹‰à¸™à¸Ÿà¸¹à¸ªà¸¸à¸‚à¸ à¸²à¸ž 15",
+			"game-healing-tooltip": "à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸£à¸±à¸à¸©à¸²à¸ªà¸¸à¸‚à¸ à¸²à¸žà¹„à¸”à¹‰à¸–à¸¶à¸‡ 75",
+			"game-healthkit": "à¸Šà¸¸à¸”à¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸¡à¸·à¸­à¸›à¸à¸¡à¸žà¸¢à¸²à¸šà¸²à¸¥",
+			"game-healthkit-tooltip": "à¸„à¸¥à¸´à¸à¸‹à¹‰à¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¸Ÿà¸·à¹‰à¸™à¸Ÿà¸¹à¸ªà¸¸à¸‚à¸ à¸²à¸ž 100",
+			"game-soda": "à¹‚à¸‹à¸”à¸²",
+			"game-soda-tooltip": "à¸„à¸¥à¸´à¸à¸‹à¹‰à¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¹€à¸žà¸´à¹ˆà¸¡à¸­à¸°à¸”à¸£à¸µà¸™à¸²à¸¥à¸µà¸™à¸ à¸²à¸¢ 25",
+			"game-adrenaline-tooltip": "à¸­à¸°à¸”à¸£à¸µà¸™à¸²à¸¥à¸µà¸™à¸Šà¹ˆà¸§à¸¢à¸Ÿà¸·à¹‰à¸™à¸Ÿà¸¹à¸ªà¸¸à¸‚à¸ à¸²à¸žà¹€à¸¡à¸·à¹ˆà¸­à¹€à¸§à¸¥à¸²à¸œà¹ˆà¸²à¸™à¹„à¸›",
+			"game-painkiller": "à¸¢à¸²à¹€à¸¡à¹‡à¸”",
+			"game-painkiller-tooltip": "à¸„à¸¥à¸´à¸à¸‹à¹‰à¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¹€à¸žà¸´à¹ˆà¸¡à¸­à¸°à¸”à¸£à¸µà¸™à¸²à¸¥à¸µà¸™à¸ à¸²à¸¢ 50",
 			"game-9mm": "9 à¸¡à¸¡.",
-			"game-9mm-tooltip": "à¸?à¸£à¸°à¸ªà¸¸à¸™à¸ªà¸³à¸«à¸£à¸±à¸š M9, Glock, MP5, MAC-10, UMP9 à¹?à¸¥à¸° Vector",
-			"game-12gauge": "12 à¹€à¸?à¸ˆà¹Œ",
-			"game-12gauge-tooltip": "à¸?à¸£à¸°à¸ªà¸¸à¸™à¸ªà¸³à¸«à¸£à¸±à¸š M870, Saiga-12 à¹?à¸¥à¸° MP220",
+			"game-9mm-tooltip": "à¸à¸£à¸°à¸ªà¸¸à¸™à¸ªà¸³à¸«à¸£à¸±à¸š M9, Glock, MP5, MAC-10, UMP9 à¹à¸¥à¸° Vector",
+			"game-12gauge": "12 à¹€à¸à¸ˆà¹Œ",
+			"game-12gauge-tooltip": "à¸à¸£à¸°à¸ªà¸¸à¸™à¸ªà¸³à¸«à¸£à¸±à¸š M870, Saiga-12 à¹à¸¥à¸° MP220",
 			"game-762mm": "7.62 à¸¡à¸¡.",
-			"game-762mm-tooltip": "à¸?à¸£à¸°à¸ªà¸¸à¸™à¸ªà¸³à¸«à¸£à¸±à¸š AK-47, SCAR-H, M39, Mosin Nagant, OT-38 à¹?à¸¥à¸° DP-28",
+			"game-762mm-tooltip": "à¸à¸£à¸°à¸ªà¸¸à¸™à¸ªà¸³à¸«à¸£à¸±à¸š AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 à¹à¸¥à¸° DP-28",
 			"game-556mm": "5.56mm",
-			"game-556mm-tooltip": "à¸?à¸£à¸°à¸ªà¸¸à¸™à¸ªà¸³à¸«à¸£à¸±à¸š FAMAS, HK416, Mk 12 à¹?à¸¥à¸° M249.",
-			"game-chest01": "à¹€à¸¥à¹€à¸§à¸¥ 1 à¹€à¸ªà¸·à¹‰à¸­à¸?à¸±à¹Šà¸?",
-			"game-chest02": "à¹€à¸¥à¹€à¸§à¸¥ 2 à¹€à¸ªà¸·à¹‰à¸­à¸?à¸±à¹Šà¸?",
-			"game-chest03": "à¹€à¸¥à¹€à¸§à¸¥ 3 à¹€à¸ªà¸·à¹‰à¸­à¸?à¸±à¹Šà¸?",
-			"game-helmet01": "à¹€à¸¥à¹€à¸§à¸¥ 1 à¸«à¸¡à¸§à¸?à¸?à¸±à¸™à¸™à¹‡à¸­à¸?",
-			"game-helmet02": "à¹€à¸¥à¹€à¸§à¸¥ 2 à¸«à¸¡à¸§à¸?à¸?à¸±à¸™à¸™à¹‡à¸­à¸?",
-			"game-helmet03": "à¹€à¸¥à¹€à¸§à¸¥ 3 à¸«à¸¡à¸§à¸?à¸?à¸±à¸™à¸™à¹‡à¸­à¸?",
+			"game-556mm-tooltip": "à¸à¸£à¸°à¸ªà¸¸à¸™à¸ªà¸³à¸«à¸£à¸±à¸š FAMAS, HK416, Mk 12 à¹à¸¥à¸° M249.",
+			"game-chest01": "à¹€à¸¥à¹€à¸§à¸¥ 1 à¹€à¸ªà¸·à¹‰à¸­à¸à¸±à¹Šà¸",
+			"game-chest02": "à¹€à¸¥à¹€à¸§à¸¥ 2 à¹€à¸ªà¸·à¹‰à¸­à¸à¸±à¹Šà¸",
+			"game-chest03": "à¹€à¸¥à¹€à¸§à¸¥ 3 à¹€à¸ªà¸·à¹‰à¸­à¸à¸±à¹Šà¸",
+			"game-helmet01": "à¹€à¸¥à¹€à¸§à¸¥ 1 à¸«à¸¡à¸§à¸à¸à¸±à¸™à¸™à¹‡à¸­à¸",
+			"game-helmet02": "à¹€à¸¥à¹€à¸§à¸¥ 2 à¸«à¸¡à¸§à¸à¸à¸±à¸™à¸™à¹‡à¸­à¸",
+			"game-helmet03": "à¹€à¸¥à¹€à¸§à¸¥ 3 à¸«à¸¡à¸§à¸à¸à¸±à¸™à¸™à¹‡à¸­à¸",
 			"game-1xscope": "1x à¸‚à¸­à¸•à¹€à¸‚à¸•",
 			"game-2xscope": "2x à¸‚à¸­à¸•à¹€à¸‚à¸•",
 			"game-4xscope": "4x à¸‚à¸­à¸•à¹€à¸‚à¸•",
@@ -17822,7 +18504,7 @@ webpackJsonp([0], {
 			"game-outfitWhite": "Arctic Avenger",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -18016,7 +18698,7 @@ webpackJsonp([0], {
 			"game-12gauge": "12 gauge",
 			"game-12gauge-tooltip": "Ammo fÃ¶r M870, Saiga-12 och MP220.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "Ammo fÃ¶r AK-47, SCAR-H, M39, Mosin Nagant, OT-38 och DP-28.",
+			"game-762mm-tooltip": "Ammo fÃ¶r AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 och DP-28.",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "Ammo fÃ¶r FAMAS, HK416, Mk 12 och M249.",
 			"game-chest01": "Level 1 VÃ¤st",
@@ -18047,7 +18729,7 @@ webpackJsonp([0], {
 			"game-fists": "Slag",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -18481,76 +19163,96 @@ webpackJsonp([0], {
 	},
 	SEs0: function(e, t, a) {
 		"use strict";
-		var i = a("juYr"),
-			o = a("zinx"),
-			n = a("Jr6A");
-		i(document).ready(function() {
-			var e = i("#start-menu");
-			i("#btn-help").click(function() {
-				var t = i("#start-help");
+
+		function i(e) {
+			d.push(e)
+		}
+
+		function o(e, t) {
+			l(".modal").fadeOut(200), l("#start-bottom-right").fadeIn(200), l("#start-top-left").fadeIn(200), l("#start-top-right").fadeIn(200);
+			for (var a = 0; a < d.length; a++) d[a](e, t)
+		}
+
+		function n(e) {
+			l(e.target).closest(".modal-content").length || (l(".modal").each(function() {
+				"block" == l(this).css("display") && o(e, l(this))
+			}), l(document).off("click touchend", n))
+		}
+
+		function r() {
+			l(document).on("click touchend", n)
+		}
+
+		function s() {
+			l(document).off("click touchend", n)
+		}
+		var l = a("juYr"),
+			c = a("zinx"),
+			m = a("Jr6A");
+		l(document).ready(function() {
+			var e = l("#start-menu");
+			l("#btn-help").click(function() {
+				var t = l("#start-help");
 				e.addClass("display-help");
 				var a = (t.position().top, e.css("height"));
 				return t.css("display", "block"), e.animate({
 					scrollTop: a
 				}, 1e3), !1
 			});
-			var t = i("#team-mobile-link"),
-				a = i("#team-mobile-link-desc"),
-				r = i("#team-mobile-link-warning"),
-				s = i("#team-link-input"),
-				l = i("#social-share-block"),
-				c = i("#news-block");
-			i("#btn-join-team").click(function() {
-				return s.val(""), t.css("display", "block"), a.css("display", "block"), r.css("display", "none"), e.css("display", "none"), c.css("display", "none"), l.css("display", "none"), !1
-			}), i("#btn-team-mobile-link-leave").click(function() {
-				return t.css("display", "none"), s.val(""), e.css("display", "block"), c.css("display", "block"), l.css("display", "block"), !1
-			}), i("#team-link-input").on("keypress", function(e) {
-				13 === (e.which || e.keyCode) && (i("#btn-team-mobile-link-join").trigger("click"), i(this).blur())
-			}), i("#player-name-input-solo").on("keypress", function(e) {
-				13 === (e.which || e.keyCode) && i(this).blur()
-			}), o.mobile && !n.detectMobileSafari() && (i("#player-name-input-solo").on("focus", function() {
-				if (n.isLandscape()) {
-					var e = n.getScreenDimensions().height,
+			var t = l("#team-mobile-link"),
+				a = l("#team-mobile-link-desc"),
+				i = l("#team-mobile-link-warning"),
+				n = l("#team-link-input"),
+				s = l("#social-share-block"),
+				d = l("#news-block");
+			l("#btn-join-team").click(function() {
+				return n.val(""), t.css("display", "block"), a.css("display", "block"), i.css("display", "none"), e.css("display", "none"), d.css("display", "none"), s.css("display", "none"), !1
+			}), l("#btn-team-mobile-link-leave").click(function() {
+				return t.css("display", "none"), n.val(""), e.css("display", "block"), d.css("display", "block"), s.css("display", "block"), !1
+			}), l("#team-link-input").on("keypress", function(e) {
+				13 === (e.which || e.keyCode) && (l("#btn-team-mobile-link-join").trigger("click"), l(this).blur())
+			}), l("#player-name-input-solo").on("keypress", function(e) {
+				13 === (e.which || e.keyCode) && l(this).blur()
+			}), c.mobile && !m.detectMobileSafari() && (l("#player-name-input-solo").on("focus", function() {
+				if (m.isLandscape()) {
+					var e = m.getScreenDimensions().height,
 						t = e <= 282 ? 18 : 36;
-					document.body.scrollTop = i(this).offset().top - t
+					document.body.scrollTop = l(this).offset().top - t
 				}
-			}), i("#player-name-input-solo").on("blur", function() {
+			}), l("#player-name-input-solo").on("blur", function() {
 				document.body.scrollTop = 0
 			}));
-			var m = i(".modal"),
-				d = i(".modal-content"),
-				p = i("#start-bottom-right"),
-				u = i("#start-top-left"),
-				h = i("#modal-customize");
-			i("#btn-customize").click(function() {
-				return h.finish(), h.css("display", "block"), p.fadeOut(200), !1
+			var p = l(".modal"),
+				u = (l(".modal-content"), l("#start-bottom-right")),
+				h = l("#start-top-left"),
+				g = l("#start-top-right"),
+				f = l("#modal-settings");
+			l(".btn-settings").click(function() {
+				return f.finish(), f.css("display", "block"), u.fadeOut(200), g.fadeOut(200), r(), !1
 			});
-			var g = i("#modal-settings");
-			i(".btn-settings").click(function() {
-				return g.finish(), g.css("display", "block"), p.fadeOut(200), !1
-			});
-			var f = i("#modal-hamburger");
-			i("#btn-hamburger").click(function() {
-				return f.finish(), f.css("display", "block"), u.fadeOut(200), !1
-			}), m.find(".close").click(function() {
-				y()
-			}), d.on("click touchend", function(e) {
-				e.stopPropagation()
-			}), i(document).on("click touchend", function(e) {
-				i(".modal").each(function() {
-					"block" == i(this).css("display") && y()
-				})
-			});
-			var y = function(e) {
-				m.fadeOut(200), p.fadeIn(200), u.fadeIn(200)
-			};
-			i(".modal-settings-text").click(function() {
-				var e = i(this).siblings("input:checkbox");
+			var y = l("#modal-hamburger");
+			l("#btn-hamburger").click(function() {
+				return y.finish(), y.css("display", "block"), h.fadeOut(200), r(), !1
+			}), l(".account-details-guest, .account-details-user").click(function() {
+				if (c.mobile) {
+					var e = l("#modal-mobile-account");
+					return e.finish(), e.css("display", "block"), l("#start-top-right").fadeOut(200), r(), !1
+				}
+			}), p.find(".close").click(function(e) {
+				o(e, l(this))
+			}), l(".modal-settings-text").click(function() {
+				var e = l(this).siblings("input:checkbox");
 				e.prop("checked", !e.is(":checked")), e.trigger("change")
-			}), i("#force-refresh").click(function() {
+			}), l("#force-refresh").click(function() {
 				window.location.reload(!0)
 			})
-		})
+		});
+		var d = [];
+		e.exports = {
+			addModalCloseListener: r,
+			addModalCloseCallback: i,
+			removeModalCloseListener: s
+		}
 	},
 	Tf6H: function(e, t, a) {
 		"use strict";
@@ -18652,91 +19354,91 @@ webpackJsonp([0], {
 			"index-europe": "æ¬§æ´²",
 			"index-asia": "äºšæ´²",
 			"index-players": "çŽ©å®¶",
-			"index-play-solo": "çŽ©å?•æŒ‘",
-			"index-play-duo": "çŽ©å?Œäººè??é˜Ÿ",
-			"index-play-squad": "çŽ©å››äººè??é˜Ÿ",
-			"index-create-team": "åˆ›å»ºè??é˜Ÿ",
+			"index-play-solo": "çŽ©å•æŒ‘",
+			"index-play-duo": "çŽ©åŒäººè”é˜Ÿ",
+			"index-play-squad": "çŽ©å››äººè”é˜Ÿ",
+			"index-create-team": "åˆ›å»ºè”é˜Ÿ",
 			"index-how-to-play": "å¦‚ä½•çŽ©",
-			"index-leave-team": "ç¦»å¼€è??é˜Ÿ",
-			"index-joining-team": "åŠ å…¥è??é˜Ÿ",
-			"index-creating-team": "å»ºç«‹è??é˜Ÿä¸­",
+			"index-leave-team": "ç¦»å¼€è”é˜Ÿ",
+			"index-joining-team": "åŠ å…¥è”é˜Ÿ",
+			"index-creating-team": "å»ºç«‹è”é˜Ÿä¸­",
 			"index-invite-link": "é‚€è¯·é“¾æŽ¥",
-			"index-solo": "å?•äºº",
-			"index-duo": "å?Œäººè??é˜Ÿ",
-			"index-squad": "å››äººè??é˜Ÿ",
+			"index-solo": "å•äºº",
+			"index-duo": "åŒäººè”é˜Ÿ",
+			"index-squad": "å››äººè”é˜Ÿ",
 			"index-auto-fill": "è‡ªåŠ¨å¡«å……",
-			"index-no-fill": "ä¸?å¡«å……",
-			"index-waiting-for-leader": "ç­‰å¾…é¢†é˜Ÿå¼€å§‹æ¸¸æˆ?ã€‚",
+			"index-no-fill": "ä¸å¡«å……",
+			"index-waiting-for-leader": "ç­‰å¾…é¢†é˜Ÿå¼€å§‹æ¸¸æˆã€‚",
 			"index-play": "å¼€å§‹",
-			"index-featured-youtuber": "ç²¾é€‰Youtubeå?šä¸»",
+			"index-featured-youtuber": "ç²¾é€‰Youtubeåšä¸»",
 			"index-settings": "è®¾ç½®",
-			"index-high-resolution": "é«˜åˆ†è¾¨çŽ‡(æ??é«˜è§†è§‰è´¨é‡?)",
-			"index-screen-shake": "å±?å¹•æŠ–åŠ¨",
-			"index-team-is-full": "è??é˜Ÿå·²æ»¡!",
-			"index-failed-joining-team": "åŠ å…¥è??é˜Ÿå¤±è´¥ã€‚",
-			"index-failed-creating-team": "åˆ›å»ºè??é˜Ÿå¤±è´¥ã€‚",
-			"index-failed-finding-game": "æŸ¥æ‰¾è??é˜Ÿå¤±è´¥ã€‚",
-			"index-failed-joining-game": "åŠ å…¥æ¸¸æˆ?å¤±è´¥ã€‚",
-			"index-lost-connection": "è??é˜Ÿè¿žæŽ¥ä¸¢å¤±ã€‚",
-			"index-host-closed": "å›¢é˜Ÿä¸»æŒ?äººå¤±åŽ»è¿žæŽ¥ã€‚",
+			"index-high-resolution": "é«˜åˆ†è¾¨çŽ‡(æé«˜è§†è§‰è´¨é‡)",
+			"index-screen-shake": "å±å¹•æŠ–åŠ¨",
+			"index-team-is-full": "è”é˜Ÿå·²æ»¡!",
+			"index-failed-joining-team": "åŠ å…¥è”é˜Ÿå¤±è´¥ã€‚",
+			"index-failed-creating-team": "åˆ›å»ºè”é˜Ÿå¤±è´¥ã€‚",
+			"index-failed-finding-game": "æŸ¥æ‰¾è”é˜Ÿå¤±è´¥ã€‚",
+			"index-failed-joining-game": "åŠ å…¥æ¸¸æˆå¤±è´¥ã€‚",
+			"index-lost-connection": "è”é˜Ÿè¿žæŽ¥ä¸¢å¤±ã€‚",
+			"index-host-closed": "å›¢é˜Ÿä¸»æŒäººå¤±åŽ»è¿žæŽ¥ã€‚",
 			"index-view-more": "æŸ¥çœ‹æ›´å¤š",
-			"index-back-to-main": "å›žåˆ°ä¸»ç•Œé?¢",
-			"index-most-kills": "æ?€æ•Œæœ€å¤š",
-			"index-total-kills": "æ€»æ?€æ•Œ",
+			"index-back-to-main": "å›žåˆ°ä¸»ç•Œé¢",
+			"index-most-kills": "æ€æ•Œæœ€å¤š",
+			"index-total-kills": "æ€»æ€æ•Œ",
 			"index-total-wins": "æ€»èµ¢æ•°",
-			"index-top-5-percent": "å‰?5%",
-			"index-kill-death-ratio": "æ?€æ•Œå’Œç?Ÿè¿˜æ¯?ä¾‹",
+			"index-top-5-percent": "å‰5%",
+			"index-kill-death-ratio": "æ€æ•Œå’Œç”Ÿè¿˜æ¯”ä¾‹",
 			"index-for": "For",
 			"index-today": "ä»Šæ—¥",
 			"index-this-week": "æœ¬å‘¨",
 			"index-all-time": "æ‰€æœ‰æ—¶é—´",
-			"index-top-100": "å‰?ä¸€ç™¾",
-			"index-rank": "æŽ’å??",
+			"index-top-100": "å‰ä¸€ç™¾",
+			"index-rank": "æŽ’å",
 			"index-player": "çŽ©å®¶",
-			"index-total-games": "æ€»æ¸¸æˆ?æ•°",
+			"index-total-games": "æ€»æ¸¸æˆæ•°",
 			"index-controls": "æŽ§åˆ¶",
 			"index-movement": "åŠ¨ä½œ",
-			"index-movement-ctrl": "W, A, S, Dé?®",
+			"index-movement-ctrl": "W, A, S, Dé”®",
 			"index-aim": "çž„å‡†",
 			"index-aim-ctrl": "é¼ æ ‡",
 			"index-punch": "æ‹³",
 			"index-shoot": "å°„å‡»",
 			"index-shoot-ctrl": "å·¦å‡»",
-			"index-change-weapons": "æ›´æ?¢æ­¦å™¨",
+			"index-change-weapons": "æ›´æ¢æ­¦å™¨",
 			"index-change-weapons-ctrl": "1-4æˆ–æ»šè½®ã€‚",
-			"index-stow-weapons": "æ?¶èµ·æ­¦å™¨(æ‹³å‡»æ¨¡å¼?)",
-			"index-stow-weapons-ctrl": "3æˆ–Eé?®",
-			"index-swap-weapons": "æ?¢åˆ°ä¹‹å‰?çš„æ­¦å™¨",
-			"index-swap-weapons-ctrl": "Qé?®",
-			"index-reload": "é‡?è£…",
-			"index-reload-ctrl": "Ré?®",
-			"index-scope-zoom": "å?˜ç„¦èŒƒå›´",
-			"index-scope-zoom-ctrl": "å·¦é?®å?•å‡»æ?¾å¤§",
+			"index-stow-weapons": "æ”¶èµ·æ­¦å™¨(æ‹³å‡»æ¨¡å¼)",
+			"index-stow-weapons-ctrl": "3æˆ–Eé”®",
+			"index-swap-weapons": "æ¢åˆ°ä¹‹å‰çš„æ­¦å™¨",
+			"index-swap-weapons-ctrl": "Qé”®",
+			"index-reload": "é‡è£…",
+			"index-reload-ctrl": "Ré”®",
+			"index-scope-zoom": "å˜ç„¦èŒƒå›´",
+			"index-scope-zoom-ctrl": "å·¦é”®å•å‡»æ”¾å¤§",
 			"index-pickup": "æ‹¾èµ·",
 			"index-loot": "æŽ å¤º",
-			"index-revive": "å¤?æ´»",
-			"index-pickup-ctrl": "Fé?®",
-			"index-use-medical": "ä½¿ç?¨åŒ»ç–—ç‰©å“?",
-			"index-use-medical-ctrl": "å·¦é?®å?•å‡»ç‰©å“?æˆ–7-0",
-			"index-drop-item": "ä¸¢å¼ƒç‰©å“?",
-			"index-drop-item-ctrl": "å?³é?®å?•å‡»ç‰©å“?",
-			"index-cancel-action": "å?–æ¶ˆåŠ¨ä½œ",
-			"index-cancel-action-ctrl": "Xé?®",
+			"index-revive": "å¤æ´»",
+			"index-pickup-ctrl": "Fé”®",
+			"index-use-medical": "ä½¿ç”¨åŒ»ç–—ç‰©å“",
+			"index-use-medical-ctrl": "å·¦é”®å•å‡»ç‰©å“æˆ–7-0",
+			"index-drop-item": "ä¸¢å¼ƒç‰©å“",
+			"index-drop-item-ctrl": "å³é”®å•å‡»ç‰©å“",
+			"index-cancel-action": "å–æ¶ˆåŠ¨ä½œ",
+			"index-cancel-action-ctrl": "Xé”®",
 			"index-view-map": "æŸ¥çœ‹åœ°å›¾",
-			"index-view-map-ctrl": "Mæˆ–Gé?®",
-			"index-toggle-minimap": "åˆ‡æ?¢å°?åœ°å›¾",
-			"index-toggle-minimap-ctrl": "Vé?®",
-			"index-use-ping": "ä½¿ç?¨è??é˜Ÿå¹³è½®",
-			"index-use-ping-ctrl": "æŒ‰ä½?Cé?®ï¼Œå?Œæ—¶æŒ‰ä½?å?³é?®ç„¶å?Žç§»åŠ¨é¼ æ ‡ï¼ŒæŽ¥ç?€æ?¾å¼€å?³é?®",
-			"index-use-emote": "ä½¿ç?¨è¡¨æƒ…è½®",
-			"index-use-emote-ctrl": "æŒ‰ä½?å?³é?®ç„¶å?Žç§»åŠ¨é¼ æ ‡ï¼ŒæŽ¥ç?€æ?¾å¼€å?³é?®",
+			"index-view-map-ctrl": "Mæˆ–Gé”®",
+			"index-toggle-minimap": "åˆ‡æ¢å°åœ°å›¾",
+			"index-toggle-minimap-ctrl": "Vé”®",
+			"index-use-ping": "ä½¿ç”¨è”é˜Ÿå¹³è½®",
+			"index-use-ping-ctrl": "æŒ‰ä½Cé”®ï¼ŒåŒæ—¶æŒ‰ä½å³é”®ç„¶åŽç§»åŠ¨é¼ æ ‡ï¼ŒæŽ¥ç€æ¾å¼€å³é”®",
+			"index-use-emote": "ä½¿ç”¨è¡¨æƒ…è½®",
+			"index-use-emote-ctrl": "æŒ‰ä½å³é”®ç„¶åŽç§»åŠ¨é¼ æ ‡ï¼ŒæŽ¥ç€æ¾å¼€å³é”®",
 			"game-alive": "å­˜æ´»çŽ©å®¶",
 			"game-reloading": "è£…å¼¹",
-			"game-using": "ä½¿ç?¨",
-			"game-reviving": "å¤?æ´»ä¸­",
-			"game-revive-teammate": "å¤?æ´»é˜Ÿå?‹",
+			"game-using": "ä½¿ç”¨",
+			"game-reviving": "å¤æ´»ä¸­",
+			"game-revive-teammate": "å¤æ´»é˜Ÿå‹",
 			"game-equip": "è£…å¤‡",
-			"game-cancel": "æ’¤é?€",
+			"game-cancel": "æ’¤é”€",
 			"game-You": "You",
 			"game-you": "you",
 			"game-themselves": "themselves",
@@ -18759,63 +19461,63 @@ webpackJsonp([0], {
 			"game-minute": "åˆ†",
 			"game-m": "åˆ†",
 			"game-s": "ç§’",
-			"game-not-enough-space": "ç©ºé—´ä¸?è¶³!",
-			"game-item-already-owned": "ç‰©å“?å·²æ‹¥æœ‰!",
-			"game-item-already-equipped": "ç‰©å“?å·²è£…å¤‡!",
-			"game-better-item-equipped": "å·²è£…å¤‡æ›´å¥½ç‰©å“?!",
-			"game-play-new-game": "å¼€å§‹æ–°æ¸¸æˆ?",
+			"game-not-enough-space": "ç©ºé—´ä¸è¶³!",
+			"game-item-already-owned": "ç‰©å“å·²æ‹¥æœ‰!",
+			"game-item-already-equipped": "ç‰©å“å·²è£…å¤‡!",
+			"game-better-item-equipped": "å·²è£…å¤‡æ›´å¥½ç‰©å“!",
+			"game-play-new-game": "å¼€å§‹æ–°æ¸¸æˆ",
 			"game-spectate": "è§‚çœ‹",
-			"game-full-screen": "å…¨å±?",
+			"game-full-screen": "å…¨å±",
 			"game-sound": "å£°éŸ³",
-			"game-quit-game": "ç¦»å¼€æ¸¸æˆ?",
-			"game-return-to-game": "è¿?å›žæ¸¸æˆ?",
-			"game-hide-match-stats": "éš?è—?æ¯?èµ›æ•°æ?®",
-			"game-view-match-stats": "æŸ¥çœ‹æ¯?èµ›æ•°æ?®",
-			"game-previous-teammate": "ä¸Šä¸ªé˜Ÿå?‹",
-			"game-next-teammate": "ä¸‹ä¸ªé˜Ÿå?‹",
+			"game-quit-game": "ç¦»å¼€æ¸¸æˆ",
+			"game-return-to-game": "è¿”å›žæ¸¸æˆ",
+			"game-hide-match-stats": "éšè—æ¯”èµ›æ•°æ®",
+			"game-view-match-stats": "æŸ¥çœ‹æ¯”èµ›æ•°æ®",
+			"game-previous-teammate": "ä¸Šä¸ªé˜Ÿå‹",
+			"game-next-teammate": "ä¸‹ä¸ªé˜Ÿå‹",
 			"game-spectate-previous": "",
 			"game-spectate-next": "",
-			"game-leave-game": "ç¦»å¼€æ¸¸æˆ?",
+			"game-leave-game": "ç¦»å¼€æ¸¸æˆ",
 			"game-your-results": "ä½ çš„æˆ˜ç»©",
-			"game-chicken": "å¤§å?‰å¤§åˆ©ï¼Œä»Šæ™šå?ƒé¸¡ï¼?",
-			"game-won-the-game": "æ¸¸æˆ?èµ¢äº†ã€‚",
-			"game-team-eliminated": "ä½ çš„é˜Ÿä¼?è¢«å‡»è´¥äº†ã€‚",
-			"game-rank": "æŽ’å??",
-			"game-team-rank": "è??é˜ŸæŽ’å??",
-			"game-team-kills": "è??é˜Ÿæ?€æ•Œæ•°",
-			"game-kill": "æ?€",
-			"game-kills": "æ?€",
+			"game-chicken": "å¤§å‰å¤§åˆ©ï¼Œä»Šæ™šåƒé¸¡ï¼",
+			"game-won-the-game": "æ¸¸æˆèµ¢äº†ã€‚",
+			"game-team-eliminated": "ä½ çš„é˜Ÿä¼è¢«å‡»è´¥äº†ã€‚",
+			"game-rank": "æŽ’å",
+			"game-team-rank": "è”é˜ŸæŽ’å",
+			"game-team-kills": "è”é˜Ÿæ€æ•Œæ•°",
+			"game-kill": "æ€",
+			"game-kills": "æ€",
 			"game-damage-dealt": "ä¼¤å®³è¾“å‡º",
-			"game-damage-taken": "å?—åˆ°ä¼¤å®³",
-			"game-survived": "ç?Ÿè¿˜",
-			"game-backpack00": "è¢‹å­?",
-			"game-backpack01": "å°?åŒ…",
+			"game-damage-taken": "å—åˆ°ä¼¤å®³",
+			"game-survived": "ç”Ÿè¿˜",
+			"game-backpack00": "è¢‹å­",
+			"game-backpack01": "å°åŒ…",
 			"game-backpack02": "å¸¸è§„åŒ…",
-			"game-backpack03": "å†›ç?¨åŒ…",
+			"game-backpack03": "å†›ç”¨åŒ…",
 			"game-bandage": "ç»·å¸¦",
-			"game-bandage-tooltip": "å·¦é?®ç‚¹å‡»å›žå¤?15ç‚¹ç?Ÿå‘½å€¼ã€‚",
-			"game-healing-tooltip": "æ— æ³•æ²»ç–—75ç‚¹ä»¥ä¸Šçš„ç?Ÿå‘½å€¼ã€‚",
-			"game-healthkit": "åŒ»è?¯åŒ…",
-			"game-healthkit-tooltip": "å·¦é?®ç‚¹å‡»æ?¢å¤?100ç‚¹ç?Ÿå‘½å€¼ã€‚",
+			"game-bandage-tooltip": "å·¦é”®ç‚¹å‡»å›žå¤15ç‚¹ç”Ÿå‘½å€¼ã€‚",
+			"game-healing-tooltip": "æ— æ³•æ²»ç–—75ç‚¹ä»¥ä¸Šçš„ç”Ÿå‘½å€¼ã€‚",
+			"game-healthkit": "åŒ»è¯åŒ…",
+			"game-healthkit-tooltip": "å·¦é”®ç‚¹å‡»æ¢å¤100ç‚¹ç”Ÿå‘½å€¼ã€‚",
 			"game-soda": "æ±½æ°´",
-			"game-soda-tooltip": "å·¦é?®ç‚¹å‡»å?¯ä»¥å¢žåŠ 25ç‚¹çš„è‚¾ä¸Šè…ºç´ ã€‚",
-			"game-adrenaline-tooltip": "è‚¾ä¸Šè…ºç´ ä¼šéš?ç?€æ—¶é—´çš„æŽ¨ç§»æ?¢å¤?è¡€é‡?å€¼ã€‚",
-			"game-painkiller": "è?¯ç‰‡",
-			"game-painkiller-tooltip": "å·¦é?®ç‚¹å‡»å?¯ä»¥å¢žåŠ 50ç‚¹çš„è‚¾ä¸Šè…ºç´ ã€‚",
+			"game-soda-tooltip": "å·¦é”®ç‚¹å‡»å¯ä»¥å¢žåŠ 25ç‚¹çš„è‚¾ä¸Šè…ºç´ ã€‚",
+			"game-adrenaline-tooltip": "è‚¾ä¸Šè…ºç´ ä¼šéšç€æ—¶é—´çš„æŽ¨ç§»æ¢å¤è¡€é‡å€¼ã€‚",
+			"game-painkiller": "è¯ç‰‡",
+			"game-painkiller-tooltip": "å·¦é”®ç‚¹å‡»å¯ä»¥å¢žåŠ 50ç‚¹çš„è‚¾ä¸Šè…ºç´ ã€‚",
 			"game-9mm": "9æ¯«ç±³",
-			"game-9mm-tooltip": "ç»™M9,MP5,æ ¼æ´›å…‹18C,Mac-10, Vector å’Œ UMP9çš„å¼¹è?¯ã€‚",
-			"game-12gauge": "12å?£å¾„",
-			"game-12gauge-tooltip": "ç»™M870, Saiga-12 å’Œ MP220çš„å¼¹è?¯ã€‚",
+			"game-9mm-tooltip": "ç»™M9,MP5,æ ¼æ´›å…‹18C,Mac-10, Vector å’Œ UMP9çš„å¼¹è¯ã€‚",
+			"game-12gauge": "12å£å¾„",
+			"game-12gauge-tooltip": "ç»™M870, Saiga-12 å’Œ MP220çš„å¼¹è¯ã€‚",
 			"game-762mm": "7.62æ¯«ç±³",
-			"game-762mm-tooltip": "ç»™AK-47, SCAR-H, M39, èŽ«è¾›-çº³ç?˜æ­¥æžª, M39 EMRï¼Œ OT-38 å’Œ DP-28çš„å¼¹è?¯ã€‚",
+			"game-762mm-tooltip": "ç»™AK-47, SCAR-H, M39, èŽ«è¾›-çº³ç”˜æ­¥æžª, M39 EMRï¼Œ OT-38 å’Œ DP-28çš„å¼¹è¯ã€‚",
 			"game-556mm": "5.56æ¯«ç±³",
-			"game-556mm-tooltip": "ç»™FAMAS, HK416, Mk 12 å’Œ M249å¼¹è?¯ã€‚",
+			"game-556mm-tooltip": "ç»™FAMAS, HK416, Mk 12 å’Œ M249å¼¹è¯ã€‚",
 			"game-chest01": "ä¸€çº§é˜²å¼¹è¡£",
 			"game-chest02": "äºŒçº§é˜²å¼¹è¡£",
 			"game-chest03": "ä¸‰çº§é˜²å¼¹è¡£",
-			"game-helmet01": "ä¸€çº§å¤´ç›?",
-			"game-helmet02": "äºŒçº§å¤´ç›?",
-			"game-helmet03": "ä¸‰çº§å¤´ç›?",
+			"game-helmet01": "ä¸€çº§å¤´ç›”",
+			"game-helmet02": "äºŒçº§å¤´ç›”",
+			"game-helmet03": "ä¸‰çº§å¤´ç›”",
 			"game-1xscope": "1x çž„å‡†é•œ",
 			"game-2xscope": "2x çž„å‡†é•œ",
 			"game-4xscope": "4x çž„å‡†é•œ",
@@ -18824,19 +19526,19 @@ webpackJsonp([0], {
 			"game-level-1": "ä¸€çº§",
 			"game-level-2": "äºŒçº§",
 			"game-level-3": "ä¸‰çº§",
-			"game-outfitBase": "åŸºæœ¬æœ?è£…",
+			"game-outfitBase": "åŸºæœ¬æœè£…",
 			"game-outfitRoyalFortune": "çš‡å®¶è´¢å¯Œ",
-			"game-outfitKeyLime": "é?’æŸ ",
+			"game-outfitKeyLime": "é’æŸ ",
 			"game-outfitCobaltShell": "é’´å£³",
 			"game-outfitCarbonFiber": "ç¢³çº¤ç»´",
 			"game-outfitDarkGloves": "ä¸“ä¸š",
-			"game-outfitGhillie": "å?‰åˆ©æœ?",
+			"game-outfitGhillie": "å‰åˆ©æœ",
 			"game-outfitCamo": "æ£®æž—è¿·å½©",
 			"game-outfitRed": "ç›®æ ‡ç»ƒä¹ ",
-			"game-outfitWhite": "åŒ—æž?å¤?ä»‡è€…",
+			"game-outfitWhite": "åŒ—æžå¤ä»‡è€…",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -19068,7 +19770,7 @@ webpackJsonp([0], {
 			"game-12gauge": "12 gauge",
 			"game-12gauge-tooltip": "Ammo for M870, Saiga-12 and MP220.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "Ammo for AK-47, SCAR-H, M39, Mosin Nagant, OT-38 and DP-28.",
+			"game-762mm-tooltip": "Ammo for AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 and DP-28.",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "Ammo for FAMAS, HK416, Mk 12 and M249.",
 			"game-50AE": ".50 AE",
@@ -19102,11 +19804,14 @@ webpackJsonp([0], {
 			"game-outfitPrisoner": "The New Black",
 			"game-outfitCasanova": "Casanova Silks",
 			"game-outfitKhaki": "The Initiative",
+			"game-outfitCoral": "Coral Guise",
+			"game-outfitAqua": "Aquatic Avenger",
 			"game-fists": "Fists",
 			"game-ak47": "AK-47",
 			"game-scar": "SCAR-H",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
+			"game-sv98": "SV-98",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -19353,9 +20058,8 @@ webpackJsonp([0], {
 			r = a("juYr"),
 			s = a("+0OL"),
 			l = (a("0od3"), a("gtMM")),
-			c = a("85i3"),
-			m = a("Jr6A"),
-			d = (a("zinx"), function() {
+			c = (a("85i3"), a("Jr6A")),
+			m = (a("zinx"), function() {
 				function e(t, a, o, n, s) {
 					var l = this;
 					i(this, e), this.audioManager = s, this.playBtn = r("#btn-start-team"), this.serverWarning = r("#server-warning"), this.teamOptions = r("#btn-team-queue-duo, #btn-team-fill-auto, #btn-team-fill-none"), this.serverSelect = r("#team-server-select"), this.queueDuo = r("#btn-team-queue-duo"), this.queueSquad = r("#btn-team-queue-squad"), this.fillAuto = r("#btn-team-fill-auto"), this.fillNone = r("#btn-team-fill-none"), this.onLeave = null, this.config = t, this.pingTest = a, this.localization = o, this.joinGameFn = n, this.active = !1, this.joined = !1, this.create = !1, this.joiningGame = !1, this.ws = null, this.keepAliveTimeout = 0, this.siteInfo = {}, this.playerData = {}, this.roomData = {}, this.players = [], this.prevPlayerCount = 0, this.localPlayerIdx = 0, this.isLeader = !0, this.serverSelect.change(function() {
@@ -19393,15 +20097,15 @@ webpackJsonp([0], {
 						});
 						var a = r("#team-url").html(),
 							i = r("<input>");
-						if (r("body").append(i), i.val(a), m.detectiOS()) {
+						if (r("body").append(i), i.val(a), c.detectiOS()) {
 							var o = i.get(0),
 								n = o.contentEditable,
 								s = o.readOnly;
 							o.contentEditable = !0, o.readOnly = !0;
 							var l = document.createRange();
 							l.selectNodeContents(o);
-							var c = window.getSelection();
-							c.removeAllRanges(), c.addRange(l), o.setSelectionRange(0, 999999), o.contentEditable = n, o.readOnly = s
+							var m = window.getSelection();
+							m.removeAllRanges(), m.addRange(l), o.setSelectionRange(0, 999999), o.contentEditable = n, o.readOnly = s
 						} else i.select();
 						document.execCommand("copy"), i.remove()
 					})
@@ -19416,14 +20120,14 @@ webpackJsonp([0], {
 					value: function(e, t) {
 						var a = this;
 						if (!this.active || t !== this.roomData.roomUrl) {
-							var i = window.location.host;
+							var i = "https:" == window.location.protocol,
+								o = window.location.host;
 							if (!e) {
-								var o = l.decodeUrl(t);
-								i = "app-" + l.appIdToString(o.appId) + ".surviv.io"
+								var n = l.decodeUrl(t);
+								o = "app-" + l.appIdToString(n.appId) + "." + /([^\.]+\.[^\.]+)$/.exec(window.location.hostname)[0]
 							}
-							var n = "https:" == window.location.protocol,
-								r = n ? "wss:" : "ws:",
-								s = r + "//" + i + "/team";
+							var r = i ? "wss:" : "ws:",
+								s = r + "//" + o + "/team";
 							this.active = !0, this.joined = !1, this.create = e, this.joiningGame = !1, this.playerData = {
 								name: this.config.get("playerName")
 							}, this.roomData = {
@@ -19468,7 +20172,7 @@ webpackJsonp([0], {
 						if (this.active) {
 							this.ws && this.ws.close(), this.ws = null, this.active = !1, this.joined = !1, this.refreshUi(), t.set("playerName", i.name), t.set("region", a.region), t.set("teamMode", a.teamMode), t.set("teamAutoFill", a.autoFill);
 							var n = "";
-							e && "" != e && (n = o(e, this.localization), c.storeGeneric("teamError", e)), this.onLeave(n)
+							e && "" != e && (n = o(e, this.localization)), this.onLeave(n)
 						}
 					}
 				}, {
@@ -19479,18 +20183,17 @@ webpackJsonp([0], {
 				}, {
 					key: "onMessage",
 					value: function(e, t) {
-						var a = this,
-							i = (this.config, this.playerData);
-						this.roomData, this.players;
+						var a = this;
+						this.config, this.playerData, this.roomData, this.players;
 						switch (e) {
 							case "state":
 								this.joined = !0;
-								var o = this.roomData;
-								this.roomData = t.room, this.players = t.players, this.localPlayerIdx = t.localPlayerIdx, this.isLeader = this.players.length > 0 && this.players[this.localPlayerIdx].isLeader, this.isLeader && (this.roomData.region = o.region, this.roomData.autoFill = o.autoFill, this.roomData.teamMode = o.teamMode), this.refreshUi();
+								var i = this.roomData;
+								this.roomData = t.room, this.players = t.players, this.localPlayerIdx = t.localPlayerIdx, this.isLeader = this.players.length > 0 && this.players[this.localPlayerIdx].isLeader, this.isLeader && (this.roomData.region = i.region, this.roomData.autoFill = i.autoFill, this.roomData.teamMode = i.teamMode), this.refreshUi();
 								break;
 							case "joinGame":
-								this.joiningGame = !0, t.gameArgs.name = i.name, this.joinGameFn(t.gameArgs, t.matchData, function() {
-									a.leave("join_game_failed"), c.storeGeneric("joinFail", "teamPlay")
+								this.joiningGame = !0, this.joinGameFn(t, function() {
+									a.leave("join_game_failed")
 								});
 								break;
 							case "keepAlive":
@@ -19502,15 +20205,14 @@ webpackJsonp([0], {
 				}, {
 					key: "sendMessage",
 					value: function(e, t) {
-						var a = this.ws;
-						if (a)
-							if (a.readyState === a.OPEN) {
-								var i = JSON.stringify({
+						if (this.ws)
+							if (this.ws.readyState === this.ws.OPEN) {
+								var a = JSON.stringify({
 									type: e,
 									data: t
 								});
-								a.send(i)
-							} else a.close()
+								this.ws.send(a)
+							} else this.ws.close()
 					}
 				}, {
 					key: "setRoomProperty",
@@ -19520,23 +20222,20 @@ webpackJsonp([0], {
 				}, {
 					key: "tryStartGame",
 					value: function() {
-						var e = this.pingTest,
-							t = this.roomData;
-						this.players;
-						if (this.isLeader && !t.findingGame) {
-							var a = s.protocolVersion,
-								i = t.region,
-								o = m.getParameterByName("region");
-							void 0 !== o && o.length > 0 && (i = o);
-							var n = e.getZones(i),
-								r = m.getParameterByName("zone");
-							void 0 !== r && r.length > 0 && (n = [r]);
-							var l = {
-								version: a,
-								region: i,
-								zones: n
+						if (this.isLeader && !this.roomData.findingGame) {
+							var e = s.protocolVersion,
+								t = this.roomData.region,
+								a = c.getParameterByName("region");
+							void 0 !== a && a.length > 0 && (t = a);
+							var i = this.pingTest.getZones(t),
+								o = c.getParameterByName("zone");
+							void 0 !== o && o.length > 0 && (i = [o]);
+							var n = {
+								version: e,
+								region: t,
+								zones: i
 							};
-							this.sendMessage("playGame", l), this.roomData.findingGame = !0, this.refreshUi()
+							this.sendMessage("playGame", n), this.roomData.findingGame = !0, this.refreshUi()
 						}
 					}
 				}, {
@@ -19576,27 +20275,27 @@ webpackJsonp([0], {
 							}), r(".btn-team-queue").removeClass("btn-hollow-selected");
 							(2 == f.teamMode ? s : l).addClass("btn-hollow-selected"), r(".btn-team-fill").removeClass("btn-hollow-selected");
 							(f.autoFill ? c : m).addClass("btn-hollow-selected"), f.roomUrl && (r("#team-url").html(window.location.origin + "/" + f.roomUrl), r("#team-code").html(f.roomUrl.substring(1)), window.history && window.history.replaceState("", "", f.roomUrl)), t.html(f.findingGame || h ? '<div class="ui-spinner"></div>' : t.attr("data-label")), x ? (i.addClass("btn-darken"), i.removeClass("btn-disabled"), i.removeClass("btn-opaque")) : (i.addClass("btn-disabled"), r(".team-menu-options-buttons .btn-hollow-selected").removeClass("btn-opaque"), r('.team-menu-options-buttons a:not(".btn-hollow-selected")').addClass("btn-opaque"), i.removeClass("btn-darken")), i.prop("disabled", !x), n.prop("disabled", !x), r("#btn-start-team").css("display", x ? "block" : "none");
-							for (var z = !1, I = 0; I < y.length; I++) y[I].isLeader && (z = y[I].inGame);
-							var D = r("#msg-wait-reason");
-							if (D.css("display", x ? "none" : "block"), f.findingGame || h ? D.html('<div class="ui-spinner" style="margin-right:16px"></div>' + e.translate("index-joining-game") + "<span> ...</span>") : z ? D.html(e.translate("index-game-in-progress") + "<span> ...</span>") : D.html(e.translate("index-waiting-for-leader") + "<span> ...</span>"), x) {
-								var A = y.length <= 2;
-								A || (s.addClass("btn-disabled btn-opaque"), s.removeClass("btn-darken btn-hollow-selected")), s.prop("disabled", !A)
+							for (var I = !1, z = 0; z < y.length; z++) y[z].isLeader && (I = y[z].inGame);
+							var A = r("#msg-wait-reason");
+							if (A.css("display", x ? "none" : "block"), f.findingGame || h ? A.html('<div class="ui-spinner" style="margin-right:16px"></div>' + e.translate("index-joining-game") + "<span> ...</span>") : I ? A.html(e.translate("index-game-in-progress") + "<span> ...</span>") : A.html(e.translate("index-waiting-for-leader") + "<span> ...</span>"), x) {
+								var D = y.length <= 2;
+								D || (s.addClass("btn-disabled btn-opaque"), s.removeClass("btn-darken btn-hollow-selected")), s.prop("disabled", !D)
 							}
 							var O = !0,
 								L = r("#team-menu-member-list");
 							L.empty();
-							for (var B = 0; B < f.teamMode; B++) {
-								var E = {
+							for (var E = 0; E < f.teamMode; E++) {
+								var B = {
 									name: "",
 									isLocal: !1,
 									isLeader: !1,
 									inGame: !1
 								};
-								if (B < y.length) {
-									var F = y[B];
-									E = {
+								if (E < y.length) {
+									var F = y[E];
+									B = {
 										name: F.name,
-										isLocal: B === b,
+										isLocal: E === b,
 										isLeader: F.isLeader,
 										inGame: F.inGame
 									}
@@ -19605,18 +20304,18 @@ webpackJsonp([0], {
 										class: "team-menu-member"
 									}),
 									j = "";
-								E.isLeader && (j = " icon-leader");
+								B.isLeader && (j = " icon-leader");
 								var N = "name-text";
-								E.isLocal && (N += " name-self"), E.inGame && (N += " name-in-game"), R.append(r("<div/>", {
+								B.isLocal && (N += " name-self"), B.inGame && (N += " name-in-game"), R.append(r("<div/>", {
 									class: "icon" + j
 								})), R.append(r("<div/>", {
 									class: "name menu-option"
 								}).append(r("<div/>", {
 									class: N,
-									html: E.name
+									html: B.name
 								}))), R.append(r("<div/>", {
-									class: "icon " + (E.inGame ? "icon-in-game" : "")
-								})), L.append(R), E.isLocal && E.inGame && (O = !1)
+									class: "icon " + (B.inGame ? "icon-in-game" : "")
+								})), L.append(R), B.isLocal && B.inGame && (O = !1)
 							}!document.hasFocus() && this.prevPlayerCount < y.length && y.length > 1 && O && v.playSound("notification_join_01", {
 								channel: "ui"
 							}), this.prevPlayerCount = y.length
@@ -19624,7 +20323,7 @@ webpackJsonp([0], {
 					}
 				}]), e
 			}());
-		e.exports = d
+		e.exports = m
 	},
 	a5N1: function(e, t, a) {
 		"use strict";
@@ -19638,38 +20337,38 @@ webpackJsonp([0], {
 			"index-region": "VÃ¹ng",
 			"index-north-america": "Báº¯c Má»¹",
 			"index-europe": "ChÃ¢u Ã‚u",
-			"index-asia": "ChÃ¢u Ã?",
-			"index-players": "ngÆ°á»?i chÆ¡i",
-			"index-play-solo": "ChÆ¡i má»™t ngÆ°á»?i",
-			"index-play-duo": "ChÆ¡i nhÃ³m hai ngÆ°á»?i",
-			"index-play-squad": "ChÆ¡i nhÃ³m bá»‘n ngÆ°á»?i",
+			"index-asia": "ChÃ¢u Ã",
+			"index-players": "ngÆ°á»i chÆ¡i",
+			"index-play-solo": "ChÆ¡i má»™t ngÆ°á»i",
+			"index-play-duo": "ChÆ¡i nhÃ³m hai ngÆ°á»i",
+			"index-play-squad": "ChÆ¡i nhÃ³m bá»‘n ngÆ°á»i",
 			"index-join-team": "VÃ o nhÃ³m",
 			"index-create-team": "Táº¡o nhÃ³m",
-			"index-leave-team": "Rá»?i nhÃ³m",
-			"index-joining-team": "Ä?ang vÃ o nhÃ³m",
-			"index-creating-team": "Ä?ang táº¡o nhÃ³m",
-			"index-invite-link": "Ä?Æ°á»?ng dáº«n má»?i chÆ¡i",
-			"index-invite-code": "MÃ£ sá»‘ má»?i chÆ¡i",
-			"index-solo": "Ä?Æ¡n",
+			"index-leave-team": "Rá»i nhÃ³m",
+			"index-joining-team": "Äang vÃ o nhÃ³m",
+			"index-creating-team": "Äang táº¡o nhÃ³m",
+			"index-invite-link": "ÄÆ°á»ng dáº«n má»i chÆ¡i",
+			"index-invite-code": "MÃ£ sá»‘ má»i chÆ¡i",
+			"index-solo": "ÄÆ¡n",
 			"index-duo": "NhÃ³m hai",
 			"index-squad": "NhÃ³m bá»‘n",
-			"index-auto-fill": "Tá»± Ä‘á»™ng Ä‘iá»?n",
+			"index-auto-fill": "Tá»± Ä‘á»™ng Ä‘iá»n",
 			"index-no-fill": "KhÃ´ng thÃªm",
-			"index-waiting-for-leader": "Chá»? trÆ°á»Ÿng nhÃ³m báº¯t Ä‘áº§u lÆ°á»£t chÆ¡i",
+			"index-waiting-for-leader": "Chá» trÆ°á»Ÿng nhÃ³m báº¯t Ä‘áº§u lÆ°á»£t chÆ¡i",
 			"index-joining-game": "Tham gia trÃ² chÆ¡i",
 			"index-game-in-progress": "TrÃ² chÆ¡i Ä‘ang diá»…n ra",
 			"index-play": "ChÆ¡i",
-			"index-featured-youtuber": "YouTuber khÃ¡ch má»?i",
+			"index-featured-youtuber": "YouTuber khÃ¡ch má»i",
 			"index-streaming-live": "PhÃ¡t trá»±c tiáº¿p!",
 			"index-settings": "CÃ i Ä‘áº·t",
-			"index-high-resolution": "Ä?á»™ phÃ¢n giáº£i cao (Ä‘Ã¡nh dáº¥u Ä‘á»ƒ tÄƒng cháº¥t lÆ°á»£ng hÃ¬nh áº£nh)",
+			"index-high-resolution": "Äá»™ phÃ¢n giáº£i cao (Ä‘Ã¡nh dáº¥u Ä‘á»ƒ tÄƒng cháº¥t lÆ°á»£ng hÃ¬nh áº£nh)",
 			"index-screen-shake": "Rung mÃ n hÃ¬nh",
 			"index-master-volume": "Ã‚m lÆ°á»£ng tá»•ng",
 			"index-sfx-volume": "Ã‚m lÆ°á»£ng SFX",
 			"index-music-volume": "Music Volume",
 			"index-mobile-announce": "Now available on mobile!",
 			"index-mobile-tooltip": "Visit <span>surviv.io</span> on your mobile device to play on the go!",
-			"index-team-is-full": "NhÃ³m Ä‘Ã£ Ä‘á»§ ngÆ°á»?i!",
+			"index-team-is-full": "NhÃ³m Ä‘Ã£ Ä‘á»§ ngÆ°á»i!",
 			"index-failed-joining-team": "KhÃ´ng vÃ o Ä‘Æ°á»£c nhÃ³m.",
 			"index-failed-creating-team": "KhÃ´ng táº¡o Ä‘Æ°á»£c nhÃ³m.",
 			"index-failed-finding-game": "KhÃ´ng tÃ¬m Ä‘Æ°á»£c lÆ°á»£t chÆ¡i.",
@@ -19679,7 +20378,7 @@ webpackJsonp([0], {
 			"index-invalid-protocol": "PhiÃªn báº£n cÅ©.",
 			"index-view-more": "Xem thÃªm",
 			"index-back-to-main": "Quay láº¡i Danh má»¥c chÃ­nh",
-			"index-most-kills": "TiÃªu diá»‡t nhiá»?u nháº¥t",
+			"index-most-kills": "TiÃªu diá»‡t nhiá»u nháº¥t",
 			"index-total-kills": "Tá»•ng sá»‘ bá»‹ tiÃªu diá»‡t",
 			"index-total-wins": "Tá»•ng sá»‘ láº§n tháº¯ng",
 			"index-top-5-percent": "Tá»‘p 5 pháº§n trÄƒm",
@@ -19688,24 +20387,24 @@ webpackJsonp([0], {
 			"index-for": "Cá»§a",
 			"index-today": "NgÃ y hÃ´m nay",
 			"index-this-week": "Tuáº§n nÃ y",
-			"index-all-time": "ToÃ n bá»™ thá»?i gian chÆ¡i",
+			"index-all-time": "ToÃ n bá»™ thá»i gian chÆ¡i",
 			"index-top-100": "Tá»‘p 100",
 			"index-rank": "Thá»© háº¡ng",
-			"index-player": "NgÆ°á»?i chÆ¡i",
+			"index-player": "NgÆ°á»i chÆ¡i",
 			"index-total-games": "Táº¥t cáº£ cÃ¡c lÆ°á»£t chÆ¡i",
 			"index-controls": "Kiá»ƒm soÃ¡t",
 			"index-movement": "Di chuyá»ƒn",
 			"index-movement-ctrl": "W, A, S, D",
 			"index-aim": "Ngáº¯m",
 			"index-aim-ctrl": "Chuá»™t",
-			"index-punch": "Ä?áº¥m",
+			"index-punch": "Äáº¥m",
 			"index-shoot": "Báº¯n",
 			"index-shoot-ctrl": "Báº¥m chuá»™t trÃ¡i",
-			"index-change-weapons": "Ä?á»•i vÅ© khÃ­",
+			"index-change-weapons": "Äá»•i vÅ© khÃ­",
 			"index-change-weapons-ctrl": "1 Ä‘áº¿n 4 hoáº·c nÃºt cuá»™n chuá»™t",
 			"index-stow-weapons": "Stow Weapons (Melee Mode)",
 			"index-stow-weapons-ctrl": "3 hoáº·c E",
-			"index-swap-weapons": "Ä?á»•i vá»? vÅ© khÃ­ trÆ°á»›c Ä‘Ã³",
+			"index-swap-weapons": "Äá»•i vá» vÅ© khÃ­ trÆ°á»›c Ä‘Ã³",
 			"index-swap-weapons-ctrl": "Q",
 			"index-reload": "Náº¡p Ä‘áº¡n",
 			"index-reload-ctrl": "R",
@@ -19717,7 +20416,7 @@ webpackJsonp([0], {
 			"index-pickup-ctrl": "F",
 			"index-use-medical": "Sá»­ dá»¥ng váº­t pháº©m cá»©u thÆ°Æ¡ng",
 			"index-use-medical-ctrl": "Báº¥m chuá»™t trÃ¡i lá»‡ váº­t pháº©m hoáº·c áº¥n 7-0",
-			"index-drop-item": "Bá»? váº­t pháº©m",
+			"index-drop-item": "Bá» váº­t pháº©m",
 			"index-drop-item-ctrl": "Pháº£i chuá»™t pháº£i vÃ o váº­t pháº©m",
 			"index-cancel-action": "Há»§y hÃ nh Ä‘á»™ng",
 			"index-cancel-action-ctrl": "X",
@@ -19730,16 +20429,16 @@ webpackJsonp([0], {
 			"index-use-emote": "DÃ¹ng Cá»­a sá»• Biá»ƒu cáº£m cá»§a nhÃ³m",
 			"index-use-emote-ctrl": "Giá»¯ pháº£i chuá»™t rá»“i rÃª chuá»™t, rá»“i tháº£ pháº£i chuá»™t",
 			"index-how-to-play": "CÃ¡ch chÆ¡i",
-			"index-tips-1-desc": "Má»¥c tiÃªu cá»§a trÃ² surviv.io lÃ  thÃ nh ngÆ°á»?i cuá»‘i cÃ¹ng cÃ²n sá»‘ng sÃ³t. Báº¡n chá»‰ cÃ³ má»™t máº¡ng cho má»—i lÆ°á»£t chÆ¡i - khÃ´ng thá»ƒ tÃ¡i sinh láº¡i!",
+			"index-tips-1-desc": "Má»¥c tiÃªu cá»§a trÃ² surviv.io lÃ  thÃ nh ngÆ°á»i cuá»‘i cÃ¹ng cÃ²n sá»‘ng sÃ³t. Báº¡n chá»‰ cÃ³ má»™t máº¡ng cho má»—i lÆ°á»£t chÆ¡i - khÃ´ng thá»ƒ tÃ¡i sinh láº¡i!",
 			"index-tips-2": "2D PUBG",
 			"index-tips-2-desc": "Náº¿u cÃ¡c báº¡n Ä‘Ã£ chÆ¡i nhá»¯ng trÃ² chÆ¡i sinh tá»“n kiá»ƒu PUBG, Fortnite hay H1Z1, thÃ¬ báº¡n Ä‘Ã£ náº¯m Ä‘Æ°á»£c má»™t ná»­a trÃ² chÆ¡i rá»“i! HÃ£y coi trÃ² surviv.io nhÆ° lÃ  trÃ² PUBG 2D.",
 			"index-tips-3": "Kiáº¿m váº­t pháº©m vÃ  tiÃªu diá»‡t",
-			"index-tips-3-desc": "Báº¡n sáº½ báº¯t Ä‘áº§u trÃ² chÆ¡i mÃ  khÃ´ng cÃ³ váº­t pháº©m gÃ¬ ngoÃ i má»™t cÃ¡i balo. Cháº¡y quanh báº£n Ä‘á»“ Ä‘á»ƒ tÃ¬m váº­t pháº©m nhÆ°: vÅ© khÃ­, Ä‘áº¡n, á»‘ng ngáº¯m vÃ  vÃ  váº­t pháº©m cá»©u thÆ°Æ¡ng. TiÃªu diá»‡t nhá»¯ng ngÆ°á»?i chÆ¡i khÃ¡c vÃ  báº¡n cÃ³ thá»ƒ láº¥y váº­t pháº©m cá»§a há»?!",
-			"index-tips-4": "MÃ u Ä‘á»? = KhÃ´ng á»•n!",
-			"index-tips-4-desc": "NgÆ°á»?i khÃ´ng chá»‰ lÃ  thá»© duy nháº¥t cÃ³ thá»ƒ gÃ¢y sÃ¡t thÆ°Æ¡ng lÃªn báº¡n. VÃ¹ng mÃ u Ä‘á»? nguy hiá»ƒm sáº½ di chuyá»ƒn vÃ  thu nhá»? dáº§n láº¡i theo báº£n Ä‘á»“ vÃ  gÃ¢y sÃ¡t thÆ°Æ¡ng lá»›n náº¿u báº¡n náº±m trong vÃ¹ng mÃ u Ä‘á»?. HÃ£y Ä‘á»ƒ Ã½ tá»›i báº£n Ä‘á»“ vÃ  giá»¯ khoáº£ng cÃ¡ch an toÃ n.",
-			"index-movement-ctrl-touch": "NÃºm Ä‘iá»?u khiá»ƒn bÃªn trÃ¡i",
-			"index-aim-ctrl-touch": "NÃºm Ä‘iá»?u khiá»ƒn bÃªn pháº£i",
-			"index-shoot-ctrl-touch": "KÃ©o nÃºt Ä‘iá»?u khiá»ƒn bÃªn pháº£i ra ngoÃ i mÃ©p thanh Ä‘iá»?u khiá»ƒn",
+			"index-tips-3-desc": "Báº¡n sáº½ báº¯t Ä‘áº§u trÃ² chÆ¡i mÃ  khÃ´ng cÃ³ váº­t pháº©m gÃ¬ ngoÃ i má»™t cÃ¡i balo. Cháº¡y quanh báº£n Ä‘á»“ Ä‘á»ƒ tÃ¬m váº­t pháº©m nhÆ°: vÅ© khÃ­, Ä‘áº¡n, á»‘ng ngáº¯m vÃ  vÃ  váº­t pháº©m cá»©u thÆ°Æ¡ng. TiÃªu diá»‡t nhá»¯ng ngÆ°á»i chÆ¡i khÃ¡c vÃ  báº¡n cÃ³ thá»ƒ láº¥y váº­t pháº©m cá»§a há»!",
+			"index-tips-4": "MÃ u Ä‘á» = KhÃ´ng á»•n!",
+			"index-tips-4-desc": "NgÆ°á»i khÃ´ng chá»‰ lÃ  thá»© duy nháº¥t cÃ³ thá»ƒ gÃ¢y sÃ¡t thÆ°Æ¡ng lÃªn báº¡n. VÃ¹ng mÃ u Ä‘á» nguy hiá»ƒm sáº½ di chuyá»ƒn vÃ  thu nhá» dáº§n láº¡i theo báº£n Ä‘á»“ vÃ  gÃ¢y sÃ¡t thÆ°Æ¡ng lá»›n náº¿u báº¡n náº±m trong vÃ¹ng mÃ u Ä‘á». HÃ£y Ä‘á»ƒ Ã½ tá»›i báº£n Ä‘á»“ vÃ  giá»¯ khoáº£ng cÃ¡ch an toÃ n.",
+			"index-movement-ctrl-touch": "NÃºm Ä‘iá»u khiá»ƒn bÃªn trÃ¡i",
+			"index-aim-ctrl-touch": "NÃºm Ä‘iá»u khiá»ƒn bÃªn pháº£i",
+			"index-shoot-ctrl-touch": "KÃ©o nÃºt Ä‘iá»u khiá»ƒn bÃªn pháº£i ra ngoÃ i mÃ©p thanh Ä‘iá»u khiá»ƒn",
 			"index-change-weapons-ctrl-touch": "Cháº¡m vÃ o Ã´ vÅ© khÃ­",
 			"index-reload-ctrl-touch": "Cháº¡m vÃ o bá»™ Ä‘áº¿m Ä‘áº¡n Ä‘Æ°á»£c trang bá»‹",
 			"index-scope-zoom-ctrl-touch": "Cháº¡m vÃ o má»¥c thu phÃ³ng",
@@ -19759,10 +20458,10 @@ webpackJsonp([0], {
 			"game-equip": "Trang bá»‹",
 			"game-cancel": "Há»§y",
 			"game-open-door": "Má»Ÿ cá»­a",
-			"game-close-door": "Ä?Ã³ng cá»­a",
+			"game-close-door": "ÄÃ³ng cá»­a",
 			"game-You": "Báº¡n",
 			"game-you": "báº¡n",
-			"game-themselves": "chÃ­nh há»?",
+			"game-themselves": "chÃ­nh há»",
 			"game-yourself": "chÃ­nh báº¡n",
 			"game-you-died": "Ä‘Ã£ bá»‹ tiÃªu diá»‡t",
 			"game-player-died": "Ä‘Ã£ bá»‹ tiÃªu diá»‡t",
@@ -19772,37 +20471,37 @@ webpackJsonp([0], {
 			"game-finally-killed": "cuá»‘i cÃ¹ng cÅ©ng tiÃªu diá»‡t Ä‘Æ°á»£c",
 			"game-finally-bled-out": "cuá»‘i cÃ¹ng Ä‘Ã£ cháº£y mÃ¡u",
 			"game-died-outside": "Ä‘Ã£ bá»‹ tiÃªu diá»‡t ngoÃ i vÃ¹ng an toÃ n",
-			"game-the-red-zone": "VÃ¹ng mÃ u Ä‘á»?",
-			"game-waiting-for-players": "Ä?á»£i ngÆ°á»?i chÆ¡i khÃ¡c",
+			"game-the-red-zone": "VÃ¹ng mÃ u Ä‘á»",
+			"game-waiting-for-players": "Äá»£i ngÆ°á»i chÆ¡i khÃ¡c",
 			"game-spectating": "Quan sÃ¡t",
-			"game-red-zone-advances": "VÃ¹ng mÃ u Ä‘á»? thu háº¹p dáº§n",
-			"game-red-zone-advancing": "VÃ¹ng mÃ u Ä‘á»? Ä‘ang thu háº¹p dáº§n, hÃ£y cháº¡y vá»? vÃ¹ng an toÃ n!",
+			"game-red-zone-advances": "VÃ¹ng mÃ u Ä‘á» thu háº¹p dáº§n",
+			"game-red-zone-advancing": "VÃ¹ng mÃ u Ä‘á» Ä‘ang thu háº¹p dáº§n, hÃ£y cháº¡y vá» vÃ¹ng an toÃ n!",
 			"game-seconds": "giÃ¢y",
 			"game-minutes": "phÃºt",
 			"game-minute": "phÃºt",
 			"game-m": "m",
 			"game-s": "s",
 			"game-not-enough-space": "KhÃ´ng Ä‘á»§ chá»—!",
-			"game-item-already-owned": "Ä?Ã£ cÃ³ váº­t pháº©m nÃ y!",
-			"game-item-already-equipped": "Ä?Ã£ trang bá»‹ váº­t pháº©m!",
-			"game-better-item-equipped": "Ä?Ã£ trang bá»‹ váº­t pháº©m tá»‘t hÆ¡n!",
+			"game-item-already-owned": "ÄÃ£ cÃ³ váº­t pháº©m nÃ y!",
+			"game-item-already-equipped": "ÄÃ£ trang bá»‹ váº­t pháº©m!",
+			"game-better-item-equipped": "ÄÃ£ trang bá»‹ váº­t pháº©m tá»‘t hÆ¡n!",
 			"game-play-new-game": "ChÆ¡i lÆ°á»£t má»›i",
-			"game-spectate": "Xem ngÆ°á»?i khÃ¡c chÆ¡i",
+			"game-spectate": "Xem ngÆ°á»i khÃ¡c chÆ¡i",
 			"game-full-screen": "ToÃ n mÃ n hÃ¬nh",
 			"game-sound": "Ã‚m thanh",
-			"game-quit-game": "ThoÃ¡t khá»?i lÆ°á»£t chÆ¡i",
+			"game-quit-game": "ThoÃ¡t khá»i lÆ°á»£t chÆ¡i",
 			"game-return-to-game": "Trá»Ÿ láº¡i lÆ°á»£t chÆ¡i",
 			"game-hide-match-stats": "áº¨n chá»‰ sá»‘ tráº­n Ä‘áº¥u",
 			"game-view-match-stats": "Xem chá»‰ sá»‘ tráº­n Ä‘áº¥u",
-			"game-previous-teammate": "Ä?á»“ng Ä‘á»™i trÆ°á»›c Ä‘Ã³",
-			"game-next-teammate": "Ä?á»“ng Ä‘á»™i káº¿ tiáº¿p",
-			"game-spectate-previous": "NgÆ°á»?i chÆ¡i trÆ°á»›c",
+			"game-previous-teammate": "Äá»“ng Ä‘á»™i trÆ°á»›c Ä‘Ã³",
+			"game-next-teammate": "Äá»“ng Ä‘á»™i káº¿ tiáº¿p",
+			"game-spectate-previous": "NgÆ°á»i chÆ¡i trÆ°á»›c",
 			"game-spectate-next": "The next player",
 			"game-leave-game": "ThoÃ¡t lÆ°á»£t chÆ¡i",
 			"game-your-results": "Káº¿t quáº£ cá»§a báº¡n",
 			"game-chicken": "Chiáº¿n tháº¯ng chiáº¿n tháº¯ng CÆ¡m gÃ  xáº£ lÃ¡ng!",
 			"game-won-the-game": "Ä‘Ã£ tháº¯ng lÆ°á»£t chÆ¡i.",
-			"game-team-eliminated": "Ä?á»™i cá»§a báº¡n Ä‘Ã£ bá»‹ tiÃªu diá»‡t.",
+			"game-team-eliminated": "Äá»™i cá»§a báº¡n Ä‘Ã£ bá»‹ tiÃªu diá»‡t.",
 			"game-solo-rank": "Xáº¿p háº¡ng Solo",
 			"game-duo-rank": "Xáº¿p háº¡ng Duo",
 			"game-squad-rank": "Xáº¿p háº¡ng Ä‘á»™i hÃ¬nh",
@@ -19813,9 +20512,9 @@ webpackJsonp([0], {
 			"game-kills": "TiÃªu diá»‡t",
 			"game-damage-dealt": "SÃ¡t thÆ°Æ¡ng gÃ¢y ra",
 			"game-damage-taken": "SÃ¡t thÆ°Æ¡ng nháº­n",
-			"game-survived": "Ä?Ã£ sá»‘ng sÃ³t",
+			"game-survived": "ÄÃ£ sá»‘ng sÃ³t",
 			"game-backpack00": "TÃºi Ä‘á»“",
-			"game-backpack01": "Balo nhá»?",
+			"game-backpack01": "Balo nhá»",
 			"game-backpack02": "Balo vá»«a",
 			"game-backpack03": "Balo quÃ¢n sá»±",
 			"game-bandage": "TÃºi cá»©u thÆ°Æ¡ng",
@@ -19825,22 +20524,22 @@ webpackJsonp([0], {
 			"game-healthkit-tooltip": "Báº¥m chuá»™t trÃ¡i Ä‘á»ƒ há»“i 100 mÃ¡u.",
 			"game-soda": "Soda",
 			"game-soda-tooltip": "Báº¥m chuá»™t trÃ¡i Ä‘á»ƒ tÄƒng adrenalin lÃªn 25 Ä‘iá»ƒm.",
-			"game-adrenaline-tooltip": "Adrenalin há»“i phá»¥c mÃ¡u theo thá»?i gian.",
+			"game-adrenaline-tooltip": "Adrenalin há»“i phá»¥c mÃ¡u theo thá»i gian.",
 			"game-painkiller": "Thuá»‘c",
 			"game-painkiller-tooltip": "Báº¥m chuá»™t trÃ¡i Ä‘á»ƒ tÄƒng adrenaline lÃªn 50.",
 			"game-9mm": "9mm",
-			"game-9mm-tooltip": "Ä?áº¡n cho sÃºng M9, MP5, MAC-10, UMP9 vÃ  Vector.",
+			"game-9mm-tooltip": "Äáº¡n cho sÃºng M9, MP5, MAC-10, UMP9 vÃ  Vector.",
 			"game-12gauge": "cá»¡ 12",
-			"game-12gauge-tooltip": "Ä?áº¡n cho sÃºng M870, Saiga-12 vÃ  MP220.",
+			"game-12gauge-tooltip": "Äáº¡n cho sÃºng M870, Saiga-12 vÃ  MP220.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "Ä?áº¡n cho sÃºng AK-47, SCAR-H, M39, Mosin Nagant, OT-38 vÃ  DP-28.",
+			"game-762mm-tooltip": "Äáº¡n cho sÃºng AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 vÃ  DP-28.",
 			"game-556mm": "5.56mm",
-			"game-556mm-tooltip": "Ä?áº¡n cho sÃºng FAMAS, HK416, Mk 12 vÃ  M249.",
+			"game-556mm-tooltip": "Äáº¡n cho sÃºng FAMAS, HK416, Mk 12 vÃ  M249.",
 			"game-50AE": ".50 AE",
-			"game-50AE-tooltip": "Ä?áº¡n cho sÃºng vÃ  Desert Eagle.",
-			"game-chest01": "Ã?o giÃ¡p cáº¥p 1",
-			"game-chest02": "Ã?o giÃ¡p cáº¥p 2",
-			"game-chest03": "Ã?o giÃ¡p cáº¥p 3",
+			"game-50AE-tooltip": "Äáº¡n cho sÃºng vÃ  Desert Eagle.",
+			"game-chest01": "Ão giÃ¡p cáº¥p 1",
+			"game-chest02": "Ão giÃ¡p cáº¥p 2",
+			"game-chest03": "Ão giÃ¡p cáº¥p 3",
 			"game-helmet01": "MÅ© cá»‘i cáº¥p 1",
 			"game-helmet02": "MÅ© cá»‘i cáº¥p 2",
 			"game-helmet03": "MÅ© cá»‘i cáº¥p 3",
@@ -19871,7 +20570,7 @@ webpackJsonp([0], {
 			"game-ak47": "AK-47",
 			"game-scar": "SCAR-H",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -19903,8 +20602,8 @@ webpackJsonp([0], {
 			"game-barrel_01": "má»™t kháº©u sÃºng",
 			"game-silo_01": "má»™t chiáº¿c xi lÃ´",
 			"game-oven_01": "má»™t chiáº¿c lÃ² nÆ°á»›ng",
-			"game-control_panel_01": "Báº£ng Ä‘iá»?u khiá»ƒn",
-			"game-control_panel_02": "Báº£ng Ä‘iá»?u khiá»ƒn",
+			"game-control_panel_01": "Báº£ng Ä‘iá»u khiá»ƒn",
+			"game-control_panel_02": "Báº£ng Ä‘iá»u khiá»ƒn",
 			"game-control_panel_03": "má»™t khá»‘i Ä‘áº§u cuá»‘i mÃ¡y tÃ­nh",
 			"game-power_box_01": "má»™t chiáº¿c tá»§ Ä‘iá»‡n"
 		};
@@ -19952,7 +20651,7 @@ webpackJsonp([0], {
 									layer: m ? m.layer : l.layer,
 									muffled: !0
 								}), m) {
-								if (m.__id == t && "single" == c.fireMode && "single" == c.reloadMode) {
+								if (m.__id == t && "single" == c.fireMode && c.pullDelay) {
 									var d = m.localData.weapons[m.localData.curWeapIdx].ammo,
 										p = d > 0 ? c.sound.cycle : c.sound.pull;
 									r.localActionSoundInstance = r.playSound(p)
@@ -20025,7 +20724,7 @@ webpackJsonp([0], {
 				for (var r = this.deadBodyPool.getPool(), l = 0; l < r.length; l++) {
 					var m = r[l];
 					if (m.active) {
-						m.nameTextSet || (m.nameTextSet = !0, m.nameText.text = c.unEntity(t.getPlayerInfo(m.playerId).name));
+						m.nameTextSet || (m.nameTextSet = !0, m.nameText.text = c.htmlUnescape(t.getPlayerInfo(m.playerId).name));
 						var d = s.createCircle(m.pos, 1),
 							p = i.insideStructureStairs(d),
 							u = m.layer,
@@ -20087,25 +20786,18 @@ webpackJsonp([0], {
 			getObjById: function(e) {
 				return this.idToObj[e]
 			},
-			getTypeById: function(e, t, a, i, o, n, s, l, c) {
-				var m = this.getObjById(e);
-				if (!m) {
-					var d = {
+			getTypeById: function(e, t) {
+				var a = this.getObjById(e);
+				if (!a) {
+					var i = {
+						instId: r.instanceId,
 						id: e,
-						dbgType: t,
-						seenCount: this.seenCount,
 						ids: Object.keys(this.idToObj),
-						packet: a,
-						teamMode: i,
-						extFlags: o,
-						delCount: n,
-						fullCount: s,
-						partCount: l,
-						stream: c._view._view
+						stream: t._view._view
 					};
-					return r.logError("getTypeById" + JSON.stringify(d)), r.storeGeneric("objectPoolErr", "getTypeById"), t
+					return r.logError("getTypeById" + JSON.stringify(i)), r.storeGeneric("objectPoolErr", "getTypeById"), 0
 				}
-				return m.__type
+				return a.__type
 			},
 			updateObjFull: function(e, t, a, i) {
 				var o = this.getObjById(t),
@@ -20309,7 +21001,7 @@ webpackJsonp([0], {
 			"game-12gauge": "12 kalibre",
 			"game-12gauge-tooltip": "M870, Saiga-12 ve MP220 iÃ§in cephane.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "AK-47, SCAR-H, M39, Mosin Nagant, OT-38 ve DP-28 iÃ§in cephane.",
+			"game-762mm-tooltip": "AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 ve DP-28 iÃ§in cephane.",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "FAMAS, HK416, Mk 12 ve M249 iÃ§in cephane.",
 			"game-chest01": "Seviye 1 ZÄ±rh",
@@ -20340,7 +21032,7 @@ webpackJsonp([0], {
 			"game-fists": "Yumruk",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -20408,6 +21100,569 @@ webpackJsonp([0], {
 				})
 			}
 		}, e.exports = i
+	},
+	gaH8: function(e, t) {
+		! function(e) {
+			if (!e.hasInitialised) {
+				var t = {
+					escapeRegExp: function(e) {
+						return e.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")
+					},
+					hasClass: function(e, t) {
+						var a = " ";
+						return 1 === e.nodeType && (a + e.className + a).replace(/[\n\t]/g, a).indexOf(a + t + a) >= 0
+					},
+					addClass: function(e, t) {
+						e.className += " " + t
+					},
+					removeClass: function(e, t) {
+						var a = new RegExp("\\b" + this.escapeRegExp(t) + "\\b");
+						e.className = e.className.replace(a, "")
+					},
+					interpolateString: function(e, t) {
+						var a = /{{([a-z][a-z0-9\-_]*)}}/gi;
+						return e.replace(a, function(e) {
+							return t(arguments[1]) || ""
+						})
+					},
+					getCookie: function(e) {
+						var t = "; " + document.cookie,
+							a = t.split("; " + e + "=");
+						return 2 != a.length ? void 0 : a.pop().split(";").shift()
+					},
+					setCookie: function(e, t, a, i, o) {
+						var n = new Date;
+						n.setDate(n.getDate() + (a || 365));
+						var r = [e + "=" + t, "expires=" + n.toUTCString(), "path=" + (o || "/")];
+						i && r.push("domain=" + i), document.cookie = r.join(";")
+					},
+					deepExtend: function(e, t) {
+						for (var a in t) t.hasOwnProperty(a) && (a in e && this.isPlainObject(e[a]) && this.isPlainObject(t[a]) ? this.deepExtend(e[a], t[a]) : e[a] = t[a]);
+						return e
+					},
+					throttle: function(e, t) {
+						var a = !1;
+						return function() {
+							a || (e.apply(this, arguments), a = !0, setTimeout(function() {
+								a = !1
+							}, t))
+						}
+					},
+					hash: function(e) {
+						var t, a, i, o = 0;
+						if (0 === e.length) return o;
+						for (t = 0, i = e.length; t < i; ++t) a = e.charCodeAt(t), o = (o << 5) - o + a, o |= 0;
+						return o
+					},
+					normaliseHex: function(e) {
+						return "#" == e[0] && (e = e.substr(1)), 3 == e.length && (e = e[0] + e[0] + e[1] + e[1] + e[2] + e[2]), e
+					},
+					getContrast: function(e) {
+						return e = this.normaliseHex(e), (299 * parseInt(e.substr(0, 2), 16) + 587 * parseInt(e.substr(2, 2), 16) + 114 * parseInt(e.substr(4, 2), 16)) / 1e3 >= 128 ? "#000" : "#fff"
+					},
+					getLuminance: function(e) {
+						var t = parseInt(this.normaliseHex(e), 16),
+							a = 38 + (t >> 16),
+							i = 38 + (t >> 8 & 255),
+							o = 38 + (255 & t);
+						return "#" + (16777216 + 65536 * (a < 255 ? a < 1 ? 0 : a : 255) + 256 * (i < 255 ? i < 1 ? 0 : i : 255) + (o < 255 ? o < 1 ? 0 : o : 255)).toString(16).slice(1)
+					},
+					isMobile: function() {
+						return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+					},
+					isPlainObject: function(e) {
+						return "object" == typeof e && null !== e && e.constructor == Object
+					}
+				};
+				e.status = {
+					deny: "deny",
+					allow: "allow",
+					dismiss: "dismiss"
+				}, e.transitionEnd = function() {
+					var e = document.createElement("div"),
+						t = {
+							t: "transitionend",
+							OT: "oTransitionEnd",
+							msT: "MSTransitionEnd",
+							MozT: "transitionend",
+							WebkitT: "webkitTransitionEnd"
+						};
+					for (var a in t)
+						if (t.hasOwnProperty(a) && void 0 !== e.style[a + "ransition"]) return t[a];
+					return ""
+				}(), e.hasTransition = !!e.transitionEnd;
+				var a = Object.keys(e.status).map(t.escapeRegExp);
+				e.customStyles = {}, e.Popup = function() {
+					function i() {
+						this.initialise.apply(this, arguments)
+					}
+
+					function o(e) {
+						this.openingTimeout = null, t.removeClass(e, "cc-invisible")
+					}
+
+					function n(t) {
+						t.style.display = "none", t.removeEventListener(e.transitionEnd, this.afterTransition), this.afterTransition = null
+					}
+
+					function r() {
+						var t = this.options.onInitialise.bind(this);
+						if (!window.navigator.cookieEnabled) return t(e.status.deny), !0;
+						if (window.CookiesOK || window.navigator.CookiesOK) return t(e.status.allow), !0;
+						var a = Object.keys(e.status),
+							i = this.getStatus(),
+							o = a.indexOf(i) >= 0;
+						return o && t(i), o
+					}
+
+					function s() {
+						var e = this.options.position.split("-"),
+							t = [];
+						return e.forEach(function(e) {
+							t.push("cc-" + e)
+						}), t
+					}
+
+					function l() {
+						var e = this.options,
+							a = "top" == e.position || "bottom" == e.position ? "banner" : "floating";
+						t.isMobile() && (a = "floating");
+						var i = ["cc-" + a, "cc-type-" + e.type, "cc-theme-" + e.theme];
+						e.static && i.push("cc-static"), i.push.apply(i, s.call(this));
+						p.call(this, this.options.palette);
+						return this.customStyleSelector && i.push(this.customStyleSelector), i
+					}
+
+					function c() {
+						var e = {},
+							a = this.options;
+						a.showLink || (a.elements.link = "", a.elements.messagelink = a.elements.message), Object.keys(a.elements).forEach(function(i) {
+							e[i] = t.interpolateString(a.elements[i], function(e) {
+								var t = a.content[e];
+								return e && "string" == typeof t && t.length ? t : ""
+							})
+						});
+						var i = a.compliance[a.type];
+						i || (i = a.compliance.info), e.compliance = t.interpolateString(i, function(t) {
+							return e[t]
+						});
+						var o = a.layouts[a.layout];
+						return o || (o = a.layouts.basic), t.interpolateString(o, function(t) {
+							return e[t]
+						})
+					}
+
+					function m(a) {
+						var i = this.options,
+							o = document.createElement("div"),
+							n = i.container && 1 === i.container.nodeType ? i.container : document.body;
+						o.innerHTML = a;
+						var r = o.children[0];
+						return r.style.display = "none", t.hasClass(r, "cc-window") && e.hasTransition && t.addClass(r, "cc-invisible"), this.onButtonClick = d.bind(this), r.addEventListener("click", this.onButtonClick), i.autoAttach && (n.firstChild ? n.insertBefore(r, n.firstChild) : n.appendChild(r)), r
+					}
+
+					function d(i) {
+						var o = i.target;
+						if (t.hasClass(o, "cc-btn")) {
+							var n = o.className.match(new RegExp("\\bcc-(" + a.join("|") + ")\\b")),
+								r = n && n[1] || !1;
+							r && (this.setStatus(r), this.close(!0))
+						}
+						t.hasClass(o, "cc-close") && (this.setStatus(e.status.dismiss), this.close(!0)), t.hasClass(o, "cc-revoke") && this.revokeChoice()
+					}
+
+					function p(e) {
+						var a = t.hash(JSON.stringify(e)),
+							i = "cc-color-override-" + a,
+							o = t.isPlainObject(e);
+						return this.customStyleSelector = o ? i : null, o && u(a, e, "." + i), o
+					}
+
+					function u(a, i, o) {
+						if (e.customStyles[a]) return void++e.customStyles[a].references;
+						var n = {},
+							r = i.popup,
+							s = i.button,
+							l = i.highlight;
+						r && (r.text = r.text ? r.text : t.getContrast(r.background), r.link = r.link ? r.link : r.text, n[o + ".cc-window"] = ["color: " + r.text, "background-color: " + r.background], n[o + ".cc-revoke"] = ["color: " + r.text, "background-color: " + r.background], n[o + " .cc-link," + o + " .cc-link:active," + o + " .cc-link:visited"] = ["color: " + r.link], s && (s.text = s.text ? s.text : t.getContrast(s.background), s.border = s.border ? s.border : "transparent", n[o + " .cc-btn"] = ["color: " + s.text, "border-color: " + s.border, "background-color: " + s.background], "transparent" != s.background && (n[o + " .cc-btn:hover, " + o + " .cc-btn:focus"] = ["background-color: " + h(s.background)]), l ? (l.text = l.text ? l.text : t.getContrast(l.background), l.border = l.border ? l.border : "transparent", n[o + " .cc-highlight .cc-btn:first-child"] = ["color: " + l.text, "border-color: " + l.border, "background-color: " + l.background]) : n[o + " .cc-highlight .cc-btn:first-child"] = ["color: " + r.text]));
+						var c = document.createElement("style");
+						document.head.appendChild(c), e.customStyles[a] = {
+							references: 1,
+							element: c.sheet
+						};
+						var m = -1;
+						for (var d in n) n.hasOwnProperty(d) && c.sheet.insertRule(d + "{" + n[d].join(";") + "}", ++m)
+					}
+
+					function h(e) {
+						return e = t.normaliseHex(e), "000000" == e ? "#222" : t.getLuminance(e)
+					}
+
+					function g(a) {
+						if (t.isPlainObject(a)) {
+							var i = t.hash(JSON.stringify(a)),
+								o = e.customStyles[i];
+							if (o && !--o.references) {
+								var n = o.element.ownerNode;
+								n && n.parentNode && n.parentNode.removeChild(n), e.customStyles[i] = null
+							}
+						}
+					}
+
+					function f(e, t) {
+						for (var a = 0, i = e.length; a < i; ++a) {
+							var o = e[a];
+							if (o instanceof RegExp && o.test(t) || "string" == typeof o && o.length && o === t) return !0
+						}
+						return !1
+					}
+
+					function y() {
+						var t = this.setStatus.bind(this),
+							a = this.options.dismissOnTimeout;
+						"number" == typeof a && a >= 0 && (this.dismissTimeout = window.setTimeout(function() {
+							t(e.status.dismiss)
+						}, Math.floor(a)));
+						var i = this.options.dismissOnScroll;
+						if ("number" == typeof i && i >= 0) {
+							var o = function(a) {
+								window.pageYOffset > Math.floor(i) && (t(e.status.dismiss), window.removeEventListener("scroll", o), this.onWindowScroll = null)
+							};
+							this.onWindowScroll = o, window.addEventListener("scroll", o)
+						}
+					}
+					var b = {
+						enabled: !0,
+						container: null,
+						cookie: {
+							name: "cookieconsent_status",
+							path: "/",
+							domain: "",
+							expiryDays: 365
+						},
+						onPopupOpen: function() {},
+						onPopupClose: function() {},
+						onInitialise: function(e) {},
+						onStatusChange: function(e, t) {},
+						onRevokeChoice: function() {},
+						content: {
+							header: "Cookies used on the website!",
+							message: "This website uses cookies to ensure you get the best experience on our website.",
+							dismiss: "Got it!",
+							allow: "Allow cookies",
+							deny: "Decline",
+							link: "Learn more",
+							href: "http://cookiesandyou.com",
+							close: "&#x274c;"
+						},
+						elements: {
+							header: '<span class="cc-header">{{header}}</span>&nbsp;',
+							message: '<span id="cookieconsent:desc" class="cc-message">{{message}}</span>',
+							messagelink: '<span id="cookieconsent:desc" class="cc-message">{{message}} <a aria-label="learn more about cookies" role=button tabindex="0" class="cc-link" href="{{href}}" rel="noopener noreferrer nofollow" target="_blank">{{link}}</a></span>',
+							dismiss: '<a aria-label="dismiss cookie message" role=button tabindex="0" class="cc-btn cc-dismiss">{{dismiss}}</a>',
+							allow: '<a aria-label="allow cookies" role=button tabindex="0"  class="cc-btn cc-allow">{{allow}}</a>',
+							deny: '<a aria-label="deny cookies" role=button tabindex="0" class="cc-btn cc-deny">{{deny}}</a>',
+							link: '<a aria-label="learn more about cookies" role=button tabindex="0" class="cc-link" href="{{href}}" target="_blank">{{link}}</a>',
+							close: '<span aria-label="dismiss cookie message" role=button tabindex="0" class="cc-close">{{close}}</span>'
+						},
+						window: '<div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window {{classes}}">\x3c!--googleoff: all--\x3e{{children}}\x3c!--googleon: all--\x3e</div>',
+						revokeBtn: '<div class="cc-revoke {{classes}}">Cookie Policy</div>',
+						compliance: {
+							info: '<div class="cc-compliance">{{dismiss}}</div>',
+							"opt-in": '<div class="cc-compliance cc-highlight">{{dismiss}}{{allow}}</div>',
+							"opt-out": '<div class="cc-compliance cc-highlight">{{deny}}{{dismiss}}</div>'
+						},
+						type: "info",
+						layouts: {
+							basic: "{{messagelink}}{{compliance}}",
+							"basic-close": "{{messagelink}}{{compliance}}{{close}}",
+							"basic-header": "{{header}}{{message}}{{link}}{{compliance}}"
+						},
+						layout: "basic",
+						position: "bottom",
+						theme: "block",
+						static: !1,
+						palette: null,
+						revokable: !1,
+						animateRevokable: !0,
+						showLink: !0,
+						dismissOnScroll: !1,
+						dismissOnTimeout: !1,
+						autoOpen: !0,
+						autoAttach: !0,
+						whitelistPage: [],
+						blacklistPage: [],
+						overrideHTML: null
+					};
+					return i.prototype.initialise = function(e) {
+						this.options && this.destroy(), t.deepExtend(this.options = {}, b), t.isPlainObject(e) && t.deepExtend(this.options, e), r.call(this) && (this.options.enabled = !1), f(this.options.blacklistPage, location.pathname) && (this.options.enabled = !1), f(this.options.whitelistPage, location.pathname) && (this.options.enabled = !0);
+						var a = this.options.window.replace("{{classes}}", l.call(this).join(" ")).replace("{{children}}", c.call(this)),
+							i = this.options.overrideHTML;
+						if ("string" == typeof i && i.length && (a = i), this.options.static) {
+							var o = m.call(this, '<div class="cc-grower">' + a + "</div>");
+							o.style.display = "", this.element = o.firstChild, this.element.style.display = "none", t.addClass(this.element, "cc-invisible")
+						} else this.element = m.call(this, a);
+						y.call(this), this.options.autoOpen && this.autoOpen()
+					}, i.prototype.destroy = function() {
+						this.onButtonClick && this.element && (this.element.removeEventListener("click", this.onButtonClick), this.onButtonClick = null), this.dismissTimeout && (clearTimeout(this.dismissTimeout), this.dismissTimeout = null), this.onWindowScroll && (window.removeEventListener("scroll", this.onWindowScroll), this.onWindowScroll = null), this.onMouseMove && (window.removeEventListener("mousemove", this.onMouseMove), this.onMouseMove = null), this.element && this.element.parentNode && this.element.parentNode.removeChild(this.element), this.element = null, this.revokeBtn && this.revokeBtn.parentNode && this.revokeBtn.parentNode.removeChild(this.revokeBtn), this.revokeBtn = null, g(this.options.palette), this.options = null
+					}, i.prototype.open = function(t) {
+						if (this.element) return this.isOpen() || (e.hasTransition ? this.fadeIn() : this.element.style.display = "", this.options.revokable && this.toggleRevokeButton(), this.options.onPopupOpen.call(this)), this
+					}, i.prototype.close = function(t) {
+						if (this.element) return this.isOpen() && (e.hasTransition ? this.fadeOut() : this.element.style.display = "none", t && this.options.revokable && this.toggleRevokeButton(!0), this.options.onPopupClose.call(this)), this
+					}, i.prototype.fadeIn = function() {
+						var a = this.element;
+						if (e.hasTransition && a && (this.afterTransition && n.call(this, a), t.hasClass(a, "cc-invisible"))) {
+							if (a.style.display = "", this.options.static) {
+								var i = this.element.clientHeight;
+								this.element.parentNode.style.maxHeight = i + "px"
+							}
+							this.openingTimeout = setTimeout(o.bind(this, a), 20)
+						}
+					}, i.prototype.fadeOut = function() {
+						var a = this.element;
+						e.hasTransition && a && (this.openingTimeout && (clearTimeout(this.openingTimeout), o.bind(this, a)), t.hasClass(a, "cc-invisible") || (this.options.static && (this.element.parentNode.style.maxHeight = ""), this.afterTransition = n.bind(this, a), a.addEventListener(e.transitionEnd, this.afterTransition), t.addClass(a, "cc-invisible")))
+					}, i.prototype.isOpen = function() {
+						return this.element && "" == this.element.style.display && (!e.hasTransition || !t.hasClass(this.element, "cc-invisible"))
+					}, i.prototype.toggleRevokeButton = function(e) {
+						this.revokeBtn && (this.revokeBtn.style.display = e ? "" : "none")
+					}, i.prototype.revokeChoice = function(e) {
+						this.options.enabled = !0, this.clearStatus(), this.options.onRevokeChoice.call(this), e || this.autoOpen()
+					}, i.prototype.hasAnswered = function(t) {
+						return Object.keys(e.status).indexOf(this.getStatus()) >= 0
+					}, i.prototype.hasConsented = function(t) {
+						var a = this.getStatus();
+						return a == e.status.allow || a == e.status.dismiss
+					}, i.prototype.autoOpen = function(e) {
+						!this.hasAnswered() && this.options.enabled && this.open()
+					}, i.prototype.setStatus = function(a) {
+						var i = this.options.cookie,
+							o = t.getCookie(i.name),
+							n = Object.keys(e.status).indexOf(o) >= 0;
+						Object.keys(e.status).indexOf(a) >= 0 ? (t.setCookie(i.name, a, i.expiryDays, i.domain, i.path), this.options.onStatusChange.call(this, a, n)) : this.clearStatus()
+					}, i.prototype.getStatus = function() {
+						return t.getCookie(this.options.cookie.name)
+					}, i.prototype.clearStatus = function() {
+						var e = this.options.cookie;
+						t.setCookie(e.name, "", -1, e.domain, e.path)
+					}, i
+				}(), e.Location = function() {
+					function e(e) {
+						t.deepExtend(this.options = {}, n), t.isPlainObject(e) && t.deepExtend(this.options, e), this.currentServiceIndex = -1
+					}
+
+					function a(e, t, a) {
+						var i, o = document.createElement("script");
+						o.type = "text/" + (e.type || "javascript"), o.src = e.src || e, o.async = !1, o.onreadystatechange = o.onload = function() {
+							var e = o.readyState;
+							clearTimeout(i), t.done || e && !/loaded|complete/.test(e) || (t.done = !0, t(), o.onreadystatechange = o.onload = null)
+						}, document.body.appendChild(o), i = setTimeout(function() {
+							t.done = !0, t(), o.onreadystatechange = o.onload = null
+						}, a)
+					}
+
+					function i(e, t, a, i, o) {
+						var n = new(window.XMLHttpRequest || window.ActiveXObject)("MSXML2.XMLHTTP.3.0");
+						if (n.open(i ? "POST" : "GET", e, 1), n.setRequestHeader("X-Requested-With", "XMLHttpRequest"), n.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), Array.isArray(o))
+							for (var r = 0, s = o.length; r < s; ++r) {
+								var l = o[r].split(":", 2);
+								n.setRequestHeader(l[0].replace(/^\s+|\s+$/g, ""), l[1].replace(/^\s+|\s+$/g, ""))
+							}
+						"function" == typeof t && (n.onreadystatechange = function() {
+							n.readyState > 3 && t(n)
+						}), n.send(i)
+					}
+
+					function o(e) {
+						return new Error("Error [" + (e.code || "UNKNOWN") + "]: " + e.error)
+					}
+					var n = {
+						timeout: 5e3,
+						services: ["freegeoip", "ipinfo", "maxmind"],
+						serviceDefinitions: {
+							freegeoip: function() {
+								return {
+									url: "//freegeoip.net/json/?callback={callback}",
+									isScript: !0,
+									callback: function(e, t) {
+										try {
+											var a = JSON.parse(t);
+											return a.error ? o(a) : {
+												code: a.country_code
+											}
+										} catch (e) {
+											return o({
+												error: "Invalid response (" + e + ")"
+											})
+										}
+									}
+								}
+							},
+							ipinfo: function() {
+								return {
+									url: "//ipinfo.io",
+									headers: ["Accept: application/json"],
+									callback: function(e, t) {
+										try {
+											var a = JSON.parse(t);
+											return a.error ? o(a) : {
+												code: a.country
+											}
+										} catch (e) {
+											return o({
+												error: "Invalid response (" + e + ")"
+											})
+										}
+									}
+								}
+							},
+							ipinfodb: function(e) {
+								return {
+									url: "//api.ipinfodb.com/v3/ip-country/?key={api_key}&format=json&callback={callback}",
+									isScript: !0,
+									callback: function(e, t) {
+										try {
+											var a = JSON.parse(t);
+											return "ERROR" == a.statusCode ? o({
+												error: a.statusMessage
+											}) : {
+												code: a.countryCode
+											}
+										} catch (e) {
+											return o({
+												error: "Invalid response (" + e + ")"
+											})
+										}
+									}
+								}
+							},
+							maxmind: function() {
+								return {
+									url: "//js.maxmind.com/js/apis/geoip2/v2.1/geoip2.js",
+									isScript: !0,
+									callback: function(e) {
+										if (!window.geoip2) return void e(new Error("Unexpected response format. The downloaded script should have exported `geoip2` to the global scope"));
+										geoip2.country(function(t) {
+											try {
+												e({
+													code: t.country.iso_code
+												})
+											} catch (t) {
+												e(o(t))
+											}
+										}, function(t) {
+											e(o(t))
+										})
+									}
+								}
+							}
+						}
+					};
+					return e.prototype.getNextService = function() {
+						var e;
+						do {
+							e = this.getServiceByIdx(++this.currentServiceIndex)
+						} while (this.currentServiceIndex < this.options.services.length && !e);
+						return e
+					}, e.prototype.getServiceByIdx = function(e) {
+						var a = this.options.services[e];
+						if ("function" == typeof a) {
+							var i = a();
+							return i.name && t.deepExtend(i, this.options.serviceDefinitions[i.name](i)), i
+						}
+						return "string" == typeof a ? this.options.serviceDefinitions[a]() : t.isPlainObject(a) ? this.options.serviceDefinitions[a.name](a) : null
+					}, e.prototype.locate = function(e, t) {
+						var a = this.getNextService();
+						if (!a) return void t(new Error("No services to run"));
+						this.callbackComplete = e, this.callbackError = t, this.runService(a, this.runNextServiceOnError.bind(this))
+					}, e.prototype.setupUrl = function(e) {
+						var t = this.getCurrentServiceOpts();
+						return e.url.replace(/\{(.*?)\}/g, function(a, i) {
+							if ("callback" === i) {
+								var o = "callback" + Date.now();
+								return window[o] = function(t) {
+									e.__JSONP_DATA = JSON.stringify(t)
+								}, o
+							}
+							if (i in t.interpolateUrl) return t.interpolateUrl[i]
+						})
+					}, e.prototype.runService = function(e, t) {
+						var o = this;
+						if (e && e.url && e.callback) {
+							(e.isScript ? a : i)(this.setupUrl(e), function(a) {
+								var i = a ? a.responseText : "";
+								e.__JSONP_DATA && (i = e.__JSONP_DATA, delete e.__JSONP_DATA), o.runServiceCallback.call(o, t, e, i)
+							}, this.options.timeout, e.data, e.headers)
+						}
+					}, e.prototype.runServiceCallback = function(e, t, a) {
+						var i = this,
+							o = function(t) {
+								n || i.onServiceResult.call(i, e, t)
+							},
+							n = t.callback(o, a);
+						n && this.onServiceResult.call(this, e, n)
+					}, e.prototype.onServiceResult = function(e, t) {
+						t instanceof Error || t && t.error ? e.call(this, t, null) : e.call(this, null, t)
+					}, e.prototype.runNextServiceOnError = function(e, t) {
+						if (e) {
+							this.logError(e);
+							var a = this.getNextService();
+							a ? this.runService(a, this.runNextServiceOnError.bind(this)) : this.completeService.call(this, this.callbackError, new Error("All services failed"))
+						} else this.completeService.call(this, this.callbackComplete, t)
+					}, e.prototype.getCurrentServiceOpts = function() {
+						var e = this.options.services[this.currentServiceIndex];
+						return "string" == typeof e ? {
+							name: e
+						} : "function" == typeof e ? e() : t.isPlainObject(e) ? e : {}
+					}, e.prototype.completeService = function(e, t) {
+						this.currentServiceIndex = -1, e && e(t)
+					}, e.prototype.logError = function(e) {
+						var t = this.currentServiceIndex,
+							a = this.getServiceByIdx(t);
+						console.error("The service[" + t + "] (" + a.url + ") responded with the following error", e)
+					}, e
+				}(), e.Law = function() {
+					function e(e) {
+						this.initialise.apply(this, arguments)
+					}
+					var a = {
+						regionalLaw: !0,
+						hasLaw: ["AT", "BE", "BG", "HR", "CZ", "CY", "DK", "EE", "FI", "FR", "DE", "EL", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "SK", "SI", "ES", "SE", "GB", "UK"],
+						revokable: ["HR", "CY", "DK", "EE", "FR", "DE", "LV", "LT", "NL", "PT", "ES"],
+						explicitAction: ["HR", "IT", "ES"]
+					};
+					return e.prototype.initialise = function(e) {
+						t.deepExtend(this.options = {}, a), t.isPlainObject(e) && t.deepExtend(this.options, e)
+					}, e.prototype.get = function(e) {
+						var t = this.options;
+						return {
+							hasLaw: t.hasLaw.indexOf(e) >= 0,
+							revokable: t.revokable.indexOf(e) >= 0,
+							explicitAction: t.explicitAction.indexOf(e) >= 0
+						}
+					}, e.prototype.applyLaw = function(e, t) {
+						var a = this.get(t);
+						return a.hasLaw || (e.enabled = !1), this.options.regionalLaw && (a.revokable && (e.revokable = !0), a.explicitAction && (e.dismissOnScroll = !1, e.dismissOnTimeout = !1)), e
+					}, e
+				}(), e.initialise = function(t, a, i) {
+					var o = new e.Law(t.law);
+					a || (a = function() {}), i || (i = function() {}), e.getCountryCode(t, function(i) {
+						delete t.law, delete t.location, i.code && (t = o.applyLaw(t, i.code)), a(new e.Popup(t))
+					}, function(a) {
+						delete t.law, delete t.location, i(a, new e.Popup(t))
+					})
+				}, e.getCountryCode = function(t, a, i) {
+					if (t.law && t.law.countryCode) return void a({
+						code: t.law.countryCode
+					});
+					if (t.location) {
+						return void new e.Location(t.location).locate(function(e) {
+							a(e || {})
+						}, i)
+					}
+					a({})
+				}, e.utils = t, e.hasInitialised = !0, window.cookieconsent = e
+			}
+		}(window.cookieconsent || {})
 	},
 	gtMM: function(e, t, a) {
 		"use strict";
@@ -20625,7 +21880,7 @@ webpackJsonp([0], {
 			"game-12gauge": "12 gauge",
 			"game-12gauge-tooltip": "Ammo for M870, Saiga-12 og MP220.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "Ammo for AK-47, SCAR-H, M39, Mosin Nagant, OT-38 og DP-28.",
+			"game-762mm-tooltip": "Ammo for AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 og DP-28.",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "Ammo for FAMAS, HK416, Mk 12 og M249.",
 			"game-chest01": "Level 1 Vest",
@@ -20654,7 +21909,7 @@ webpackJsonp([0], {
 			"game-outfitWhite": "Arktisk HÃ¦vner",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -20679,93 +21934,93 @@ webpackJsonp([0], {
 			},
 			"word-order": "svo",
 			"index-slogan": "2då¤§é€ƒæ®º",
-			"index-region": "åœ°å?€",
+			"index-region": "åœ°å€",
 			"index-north-america": "åŒ—ç¾Ž",
-			"index-europe": "æ­?æ´²",
+			"index-europe": "æ­æ´²",
 			"index-asia": "äºžæ´²",
 			"index-players": "çŽ©å®¶",
 			"index-play-solo": "å–®äºº",
 			"index-play-duo": "é›™äºº",
 			"index-play-squad": "4äºº",
-			"index-create-team": "å‰µç«‹éšŠä¼?",
-			"index-join-team": "åŠ å…¥éšŠä¼?",
+			"index-create-team": "å‰µç«‹éšŠä¼",
+			"index-join-team": "åŠ å…¥éšŠä¼",
 			"index-how-to-play": "å¦‚ä½•çŽ©",
-			"index-leave-team": "é›¢é–‹è?¯éšŠ",
-			"index-joining-team": "åŠ å…¥éšŠä¼?ä¸­",
-			"index-creating-team": "å»ºç«‹éšŠä¼?ä¸­",
-			"index-invite-link": "é‚€è«‹çš„é€£çµ?",
+			"index-leave-team": "é›¢é–‹è¯éšŠ",
+			"index-joining-team": "åŠ å…¥éšŠä¼ä¸­",
+			"index-creating-team": "å»ºç«‹éšŠä¼ä¸­",
+			"index-invite-link": "é‚€è«‹çš„é€£çµ",
 			"index-solo": "å–®äºº",
 			"index-duo": "å…©äºº",
-			"index-squad": "è?¯éšŠ",
+			"index-squad": "è¯éšŠ",
 			"index-auto-fill": "è‡ªå‹•æ‰¾çŽ©å®¶åŠ å…¥",
-			"index-no-fill": "ä¸?åŠ å…¥éš¨æ©ŸçŽ©å®¶",
-			"index-waiting-for-leader": "ç­‰å¾…éšŠé•·é–‹å§‹é?Šæˆ²",
+			"index-no-fill": "ä¸åŠ å…¥éš¨æ©ŸçŽ©å®¶",
+			"index-waiting-for-leader": "ç­‰å¾…éšŠé•·é–‹å§‹éŠæˆ²",
 			"index-play": "é–‹å§‹",
 			"index-featured-youtuber": "æŽ¨è–¦çš„YouTubeå®¢",
 			"index-settings": "è¨­å®š",
-			"index-high-resolution": "é«˜è§£åƒ?åº¦(æ??å?‡ç•«é?¢è³ªç´ )",
+			"index-high-resolution": "é«˜è§£åƒåº¦(æå‡ç•«é¢è³ªç´ )",
 			"index-screen-shake": "ç‡Ÿå¹•éœ‡å‹•",
 			"index-team-is-full": "åœ˜éšŠå·²æ»¿!",
-			"index-failed-joining-team": "åŠ å…¥éšŠä¼?å¤±æ•—ã€‚",
-			"index-failed-creating-team": "å‰µç«‹éšŠä¼?å¤±æ•—ã€‚",
-			"index-failed-finding-game": "å°‹æ‰¾éšŠä¼?å¤±æ•—ã€‚",
-			"index-failed-joining-game": "åŠ å…¥é?Šæˆ²å¤±æ•—ã€‚",
-			"index-lost-connection": "å’ŒéšŠä¼?å¤±åŽ»é€£æŽ¥ã€‚",
-			"index-host-closed": "ä¼ºæœ?å™¨é—œäº†é€£æŽ¥ã€‚",
+			"index-failed-joining-team": "åŠ å…¥éšŠä¼å¤±æ•—ã€‚",
+			"index-failed-creating-team": "å‰µç«‹éšŠä¼å¤±æ•—ã€‚",
+			"index-failed-finding-game": "å°‹æ‰¾éšŠä¼å¤±æ•—ã€‚",
+			"index-failed-joining-game": "åŠ å…¥éŠæˆ²å¤±æ•—ã€‚",
+			"index-lost-connection": "å’ŒéšŠä¼å¤±åŽ»é€£æŽ¥ã€‚",
+			"index-host-closed": "ä¼ºæœå™¨é—œäº†é€£æŽ¥ã€‚",
 			"index-invalid-protocol": "èˆŠç‰ˆå®¢æˆ¶ç«¯,è«‹æŒ‰F5æ›´æ–°.",
 			"index-view-more": "æŸ¥çœ‹æ›´å¤š",
-			"index-back-to-main": "å›žåˆ°ä¸»ç•«é?¢",
+			"index-back-to-main": "å›žåˆ°ä¸»ç•«é¢",
 			"index-most-kills": "æ®ºæ•µæœ€å¤š",
 			"index-total-kills": "ç¸½æ®ºæ•¸",
-			"index-total-wins": "ç¸½è´?æ•¸",
-			"index-top-5-percent": "å‰?5%",
-			"index-kill-death-ratio": "æ®ºæ•µå’Œç?Ÿé‚„æ¯?ä¾‹",
+			"index-total-wins": "ç¸½è´æ•¸",
+			"index-top-5-percent": "å‰5%",
+			"index-kill-death-ratio": "æ®ºæ•µå’Œç”Ÿé‚„æ¯”ä¾‹",
 			"index-for": "For",
 			"index-today": "ä»Šæ—¥",
 			"index-this-week": "é€™å€‹ç¦®æ‹œ",
 			"index-all-time": "æ‰€æœ‰æ™‚é–“",
-			"index-top-100": "å‰?ä¸€ç™¾",
-			"index-rank": "æŽ’å??",
+			"index-top-100": "å‰ä¸€ç™¾",
+			"index-rank": "æŽ’å",
 			"index-player": "çŽ©å®¶",
-			"index-total-games": "ç¸½é?Šæˆ²æ•¸",
+			"index-total-games": "ç¸½éŠæˆ²æ•¸",
 			"index-controls": "æŽ§åˆ¶",
-			"index-movement": "é?‹å‹•",
-			"index-movement-ctrl": "W, A, S, Dé?µ",
+			"index-movement": "é‹å‹•",
+			"index-movement-ctrl": "W, A, S, Déµ",
 			"index-aim": "çž„æº–",
 			"index-aim-ctrl": "é¼ æ¨™",
 			"index-punch": "å‡ºæ‹³",
 			"index-shoot": "å°„æ“Š",
-			"index-shoot-ctrl": "æ»‘é¼ å·¦é?µ",
-			"index-change-weapons": "æ›´æ?›æ­¦å™¨",
+			"index-shoot-ctrl": "æ»‘é¼ å·¦éµ",
+			"index-change-weapons": "æ›´æ›æ­¦å™¨",
 			"index-change-weapons-ctrl": "1 åˆ° 4æˆ–æ»¾è¼ª",
-			"index-stow-weapons": "æ?¶èµ·æ­¦å™¨(æ‹³æ“Šæ¨¡å¼?)",
-			"index-stow-weapons-ctrl": "3æˆ–Eé?µ",
-			"index-swap-weapons": "æ?›åˆ°ä¹‹å‰?çš„æ­¦å™¨",
+			"index-stow-weapons": "æ”¶èµ·æ­¦å™¨(æ‹³æ“Šæ¨¡å¼)",
+			"index-stow-weapons-ctrl": "3æˆ–Eéµ",
+			"index-swap-weapons": "æ›åˆ°ä¹‹å‰çš„æ­¦å™¨",
 			"index-swap-weapons-ctrl": "QæŽ£",
-			"index-reload": "è£?å­?å½ˆ",
+			"index-reload": "è£å­å½ˆ",
 			"index-reload-ctrl": "RæŽ£",
-			"index-scope-zoom": "è®Šç„¦ç¯„åœ?",
-			"index-scope-zoom-ctrl": "å·¦é?µå–®æ“Šæ?¾å¤§",
+			"index-scope-zoom": "è®Šç„¦ç¯„åœ",
+			"index-scope-zoom-ctrl": "å·¦éµå–®æ“Šæ”¾å¤§",
 			"index-pickup": "æ‹¾èµ·",
-			"index-loot": "æˆ°åˆ©å“?",
-			"index-revive": "æ?¢å¾©",
-			"index-pickup-ctrl": "Fé?µ",
-			"index-use-medical": "ä½¿ç?¨é†«ç™‚ç‰©å“?",
-			"index-use-medical-ctrl": "å·¦é?µå–®æ“Šç‰©å“?æˆ–7 åˆ° 0",
-			"index-drop-item": "ä¸Ÿæ£„ç‰©å“?",
-			"index-drop-item-ctrl": "å?³é?µå–®æ“Šç‰©å“?",
-			"index-cancel-action": "å?–æ¶ˆæ“?ä½œ",
-			"index-cancel-action-ctrl": "Xé?µ",
+			"index-loot": "æˆ°åˆ©å“",
+			"index-revive": "æ¢å¾©",
+			"index-pickup-ctrl": "Féµ",
+			"index-use-medical": "ä½¿ç”¨é†«ç™‚ç‰©å“",
+			"index-use-medical-ctrl": "å·¦éµå–®æ“Šç‰©å“æˆ–7 åˆ° 0",
+			"index-drop-item": "ä¸Ÿæ£„ç‰©å“",
+			"index-drop-item-ctrl": "å³éµå–®æ“Šç‰©å“",
+			"index-cancel-action": "å–æ¶ˆæ“ä½œ",
+			"index-cancel-action-ctrl": "Xéµ",
 			"index-view-map": "æŸ¥çœ‹åœ°åœ–",
-			"index-view-map-ctrl": "Mæˆ–Gé?µ",
-			"index-toggle-minimap": "åˆ‡æ?›å°?åœ°åœ–",
-			"index-toggle-minimap-ctrl": "Vé?µ",
+			"index-view-map-ctrl": "Mæˆ–Géµ",
+			"index-toggle-minimap": "åˆ‡æ›å°åœ°åœ–",
+			"index-toggle-minimap-ctrl": "Véµ",
 			"game-alive": "çŽ©å®¶",
-			"game-reloading": "è£?å½ˆ",
-			"game-using": "ä½¿ç?¨",
-			"game-reviving": "æ?¢å¾©",
-			"game-revive-teammate": "å¾©æ´»éšŠå?‹",
-			"game-equip": "è£?å‚™",
+			"game-reloading": "è£å½ˆ",
+			"game-using": "ä½¿ç”¨",
+			"game-reviving": "æ¢å¾©",
+			"game-revive-teammate": "å¾©æ´»éšŠå‹",
+			"game-equip": "è£å‚™",
 			"game-cancel": "æ’¤éŠ·",
 			"game-open-door": "é–‹é–€",
 			"game-close-door": "é—œé–€",
@@ -20784,75 +22039,75 @@ webpackJsonp([0], {
 			"game-the-red-zone": "The red zone",
 			"game-waiting-for-players": "ç­‰å¾…çŽ©å®¶",
 			"game-spectating": "è§€çœ‹",
-			"game-red-zone-advances": "ç´…è‰²å?€åŸŸæ“´å¤§æ–¼",
-			"game-red-zone-advancing": "ç´…è‰²å?€åŸŸæ“´å¤§ä¸­ï¼Œå¿«åˆ°å®‰å…¨å?€åŽ»!",
+			"game-red-zone-advances": "ç´…è‰²å€åŸŸæ“´å¤§æ–¼",
+			"game-red-zone-advancing": "ç´…è‰²å€åŸŸæ“´å¤§ä¸­ï¼Œå¿«åˆ°å®‰å…¨å€åŽ»!",
 			"game-seconds": "ç§’",
 			"game-minutes": "åˆ†",
 			"game-minute": "åˆ†",
 			"game-m": "åˆ†",
 			"game-s": "ç§’",
-			"game-not-enough-space": "ç©ºé–“ä¸?è¶³!",
-			"game-item-already-owned": "ç‰©å“?å·²æ“?æœ‰!",
-			"game-item-already-equipped": "ç‰©å“?å·²è£?å‚™!",
-			"game-better-item-equipped": "å·²è£?å‚™æ›´å¥½ç‰©å“?!",
-			"game-play-new-game": "é–‹å§‹æ–°é?Šæˆ²",
+			"game-not-enough-space": "ç©ºé–“ä¸è¶³!",
+			"game-item-already-owned": "ç‰©å“å·²æ“æœ‰!",
+			"game-item-already-equipped": "ç‰©å“å·²è£å‚™!",
+			"game-better-item-equipped": "å·²è£å‚™æ›´å¥½ç‰©å“!",
+			"game-play-new-game": "é–‹å§‹æ–°éŠæˆ²",
 			"game-spectate": "è§€çœ‹",
-			"game-full-screen": "å…¨å±?",
-			"game-sound": "è?²éŸ³",
-			"game-quit-game": "é›¢é–‹é?Šæˆ²",
-			"game-return-to-game": "è¿?å›žæ¸¸æˆ²",
-			"game-hide-match-stats": "éš±è—?æ¯?è³½æ•¸æ“š",
-			"game-view-match-stats": "æŸ¥çœ‹æ¯?è³½æ•¸æ“š",
-			"game-previous-teammate": "ä¸Šå€‹éšŠå?‹",
-			"game-next-teammate": "ä¸‹å€‹éšŠå?‹",
+			"game-full-screen": "å…¨å±",
+			"game-sound": "è²éŸ³",
+			"game-quit-game": "é›¢é–‹éŠæˆ²",
+			"game-return-to-game": "è¿”å›žæ¸¸æˆ²",
+			"game-hide-match-stats": "éš±è—æ¯”è³½æ•¸æ“š",
+			"game-view-match-stats": "æŸ¥çœ‹æ¯”è³½æ•¸æ“š",
+			"game-previous-teammate": "ä¸Šå€‹éšŠå‹",
+			"game-next-teammate": "ä¸‹å€‹éšŠå‹",
 			"game-spectate-previous": "",
 			"game-spectate-next": "",
-			"game-leave-game": "é›¢é–‹é?Šæˆ²",
+			"game-leave-game": "é›¢é–‹éŠæˆ²",
 			"game-your-results": "ä½ çš„æˆ°ç¸¾",
-			"game-chicken": "å¤§å?‰å¤§åˆ©ï¼Œä»Šæ™šå?ƒé›ž!",
-			"game-won-the-game": "è´?äº†é?Šæˆ²ã€‚",
-			"game-team-eliminated": "ä½ çš„éšŠä¼?è¢«æ“Šæ•—äº†ã€‚",
-			"game-rank": "æŽ’å??",
-			"game-team-rank": "è?¯éšŠæŽ’å??",
-			"game-team-kills": "è?¯éšŠæ®º",
+			"game-chicken": "å¤§å‰å¤§åˆ©ï¼Œä»Šæ™šåƒé›ž!",
+			"game-won-the-game": "è´äº†éŠæˆ²ã€‚",
+			"game-team-eliminated": "ä½ çš„éšŠä¼è¢«æ“Šæ•—äº†ã€‚",
+			"game-rank": "æŽ’å",
+			"game-team-rank": "è¯éšŠæŽ’å",
+			"game-team-kills": "è¯éšŠæ®º",
 			"game-kill": "æ®º",
 			"game-kills": "æ®º",
 			"game-damage-dealt": "å‚·å®³è¼¸å‡º",
-			"game-damage-taken": "å?—åˆ°å‚·å®³",
-			"game-survived": "ç?Ÿå­˜",
-			"game-backpack00": "è¢‹å­?",
-			"game-backpack01": "å°?åŒ…",
-			"game-backpack02": "å¸¸è¦?åŒ…",
-			"game-backpack03": "è»?ç?¨åŒ…",
+			"game-damage-taken": "å—åˆ°å‚·å®³",
+			"game-survived": "ç”Ÿå­˜",
+			"game-backpack00": "è¢‹å­",
+			"game-backpack01": "å°åŒ…",
+			"game-backpack02": "å¸¸è¦åŒ…",
+			"game-backpack03": "è»ç”¨åŒ…",
 			"game-bandage": "ç¹ƒå¸¶",
-			"game-bandage-tooltip": "å·¦é?µé»žæ“Šæ?¢å¾©15ç?Ÿå‘½ã€‚",
-			"game-healing-tooltip": "ç„¡æ³•æ²»ç™‚75é»žä»¥ä¸Šçš„ç?Ÿå‘½ã€‚",
+			"game-bandage-tooltip": "å·¦éµé»žæ“Šæ¢å¾©15ç”Ÿå‘½ã€‚",
+			"game-healing-tooltip": "ç„¡æ³•æ²»ç™‚75é»žä»¥ä¸Šçš„ç”Ÿå‘½ã€‚",
 			"game-healthkit": "é†«è—¥ç®±",
-			"game-healthkit-tooltip": "å·¦é?µé»žæ“Šæ?¢å¾©100ç?Ÿå‘½ã€‚",
+			"game-healthkit-tooltip": "å·¦éµé»žæ“Šæ¢å¾©100ç”Ÿå‘½ã€‚",
 			"game-soda": "æ±½æ°´",
-			"game-soda-tooltip": "å·¦é?µé»žæ“Šå?¯ä»¥å¢žåŠ 25çš„è…Žä¸Šè…ºç´ ã€‚",
-			"game-adrenaline-tooltip": "è…Žä¸Šè…ºç´ æœƒéš¨è‘—æ™‚é–“çš„æŽ¨ç§»è€Œæ?¢å¾©è¡€é‡?ã€‚",
+			"game-soda-tooltip": "å·¦éµé»žæ“Šå¯ä»¥å¢žåŠ 25çš„è…Žä¸Šè…ºç´ ã€‚",
+			"game-adrenaline-tooltip": "è…Žä¸Šè…ºç´ æœƒéš¨è‘—æ™‚é–“çš„æŽ¨ç§»è€Œæ¢å¾©è¡€é‡ã€‚",
 			"game-painkiller": "è—¥ç‰‡",
-			"game-painkiller-tooltip": "å·¦é?µé»žæ“Šå?¯ä½¿è…Žä¸Šè…ºç´ å¢žåŠ 50ã€‚",
+			"game-painkiller-tooltip": "å·¦éµé»žæ“Šå¯ä½¿è…Žä¸Šè…ºç´ å¢žåŠ 50ã€‚",
 			"game-9mm": "9æ¯«ç±³",
 			"game-9mm-tooltip": "M9, Glock, MP5, Vector, MAC-10å’ŒUMP9å½ˆè—¥ã€‚",
 			"game-12gauge": "12è¨ˆ",
 			"game-12gauge-tooltip": "M870, Saiga-12 å’Œ MP220å½ˆè—¥ã€‚",
 			"game-762mm": "7.62æ¯«ç±³",
-			"game-762mm-tooltip": "AK-47, SCAR-H, M39, Mosin Nagant, OT-38 å’Œ DP-28å½ˆè—¥ã€‚",
+			"game-762mm-tooltip": "AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 å’Œ DP-28å½ˆè—¥ã€‚",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "FAMAS, HK416, Mk 12 å’Œ M249å½ˆè—¥ã€‚",
 			"game-chest01": "ä¸€ç´šé˜²å½ˆè¡£",
 			"game-chest02": "äºŒç´šé˜²å½ˆè¡£",
 			"game-chest03": "ä¸‰ç´šé˜²å½ˆè¡£",
-			"game-helmet01": "ä¸€ç´šé ­ç›?",
-			"game-helmet02": "äºŒç´šé ­ç›?",
-			"game-helmet03": "ä¸‰ç´šé ­ç›?",
-			"game-1xscope": "1x å€?é?¡",
-			"game-2xscope": "2x å€?é?¡",
-			"game-4xscope": "4x å€?é?¡",
-			"game-8xscope": "8x å€?é?¡",
-			"game-15xscope": "15x å€?é?¡",
+			"game-helmet01": "ä¸€ç´šé ­ç›”",
+			"game-helmet02": "äºŒç´šé ­ç›”",
+			"game-helmet03": "ä¸‰ç´šé ­ç›”",
+			"game-1xscope": "1x å€é¡",
+			"game-2xscope": "2x å€é¡",
+			"game-4xscope": "4x å€é¡",
+			"game-8xscope": "8x å€é¡",
+			"game-15xscope": "15x å€é¡",
 			"game-level-1": "ä¸€ç´š",
 			"game-level-2": "äºŒç´š",
 			"game-level-3": "ä¸‰ç´š",
@@ -20868,7 +22123,7 @@ webpackJsonp([0], {
 			"game-outfitWhite": "Arctic Avenger",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -21173,6 +22428,19 @@ webpackJsonp([0], {
 					},
 					mosin_pull_01: {
 						name: "audio/guns/mosin_pull_01.mp3",
+						volume: 1
+					},
+					sv98_01: {
+						name: "audio/guns/sv98_01.mp3",
+						volume: 1,
+						maxInstances: 5
+					},
+					sv98_reload_01: {
+						name: "audio/guns/sv98_reload_01.mp3",
+						volume: 1
+					},
+					sv98_cycle_01: {
+						name: "audio/guns/sv98_cycle_01.mp3",
 						volume: 1
 					},
 					empty_fire_01: {
@@ -21909,32 +23177,32 @@ webpackJsonp([0], {
 			T = a("p/CU"),
 			P = T.Gas,
 			C = a("S40U"),
-			z = a("pI87"),
-			I = a("1JzZ"),
-			D = a("dT1u"),
-			A = a("EZ6M"),
+			I = a("pI87"),
+			z = a("1JzZ"),
+			A = a("dT1u"),
+			D = a("EZ6M"),
 			O = a("/rj8"),
 			L = a("pQi2"),
-			B = a("vIPv"),
-			E = a("xgte"),
-			F = E.Renderer,
+			E = a("vIPv"),
+			B = a("xgte"),
+			F = B.Renderer,
 			R = a("bkPR"),
 			j = a("CVWn"),
 			N = (a("zgif"), a("4glI")),
 			q = a("MWDq"),
-			G = a("09pV");
+			U = a("09pV");
 		o.prototype = {
 			tryJoinGame: function(e, t, a) {
 				var i = this;
 				if (!(this.connecting || this.connected || this.initialized)) {
-					y.logDebug() && console.log("Joining game", t, e), this.ws && (this.ws.onerror = function() {}, this.ws.onopen = function() {}, this.ws.onmessage = function() {}, this.ws.onclose = function() {}, this.ws.close(), this.ws = null), this.connecting = !0, this.connected = !1;
+					this.ws && (this.ws.onerror = function() {}, this.ws.onopen = function() {}, this.ws.onmessage = function() {}, this.ws.onclose = function() {}, this.ws.close(), this.ws = null), this.connecting = !0, this.connected = !1;
 					try {
 						this.ws = new WebSocket(t), this.ws.binaryType = "arraybuffer", this.ws.onerror = function(e) {
 							i.ws && i.ws.close()
 						}, this.ws.onopen = function() {
 							i.connecting = !1, i.connected = !0, i.init();
 							var t = new u.JoinMsg;
-							t.protocol = r.protocolVersion, t.teamUuid = e.teamUuid, t.teamMode = e.teamMode, t.playerCount = e.playerCount, t.autoFill = e.autoFill, t.name = e.name, t.bot = !1, t.emotes = i.emoteLoadout, t.useTouch = f.touch, i.sendMessage(u.Msg.Join, t)
+							t.protocol = r.protocolVersion, t.privData = e, t.name = i.name, t.emotes = i.emoteLoadout, t.useTouch = f.touch, t.bot = !1, i.sendMessage(u.Msg.Join, t)
 						}, this.ws.onmessage = function(e) {
 							for (var t = new u.MsgStream(e.data);;) {
 								var a = t.deserializeMsgType();
@@ -21957,16 +23225,16 @@ webpackJsonp([0], {
 			},
 			init: function() {
 				var e, t = this.pixi.renderer.type == n.RENDERER_TYPE.CANVAS;
-				this.input = new C.InputHandler(this.pixi.view), this.touch = new N.Touch(this.input, this.config), this.camera = new x, this.renderer = new F(t), this.particleBarn = new A.ParticleBarn(this.renderer), this.map = new I, this.playerBarn = new L.PlayerBarn, this.bulletBarn = new b.BulletBarn, this.projectileBarn = new B.ProjectileBarn, this.explosionBarn = new S.ExplosionBarn, this.smokeBarn = new j.SmokeBarn, this.deadBodyBarn = new v.DeadBodyBarn, this.decalBarn = new _.DecalBarn, this.lootBarn = new z.LootBarn, this.gas = new P(t), this.pieTimer = new O.PieTimer, this.uiManager = new q.UiManager(this, this.audioManager, this.pieTimer, this.particleBarn, this.localization, t, this.touch), this.ui2Manager = new G.Ui2Manager(this.localization), this.emoteManager = new w.EmoteManager(this, this.audioManager, this.uiManager, this.playerBarn, this.camera, this.map), this.shotBarn = new R.ShotBarn(this.particleBarn, this.audioManager, this.uiManager);
+				this.input = new C.InputHandler(this.pixi.view), this.touch = new N.Touch(this.input, this.config), this.camera = new x, this.renderer = new F(t), this.particleBarn = new D.ParticleBarn(this.renderer), this.map = new z, this.playerBarn = new L.PlayerBarn, this.bulletBarn = new b.BulletBarn, this.projectileBarn = new E.ProjectileBarn, this.explosionBarn = new S.ExplosionBarn, this.smokeBarn = new j.SmokeBarn, this.deadBodyBarn = new v.DeadBodyBarn, this.decalBarn = new _.DecalBarn, this.lootBarn = new I.LootBarn, this.gas = new P(t), this.pieTimer = new O.PieTimer, this.uiManager = new q.UiManager(this, this.audioManager, this.pieTimer, this.particleBarn, this.localization, t, this.touch), this.ui2Manager = new U.Ui2Manager(this.localization), this.emoteManager = new w.EmoteManager(this, this.audioManager, this.uiManager, this.playerBarn, this.camera, this.map), this.shotBarn = new R.ShotBarn(this.particleBarn, this.audioManager, this.uiManager);
 				var a = (e = {}, i(e, s.Type.Player, this.playerBarn.playerPool), i(e, s.Type.Obstacle, this.map.obstaclePool), i(e, s.Type.Loot, this.lootBarn.lootPool), i(e, s.Type.LootSpawner, this.map.lootSpawnerPool), i(e, s.Type.DeadBody, this.deadBodyBarn.deadBodyPool), i(e, s.Type.Building, this.map.buildingPool), i(e, s.Type.Structure, this.map.structurePool), i(e, s.Type.Decal, this.decalBarn.decalPool), i(e, s.Type.Projectile, this.projectileBarn.projectilePool), i(e, s.Type.Smoke, this.smokeBarn.smokePool), e);
-				this.objectCreator = new D.Creator;
+				this.objectCreator = new A.Creator;
 				for (var o in a) a.hasOwnProperty(o) && this.objectCreator.registerType(o, a[o]);
 				this.debugDisplay = new n.Graphics;
 				for (var r = [this.map.display.water, this.map.display.background, this.renderer.layers[0], this.renderer.ground, this.renderer.layers[1], this.renderer.layers[2], this.renderer.layers[3], this.debugDisplay, this.gas.gasRenderer.display, this.touch.container, this.emoteManager.container, this.uiManager.container, this.emoteManager.indContainer, this.pieTimer.container], l = 0; l < r.length; l++) {
 					var m = r[l];
 					m && (m.interactiveChildren = !1, this.pixi.stage.addChild(m))
 				}
-				this.disconnectMsg = "", this.playing = !1, this.gameOver = !1, this.spectating = !1, this.moveMsgTimeout = 0, this.prevMoveMsg = new u.MoveMsg, this.playingTicker = 0, this.localId = 0, this.activeId = 0, this.activePlayer = null, this.targetZoom = 1, this.debugZoom = 1, this.useDebugZoom = !1, this.packet = 0, this.seq = 0, this.seqInFlight = !1, this.seqSendTime = 0, this.pings = [], this.debugPingTime = 0, this.camera.setShakeEnabled(this.config.get("screenShake"));
+				this.disconnectMsg = "", this.playing = !1, this.gameOver = !1, this.spectating = !1, this.moveMsgTimeout = 0, this.prevMoveMsg = new u.MoveMsg, this.playingTicker = 0, this.localId = 0, this.activeId = 0, this.activePlayer = null, this.targetZoom = 1, this.debugZoom = 1, this.useDebugZoom = !1, this.seq = 0, this.seqInFlight = !1, this.seqSendTime = 0, this.pings = [], this.debugPingTime = 0, this.camera.setShakeEnabled(this.config.get("screenShake")), this.name = this.config.get("playerName");
 				var d = {
 					emoteTop: c.Top,
 					emoteRight: c.Right,
@@ -21980,18 +23248,20 @@ webpackJsonp([0], {
 					var f = h[g],
 						y = parseInt(this.config.get(f)),
 						k = p.clamp(y, 1, 255);
-					this.emoteLoadout[d[f]] = k, M.storeGeneric("loadouts", "emoteEquipped/" + k)
+					this.emoteLoadout[d[f]] = k
 				}
 				this.emoteManager.updateEmoteWheel(this.emoteLoadout), void 0 == this.ambientSounds.wavesInst && (this.ambientSounds.wavesInst = this.audioManager.playSound("ambient_waves_01", {
 					channel: "ambient",
 					startSilent: !0,
 					loop: !0,
 					forceStart: !0
-				})), this.resize(), this.initialized = !0
+				})), document.hasFocus() || this.audioManager.playSound("notification_start_01", {
+					channel: "ui"
+				}), M.storeGeneric("language", this.config.get("language")), this.resize(), this.initialized = !0
 			},
 			free: function() {
 				if (this.ws && (this.ws.onmessage = function() {}, this.ws.close(), this.ws = null), this.connecting = !1, this.connected = !1, this.initialized)
-					for (this.initialized = !1, this.input.free(), this.map.free(), this.uiManager.free(), this.ui2Manager.free(), this.emoteManager.free(), this.pieTimer.destroy(); this.pixi.stage.children.length > 0;) {
+					for (this.initialized = !1, this.emoteManager.free(), this.ui2Manager.free(), this.uiManager.free(), this.pieTimer.destroy(), this.map.free(), this.input.free(); this.pixi.stage.children.length > 0;) {
 						var e = this.pixi.stage.children[0];
 						this.pixi.stage.removeChild(e), e.destroy({
 							children: !0,
@@ -22038,9 +23308,9 @@ webpackJsonp([0], {
 					} else b.toMouseDir = h.copy(y), b.toMouseLen = Math.min(g, u.kMouseMaxLen);
 					b.shootStart = x.mousePressed() || this.touch.shotDetected, b.shootHold = x.mouseDown() || this.touch.shotDetected, b.reload = x.keyPressed(C.Key.R) || v.reloadTouched, b.interaction = x.keyPressed(C.Key.F) || v.interactionTouched, b.cancelAction = x.keyPressed(C.Key.X) || v.interactionTouched, b.equipPrimary = x.keyPressed(C.Key.One) || 0 == k.switchWeaponIdx, b.equipSecondary = x.keyPressed(C.Key.Two) || 1 == k.switchWeaponIdx, b.equipThrowable = x.keyPressed(C.Key.Four) || 3 == k.switchWeaponIdx, b.equipMelee = x.keyPressed(C.Key.Three) || x.keyPressed(C.Key.E) || 2 == k.switchWeaponIdx, b.equipLast = x.keyPressed(C.Key.Q), b.scrollDown = x.mouseWheel() > 0, b.scrollUp = x.mouseWheel() < 0, b.portrait = this.camera.screenWidth < this.camera.screenHeight;
 					for (var P = 0; P < k.uiEvents.length; P++) {
-						var z = k.uiEvents[P];
-						if ("use" == z.action)
-							if ("weapon" == z.type) switch (z.data) {
+						var I = k.uiEvents[P];
+						if ("use" == I.action)
+							if ("weapon" == I.type) switch (I.data) {
 								case 0:
 									b.equipPrimary = !0;
 									break;
@@ -22052,33 +23322,33 @@ webpackJsonp([0], {
 									break;
 								case 3:
 									b.equipThrowable = !0
-							} else "scope" == z.type ? b.useScope = z.data : b.useItem = z.data
+							} else "scope" == I.type ? b.useScope = I.data : b.useItem = I.data
 					}
 					"" === b.useItem && (b.useItem = x.keyPressed(C.Key.Seven) ? "bandage" : x.keyPressed(C.Key.Eight) ? "healthkit" : x.keyPressed(C.Key.Nine) ? "soda" : x.keyPressed(C.Key.Zero) ? "painkiller" : "");
-					for (var I = !1, D = 0; D < k.uiEvents.length; D++) {
-						var A = k.uiEvents[D];
-						if ("drop" == A.action) {
+					for (var z = !1, A = 0; A < k.uiEvents.length; A++) {
+						var D = k.uiEvents[A];
+						if ("drop" == D.action) {
 							var O = new u.DropItemMsg;
-							if ("weapon" == A.type) {
+							if ("weapon" == D.type) {
 								var L = this.activePlayer.localData.weapons;
-								O.item = L[A.data].name, O.weapIdx = A.data
+								O.item = L[D.data].name, O.weapIdx = D.data
 							} else {
-								var B = "";
-								B = "helmet" == A.data ? this.activePlayer.netData.helmet : "chest" == A.data ? this.activePlayer.netData.chest : A.data, O.item = B
+								var E = "";
+								E = "helmet" == D.data ? this.activePlayer.netData.helmet : "chest" == D.data ? this.activePlayer.netData.chest : D.data, O.item = E
 							}
-							"" != O.item && (this.sendMessage(u.Msg.DropItem, O), I = !0)
+							"" != O.item && (this.sendMessage(u.Msg.DropItem, O), z = !0)
 						}
 					}
-					I && this.audioManager.playSound("loot_drop_01", {
+					z && this.audioManager.playSound("loot_drop_01", {
 						channel: "ui"
 					})
 				}
-				var E = this.uiManager.specNext || this.spectating && this.input.keyPressed(C.Key.Right),
+				var B = this.uiManager.specNext || this.spectating && this.input.keyPressed(C.Key.Right),
 					F = this.uiManager.specPrev || this.spectating && this.input.keyPressed(C.Key.Left);
-				if (this.uiManager.beginSpectating || E || F) {
+				if (this.uiManager.beginSpectating || B || F) {
 					this.gameOver = !1;
 					var R = new u.SpectateMsg;
-					R.specNext = E, R.specPrev = F, this.sendMessage(u.Msg.Spectate, R)
+					R.specNext = B, R.specPrev = F, this.sendMessage(u.Msg.Spectate, R)
 				}
 				this.uiManager.beginSpectating = !1, this.uiManager.specNext = !1, this.uiManager.specPrev = !1, this.uiManager.reloadTouched = !1, this.uiManager.interactionTouched = !1;
 				var j = !1;
@@ -22086,14 +23356,14 @@ webpackJsonp([0], {
 					if (b.hasOwnProperty(N)) {
 						if ("toMouseDir" == N) {
 							var q = p.clamp(h.dot(b[N], this.prevMoveMsg[N]), -1, 1),
-								G = p.rad2deg(Math.acos(q));
-							j = G > .4
+								U = p.rad2deg(Math.acos(q));
+							j = U > .4
 						} else "toMouseLen" == N ? j = Math.abs(this.prevMoveMsg[N] - b[N]) > .5 : "shootStart" == N ? j = b[N] || b[N] != this.prevMoveMsg[N] : this.prevMoveMsg[N] != b[N] && (j = !0);
 						if (j) break
 					}
 				this.moveMsgTimeout -= e, (j || this.moveMsgTimeout < 0) && (this.seqInFlight || (this.seq = (this.seq + 1) % 256, this.seqSendTime = (new Date).getTime(), this.seqInFlight = !0, b.seq = this.seq), this.sendMessage(u.Msg.Move, b), this.moveMsgTimeout = 1, this.prevMoveMsg = b), this.ui2Manager.flushInput(), this.map.update(e, this.activePlayer, this.particleBarn, this.audioManager, this.renderer, this.camera), this.lootBarn.update(e, this.activePlayer, this.camera), this.bulletBarn.update(e, this.playerBarn, this.map, this.camera, this.activePlayer, this.renderer, this.particleBarn, this.audioManager), this.projectileBarn.update(e, this.particleBarn, this.audioManager, this.activePlayer, this.map, this.renderer, this.camera), this.explosionBarn.update(e, this.map, this.camera, this.particleBarn, this.audioManager), this.smokeBarn.update(e, this.camera, this.activePlayer, this.map, this.renderer), this.shotBarn.update(e, this.activeId, this.playerBarn, this.particleBarn, this.audioManager), this.particleBarn.update(e, this.camera), this.deadBodyBarn.update(e, this.playerBarn, this.activePlayer, this.map, this.camera, this.renderer), this.decalBarn.update(e, this.map, this.camera), this.pieTimer.update(e, this.activePlayer, this.camera), this.uiManager.update(e, this.activePlayer, this.activeId == this.localId, this.map, this.gas, this.lootBarn, this.playerBarn, this.camera, this.teamMode, this.input), this.ui2Manager.update(e, this.activePlayer, this.spectating, this.playerBarn, this.lootBarn, this.map), this.emoteManager.update(e, this.localId, this.activePlayer, this.input.mousePos, this.teamMode, this.deadBodyBarn, this.renderer), this.touch.updateDisplay(), this.renderer.update(e, this.camera, this.map);
-				for (var U = 0; U < this.emoteManager.newPings.length; U++) {
-					var V = this.emoteManager.newPings[U],
+				for (var G = 0; G < this.emoteManager.newPings.length; G++) {
+					var V = this.emoteManager.newPings[G],
 						H = new u.EmoteMsg;
 					H.type = V.type, H.pos = V.pos, H.useLoadout = !1, H.teamOnly = !0, H.isPing = !0, this.sendMessage(u.Msg.Emote, H)
 				}
@@ -22172,7 +23442,7 @@ webpackJsonp([0], {
 						break;
 					case u.Msg.Update:
 						var l = new u.UpdateMsg;
-						l.deserialize(t, this.objectCreator, this.packet++, this.teamMode), this.playing = !0, this.processGameUpdate(l);
+						l.deserialize(t, this.objectCreator), this.playing = !0, this.processGameUpdate(l);
 						break;
 					case u.Msg.Kill:
 						var c = new u.KillMsg;
@@ -22245,39 +23515,41 @@ webpackJsonp([0], {
 				if (this.ws && this.ws.readyState == this.ws.OPEN) try {
 					this.ws.send(e.getBuffer())
 				} catch (e) {
-					M.storeGeneric("gameError", "sendMessageException"), this.ws.close()
+					M.storeGeneric("error", "sendMessageException"), this.ws.close()
 				}
 			}
-		}, o.preloadImages = function() {
-			var e = ["img/player/circle-base-01.svg", "img/player/player-base-01.svg", "img/player/armor-base-01.svg", "img/player/player-hands-01.svg", "img/player/bullet-trail-02.svg", "img/loot/loot-circle-outer-01.svg", "img/gui/skull.svg", "img/gui/player-map-outer.svg", "img/gui/pad.svg", "img/guns/gun-short-01.svg", "img/guns/gun-med-01.svg", "img/guns/gun-long-01.svg", "img/guns/gun-dp28-top-01.svg", "img/guns/gun-m249-bot-01.svg", "img/proj/frag-proj-nopin-nolever.svg", "img/proj/frag-proj-pin.svg", "img/proj/frag-proj-nopin.svg", "img/proj/frag-pin.svg"],
-				t = function(t) {
-					"none" != t && -1 == e.indexOf(t) && e.push(t)
+		}, o.preloadImages = function(e) {
+			var t = ["img/player/circle-base-01.svg", "img/player/player-base-01.svg", "img/player/armor-base-01.svg", "img/player/player-hands-01.svg", "img/player/bullet-trail-02.svg", "img/loot/loot-circle-outer-01.svg", "img/gui/skull.svg", "img/gui/player-map-outer.svg", "img/gui/pad.svg", "img/guns/gun-short-01.svg", "img/guns/gun-med-01.svg", "img/guns/gun-long-01.svg", "img/guns/gun-dp28-top-01.svg", "img/guns/gun-m249-bot-01.svg", "img/proj/frag-proj-nopin-nolever.svg", "img/proj/frag-proj-pin.svg", "img/proj/frag-proj-nopin.svg", "img/proj/frag-pin.svg"],
+				a = function(e) {
+					"none" != e && -1 == t.indexOf(e) && t.push(e)
 				};
-			for (var a in d.Defs)
-				if (d.Defs.hasOwnProperty(a)) {
-					var i = d.Defs[a],
-						o = i.img;
-					if (void 0 !== o && (void 0 !== o.sprite && t(o.sprite), void 0 !== o.residue && t(o.residue)), i.button && i.button.useImg && t(i.button.useImg), "building" == i.type) {
-						for (var s = 0; s < i.floor.imgs.length; s++) t(i.floor.imgs[s].sprite);
-						for (var l = 0; l < i.ceiling.imgs.length; l++) t(i.ceiling.imgs[l].sprite)
+			for (var i in d.Defs)
+				if (d.Defs.hasOwnProperty(i)) {
+					var o = d.Defs[i],
+						s = o.img;
+					if (void 0 !== s && (void 0 !== s.sprite && a(s.sprite), void 0 !== s.residue && a(s.residue)), o.button && o.button.useImg && a(o.button.useImg), "building" == o.type) {
+						for (var l = 0; l < o.floor.imgs.length; l++) a(o.floor.imgs[l].sprite);
+						for (var c = 0; c < o.ceiling.imgs.length; c++) a(o.ceiling.imgs[c].sprite)
 					}
 				}
-			for (var c in r.items)
-				if (r.items.hasOwnProperty(c)) {
-					var p = r.items[c];
-					if (void 0 !== p.lootImg && t(p.lootImg.sprite), void 0 !== p.worldImg && t(p.worldImg.sprite), void 0 !== p.handImg)
-						for (var u in p.handImg) void 0 !== p.handImg[u].right && "none" !== p.handImg[u].right && t(p.handImg[u].right.sprite), void 0 !== p.handImg[u].left && "none" !== p.handImg[u].left && t(p.handImg[u].left.sprite)
+			for (var p in r.items)
+				if (r.items.hasOwnProperty(p)) {
+					var u = r.items[p];
+					if (void 0 !== u.lootImg && a(u.lootImg.sprite), void 0 !== u.worldImg && a(u.worldImg.sprite), void 0 !== u.handImg)
+						for (var h in u.handImg) void 0 !== u.handImg[h].right && "none" !== u.handImg[h].right && a(u.handImg[h].right.sprite), void 0 !== u.handImg[h].left && "none" !== u.handImg[h].left && a(u.handImg[h].left.sprite)
 				}
-			for (var h in A.Defs)
-				if (A.Defs.hasOwnProperty(h) && void 0 !== A.Defs[h].image)
-					for (var g = A.Defs[h].image, f = 0; f < g.length; f++) t(g[f]);
-			for (var y in m) m.hasOwnProperty(y) && void 0 !== m[y].texture && t(m[y].texture);
-			var b = Math.max(window.screen.width, window.screen.height),
-				x = Math.min(window.screen.width, window.screen.height);
-			b *= window.devicePixelRatio, x *= window.devicePixelRatio;
-			for (var v = b < 1366 && x < 768, k = v ? .5 : 1, _ = 0; _ < e.length; _++) {
-				n.Texture.fromImage(e[_], void 0, void 0, k).baseTexture.resolution = k
+			for (var g in D.Defs)
+				if (D.Defs.hasOwnProperty(g) && void 0 !== D.Defs[g].image)
+					for (var f = D.Defs[g].image, y = 0; y < f.length; y++) a(f[y]);
+			for (var b in m) m.hasOwnProperty(b) && void 0 !== m[b].texture && a(m[b].texture);
+			var x = Math.max(window.screen.width, window.screen.height),
+				v = Math.min(window.screen.width, window.screen.height);
+			x *= window.devicePixelRatio, v *= window.devicePixelRatio;
+			for (var k = x < 1366 && v < 768, _ = k ? .5 : 1, w = 0; w < t.length; w++) {
+				var S = n.Texture.fromImage(t[w], void 0, void 0, _);
+				S.baseTexture.resolution = _, e.plugins.prepare.upload(S.baseTexture)
 			}
+			e.plugins.prepare.limiter.maxItemsPerFrame = 1
 		}, e.exports = o
 	},
 	moUH: function(e, t, a) {
@@ -22332,7 +23604,7 @@ webpackJsonp([0], {
 			"index-region": "RegiÃ£o",
 			"index-north-america": "AmÃ©rica do Norte",
 			"index-europe": "Europa",
-			"index-asia": "Ã?sia",
+			"index-asia": "Ãsia",
 			"index-players": "jogadores",
 			"index-play-solo": "Jogar Sozinho",
 			"index-play-duo": "Jogar em Duplas",
@@ -22491,7 +23763,7 @@ webpackJsonp([0], {
 			"game-12gauge": "Calibre 12",
 			"game-12gauge-tooltip": "MuniÃ§Ã£o para M870, Saiga-12 e MP220.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "MuniÃ§Ã£o para AK-47, SCAR-H, M39, Mosin Nagant, OT-38 e DP-28.",
+			"game-762mm-tooltip": "MuniÃ§Ã£o para AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 e DP-28.",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "MuniÃ§Ã£o para FAMAS, HK416, Mk 12 e M249.",
 			"game-chest01": "Colete NÃ­vel 1",
@@ -22520,7 +23792,7 @@ webpackJsonp([0], {
 			"game-outfitWhite": "Arctic Avenger",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -22820,18 +24092,17 @@ webpackJsonp([0], {
 			M = a("EZ6M"),
 			T = a("xgte"),
 			P = T.RenderType,
-			C = .5,
-			z = function() {
+			C = function() {
 				function e() {
 					o(this, e), this.container = new l.Container, this.gunContainerL = new l.Container, this.gunContainerR = new l.Container, this.skinType = "outfitBase";
 					var t = c.items[this.skinType];
-					this.footSpriteName = "img/player/player-feet-01.svg", this.footLt = g.create(-20, -35), this.footRt = g.create(20, -35), this.foot_left = l.Sprite.fromImage(this.footSpriteName), this.foot_left.anchor.set(.5, .5), this.foot_left.scale.set(.45, .45), this.foot_left.pivot.set(this.footLt.x, this.footLt.y), this.foot_left.tint = t.skinImg.handTint, this.foot_left.visible = !1, this.foot_left_submerge = l.Sprite.fromImage(this.footSpriteName), this.foot_left_submerge.anchor.set(.5, .5), this.foot_left_submerge.tint = x.water, this.foot_left_submerge.visible = !1, this.foot_left_submerge.alpha = 0, this.foot_left.addChild(this.foot_left_submerge), this.container.addChild(this.foot_left), this.foot_right = l.Sprite.fromImage(this.footSpriteName), this.foot_right.anchor.set(.5, .5), this.foot_right.scale.set(.45, .45), this.foot_right.pivot.set(this.footRt.x, this.footRt.y), this.foot_right.tint = t.skinImg.handTint, this.foot_right.visible = !1, this.foot_right_submerge = l.Sprite.fromImage(this.footSpriteName), this.foot_right_submerge.anchor.set(.5, .5), this.foot_right_submerge.tint = x.water, this.foot_right_submerge.visible = !1, this.foot_right_submerge.alpha = 0, this.foot_right.addChild(this.foot_right_submerge), this.container.addChild(this.foot_right), this.backpack = l.Sprite.fromImage("img/player/circle-base-01.svg"), this.backpack.anchor.set(.5, .5), this.backpack.scale.set(.4, .4), this.backpack.tint = t.skinImg.backpackTint, this.container.addChild(this.backpack), this.baseSpriteName = t.skinImg.baseSprite, this.sprite = l.Sprite.fromImage(this.baseSpriteName), this.sprite.anchor.set(.5, .5), this.sprite.scale.set(.5 * t.skinImg.baseScale, .5 * t.skinImg.baseScale), this.sprite.tint = t.skinImg.baseTint, this.container.addChild(this.sprite), this.gunBot = l.Sprite.fromImage("img/guns/gun-short-01.svg"), this.gunBot.anchor.set(.5, .75), this.gunBot.scale.set(.5, .5), this.gunBot.pivot.set(0, 110), this.gunBot.visible = !1, this.gunContainerL.addChild(this.gunBot), this.gunBotVis = !1, this.gunOffhand = l.Sprite.fromImage("img/guns/gun-short-01.svg"), this.gunOffhand.anchor.set(.5, .75), this.gunOffhand.scale.set(.5, .5), this.gunOffhand.pivot.set(0, 110), this.gunOffhand.visible = !1, this.gunContainerR.addChild(this.gunOffhand), this.gunOffhandVis = !1, this.gun = l.Sprite.fromImage("img/guns/gun-short-01.svg"), this.gun.anchor.set(.5, .75), this.gun.scale.set(.5, .5), this.gun.pivot.set(0, 110), this.gunContainerL.addChild(this.gun), this.gunVis = !1, this.chest = l.Sprite.fromImage("img/player/armor-base-01.svg"), this.chest.anchor.set(.5, .5), this.chest.scale.set(.5, .5), this.container.addChild(this.chest), this.submergedMask = l.Sprite.fromImage("img/player/player-base-01.svg"), this.submergedMask.anchor.set(.5, .5), this.submergedMask.scale.set(.6, .6), this.container.addChild(this.submergedMask), this.submerged = l.Sprite.fromImage("img/player/player-wading-01.svg"), this.submerged.anchor.set(.5, .5), this.submerged.scale.set(.9, .9), this.submerged.alpha = 0, this.submerged.tint = 2854052, this.submerged.mask = this.submergedMask, this.submerged.visible = !0, this.container.addChild(this.submerged), this.submergeTicker = 0, this.rippleTicker = C, this.handSpriteName = t.skinImg.handSprite, this.hand_left = l.Sprite.fromImage(this.handSpriteName), this.hand_left.anchor.set(.5, .5), this.hand_left.scale.set(.35, .35), this.hand_left.pivot.set(35, 40), this.hand_left.tint = t.skinImg.handTint, this.hand_left_submerge = l.Sprite.fromImage(this.handSpriteName), this.hand_left_submerge.anchor.set(.5, .5), this.hand_left_submerge.tint = x.water, this.hand_left_submerge.visible = !1, this.hand_left_submerge.alpha = 0, this.hand_left.addChild(this.hand_left_submerge), this.gunContainerL.addChild(this.hand_left), this.hand_right = l.Sprite.fromImage(this.handSpriteName), this.hand_right.anchor.set(.5, .5), this.hand_right.scale.set(.35, .35), this.hand_right.pivot.set(-35, 40), this.hand_right.tint = t.skinImg.handTint, this.hand_right_submerge = l.Sprite.fromImage(this.handSpriteName), this.hand_right_submerge.anchor.set(.5, .5), this.hand_right_submerge.tint = x.water, this.hand_right_submerge.visible = !1, this.hand_right_submerge.alpha = 0, this.hand_right.addChild(this.hand_right_submerge), this.gunContainerR.addChild(this.hand_right), this.object_left = l.Sprite.from(l.Texture.EMPTY), this.object_left.anchor.set(.5, .5), this.object_left.pivot.set(0, 0), this.object_left.visible = !1, this.hand_left.addChild(this.object_left), this.object_right = l.Sprite.from(l.Texture.EMPTY), this.object_right.anchor.set(.5, .5), this.object_right.visible = !1, this.hand_right.addChild(this.object_right), this.handLt = g.create(35, 40), this.handRt = g.create(-35, 40), this.gunHandLt = g.copy(this.handLt), this.gunHandRt = g.copy(this.handRt), this.objHandLt = g.copy(this.handLt), this.objHandRt = g.copy(this.handRt), this.gunHandLtVis = !0, this.gunHandRtVis = !0, this.objLtVis = !1, this.objRtVis = !1, this.gunTop = l.Sprite.fromImage("img/guns/gun-short-01.svg"), this.gunTop.anchor.set(.5, 1), this.gunTop.scale.set(.5, .5), this.gunTop.pivot.set(0, 110), this.gunTop.visible = !1, this.gunContainerL.addChild(this.gunTop), this.gunTopVis = !1, this.container.addChild(this.gunContainerL), this.container.addChild(this.gunContainerR), this.helmet = l.Sprite.fromImage("img/player/circle-base-01.svg"), this.helmet.anchor.set(.5, .5), this.helmet.scale.set(.3, .3), this.container.addChild(this.helmet), this.nameText = n(), this.nameText.visible = !1, this.container.addChild(this.nameText), this.anim = {
+					this.footSpriteName = "img/player/player-feet-01.svg", this.footLt = g.create(-20, -35), this.footRt = g.create(20, -35), this.foot_left = l.Sprite.fromImage(this.footSpriteName), this.foot_left.anchor.set(.5, .5), this.foot_left.scale.set(.45, .45), this.foot_left.pivot.set(this.footLt.x, this.footLt.y), this.foot_left.tint = t.skinImg.handTint, this.foot_left.visible = !1, this.foot_left_submerge = l.Sprite.fromImage(this.footSpriteName), this.foot_left_submerge.anchor.set(.5, .5), this.foot_left_submerge.tint = x.water, this.foot_left_submerge.visible = !1, this.foot_left_submerge.alpha = 0, this.foot_left.addChild(this.foot_left_submerge), this.container.addChild(this.foot_left), this.foot_right = l.Sprite.fromImage(this.footSpriteName), this.foot_right.anchor.set(.5, .5), this.foot_right.scale.set(.45, .45), this.foot_right.pivot.set(this.footRt.x, this.footRt.y), this.foot_right.tint = t.skinImg.handTint, this.foot_right.visible = !1, this.foot_right_submerge = l.Sprite.fromImage(this.footSpriteName), this.foot_right_submerge.anchor.set(.5, .5), this.foot_right_submerge.tint = x.water, this.foot_right_submerge.visible = !1, this.foot_right_submerge.alpha = 0, this.foot_right.addChild(this.foot_right_submerge), this.container.addChild(this.foot_right), this.backpack = l.Sprite.fromImage("img/player/circle-base-01.svg"), this.backpack.anchor.set(.5, .5), this.backpack.scale.set(.4, .4), this.backpack.tint = t.skinImg.backpackTint, this.container.addChild(this.backpack), this.baseSpriteName = t.skinImg.baseSprite, this.sprite = l.Sprite.fromImage(this.baseSpriteName), this.sprite.anchor.set(.5, .5), this.sprite.scale.set(.5 * t.skinImg.baseScale, .5 * t.skinImg.baseScale), this.sprite.tint = t.skinImg.baseTint, this.container.addChild(this.sprite), this.gunBot = l.Sprite.fromImage("img/guns/gun-short-01.svg"), this.gunBot.anchor.set(.5, .75), this.gunBot.scale.set(.5, .5), this.gunBot.pivot.set(0, 110), this.gunBot.visible = !1, this.gunContainerL.addChild(this.gunBot), this.gunBotVis = !1, this.gunOffhand = l.Sprite.fromImage("img/guns/gun-short-01.svg"), this.gunOffhand.anchor.set(.5, .75), this.gunOffhand.scale.set(.5, .5), this.gunOffhand.pivot.set(0, 110), this.gunOffhand.visible = !1, this.gunContainerR.addChild(this.gunOffhand), this.gunOffhandVis = !1, this.gun = l.Sprite.fromImage("img/guns/gun-short-01.svg"), this.gun.anchor.set(.5, .75), this.gun.scale.set(.5, .5), this.gun.pivot.set(0, 110), this.gunContainerL.addChild(this.gun), this.gunVis = !1, this.chest = l.Sprite.fromImage("img/player/armor-base-01.svg"), this.chest.anchor.set(.5, .5), this.chest.scale.set(.5, .5), this.container.addChild(this.chest), this.submergedMask = l.Sprite.fromImage("img/player/player-base-01.svg"), this.submergedMask.anchor.set(.5, .5), this.submergedMask.scale.set(.6, .6), this.container.addChild(this.submergedMask), this.submerged = l.Sprite.fromImage("img/player/player-wading-01.svg"), this.submerged.anchor.set(.5, .5), this.submerged.scale.set(.9, .9), this.submerged.alpha = 0, this.submerged.tint = 2854052, this.submerged.mask = this.submergedMask, this.submerged.visible = !0, this.container.addChild(this.submerged), this.submersion = 0, this.handSpriteName = t.skinImg.handSprite, this.hand_left = l.Sprite.fromImage(this.handSpriteName), this.hand_left.anchor.set(.5, .5), this.hand_left.scale.set(.35, .35), this.hand_left.pivot.set(35, 40), this.hand_left.tint = t.skinImg.handTint, this.hand_left_submerge = l.Sprite.fromImage(this.handSpriteName), this.hand_left_submerge.anchor.set(.5, .5), this.hand_left_submerge.tint = x.water, this.hand_left_submerge.visible = !1, this.hand_left_submerge.alpha = 0, this.hand_left.addChild(this.hand_left_submerge), this.gunContainerL.addChild(this.hand_left), this.hand_right = l.Sprite.fromImage(this.handSpriteName), this.hand_right.anchor.set(.5, .5), this.hand_right.scale.set(.35, .35), this.hand_right.pivot.set(-35, 40), this.hand_right.tint = t.skinImg.handTint, this.hand_right_submerge = l.Sprite.fromImage(this.handSpriteName), this.hand_right_submerge.anchor.set(.5, .5), this.hand_right_submerge.tint = x.water, this.hand_right_submerge.visible = !1, this.hand_right_submerge.alpha = 0, this.hand_right.addChild(this.hand_right_submerge), this.gunContainerR.addChild(this.hand_right), this.object_left = l.Sprite.from(l.Texture.EMPTY), this.object_left.anchor.set(.5, .5), this.object_left.pivot.set(0, 0), this.object_left.visible = !1, this.hand_left.addChild(this.object_left), this.object_right = l.Sprite.from(l.Texture.EMPTY), this.object_right.anchor.set(.5, .5), this.object_right.visible = !1, this.hand_right.addChild(this.object_right), this.handLt = g.create(35, 40), this.handRt = g.create(-35, 40), this.gunHandLt = g.copy(this.handLt), this.gunHandRt = g.copy(this.handRt), this.objHandLt = g.copy(this.handLt), this.objHandRt = g.copy(this.handRt), this.gunHandLtVis = !0, this.gunHandRtVis = !0, this.objLtVis = !1, this.objRtVis = !1, this.gunTop = l.Sprite.fromImage("img/guns/gun-short-01.svg"), this.gunTop.anchor.set(.5, 1), this.gunTop.scale.set(.5, .5), this.gunTop.pivot.set(0, 110), this.gunTop.visible = !1, this.gunContainerL.addChild(this.gunTop), this.gunTopVis = !1, this.container.addChild(this.gunContainerL), this.container.addChild(this.gunContainerR), this.helmet = l.Sprite.fromImage("img/player/circle-base-01.svg"), this.helmet.anchor.set(.5, .5), this.helmet.scale.set(.3, .3), this.container.addChild(this.helmet), this.nameText = n(), this.nameText.visible = !1, this.container.addChild(this.nameText), this.anim = {
 						type: d.None,
 						seq: 0,
 						frame: 0,
 						timer: 0,
 						duration: 0
-					}, this.isOnBrightSurface = !1, this.weapType = "", this.stepTicker = 0, this.zoomFast = !1, this.playedDryFire = !1, this.curAction = {
+					}, this.isOnBrightSurface = !1, this.weapType = "", this.wasInWater = !1, this.stepDistance = 0, this.zoomFast = !1, this.playedDryFire = !1, this.curAction = {
 						type: m.None
 					}, this.actionSoundInstance = !1, this.soundUpdateThrottle = 0, this.downed = !1, this.bleedTicker = 0, this.lastThrowablePickupSfxTicker = 0, this.isNearDoorError = !1, this.doorErrorTicker = 0, this.noCeilingRevealTicker = 0, this.netData = {}, this.localData = {
 						action: {
@@ -22879,7 +24150,8 @@ webpackJsonp([0], {
 				}, {
 					key: "getScopeZoom",
 					value: function() {
-						return c.scopeZoomRadius[this.localData.curScope]
+						var e = this.netData.downed || this.localData.scopedIn ? "1xscope" : this.localData.curScope;
+						return c.scopeZoomRadius[e]
 					}
 				}, {
 					key: "getBagLevel",
@@ -23081,20 +24353,12 @@ webpackJsonp([0], {
 					}
 				}, {
 					key: "updateSubmersion",
-					value: function(e, t, a, i, o, n) {
-						var r = 0;
-						e ? (this.submergeTicker = Math.min(this.submergeTicker + t, 2), r = Math.min(1, a.distanceToShore(o) / 16), this.rippleTicker += t, this.rippleTicker > C && i && (a.addRipple(this.pos, 0), this.rippleTicker = 0, n.audioManager.playGroup("footstep_water", {
-							soundPos: o,
-							fallOff: 3,
-							layer: this.layer,
-							muffled: !0
-						}))) : (this.submergeTicker = Math.max(0, this.submergeTicker - 3 * t * this.submergeTicker), this.rippleTicker = C);
-						var s = Math.min(2, this.submergeTicker) / 2,
-							l = f.lerp(.5, r, s),
-							c = .75 * l;
-						this.submerged.alpha = c, this.foot_left_submerge.alpha = c, this.foot_right_submerge.alpha = c, this.hand_left_submerge.alpha = c, this.hand_right_submerge.alpha = c;
-						var m = .9 - .4 * l;
-						this.submerged.scale.set(m, m)
+					value: function(e, t, a) {
+						var i = 0;
+						t && (i = f.remap(a.distanceToShore(this.pos), 0, 16, .6, 1)), this.submersion = f.lerp(4 * e, this.submersion, i);
+						var o = .75 * this.submersion,
+							n = .9 - .4 * this.submersion;
+						this.submerged.alpha = o, this.foot_left_submerge.alpha = o, this.foot_right_submerge.alpha = o, this.hand_left_submerge.alpha = o, this.hand_right_submerge.alpha = o, this.submerged.scale.set(n, n)
 					}
 				}, {
 					key: "addRecoil",
@@ -23105,7 +24369,7 @@ webpackJsonp([0], {
 			}(),
 			I = function() {
 				function e() {
-					o(this, e), this.playerPool = new S.Pool(z), this.playerInfo = {}, this.teamInfo = {}, this.teammateData = {}
+					o(this, e), this.playerPool = new S.Pool(C), this.playerInfo = {}, this.teamInfo = {}, this.teammateData = {}
 				}
 				return s(e, [{
 					key: "update",
@@ -23120,32 +24384,32 @@ webpackJsonp([0], {
 							if (T.active) {
 								var C = T.__id == t;
 								if (C) {
-									var z = this.playerPool.getPool()[0];
-									z.sentinel && (z.pos = g.add(T.netData.pos, g.create(4, 3)), z.netData.pos = g.copy(z.pos))
+									var I = this.playerPool.getPool()[0];
+									I.sentinel && (I.pos = g.add(T.netData.pos, g.create(4, 3)), I.netData.pos = g.copy(I.pos))
 								}
-								var I = T.pos;
+								var z = T.pos;
 								T.pos = g.copy(T.netData.pos), T.dir = g.copy(T.netData.dir), T.layer = T.netData.layer, T.lastThrowablePickupSfxTicker -= e;
-								var D = this.playerInfo[t].teamId,
-									A = this.playerInfo[T.__id].teamId == D;
+								var A = this.playerInfo[t].teamId,
+									D = this.playerInfo[T.__id].teamId == A;
 								if (T.isNew) {
 									var O = this.getPlayerInfo(T.__id);
-									T.nameText.text = O.nameUnEntity, T.nameText.visible = !C && A
+									T.nameText.text = O.nameUnEntity, T.nameText.visible = !C && D
 								}
-								for (var L = this.getPlayerById(t), B = null, E = null, F = n.obstaclePool.getPool(), R = 0; R < F.length; R++) {
+								for (var L = this.getPlayerById(t), E = null, B = null, F = n.obstaclePool.getPool(), R = 0; R < F.length; R++) {
 									var j = F[R];
 									if (j.active && !j.dead && j.layer == T.netData.layer)
 										if (j.isBush) {
 											var N = .25 * c.player.radius;
-											b.intersectCircle(j.collider, T.pos, N) && (B = j)
+											b.intersectCircle(j.collider, T.pos, N) && (E = j)
 										} else if (j.isDoor && !j.door.open && j.door.playErrorFx) {
 										var q = c.player.radius + .25,
-											G = g.rotate(g.create(1, 0), j.rot),
-											U = g.sub(j.pos, T.pos);
-										g.dot(U, G) < 0 && b.intersectCircle(j.collider, T.pos, q) && (E = j)
+											U = g.rotate(g.create(1, 0), j.rot),
+											G = g.sub(j.pos, T.pos);
+										g.dot(G, U) < 0 && b.intersectCircle(j.collider, T.pos, q) && (B = j)
 									}
 								}
-								var V = null != B;
-								if (V && (T.insideObstacleType = B.type), T.lastInsideObstacleTime -= e, T.wasInsideObstacle != V && T.lastInsideObstacleTime < 0 && !T.isNew) {
+								var V = null != E;
+								if (V && (T.insideObstacleType = E.type), T.lastInsideObstacleTime -= e, T.wasInsideObstacle != V && T.lastInsideObstacleTime < 0 && !T.isNew) {
 									var H = p.Defs[T.insideObstacleType];
 									T.lastInsideObstacleTime = .2, l.playSound(H.sound.enter, {
 										channel: "sfx",
@@ -23154,16 +24418,16 @@ webpackJsonp([0], {
 										layer: T.layer,
 										muffled: !0
 									});
-									for (var W = g.normalizeSafe(g.sub(I, T.pos), g.create(1, 0)), K = V ? 1 : -1, X = Math.floor(h.random(3, 5)), Z = 0; Z < X; Z++) {
-										var Y = g.mul(g.rotate(g.mul(W, K), (Math.random() - .5) * Math.PI / 1.5), h.random(6, 8));
-										i.addParticle(M.Defs[H.hitParticle], T.layer, T.pos, Y)
+									for (var W = g.normalizeSafe(g.sub(z, T.pos), g.create(1, 0)), K = V ? 1 : -1, X = Math.floor(h.random(3, 5)), Y = 0; Y < X; Y++) {
+										var Z = g.mul(g.rotate(g.mul(W, K), (Math.random() - .5) * Math.PI / 1.5), h.random(6, 8));
+										i.addParticle(M.Defs[H.hitParticle], T.layer, T.pos, Z)
 									}
 								}
 								T.wasInsideObstacle = V;
 								var J = T.isNearDoorError;
-								if (T.isNearDoorError = null != E, T.doorErrorTicker -= e, T.isNearDoorError && !J && T.doorErrorTicker <= 0) {
+								if (T.isNearDoorError = null != B, T.doorErrorTicker -= e, T.isNearDoorError && !J && T.doorErrorTicker <= 0) {
 									T.doorErrorTicker = .5;
-									var Q = p.Defs[E.type],
+									var Q = p.Defs[B.type],
 										$ = Q.door.sound.error;
 									l.playSound($, {
 										channel: "sfx",
@@ -23173,171 +24437,173 @@ webpackJsonp([0], {
 										muffled: !0
 									})
 								}
-								var ee = g.length(g.sub(I, T.pos));
-								T.stepTicker += ee;
-								var te = n.getGroundSurface(T.pos, T.layer);
+								var ee = n.getGroundSurface(T.pos, T.layer);
 								if (C)
 									if (T.soundUpdateThrottle < 0) {
 										T.soundUpdateThrottle = .2;
-										var ae = 0,
-											ie = 1;
-										if ("water" !== te) {
-											var oe = n.distanceToShore(T.pos);
-											oe < 50 && (ae = (50 - oe) / 50, ie = 1 - ae)
-										} else ae = 1, ie = 0;
-										l.setVolume(f.wavesInst, ae), l.setVolume(f.windInst, ie)
+										var te = 0,
+											ae = 1;
+										if ("water" !== ee) {
+											var ie = n.distanceToShore(T.pos);
+											ie < 50 && (te = (50 - ie) / 50, ae = 1 - te)
+										} else te = 1, ae = 0;
+										l.setVolume(f.wavesInst, te), l.setVolume(f.windInst, ae)
 									} else T.soundUpdateThrottle -= e;
-								T.isOnBrightSurface = 1 == T.layer && "tile" == te;
-								var ne = "water" === te,
-									re = ee > 0;
-								T.updateSubmersion(ne, e, n, re, T.pos, _), T.stepTicker > 4 && !ne && (T.stepTicker = 0, l.playGroup("footstep_" + te, {
+								T.isOnBrightSurface = 1 == T.layer && "tile" == ee;
+								var oe = "water" === ee;
+								T.updateSubmersion(e, oe, n), T.stepDistance += g.length(g.sub(z, T.pos)), T.stepDistance > 5 && oe || oe && !T.wasInWater ? (T.stepDistance = 0, n.addRipple(T.pos, 0), _.audioManager.playGroup("footstep_water", {
 									soundPos: T.pos,
 									fallOff: 3,
 									layer: T.layer,
 									muffled: !0
-								})), T.netData.dead || T.updateDownedState(e, _, L, x);
-								var se = T.weapType != T.netData.curWeapType;
-								se && (T.weapType = T.netData.curWeapType, T.updateWeapon());
-								var le = T.gunContainerL.pivot.y,
-									ce = T.gunContainerR.pivot.y;
-								if (le = Math.min(0, le - le * e * 5 + e), ce = Math.min(0, ce - ce * e * 5 + e), T.gunContainerL.pivot.y = le, T.gunContainerR.pivot.y = ce, C) {
-									var me = T.localData.curWeapIdx,
-										de = T.localData.weapons[me],
-										pe = c.items[de.name];
-									if (!T.playedDryFire && "gun" == T.equippedWeaponType() && (s.mousePressed() || s.mouseDown() && "auto" == pe.fireMode) && 0 === T.localData.action.type && !y) {
-										var ue = T.localData.inventory[pe.ammo],
-											he = de.ammo;
-										0 === ue && 0 === he && (l.playSound(pe.sound.empty), T.playedDryFire = !0)
+								})) : T.stepDistance > 4 && !oe && (T.stepDistance = 0, l.playGroup("footstep_" + ee, {
+									soundPos: T.pos,
+									fallOff: 3,
+									layer: T.layer,
+									muffled: !0
+								})), T.wasInWater = oe, T.netData.dead || T.updateDownedState(e, _, L, x);
+								var ne = T.weapType != T.netData.curWeapType;
+								ne && (T.weapType = T.netData.curWeapType, T.updateWeapon());
+								var re = T.gunContainerL.pivot.y,
+									se = T.gunContainerR.pivot.y;
+								if (re = Math.min(0, re - re * e * 5 + e), se = Math.min(0, se - se * e * 5 + e), T.gunContainerL.pivot.y = re, T.gunContainerR.pivot.y = se, C) {
+									var le = T.localData.curWeapIdx,
+										ce = T.localData.weapons[le],
+										me = c.items[ce.name];
+									if (!T.playedDryFire && "gun" == T.equippedWeaponType() && (s.mousePressed() || s.mouseDown() && "auto" == me.fireMode) && 0 === T.localData.action.type && !y) {
+										var de = T.localData.inventory[me.ammo],
+											pe = ce.ammo;
+										0 === de && 0 === pe && (l.playSound(me.sound.empty), T.playedDryFire = !0)
 									}
 									s.mousePressed() || s.mouseDown() || (T.playedDryFire = !1)
 								}
-								var ge = T.netData.actionType;
-								if (!C && T.curAction.type != ge) {
+								var ue = T.netData.actionType;
+								if (!C && T.curAction.type != ue) {
 									l.stopSound(this.actionSoundInstance);
-									var fe = null;
-									switch (ge) {
+									var he = null;
+									switch (ue) {
 										case m.Reload:
-											var ye = T.netData.curWeapType;
-											if ("" != ye) {
-												fe = c.items[ye].sound.reload
+											var ge = T.netData.curWeapType;
+											if ("" != ge) {
+												he = c.items[ge].sound.reload
 											}
 									}
-									fe && (this.actionSoundInstance = l.playSound(fe, {
+									he && (this.actionSoundInstance = l.playSound(he, {
 										channel: "otherPlayers",
 										soundPos: T.pos,
 										fallOff: 2,
 										layer: T.layer,
 										muffled: !0
-									})), T.curAction.type = ge
+									})), T.curAction.type = ue
 								}
-								if (T.gunSwitchCooldown -= e, C && (se || T.curWeapIdx != T.localData.curWeapIdx)) {
+								if (T.gunSwitchCooldown -= e, C && (ne || T.curWeapIdx != T.localData.curWeapIdx)) {
 									T.curWeapIdx = T.localData.curWeapIdx;
-									var be = c.items[T.weapType];
-									if ("melee" == be.type || "throwable" == be.type)("throwable" != be.type || T.lastThrowablePickupSfxTicker <= 0) && l.playSound(be.sound.deploy, {
+									var fe = c.items[T.weapType];
+									if ("melee" == fe.type || "throwable" == fe.type)("throwable" != fe.type || T.lastThrowablePickupSfxTicker <= 0) && l.playSound(fe.sound.deploy, {
 										channel: "sfx",
 										soundPos: T.pos,
 										fallOff: 3
 									});
-									else if ("gun" == be.type) {
-										var xe = "gun_switch_01";
-										T.gunSwitchCooldown > 0 ? xe = be.sound.deploy : T.gunSwitchCooldown = c.player.freeSwitchCooldown, l.stopLocalActionSound(), l.playSound(xe, {
+									else if ("gun" == fe.type) {
+										var ye = "gun_switch_01";
+										T.gunSwitchCooldown > 0 ? ye = fe.sound.deploy : T.gunSwitchCooldown = c.player.freeSwitchCooldown, l.stopLocalActionSound(), l.playSound(ye, {
 											channel: "activePlayer"
 										})
 									}
 								}
 								T.updateAnim(e, _);
-								var ve = v[T.anim.type],
-									ke = !ve || !ve.hideWeapon;
-								(T.netData.downed || T.netData.dead) && (ke = !1), T.gun.visible = !!ke && T.gunVis, T.gunBot.visible = !!ke && T.gunBotVis, T.gunOffhand.visible = !!ke && T.gunOffhandVis, T.gunTop.visible = !!ke && T.gunTopVis, T.hand_left.visible = !ke || T.gunHandLtVis, T.hand_right.visible = !ke || T.gunHandRtVis;
-								var _e = T.anim.type == d.Throw;
-								T.object_right.visible = !(!ke || _e) && T.objRtVis, T.object_left.visible = !!ke && T.objLtVis;
-								var we = c.items[T.netData.curWeapType].type,
-									Se = T.handLt,
-									Me = T.handRt;
-								if (ke && ("gun" == we ? (Se = T.gunHandLt, Me = T.gunHandRt) : T.anim.type == d.None && "throwable" == we && (Se = T.objHandLt, Me = T.objHandRt)), !Me) {
-									var Te = {
-										handRt: void 0 !== Me ? Me : "undefined",
+								var be = v[T.anim.type],
+									xe = !be || !be.hideWeapon;
+								(T.netData.downed || T.netData.dead) && (xe = !1), T.gun.visible = !!xe && T.gunVis, T.gunBot.visible = !!xe && T.gunBotVis, T.gunOffhand.visible = !!xe && T.gunOffhandVis, T.gunTop.visible = !!xe && T.gunTopVis, T.hand_left.visible = !xe || T.gunHandLtVis, T.hand_right.visible = !xe || T.gunHandRtVis;
+								var ve = T.anim.type == d.Throw;
+								T.object_right.visible = !(!xe || ve) && T.objRtVis, T.object_left.visible = !!xe && T.objLtVis;
+								var ke = c.items[T.netData.curWeapType].type,
+									_e = T.handLt,
+									we = T.handRt;
+								if (xe && ("gun" == ke ? (_e = T.gunHandLt, we = T.gunHandRt) : T.anim.type == d.None && "throwable" == ke && (_e = T.objHandLt, we = T.objHandRt)), !we) {
+									var Se = {
+										handRt: void 0 !== we ? we : "undefined",
 										gunHandRt: void 0 !== T.gunHandRt ? T.gunHandRt : "undefined",
 										objHandRt: void 0 !== T.objHandRt ? T.objHandRt : "undefined",
 										pHandRt: void 0 !== T.handRt ? T.handRt : "undefined"
 									};
-									k.logError("hand_err: " + JSON.stringify(Te))
+									k.logError("hand_err: " + JSON.stringify(Se))
 								}
-								T.hand_left.pivot.set(Se.x, Se.y), T.hand_right.pivot.set(Me.x, Me.y), T.foot_left.pivot.set(T.footLt.x, T.footLt.y), T.foot_right.pivot.set(T.footRt.x, T.footRt.y);
-								var Pe = Math.atan2(T.dir.x, T.dir.y);
-								T.foot_left.rotation = Pe, T.foot_right.rotation = Pe, T.gunContainerL.rotation = Pe, T.gunContainerR.rotation = Pe;
-								var Ce = c.items[T.skinType],
-									ze = "camo" == Ce.subtype;
+								T.hand_left.pivot.set(_e.x, _e.y), T.hand_right.pivot.set(we.x, we.y), T.foot_left.pivot.set(T.footLt.x, T.footLt.y), T.foot_right.pivot.set(T.footRt.x, T.footRt.y);
+								var Me = Math.atan2(T.dir.x, T.dir.y);
+								T.foot_left.rotation = Me, T.foot_right.rotation = Me, T.gunContainerL.rotation = Me, T.gunContainerR.rotation = Me;
+								var Te = c.items[T.skinType],
+									Pe = "camo" == Te.subtype;
 								T.skinType != T.netData.skin && (T.skinType = T.netData.skin, T.updateSkin());
-								var Ie = T.getBagLevel();
-								if (Ie > 0 && !ze && !T.downed) {
-									var De = (c.items[T.netData.backpack], Ie > 0 ? .03 * Ie + .4 : 0),
-										Ae = .5 * T.backpack.width + 8;
-									T.backpack.scale.set(De, De), T.backpack.pivot.set(T.dir.x * Ae, T.dir.y * -Ae), T.backpack.visible = !0
+								var Ce = T.getBagLevel();
+								if (Ce > 0 && !Pe && !T.downed) {
+									var Ie = (c.items[T.netData.backpack], Ce > 0 ? .03 * Ce + .4 : 0),
+										ze = .5 * T.backpack.width + 8;
+									T.backpack.scale.set(Ie, Ie), T.backpack.pivot.set(T.dir.x * ze, T.dir.y * -ze), T.backpack.visible = !0
 								} else T.backpack.visible = !1;
-								if ("" == T.netData.chest || ze) T.chest.visible = !1;
+								if ("" == T.netData.chest || Pe) T.chest.visible = !1;
 								else {
-									var Oe = c.items[T.netData.chest];
-									T.chest.tint = Oe.tint, T.chest.visible = !0
+									var Ae = c.items[T.netData.chest];
+									T.chest.tint = Ae.tint, T.chest.visible = !0
 								}
-								if ("" == T.netData.helmet || ze) T.helmet.visible = !1;
+								if ("" == T.netData.helmet || Pe) T.helmet.visible = !1;
 								else {
-									var Le = c.items[T.netData.helmet],
-										Be = .5 * T.helmet.width,
-										Ee = T.downed ? -1 : 1;
-									T.helmet.pivot.set(T.dir.x * Be * Ee, T.dir.y * Be * -Ee), T.helmet.tint = Le.tint, T.helmet.visible = !0
+									var De = c.items[T.netData.helmet],
+										Oe = .5 * T.helmet.width,
+										Le = T.downed ? -1 : 1;
+									T.helmet.pivot.set(T.dir.x * Oe * Le, T.dir.y * Oe * -Le), T.helmet.tint = De.tint, T.helmet.visible = !0
 								}
 								T.noCeilingRevealTicker -= e;
-								for (var Fe = T.layer, Re = b.createCircle(T.pos, c.player.maxVisualRadius), je = !1, Ne = !1, qe = !1, Ge = n.structurePool.getPool(), Ue = 0; Ue < Ge.length; Ue++) {
-									var Ve = Ge[Ue];
-									if (Ve.active) {
-										for (var He = 0; He < Ve.stairs.length; He++) {
-											var We = Ve.stairs[He],
-												Ke = b.intersect(We.collision, Re);
-											if (Ke) {
-												Ne = !0;
-												var Xe = g.add(We.center, g.mul(We.downDir, -3)),
-													Ze = g.sub(Xe, T.pos),
-													Ye = g.length(Ze);
-												Ze = Ye > 1e-4 ? g.div(Ze, Ye) : g.create(1, 0);
-												qe = r(n, T.pos, Ze, Ye, .5, T.layer) < Ye
+								for (var Ee = T.layer, Be = b.createCircle(T.pos, c.player.maxVisualRadius), Fe = !1, Re = !1, je = !1, Ne = n.structurePool.getPool(), qe = 0; qe < Ne.length; qe++) {
+									var Ue = Ne[qe];
+									if (Ue.active) {
+										for (var Ge = 0; Ge < Ue.stairs.length; Ge++) {
+											var Ve = Ue.stairs[Ge],
+												He = b.intersect(Ve.collision, Be);
+											if (He) {
+												Re = !0;
+												var We = g.add(Ve.center, g.mul(Ve.downDir, -3)),
+													Ke = g.sub(We, T.pos),
+													Xe = g.length(Ke);
+												Ke = Xe > 1e-4 ? g.div(Ke, Xe) : g.create(1, 0);
+												je = r(n, T.pos, Ke, Xe, .5, T.layer) < Xe
 											}
-											C && We.noCeilingReveal && Ke && 0 != T.layer && (T.noCeilingRevealTicker = .25)
+											C && Ve.noCeilingReveal && He && 0 != T.layer && (T.noCeilingRevealTicker = .25)
 										}
-										for (var Je = 0; Je < Ve.mask.length; Je++)
-											if (b.intersect(Ve.mask[Je], Re)) {
-												je = !0;
+										for (var Ye = 0; Ye < Ue.mask.length; Ye++)
+											if (b.intersect(Ue.mask[Ye], Be)) {
+												Fe = !0;
 												break
 											}
 									}
 								}
-								var Qe = 18;
-								Ne && (1 & Fe && (1 & L.layer || !qe) || 2 & L.layer && !je) && (Fe |= 2), (1 & Fe) != (1 & L.layer) || !Ne || je && 0 != L.layer || (Fe |= 2, Qe += 100);
-								var $e = T.__id + (T.netData.downed ? 0 : 131072) + (C ? 65536 : 0);
-								a.addPIXIObj(T.container, P.Player, Fe, Qe, $e), T.isNew = !1
+								var Ze = 18;
+								Re && (1 & Ee && (1 & L.layer || !je) || 2 & L.layer && !Fe) && (Ee |= 2), (1 & Ee) != (1 & L.layer) || !Re || Fe && 0 != L.layer || (Ee |= 2, Ze += 100);
+								var Je = T.__id + (T.netData.downed ? 0 : 131072) + (C ? 65536 : 0);
+								a.addPIXIObj(T.container, P.Player, Ee, Ze, Je), T.isNew = !1
 							}
 						}
-						for (var et = this.getPlayerInfo(t).teamId, tt = this.getTeamInfo(et), at = 0; at < tt.playerIds.length; at++) {
-							var it = tt.playerIds[at],
-								ot = this.getPlayerById(it);
-							ot && it == t && this.setTeammateData(it, {
-								pos: g.copy(ot.netData.pos),
-								health: ot.localData.health,
+						for (var Qe = this.getPlayerInfo(t).teamId, $e = this.getTeamInfo(Qe), et = 0; et < $e.playerIds.length; et++) {
+							var tt = $e.playerIds[et],
+								at = this.getPlayerById(tt);
+							at && tt == t && this.setTeammateData(tt, {
+								pos: g.copy(at.netData.pos),
+								health: at.localData.health,
 								disconnected: !1,
-								dead: ot.netData.dead,
-								downed: ot.netData.downed
+								dead: at.netData.dead,
+								downed: at.netData.downed
 							});
-							var nt = this.teammateData[it];
-							if (nt)
-								if (ot) {
-									var rt = this.teammateData[it];
-									rt.pos = g.copy(ot.netData.pos), rt.posTarget = g.copy(ot.netData.pos)
-								} else if (nt) {
-								var st = (c.player.moveSpeed, g.sub(nt.posTarget, nt.pos)),
-									lt = g.length(st),
-									ct = lt > 1e-4 ? g.div(st, lt) : g.create(1, 0),
-									mt = Math.min(lt, nt.posDelta * e / u.kTeamUpdateRate);
-								nt.pos = g.add(nt.pos, g.mul(ct, mt))
+							var it = this.teammateData[tt];
+							if (it)
+								if (at) {
+									var ot = this.teammateData[tt];
+									ot.pos = g.copy(at.netData.pos), ot.posTarget = g.copy(at.netData.pos)
+								} else if (it) {
+								var nt = (c.player.moveSpeed, g.sub(it.posTarget, it.pos)),
+									rt = g.length(nt),
+									st = rt > 1e-4 ? g.div(nt, rt) : g.create(1, 0),
+									lt = Math.min(rt, it.posDelta * e / u.kTeamUpdateRate);
+								it.pos = g.add(it.pos, g.mul(st, lt))
 							}
 						}
 					}
@@ -23369,7 +24635,7 @@ webpackJsonp([0], {
 							a = ((new Date).getTime(), w.truncateString(t, "bold 16px arial", 180));
 						this.playerInfo[e.id] = {
 							name: t,
-							nameUnEntity: w.unEntity(t),
+							nameUnEntity: w.htmlUnescape(t),
 							nameKillFeed: a,
 							teamId: e.teamId
 						}
@@ -23596,7 +24862,7 @@ webpackJsonp([0], {
 			"game-12gauge": "Calibre 12",
 			"game-12gauge-tooltip": "MuniciÃ³n para la M870, Saiga-12 y MP220.",
 			"game-762mm": "7,62mm",
-			"game-762mm-tooltip": "Ammo for AK-47, SCAR-H, M39, Mosin Nagant, OT-38 y DP-28.",
+			"game-762mm-tooltip": "Ammo for AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 y DP-28.",
 			"game-556mm": "5,56mm",
 			"game-556mm-tooltip": "Ammo for FAMAS, HK416, Mk 12 y M249.",
 			"game-chest01": "Chaleco de nivel 1",
@@ -23622,10 +24888,10 @@ webpackJsonp([0], {
 			"game-outfitGhillie": "Traje Ghillie",
 			"game-outfitCamo": "Camuflaje de Bosque ",
 			"game-outfitRed": "PrÃ¡ctica de Tiro",
-			"game-outfitWhite": "Vengador del Ã?rtico",
+			"game-outfitWhite": "Vengador del Ãrtico",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -23644,6 +24910,284 @@ webpackJsonp([0], {
 			"game-silo_01": "un silo"
 		};
 		e.exports = i
+	},
+	po6R: function(e, t, a) {
+		"use strict";
+
+		function i(e, t) {
+			if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+		}
+		var o = function() {
+				function e(e, t) {
+					for (var a = 0; a < t.length; a++) {
+						var i = t[a];
+						i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
+					}
+				}
+				return function(t, a, i) {
+					return a && e(t.prototype, a), i && e(t, i), t
+				}
+			}(),
+			n = a("juYr"),
+			r = a("zinx"),
+			s = a("v8aM"),
+			l = (s.EmoteType, s.EmoteData),
+			c = a("Jr6A"),
+			m = a("85i3"),
+			d = a("SEs0"),
+			p = function() {
+				function e(t) {
+					i(this, e), this.selector = t, this.enabled = !0, this.onToggle = function() {}
+				}
+				return o(e, [{
+					key: "onToggle",
+					value: function(e) {
+						this.onToggle = e
+					}
+				}, {
+					key: "isVisible",
+					value: function() {
+						return "none" != this.selector.css("display")
+					}
+				}, {
+					key: "show",
+					value: function() {
+						this.selector.css("display", "block"), this.onToggle(this.isVisible()), d.addModalCloseListener()
+					}
+				}, {
+					key: "hide",
+					value: function() {
+						this.selector.css("display", "none"), this.onToggle(this.isVisible()), d.removeModalCloseListener()
+					}
+				}]), e
+			}(),
+			u = function() {
+				function e(t) {
+					var a = this;
+					i(this, e), this.profile = {}, this.loading = !1, this.nameChangeEnabled = !1, this.setNamePrompt = new p(n("#modal-account-name-change")), this.setNamePrompt.onToggle(function() {
+						n("#modal-body-warning").css("display", "none"), n("#modal-account-name-title").html("Change name"), n("#modal-account-name-input").val("")
+					}), n("#modal-account-name-finish").click(function(e) {
+						e.stopPropagation();
+						var i = n("#modal-account-name-input").val();
+						t.setUsername(i, function(e) {
+							a.onSetUsername(e)
+						})
+					}), n("#modal-account-name-input").on("keypress", function(e) {
+						13 === (e.which || e.keyCode) && n("#modal-account-name-finish").trigger("click")
+					}), this.changeAvatarPrompt = new p(n("#modal-account-avatar")), d.addModalCloseCallback(function(e, a) {
+						if (a.parents("#modal-account-avatar").length > 0) {
+							e.stopPropagation();
+							var i = n("#customize-account-avatar").find(".customize-emote-image").data("id");
+							t.setAvatar(i)
+						}
+					}), this.delAccountPrompt = new p(n("#modal-account-delete")), n("#modal-account-delete-finish").click(function(e) {
+						e.stopPropagation(), "DELETE" == n("#modal-account-delete-input").val() && t.deleteUser(), a.hideModals()
+					}), n("#modal-account-delete-input").on("keypress", function(e) {
+						13 === (e.which || e.keyCode) && n("#modal-account-delete-finish").trigger("click")
+					}), this.modals = [this.setNamePrompt, this.changeAvatarPrompt, this.delAccountPrompt];
+					var o = n(".account-loggedin-stats"),
+						r = n(".account-loggedin-buttons-main"),
+						s = n(".account-loggedin-buttons-settings"),
+						l = n(".account-loggedin-buttons-link-account");
+					n(".account-details-user").click(function(e) {
+						e.stopPropagation(), a.activeMenu != o ? a.setMenu(o) : a.setMenu(r)
+					}), n(".btn-account-settings").click(function(e) {
+						e.stopPropagation(), a.setMenu(s)
+					}), n(".btn-account-link").click(function(e) {
+						e.stopPropagation(), a.setMenu(l)
+					}), n(".btn-account-back").click(function(e) {
+						e.stopPropagation(), a.setMenu(r)
+					}), n(".btn-account-change-name").click(function(e) {
+						e.stopPropagation(), a.profile.usernameChangeTime <= 0 && (a.showModal(a.setNamePrompt), n("#modal-account-name-title").html("Change name"), a.setMenu(o))
+					}), n(".btn-account-change-avatar, .account-avatar").click(function(e) {
+						e.stopPropagation(), void 0 != a.profile.avatar && (a.showModal(a.changeAvatarPrompt), a.setMenu(o))
+					}), n(".btn-account-delete").click(function(e) {
+						e.stopPropagation(), n("#modal-account-delete-input").val(""), a.showModal(a.delAccountPrompt), a.setMenu(o)
+					}), this.menus = [o, r, s, l], this.activeMenu = o, this.statsButtons = o, this.menuListener = function(e) {
+						n(e.target).closest(n(".account-loggedin-block")).length || a.setMenu(o)
+					}
+				}
+				return o(e, [{
+					key: "setMenu",
+					value: function(e) {
+						for (var t = 0; t < this.menus.length; t++) this.menus[t].css("display", "none");
+						e.css("display", "block"), this.activeMenu = e, e != this.statsButtons ? n(document).on("click touchend", this.menuListener) : n(document).off("click touchend", this.menuListener)
+					}
+				}, {
+					key: "showModal",
+					value: function(e) {
+						this.hideModals(), e.show()
+					}
+				}, {
+					key: "hideModals",
+					value: function() {
+						for (var e = 0; e < this.modals.length; e++) this.modals[e].hide()
+					}
+				}, {
+					key: "onSetUsername",
+					value: function(e) {
+						var t = {
+								failed: "Failed setting username.",
+								invalid: "Invalid username.",
+								taken: "Name already taken!",
+								change_time_not_expired: "Username has already been set recently."
+							},
+							a = t[e] || t.failed;
+						n("#modal-body-warning").hide(), n("#modal-body-warning div").html(a), n("#modal-body-warning").fadeIn()
+					}
+				}, {
+					key: "show",
+					value: function(e) {
+						n(".account-loggedin-block").css("display", "block"), this.setMenu(this.statsButtons);
+						var t = c.htmlEscape(this.profile.username);
+						n(".account-player-name").html(t);
+						var a = n(".btn-player-stats-link");
+						this.profile.slug ? (a.attr("href", "/stats/" + this.profile.slug), a.css("display", "block")) : a.css("display", "none");
+						var i = this.profile.avatar,
+							o = l[i],
+							r = o && o.texture ? o.texture : "../img/gui/player.svg";
+						n(".account-details-user .account-avatar").css("background-image", e ? "none" : "url(" + r + ")").addClass(e ? "" : "account-avatar-hover"), n(".account-details-user .account-avatar-loading").css("display", e ? "block" : "none"), this.nameChangeEnabled = this.profile.usernameChangeTime <= 0, this.nameChangeEnabled ? n(".btn-account-change-name").removeClass("btn-account-disabled") : n(".btn-account-change-name").addClass("btn-account-disabled"), n(".btn-account-change-name").html(this.profile.usernameSet ? "Change Account Name" : "Set Account Name"), e || this.profile.usernameSet ? this.setNamePrompt.hide() : (this.showModal(this.setNamePrompt), d.removeModalCloseListener());
+						var s = function(e) {
+							e.addClass("btn-login-linked"), e.find("span.login-button-name").html('<div class="icon"></div>'), e.off("click")
+						};
+						this.profile.linkedFacebook && s(n(".btn-login-facebook")), this.profile.linkedGoogle && s(n(".btn-login-google")), this.profile.linkedTwitch && s(n(".btn-login-twitch")), this.profile.linkedDiscord && s(n(".btn-login-discord"))
+					}
+				}, {
+					key: "hide",
+					value: function() {
+						n(".account-loggedin-block").css("display", "none"), this.setMenu(this.statsButtons), this.hideModals()
+					}
+				}]), e
+			}(),
+			h = function() {
+				function e() {
+					var t = this;
+					i(this, e), this.leaderboard = n(".account-login-leaderboard"), this.loginButtons = n(".account-login-buttons"), this.loginVisible = !1, this.clickListener = function(e) {
+						n(e.target).closest(t.loginButtons).length || t.showLogin(!1)
+					}, n(".account-details-guest").click(function(e) {
+						e.stopPropagation(), t.showLogin(!t.loginVisible)
+					})
+				}
+				return o(e, [{
+					key: "showLogin",
+					value: function(e) {
+						this.loginButtons.css("display", e || r.mobile ? "block" : "none"), this.leaderboard.css("display", e ? "none" : "block"), this.loginVisible = e, e && !r.mobile ? n(document).on("click touchend", this.clickListener) : n(document).off("click touchend", this.clickListener)
+					}
+				}, {
+					key: "show",
+					value: function(e) {
+						n(".account-login-block").css("display", "block");
+						var t = n(".account-login-block");
+						t.find(".account-avatar-loading").css("display", e ? "block" : "none"), t.find(".account-avatar").css("background-image", e ? "none" : 'url("../img/gui/player.svg")'), t.find(".account-name").html(e ? "Logging in..." : "Log in to track your stats!"), this.loginButtons.enabled = !e
+					}
+				}, {
+					key: "hide",
+					value: function() {
+						n(".account-login-block").css("display", "none"), this.showLogin(!1)
+					}
+				}]), e
+			}(),
+			g = function() {
+				function e(t) {
+					var a = this;
+					i(this, e), this.config = t, this.loading = !1, this.loggedIn = !1, this.profile = {}, this.loginMenu = new h, this.profileMenu = new u(this), this.errorModal = new p(n("#modal-notification")), n(".btn-login-facebook").click(function(e) {
+						window.location.href = "/api/user/auth/facebook"
+					}), n(".btn-login-google").click(function(e) {
+						window.location.href = "/api/user/auth/google"
+					}), n(".btn-login-twitch").click(function(e) {
+						window.location.href = "/api/user/auth/twitch"
+					}), n(".btn-login-discord").click(function(e) {
+						window.location.href = "/api/user/auth/discord"
+					}), n(".btn-account-logout").click(function(e) {
+						a.logout()
+					})
+				}
+				return o(e, [{
+					key: "load",
+					value: function() {
+						var e = this;
+						!this.loading && c.getCookie("app-data") && (this.loading = !0, this.render(), n.ajax({
+							type: "GET",
+							url: "/api/user/profile",
+							timeout: 1e4
+						}).done(function(t, a) {
+							if (e.loggedIn = void 0 !== t.profile, e.loggedIn) {
+								e.profile = t.profile;
+								var i = e.config.get("profile") || {};
+								i.slug = t.profile.slug, e.config.set("profile", i)
+							}
+						}).fail(function(e) {
+							m.storeGeneric("account", "load_error")
+						}).always(function() {
+							e.loading = !1, e.render()
+						}))
+					}
+				}, {
+					key: "logout",
+					value: function() {
+						this.config.set("profile", null), window.location.href = "/api/user/logout"
+					}
+				}, {
+					key: "deleteUser",
+					value: function() {
+						this.config.set("profile", null), window.location.href = "/api/user/delete"
+					}
+				}, {
+					key: "setUsername",
+					value: function(e, t) {
+						var a = this;
+						n.ajax({
+							type: "POST",
+							url: "/api/user/username",
+							timeout: 5e3,
+							contentType: "application/json; charset=utf-8",
+							data: JSON.stringify({
+								username: e
+							})
+						}).done(function(e, i) {
+							"success" == e.result ? a.load() : t(e.result)
+						}).fail(function(e) {
+							m.storeGeneric("account", "set_username_error"), t("Failed setting username.")
+						})
+					}
+				}, {
+					key: "setAvatar",
+					value: function(e) {
+						var t = this;
+						this.loggedIn && e != this.profile.avatar && n.ajax({
+							type: "POST",
+							url: "/api/user/avatar",
+							timeout: 1e4,
+							contentType: "application/json; charset=utf-8",
+							data: JSON.stringify({
+								avatar: e
+							})
+						}).done(function(e, a) {
+							t.load()
+						}).fail(function(e) {
+							m.storeGeneric("account", "set_avatar_error"), t.displayError("server_error")
+						})
+					}
+				}, {
+					key: "displayError",
+					value: function(e) {
+						var t = {
+							server_error: "Internal server error, please try again later.",
+							facebook_account_in_use: "Failed linking Facebook account.<br/>Account already in use!",
+							google_account_in_use: "Failed linking Google account.<br/>Account already in use!",
+							twitch_account_in_use: "Failed linking Twitch account.<br/>Account already in use!",
+							discord_account_in_use: "Failed linking Discord account.<br/>Account already in use!"
+						};
+						t[e] && (n("#modal-notification").find(".modal-settings-text").html(t[e]), this.errorModal.show())
+					}
+				}, {
+					key: "render",
+					value: function() {
+						this.profileMenu.profile = this.profile, this.loggedIn ? (this.profileMenu.show(this.loading), this.loginMenu.hide(), this.profile.errorFlash.length > 0 && this.displayError(this.profile.errorFlash[0])) : (this.profileMenu.hide(), this.loginMenu.show(this.loading))
+					}
+				}]), e
+			}();
+		e.exports = g
 	},
 	"qwV+": function(e, t, a) {
 		"use strict";
@@ -23919,7 +25463,7 @@ webpackJsonp([0], {
 		e.exports = d
 	},
 	tPA9: function(e, t, a) {
-		t = e.exports = a("lcwS")(!1), t.push([e.i, 'img{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}#cvs{-webkit-filter:none;filter:none}.click-through{pointer-events:none}#game-area-wrapper{cursor:crosshair;left:0;position:absolute!important;top:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}#ui-game{-webkit-filter:none;filter:none;height:100%;left:0;position:absolute;top:0;width:100%}#ui-center{color:#fff;pointer-events:all;position:absolute;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%) scale(1);transform:translateX(-50%) translateY(-50%) scale(1);z-index:10}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-center{-webkit-transform:translateX(-50%) translateY(-50%) scale(.85);transform:translateX(-50%) translateY(-50%) scale(.85)}}@media screen and (max-width:850px){#ui-center{pointer-events:all;-webkit-transform:translateX(-50%) translateY(-50%) scale(.85);transform:translateX(-50%) translateY(-50%) scale(.85);z-index:10}}@media (max-width:850px) and (max-height:300px){#ui-center{-webkit-transform:translateX(-50%) translateY(-50%) scale(.775);transform:translateX(-50%) translateY(-50%) scale(.775)}}#ui-center .movement-icon{background-image:url(../img/gui/movement.svg)}#ui-center .target-icon{background-image:url(../img/gui/target.svg)}#ui-center .btns-game-double-row{display:flex;position:relative}#ui-center .btns-game-double-row a{display:inline-block}#ui-center .btns-game-double-row div{display:inline-block;position:relative;width:100%}#ui-center .btns-game-double-row div:not(:last-child){margin-right:2px}#ui-center .btns-game-double-row .game-menu-icon{background-size:22px;background-position:50%;background-repeat:no-repeat;bottom:13px;display:inline-block;height:22px;left:55%;pointer-events:none;position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:22px}#ui-center .btn-game-touch-style{background-color:#50afab;background-position:4px 4px;background-repeat:no-repeat;background-size:20px;border:0;border-bottom:none;border-radius:5px;box-shadow:inset 0 -2px #387c79;box-sizing:border-box;color:#fff;cursor:pointer;display:block;font-size:14px;height:30px;line-height:30px;margin:auto;margin-top:2px;margin-bottom:4px;position:relative;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);width:100%}#ui-game-menu{background-color:rgba(0,0,0,.5);border-radius:5px;box-sizing:border-box;display:none;margin:10px auto;padding:10px 15px;width:250px}@media screen and (max-width:850px){#ui-game-menu{padding:4px 10px;width:190px}}@media (max-width:850px) and (max-height:300px){#ui-game-menu{margin-top:0}}#ui-game-menu p{bottom:4px;display:inline-block;font-size:14px;position:relative}@media screen and (max-width:850px){#ui-game-menu p{bottom:0;font-size:12px;margin-bottom:8px;margin-top:6px}}.ui-map-wrapper-mobile{bottom:auto;color:#fff;display:block;font-size:16px;left:6px;top:46px}.ui-map-wrapper-mobile #ui-map-container{position:absolute;bottom:52px}.ui-map-wrapper-mobile #ui-map-info{width:100px;left:0}.ui-map-wrapper-mobile #ui-alive-info,.ui-map-wrapper-mobile #ui-map-info{position:absolute;color:#fff;height:36px;top:174px;background:rgba(0,0,0,.4);border-radius:5px}.ui-map-wrapper-mobile #ui-alive-info{width:80px;left:106px}.ui-map-wrapper-mobile .ui-players-alive{left:4px}.ui-map-wrapper-mobile .ui-map-counter{position:relative;display:inline-block;font-size:24px;text-align:center;bottom:9px;left:2px}.ui-map-wrapper-mobile .ui-map-icon{padding:6px;display:inline-block;height:24px;width:24px;margin-left:2px;background-size:24px;background-repeat:no-repeat;background-position:6px 6px}.ui-map-wrapper-mobile .gas-icon{background-image:url(../img/gui/gas.svg)}.ui-map-wrapper-mobile .danger-icon{background-image:url(../img/gui/danger.svg)}.ui-map-wrapper-mobile .alive-icon{background-image:url(../img/gui/player.svg)}.ui-map-wrapper-mobile .icon-pulse{-webkit-animation:pulse 2s linear infinite;animation:pulse 2s linear infinite}.ui-map-wrapper-mobile #ui-spec-counter{position:absolute;color:#fff;width:68px;height:28px;top:135px;left:60px;background:rgba(0,0,0,.4);border-radius:5px}.ui-map-wrapper-mobile #ui-spec-counter-icon{padding:6px;display:inline-block;height:24px;width:18px;margin-left:2px;background-size:20px;background-repeat:no-repeat;background-position:6px 4px;background-image:url(../img/gui/eye.svg)}.ui-map-wrapper-mobile #ui-spec-counter-number{position:relative;display:inline-block;font-size:20px;width:24px;text-align:center;bottom:15px;left:0}.ui-map-wrapper-mobile .ui-settings-button{position:absolute;color:#fff;border-radius:5px;pointer-events:all}.ui-map-wrapper-mobile #ui-map-expand-mobile{height:190px;width:190px;left:-4px;top:-22px;z-index:0;background-color:transparent}.ui-map-wrapper-mobile #ui-map-expand img{display:none}.ui-map-wrapper-mobile #ui-map-minimize{left:124px}.ui-map-wrapper-mobile .ui-settings-button img{position:absolute;left:6px;top:6px;height:36px;width:36px;background-size:36px;background-repeat:no-repeat;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-map-wrapper-mobile .ui-settings-button .map-img-after{display:none}.ui-map-wrapper-mobile .ui-settings-button:hover{-webkit-transform:scale(1);transform:scale(1)}.ui-map-wrapper-desktop{position:absolute;bottom:12px;left:12px}#ui-map-wrapper{position:absolute;z-index:1}#ui-map-wrapper #ui-settings-container-mobile{position:relative}#ui-map-wrapper #ui-menu-display{cursor:pointer;left:2px;top:-18px;height:48px;width:48px;opacity:.8;background-color:rgba(0,0,0,.4);background-size:48px;background-repeat:no-repeat;background-position:50%;background-image:url(../img/gui/cog.svg);z-index:1}#big-map{display:none;height:100%;width:100%}#big-map-collision{height:100%;left:50%;margin:auto;pointer-events:all;position:fixed;top:0;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#big-map-close{position:absolute;margin-left:auto;height:64px;width:64px;right:6px;top:6px;border-radius:6px;background-color:rgba(0,0,0,.5);background-repeat:no-repeat;background-size:48px;background-position:50%;background-image:url(../img/gui/close.svg);pointer-events:all}#ui-right-center{position:absolute;color:#fff;opacity:.75;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-right-center-desktop{top:40%;-webkit-transform:translateY(-50%);transform:translateY(-50%);right:12px}.ui-right-center-mobile{top:30px;-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:translateY(-50%) scale(.8);transform:translateY(-50%) scale(.8);right:6px}.ui-right-center-tablet{top:12px!important;-webkit-transform:scale(.85);transform:scale(.85)}@media (max-height:360px),(max-width:640px){.ui-right-center-mobile{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85);top:16px}}.ui-bottom-right-tablet{bottom:25%!important;-webkit-transform:scale(.8)!important;transform:scale(.8)!important;-webkit-transform-origin:right!important;transform-origin:right!important}.ui-bottom-center-right-tablet{left:72%!important;-webkit-transform:scale(.65)!important;transform:scale(.65)!important}#ui-emote-button{background:rgba(0,0,0,.4);background-image:url(../img/gui/emote.svg);background-position:50%;background-repeat:no-repeat;background-size:28px;border-radius:21px;display:none;height:42px;position:absolute;right:108px;top:0;width:42px}@media screen and (max-width:850px){#ui-emote-button{background-size:20px;border-radius:14px;height:28px;right:0;top:50px;width:28px}}.ui-top-left-tablet{left:120px!important}.ui-spectate-options-wrapper-tablet{bottom:12px!important;top:auto!important}.ui-killfeed-wrapper-tablet{top:60px!important}@media (max-width:850px) and (max-height:320px){.ui-slider-container{margin-bottom:0}}@media (max-width:850px) and (max-height:320px){.ui-slider-container p{width:75px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container .slider{bottom:3px;width:85px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container .slider::-webkit-slider-thumb{width:20px;height:20px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container .slider::-moz-range-thumb{width:20px;height:20px}}.ui-hidden{display:none}.btn-game-menu{text-align:center;line-height:38px;display:block;width:100%;height:40px;border:0;border-radius:5px;box-sizing:border-box;position:relative;margin:auto;margin-top:5px;margin-bottom:5px;color:#fff;font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,.25);background-color:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;background-repeat:no-repeat;cursor:pointer}#btn-game-fullscreen{background-size:34px;background-position:4px 2px;background-image:url(../img/gui/minimize.svg)}#btn-game-sound{background-size:44px;background-position:2px -3px}#btn-game-quit{margin-top:40px;background-image:url(../img/gui/quit.svg)}#btn-game-quit,#btn-game-resume{background-size:44px;background-position:-2px -3px}#btn-game-resume{margin-top:30px;background-image:url(../img/gui/resume.svg)}#ui-top-center{position:absolute;color:#fff;top:80px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-top-center .top-center-text{text-align:center;width:100vw;padding:8px}#ui-waiting-text{display:none;color:#fff;text-shadow:2px 2px 0 #000}#ui-waiting-text,#ui-waiting-text span{font-size:32px;font-weight:700}.top-center-text .spectate-text{display:inline-block;text-shadow:2px 2px 0 #000;font-size:24px;font-weight:700;overflow:hidden;height:32px}@media (max-width:1024px){.top-center-text .spectate-text{font-size:18px}}.top-center-text .spectate-desc{color:#fff;margin-right:8px}.ui-spectate-mode{display:none}#ui-spectate-text{position:relative}#spectate-player{max-width:250px;white-space:nowrap;text-overflow:ellipsis;color:cyan}#ui-top-center-scopes-wrapper{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:100%}#ui-top-center-scopes{margin-top:12px;text-align:center}@media (max-height:768px),(max-width:1200px){#ui-top-center-scopes{-webkit-transform:scale(.85);transform:scale(.85)}}.ui-zoom{background:rgba(0,0,0,.3);border-radius:36px;width:64px;height:64px;opacity:.6;display:inline-block}.ui-zoom-hover:hover{opacity:1}.ui-zoom-active{vertical-align:baseline;opacity:1;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-zoom .ui-zoom-image{width:64px;height:64px;opacity:.4;padding:2px}.ui-zoom .ui-zoom-text{margin-top:14px;width:100%}.ui-zoom .ui-zoom-level{font-size:32px;text-align:center;width:100%}.ui-zoom .ui-zoom-append{font-size:24px}.ui-zoom-inactive{display:none;margin-left:-8px;margin-right:-8px;-webkit-transition:all .1s ease-in;-webkit-transform:scale(.5);-ms-transition:all .1s ease-in;-ms-transform:scale(.5);-moz-transition:all .1s ease-in;-moz-transform:scale(.5);transition:all .1s ease-in;transform:scale(.5)}.ui-zoom-inactive:hover{cursor:pointer!important;opacity:1}.ui-emote-wheel{z-index:3;display:none;position:fixed}.ui-emote-parent{opacity:.75}.ui-emote-hl{z-index:2;display:none}.ui-emote{position:fixed;width:256px;height:256px;background-size:256px;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-bg-circle{opacity:.5;background-image:url(../img/gui/ping-part-circle.svg)}.ui-emote-bg-quarter{opacity:.5;background-image:url(../img/gui/ping-part-quarter.svg)}.ui-emote-bg-eighth{opacity:.5;background-image:url(../img/gui/ping-part-eighth.svg)}.ui-emote-middle .ui-emote-image{width:24px!important;height:24px!important;background-size:24px!important;background-image:url(../img/gui/close.svg)}.ui-emote-top .ui-emote-image{margin-top:-78px;background-image:url(../img/gui/ping-team-danger.svg)}.ui-emote-right .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(90deg);transform:translate(-50%,-50%) rotate(90deg)}.ui-emote-right .ui-emote-image{margin-left:78px;background-image:url(../img/gui/ping-team-coming.svg)}.ui-emote-bottom .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(180deg);transform:translate(-50%,-50%) rotate(180deg)}.ui-emote-bottom .ui-emote-image{margin-top:78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(270deg);transform:translate(-50%,-50%) rotate(270deg)}.ui-emote-left .ui-emote-image{margin-left:-78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-top-left .ui-emote-image{margin-left:-80px;margin-top:-30px;background-image:url(../img/loot/loot-ammo-box.svg)}.ui-emote-bottom-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(-45deg);transform:translate(-50%,-50%) rotate(-45deg)}.ui-emote-bottom-left .ui-emote-image{margin-left:-80px;margin-top:30px;background-image:url(../img/loot/loot-medical-healthkit.svg)}.ui-emote-circle .ui-emote-hl{background-image:url(../img/gui/ping-part-circle-highlight.svg)}.ui-emote-quarter .ui-emote-hl{background-image:url(../img/gui/ping-part-quarter-highlight.svg)}.ui-emote-eighth .ui-emote-hl{background-image:url(../img/gui/ping-part-eighth-highlight.svg)}.ui-emote-image{z-index:1;position:fixed;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-image-large{width:64px;height:64px;background-size:64px}.ui-emote-image-small{width:35px;height:35px;background-size:35px}.ui-team-indicator{z-index:2;display:none;position:fixed;top:0;left:0;border-radius:32px;width:64px;height:64px;background-size:64px;background-repeat:no-repeat;background-image:url(../img/gui/indicator.svg)}.ui-team-indicator,.ui-team-indicator-pos{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-team-indicator-pos{opacity:.75;position:relative;border-radius:24px;width:32px;height:32px;top:23px;left:32px}.ui-team-indicator-image{width:32px;height:32px;background-size:32px;background-repeat:no-repeat;background-image:url(../img/gui/ping-team-danger.svg)}.ui-indicator-ping-border{z-index:0;display:none;position:fixed;top:0;left:0;width:160px;height:160px;position:relative;background-size:160px;background-repeat:no-repeat;background-image:url(../img/gui/ping-border.svg);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}#ui-top-left{position:absolute;color:#fff;font-size:16px;top:12px;left:12px;display:block}@media (max-height:768px),(max-width:1200px){#ui-top-left{-webkit-transform-origin:top left;transform-origin:top left;-webkit-transform:scale(.85);transform:scale(.85)}}.ui-bg-standard{background:rgba(0,0,0,.24);border-radius:5px}.ui-team-member{display:none;position:relative;width:200px;height:32px;padding:4px;margin-bottom:8px}.ui-team-member-name{font-weight:700;text-shadow:1px 1px 0 #000;font-size:16px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-team-member-color{position:absolute;top:5px;right:5px;border-radius:7px;width:14px;height:14px}.ui-background-yellow{background-color:#ff0}.ui-background-blue{background-color:blue}.ui-background-red{background-color:red}.ui-background-purple{background-color:purple}.ui-background-cyan{background-color:cyan}.ui-team-member-status{display:none;position:absolute;top:4px;right:-38px;width:32px;height:32px;background-size:32px;background-repeat:no-repeat}.ui-team-member-status-downed{border-radius:16px;display:block!important;background-image:url(../img/gui/down.svg)!important}.ui-team-member-status-dead{display:block!important;background-image:url(../img/gui/skull-team.svg)!important;opacity:.5!important}.ui-team-member-status-disconnected{display:block!important;background-image:url(../img/gui/close.svg)!important;opacity:.5!important}.ui-team-member-health{margin-top:4px}.ui-team-member-health .ui-bar-inner{background-color:#fff;z-index:1;position:absolute;border-radius:4px;width:200px;height:10px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}.ui-team-member-health .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}.ui-team-member-health .ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}#ui-spectate-options-wrapper{color:#fff;display:block;left:12px;position:absolute;top:12px}@media (max-height:768px),(max-width:1200px){#ui-spectate-options-wrapper{-webkit-transform:scale(.85);transform:scale(.85);-webkit-transform-origin:top left;transform-origin:top left}}#ui-spectate-options{position:relative;pointer-events:all;width:100%}#ui-spectate-buttons{display:inline-block;padding:8px 8px 0;text-align:center;width:192px}#ui-spectate-options a{position:relative;color:#fff;font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;cursor:pointer}#btn-spectate-prev-player{margin-bottom:24px}#ui-spectate-stats{vertical-align:top;display:none}#ui-spectate-stats-header{text-align:center;font-size:24px;font-weight:700;padding:8px}#ui-spectate-stats-table{width:100%;background-color:transparent;margin:auto;margin-right:0;border-collapse:collapse}#ui-spectate-stats tbody,#ui-spectate-stats td,#ui-spectate-stats th{padding:0 8px 8px 16px;font-size:18px}.ui-spectate-stats-category{width:130px;color:hsla(0,0%,100%,.75)}.ui-spectate-stats-value{width:75px;color:#fff}#ui-leaderboard{position:absolute;color:#fff;font-size:16px;top:12px;right:12px;display:flex;font-weight:700;text-align:center;width:85px;display:inline-block}@media (max-height:768px),(max-width:1200px){#ui-leaderboard{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85)}}#ui-leaderboard-alive{background:rgba(0,0,0,.4);border-radius:5px;margin-bottom:8px;padding:8px;height:64px;width:72px}.ui-players-alive{position:relative;font-size:54px}.ui-players-alive-pulse{-webkit-animation-name:pulseAlive;animation-name:pulseAlive;-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}@keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}.ui-leaderboard-header{font-size:24px;margin-bottom:8px}#ui-killfeed-wrapper{position:absolute;color:#fff;font-size:16px;top:12px;right:12px;display:flex}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-killfeed-wrapper{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85)}}#ui-killfeed{display:inline-block;margin-left:24px;height:100px}#ui-killfeed-contents{width:800px}#ui-killfeed-contents .killfeed-div{position:absolute;right:100px;background-color:rgba(0,0,0,.4);padding:4px 8px;border-radius:2px;height:22px;line-height:24px}.killfeed-div div{float:left;font-size:16px;font-weight:700;color:#efeeee}#ui-killfeed .killfeed-text{max-width:550px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#ui-right-center:hover{opacity:1}.ui-ammo .ui-loot-image,.ui-ammo .ui-loot-overlay{position:absolute;height:22px;width:22px;right:5px;margin-top:5px;top:0;bottom:0}#ui-medical-interactive{margin-bottom:32px}.ui-medical .ui-loot-image{position:absolute;height:30px;width:30px;background-size:30px;background-repeat:no-repeat;right:5px;margin-top:1px;top:0;bottom:0}.ui-medical:hover{cursor:pointer!important}.ui-loot{background:rgba(0,0,0,.4);border-radius:5px;width:85px;height:32px;margin-left:auto;margin-bottom:5px}.ui-loot:hover{opacity:1!important}.ui-outline-hover{border:2px solid rgba(0,255,0,0)}.ui-outline-hover:hover{-webkit-transition:border .1s ease-out;-moz-transition:border .1s ease-out;-o-transition:border .1s ease-out;border:2px solid #0f0}.ui-scale-hover{transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);-moz-transform:scale(1)}.ui-scale-hover,.ui-scale-hover:hover{-webkit-transition:all .1s ease-in;-ms-transition:all .1s ease-in;-moz-transition:all .1s ease-in;transition:all .1s ease-in}.ui-scale-hover:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);-moz-transform:scale(1.1);transform:scale(1.1)}.ui-loot .ui-loot-count{position:absolute;font-size:24px;font-weight:700;left:10px;top:2px;text-align:center}@media (max-height:768px),(max-width:1200px){.ui-right-center-desktop{top:42%;-webkit-transform-origin:right;transform-origin:right;-webkit-transform:translateY(-50%) scale(.8);transform:translateY(-50%) scale(.8)}#ui-medical-interactive{margin-bottom:8px}}#ui-upper-center{position:absolute;display:flex;color:#fff;top:180px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-announcement{display:none;color:#ff0;text-shadow:2px 2px 0 #000;font-size:32px;font-weight:700;text-align:center;width:100vw}#ui-lower-center{position:absolute;color:#fff;bottom:40%;left:50%}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-lower-center{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:scale(.85);transform:scale(.85);bottom:33%}}#ui-interaction{display:flex}#ui-interaction-press{background:rgba(0,0,0,.4);border-radius:5px;margin-left:-24px;width:48px;height:48px;font-size:42px;font-weight:700;text-align:center;background-size:80%;background-position:50%;background-repeat:no-repeat}#ui-interaction-outer{background:rgba(0,0,0,.4);border-radius:5px;margin-left:10px;padding:0 15px;height:48px}#ui-interaction-outer #ui-interaction-description{margin-top:10px;font-size:24px;text-align:center}#ui-map-container{position:absolute;bottom:52px}#ui-map-info{position:absolute;color:#fff;width:100px;height:36px;bottom:218px;left:82px;background:rgba(0,0,0,.4);border-radius:5px}#ui-gas-icon{padding:6px;display:inline-block;height:24px;width:24px;margin-left:2px;background-size:24px;background-repeat:no-repeat;background-position:6px 6px}.gas-icon{background-image:url(../img/gui/gas.svg)}.danger-icon{background-image:url(../img/gui/danger.svg)}.icon-pulse{-webkit-animation:pulse 2s linear infinite;animation:pulse 2s linear infinite}#ui-gas-timer{position:relative;display:inline-block;font-size:24px;text-align:center;bottom:10px;left:2px}#ui-spec-counter{position:absolute;color:#fff;width:68px;height:28px;bottom:218px;left:6px;background:rgba(0,0,0,.4);border-radius:5px}#ui-spec-counter-icon{padding:6px;display:inline-block;height:24px;width:18px;margin-left:2px;background-size:20px;background-repeat:no-repeat;background-position:6px 4px;background-image:url(../img/gui/eye.svg)}#ui-spec-counter-number{position:relative;display:inline-block;font-size:20px;width:24px;text-align:center;bottom:15px;left:0}#ui-settings-container-desktop{position:relative;left:16px;bottom:12px}#ui-settings-container-desktop div{cursor:pointer}.ui-settings-button{position:absolute;color:#fff;border-radius:5px;height:48px;width:48px;pointer-events:all;opacity:.5;background:rgba(0,0,0,.4)}#ui-map-minimize{left:185px}.ui-settings-button img{position:absolute;left:6px;top:6px;height:36px;width:36px;background-size:36px;background-repeat:no-repeat;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-settings-button .map-img-after{display:none}.ui-settings-button:hover{opacity:1;-webkit-transition:all .1s ease-in;-webkit-transform:scale(1.1);-ms-transition:all .1s ease-in;-ms-transform:scale(1.1);-moz-transition:all .1s ease-in;-moz-transform:scale(1.1);transition:all .1s ease-in;transform:scale(1.1)}#ui-bottom-center-0{position:absolute;color:#fff;bottom:12px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-0{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}#ui-equipped-ammo-wrapper{position:absolute;color:#fff;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);bottom:62px}#ui-equipped-ammo{margin-bottom:12px;text-align:center;opacity:1}#ui-bullet-counter{display:inline-block;width:175px;height:56px;text-align:center;text-shadow:2px 2px #000}#ui-bullet-counter #ui-current-clip{background:rgba(0,0,0,.4);border-radius:5px;font-size:44px;font-weight:700;width:100px;height:50px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;position:relative;text-align:center}#ui-bullet-counter #ui-ammo-divider{font-size:22px;left:53%;position:absolute;text-align:center;top:20px}#ui-bullet-counter #ui-remaining-ammo{background:rgba(0,0,0,.4);border-radius:5px;font-size:24px;font-weight:700;line-height:32px;width:65px;height:32px;left:82%;position:absolute;text-align:center;top:18px}#ui-boost-counter{display:inline-flex;width:412px}#ui-boost-counter .ui-boost-base{background:rgba(0,0,0,.4);height:10px;margin-bottom:8px}#ui-boost-counter-0{border-top-left-radius:3px;border-bottom-left-radius:3px;width:100px;margin-right:3px}#ui-boost-counter-0 .ui-bar-inner{background:#ff901a}#ui-boost-counter-1{width:100px;margin-left:3px;margin-right:3px}#ui-boost-counter-1 .ui-bar-inner{background:#ff751a}#ui-boost-counter-2{width:150px;margin-left:3px;margin-right:3px}#ui-boost-counter-2 .ui-bar-inner{background:#ff6616}#ui-boost-counter-3{border-top-right-radius:3px;border-bottom-right-radius:3px;width:50px;margin-left:3px}#ui-boost-counter-3 .ui-bar-inner{background:#ff5600}.ui-boost-base .ui-bar-inner{border-radius:inherit;width:0;height:10px}#ui-health-counter{background:rgba(0,0,0,.4);border-radius:5px;width:400px;height:32px;padding:6px}#ui-health-counter .ui-bar-inner{z-index:1;position:absolute;border-radius:5px;width:100%;height:32px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}#ui-health-container{width:400px;position:relative}#ui-health-counter .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}#ui-health-counter #ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}.health-bar-pulse{-webkit-animation:pulsewhite 1s linear infinite;animation:pulsewhite 1s linear infinite}@-webkit-keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@-webkit-keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}@keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}#ui-bottom-center-1{z-index:3;position:absolute;color:#fff;bottom:220px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-1{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85);bottom:138px}}#ui-kills{display:none;text-align:center;background:rgba(0,0,0,.4);color:#fff;border-radius:5px;padding:8px}#ui-kill-text{font-size:18px}#ui-kill-count{font-weight:700;color:#ff4100;font-size:32px;text-shadow:1px 1px 1px rgba(0,0,0,.3)}#ui-bottom-center-2{position:absolute;color:#fff;bottom:160px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-pickup-message{color:#fff;opacity:0;text-shadow:2px 2px 0 #000;font-size:32px;font-weight:700;text-align:center;width:100vw}#ui-bottom-center-right{position:absolute;color:#fff;bottom:12px;left:75%}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-right{-webkit-transform:scale(.8);transform:scale(.8)}}.ui-armor-counter{position:absolute;bottom:0;display:block;width:48px;height:60px;background:rgba(0,0,0,.4);border-radius:5px;margin-left:4px}#ui-armor-helmet{right:4px}#ui-armor-backpack{left:60px;border:2px solid transparent}.ui-armor-level{position:relative;font-size:16px;font-weight:700;bottom:24px;text-align:center;text-shadow:1px 1px #000}.ui-armor-counter-inner{z-index:1;position:absolute;background:rgba(0,255,0,.5);border-radius:5px;width:100%;height:0;bottom:0;transition:height .5s;transition-property:height;transition-duration:.5s;transition-timing-function:ease-out;transition-delay:0s}.ui-armor-counter .ui-armor-count{z-index:2;text-shadow:2px 2px #000;position:relative;font-size:18px;font-weight:700;margin-top:-28px;text-align:center}.ui-armor-counter .ui-armor-image{margin:auto;left:0;right:0;bottom:0;top:0;z-index:0;position:absolute;height:36px;width:36px}#ui-bottom-right{position:absolute;color:#fff;bottom:12px;right:12px}@media (max-height:768px),(max-width:1200px){#ui-bottom-right{-webkit-transform-origin:bottom right;transform-origin:bottom right;-webkit-transform:scale(.7);transform:scale(.7)}}#ui-weapon-container{width:192px}.ui-weapon-info{margin-bottom:5px}.ui-weapon-info,.ui-weapon-switch{border-radius:5px;border:2px solid transparent}.ui-weapon-switch{position:absolute;right:0;opacity:.6;width:160px;height:60px;margin-left:auto;pointer-events:all;cursor:pointer!important}#ui-weapon-id-1{bottom:210px}#ui-weapon-id-2{bottom:140px}#ui-weapon-id-3{bottom:70px}#ui-weapon-id-4{bottom:0}.ui-weapon-name{font-size:18px;margin-top:38px}.ui-weapon-name,.ui-weapon-number{position:absolute;font-weight:700;right:8px;text-align:center}.ui-weapon-number{font-size:24px}.ui-weapon-exp{display:none;position:absolute;height:32px;width:32px;font-size:18px;font-weight:700;line-height:34px;right:78px;margin-top:26px;text-align:center}.ui-weapon-image{display:none;position:relative;height:60px;width:60px;left:4px;background-size:60px;background-repeat:no-repeat}#ui-weapon-id-4 .ui-weapon-image{height:52px;width:52px;left:4px;top:4px;background-size:52px}#ui-stats{display:none}#ui-stats-bg{display:none;opacity:0;position:absolute;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.75);pointer-events:none;z-index:2}#ui-stats-contents{position:absolute;width:100%;top:10%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;color:#fff;border-radius:5px;z-index:3}@media (max-height:860px){#ui-stats-contents{top:3%}}@media (max-width:1024px){#ui-stats-contents{-webkit-transform:translateX(-50%) scale(.8);transform:translateX(-50%) scale(.8);-webkit-transform-origin:top;transform-origin:top}}.ui-stats-header-title{font-weight:700;font-size:48px;margin:20px;color:gold}.ui-stats-header-reason{font-size:24px}.ui-stats-header-overview{display:inline;margin:10px}.ui-stats-header-overview div{display:inline;padding-bottom:12px;border-bottom:2px solid hsla(0,0%,100%,.25)}.ui-stats-header-overview div:not(:first-child){margin-left:100px}span.ui-stats-header-stat{font-size:32px}span.ui-stats-header-value{margin-left:24px;font-size:48px;font-weight:700}#ui-stats-info-box{position:relative;left:50%;margin:auto;margin-top:50px;height:190px;display:flex}@media (max-height:768px),(max-width:1200px){#ui-stats-info-box{margin-top:25px}}@media (max-width:1024px){#ui-stats-info-box{-webkit-transform-origin:left;transform-origin:left;-webkit-transform:scale(.85);transform:scale(.85)}}.ui-stats-info-player{position:relative;width:250px;background-color:rgba(0,0,0,.75);border-radius:4px;border:2px solid #000;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.ui-stats-info-status:after{content:"";display:block;position:absolute;top:15%;left:25%;background-image:url(../img/gui/skull.svg);background-repeat:no-repeat;background-size:128px;width:100%;height:100%;opacity:.1;z-index:-1}.ui-stats-info-player-name{color:gold;font-size:24px;font-weight:700;font-style:italic;margin:8px auto;max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-stats-info{display:flex;height:36px;margin:auto}.ui-stats-info>div{padding:8px;font-size:18px;line-height:12px;text-align:left;font-weight:700}.ui-stats-info>div:first-child{width:55%;margin-right:4px;text-align:right;font-weight:400}.ui-stats-reason{display:flex;height:72px;margin:auto}.ui-stats-reason div{padding:8px;margin:auto;width:100%;text-align:center;font-size:16px}.ui-stats-reason .ui-stats-reason-dead{color:red}.ui-stats-reason .ui-stats-reason-alive{color:#7cfc00}#ui-stats-options{position:absolute;left:50%;margin-top:20px;min-height:60px;z-index:1}.ui-stats-restart{width:200px;margin:auto;margin-bottom:20px}#ui-stats-spectate,.ui-stats-restart{position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-stats-spectate{left:102px;width:125px;background:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79}.ui-stats-ad-container{display:none;margin-top:80px}#ui-spec-ad-container{z-index:1;position:absolute;top:0;left:50%}.tooltip{position:relative}.tooltip .tooltip-text{visibility:hidden;width:240px;background-color:#000;color:#fff;text-align:center;padding:5px 0;border-radius:6px;position:absolute;z-index:1;right:110%;opacity:.75;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.tooltip .tooltip-text:after{content:" ";position:absolute;top:50%;left:100%;margin-top:-5px;border-width:5px;border-style:solid;border-color:transparent transparent transparent #000}.tooltip-title{font-size:18px;font-weight:700;padding:4px;color:#ff0}.tooltip-description{font-size:16px;padding:4px}.tooltip-description span{font-size:16px}.tooltip:hover .tooltip-text{visibility:visible}#ui-editor-top-center{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-editor-top-right{position:absolute;color:#fff;font-size:16px;top:12px;right:12px}.ui-editor-header{text-align:center;font-weight:700;font-size:16px;padding:8px}.ui-editor-info{background:rgba(0,0,0,.4);border-radius:5px;font-size:36px;margin-bottom:8px;padding:8px}.ui-editor-list{margin:0;padding:0;list-style:none}.ui-editor-list li div{font-family:monospace;font-size:14px}#ui-profiler-top-left{position:absolute;color:#fff;font-size:16px;top:12px;left:12px;text-align:center;display:flex}.ui-profiler-list{background:rgba(0,0,0,.4);border-radius:5px;margin-right:16px;padding:8px}.ui-profiler-list-header{font-size:16px;font-weight:700;margin-bottom:8px}.ui-profiler-list ul{list-style:none;text-align:left;padding:0;margin:0}.ui-profiler-list li{display:flex}.kv{font-family:monospace;font-size:14px;font-weight:400}.kv:last-child{width:100%;text-align:right}#ui-settings-container-mobile{display:none}@media screen and (max-width:850px){*{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.ui-touch-down{display:none;position:fixed;background-color:rgba(0,0,0,.5);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-touch-down-landscape{width:112px;height:112px;border-radius:56px}.ui-touch-down-portrait{width:96px;height:96px;border-radius:48px}.ui-touch-pos{display:none;position:fixed;background-color:rgba(0,0,0,.5);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-touch-pos-landscape{width:64px;height:64px;border-radius:32px}.ui-touch-pos-portrait{width:48px;height:48px;border-radius:24px}.btn-game-menu{position:relative;margin:auto;margin-top:2px;margin-bottom:4px;color:#fff;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,.25);background-color:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;background-repeat:no-repeat;cursor:pointer;text-align:center;line-height:30px;display:block;width:100%;height:30px;border:0;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-sizing:border-box}#btn-game-fullscreen{background-size:22px;background-position:4px 2px;background-image:url(../img/gui/minimize.svg)}#btn-game-sound{background-size:30px;background-position:3px 0;margin-bottom:8px}#btn-game-quit{background-position:-2px -3px;background-image:url(../img/gui/quit.svg)}#btn-game-quit,#btn-game-resume{margin-top:20px;background-size:34px}#btn-game-resume{background-position:-1px -1px;background-image:url(../img/gui/resume.svg)}#ui-top-center{position:absolute;color:#fff;top:15%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-top-center .top-center-text{text-align:center;width:100vw;padding:4px}#ui-waiting-text{display:none;color:#fff;text-shadow:1px 1px 0 #000}#ui-waiting-text,#ui-waiting-text span{font-size:16px;font-weight:700}.top-center-text .spectate-text{display:inline-block;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;overflow:hidden;height:32px}.top-center-text .spectate-desc{color:#fff;margin-right:8px}.ui-spectate-mode{display:none}#ui-spectate-text{position:relative}#spectate-player{max-width:250px;white-space:nowrap;text-overflow:ellipsis;color:cyan}#ui-top-center-scopes{margin-top:6px;text-align:center;color:#fff}.ui-zoom{display:inline-block;margin-left:-12px;margin-right:-12px;-webkit-transform:scale(.6);transform:scale(.6);background:rgba(0,0,0,.3);border-radius:32px;width:42px;height:42px;opacity:.6;pointer-events:all}.ui-zoom-active{vertical-align:baseline;opacity:1;margin-left:0;margin-right:0;-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-zoom .ui-zoom-image{width:48px;height:48px;opacity:.4;padding:2px}.ui-zoom .ui-zoom-text{margin-top:14px;width:100%}.ui-zoom .ui-zoom-level{font-size:24px;line-height:16px;text-align:center;width:100%}.ui-zoom .ui-zoom-append{font-size:24px}.ui-zoom-inactive{display:none;margin-left:-8px;margin-right:-8px;transition:all .1s ease-in;-webkit-transform:scale(.6);transform:scale(.6)}.ui-emote-wheel{z-index:3;display:none;position:fixed}.ui-emote-parent{opacity:1}.ui-emote-hl{z-index:2;display:none}.ui-emote{position:fixed;width:256px;height:256px;background-size:256px;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-bg-circle{opacity:.65;background-image:url(../img/gui/ping-part-circle.svg)}.ui-emote-bg-quarter{opacity:.65;background-image:url(../img/gui/ping-part-quarter.svg)}.ui-emote-bg-eighth{opacity:.65;background-image:url(../img/gui/ping-part-eighth.svg)}.ui-emote-middle .ui-emote-image{width:24px!important;height:24px!important;background-size:24px!important;background-image:none!important}.ui-emote-top .ui-emote-image{margin-top:-78px;background-image:url(../img/gui/ping-team-danger.svg)}.ui-emote-right .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(90deg);transform:translate(-50%,-50%) rotate(90deg)}.ui-emote-right .ui-emote-image{margin-left:78px;background-image:url(../img/gui/ping-team-coming.svg)}.ui-emote-bottom .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(180deg);transform:translate(-50%,-50%) rotate(180deg)}.ui-emote-bottom .ui-emote-image{margin-top:78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(270deg);transform:translate(-50%,-50%) rotate(270deg)}.ui-emote-left .ui-emote-image{margin-left:-78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-top-left .ui-emote-image{margin-left:-80px;margin-top:-30px;background-image:url(../img/loot/loot-ammo-box.svg)}.ui-emote-bottom-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(-45deg);transform:translate(-50%,-50%) rotate(-45deg)}.ui-emote-bottom-left .ui-emote-image{margin-left:-80px;margin-top:30px;background-image:url(../img/loot/loot-medical-healthkit.svg)}.ui-emote-circle .ui-emote-hl{background-image:url(../img/gui/ping-part-circle-highlight.svg)}.ui-emote-quarter .ui-emote-hl{background-image:url(../img/gui/ping-part-quarter-highlight.svg)}.ui-emote-eighth .ui-emote-hl{background-image:url(../img/gui/ping-part-eighth-highlight.svg)}.ui-emote-image{z-index:1;position:fixed;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-image-large{width:80px;height:80px;background-size:64px;background-position:50%}.ui-emote-image-small{width:35px;height:35px;background-size:35px}.ui-team-indicator{z-index:2;display:none;position:fixed;top:0;left:0;border-radius:32px;width:64px;height:64px;background-size:64px;background-repeat:no-repeat;background-image:url(../img/gui/indicator.svg)}.ui-team-indicator,.ui-team-indicator-pos{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-team-indicator-pos{opacity:.75;position:relative;border-radius:24px;width:32px;height:32px;top:23px;left:32px}.ui-team-indicator-image{width:32px;height:32px;background-size:32px;background-repeat:no-repeat;background-image:url(../img/gui/ping-team-danger.svg)}.ui-indicator-ping-border{z-index:0;display:none;position:fixed;top:0;left:0;width:160px;height:160px;position:relative;background-size:160px;background-repeat:no-repeat;background-image:url(../img/gui/ping-border.svg);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}#ui-top-left{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;display:block}.ui-bg-standard{background:rgba(0,0,0,.24);border-radius:5px}#ui-team{position:fixed;left:128px}.ui-team-member{display:none;position:relative;width:110px;height:20px;padding:4px;margin-bottom:4px}.ui-team-member-name{font-weight:700;text-shadow:1px 1px 0 #000;font-size:10px;max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-team-member-color{position:absolute;top:4px;right:4px;border-radius:9px;width:9px;height:9px}.ui-background-yellow{background-color:#ff0}.ui-background-blue{background-color:blue}.ui-background-red{background-color:red}.ui-background-purple{background-color:purple}.ui-background-cyan{background-color:cyan}.ui-team-member-status{display:none;position:absolute;top:2px;right:-24px;width:20px;height:20px;background-size:20px;background-repeat:no-repeat}.ui-team-member-status-downed{border-radius:16px;display:block!important;background-image:url(../img/gui/down.svg)!important}.ui-team-member-status-dead{display:block!important;background-image:url(../img/gui/skull-team.svg)!important;opacity:.5!important}.ui-team-member-status-disconnected{display:block!important;background-image:url(../img/gui/close.svg)!important;opacity:.5!important}.ui-team-member-health{margin-top:2px}.ui-team-member-health .ui-bar-inner{background-color:#fff;z-index:1;position:absolute;border-radius:4px;width:110px;height:5px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}.ui-team-member-health .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}.ui-team-member-health .ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}#ui-spectate-options-wrapper{bottom:6px;position:fixed;left:6px;top:auto!important}#ui-spectate-options{bottom:0;z-index:1;position:absolute;pointer-events:all;width:100%}#ui-spectate-buttons{display:inline-block;width:124px;padding:8px 8px 4px;text-align:center}#ui-spectate-options a{position:relative;color:#fff;height:24px;margin-bottom:2px;line-height:22px;font-size:12px;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#50afab;border-bottom:2px solid #387c79;box-shadow:none;cursor:pointer}#btn-spectate-prev-player,#btn-spectate-view-stats{margin-bottom:12px!important}#ui-spectate-stats{position:absolute;top:0;left:146px;width:160px;display:none}#ui-spectate-stats-header{text-align:center;font-size:16px;font-weight:700;padding:6px;color:#fff}#ui-spectate-stats-table{width:100%;background-color:transparent;margin:auto;margin-right:0;margin-bottom:4px;border-collapse:collapse}#ui-spectate-stats tbody,#ui-spectate-stats td,#ui-spectate-stats th{padding:0 2px 2px 14px;font-size:10px}.ui-spectate-stats-category{width:75px;color:hsla(0,0%,100%,.75)}.ui-spectate-stats-value{width:75px;color:#fff}#ui-top-right{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;display:flex}#ui-leaderboard{font-weight:700;text-align:center;width:56px;display:inline-block}#ui-leaderboard-alive{background:rgba(0,0,0,.4);border-radius:5px;margin-bottom:-16px;padding:8px;height:32px;width:40px}.ui-players-alive-pulse{-webkit-animation-name:pulseAlive;animation-name:pulseAlive;-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}@keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}.ui-leaderboard-header{font-size:12px}#ui-killfeed-wrapper{top:24px;left:6px;right:auto}#ui-killfeed{position:absolute;margin:initial;top:135px}#ui-killfeed-contents{width:800px}#ui-killfeed-contents .killfeed-div{position:absolute;background-color:rgba(0,0,0,.4);padding:3px;border-radius:2px;height:8px;line-height:8px;right:auto}.killfeed-div div,.killfeed-div span{float:left;font-size:8px;line-height:8px;font-weight:700;color:#efeeee}.killfeed-red div,.killfeed-red span{color:#d1777c!important}.killfeed-blue div,.killfeed-blue span{color:#00bfff!important}#ui-killfeed-contents .killfeed-red{color:#d1777c}#ui-killfeed-contents .killfeed-blue{color:#00bfff}#ui-killfeed .killfeed-name{max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-ammo .ui-loot-image,.ui-ammo .ui-loot-overlay{position:absolute;height:11px;width:11px;right:2px;margin-top:2px}#ui-ammo-interactive{position:absolute;right:0;top:25px}#ui-ammo-interactive .ui-loot{display:inline-block;background:rgba(0,0,0,.4);border-radius:5px;width:38px;height:14px;margin-left:auto;margin-bottom:2px}.ui-ammo .ui-loot-count{position:absolute;font-size:12px;font-weight:700;width:16px;left:3px;margin-top:-1px;text-align:center}#ui-medical-interactive .ui-loot{display:inline-block;background:rgba(0,0,0,.4);border-radius:5px;width:44px;height:16px;margin-left:auto;margin-bottom:2px}.ui-medical .ui-loot-image{position:absolute;height:16px;width:16px;background-size:16px;background-repeat:no-repeat;right:2px;margin-top:0}.ui-medical .ui-loot-count{position:absolute;font-size:16px;font-weight:700;left:4px;width:16px;margin-top:-3px;text-align:center}.ui-loot{background:rgba(0,0,0,.4);border-radius:5px;width:85px;height:32px;margin-left:auto;margin-bottom:5px}.ui-loot:hover{opacity:1!important}.ui-outline-hover,.ui-outline-hover:hover{border:2px solid rgba(0,255,0,0)}.ui-outline-hover:hover{-webkit-transition:border .1s ease-out;-moz-transition:border .1s ease-out;-o-transition:border .1s ease-out}.ui-scale-hover{transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);-moz-transform:scale(1)}.ui-scale-hover,.ui-scale-hover:hover{-webkit-transition:all .1s ease-in;-ms-transition:all .1s ease-in;-moz-transition:all .1s ease-in;transition:all .1s ease-in}.ui-scale-hover:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);-moz-transform:scale(1.1);transform:scale(1.1)}#ui-debug-button{display:none;background:rgba(0,0,0,.4);position:absolute;border-radius:13px;height:26px;width:26px;background-size:18px;bottom:4px;right:4px;background-position:50%;background-image:url(../img/gui/mag-glass.svg);background-repeat:no-repeat;pointer-events:auto;z-index:1}#ui-upper-center{position:absolute;display:flex;color:#fff;top:84px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-announcement{display:none;color:#ff0;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;text-align:center;width:100vw}#ui-lower-center{position:absolute;color:#fff;bottom:44%;left:60%}#ui-interaction{display:flex}#ui-interaction-press{background:rgba(0,0,0,.4);border-radius:5px;margin-left:-20px;font-size:34px;width:44px;height:44px;background-size:36px;background-position:50%;background-repeat:no-repeat}#ui-interaction-outer{background:rgba(0,0,0,.4);border-radius:5px;margin-left:6px;padding:0 6px;height:28px}#ui-interaction-outer #ui-interaction-description{margin-top:5px;font-size:16px;text-align:center}#ui-bottom-center-0{bottom:6px}#ui-bottom-center-0,#ui-equipped-ammo-wrapper{position:absolute;color:#fff;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-equipped-ammo-wrapper{bottom:78px}#ui-equipped-ammo{position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;opacity:1}#ui-bullet-counter{display:inline-block;width:175px;height:28px;text-align:center;text-shadow:1px 1px #000}#ui-bullet-counter #ui-current-clip{background:rgba(0,0,0,.4);border-radius:5px;font-size:28px;font-weight:700;line-height:30px;width:60px;height:32px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;position:relative;text-align:center}#ui-bullet-counter #ui-ammo-divider{font-size:22px;left:53%;position:absolute;text-align:center;top:20px}#ui-bullet-counter #ui-remaining-ammo{background:rgba(0,0,0,.4);border-radius:5px;font-size:16px;font-weight:700;line-height:22px;width:44px;height:22px;left:122px;position:absolute;text-align:center;top:10px}#ui-bullet-counter #ui-reload-button{background:rgba(0,0,0,.4);position:absolute;border-radius:11px;height:22px;width:22px;background-size:14px;top:10px;left:170px;background-position:4px 3px;background-image:url(../img/gui/bullets.svg);background-repeat:no-repeat}#ui-boost-counter{display:inline-flex;width:206px}#ui-boost-counter .ui-boost-base{background:rgba(0,0,0,.4);height:6px;margin-bottom:0}#ui-boost-counter-0{border-top-left-radius:3px;border-bottom-left-radius:3px;width:50px;margin-right:3px}#ui-boost-counter-0 .ui-bar-inner{background:#ff901a}#ui-boost-counter-1{width:50px;margin-left:3px;margin-right:3px}#ui-boost-counter-1 .ui-bar-inner{background:#ff751a}#ui-boost-counter-2{width:75px;margin-left:3px;margin-right:3px}#ui-boost-counter-2 .ui-bar-inner{background:#ff6616}#ui-boost-counter-3{border-top-right-radius:3px;border-bottom-right-radius:3px;width:25px;margin-left:3px}#ui-boost-counter-3 .ui-bar-inner{background:#ff5600}.ui-boost-base .ui-bar-inner{border-radius:inherit;width:0;height:6px}#ui-health-counter{background:rgba(0,0,0,.4);border-radius:5px;width:200px;height:18px;padding:4px}#ui-health-counter .ui-bar-inner{z-index:1;position:absolute;border-radius:5px;width:100%;height:18px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}#ui-health-container{width:200px;position:relative}#ui-health-counter .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}#ui-health-counter #ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}.health-bar-pulse{-webkit-animation:pulsewhite 1s linear infinite;animation:pulsewhite 1s linear infinite}@-webkit-keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@-webkit-keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}@keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}#ui-bottom-center-1{z-index:3;position:absolute;color:#fff;bottom:23%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-kills{display:none;text-align:center;background:rgba(0,0,0,.4);color:#fff;border-radius:5px;padding:6px}#ui-kill-text{font-size:10px}#ui-kill-count{font-weight:700;color:#ff4100;font-size:18px;margin-bottom:-3px;text-shadow:1px 1px 1px rgba(0,0,0,.3)}#ui-bottom-center-2{position:absolute;color:#fff;bottom:82px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-pickup-message{color:#fff;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;text-align:center;width:100vw}#ui-bottom-center-right{position:absolute;color:#fff;bottom:6px;left:75%}.ui-armor-counter{position:absolute;bottom:0;display:block;width:20px;height:24px;background:rgba(0,0,0,.4);border-radius:5px;margin-left:2px}#ui-armor-helmet{right:0}#ui-armor-backpack{left:26px}.ui-armor-level{position:relative;font-size:8px;font-weight:700;bottom:12px;text-align:center;text-shadow:1px 1px #000}.ui-armor-counter-inner{z-index:1;position:absolute;background:rgba(0,255,0,.5);border-radius:5px;width:100%;height:0;bottom:0;transition:height .5s;transition-property:height;transition-duration:.5s;transition-timing-function:ease-out;transition-delay:0s}.ui-armor-counter .ui-armor-count{z-index:2;text-shadow:1px 1px #000;position:relative;font-size:18px;font-weight:700;margin-top:-28px;text-align:center}.ui-armor-counter .ui-armor-image{margin:auto;left:0;right:0;bottom:0;top:0;z-index:0;position:absolute;height:18px;width:18px}#ui-bottom-right{bottom:auto;color:#fff;position:absolute;right:6px;top:55%;-webkit-transform-origin:bottom right;transform-origin:bottom right;-webkit-transform:scale(1);transform:scale(1)}#ui-weapon-container{width:84px}.ui-weapon-info{margin-bottom:5px}.ui-weapon-info,.ui-weapon-switch{border-radius:5px;border:2px solid transparent}.ui-weapon-switch{position:absolute;right:0;opacity:.6;width:68px;height:24px;margin-left:auto;pointer-events:all}#ui-weapon-id-1{bottom:90px}#ui-weapon-id-2{bottom:60px}#ui-weapon-id-3{bottom:30px}#ui-weapon-id-4{bottom:0}.ui-weapon-name{position:absolute;font-size:10px;font-weight:700;right:4px;width:48px;margin-top:12px;text-align:right;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.ui-weapon-number{font-size:24px;right:8px}.ui-weapon-exp,.ui-weapon-number{display:none;position:absolute;font-weight:700;text-align:center}.ui-weapon-exp{height:16px;width:16px;font-size:8px;line-height:18px;right:34px;margin-top:10px}.ui-weapon-image{display:none;position:relative;height:28px;width:28px;left:0;bottom:3px;-webkit-transform:rotate(10deg);transform:rotate(10deg)}#ui-weapon-id-4 .ui-weapon-image{height:24px;width:24px;left:0;top:0;background-size:24px}#ui-stats-contents{position:absolute;width:100%;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;color:#fff;border-radius:5px}#ui-stats-header{margin-top:14px}.ui-stats-header-title{font-weight:700;font-size:24px;margin:6px;color:gold}.ui-stats-header-reason{font-size:12px}.ui-stats-header-overview{position:fixed;top:4px;right:12px;margin:5px}.ui-stats-header-overview div{display:block;padding-bottom:6px;border-bottom:2px solid hsla(0,0%,100%,.25)}.ui-stats-header-overview div:not(:first-child){margin:initial}span.ui-stats-header-stat{font-size:22px}span.ui-stats-header-value{margin-left:12px;font-size:28px;font-weight:700}#ui-stats-info-box{position:relative;left:50%;margin:auto;margin-top:0;height:100px;display:flex}.ui-stats-info-player{position:relative;width:125px;background-color:rgba(0,0,0,.75);border-radius:4px;border:2px solid #000;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.ui-stats-info-status:after{background-image:url(../img/gui/skull.svg);background-position:50%;background-repeat:no-repeat;background-size:70px;content:"";display:block;height:100%;left:auto;opacity:.1;position:absolute;top:0;width:100%;z-index:-1}.ui-stats-info-player-name{color:gold;font-size:12px;font-weight:700;font-style:italic;margin:4px auto;max-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-stats-info{display:flex;height:18px;margin:auto}.ui-stats-info>div{padding:4px;font-size:9px;line-height:6px;text-align:left;font-weight:700}.ui-stats-info>div:first-child{width:55%;margin-right:4px;text-align:right;font-weight:400}.ui-stats-reason{display:flex;height:72px;margin:auto}.ui-stats-reason div{padding:8px;margin:auto;width:100%;text-align:center;font-size:16px}.ui-stats-reason .ui-stats-reason-dead{color:red}.ui-stats-reason .ui-stats-reason-alive{color:#7cfc00}#ui-stats-options{position:absolute;left:50%;margin-top:10px;min-height:30px;z-index:1}.ui-stats-restart{width:130px;margin:auto;margin-bottom:20px}#ui-stats-spectate,.ui-stats-restart{position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-stats-spectate{left:68px;width:88px;background:#50afab;border-bottom:2px solid #387c79;box-shadow:none}.ui-stats-ad-container{display:none;margin-top:8px;-webkit-transform:scale(.7);transform:scale(.7)}#ui-spec-ad-container{z-index:1;position:absolute;top:0;left:50%}#ad-block-stats-bottom{-webkit-transform:scale(.6);transform:scale(.6);-webkit-transform-origin:center;transform-origin:center;position:static}.tooltip{position:relative}.tooltip .tooltip-text{visibility:hidden!important;width:240px;background-color:#000;color:#fff;text-align:center;padding:5px 0;border-radius:6px;position:absolute;z-index:1;right:110%;opacity:.75;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.tooltip .tooltip-text:after{content:" ";position:absolute;top:50%;left:100%;margin-top:-5px;border-width:5px;border-style:solid;border-color:transparent transparent transparent #000}.tooltip-title{font-size:18px;font-weight:700;padding:4px;color:#ff0}.tooltip-description{font-size:16px;padding:4px}.tooltip-description span{font-size:16px}#ui-editor-top-center{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-editor-top-right{position:absolute;color:#fff;font-size:16px;top:6px;right:6px}.ui-editor-header{text-align:center;font-weight:700;font-size:16px;padding:8px}.ui-editor-info{background:rgba(0,0,0,.4);border-radius:5px;font-size:36px;margin-bottom:8px;padding:8px}.ui-editor-list{margin:0;padding:0;list-style:none}.ui-editor-list li div{font-family:monospace;font-size:14px}#ui-profiler-top-left{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;text-align:center;display:flex}.ui-profiler-list{background:rgba(0,0,0,.4);border-radius:5px;margin-right:16px;padding:8px}.ui-profiler-list-header{font-size:16px;font-weight:700;margin-bottom:8px}.ui-profiler-list ul{list-style:none;text-align:left;padding:0;margin:0}.ui-profiler-list li{display:flex}.kv{font-family:monospace;font-size:14px;font-weight:400}.kv:last-child{width:100%;text-align:right}#ui-leaderboard-wrapper,#ui-settings-container-desktop{display:none}#ui-settings-container-mobile{display:block}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-top-center{-webkit-transform-origin:top;transform-origin:top;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}@media screen and (max-width:850px) and screen and (max-width:850px){#ui-lower-center{-webkit-transform:scale(1);transform:scale(1)}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-bottom-center-0{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-bottom-right{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.8);transform:scale(.8)}}@media screen and (max-width:850px) and (max-width:850px) and (orientation:landscape){.ui-stats-header-overview .ui-stats-header-left{position:fixed;top:6px;left:12px}.ui-stats-header-overview .ui-stats-header-right{position:fixed;top:6px;right:12px}}@media screen and (max-width:850px) and (max-height:360px) and (max-width:640px){.ui-stats-ad-container{margin-top:0;-webkit-transform:scale(.6);transform:scale(.6)}}@media screen and (max-width:850px) and (max-width:850px) and (max-height:320px){.ui-stats-ad-container{position:fixed;right:10px;top:24px;-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:bottom right;transform-origin:bottom right}}@media screen and (max-width:850px) and (orientation:portrait){#ui-stats-contents{margin-top:32px;margin-bottom:16px}#ui-stats-header-overview{position:static}#ui-stats-info-box{display:inline-block;left:auto;-webkit-transform:scale(.9);transform:scale(.9);-webkit-transform-origin:initial;transform-origin:initial;margin-top:2px;width:100%}.ui-stats-ad-container{width:100%}.ui-stats-info-player{display:inline-block;left:auto!important;margin:8px;-webkit-transform:none;transform:none}.ui-stats-header-overview{display:inline-block;position:static;width:175px}.ui-stats-header-overview div{position:static;margin-bottom:8px}#ui-top-center{top:134px;left:50%}#ui-top-center-scopes-wrapper{display:none;bottom:42px;top:auto}#ui-team{top:40px}.ui-team-member{height:18px;margin-bottom:4px}#ui-upper-center{top:180px}#ui-bottom-center-0{top:-15px;bottom:auto;left:100px;-webkit-transform:scale(.85);transform:scale(.85)}#ui-bottom-center-1{bottom:28%}#ui-bottom-center-2{bottom:218px}#ui-lower-center{bottom:38%;left:38%}#ui-boost-counter{position:relative;top:40px;left:2px}#ui-bottom-right{bottom:20px;right:6px;top:auto}#ui-weapon-id-1{right:240px;bottom:auto}#ui-weapon-id-2{right:160px;bottom:auto}#ui-weapon-id-3{right:80px;bottom:auto}#ui-weapon-id-4{bottom:auto}.ui-weapon-info{display:inline-block}#ui-bottom-center-right{bottom:9px;left:30px}.ui-right-center-mobile{top:6px}#ui-emote-button{top:175px}#ui-debug-button{top:190px}#ui-ammo-interactive{left:8px;margin-top:4px;top:88px}#ui-ammo-interactive .ui-loot,#ui-medical-interactive .ui-loot{display:block}#ui-equipped-ammo{position:static}#ui-equipped-ammo,#ui-equipped-ammo-wrapper{left:auto;-webkit-transform:none;transform:none}#ui-equipped-ammo-wrapper{bottom:auto;color:#fff;position:absolute;right:6px;top:44%}#ui-bullet-counter{width:auto}#ui-bullet-counter #ui-current-clip{left:50%}#ui-bullet-counter #ui-remaining-ammo{left:auto;right:0;top:36px}#ui-bullet-counter #ui-reload-button{left:auto;right:0;top:62px}#big-map-collision{left:auto;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}#big-map-close{bottom:auto;top:12px}#ui-spectate-options-wrapper{bottom:42px;-webkit-transform:scale(.7);transform:scale(.7)}#ui-spectate-options{position:absolute;bottom:12px}#ui-spectate-stats{bottom:0;top:auto}}@media screen and (max-width:850px) and (orientation:portrait) and (min-height:668px){#ui-stats-contents{margin-top:32px}#ui-stats-info-box,.ui-stats-ad-container{-webkit-transform:scale(1);transform:scale(1)}.ui-stats-ad-container{margin-top:20px}#ui-stats-options{display:block;left:auto;position:static;margin:auto;margin-top:24px;width:100%}.ui-stats-restart{margin-bottom:0}#ui-stats-spectate,.ui-stats-restart{display:block;position:static;-webkit-transform:initial;transform:none}#ui-stats-spectate{margin:auto;margin-top:6px}}@media screen and (max-width:850px) and (orientation:portrait) and (max-height:667px){#ui-stats-contents{margin-top:0;-webkit-transform:translateX(-50%) scale(.9);transform:translateX(-50%) scale(.9);-webkit-transform-origin:top;transform-origin:top}.ui-stats-ad-container{margin-top:20px}}@media screen and (max-width:850px) and (orientation:portrait) and (max-height:568px) and (max-width:360px){#ui-bottom-center-right{left:22px;-webkit-transform:scale(.8);transform:scale(.8)}#ui-bottom-right{right:0}#ui-bottom-center-0{top:-20px;left:84px;-webkit-transform:scale(.7);transform:scale(.7)}}', ""])
+		t = e.exports = a("lcwS")(!1), t.push([e.i, 'img{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}#cvs{-webkit-filter:none;filter:none}.click-through{pointer-events:none}#game-area-wrapper{cursor:crosshair;left:0;position:absolute!important;top:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}#ui-game{-webkit-filter:none;filter:none;height:100%;left:0;position:absolute;top:0;width:100%}#ui-center{color:#fff;pointer-events:all;position:absolute;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%) scale(1);transform:translateX(-50%) translateY(-50%) scale(1);z-index:10}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-center{-webkit-transform:translateX(-50%) translateY(-50%) scale(.85);transform:translateX(-50%) translateY(-50%) scale(.85)}}@media screen and (max-width:850px){#ui-center{pointer-events:all;-webkit-transform:translateX(-50%) translateY(-50%) scale(.85);transform:translateX(-50%) translateY(-50%) scale(.85);z-index:10}}@media (max-width:850px) and (max-height:300px){#ui-center{-webkit-transform:translateX(-50%) translateY(-50%) scale(.775);transform:translateX(-50%) translateY(-50%) scale(.775)}}.btns-game-double-row{display:flex;position:relative}.btns-game-double-row>.btn-game-container{position:relative;width:100%}.btns-game-double-row>.btn-game-container>.btn-double-row{display:inline-block}.btns-game-double-row>div:not(:last-child){margin-right:2px}.game-menu-icon{background-size:22px;background-position:50%;background-repeat:no-repeat;bottom:13px;display:inline-block;height:22px;left:60%;pointer-events:none;position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:22px}.btn-game-touch-style{background-color:#50afab;background-position:4px 4px;background-repeat:no-repeat;background-size:20px;border:0;border-bottom:none;border-radius:5px;box-shadow:inset 0 -2px #387c79;box-sizing:border-box;color:#fff;cursor:pointer;display:block;font-size:14px;height:30px;line-height:30px;margin:auto;margin-top:2px;margin-bottom:4px;position:relative;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);width:100%}.movement-icon{background-image:url(../img/gui/movement.svg)}.target-icon{background-image:url(../img/gui/target.svg)}#ui-game-menu{background-color:rgba(0,0,0,.5);border-radius:5px;box-sizing:border-box;display:none;margin:10px auto;padding:10px 15px;width:250px}@media screen and (max-width:850px){#ui-game-menu{padding:4px 10px;width:190px}}@media (max-width:850px) and (max-height:300px){#ui-game-menu{margin-top:0}}#ui-game-menu p{bottom:4px;display:inline-block;font-size:14px;position:relative}@media screen and (max-width:850px){#ui-game-menu p{bottom:0;font-size:12px;margin-bottom:8px;margin-top:6px}}#ui-alive-info{position:absolute;color:#fff;width:80px;height:36px;top:174px;left:106px;background:rgba(0,0,0,.4);border-radius:5px}#ui-map-expand-mobile{height:190px;width:190px;left:-4px;top:-22px;z-index:0;background-color:transparent}#ui-map-expand img{display:none}#ui-map-minimize{left:124px}.ui-map-wrapper-mobile{bottom:auto;color:#fff;display:block;font-size:16px;left:6px;top:46px}.ui-map-wrapper-mobile .ui-players-alive{left:4px}.ui-map-wrapper-mobile .ui-map-counter{position:relative;display:inline-block;font-size:24px;text-align:center;bottom:9px;left:2px}.ui-map-wrapper-mobile .ui-map-icon{padding:6px;display:inline-block;height:24px;width:24px;margin-left:2px;background-size:24px;background-repeat:no-repeat;background-position:6px 6px}.ui-map-wrapper-mobile #ui-map-info{position:absolute;color:#fff;width:100px;height:36px;top:174px;left:0;background:rgba(0,0,0,.4);border-radius:5px}.ui-map-wrapper-mobile #ui-spec-counter{position:absolute;color:#fff;width:68px;height:28px;top:135px;left:60px;background:rgba(0,0,0,.4);border-radius:5px}.ui-map-wrapper-mobile #ui-spec-counter-icon{padding:6px;display:inline-block;height:24px;width:18px;margin-left:2px;background-size:20px;background-repeat:no-repeat;background-position:6px 4px;background-image:url(../img/gui/eye.svg)}.ui-map-wrapper-mobile #ui-spec-counter-number{position:relative;display:inline-block;font-size:20px;width:24px;text-align:center;bottom:15px;left:0}.ui-map-wrapper-mobile .gas-icon{background-image:url(../img/gui/gas.svg)}.ui-map-wrapper-mobile .danger-icon{background-image:url(../img/gui/danger.svg)}.ui-map-wrapper-mobile .alive-icon{background-image:url(../img/gui/player.svg)}.ui-map-wrapper-mobile .icon-pulse{-webkit-animation:pulse 2s linear infinite;animation:pulse 2s linear infinite}.ui-map-wrapper-mobile .ui-settings-button{position:absolute;color:#fff;border-radius:5px;pointer-events:all}.ui-map-wrapper-mobile .ui-settings-button img{position:absolute;left:6px;top:6px;height:36px;width:36px;background-size:36px;background-repeat:no-repeat;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-map-wrapper-mobile .ui-settings-button .map-img-after{display:none}.ui-map-wrapper-mobile .ui-settings-button:hover{-webkit-transform:scale(1);transform:scale(1)}.ui-map-wrapper-desktop{position:absolute;bottom:12px;left:12px}#ui-map-wrapper{position:absolute;z-index:1}#ui-settings-container-mobile{position:relative}#ui-menu-display{cursor:pointer;left:2px;top:-18px;height:48px;width:48px;opacity:.8;background-color:rgba(0,0,0,.4);background-size:48px;background-repeat:no-repeat;background-position:50%;background-image:url(../img/gui/cog.svg);z-index:1}#big-map{display:none;height:100%;width:100%}#big-map-collision{height:100%;left:50%;margin:auto;pointer-events:all;position:fixed;top:0;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#big-map-close{position:absolute;margin-left:auto;height:64px;width:64px;right:6px;top:6px;border-radius:6px;background-color:rgba(0,0,0,.5);background-repeat:no-repeat;background-size:48px;background-position:50%;background-image:url(../img/gui/close.svg);pointer-events:all}#ui-right-center{position:absolute;color:#fff;opacity:.75;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-right-center-desktop{top:40%;-webkit-transform:translateY(-50%);transform:translateY(-50%);right:12px}.ui-right-center-mobile{top:30px;-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:translateY(-50%) scale(.8);transform:translateY(-50%) scale(.8);right:6px}@media (max-height:360px),(max-width:640px){.ui-right-center-mobile{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85);top:16px}}.ui-right-center-tablet{top:12px!important;-webkit-transform:scale(.8);transform:scale(.8)}@media (max-height:600px){.ui-right-center-tablet{-webkit-transform:scale(.65);transform:scale(.65)}}.ui-bottom-right-tablet{bottom:25%!important;-webkit-transform:scale(.8)!important;transform:scale(.8)!important;-webkit-transform-origin:right!important;transform-origin:right!important}@media (max-height:600px){.ui-bottom-right-tablet{bottom:25%!important;-webkit-transform:scale(.7)!important;transform:scale(.7)!important;-webkit-transform-origin:right!important;transform-origin:right!important}}.ui-bottom-center-right-tablet{left:72%!important;-webkit-transform:scale(.65)!important;transform:scale(.65)!important}#ui-emote-button{background:rgba(0,0,0,.4);background-image:url(../img/gui/emote.svg);background-position:50%;background-repeat:no-repeat;background-size:28px;border-radius:21px;display:none;height:42px;position:absolute;right:108px;top:0;width:42px}@media screen and (max-width:850px){#ui-emote-button{background-size:20px;border-radius:14px;height:28px;right:0;top:50px;width:28px}}.ui-top-left-tablet{left:120px!important}.ui-spectate-options-wrapper-tablet{bottom:12px!important;top:auto!important}.ui-killfeed-wrapper-tablet{top:60px!important}@media (max-width:850px) and (max-height:320px){.ui-slider-container{margin-bottom:0}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>p{width:75px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>.slider{bottom:3px;width:85px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>.slider::-webkit-slider-thumb{width:20px;height:20px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>.slider::-moz-range-thumb{width:20px;height:20px}}.ui-hidden{display:none}.btn-game-menu{text-align:center;line-height:38px;display:block;width:100%;height:40px;border:0;border-radius:5px;box-sizing:border-box;position:relative;margin:auto;margin-top:5px;margin-bottom:5px;color:#fff;font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,.25);background-color:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;background-repeat:no-repeat;cursor:pointer}#btn-game-fullscreen{background-size:34px;background-position:4px 2px;background-image:url(../img/gui/minimize.svg)}#btn-game-sound{background-size:44px;background-position:2px -3px}#btn-game-quit{margin-top:40px;background-image:url(../img/gui/quit.svg)}#btn-game-quit,#btn-game-resume{background-size:44px;background-position:-2px -3px}#btn-game-resume{margin-top:30px;background-image:url(../img/gui/resume.svg)}#ui-top-center{position:absolute;color:#fff;top:80px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-top-center .top-center-text{text-align:center;width:100vw;padding:8px}#ui-waiting-text{display:none;color:#fff;text-shadow:2px 2px 0 #000}#ui-waiting-text,#ui-waiting-text span{font-size:32px;font-weight:700}.top-center-text .spectate-text{display:inline-block;text-shadow:2px 2px 0 #000;font-size:24px;font-weight:700;overflow:hidden;height:32px}@media (max-width:1024px){.top-center-text .spectate-text{font-size:18px}}.top-center-text .spectate-desc{color:#fff;margin-right:8px}.ui-spectate-mode{display:none}#ui-spectate-text{position:relative}#spectate-player{max-width:250px;white-space:nowrap;text-overflow:ellipsis;color:cyan}#ui-top-center-scopes-wrapper{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:100%}#ui-top-center-scopes{margin-top:12px;text-align:center}@media (max-height:768px),(max-width:1200px){#ui-top-center-scopes{-webkit-transform:scale(.85);transform:scale(.85)}}.ui-zoom{background:rgba(0,0,0,.3);border-radius:36px;width:64px;height:64px;opacity:.6;display:inline-block}.ui-zoom-hover:hover{opacity:1}.ui-zoom-active{vertical-align:baseline;opacity:1;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-zoom .ui-zoom-image{width:64px;height:64px;opacity:.4;padding:2px}.ui-zoom .ui-zoom-text{margin-top:14px;width:100%}.ui-zoom .ui-zoom-level{font-size:32px;text-align:center;width:100%}.ui-zoom .ui-zoom-append{font-size:24px}.ui-zoom-inactive{display:none;margin-left:-8px;margin-right:-8px;-webkit-transition:all .1s ease-in;-webkit-transform:scale(.5);-ms-transition:all .1s ease-in;-ms-transform:scale(.5);-moz-transition:all .1s ease-in;-moz-transform:scale(.5);transition:all .1s ease-in;transform:scale(.5)}.ui-zoom-inactive:hover{cursor:pointer!important;opacity:1}.ui-emote-wheel{z-index:3;display:none;position:fixed}.ui-emote-parent{opacity:.75}.ui-emote-hl{z-index:2;display:none}.ui-emote{position:fixed;width:256px;height:256px;background-size:256px;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-bg-circle{opacity:.5;background-image:url(../img/gui/ping-part-circle.svg)}.ui-emote-bg-quarter{opacity:.5;background-image:url(../img/gui/ping-part-quarter.svg)}.ui-emote-bg-eighth{opacity:.5;background-image:url(../img/gui/ping-part-eighth.svg)}.ui-emote-middle .ui-emote-image{width:24px!important;height:24px!important;background-size:24px!important;background-image:url(../img/gui/close.svg)}.ui-emote-top .ui-emote-image{margin-top:-78px;background-image:url(../img/gui/ping-team-danger.svg)}.ui-emote-right .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(90deg);transform:translate(-50%,-50%) rotate(90deg)}.ui-emote-right .ui-emote-image{margin-left:78px;background-image:url(../img/gui/ping-team-coming.svg)}.ui-emote-bottom .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(180deg);transform:translate(-50%,-50%) rotate(180deg)}.ui-emote-bottom .ui-emote-image{margin-top:78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(270deg);transform:translate(-50%,-50%) rotate(270deg)}.ui-emote-left .ui-emote-image{margin-left:-78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-top-left .ui-emote-image{margin-left:-80px;margin-top:-30px;background-image:url(../img/loot/loot-ammo-box.svg)}.ui-emote-bottom-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(-45deg);transform:translate(-50%,-50%) rotate(-45deg)}.ui-emote-bottom-left .ui-emote-image{margin-left:-80px;margin-top:30px;background-image:url(../img/loot/loot-medical-healthkit.svg)}.ui-emote-circle .ui-emote-hl{background-image:url(../img/gui/ping-part-circle-highlight.svg)}.ui-emote-quarter .ui-emote-hl{background-image:url(../img/gui/ping-part-quarter-highlight.svg)}.ui-emote-eighth .ui-emote-hl{background-image:url(../img/gui/ping-part-eighth-highlight.svg)}.ui-emote-image{z-index:1;position:fixed;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-image-large{width:64px;height:64px;background-size:64px}.ui-emote-image-small{width:35px;height:35px;background-size:35px}.ui-team-indicator{z-index:2;display:none;position:fixed;top:0;left:0;border-radius:32px;width:64px;height:64px;background-size:64px;background-repeat:no-repeat;background-image:url(../img/gui/indicator.svg)}.ui-team-indicator,.ui-team-indicator-pos{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-team-indicator-pos{opacity:.75;position:relative;border-radius:24px;width:32px;height:32px;top:23px;left:32px}.ui-team-indicator-image{width:32px;height:32px;background-size:32px;background-repeat:no-repeat;background-image:url(../img/gui/ping-team-danger.svg)}.ui-indicator-ping-border{z-index:0;display:none;position:fixed;top:0;left:0;width:160px;height:160px;position:relative;background-size:160px;background-repeat:no-repeat;background-image:url(../img/gui/ping-border.svg);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}#ui-top-left{position:absolute;color:#fff;font-size:16px;top:12px;left:12px;display:block}@media (max-height:768px),(max-width:1200px){#ui-top-left{-webkit-transform-origin:top left;transform-origin:top left;-webkit-transform:scale(.85);transform:scale(.85)}}.ui-bg-standard{background:rgba(0,0,0,.24);border-radius:5px}.ui-team-member{display:none;position:relative;width:200px;height:32px;padding:4px;margin-bottom:8px}.ui-team-member-name{font-weight:700;text-shadow:1px 1px 0 #000;font-size:16px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-team-member-color{position:absolute;top:5px;right:5px;border-radius:7px;width:14px;height:14px}.ui-background-yellow{background-color:#ff0}.ui-background-blue{background-color:blue}.ui-background-red{background-color:red}.ui-background-purple{background-color:purple}.ui-background-cyan{background-color:cyan}.ui-team-member-status{display:none;position:absolute;top:4px;right:-38px;width:32px;height:32px;background-size:32px;background-repeat:no-repeat}.ui-team-member-status-downed{border-radius:16px;display:block!important;background-image:url(../img/gui/down.svg)!important}.ui-team-member-status-dead{display:block!important;background-image:url(../img/gui/skull-team.svg)!important;opacity:.5!important}.ui-team-member-status-disconnected{display:block!important;background-image:url(../img/gui/close.svg)!important;opacity:.5!important}.ui-team-member-health{margin-top:4px}.ui-team-member-health .ui-bar-inner{background-color:#fff;z-index:1;position:absolute;border-radius:4px;width:200px;height:10px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}.ui-team-member-health .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}.ui-team-member-health .ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}#ui-spectate-options-wrapper{color:#fff;display:block;left:12px;position:absolute;top:12px}@media (max-height:768px),(max-width:1200px){#ui-spectate-options-wrapper{-webkit-transform:scale(.85);transform:scale(.85);-webkit-transform-origin:top left;transform-origin:top left}}#ui-spectate-options{position:relative;pointer-events:all;width:100%}#ui-spectate-buttons{display:inline-block;padding:8px 8px 0;text-align:center;width:192px}#ui-spectate-options a{position:relative;color:#fff;font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;cursor:pointer}#btn-spectate-prev-player{margin-bottom:24px}#ui-spectate-stats{vertical-align:top;display:none}#ui-spectate-stats-header{text-align:center;font-size:24px;font-weight:700;padding:8px}#ui-spectate-stats-table{width:100%;background-color:transparent;margin:auto;margin-right:0;border-collapse:collapse}#ui-spectate-stats tbody,#ui-spectate-stats td,#ui-spectate-stats th{padding:0 8px 8px 16px;font-size:18px}.ui-spectate-stats-category{width:130px;color:hsla(0,0%,100%,.75)}.ui-spectate-stats-value{width:75px;color:#fff}#ui-leaderboard{position:absolute;color:#fff;font-size:16px;top:12px;right:12px;display:flex;font-weight:700;text-align:center;width:85px;display:inline-block}@media (max-height:768px),(max-width:1200px){#ui-leaderboard{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85)}}#ui-leaderboard-alive{background:rgba(0,0,0,.4);border-radius:5px;margin-bottom:8px;padding:8px;height:64px;width:72px}.ui-players-alive{position:relative;font-size:54px}.ui-players-alive-pulse{-webkit-animation-name:pulseAlive;animation-name:pulseAlive;-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}@keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}.ui-leaderboard-header{font-size:24px;margin-bottom:8px}#ui-killfeed-wrapper{position:absolute;color:#fff;font-size:16px;top:12px;right:12px;display:flex}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-killfeed-wrapper{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85)}}#ui-killfeed{display:inline-block;margin-left:24px;height:100px}#ui-killfeed-contents{width:800px}#ui-killfeed-contents .killfeed-div{position:absolute;right:100px;background-color:rgba(0,0,0,.4);padding:4px 8px;border-radius:2px;height:22px;line-height:24px}.killfeed-div div{float:left;font-size:16px;font-weight:700;color:#efeeee}#ui-killfeed .killfeed-text{max-width:550px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#ui-right-center:hover{opacity:1}.ui-ammo .ui-loot-image,.ui-ammo .ui-loot-overlay{position:absolute;height:22px;width:22px;right:5px;margin-top:5px;top:0;bottom:0}#ui-medical-interactive{margin-bottom:32px}.ui-medical .ui-loot-image{position:absolute;height:30px;width:30px;background-size:30px;background-repeat:no-repeat;right:5px;margin-top:1px;top:0;bottom:0}.ui-medical:hover{cursor:pointer!important}.ui-loot{background:rgba(0,0,0,.4);border-radius:5px;width:85px;height:32px;margin-left:auto;margin-bottom:5px}.ui-loot:hover{opacity:1!important}.ui-outline-hover{border:2px solid rgba(0,255,0,0)}.ui-outline-hover:hover{-webkit-transition:border .1s ease-out;-moz-transition:border .1s ease-out;-o-transition:border .1s ease-out;border:2px solid #0f0}.ui-scale-hover{transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);-moz-transform:scale(1)}.ui-scale-hover,.ui-scale-hover:hover{-webkit-transition:all .1s ease-in;-ms-transition:all .1s ease-in;-moz-transition:all .1s ease-in;transition:all .1s ease-in}.ui-scale-hover:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);-moz-transform:scale(1.1);transform:scale(1.1)}.ui-loot .ui-loot-count{position:absolute;font-size:24px;font-weight:700;left:10px;top:2px;text-align:center}@media (max-height:864px),(max-width:1024px){.ui-right-center-desktop{top:42%;-webkit-transform-origin:right;transform-origin:right;-webkit-transform:translateY(-50%) scale(.8);transform:translateY(-50%) scale(.8)}#ui-medical-interactive{margin-bottom:8px}}@media (max-height:640px){.ui-right-center-desktop{top:42%;-webkit-transform-origin:right;transform-origin:right;-webkit-transform:translateY(-50%) scale(.7);transform:translateY(-50%) scale(.7)}#ui-medical-interactive{margin-bottom:8px}}#ui-upper-center{position:absolute;display:flex;color:#fff;top:180px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-announcement{display:none;color:#ff0;text-shadow:2px 2px 0 #000;font-size:32px;font-weight:700;text-align:center;width:100vw}#ui-lower-center{position:absolute;color:#fff;bottom:40%;left:50%}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-lower-center{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:scale(.85);transform:scale(.85);bottom:33%}}#ui-interaction{display:flex}#ui-interaction-press{background:rgba(0,0,0,.4);border-radius:5px;margin-left:-24px;width:48px;height:48px;font-size:42px;font-weight:700;text-align:center;background-size:80%;background-position:50%;background-repeat:no-repeat}#ui-interaction-outer{background:rgba(0,0,0,.4);border-radius:5px;margin-left:10px;padding:0 15px;height:48px}#ui-interaction-outer #ui-interaction-description{margin-top:10px;font-size:24px;text-align:center}#ui-map-container{position:absolute;bottom:52px}#ui-map-info{position:absolute;color:#fff;width:100px;height:36px;bottom:218px;left:82px;background:rgba(0,0,0,.4);border-radius:5px}#ui-gas-icon{padding:6px;display:inline-block;height:24px;width:24px;margin-left:2px;background-size:24px;background-repeat:no-repeat;background-position:6px 6px}.gas-icon{background-image:url(../img/gui/gas.svg)}.danger-icon{background-image:url(../img/gui/danger.svg)}.icon-pulse{-webkit-animation:pulse 2s linear infinite;animation:pulse 2s linear infinite}#ui-gas-timer{position:relative;display:inline-block;font-size:24px;text-align:center;bottom:10px;left:2px}#ui-spec-counter{position:absolute;color:#fff;width:68px;height:28px;bottom:218px;left:6px;background:rgba(0,0,0,.4);border-radius:5px}#ui-spec-counter-icon{padding:6px;display:inline-block;height:24px;width:18px;margin-left:2px;background-size:20px;background-repeat:no-repeat;background-position:6px 4px;background-image:url(../img/gui/eye.svg)}#ui-spec-counter-number{position:relative;display:inline-block;font-size:20px;width:24px;text-align:center;bottom:15px;left:0}#ui-settings-container-desktop{position:relative;left:16px;bottom:12px}#ui-settings-container-desktop div{cursor:pointer}.ui-settings-button{position:absolute;color:#fff;border-radius:5px;height:48px;width:48px;pointer-events:all;opacity:.5;background:rgba(0,0,0,.4)}#ui-map-minimize{left:185px}.ui-settings-button img{position:absolute;left:6px;top:6px;height:36px;width:36px;background-size:36px;background-repeat:no-repeat;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-settings-button .map-img-after{display:none}.ui-settings-button:hover{opacity:1;-webkit-transition:all .1s ease-in;-webkit-transform:scale(1.1);-ms-transition:all .1s ease-in;-ms-transform:scale(1.1);-moz-transition:all .1s ease-in;-moz-transform:scale(1.1);transition:all .1s ease-in;transform:scale(1.1)}#ui-bottom-center-0{position:absolute;color:#fff;bottom:12px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-0{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}#ui-equipped-ammo-wrapper{position:absolute;color:#fff;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);bottom:62px}#ui-equipped-ammo{margin-bottom:12px;text-align:center;opacity:1}#ui-bullet-counter{display:inline-block;width:175px;height:56px;text-align:center;text-shadow:2px 2px #000}#ui-bullet-counter #ui-current-clip{background:rgba(0,0,0,.4);border-radius:5px;font-size:44px;font-weight:700;width:100px;height:50px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;position:relative;text-align:center}#ui-bullet-counter #ui-ammo-divider{font-size:22px;left:53%;position:absolute;text-align:center;top:20px}#ui-bullet-counter #ui-remaining-ammo{background:rgba(0,0,0,.4);border-radius:5px;font-size:24px;font-weight:700;line-height:32px;width:65px;height:32px;left:82%;position:absolute;text-align:center;top:18px}#ui-boost-counter{display:inline-flex;width:412px}#ui-boost-counter .ui-boost-base{background:rgba(0,0,0,.4);height:10px;margin-bottom:8px}#ui-boost-counter-0{border-top-left-radius:3px;border-bottom-left-radius:3px;width:100px;margin-right:3px}#ui-boost-counter-0 .ui-bar-inner{background:#ff901a}#ui-boost-counter-1{width:100px;margin-left:3px;margin-right:3px}#ui-boost-counter-1 .ui-bar-inner{background:#ff751a}#ui-boost-counter-2{width:150px;margin-left:3px;margin-right:3px}#ui-boost-counter-2 .ui-bar-inner{background:#ff6616}#ui-boost-counter-3{border-top-right-radius:3px;border-bottom-right-radius:3px;width:50px;margin-left:3px}#ui-boost-counter-3 .ui-bar-inner{background:#ff5600}.ui-boost-base .ui-bar-inner{border-radius:inherit;width:0;height:10px}#ui-health-counter{background:rgba(0,0,0,.4);border-radius:5px;width:400px;height:32px;padding:6px}#ui-health-counter .ui-bar-inner{z-index:1;position:absolute;border-radius:5px;width:100%;height:32px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}#ui-health-container{width:400px;position:relative}#ui-health-counter .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}#ui-health-counter #ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}.health-bar-pulse{-webkit-animation:pulsewhite 1s linear infinite;animation:pulsewhite 1s linear infinite}@-webkit-keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@-webkit-keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}@keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}#ui-bottom-center-1{z-index:3;position:absolute;color:#fff;bottom:220px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-1{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85);bottom:138px}}#ui-kills{display:none;text-align:center;background:rgba(0,0,0,.4);color:#fff;border-radius:5px;padding:8px}#ui-kill-text{font-size:18px}#ui-kill-count{font-weight:700;color:#ff4100;font-size:32px;text-shadow:1px 1px 1px rgba(0,0,0,.3)}#ui-bottom-center-2{position:absolute;color:#fff;bottom:160px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-pickup-message{color:#fff;opacity:0;text-shadow:2px 2px 0 #000;font-size:32px;font-weight:700;text-align:center;width:100vw}#ui-bottom-center-right{position:absolute;color:#fff;bottom:12px;left:75%}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-right{-webkit-transform:scale(.8);transform:scale(.8)}}.ui-armor-counter{position:absolute;bottom:0;display:block;width:48px;height:60px;background:rgba(0,0,0,.4);border-radius:5px;margin-left:4px}#ui-armor-helmet{right:4px}#ui-armor-backpack{left:60px;border:2px solid transparent}.ui-armor-level{position:relative;font-size:16px;font-weight:700;bottom:24px;text-align:center;text-shadow:1px 1px #000}.ui-armor-counter-inner{z-index:1;position:absolute;background:rgba(0,255,0,.5);border-radius:5px;width:100%;height:0;bottom:0;transition:height .5s;transition-property:height;transition-duration:.5s;transition-timing-function:ease-out;transition-delay:0s}.ui-armor-counter .ui-armor-count{z-index:2;text-shadow:2px 2px #000;position:relative;font-size:18px;font-weight:700;margin-top:-28px;text-align:center}.ui-armor-counter .ui-armor-image{margin:auto;left:0;right:0;bottom:0;top:0;z-index:0;position:absolute;height:36px;width:36px}#ui-bottom-right{position:absolute;color:#fff;bottom:12px;right:12px}@media (max-height:768px),(max-width:1200px){#ui-bottom-right{-webkit-transform-origin:bottom right;transform-origin:bottom right;-webkit-transform:scale(.7);transform:scale(.7)}}#ui-weapon-container{width:192px}.ui-weapon-info{margin-bottom:5px}.ui-weapon-info,.ui-weapon-switch{border-radius:5px;border:2px solid transparent}.ui-weapon-switch{position:absolute;right:0;opacity:.6;width:160px;height:60px;margin-left:auto;pointer-events:all;cursor:pointer!important}#ui-weapon-id-1{bottom:210px}#ui-weapon-id-2{bottom:140px}#ui-weapon-id-3{bottom:70px}#ui-weapon-id-4{bottom:0}.ui-weapon-name{font-size:18px;margin-top:38px}.ui-weapon-name,.ui-weapon-number{position:absolute;font-weight:700;right:8px;text-align:center}.ui-weapon-number{font-size:24px}.ui-weapon-exp{display:none;position:absolute;height:32px;width:32px;font-size:18px;font-weight:700;line-height:34px;right:78px;margin-top:26px;text-align:center}.ui-weapon-image{display:none;position:relative;height:60px;width:60px;left:4px;background-size:60px;background-repeat:no-repeat}#ui-weapon-id-4 .ui-weapon-image{height:52px;width:52px;left:4px;top:4px;background-size:52px}#ui-stats{display:none}#ui-stats-bg{display:none;opacity:0;position:absolute;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.75);pointer-events:none;z-index:2}#ui-stats-contents{position:absolute;width:100%;top:10%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;color:#fff;border-radius:5px;z-index:3}@media (max-height:860px){#ui-stats-contents{top:3%}}@media (max-width:1024px){#ui-stats-contents{-webkit-transform:translateX(-50%) scale(.8);transform:translateX(-50%) scale(.8);-webkit-transform-origin:top;transform-origin:top}}.ui-stats-header-title{font-weight:700;font-size:48px;margin:20px;color:gold}.ui-stats-header-reason{font-size:24px}.ui-stats-header-overview{display:inline;margin:10px}.ui-stats-header-overview div{display:inline;padding-bottom:12px;border-bottom:2px solid hsla(0,0%,100%,.25)}.ui-stats-header-overview div:not(:first-child){margin-left:100px}span.ui-stats-header-stat{font-size:32px}span.ui-stats-header-value{margin-left:24px;font-size:48px;font-weight:700}#ui-stats-info-box{position:relative;left:50%;margin:auto;margin-top:50px;height:190px;display:flex}@media (max-height:768px),(max-width:1200px){#ui-stats-info-box{margin-top:25px}}@media (max-width:1024px){#ui-stats-info-box{-webkit-transform-origin:left;transform-origin:left;-webkit-transform:scale(.85);transform:scale(.85)}}.ui-stats-info-player{position:relative;width:250px;background-color:rgba(0,0,0,.75);border-radius:4px;border:2px solid #000;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.ui-stats-info-status:after{content:"";display:block;position:absolute;top:15%;left:25%;background-image:url(../img/gui/skull.svg);background-repeat:no-repeat;background-size:128px;width:100%;height:100%;opacity:.1;z-index:-1}.ui-stats-info-player-name{color:gold;font-size:24px;font-weight:700;font-style:italic;margin:8px auto;max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-stats-info{display:flex;height:36px;margin:auto}.ui-stats-info>div{padding:8px;font-size:18px;line-height:12px;text-align:left;font-weight:700}.ui-stats-info>div:first-child{width:55%;margin-right:4px;text-align:right;font-weight:400}.ui-stats-reason{display:flex;height:72px;margin:auto}.ui-stats-reason div{padding:8px;margin:auto;width:100%;text-align:center;font-size:16px}.ui-stats-reason .ui-stats-reason-dead{color:red}.ui-stats-reason .ui-stats-reason-alive{color:#7cfc00}#ui-stats-options{position:absolute;left:50%;margin-top:20px;min-height:60px;z-index:1}.ui-stats-restart{width:200px;margin:auto;margin-bottom:20px}#ui-stats-spectate,.ui-stats-restart{position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-stats-spectate{left:102px;width:125px;background:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79}.ui-stats-ad-container{display:none;margin-top:80px}#ui-spec-ad-container{z-index:1;position:absolute;top:0;left:50%}.tooltip{position:relative}.tooltip .tooltip-text{visibility:hidden;width:240px;background-color:#000;color:#fff;text-align:center;padding:5px 0;border-radius:6px;position:absolute;z-index:1;right:110%;opacity:.75;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.tooltip .tooltip-text:after{content:" ";position:absolute;top:50%;left:100%;margin-top:-5px;border-width:5px;border-style:solid;border-color:transparent transparent transparent #000}.tooltip-title{font-size:18px;font-weight:700;padding:4px;color:#ff0}.tooltip-description{font-size:16px;padding:4px}.tooltip-description span{font-size:16px}.tooltip:hover .tooltip-text{visibility:visible}#ui-editor-top-center{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-editor-top-right{position:absolute;color:#fff;font-size:16px;top:12px;right:12px}.ui-editor-header{text-align:center;font-weight:700;font-size:16px;padding:8px}.ui-editor-info{background:rgba(0,0,0,.4);border-radius:5px;font-size:36px;margin-bottom:8px;padding:8px}.ui-editor-list{margin:0;padding:0;list-style:none}.ui-editor-list li div{font-family:monospace;font-size:14px}#ui-profiler-top-left{position:absolute;color:#fff;font-size:16px;top:12px;left:12px;text-align:center;display:flex}.ui-profiler-list{background:rgba(0,0,0,.4);border-radius:5px;margin-right:16px;padding:8px}.ui-profiler-list-header{font-size:16px;font-weight:700;margin-bottom:8px}.ui-profiler-list ul{list-style:none;text-align:left;padding:0;margin:0}.ui-profiler-list li{display:flex}.kv{font-family:monospace;font-size:14px;font-weight:400}.kv:last-child{width:100%;text-align:right}#ui-settings-container-mobile{display:none}@media screen and (max-width:850px){*{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.ui-touch-down{display:none;position:fixed;background-color:rgba(0,0,0,.5);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-touch-down-landscape{width:112px;height:112px;border-radius:56px}.ui-touch-down-portrait{width:96px;height:96px;border-radius:48px}.ui-touch-pos{display:none;position:fixed;background-color:rgba(0,0,0,.5);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-touch-pos-landscape{width:64px;height:64px;border-radius:32px}.ui-touch-pos-portrait{width:48px;height:48px;border-radius:24px}.btn-game-menu{position:relative;margin:auto;margin-top:2px;margin-bottom:4px;color:#fff;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,.25);background-color:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;background-repeat:no-repeat;cursor:pointer;text-align:center;line-height:30px;display:block;width:100%;height:30px;border:0;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-sizing:border-box}#btn-game-fullscreen{background-size:22px;background-position:4px 2px;background-image:url(../img/gui/minimize.svg)}#btn-game-sound{background-size:30px;background-position:3px 0;margin-bottom:8px}#btn-game-quit{background-position:-2px -3px;background-image:url(../img/gui/quit.svg)}#btn-game-quit,#btn-game-resume{margin-top:20px;background-size:34px}#btn-game-resume{background-position:-1px -1px;background-image:url(../img/gui/resume.svg)}#ui-top-center{position:absolute;color:#fff;top:15%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-top-center .top-center-text{text-align:center;width:100vw;padding:4px}#ui-waiting-text{display:none;color:#fff;text-shadow:1px 1px 0 #000}#ui-waiting-text,#ui-waiting-text span{font-size:16px;font-weight:700}.top-center-text .spectate-text{display:inline-block;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;overflow:hidden;height:32px}.top-center-text .spectate-desc{color:#fff;margin-right:8px}.ui-spectate-mode{display:none}#ui-spectate-text{position:relative}#spectate-player{max-width:250px;white-space:nowrap;text-overflow:ellipsis;color:cyan}#ui-top-center-scopes{margin-top:6px;text-align:center;color:#fff}.ui-zoom{display:inline-block;margin-left:-12px;margin-right:-12px;-webkit-transform:scale(.6);transform:scale(.6);background:rgba(0,0,0,.3);border-radius:32px;width:42px;height:42px;opacity:.6;pointer-events:all}.ui-zoom-active{vertical-align:baseline;opacity:1;margin-left:0;margin-right:0;-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-zoom .ui-zoom-image{width:48px;height:48px;opacity:.4;padding:2px}.ui-zoom .ui-zoom-text{margin-top:14px;width:100%}.ui-zoom .ui-zoom-level{font-size:24px;line-height:16px;text-align:center;width:100%}.ui-zoom .ui-zoom-append{font-size:24px}.ui-zoom-inactive{display:none;margin-left:-8px;margin-right:-8px;transition:all .1s ease-in;-webkit-transform:scale(.6);transform:scale(.6)}.ui-emote-wheel{z-index:3;display:none;position:fixed}.ui-emote-parent{opacity:1}.ui-emote-hl{z-index:2;display:none}.ui-emote{position:fixed;width:256px;height:256px;background-size:256px;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-bg-circle{opacity:.65;background-image:url(../img/gui/ping-part-circle.svg)}.ui-emote-bg-quarter{opacity:.65;background-image:url(../img/gui/ping-part-quarter.svg)}.ui-emote-bg-eighth{opacity:.65;background-image:url(../img/gui/ping-part-eighth.svg)}.ui-emote-middle .ui-emote-image{width:24px!important;height:24px!important;background-size:24px!important;background-image:none!important}.ui-emote-top .ui-emote-image{margin-top:-78px;background-image:url(../img/gui/ping-team-danger.svg)}.ui-emote-right .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(90deg);transform:translate(-50%,-50%) rotate(90deg)}.ui-emote-right .ui-emote-image{margin-left:78px;background-image:url(../img/gui/ping-team-coming.svg)}.ui-emote-bottom .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(180deg);transform:translate(-50%,-50%) rotate(180deg)}.ui-emote-bottom .ui-emote-image{margin-top:78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(270deg);transform:translate(-50%,-50%) rotate(270deg)}.ui-emote-left .ui-emote-image{margin-left:-78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-top-left .ui-emote-image{margin-left:-80px;margin-top:-30px;background-image:url(../img/loot/loot-ammo-box.svg)}.ui-emote-bottom-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(-45deg);transform:translate(-50%,-50%) rotate(-45deg)}.ui-emote-bottom-left .ui-emote-image{margin-left:-80px;margin-top:30px;background-image:url(../img/loot/loot-medical-healthkit.svg)}.ui-emote-circle .ui-emote-hl{background-image:url(../img/gui/ping-part-circle-highlight.svg)}.ui-emote-quarter .ui-emote-hl{background-image:url(../img/gui/ping-part-quarter-highlight.svg)}.ui-emote-eighth .ui-emote-hl{background-image:url(../img/gui/ping-part-eighth-highlight.svg)}.ui-emote-image{z-index:1;position:fixed;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-image-large{width:80px;height:80px;background-size:64px;background-position:50%}.ui-emote-image-small{width:35px;height:35px;background-size:35px}.ui-team-indicator{z-index:2;display:none;position:fixed;top:0;left:0;border-radius:32px;width:64px;height:64px;background-size:64px;background-repeat:no-repeat;background-image:url(../img/gui/indicator.svg)}.ui-team-indicator,.ui-team-indicator-pos{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-team-indicator-pos{opacity:.75;position:relative;border-radius:24px;width:32px;height:32px;top:23px;left:32px}.ui-team-indicator-image{width:32px;height:32px;background-size:32px;background-repeat:no-repeat;background-image:url(../img/gui/ping-team-danger.svg)}.ui-indicator-ping-border{z-index:0;display:none;position:fixed;top:0;left:0;width:160px;height:160px;position:relative;background-size:160px;background-repeat:no-repeat;background-image:url(../img/gui/ping-border.svg);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}#ui-top-left{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;display:block}.ui-bg-standard{background:rgba(0,0,0,.24);border-radius:5px}#ui-team{position:fixed;left:128px}.ui-team-member{display:none;position:relative;width:110px;height:20px;padding:4px;margin-bottom:4px}.ui-team-member-name{font-weight:700;text-shadow:1px 1px 0 #000;font-size:10px;max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-team-member-color{position:absolute;top:4px;right:4px;border-radius:9px;width:9px;height:9px}.ui-background-yellow{background-color:#ff0}.ui-background-blue{background-color:blue}.ui-background-red{background-color:red}.ui-background-purple{background-color:purple}.ui-background-cyan{background-color:cyan}.ui-team-member-status{display:none;position:absolute;top:2px;right:-24px;width:20px;height:20px;background-size:20px;background-repeat:no-repeat}.ui-team-member-status-downed{border-radius:16px;display:block!important;background-image:url(../img/gui/down.svg)!important}.ui-team-member-status-dead{display:block!important;background-image:url(../img/gui/skull-team.svg)!important;opacity:.5!important}.ui-team-member-status-disconnected{display:block!important;background-image:url(../img/gui/close.svg)!important;opacity:.5!important}.ui-team-member-health{margin-top:2px}.ui-team-member-health .ui-bar-inner{background-color:#fff;z-index:1;position:absolute;border-radius:4px;width:110px;height:5px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}.ui-team-member-health .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}.ui-team-member-health .ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}#ui-spectate-options-wrapper{bottom:6px;position:fixed;left:6px;top:auto!important}#ui-spectate-options{bottom:0;z-index:1;position:absolute;pointer-events:all;width:100%}#ui-spectate-buttons{display:inline-block;width:124px;padding:8px 8px 4px;text-align:center}#ui-spectate-options a{position:relative;color:#fff;height:24px;margin-bottom:2px;line-height:22px;font-size:12px;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#50afab;border-bottom:2px solid #387c79;box-shadow:none;cursor:pointer}#btn-spectate-prev-player,#btn-spectate-view-stats{margin-bottom:12px!important}#ui-spectate-stats{position:absolute;top:0;left:146px;width:160px;display:none}#ui-spectate-stats-header{text-align:center;font-size:16px;font-weight:700;padding:6px;color:#fff}#ui-spectate-stats-table{width:100%;background-color:transparent;margin:auto;margin-right:0;margin-bottom:4px;border-collapse:collapse}#ui-spectate-stats tbody,#ui-spectate-stats td,#ui-spectate-stats th{padding:0 2px 2px 14px;font-size:10px}.ui-spectate-stats-category{width:75px;color:hsla(0,0%,100%,.75)}.ui-spectate-stats-value{width:75px;color:#fff}#ui-top-right{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;display:flex}#ui-leaderboard{font-weight:700;text-align:center;width:56px;display:inline-block}#ui-leaderboard-alive{background:rgba(0,0,0,.4);border-radius:5px;margin-bottom:-16px;padding:8px;height:32px;width:40px}.ui-players-alive-pulse{-webkit-animation-name:pulseAlive;animation-name:pulseAlive;-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}@keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}.ui-leaderboard-header{font-size:12px}#ui-killfeed-wrapper{top:24px;left:6px;right:auto}#ui-killfeed{position:absolute;margin:initial;top:135px}#ui-killfeed-contents{width:800px}#ui-killfeed-contents .killfeed-div{position:absolute;background-color:rgba(0,0,0,.4);padding:3px;border-radius:2px;height:8px;line-height:8px;right:auto}.killfeed-div div,.killfeed-div span{float:left;font-size:8px;line-height:8px;font-weight:700;color:#efeeee}.killfeed-red div,.killfeed-red span{color:#d1777c!important}.killfeed-blue div,.killfeed-blue span{color:#00bfff!important}#ui-killfeed-contents .killfeed-red{color:#d1777c}#ui-killfeed-contents .killfeed-blue{color:#00bfff}#ui-killfeed .killfeed-name{max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-ammo .ui-loot-image,.ui-ammo .ui-loot-overlay{position:absolute;height:11px;width:11px;right:2px;margin-top:2px}#ui-ammo-interactive{position:absolute;right:0;top:25px}#ui-ammo-interactive .ui-loot{display:inline-block;background:rgba(0,0,0,.4);border-radius:5px;width:38px;height:14px;margin-left:auto;margin-bottom:2px}.ui-ammo .ui-loot-count{position:absolute;font-size:12px;font-weight:700;width:16px;left:3px;margin-top:-1px;text-align:center}#ui-medical-interactive .ui-loot{display:inline-block;background:rgba(0,0,0,.4);border-radius:5px;width:44px;height:16px;margin-left:auto;margin-bottom:2px}.ui-medical .ui-loot-image{position:absolute;height:16px;width:16px;background-size:16px;background-repeat:no-repeat;right:2px;margin-top:0}.ui-medical .ui-loot-count{position:absolute;font-size:16px;font-weight:700;left:4px;width:16px;margin-top:-3px;text-align:center}.ui-loot{background:rgba(0,0,0,.4);border-radius:5px;width:85px;height:32px;margin-left:auto;margin-bottom:5px}.ui-loot:hover{opacity:1!important}.ui-outline-hover,.ui-outline-hover:hover{border:2px solid rgba(0,255,0,0)}.ui-outline-hover:hover{-webkit-transition:border .1s ease-out;-moz-transition:border .1s ease-out;-o-transition:border .1s ease-out}.ui-scale-hover{transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);-moz-transform:scale(1)}.ui-scale-hover,.ui-scale-hover:hover{-webkit-transition:all .1s ease-in;-ms-transition:all .1s ease-in;-moz-transition:all .1s ease-in;transition:all .1s ease-in}.ui-scale-hover:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);-moz-transform:scale(1.1);transform:scale(1.1)}#ui-debug-button{display:none;background:rgba(0,0,0,.4);position:absolute;border-radius:13px;height:26px;width:26px;background-size:18px;bottom:4px;right:4px;background-position:50%;background-image:url(../img/gui/mag-glass.svg);background-repeat:no-repeat;pointer-events:auto;z-index:1}#ui-upper-center{position:absolute;display:flex;color:#fff;top:84px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-announcement{display:none;color:#ff0;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;text-align:center;width:100vw}#ui-lower-center{position:absolute;color:#fff;bottom:44%;left:60%}#ui-interaction{display:flex}#ui-interaction-press{background:rgba(0,0,0,.4);border-radius:5px;margin-left:-20px;font-size:34px;width:44px;height:44px;background-size:36px;background-position:50%;background-repeat:no-repeat}#ui-interaction-outer{background:rgba(0,0,0,.4);border-radius:5px;margin-left:6px;padding:0 6px;height:28px}#ui-interaction-outer #ui-interaction-description{margin-top:5px;font-size:16px;text-align:center}#ui-bottom-center-0{bottom:6px}#ui-bottom-center-0,#ui-equipped-ammo-wrapper{position:absolute;color:#fff;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-equipped-ammo-wrapper{bottom:78px}#ui-equipped-ammo{position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;opacity:1}#ui-bullet-counter{display:inline-block;width:175px;height:28px;text-align:center;text-shadow:1px 1px #000}#ui-bullet-counter #ui-current-clip{background:rgba(0,0,0,.4);border-radius:5px;font-size:28px;font-weight:700;line-height:30px;width:60px;height:32px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;position:relative;text-align:center}#ui-bullet-counter #ui-ammo-divider{font-size:22px;left:53%;position:absolute;text-align:center;top:20px}#ui-bullet-counter #ui-remaining-ammo{background:rgba(0,0,0,.4);border-radius:5px;font-size:16px;font-weight:700;line-height:22px;width:44px;height:22px;left:122px;position:absolute;text-align:center;top:10px}#ui-bullet-counter #ui-reload-button{background:rgba(0,0,0,.4);position:absolute;border-radius:11px;height:22px;width:22px;background-size:14px;top:10px;left:170px;background-position:4px 3px;background-image:url(../img/gui/bullets.svg);background-repeat:no-repeat}#ui-boost-counter{display:inline-flex;width:206px}#ui-boost-counter .ui-boost-base{background:rgba(0,0,0,.4);height:6px;margin-bottom:0}#ui-boost-counter-0{border-top-left-radius:3px;border-bottom-left-radius:3px;width:50px;margin-right:3px}#ui-boost-counter-0 .ui-bar-inner{background:#ff901a}#ui-boost-counter-1{width:50px;margin-left:3px;margin-right:3px}#ui-boost-counter-1 .ui-bar-inner{background:#ff751a}#ui-boost-counter-2{width:75px;margin-left:3px;margin-right:3px}#ui-boost-counter-2 .ui-bar-inner{background:#ff6616}#ui-boost-counter-3{border-top-right-radius:3px;border-bottom-right-radius:3px;width:25px;margin-left:3px}#ui-boost-counter-3 .ui-bar-inner{background:#ff5600}.ui-boost-base .ui-bar-inner{border-radius:inherit;width:0;height:6px}#ui-health-counter{background:rgba(0,0,0,.4);border-radius:5px;width:200px;height:18px;padding:4px}#ui-health-counter .ui-bar-inner{z-index:1;position:absolute;border-radius:5px;width:100%;height:18px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}#ui-health-container{width:200px;position:relative}#ui-health-counter .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}#ui-health-counter #ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}.health-bar-pulse{-webkit-animation:pulsewhite 1s linear infinite;animation:pulsewhite 1s linear infinite}@-webkit-keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@-webkit-keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}@keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}#ui-bottom-center-1{z-index:3;position:absolute;color:#fff;bottom:23%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-kills{display:none;text-align:center;background:rgba(0,0,0,.4);color:#fff;border-radius:5px;padding:6px}#ui-kill-text{font-size:10px}#ui-kill-count{font-weight:700;color:#ff4100;font-size:18px;margin-bottom:-3px;text-shadow:1px 1px 1px rgba(0,0,0,.3)}#ui-bottom-center-2{position:absolute;color:#fff;bottom:82px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-pickup-message{color:#fff;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;text-align:center;width:100vw}#ui-bottom-center-right{position:absolute;color:#fff;bottom:6px;left:75%}.ui-armor-counter{position:absolute;bottom:0;display:block;width:20px;height:24px;background:rgba(0,0,0,.4);border-radius:5px;margin-left:2px}#ui-armor-helmet{right:0}#ui-armor-backpack{left:26px}.ui-armor-level{position:relative;font-size:8px;font-weight:700;bottom:12px;text-align:center;text-shadow:1px 1px #000}.ui-armor-counter-inner{z-index:1;position:absolute;background:rgba(0,255,0,.5);border-radius:5px;width:100%;height:0;bottom:0;transition:height .5s;transition-property:height;transition-duration:.5s;transition-timing-function:ease-out;transition-delay:0s}.ui-armor-counter .ui-armor-count{z-index:2;text-shadow:1px 1px #000;position:relative;font-size:18px;font-weight:700;margin-top:-28px;text-align:center}.ui-armor-counter .ui-armor-image{margin:auto;left:0;right:0;bottom:0;top:0;z-index:0;position:absolute;height:18px;width:18px}#ui-bottom-right{bottom:auto;color:#fff;position:absolute;right:6px;top:55%;-webkit-transform-origin:bottom right;transform-origin:bottom right;-webkit-transform:scale(1);transform:scale(1)}#ui-weapon-container{width:84px}.ui-weapon-info{margin-bottom:5px}.ui-weapon-info,.ui-weapon-switch{border-radius:5px;border:2px solid transparent}.ui-weapon-switch{position:absolute;right:0;opacity:.6;width:68px;height:24px;margin-left:auto;pointer-events:all}#ui-weapon-id-1{bottom:90px}#ui-weapon-id-2{bottom:60px}#ui-weapon-id-3{bottom:30px}#ui-weapon-id-4{bottom:0}.ui-weapon-name{position:absolute;font-size:10px;font-weight:700;right:4px;width:48px;margin-top:12px;text-align:right;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.ui-weapon-number{font-size:24px;right:8px}.ui-weapon-exp,.ui-weapon-number{display:none;position:absolute;font-weight:700;text-align:center}.ui-weapon-exp{height:16px;width:16px;font-size:8px;line-height:18px;right:34px;margin-top:10px}.ui-weapon-image{display:none;position:relative;height:28px;width:28px;left:0;bottom:3px;-webkit-transform:rotate(10deg);transform:rotate(10deg)}#ui-weapon-id-4 .ui-weapon-image{height:24px;width:24px;left:0;top:0;background-size:24px}#ui-stats-contents{position:absolute;width:100%;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;color:#fff;border-radius:5px}#ui-stats-header{margin-top:14px}.ui-stats-header-title{font-weight:700;font-size:24px;margin:6px;color:gold}.ui-stats-header-reason{font-size:12px}.ui-stats-header-overview{position:fixed;top:4px;right:12px;margin:5px}.ui-stats-header-overview div{display:block;padding-bottom:6px;border-bottom:2px solid hsla(0,0%,100%,.25)}.ui-stats-header-overview div:not(:first-child){margin:initial}span.ui-stats-header-stat{font-size:22px}span.ui-stats-header-value{margin-left:12px;font-size:28px;font-weight:700}#ui-stats-info-box{position:relative;left:50%;margin:auto;margin-top:0;height:100px;display:flex}.ui-stats-info-player{position:relative;width:125px;background-color:rgba(0,0,0,.75);border-radius:4px;border:2px solid #000;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.ui-stats-info-status:after{background-image:url(../img/gui/skull.svg);background-position:50%;background-repeat:no-repeat;background-size:70px;content:"";display:block;height:100%;left:auto;opacity:.1;position:absolute;top:0;width:100%;z-index:-1}.ui-stats-info-player-name{color:gold;font-size:12px;font-weight:700;font-style:italic;margin:4px auto;max-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-stats-info{display:flex;height:18px;margin:auto}.ui-stats-info>div{padding:4px;font-size:9px;line-height:6px;text-align:left;font-weight:700}.ui-stats-info>div:first-child{width:55%;margin-right:4px;text-align:right;font-weight:400}.ui-stats-reason{display:flex;height:72px;margin:auto}.ui-stats-reason div{padding:8px;margin:auto;width:100%;text-align:center;font-size:16px}.ui-stats-reason .ui-stats-reason-dead{color:red}.ui-stats-reason .ui-stats-reason-alive{color:#7cfc00}#ui-stats-options{position:absolute;left:50%;margin-top:10px;min-height:30px;z-index:1}.ui-stats-restart{width:130px;margin:auto;margin-bottom:20px}#ui-stats-spectate,.ui-stats-restart{position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-stats-spectate{left:68px;width:88px;background:#50afab;border-bottom:2px solid #387c79;box-shadow:none}.ui-stats-ad-container{display:none;margin-top:8px;-webkit-transform:scale(.7);transform:scale(.7)}#ui-spec-ad-container{z-index:1;position:absolute;top:0;left:50%}#ad-block-stats-bottom{-webkit-transform:scale(.6);transform:scale(.6);-webkit-transform-origin:center;transform-origin:center;position:static}.tooltip{position:relative}.tooltip .tooltip-text{visibility:hidden!important;width:240px;background-color:#000;color:#fff;text-align:center;padding:5px 0;border-radius:6px;position:absolute;z-index:1;right:110%;opacity:.75;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.tooltip .tooltip-text:after{content:" ";position:absolute;top:50%;left:100%;margin-top:-5px;border-width:5px;border-style:solid;border-color:transparent transparent transparent #000}.tooltip-title{font-size:18px;font-weight:700;padding:4px;color:#ff0}.tooltip-description{font-size:16px;padding:4px}.tooltip-description span{font-size:16px}#ui-editor-top-center{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-editor-top-right{position:absolute;color:#fff;font-size:16px;top:6px;right:6px}.ui-editor-header{text-align:center;font-weight:700;font-size:16px;padding:8px}.ui-editor-info{background:rgba(0,0,0,.4);border-radius:5px;font-size:36px;margin-bottom:8px;padding:8px}.ui-editor-list{margin:0;padding:0;list-style:none}.ui-editor-list li div{font-family:monospace;font-size:14px}#ui-profiler-top-left{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;text-align:center;display:flex}.ui-profiler-list{background:rgba(0,0,0,.4);border-radius:5px;margin-right:16px;padding:8px}.ui-profiler-list-header{font-size:16px;font-weight:700;margin-bottom:8px}.ui-profiler-list ul{list-style:none;text-align:left;padding:0;margin:0}.ui-profiler-list li{display:flex}.kv{font-family:monospace;font-size:14px;font-weight:400}.kv:last-child{width:100%;text-align:right}#ui-leaderboard-wrapper,#ui-settings-container-desktop{display:none}#ui-settings-container-mobile{display:block}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-top-center{-webkit-transform-origin:top;transform-origin:top;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}@media screen and (max-width:850px) and screen and (max-width:850px){#ui-lower-center{-webkit-transform:scale(1);transform:scale(1)}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-bottom-center-0{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-bottom-right{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.8);transform:scale(.8)}}@media screen and (max-width:850px) and (max-width:850px) and (orientation:landscape){.ui-stats-header-overview .ui-stats-header-left{position:fixed;top:6px;left:12px}.ui-stats-header-overview .ui-stats-header-right{position:fixed;top:6px;right:12px}}@media screen and (max-width:850px) and (max-height:360px) and (max-width:640px){.ui-stats-ad-container{margin-top:0;-webkit-transform:scale(.6);transform:scale(.6)}}@media screen and (max-width:850px) and (max-width:850px) and (max-height:320px){.ui-stats-ad-container{position:fixed;right:10px;top:24px;-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:bottom right;transform-origin:bottom right}}@media screen and (max-width:850px) and (orientation:portrait){#ui-stats-contents{margin-top:32px;margin-bottom:16px}#ui-stats-header-overview{position:static}#ui-stats-info-box{display:inline-block;left:auto;-webkit-transform:scale(.9);transform:scale(.9);-webkit-transform-origin:initial;transform-origin:initial;margin-top:2px;width:100%}.ui-stats-ad-container{width:100%}.ui-stats-info-player{display:inline-block;left:auto!important;margin:8px;-webkit-transform:none;transform:none}.ui-stats-header-overview{display:inline-block;position:static;width:175px}.ui-stats-header-overview div{position:static;margin-bottom:8px}#ui-top-center{top:134px;left:50%}#ui-top-center-scopes-wrapper{display:none;bottom:42px;top:auto}#ui-team{top:40px}.ui-team-member{height:18px;margin-bottom:4px}#ui-upper-center{top:180px}#ui-bottom-center-0{top:-15px;bottom:auto;left:100px;-webkit-transform:scale(.85);transform:scale(.85)}#ui-bottom-center-1{bottom:28%}#ui-bottom-center-2{bottom:218px}#ui-lower-center{bottom:38%;left:38%}#ui-boost-counter{position:relative;top:40px;left:2px}#ui-bottom-right{bottom:20px;right:6px;top:auto}#ui-weapon-id-1{right:240px;bottom:auto}#ui-weapon-id-2{right:160px;bottom:auto}#ui-weapon-id-3{right:80px;bottom:auto}#ui-weapon-id-4{bottom:auto}.ui-weapon-info{display:inline-block}#ui-bottom-center-right{bottom:9px;left:30px}.ui-right-center-mobile{top:6px}#ui-emote-button{top:200px}#ui-debug-button{top:210px}#ui-ammo-interactive{left:8px;margin-top:4px;top:88px}#ui-ammo-interactive .ui-loot,#ui-medical-interactive .ui-loot{display:block}#ui-equipped-ammo{position:static}#ui-equipped-ammo,#ui-equipped-ammo-wrapper{left:auto;-webkit-transform:none;transform:none}#ui-equipped-ammo-wrapper{bottom:auto;color:#fff;position:absolute;right:6px;top:44%}#ui-bullet-counter{width:auto}#ui-bullet-counter #ui-current-clip{left:50%}#ui-bullet-counter #ui-remaining-ammo{left:auto;right:0;top:36px}#ui-bullet-counter #ui-reload-button{left:auto;right:0;top:62px}#big-map-collision{left:auto;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}#big-map-close{bottom:auto;top:12px}#ui-spectate-options-wrapper{bottom:42px;-webkit-transform:scale(.7);transform:scale(.7)}#ui-spectate-options{position:absolute;bottom:12px}#ui-spectate-stats{bottom:0;top:auto}}@media screen and (max-width:850px) and (orientation:portrait) and (min-height:668px){#ui-stats-contents{margin-top:32px}#ui-stats-info-box,.ui-stats-ad-container{-webkit-transform:scale(1);transform:scale(1)}.ui-stats-ad-container{margin-top:20px}#ui-stats-options{display:block;left:auto;position:static;margin:auto;margin-top:24px;width:100%}.ui-stats-restart{margin-bottom:0}#ui-stats-spectate,.ui-stats-restart{display:block;position:static;-webkit-transform:initial;transform:none}#ui-stats-spectate{margin:auto;margin-top:6px}}@media screen and (max-width:850px) and (orientation:portrait) and (max-height:667px){#ui-stats-contents{margin-top:0;-webkit-transform:translateX(-50%) scale(.9);transform:translateX(-50%) scale(.9);-webkit-transform-origin:top;transform-origin:top}.ui-stats-ad-container{margin-top:20px}}@media screen and (max-width:850px) and (orientation:portrait) and (max-height:568px) and (max-width:375px){#ui-bottom-center-right{left:22px;-webkit-transform:scale(.8);transform:scale(.8)}#ui-bottom-right{right:0}#ui-bottom-center-0{top:-20px;left:84px;-webkit-transform:scale(.7);transform:scale(.7)}}', ""])
 	},
 	v8aM: function(e, t, a) {
 		"use strict";
@@ -23945,9 +25489,10 @@ webpackJsonp([0], {
 			r = {
 				Locked: 0,
 				Default: 1,
-				Twitter: 2,
-				YouTube: 3,
-				Facebook: 4
+				Account: 5,
+				Twitter: 6,
+				YouTube: 7,
+				Facebook: 8
 			},
 			s = {
 				None: 0,
@@ -24028,14 +25573,20 @@ webpackJsonp([0], {
 				LogoSwine: 75,
 				LogoHydra: 76,
 				LogoStorm: 77,
-				FlagHonduras: 78
+				FlagHonduras: 78,
+				LogoCaduceus: 79,
+				ImpFace: 80,
+				MonocleFace: 81,
+				SunglassFace: 82,
+				HeadshotFace: 83,
+				Potato: 84,
+				Leek: 85,
+				Eggplant: 86,
+				Baguette: 87,
+				Chick: 88,
+				Ammo50AE: 89
 			},
 			l = (o = {}, i(o, s.None, {
-				texture: "img/gui/close.svg",
-				teamOnly: !1,
-				noCustom: !0,
-				category: r.Locked
-			}), i(o, s.Empty, {
 				texture: "",
 				teamOnly: !1,
 				noCustom: !0,
@@ -24486,6 +26037,71 @@ webpackJsonp([0], {
 				teamOnly: !1,
 				facebookLike: !0,
 				category: r.Facebook
+			}), i(o, s.LogoCaduceus, {
+				texture: "img/emotes/logo-caduceus.svg",
+				sound: "emote_01",
+				teamOnly: !1,
+				accountLogin: !0,
+				category: r.Account
+			}), i(o, s.ImpFace, {
+				texture: "img/emotes/imp-face.svg",
+				sound: "emote_01",
+				teamOnly: !1,
+				accountLogin: !0,
+				category: r.Account
+			}), i(o, s.MonocleFace, {
+				texture: "img/emotes/monocle-face.svg",
+				sound: "emote_01",
+				teamOnly: !1,
+				accountLogin: !0,
+				category: r.Account
+			}), i(o, s.SunglassFace, {
+				texture: "img/emotes/sunglass-face.svg",
+				sound: "emote_01",
+				teamOnly: !1,
+				accountLogin: !0,
+				category: r.Account
+			}), i(o, s.HeadshotFace, {
+				texture: "img/emotes/headshot-face.svg",
+				sound: "emote_01",
+				teamOnly: !1,
+				accountLogin: !0,
+				category: r.Account
+			}), i(o, s.Potato, {
+				texture: "img/emotes/potato.svg",
+				sound: "emote_01",
+				teamOnly: !1,
+				accountLogin: !0,
+				category: r.Account
+			}), i(o, s.Leek, {
+				texture: "img/emotes/leek.svg",
+				sound: "emote_01",
+				teamOnly: !1,
+				accountLogin: !0,
+				category: r.Account
+			}), i(o, s.Eggplant, {
+				texture: "img/emotes/eggplant.svg",
+				sound: "emote_01",
+				teamOnly: !1,
+				accountLogin: !0,
+				category: r.Account
+			}), i(o, s.Baguette, {
+				texture: "img/emotes/baguette.svg",
+				sound: "emote_01",
+				teamOnly: !1,
+				accountLogin: !0,
+				category: r.Account
+			}), i(o, s.Chick, {
+				texture: "img/emotes/chick.svg",
+				sound: "emote_01",
+				teamOnly: !1,
+				accountLogin: !0,
+				category: r.Account
+			}), i(o, s.Ammo50AE, {
+				texture: "img/emotes/ammo-50AE.svg",
+				sound: "emote_01",
+				teamOnly: !0,
+				category: r.Locked
 			}), o);
 		e.exports = {
 			EmoteSlot: n,
@@ -24585,14 +26201,14 @@ webpackJsonp([0], {
 									C = d.length(P);
 								if (x.obj && x.obj.__id != y.lastSoundObjId && C > 7.5) {
 									y.lastSoundObjId = x.obj.__id;
-									var z = d.mul(d.normalizeSafe(P, d.create(1, 0)), -1);
-									x.obj.playHitFx(y.pos, z, y.layer, t, a)
+									var I = d.mul(d.normalizeSafe(P, d.create(1, 0)), -1);
+									x.obj.playHitFx(y.pos, I, y.layer, t, a)
 								}
-								var I = o.getGroundSurface(y.pos, y.layer);
-								y.posZ <= .01 && !y.inWater && "water" == I && (o.addRipple(y.pos, 0), y.inWater = !0);
-								var D = y.velZ;
-								if (y.velZ = (y.posZ - y.posZOld) / e, !y.isNew && !y.grounded && y.velZ >= 0 && D < 0) {
-									var A = {
+								var z = o.getGroundSurface(y.pos, y.layer);
+								y.posZ <= .01 && !y.inWater && "water" == z && (o.addRipple(y.pos, 0), y.inWater = !0);
+								var A = y.velZ;
+								if (y.velZ = (y.posZ - y.posZOld) / e, !y.isNew && !y.grounded && y.velZ >= 0 && A < 0) {
+									var D = {
 										fn: "playGroup",
 										channel: "hits",
 										name: ""
@@ -24601,22 +26217,22 @@ webpackJsonp([0], {
 										if (y.lastSoundObjId != v.obj.__id) {
 											y.lastSoundObjId = v.obj.__id;
 											var O = s.Defs[v.obj.type];
-											A.name = O.sound.bullet
+											D.name = O.sound.bullet
 										}
-									} else y.grounded = !0, A.name = g[I], void 0 === A.name && (A.name = "footstep_" + I, A.fn = "playGroup", A.channel = "sfx");
-									"" != A.name && a[A.fn](A.name, {
-										channel: A.channel,
+									} else y.grounded = !0, D.name = g[z], void 0 === D.name && (D.name = "footstep_" + z, D.fn = "playGroup", D.channel = "sfx");
+									"" != D.name && a[D.fn](D.name, {
+										channel: D.channel,
 										soundPos: y.pos,
 										layer: y.layer,
 										muffled: !0
 									})
 								}
 								var L = y.layer,
-									B = y.posZ < .25 ? 14 : 25,
-									E = l.createCircle(y.pos, 3 * y.rad),
-									F = o.insideStructureStairs(E),
-									R = o.insideStructureMask(E);
-								!(y.posZ >= .25 && F && (1 & y.layer) == (1 & i.layer)) || R && 2 & i.layer || (L |= 2, B += 100), n.addPIXIObj(y.sprite, h.World, L, B);
+									E = y.posZ < .25 ? 14 : 25,
+									B = l.createCircle(y.pos, 3 * y.rad),
+									F = o.insideStructureStairs(B),
+									R = o.insideStructureMask(B);
+								!(y.posZ >= .25 && F && (1 & y.layer) == (1 & i.layer)) || R && 2 & i.layer || (L |= 2, E += 100), n.addPIXIObj(y.sprite, h.World, L, E);
 								var j = y.imgScale * c.remap(y.posZ, 0, r.projectile.maxHeight, 1, 2.5),
 									N = p.pointToScreen(y.pos),
 									q = p.pixels(j);
@@ -24807,7 +26423,7 @@ webpackJsonp([0], {
 			"game-12gauge": "12 gauge",
 			"game-12gauge-tooltip": "Ammunitie voor M870, Saiga-12 en MP220.",
 			"game-762mm": "7.62mm",
-			"game-762mm-tooltip": "Ammunitie voor AK-47, SCAR-H, M39, Mosin Nagant, OT-38 en DP-28.",
+			"game-762mm-tooltip": "Ammunitie voor AK-47, SCAR-H, M39, Mosin-Nagant, OT-38 en DP-28.",
 			"game-556mm": "5.56mm",
 			"game-556mm-tooltip": "Ammunitie voor FAMAS, HK416, Mk 12 en M249.",
 			"game-chest01": "Level 1 Armor",
@@ -24837,7 +26453,7 @@ webpackJsonp([0], {
 			"game-fists": "Punch",
 			"game-ak47": "AK-47",
 			"game-dp28": "DP-28",
-			"game-mosin": "Mosin Nagant",
+			"game-mosin": "Mosin-Nagant",
 			"game-m39": "M39 EMR",
 			"game-mp5": "MP5",
 			"game-mac10": "MAC-10",
@@ -25364,31 +26980,31 @@ webpackJsonp([0], {
 								})
 							}
 						}
-						for (var z = 0; z < y.length; z++) {
-							var I = y[z];
-							if (I.active && !I.netData.dead && (m.sameLayer(I.netData.layer, x.layer) || 2 & I.netData.layer) && (I.__id != x.playerId || x.damageSelf)) {
-								var D = s.intersectSegmentCircle(_, x.pos, I.pos, n.player.radius);
-								D && S.push({
+						for (var I = 0; I < y.length; I++) {
+							var z = y[I];
+							if (z.active && !z.netData.dead && (m.sameLayer(z.netData.layer, x.layer) || 2 & z.netData.layer) && (z.__id != x.playerId || x.damageSelf)) {
+								var A = s.intersectSegmentCircle(_, x.pos, z.pos, n.player.radius);
+								A && S.push({
 									type: r.Type.Player,
-									obj: I,
-									res: D
+									obj: z,
+									res: A
 								})
 							}
 						}
-						for (var A = 0; A < S.length; A++) {
-							var O = S[A];
+						for (var D = 0; D < S.length; D++) {
+							var O = S[D];
 							O.dist = d.length(d.sub(O.res.point, _))
 						}
 						S.sort(function(e, t) {
 							return e.dist - t.dist
 						});
 						var L = !1,
-							B = t.getPlayerById(x.playerId);
-						B && (B.netData.dead || B.netData.downed) && (L = !0);
-						for (var E = !1, F = 0; F < S.length; F++) {
+							E = t.getPlayerById(x.playerId);
+						E && (E.netData.dead || E.netData.downed) && (L = !0);
+						for (var B = !1, F = 0; F < S.length; F++) {
 							var R = S[F],
 								j = R.res;
-							if (R.type == r.Type.Obstacle) R.obj.playHitFx(j.point, j.normal, x.layer, g, f), E = R.obj.collidable;
+							if (R.type == r.Type.Obstacle) R.obj.playHitFx(j.point, j.normal, x.layer, g, f), B = R.obj.collidable;
 							else if (R.type == r.Type.Player) {
 								if (!L) {
 									var N = R.obj,
@@ -25400,32 +27016,32 @@ webpackJsonp([0], {
 										muffled: !0
 									})
 								}
-								E = !0
+								B = !0
 							}
-							if (E) {
+							if (B) {
 								x.pos = j.point;
 								break
 							}
 						}
 						if (!(2 & x.layer)) {
-							for (var G = a.structurePool.getPool(), U = x.layer, V = 0; V < G.length; V++) {
-								var H = G[V];
+							for (var U = a.structurePool.getPool(), G = x.layer, V = 0; V < U.length; V++) {
+								var H = U[V];
 								if (H.active) {
 									for (var W = !1, K = !1, X = 0; X < H.stairs.length; X++)
 										if (l.intersectSegment(H.stairs[X].collision, x.pos, _)) {
 											W = !0;
 											break
 										}
-									for (var Z = 0; Z < H.mask.length; Z++)
-										if (l.intersectSegment(H.mask[Z], x.pos, _)) {
+									for (var Y = 0; Y < H.mask.length; Y++)
+										if (l.intersectSegment(H.mask[Y], x.pos, _)) {
 											K = !0;
 											break
 										}
-									W && !K && (U |= 2)
+									W && !K && (G |= 2)
 								}
 							}
-							U != x.layer && (x.layer = U, u.addPIXIObj(x.container, h.Bullet, x.layer, 19))
-						}(E || c.eqAbs(v, k)) && (x.collided = !0, x.alive = !1), x.isNew = !1
+							G != x.layer && (x.layer = G, u.addPIXIObj(x.container, h.Bullet, x.layer, 19))
+						}(B || c.eqAbs(v, k)) && (x.collided = !0, x.alive = !1), x.isNew = !1
 					}
 				}
 			},
@@ -25485,17 +27101,18 @@ webpackJsonp([0], {
 		var l = a("+0OL"),
 			c = a("0od3"),
 			m = a("yp2f"),
-			d = a("S1KI"),
-			p = a("zinx"),
-			u = (a("5dFr"), a("85i3")),
-			h = a("m1+W"),
-			g = a("Jr6A"),
-			f = a("LLDW"),
+			d = a("po6R"),
+			p = a("S1KI"),
+			u = a("zinx"),
+			h = (a("5dFr"), a("85i3")),
+			g = a("m1+W"),
+			f = a("Jr6A"),
 			y = a("FT2U"),
 			b = a("fWTV"),
 			x = (a("SEs0"), a("xGI0")),
-			v = a("YfyY"),
-			k = function() {
+			v = a("2Ex0"),
+			k = a("YfyY"),
+			_ = function() {
 				function e() {
 					i(this, e), this.useLocalStorage = !0, this.config = {}, this.onModified = []
 				}
@@ -25508,7 +27125,7 @@ webpackJsonp([0], {
 						} catch (e) {
 							this.useLocalStorage = !1
 						}
-						var t = g.detectLanguage();
+						var t = f.detectLanguage();
 						this.config = o({
 							muteAudio: !1,
 							masterVolume: 1,
@@ -25518,6 +27135,7 @@ webpackJsonp([0], {
 							screenShake: !0,
 							touchMoveStyle: "locked",
 							touchAimStyle: "locked",
+							profile: null,
 							playerName: "",
 							region: "na",
 							teamMode: 4,
@@ -25531,8 +27149,9 @@ webpackJsonp([0], {
 							emoteDeath: 1,
 							twitterFollow: !1,
 							youtubeSubscribe: !1,
-							facebookLike: !1
-						}, e), this.config.teamAutoFill = !0, this.onModified && this.onModified()
+							facebookLike: !1,
+							cookiesConsented1: !0
+						}, e), delete this.config.cookiesConsented, this.config.teamAutoFill = !0, this.onModified && this.onModified()
 					}
 				}, {
 					key: "store",
@@ -25553,50 +27172,48 @@ webpackJsonp([0], {
 					}
 				}]), e
 			}(),
-			_ = function() {
+			w = function() {
 				function e() {
 					var t = this;
-					i(this, e), this.gameCanvas = r("#cvs"), this.nameInput = r("#player-name-input-solo"), this.serverSelect = r("#server-select-main"), this.playSoloBtn = r("#btn-start-solo"), this.playDuoBtn = r("#btn-start-duo"), this.playSquadBtn = r("#btn-start-squad"), this.createTeamBtn = r("#btn-create-team"), this.joinTeamBtn = r("#btn-team-mobile-link-join"), this.leaveTeamBtn = r("#btn-team-leave"), this.muteBtns = r(".btn-sound-toggle"), this.masterSliders = r(".sl-master-volume"), this.soundSliders = r(".sl-sound-volume"), this.musicSliders = r(".sl-music-volume"), this.fullscreenBtn = r(".btn-fullscreen-toggle"), this.serverWarning = r("#server-warning"), this.languageSelect = r(".language-select"), this.startMenuWrapper = r("#start-menu-wrapper"), this.gameAreaWrapper = r("#game-area-wrapper"), this.config = new k, this.config.onModified = function() {
+					i(this, e), this.gameCanvas = r("#cvs"), this.nameInput = r("#player-name-input-solo"), this.serverSelect = r("#server-select-main"), this.playSoloBtn = r("#btn-start-solo"), this.playDuoBtn = r("#btn-start-duo"), this.playSquadBtn = r("#btn-start-squad"), this.createTeamBtn = r("#btn-create-team"), this.joinTeamBtn = r("#btn-team-mobile-link-join"), this.leaveTeamBtn = r("#btn-team-leave"), this.muteBtns = r(".btn-sound-toggle"), this.masterSliders = r(".sl-master-volume"), this.soundSliders = r(".sl-sound-volume"), this.musicSliders = r(".sl-music-volume"), this.fullscreenBtn = r(".btn-fullscreen-toggle"), this.serverWarning = r("#server-warning"), this.languageSelect = r(".language-select"), this.startMenuWrapper = r("#start-menu-wrapper"), this.gameAreaWrapper = r("#game-area-wrapper"), this.config = new _, this.config.onModified = function() {
 						t.onConfigModified()
-					}, this.siteInfo = {}, this.localization = new b, this.localization.setLocale("en"), this.localization.localizeIndex(), this.leaderboard = new f(this.localization), this.pingTest = new x, this.audioManager = new d, this.teamMenu = new v(this.config, this.pingTest, this.localization, this.joinGame.bind(this), this.audioManager), this.teamMenu.onLeave = this.onTeamMenuLeave.bind(this), this.loadoutMenu = new y(this.config), this.pixi = null, this.game = null, this.initialized = !1, this.active = !1, this.contextListener = function(e) {
+					}, this.siteInfo = {}, this.account = new d(this.config), this.localization = new b, this.localization.setLocale("en"), this.localization.localizeIndex(), this.loadoutMenu = new y(this.config), this.pingTest = new x, this.audioManager = new p, this.teamMenu = new k(this.config, this.pingTest, this.localization, this.joinGame.bind(this), this.audioManager), this.teamMenu.onLeave = this.onTeamMenuLeave.bind(this), this.pixi = null, this.game = null, this.initialized = !1, this.active = !1, this.contextListener = function(e) {
 						e.preventDefault()
-					}, this.errorMessage = "", this.errorCount = 0, this.playEnabled = !1, this.quickPlayPendingMode = 0, this.findGameTimeout = 0, this.playTimeout = 0, this.menuMusicIdx = 0, this.config.load(), this.pingTest.start(this.config.get("region")), this.loadoutMenu.init()
+					}, this.errorMessage = "", this.errorCount = 0, this.playEnabled = !1, this.quickPlayPendingMode = 0, this.findGameTimeout = 0, this.playTimeout = 0, this.menuMusicIdx = 0, this.config.load(), this.pingTest.start(this.config.get("region"))
 				}
 				return n(e, [{
 					key: "init",
 					value: function() {
 						var e = this,
-							t = this.nameInput,
-							a = this.playSoloBtn,
-							i = this.playDuoBtn,
-							o = this.playSquadBtn,
-							n = this.serverSelect,
-							l = this.createTeamBtn,
-							c = this.joinTeamBtn,
-							d = this.leaveTeamBtn,
-							f = this.config,
-							y = this.leaderboard,
-							b = this.teamMenu,
-							x = this.muteBtns,
-							v = this.masterSliders,
-							k = this.soundSliders,
-							_ = this.musicSliders,
-							w = this.fullscreenBtn,
-							S = this.audioManager,
-							M = this.localization,
-							T = this.languageSelect;
+							t = this.audioManager,
+							a = this.config,
+							i = this.createTeamBtn,
+							o = this.fullscreenBtn,
+							n = this.joinTeamBtn,
+							l = this.leaveTeamBtn,
+							c = this.languageSelect,
+							d = (this.loadoutMenu, this.localization),
+							p = this.muteBtns,
+							y = this.masterSliders,
+							b = this.musicSliders,
+							x = this.nameInput,
+							k = this.playSoloBtn,
+							_ = this.playDuoBtn,
+							w = this.playSquadBtn,
+							S = this.serverSelect,
+							M = this.soundSliders,
+							T = this.teamMenu;
 						if (!this.initialized) {
-							t.maxLength = m.kNameMaxLen, a.on("click", function() {
-								e.tryQuickStartGame(1)
-							}), i.on("click", function() {
-								e.tryQuickStartGame(2)
-							}), o.on("click", function() {
-								e.tryQuickStartGame(4)
-							}), n.change(function() {
-								var t = n.find(":selected").val();
-								e.pingTest.start(t)
-							});
-							if (r.ajax("/site_info?language=" + this.localization.getLocale()).done(function(t, a) {
+							if (x.maxLength = m.kNameMaxLen, k.on("click", function() {
+									e.tryQuickStartGame(1)
+								}), _.on("click", function() {
+									e.tryQuickStartGame(2)
+								}), w.on("click", function() {
+									e.tryQuickStartGame(4)
+								}), S.change(function() {
+									var t = S.find(":selected").val();
+									e.pingTest.start(t)
+								}), r.ajax("/api/site_info?language=" + this.localization.getLocale()).done(function(t, a) {
 									e.siteInfo = t, e.teamMenu.siteInfo = t;
 									var i = t.pops;
 									if (i)
@@ -25608,89 +27225,85 @@ webpackJsonp([0], {
 										}
 									var m = !1,
 										d = r("#featured-streamers"),
-										u = r(".streamer-list");
-									if (!p.mobile && t.twitch)
+										p = r(".streamer-list");
+									if (!u.mobile && t.twitch)
 										for (var h = 0; h < t.twitch.length; h++) {
 											var g = t.twitch[h],
 												f = r("#featured-streamer-template").clone();
 											f.attr("class", "featured-streamer streamer-tooltip").attr("id", "");
 											var y = f.find("a");
-											y.html(g.name + " <span>" + g.viewers + " " + (1 != g.viewers ? "viewers" : "viewer") + "</span>"), y.css("background-image", "url(" + g.img + ")"), y.attr("href", g.url), u.append(f), m = !0
+											y.html(g.name + " <span>" + g.viewers + " " + (1 != g.viewers ? "viewers" : "viewer") + "</span>"), y.css("background-image", "url(" + g.img + ")"), y.attr("href", g.url), p.append(f), m = !0
 										}
 									d.css("display", m ? "block" : "none");
 									var b = r("#featured-youtuber"),
 										x = t.youtube && !m;
-									x && r(".btn-youtuber").attr("href", t.youtube.link).html(t.youtube.name), b.css("display", x ? "block" : "none")
-								}), p.mobile && !p.tablet || y.startLeaderboardRotation(), r(".btn-youtuber").on("click", function() {
-									u.storeGeneric("navOut", "youtube")
-								}), r("#btn-more").on("click", function() {
-									u.storeGeneric("navOut", "iogamesspace")
-								}), t.on("blur", function(t) {
+									x && r(".btn-youtuber").attr("href", t.youtube.link).html(t.youtube.name), b.css("display", x ? "block" : "none"), t.promptConsent && v.showCookieConsent(e.config)
+								}), x.on("blur", function(t) {
 									e.setConfigFromDOM()
-								}), x.on("click", function() {
-									f.set("muteAudio", !f.get("muteAudio"))
-								}), v.on("input", function() {
+								}), p.on("click", function() {
+									a.set("muteAudio", !a.get("muteAudio"))
+								}), y.on("input", function() {
 									var e = r(this).val() / 100;
-									S.setMasterVolume(e), f.set("masterVolume", e)
-								}), k.on("input", function() {
+									t.setMasterVolume(e), a.set("masterVolume", e)
+								}), M.on("input", function() {
 									var e = r(this).val() / 100;
-									S.setSoundVolume(e), f.set("soundVolume", e)
-								}), _.on("input", function() {
+									t.setSoundVolume(e), a.set("soundVolume", e)
+								}), b.on("input", function() {
 									var e = r(this).val() / 100;
-									S.setMusicVolume(e), f.set("musicVolume", e)
+									t.setMusicVolume(e), a.set("musicVolume", e)
 								}), r(".modal-settings-item").children("input").each(function(e, t) {
-									var a = r(t);
-									a.prop("checked", f.get(a.prop("id")))
+									var i = r(t);
+									i.prop("checked", a.get(i.prop("id")))
 								}), r(".modal-settings-item > input:checkbox").change(function(e) {
 									var t = r(e.target);
-									f.set(t.prop("id"), t.is(":checked"))
-								}), w.on("click", function() {
-									g.toggleFullScreen()
-								}), T.on("change", function() {
-									this.value && f.set("language", this.value)
-								}), l.on("click", function() {
+									a.set(t.prop("id"), t.is(":checked"))
+								}), o.on("click", function() {
+									f.toggleFullScreen()
+								}), c.on("change", function() {
+									this.value && a.set("language", this.value)
+								}), i.on("click", function() {
 									e.tryJoinTeam(!0)
-								}), c.on("click", function() {
+								}), n.on("click", function() {
 									var t = r("#team-link-input").val(),
 										a = t.indexOf("#");
 									a >= 0 && (t = t.slice(a + 1)), t.length > 0 ? (r("#team-mobile-link").css("display", "none"), e.tryJoinTeam(!1, t)) : (r("#team-mobile-link-desc").css("display", "none"), r("#team-mobile-link-warning").css("display", "none").fadeIn(100))
-								}), d.on("click", function() {
-									window.history && window.history.replaceState("", "", "/"), e.game && e.game.free(), b.leave()
+								}), l.on("click", function() {
+									window.history && window.history.replaceState("", "", "/"), e.game && e.game.free(), T.leave()
 								}), "WebSocket" in window)
-								if (g.authLocation()) {
-									if (g.detectIE()) {
+								if (f.authLocation()) {
+									if (f.detectIE()) {
 										var P = 'Please use the <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome browser</a> for a better playing experience!';
-										P += '<br><br>Â¡Usa el <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">navegador Chrome</a> para una mejor experiencia de juego!', P += '<br><br><a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">êµ¬ê¸€ í?¬ë¡¬</a> ë¸Œë?¼ìš°ì €ë¡œì?´ ê²Œìž„ì?„ ì¦?ê²¨ë³´ì„¸ìš?.';
+										P += '<br><br>Â¡Usa el <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">navegador Chrome</a> para una mejor experiencia de juego!', P += '<br><br><a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">êµ¬ê¸€ í¬ë¡¬</a> ë¸Œë¼ìš°ì €ë¡œì´ ê²Œìž„ì„ ì¦ê²¨ë³´ì„¸ìš”.';
 										var C = r("#modal-notification");
 										C.find(".modal-settings-text").html(P), C.fadeIn(200)
 									}
 								} else {
-									u.storeGeneric("proxy", "used"), u.logProxy(window.location.hostname);
-									var z = r("#modal-notification");
-									z.find(".modal-settings-text").html('Please use the <a href="https://surviv.io" target="_blank">official surviv.io site</a> for a better playing experience!'), z.find(".modal-footer").remove(), r(document).off("click"), z.fadeIn(200)
+									h.storeGeneric("proxy", "used"), h.logProxy(window.location.hostname);
+									var I = r("#modal-notification");
+									I.find(".modal-settings-text").html('Please use the <a href="https://surviv.io" target="_blank">official surviv.io site</a> for a better playing experience!'), I.fadeIn(200)
 								}
 							else {
-								u.storeGeneric("compatibility", "no_websocket");
-								var I = r("#modal-notification");
-								I.find(".modal-settings-text").html('WebSockets are required to play.<br><br>Please use the <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome browser</a> for a better playing experience!'), I.find(".modal-footer").remove(), r(document).off("click"), I.fadeIn(200)
+								h.storeGeneric("error", "no_websocket");
+								var z = r("#modal-notification");
+								z.find(".modal-settings-text").html('WebSockets are required to play.<br><br>Please use the <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome browser</a> for a better playing experience!'), z.fadeIn(200)
 							}
-							this.playEnabled = !0, this.setDOMFromConfig(), this.setAppActive(!0);
-							var D = this.getConfigResolution(),
-								A = new s.Application({
+							this.account.load(), this.loadoutMenu.init(this.account), this.playEnabled = !0, this.setDOMFromConfig(), this.setAppActive(!0);
+							var A = this.getConfigResolution(),
+								D = new s.Application({
 									width: window.innerWidth,
 									height: window.innerHeight,
 									view: this.gameCanvas[0],
 									antialias: !1,
-									resolution: D
+									resolution: A
 								});
-							A.renderer.plugins.interaction.destroy(), A.ticker.add(this.update, this), this.pixi = A, h.preloadImages();
+							D.renderer.plugins.interaction.destroy(), D.ticker.add(this.update, this), this.pixi = D, g.preloadImages(D.renderer);
 							var O = function() {
 									e.setAppActive(!1)
 								},
 								L = function(t) {
 									e.game.free(), e.errorMessage = t || "", e.teamMenu.onGameComplete(), e.setAppActive(!0)
 								};
-							this.game = new h(A, S, M, f, O, L), this.onResize(), this.tryJoinTeam(!1), this.audioManager.preloadSounds(), this.menuMusicIdx = S.queueSound("menu_music", {
+							this.game = new g(D, t, d, a, O, L), this.onResize(), this.tryJoinTeam(!1), this.audioManager.preloadSounds(), this.menuMusicIdx = t.queueSound("menu_music", {
 								channel: "music",
 								fadeIn: !0,
 								loop: !1,
@@ -25703,28 +27316,25 @@ webpackJsonp([0], {
 					value: function() {
 						var e = this.pixi,
 							t = this.game;
-						if (g.detectMobileSafari())
+						if (f.detectMobileSafari())
 							if (window.navigator.standalone) r("#ui-game").css({
 								height: "95%"
 							});
 							else {
-								var a = g.isLandscape() || g.detectiPhoneX() ? "86%" : "82%";
-								p.tablet && (a = "90%"), r("#ui-game").css({
+								var a = f.isLandscape() || f.detectiPhoneX() ? "86%" : "82%";
+								u.tablet && (a = "90%"), r("#ui-game").css({
 									height: a
 								});
 								var i = r("#ui-right-center, #ui-top-center-scopes-wrapper, #ui-top-center, #ui-menu-display");
 								i.css({
 									"margin-top": "6px"
-								}), g.isLandscape() || g.detectiPhoneX() ? (r("#start-main-center").attr("style", ""), r("#modal-customize .modal-content").attr("style", "")) : (r("#start-main-center").css({
-									transform: "scale(0.8)",
-									"transform-origin": "top"
-								}), r("#modal-customize .modal-content").css({
+								}), f.isLandscape() || f.detectiPhoneX() ? (r("#start-main-center").attr("style", ""), r("#modal-customize .modal-content").attr("style", "")) : r("#modal-customize .modal-content").css({
 									transform: "translate(-50%, -50%) scale(0.45)",
 									top: "38%"
-								}))
+								})
 							}
 						if (e) {
-							var o = g.getScreenDimensions();
+							var o = f.getScreenDimensions();
 							e.renderer.resize(o.width, o.height)
 						}
 						t && t.initialized && t.resize(), this.refreshUi(!1)
@@ -25745,7 +27355,7 @@ webpackJsonp([0], {
 						var e = this.config,
 							t = this.nameInput,
 							a = this.serverSelect,
-							i = g.sanitizeNameInput(t.val());
+							i = f.sanitizeNameInput(t.val());
 						e.set("playerName", i);
 						var o = a.find(":selected").val();
 						e.set("region", o)
@@ -25767,61 +27377,59 @@ webpackJsonp([0], {
 						var e = this.config,
 							t = this.audioManager,
 							a = this.localization,
-							i = this.leaderboard,
-							o = this.muteBtns,
-							n = this.masterSliders,
-							r = this.soundSliders,
-							s = this.musicSliders,
-							l = this.pixi,
-							c = e.get("muteAudio");
-						c != t.mute && (o.removeClass(c ? "audio-on-icon" : "audio-off-icon"), o.addClass(c ? "audio-off-icon" : "audio-on-icon"), t.setMute(c));
-						var m = e.get("masterVolume");
-						n.val(100 * m), t.setMasterVolume(m);
-						var d = e.get("soundVolume");
-						r.val(100 * d), t.setSoundVolume(d);
-						var p = e.get("musicVolume");
-						s.val(100 * p), t.setMusicVolume(p);
-						var u = e.get("language");
-						a.setLocale(u), a.localizeIndex(), i.setLanguage();
-						var h = this.getConfigResolution();
-						l && l.renderer.resolution != h && location.reload()
+							i = this.muteBtns,
+							o = this.masterSliders,
+							n = this.soundSliders,
+							r = this.musicSliders,
+							s = this.pixi,
+							l = e.get("muteAudio");
+						l != t.mute && (i.removeClass(l ? "audio-on-icon" : "audio-off-icon"), i.addClass(l ? "audio-off-icon" : "audio-on-icon"), t.setMute(l));
+						var c = e.get("masterVolume");
+						o.val(100 * c), t.setMasterVolume(c);
+						var m = e.get("soundVolume");
+						n.val(100 * m), t.setSoundVolume(m);
+						var d = e.get("musicVolume");
+						r.val(100 * d), t.setMusicVolume(d);
+						var p = e.get("language");
+						p != a.getLocale() && (a.setLocale(p), a.localizeIndex());
+						var u = this.getConfigResolution();
+						s && s.renderer.resolution != u && location.reload()
 					}
 				}, {
 					key: "getConfigResolution",
 					value: function() {
-						return this.config.get("highRes") || p.pixelRatio > 1 ? 2 : 1
+						return this.config.get("highRes") || u.pixelRatio > 1 ? 2 : 1
 					}
 				}, {
 					key: "refreshUi",
 					value: function() {
-						var e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0],
-							t = (this.nameInput, this.serverSelect, this.playSoloBtn),
-							a = this.playDuoBtn,
-							i = this.playSquadBtn,
-							o = this.startMenuWrapper,
-							n = this.gameAreaWrapper,
-							s = this.serverWarning,
-							l = this.active,
-							c = this.quickPlayPendingMode,
-							m = (this.playArgs, this.errorMessage),
-							d = this.teamMenu;
-						o.css("display", l ? "flex" : "none"), n.css({
+						var e = (!(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0], this.nameInput, this.serverSelect, this.playSoloBtn),
+							t = this.playDuoBtn,
+							a = this.playSquadBtn,
+							i = this.startMenuWrapper,
+							o = this.gameAreaWrapper,
+							n = this.serverWarning,
+							s = this.active,
+							l = this.quickPlayPendingMode,
+							c = (this.playArgs, this.errorMessage),
+							m = this.teamMenu;
+						i.css("display", s ? "flex" : "none"), o.css({
 							display: "block",
-							opacity: l ? 0 : 1
-						}), l ? (r("body").removeClass("user-select-none"), document.removeEventListener("contextmenu", this.contextListener)) : (r("body").addClass("user-select-none"), r("#start-main").stop(!0), r(".leaderboard").stop(!0), r("#btn-leaderboard-to-front").trigger("click"), document.addEventListener("contextmenu", this.contextListener)), r("#ad-block-left").css("display", !g.isLandscape() && d.active ? "none" : "block"), e && r("#btn-leaderboard-to-front").trigger("click");
-						var p = l && "" != m;
-						s.css({
+							opacity: s ? 0 : 1
+						}), s ? (r("body").removeClass("user-select-none"), document.removeEventListener("contextmenu", this.contextListener)) : (r("body").addClass("user-select-none"), r("#start-main").stop(!0), document.addEventListener("contextmenu", this.contextListener)), r("#ad-block-left").css("display", !f.isLandscape() && m.active ? "none" : "block");
+						var d = s && "" != c;
+						n.css({
 							display: "block",
-							opacity: p ? 1 : 0
-						}), s.html(m), t.html(1 == c ? '<div class="ui-spinner"></div>' : t.attr("data-label")), a.html(2 == c ? '<div class="ui-spinner"></div>' : a.attr("data-label")), i.html(4 == c ? '<div class="ui-spinner"></div>' : i.attr("data-label"));
-						var u = d.active,
-							h = window.innerHeight <= 768,
-							f = {
-								x: u && h ? "-60px" : 0,
-								y: u ? h ? 0 : "40px" : 0
+							opacity: d ? 1 : 0
+						}), n.html(c), e.html(1 == l ? '<div class="ui-spinner"></div>' : e.attr("data-label")), t.html(2 == l ? '<div class="ui-spinner"></div>' : t.attr("data-label")), a.html(4 == l ? '<div class="ui-spinner"></div>' : a.attr("data-label"));
+						var p = m.active,
+							u = window.innerHeight <= 768,
+							h = {
+								x: p && u ? "-60px" : 0,
+								y: p ? u ? 0 : "40px" : 0
 							};
 						r("#surviv-io_728x90").css({
-							transform: "translate(" + f.x + ", " + f.y + ")"
+							transform: "translate(" + h.x + ", " + h.y + ")"
 						})
 					}
 				}, {
@@ -25848,10 +27456,10 @@ webpackJsonp([0], {
 							this.playTimeout = r + 1e3, this.errorMessage = "", this.quickPlayPendingMode = e, this.setConfigFromDOM(), this.refreshUi();
 							var s = l.protocolVersion,
 								c = a.get("region"),
-								m = g.getParameterByName("region");
+								m = f.getParameterByName("region");
 							void 0 !== m && m.length > 0 && (c = m);
 							var d = this.pingTest.getZones(c),
-								p = g.getParameterByName("zone");
+								p = f.getParameterByName("zone");
 							void 0 !== p && p.length > 0 && (d = [p]);
 							var u = {
 									version: s,
@@ -25862,57 +27470,42 @@ webpackJsonp([0], {
 									autoFill: !0
 								},
 								h = (new Date).getTime(),
-								f = Math.max(0, this.findGameTimeout - h),
+								g = Math.max(0, this.findGameTimeout - h),
 								y = Math.min(3500, 1e3 + 500 * this.errorCount);
-							this.findGameTimeout = h + f + y, setTimeout(function() {
+							this.findGameTimeout = h + g + y, setTimeout(function() {
 								t.findGame(u)
-							}, f)
+							}, g)
 						}
 					}
 				}, {
 					key: "findGame",
 					value: function(e) {
 						var t = this,
-							a = this.localization,
-							i = this.config;
-						g.findGame(e, function(o, n) {
-							if (o) {
-								var s = {
+							a = this.localization;
+						this.config;
+						f.findGame(e, function(e, i) {
+							if (e) {
+								var o = {
 									full: a.translate("index-failed-finding-game"),
 									invalid_protocol: a.translate("index-invalid-protocol")
 								};
-								if ("invalid_protocol" == o) {
-									var l = r("#modal-refresh");
-									r(document).off("click"), l.fadeIn(200)
+								if ("invalid_protocol" == e) {
+									r("#modal-refresh").fadeIn(200)
 								}
-								t.errorMessage = s[o] || s.full, t.errorCount++, t.quickPlayPendingMode = 0, t.refreshUi()
-							} else {
-								var c = {
-									name: i.get("playerName"),
-									teamUuid: n.teamUuid,
-									teamMode: e.teamMode,
-									playerCount: e.playerCount,
-									autoFill: e.autoFill
-								};
-								t.errorCount = 0, t.joinGame(c, n, function() {
-									t.errorMessage = a.translate("index-failed-joining-game"), t.quickPlayPendingMode = 0, t.refreshUi(), u.storeGeneric("joinFail", "quickPlay_" + c.teamMode)
-								})
-							}
+								t.errorMessage = o[e] || o.full, t.errorCount++, t.quickPlayPendingMode = 0, t.refreshUi()
+							} else t.errorCount = 0, t.joinGame(i, function() {
+								t.errorMessage = a.translate("index-failed-joining-game"), t.quickPlayPendingMode = 0, t.refreshUi()
+							})
 						})
 					}
 				}, {
 					key: "joinGame",
-					value: function(e, t, a) {
-						var i = this,
-							o = this.config,
-							n = this.game;
-						this.audioManager;
-						if (!n) return void setTimeout(function() {
-							i.joinGame(e, t, a)
+					value: function(e, t) {
+						var a = this;
+						if (!this.game) return void setTimeout(function() {
+							a.joinGame(e, t)
 						}, 250);
-						document.hasFocus() || this.audioManager.playSound("notification_start_01", {
-							channel: "ui"
-						}), u.storeGeneric("language", o.get("language")), g.joinGame(n, e, t, a)
+						f.joinGame(this.game, e, t)
 					}
 				}, {
 					key: "update",
@@ -25932,7 +27525,7 @@ webpackJsonp([0], {
 								fadeIn: !0,
 								loop: !0,
 								forceStart: !0
-							}), a.ambientSounds.windInst = this.windInst), i.isSoundPlaying(l) && a.playing && i.stopSound(l), a.initialized && a.playing ? a.update(s) : t.renderer.backgroundColor = 7378501, window.specOk) {
+							}), a.ambientSounds.windInst = this.windInst), i.isSoundPlaying(l) && a.playing && i.stopSound(l), a.initialized && a.playing ? a.update(s) : t.renderer.backgroundColor = 7378501, window.survivSpecOk) {
 							var m = document.body;
 							a.ws && a.ws.close(), m && m.parentNode && m.parentNode.removeChild(m)
 						}
@@ -25947,28 +27540,29 @@ webpackJsonp([0], {
 				t.innerHTML = e.toString(), document.body.appendChild(t)
 			}(e)
 		}();
-		var w = new _;
+		var S = new w;
 		document.addEventListener("DOMContentLoaded", function(e) {
 			setTimeout(function() {
-				w.init()
+				S.init()
 			}, 0)
 		}), window.addEventListener("load", function() {
 			setTimeout(function() {
-				w.init()
+				S.init()
 			}, 0)
-		}), window.addEventListener("resize", function() {
-			w.onResize()
+		}), "#_=_" == window.location.hash && (window.location.hash = "", history.pushState("", document.title, window.location.pathname)), window.addEventListener("resize", function() {
+			S.onResize()
 		}), window.addEventListener("hashchange", function() {
-			w.tryJoinTeam(!1)
+			S.tryJoinTeam(!1)
 		}), window.addEventListener("beforeunload", function(e) {
-			if (w.game && w.game.warnPageReload()) {
+			if (S.game && S.game.warnPageReload()) {
 				var t = "Do you want to reload the game?";
 				return e.returnValue = t, t
 			}
 		}), window.onerror = function(e, t, a, i, o) {
-			if (window.specOk = e.indexOf("getElementById('ui-stats-spectate').innerText"), window.specOk) return u.storeGeneric("error", "specOk"), void(u.enabled = !1);
+			if (window.survivSpecOk = -1 != e.indexOf("getElementById('ui-stats-spectate').innerText"), window.survivSpecOk) return h.storeGeneric("error", "specOk"), void(h.enabled = !1);
 			var n = {
 					msg: e,
+					id: h.instanceId,
 					url: t,
 					line: a,
 					column: i,
@@ -25976,7 +27570,7 @@ webpackJsonp([0], {
 					browser: navigator.userAgent
 				},
 				r = JSON.stringify(n);
-			/surviv\.io\/js\/.*\.js/.test(r) ? u.logWindowOnAppError(r) : u.logWindowOnError(r)
+			/surviv\.io\/js\/.*\.js/.test(r) ? h.logWindowOnAppError(r) : h.logWindowOnError(r)
 		}
 	},
 	yp2f: function(e, t, a) {
@@ -26163,7 +27757,7 @@ webpackJsonp([0], {
 				}, {
 					key: "deserializeMsgType",
 					value: function() {
-						return this.stream.length - 8 * this.stream.byteIndex >= 1 ? this.stream.readUint8() : z.None
+						return this.stream.length - 8 * this.stream.byteIndex >= 1 ? this.stream.readUint8() : I.None
 					}
 				}]), e
 			}(),
@@ -26233,7 +27827,7 @@ webpackJsonp([0], {
 		}, function(e, t) {
 			t.layer = e.readUint8()
 		});
-		var z = {
+		var I = {
 				None: 0,
 				Join: 1,
 				Disconnect: 2,
@@ -26251,30 +27845,30 @@ webpackJsonp([0], {
 				Emote: 14,
 				PlayerStats: 15
 			},
-			I = function() {
+			z = function() {
 				function e() {
-					i(this, e), this.protocol = 0, this.teamUuid = "", this.teamMode = 0, this.playerCount = 1, this.autoFill = !1, this.bot = !1, this.name = "", this.emotes = [], this.useTouch = !1
+					i(this, e), this.protocol = 0, this.privData = "", this.name = "", this.emotes = [], this.useTouch = !1, this.bot = !1
 				}
 				return h(e, [{
 					key: "serialize",
 					value: function(e) {
-						e.writeUint32(this.protocol), e.writeString(this.teamUuid, 32), e.writeUint8(this.teamMode), e.writeUint8(this.playerCount), e.writeUint8(this.autoFill), e.writeUint8(this.bot), e.writeString(this.name, 16);
+						e.writeUint32(this.protocol), e.writeString(this.privData), e.writeString(this.name, 16);
 						for (var t = 0; t < y.Count; t++) e.writeUint8(this.emotes[t]);
-						e.writeUint8(this.useTouch)
+						e.writeUint8(this.useTouch), e.writeUint8(this.bot)
 					}
 				}, {
 					key: "deserialize",
 					value: function(e) {
-						this.protocol = e.readUint32(), this.teamUuid = e.readString(32), this.teamMode = e.readUint8(), this.playerCount = e.readUint8(), this.autoFill = e.readUint8(), this.bot = e.readUint8(), this.name = e.readString(16);
+						this.protocol = e.readUint32(), this.privData = e.readString(), this.name = e.readString(16);
 						for (var t = 0; t < y.Count; t++) {
 							var a = e.readUint8();
 							this.emotes.push(a)
 						}
-						this.useTouch = e.readUint8()
+						this.useTouch = e.readUint8(), this.bot = e.readUint8()
 					}
 				}]), e
 			}(),
-			D = function() {
+			A = function() {
 				function e() {
 					i(this, e), this.reason = ""
 				}
@@ -26290,7 +27884,7 @@ webpackJsonp([0], {
 					}
 				}]), e
 			}(),
-			A = function() {
+			D = function() {
 				function e() {
 					i(this, e), this.seq = 0, this.moveLeft = !1, this.moveRight = !1, this.moveUp = !1, this.moveDown = !1, this.shootStart = !1, this.shootHold = !1, this.reload = !1, this.interaction = !1, this.equipPrimary = !1, this.equipSecondary = !1, this.equipThrowable = !1, this.equipMelee = !1, this.equipLast = !1, this.cancelAction = !1, this.scrollDown = !1, this.scrollUp = !1, this.useItem = "", this.useScope = "", this.toMouseDir = _.create(1, 0), this.toMouseLen = 0, this.portrait = !1, this.editMode = !1, this.moveLen = 255
 				}
@@ -26338,7 +27932,7 @@ webpackJsonp([0], {
 					}
 				}]), e
 			}(),
-			B = function() {
+			E = function() {
 				function e() {
 					i(this, e), this.type = 0, this.pos = _.create(0, 0), this.useLoadout = !1, this.teamOnly = !1, this.isPing = !1
 				}
@@ -26354,7 +27948,7 @@ webpackJsonp([0], {
 					}
 				}]), e
 			}(),
-			E = function() {
+			B = function() {
 				function e() {
 					i(this, e), this.id = 0, this.teamId = 0, this.name = ""
 				}
@@ -26387,7 +27981,7 @@ webpackJsonp([0], {
 					value: function(e) {
 						this.teamMode = e.readUint8(), this.playerId = e.readUint16(), this.started = e.readUint8();
 						for (var t = e.readUint16(), a = 0; a < t; a++) {
-							var i = new E;
+							var i = new B;
 							i.deserialize(e), this.playerInfoMsgs.push(i)
 						}
 					}
@@ -26442,60 +28036,59 @@ webpackJsonp([0], {
 				}
 				return h(e, [{
 					key: "deserialize",
-					value: function(e, t, a, i) {
-						var o = e.readUint16(),
-							c = 0;
-						if (0 != (o & j.DeletedObjects)) {
-							c = e.readUint16();
-							for (var m = 0; m < c; m++) this.delObjIds.push(e.readUint16())
+					value: function(e, t) {
+						var a = e.readUint16(),
+							i = 0;
+						if (0 != (a & j.DeletedObjects)) {
+							i = e.readUint16();
+							for (var o = 0; o < i; o++) this.delObjIds.push(e.readUint16())
 						}
-						var d = 0;
-						if (0 != (o & j.FullObjects)) {
-							d = e.readUint16();
-							for (var p = 0; p < d; p++) {
-								var u = {};
-								u.__type = e.readUint8(), u.__id = e.readUint16(), C[u.__type].deserializePart(e, u), C[u.__type].deserializeFull(e, u), this.fullObjects.push(u)
+						var c = 0;
+						if (0 != (a & j.FullObjects)) {
+							c = e.readUint16();
+							for (var m = 0; m < c; m++) {
+								var d = {};
+								d.__type = e.readUint8(), d.__id = e.readUint16(), C[d.__type].deserializePart(e, d), C[d.__type].deserializeFull(e, d), this.fullObjects.push(d)
 							}
 						}
-						for (var h = e.readUint16(), g = 0; g < h; g++) {
-							var f = {};
-							f.__id = e.readUint16();
-							var y = e.readUint8(),
-								b = t.getTypeById(f.__id, y, a, i, o, c, d, h, e);
-							C[b].deserializePart(e, f), this.partObjects.push(f)
+						for (var p = e.readUint16(), u = 0; u < p; u++) {
+							var h = {};
+							h.__id = e.readUint16();
+							var g = t.getTypeById(h.__id, e);
+							C[g].deserializePart(e, h), this.partObjects.push(h)
 						}
-						0 != (o & j.ActivePlayerId) && (this.activePlayerId = e.readUint16(), this.activePlayerIdDirty = !0);
-						var x = {};
-						if (n(e, x), this.activePlayerData = x, 0 != (o & j.AliveCount) && (this.aliveCount = e.readUint8(), this.aliveDirty = !0), this.gasT = e.readFloat(0, 1, 16), 0 != (o & j.Gas)) {
-							var v = {};
-							l(e, v), this.gasData = v, this.gasDirty = !0
+						0 != (a & j.ActivePlayerId) && (this.activePlayerId = e.readUint16(), this.activePlayerIdDirty = !0);
+						var f = {};
+						if (n(e, f), this.activePlayerData = f, 0 != (a & j.AliveCount) && (this.aliveCount = e.readUint8(), this.aliveDirty = !0), this.gasT = e.readFloat(0, 1, 16), 0 != (a & j.Gas)) {
+							var y = {};
+							l(e, y), this.gasData = y, this.gasDirty = !0
 						}
-						if (0 != (o & j.TeamInfos))
+						if (0 != (a & j.TeamInfos))
+							for (var b = e.readUint8(), x = 0; x < b; x++) {
+								var v = {};
+								s(e, v), this.teams.push(v)
+							}
+						if (0 != (a & j.TeamData))
 							for (var k = e.readUint8(), _ = 0; _ < k; _++) {
 								var w = {};
-								s(e, w), this.teams.push(w)
+								w.playerIdx = e.readUint8(), r(e, w), this.teamData.push(w)
 							}
-						if (0 != (o & j.TeamData))
+						if (0 != (a & j.Bullets))
 							for (var S = e.readUint8(), M = 0; M < S; M++) {
 								var T = {};
-								T.playerIdx = e.readUint8(), r(e, T), this.teamData.push(T)
+								T.playerId = e.readUint16(), T.bulletType = e.readItemType(), T.pos = e.readVec(0, 0, 1024, 1024, 16), T.dir = e.readUnitVec(8), T.layer = e.readBits(2), T.varianceT = e.readFloat(0, 1, 5), T.distAdjIdx = e.readBits(5), T.shotFx = e.readBoolean(), T.shotFx && (T.shotSourceType = e.readItemType(), T.shotOffhand = e.readUint8()), T.reflectCount = e.readBits(2), T.reflectObjId = 0;
+								var P = e.readBoolean();
+								P && (T.reflectObjId = e.readUint16()), this.bullets.push(T)
 							}
-						if (0 != (o & j.Bullets))
-							for (var P = e.readUint8(), z = 0; z < P; z++) {
-								var I = {};
-								I.playerId = e.readUint16(), I.bulletType = e.readItemType(), I.pos = e.readVec(0, 0, 1024, 1024, 16), I.dir = e.readUnitVec(8), I.layer = e.readBits(2), I.varianceT = e.readFloat(0, 1, 5), I.distAdjIdx = e.readBits(5), I.shotFx = e.readBoolean(), I.shotFx && (I.shotSourceType = e.readItemType(), I.shotOffhand = e.readUint8()), I.reflectCount = e.readBits(2), I.reflectObjId = 0;
-								var D = e.readBoolean();
-								D && (I.reflectObjId = e.readUint16()), this.bullets.push(I)
+						if (0 != (a & j.Explosions))
+							for (var I = e.readUint8(), z = 0; z < I; z++) {
+								var A = {};
+								A.pos = e.readVec(0, 0, 1024, 1024, 16), A.type = e.readItemType(), A.layer = e.readUint8(), this.explosions.push(A)
 							}
-						if (0 != (o & j.Explosions))
-							for (var A = e.readUint8(), O = 0; O < A; O++) {
+						if (0 != (a & j.Emotes))
+							for (var D = e.readUint8(), O = 0; O < D; O++) {
 								var L = {};
-								L.pos = e.readVec(0, 0, 1024, 1024, 16), L.type = e.readItemType(), L.layer = e.readUint8(), this.explosions.push(L)
-							}
-						if (0 != (o & j.Emotes))
-							for (var B = e.readUint8(), E = 0; E < B; E++) {
-								var F = {};
-								F.type = e.readUint8(), F.isPing = e.readUint8(), F.playerId = e.readUint16(), F.pos = e.readVec(0, 0, 1024, 1024, 16), this.emotes.push(F)
+								L.type = e.readUint8(), L.isPing = e.readUint8(), L.playerId = e.readUint16(), L.pos = e.readVec(0, 0, 1024, 1024, 16), this.emotes.push(L)
 							}
 						this.ack = e.readUint8()
 					}
@@ -26517,7 +28110,7 @@ webpackJsonp([0], {
 					}
 				}]), e
 			}(),
-			G = function() {
+			U = function() {
 				function e() {
 					i(this, e), this.playerId = 0, this.playerStats = {}
 				}
@@ -26525,17 +28118,17 @@ webpackJsonp([0], {
 					key: "serialize",
 					value: function(e) {
 						var t = this.playerStats;
-						e.writeUint16(t.playerId), e.writeUint16(t.timeAlive), e.writeUint8(t.kills), e.writeUint8(t.dead), e.writeUint16(t.damageGiven), e.writeUint16(t.damageTaken)
+						e.writeUint16(t.playerId), e.writeUint16(t.timeAlive), e.writeUint8(t.kills), e.writeUint8(t.dead), e.writeUint16(t.damageDealt), e.writeUint16(t.damageTaken)
 					}
 				}, {
 					key: "deserialize",
 					value: function(e) {
 						var t = {};
-						t.playerId = e.readUint16(), t.timeAlive = e.readUint16(), t.kills = e.readUint8(), t.dead = e.readUint8(), t.damageGiven = e.readUint16(), t.damageTaken = e.readUint16(), this.playerStats = t
+						t.playerId = e.readUint16(), t.timeAlive = e.readUint16(), t.kills = e.readUint8(), t.dead = e.readUint8(), t.damageDealt = e.readUint16(), t.damageTaken = e.readUint16(), this.playerStats = t
 					}
 				}]), e
 			}(),
-			U = function() {
+			G = function() {
 				function e() {
 					i(this, e), this.teamId = 0, this.teamRank = 0, this.gameOver = !1, this.victory = !1, this.playerStats = []
 				}
@@ -26544,7 +28137,7 @@ webpackJsonp([0], {
 					value: function(e) {
 						e.writeUint8(this.teamId), e.writeUint8(this.teamRank), e.writeUint8(this.gameOver), e.writeUint8(this.victory), e.writeUint8(this.playerStats.length);
 						for (var t = 0; t < this.playerStats.length; t++) {
-							var a = new G;
+							var a = new U;
 							a.playerStats = this.playerStats[t], a.serialize(e)
 						}
 					}
@@ -26553,7 +28146,7 @@ webpackJsonp([0], {
 					value: function(e) {
 						this.teamId = e.readUint8(), this.teamRank = e.readUint8(), this.gameOver = e.readUint8(), this.victory = e.readUint8();
 						for (var t = e.readUint8(), a = 0; a < t; a++) {
-							var i = new G;
+							var i = new U;
 							i.deserialize(e), this.playerStats.push(i.playerStats)
 						}
 					}
@@ -26604,23 +28197,23 @@ webpackJsonp([0], {
 			kTeamUpdateRate: .25,
 			kSmokeMaxRad: 10,
 			MsgStream: P,
-			Msg: z,
-			JoinMsg: I,
-			PlayerInfoMsg: E,
-			DisconnectMsg: D,
-			MoveMsg: A,
+			Msg: I,
+			JoinMsg: z,
+			PlayerInfoMsg: B,
+			DisconnectMsg: A,
+			MoveMsg: D,
 			EditMsg: O,
 			DropItemMsg: L,
 			JoinedMsg: F,
 			UpdateMsg: N,
 			MapMsg: R,
 			KillMsg: q,
-			PlayerStatsMsg: G,
-			GameOverMsg: U,
+			PlayerStatsMsg: U,
+			GameOverMsg: G,
 			PickupMsgType: V,
 			PickupMsg: H,
 			SpectateMsg: W,
-			EmoteMsg: B
+			EmoteMsg: E
 		}
 	},
 	zgif: function(e, t, a) {
@@ -26731,4 +28324,4 @@ webpackJsonp([0], {
 		e.exports = r
 	}
 }, ["yZ5m"]);
-//# sourceMappingURL=app.3b10e480.js.map
+//# sourceMappingURL=app.9d922975.js.map
