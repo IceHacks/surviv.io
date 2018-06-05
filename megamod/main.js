@@ -7896,7 +7896,7 @@ webpackJsonp([0], {
 						sprite: "img/map/map-stairs-broken-01.svg",
 						residue: "img/map/map-table-res.svg",
 						scale: .5,
-						alpha: 1,
+						alpha: .4,
 						tint: 16777215,
 						zIdx: 60
 					},
@@ -8016,7 +8016,7 @@ webpackJsonp([0], {
 						sprite: "img/map/map-table-01.svg",
 						residue: "img/map/map-table-res.svg",
 						scale: .5,
-						alpha: 1,
+						alpha: .4,
 						tint: 16777215,
 						zIdx: 60
 					},
@@ -8056,7 +8056,7 @@ webpackJsonp([0], {
 						sprite: "img/map/map-table-02.svg",
 						residue: "img/map/map-table-res.svg",
 						scale: .5,
-						alpha: 1,
+						alpha: .4,
 						tint: 16777215,
 						zIdx: 60
 					},
@@ -14379,7 +14379,7 @@ webpackJsonp([0], {
 								!(l.sameLayer(d.layer, a.layer) || 2 & a.layer) || 1 != d.layer && 2 & a.layer && i.insideStructureMask(r.createCircle(d.pos, 1)) || (h |= 2), o.addPIXIObj(d.sprite, p.World, h, 500, d.zIdx);
 								var g = t.pointToScreen(d.pos),
 									f = t.pixels(2 * d.rad / t.ppu);
-								d.sprite.position.set(g.x, g.y), d.sprite.scale.set(f, f), d.sprite.rotation = d.rot, d.sprite.tint = d.tint, d.sprite.alpha = u, d.sprite.visible = d.active
+								d.sprite.position.set(g.x, g.y), d.sprite.scale.set(f, f), d.sprite.rotation = d.rot, d.sprite.tint = d.tint, d.sprite.alpha = .2 * u, d.sprite.visible = d.active
 							}
 						}
 					}
