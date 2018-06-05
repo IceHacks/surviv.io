@@ -1,10 +1,11 @@
 Stay tuned for Autoloot + more!
 
-# MegaMod (Cobra Bunker Update)
-Thanks to DragonFlyerHD for this new update and installation guide (I am currently busy with life). It has everything it had before but it works with the Surviv.io Cobra Bunker update. I still plan to add...
+# MegaMod (Log & Load)
+This update has everything it had before but it works with the Surviv.io Log & Load update. I still plan to add...
 
 * Aimbot
 * Increasable zoom
+* Autoloot (working on right now)
 
 ## Installation:
 1. Install the [Resource Override](https://chrome.google.com/webstore/detail/resource-override/pkoacgokdfckfpndoffpifphamojphii) extension for Google Chrome.
