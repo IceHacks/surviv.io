@@ -1,5 +1,5 @@
 var survivAddon = function ({name, desc, version, code}) {
-  This = {
+  var This = {
     name: name,
     desc: desc,
     version: version,
