@@ -1,12 +1,12 @@
 var survivAddon = function ({name, desc, version, code}) {
-  this = {
+  This = {
     name: name,
     desc: desc,
     version: version,
     run: code
   };
 
-  window[name] = this;
+  window[name] = This;
 
-  return this;
+  return This;
 }
