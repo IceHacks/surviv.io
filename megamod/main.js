@@ -12550,7 +12550,7 @@ webpackJsonp([0], {
 						scopeIn: [D.createAabbExtents(L.create(0, -4.5), L.create(10, 9))],
 						scopeOut: [D.createAabbExtents(L.create(0, -4.5), L.create(10, 9))],
 						imgs: [{
-							sprite: "img/map/map-bunker-egg-chamber-ceiling-01.svg",
+							sprite: "",
 							scale: .5,
 							alpha: 1,
 							tint: 16777215
@@ -12695,7 +12695,7 @@ webpackJsonp([0], {
 						scopeIn: [D.createAabbExtents(L.create(19.25, 3.5), L.create(6.25, 5.5)), D.createAabbExtents(L.create(32.25, 3.5), L.create(6.75, 9.25))],
 						scopeOut: [D.createAabbExtents(L.create(19.25, 3.5), L.create(6.25, 5.5)), D.createAabbExtents(L.create(32.25, 3.5), L.create(6.75, 9.25))],
 						imgs: [{
-							sprite: "img/map/map-bunker-hydra-ceiling-01.svg",
+							sprite: "",
 							pos: L.create(25.25, 3.5),
 							scale: .5,
 							alpha: 1,
@@ -12904,19 +12904,19 @@ webpackJsonp([0], {
 						scopeIn: [D.createAabbExtents(L.create(3.5, 2.25), L.create(10, 10)), D.createAabbExtents(L.create(-15, -77), L.create(5.5, 10.5)), D.createAabbExtents(L.create(38, -62), L.create(11.5, 8))],
 						scopeOut: [D.createAabbExtents(L.create(3.5, 2.25), L.create(10, 10)), D.createAabbExtents(L.create(-15, -77), L.create(5.5, 10.5)), D.createAabbExtents(L.create(38, -62), L.create(11.5, 8))],
 						imgs: [{
-							sprite: "img/map/map-bunker-hydra-chamber-ceiling-01.svg",
+							sprite: "",
 							pos: L.create(7, 2),
 							scale: .5,
 							alpha: 1,
 							tint: 6250335
 						}, {
-							sprite: "img/map/map-bunker-hydra-chamber-ceiling-02.svg",
+							sprite: "",
 							pos: L.create(-13.5, -76.5),
 							scale: .5,
 							alpha: 1,
 							tint: 6250335
 						}, {
-							sprite: "img/map/map-bunker-hydra-chamber-ceiling-03.svg",
+							sprite: "",
 							pos: L.create(38, -62),
 							scale: .5,
 							alpha: 1,
@@ -13180,7 +13180,7 @@ webpackJsonp([0], {
 						scopeIn: [D.createAabbExtents(L.create(0, 1.25), L.create(10, 10))],
 						scopeOut: [D.createAabbExtents(L.create(0, 1.25), L.create(10, 10))],
 						imgs: [{
-							sprite: "img/map/map-bunker-hydra-compartment-ceiling-01.svg",
+							sprite: "",
 							pos: L.create(0, 1.25),
 							scale: .5,
 							alpha: 1,
@@ -13301,7 +13301,7 @@ webpackJsonp([0], {
 						scopeIn: [D.createAabbExtents(L.create(-2, 3), L.create(22.5, 19.5))],
 						scopeOut: [D.createAabbExtents(L.create(-2, 3), L.create(22.5, 19.5))],
 						imgs: [{
-							sprite: "img/map/map-bunker-hydra-compartment-ceiling-02.svg",
+							sprite: "",
 							pos: L.create(0, 1),
 							scale: .5,
 							alpha: 1,
@@ -13529,7 +13529,7 @@ webpackJsonp([0], {
 						scopeIn: [D.createAabbExtents(L.create(0, .75), L.create(10, 7.75))],
 						scopeOut: [D.createAabbExtents(L.create(0, .75), L.create(10, 7.75))],
 						imgs: [{
-							sprite: "img/map/map-bunker-hydra-compartment-ceiling-03.svg",
+							sprite: "",
 							pos: L.create(0, 1),
 							scale: .5,
 							alpha: 1,
@@ -13643,7 +13643,7 @@ webpackJsonp([0], {
 							width: 4
 						},
 						imgs: [{
-							sprite: "img/map/map-building-shack-ceiling-01.svg",
+							sprite: "",
 							pos: L.create(-1, 10),
 							scale: .5,
 							alpha: 1,
@@ -13744,7 +13744,7 @@ webpackJsonp([0], {
 						scopeIn: [D.createAabbExtents(L.create(8.5, -4.5), L.create(18, 9.1))],
 						scopeOut: [D.createAabbExtents(L.create(8.5, -4.5), L.create(18, 9.1))],
 						imgs: [{
-							sprite: "img/map/map-bunker-storm-chamber-ceiling-01.svg",
+							sprite: "",
 							pos: L.create(8.5, -1),
 							scale: .5,
 							alpha: 1,
@@ -24150,8 +24150,7 @@ webpackJsonp([0], {
 				}, {
 					key: "getScopeZoom",
 					value: function() {
-						var e = this.netData.downed || this.localData.scopedIn ? "1xscope" : this.localData.curScope;
-						return c.scopeZoomRadius[e]
+						return c.scopeZoomRadius[this.localData.curScope]
 					}
 				}, {
 					key: "getBagLevel",
