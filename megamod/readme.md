@@ -24,6 +24,9 @@ From:  `http://surviv.io/js/app.*.js` To:`https://rawgit.com/IceHacks/surviv.io/
 * Automatically pick-up loot (<a href="#addons">addon</a>)
 
 ## Addons:
+
+All addons are UserScripts that are installed separately.
+
 * MegaPack (Autoloot + more soon) | `addon/autoloot.user.js`
 
 Hope you enjoy,
