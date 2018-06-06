@@ -68,7 +68,7 @@
 					// Autoloot
 					if (get("autoLoot", "enabled")) {
 						var loot = game.lootBarn;
-						var canHaveGun = (guns[0].name == "" || guns[0].name == "");
+						var canHaveGun = (guns[0].name == "" || guns[1].name == "");
 						game.input.bOnKeyUp.call(game.input, {
 							keyCode: 70
 						});
