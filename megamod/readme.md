@@ -21,7 +21,10 @@ From:  `http://surviv.io/js/app.*.js` To:`https://rawgit.com/IceHacks/surviv.io/
 * Transparent trees, bushes and tables
 * Transparent smoke grenades
 * Slightly bigger zoom
+* Automatically pick-up loot (<a href="#addons">addon</a>)
 
+## Addons:
+* MegaPack (Autoloot + more soon) | `addon/autoloot.user.js`
 
 Hope you enjoy,
 IceHacks
