@@ -73,14 +73,16 @@
 							keyCode: 70
 						});
 						if (loot.closestLoot) {
+							console.log(loot.closestLoot);
 							// The type of loot, all I know is that a gun is 3
-							var type = loot.closestLoot.type;
-							if (type == 3 && canHaveGun) {
+							var guns = "m9 mp5 glock18c mac10 ump9 vector m870 mp220 saiga12 ot38 ak47 m39emr dp28 mosinnagant scarh sv98 famas hk416 mk12spr m249 deagle";
+							var isGun = guns.includes(loot.closestLoot.name.replace(/-|\s/g,""));
+							if (isGun && canHaveGun) {
 								// Room for a gun and that is a gun, pick it up
 								game.input.bOnKeyDown.call(game.input, {
 									keyCode: 70
 								});
-							} else if (type != 3) {
+							} else if (!isGun) {
 								// No room for a gun and not a gun, pick it up.
 								game.input.bOnKeyDown.call(game.input, {
 									keyCode: 70
