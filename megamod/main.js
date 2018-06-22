@@ -25404,7 +25404,7 @@ webpackJsonp([0], {
                 }, {
                     key: "getScopeZoom",
                     value: function () {
-                        return c.scopeZoomRadius[this.localData.curScope]
+                        return l.scopeZoomRadius[this.localData.curScope]
                     }
                 }, {
                     key: "getBagLevel",
