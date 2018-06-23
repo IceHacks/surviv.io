@@ -8238,7 +8238,7 @@ webpackJsonp([0], {
                         imgs: [{
                             sprite: "img/map/map-building-container-ceiling-05.svg",
                             scale: .5,
-                            alpha: 0,
+                            alpha: 1,
                             tint: 11485762
                         }]
                     },
@@ -8317,7 +8317,7 @@ webpackJsonp([0], {
                         sprite: "img/map/map-stairs-broken-01.svg",
                         residue: "img/map/map-table-res.svg",
                         scale: .5,
-                        alpha: 1,
+                        alpha: 0.4,
                         tint: 16777215,
                         zIdx: 60
                     },
@@ -8404,7 +8404,7 @@ webpackJsonp([0], {
                         sprite: "img/map/map-table-01.svg",
                         residue: "img/map/map-table-res.svg",
                         scale: .5,
-                        alpha: 1,
+                        alpha: .4,
                         tint: 16777215,
                         zIdx: 60
                     },
@@ -8444,7 +8444,7 @@ webpackJsonp([0], {
                         sprite: "img/map/map-table-02.svg",
                         residue: "img/map/map-table-res.svg",
                         scale: .5,
-                        alpha: 1,
+                        alpha: .4,
                         tint: 16777215,
                         zIdx: 60
                     },
