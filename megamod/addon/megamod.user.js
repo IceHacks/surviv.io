@@ -42,13 +42,6 @@
 			name: "Open & Close",
 			desc: "Automagically open and close doors.",
 			params: {
-				enabled: {
-					name: "Enabled",
-					desc: "Autoloot enabled",
-					type: "checkbox",
-					id: "bba",
-					value: true
-				}
 			}
 		},
 		aimBot: {
