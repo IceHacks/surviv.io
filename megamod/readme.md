@@ -1,7 +1,5 @@
-Stay tuned for Autoloot + more!
-
 # MegaMod (Log & Load)
-This update has everything it had before but it works with the Surviv.io Log & Load update. I still plan to add...
+This update has everything it had before but it works with the Surviv.io "Suns out, Guns out" update. I still plan to add...
 
 * Aimbot
 * Increasable zoom
@@ -27,7 +25,7 @@ From:  `http://surviv.io/js/app.*.js` To:`https://rawgit.com/IceHacks/surviv.io/
 
 All addons are UserScripts that are installed separately.
 
-* MegaPack (Autoloot + more soon) | `addon/autoloot.user.js`
+* MegaPack (Autoloot + more soon) | `addon/megamod.user.js`
 
 Hope you enjoy,
 IceHacks
