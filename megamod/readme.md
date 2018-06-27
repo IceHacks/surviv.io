@@ -29,3 +29,5 @@ All addons are UserScripts that are installed separately.
 
 Hope you enjoy,
 IceHacks
+
+TIP: If you love this I could use some cash: https://paypal.me/pools/c/85EKjp6vaJ
