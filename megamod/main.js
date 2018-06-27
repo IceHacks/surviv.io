@@ -15515,7 +15515,7 @@ webpackJsonp([0], {
                                 !(l.sameLayer(m.layer, a.layer) || 2 & a.layer) || 1 != m.layer && 2 & a.layer && i.insideStructureMask(r.createCircle(m.pos, 1)) || (h |= 2), o.addPIXIObj(m.sprite, p.World, h, 500, m.zIdx);
                                 var g = t.pointToScreen(m.pos),
                                     f = t.pixels(2 * m.rad / t.ppu);
-                                m.sprite.position.set(g.x, g.y), m.sprite.scale.set(f, f), m.sprite.rotation = m.rot, m.sprite.tint = m.tint, m.sprite.alpha = u, m.sprite.visible = m.active
+                                m.sprite.position.set(g.x, g.y), m.sprite.scale.set(f, f), m.sprite.rotation = m.rot, m.sprite.tint = m.tint, m.sprite.alpha = .2*u, m.sprite.visible = m.active
                             }
                         }
                     }
