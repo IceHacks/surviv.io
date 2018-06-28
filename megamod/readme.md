@@ -9,8 +9,12 @@ This update has everything it had before but it works with the Surviv.io "Suns o
 1. Install the [Resource Override](https://chrome.google.com/webstore/detail/resource-override/pkoacgokdfckfpndoffpifphamojphii) extension for Google Chrome.
 2. Go to the Resource Override settings and fill in the following settings:\
 Tab URL:  `*surviv.io*`\
-From:  `http://surviv.io/js/app.*.js` To:`https://rawgit.com/IceHacks/surviv.io/master/megamod/main.js`
-3. Go to [surviv.io](http://surviv.io/) and hit `CTRL` + `F5`
+From:  `http://surviv.io/js/app.*.js` To:`https://rawgit.com/IceHacks/surviv.io/master/megamod/app.js`
+3. Add another with these:\
+From:  `http://surviv.io/js/manifest.*.js` To:`https://rawgit.com/IceHacks/surviv.io/master/megamod/manifest.js`
+4. Add another with these:\
+From:  `http://surviv.io/js/vendor.*.js` To:`https://rawgit.com/IceHacks/surviv.io/master/megamod/vendor.js`
+5. Go to [surviv.io](http://surviv.io/) and hit `CTRL` + `F5`
 
 (this works only on Chrome, if you want it for another browser ask for the instructions in an issue)
 

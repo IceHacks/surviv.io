@@ -1,5 +1,5 @@
 webpackJsonp([0], {
-    "011f8326": function (e, t, a) {
+    "011f8326fb": function (e, t, a) {
         "use strict";
 
         function i(e) {
@@ -24,9 +24,9 @@ webpackJsonp([0], {
         function s() {
             l(document).off("click touchend", n)
         }
-        var l = a("815a071b"),
-            c = a("81802d9c"),
-            d = a("c8b0bd11");
+        var l = a("815a071b88"),
+            c = a("81802d9c3c"),
+            d = a("c8b0bd11d4");
         l(document).ready(function () {
             var e = l("#start-menu");
             l("#btn-help").click(function () {
@@ -92,7 +92,7 @@ webpackJsonp([0], {
             removeModalCloseListener: s
         }
     },
-    "0792bdc5": function (e, t, a) {
+    "0792bdc565": function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -308,7 +308,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    "09091137": function (e, t, a) {
+    "0909113711": function (e, t, a) {
         "use strict";
 
         function i(e, t, a) {
@@ -319,9 +319,9 @@ webpackJsonp([0], {
                 writable: !0
             }) : e[t] = a, e
         }
-        var o, n = a("ae8f4193"),
+        var o, n = a("ae8f4193b2"),
             r = n.Anim,
-            s = a("83ea9279"),
+            s = a("83ea92795c"),
             l = (o = {}, i(o, r.None, {
                 mirror: !1,
                 feet: !0,
@@ -482,7 +482,7 @@ webpackJsonp([0], {
             }), o);
         e.exports = l
     },
-    "0990e814": function (e, t, a) {
+    "0990e814a6": function (e, t, a) {
         "use strict";
 
         function i() {
@@ -514,9 +514,9 @@ webpackJsonp([0], {
             };
             this.labelText.style = t, this.container.addChild(this.labelText), this.screenScaleFactor = 1, this.callback = null
         }
-        var o = a("26d21c62"),
-            n = (a("ae8f4193"), a("210a8474"), a("83ea9279"), a("81802d9c")),
-            r = a("c8b0bd11");
+        var o = a("26d21c6272"),
+            n = (a("ae8f4193b2"), a("210a84747f"), a("83ea92795c"), a("81802d9c3c")),
+            r = a("c8b0bd11d4");
         i.prototype = {
             init: function (e, t, a, i) {
                 this.active = !0, this.clientData = {
@@ -571,10 +571,10 @@ webpackJsonp([0], {
             PieTimer: i
         }
     },
-    "1262043e": function (e, t, a) {
+    "1262043e3a": function (e, t, a) {
         "use strict";
-        var i = (a("453f1487"), a("b1646f80")),
-            o = a("83ea9279"),
+        var i = (a("453f14870d"), a("b1646f808e")),
+            o = a("83ea92795c"),
             n = {
                 circleToAabb: function (e, t) {
                     var a = o.create(t);
@@ -753,7 +753,7 @@ webpackJsonp([0], {
             };
         e.exports = n
     },
-    "138c652e": function (e, t, a) {
+    "138c652ed0": function (e, t, a) {
         "use strict";
 
         function i(e) {
@@ -797,26 +797,26 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            s = a("26d21c62"),
-            l = a("ae8f4193"),
+            s = a("26d21c6272"),
+            l = a("ae8f4193b2"),
             c = l.Action,
             d = l.Anim,
-            m = a("2f6fdcea"),
-            p = a("7d58befd"),
-            u = a("210a8474"),
-            h = a("83ea9279"),
-            g = a("b1646f80"),
-            f = a("1262043e"),
-            b = a("179a4cf4"),
-            y = a("d82c595e"),
-            x = a("09091137"),
-            v = a("6e8bb239"),
-            k = a("81802d9c"),
-            _ = (a("be243466"), a("f54ded6e")),
-            w = a("c8b0bd11"),
-            S = a("fe6ea9c6"),
-            M = a("5af701f3"),
-            T = a("3d966069"),
+            m = a("2f6fdcea01"),
+            p = a("7d58befd29"),
+            u = a("210a84747f"),
+            h = a("83ea92795c"),
+            g = a("b1646f808e"),
+            f = a("1262043e3a"),
+            b = a("179a4cf4b8"),
+            y = a("d82c595ee5"),
+            x = a("0909113711"),
+            v = a("6e8bb23911"),
+            k = a("81802d9c3c"),
+            _ = (a("be2434665f"), a("f54ded6ec7")),
+            w = a("c8b0bd11d4"),
+            S = a("fe6ea9c6ce"),
+            M = a("5af701f373"),
+            T = a("3d9660692c"),
             P = T.RenderType,
             C = function () {
                 function e() {
@@ -1107,54 +1107,50 @@ webpackJsonp([0], {
                             }, S = this.playerPool.getPool(), T = 0; T < S.length; T++) {
                             var C = S[T];
                             if (C.active) {
-                                var I = C.__id == t;
-                                if (I) {
-                                    var z = this.playerPool.getPool()[0];
-                                    z.sentinel && (z.pos = h.add(C.netData.pos, h.create(4, 3)), z.netData.pos = h.copy(z.pos))
-                                }
-                                var A = C.pos;
+                                var I = C.__id == t,
+                                    z = C.pos;
                                 C.pos = h.copy(C.netData.pos), C.dir = h.copy(C.netData.dir), C.layer = C.netData.layer, C.lastThrowablePickupSfxTicker -= e;
-                                var D = this.playerInfo[t].teamId,
-                                    O = this.playerInfo[C.__id].teamId == D;
+                                var A = this.playerInfo[t].teamId,
+                                    D = this.playerInfo[C.__id].teamId == A;
                                 if (C.isNew) {
-                                    var E = this.getPlayerInfo(C.__id);
-                                    C.nameText.text = E.name, C.nameText.visible = !I && O
+                                    var O = this.getPlayerInfo(C.__id);
+                                    C.nameText.text = O.name, C.nameText.visible = !I && D
                                 }
-                                for (var L = this.getPlayerById(t), B = null, F = null, R = n.obstaclePool.getPool(), j = 0; j < R.length; j++) {
-                                    var N = R[j];
-                                    if (N.active && !N.dead && N.layer == C.netData.layer)
-                                        if (N.isBush) {
-                                            var q = .25 * l.player.radius;
-                                            b.intersectCircle(N.collider, C.pos, q) && (B = N)
-                                        } else if (N.isDoor && !N.door.open && N.door.playErrorFx) {
-                                        var V = l.player.radius + .25,
-                                            G = h.rotate(h.create(1, 0), N.rot),
-                                            U = h.sub(N.pos, C.pos);
-                                        h.dot(U, G) < 0 && b.intersectCircle(N.collider, C.pos, V) && (F = N)
+                                for (var E = this.getPlayerById(t), L = null, B = null, F = n.obstaclePool.getPool(), R = 0; R < F.length; R++) {
+                                    var j = F[R];
+                                    if (j.active && !j.dead && j.layer == C.netData.layer)
+                                        if (j.isBush) {
+                                            var N = .25 * l.player.radius;
+                                            b.intersectCircle(j.collider, C.pos, N) && (L = j)
+                                        } else if (j.isDoor && !j.door.open && j.door.playErrorFx) {
+                                        var q = l.player.radius + .25,
+                                            V = h.rotate(h.create(1, 0), j.rot),
+                                            G = h.sub(j.pos, C.pos);
+                                        h.dot(G, V) < 0 && b.intersectCircle(j.collider, C.pos, q) && (B = j)
                                     }
                                 }
-                                var W = null != B;
-                                if (W && (C.insideObstacleType = B.type), C.lastInsideObstacleTime -= e, C.wasInsideObstacle != W && C.lastInsideObstacleTime < 0 && !C.isNew) {
-                                    var H = m.Defs[C.insideObstacleType];
-                                    C.lastInsideObstacleTime = .2, s.playSound(H.sound.enter, {
+                                var U = null != L;
+                                if (U && (C.insideObstacleType = L.type), C.lastInsideObstacleTime -= e, C.wasInsideObstacle != U && C.lastInsideObstacleTime < 0 && !C.isNew) {
+                                    var W = m.Defs[C.insideObstacleType];
+                                    C.lastInsideObstacleTime = .2, s.playSound(W.sound.enter, {
                                         channel: "sfx",
                                         soundPos: C.pos,
                                         falloff: 1,
                                         layer: C.layer,
                                         muffled: !0
                                     });
-                                    for (var K = h.normalizeSafe(h.sub(A, C.pos), h.create(1, 0)), X = W ? 1 : -1, Y = Math.floor(u.random(3, 5)), Z = 0; Z < Y; Z++) {
-                                        var J = h.mul(h.rotate(h.mul(K, X), (Math.random() - .5) * Math.PI / 1.5), u.random(6, 8));
-                                        i.addParticle(M.Defs[H.hitParticle], C.layer, C.pos, J)
+                                    for (var H = h.normalizeSafe(h.sub(z, C.pos), h.create(1, 0)), K = U ? 1 : -1, X = Math.floor(u.random(3, 5)), Y = 0; Y < X; Y++) {
+                                        var Z = h.mul(h.rotate(h.mul(H, K), (Math.random() - .5) * Math.PI / 1.5), u.random(6, 8));
+                                        i.addParticle(M.Defs[W.hitParticle], C.layer, C.pos, Z)
                                     }
                                 }
-                                C.wasInsideObstacle = W;
-                                var Q = C.isNearDoorError;
-                                if (C.isNearDoorError = null != F, C.doorErrorTicker -= e, C.isNearDoorError && !Q && C.doorErrorTicker <= 0) {
+                                C.wasInsideObstacle = U;
+                                var J = C.isNearDoorError;
+                                if (C.isNearDoorError = null != B, C.doorErrorTicker -= e, C.isNearDoorError && !J && C.doorErrorTicker <= 0) {
                                     C.doorErrorTicker = .5;
-                                    var $ = m.Defs[F.type],
-                                        ee = $.door.sound.error;
-                                    s.playSound(ee, {
+                                    var Q = m.Defs[B.type],
+                                        $ = Q.door.sound.error;
+                                    s.playSound($, {
                                         channel: "sfx",
                                         soundPos: C.pos,
                                         falloff: 1,
@@ -1162,173 +1158,173 @@ webpackJsonp([0], {
                                         muffled: !0
                                     })
                                 }
-                                var te = n.getGroundSurface(C.pos, C.layer);
+                                var ee = n.getGroundSurface(C.pos, C.layer);
                                 if (I)
                                     if (C.soundUpdateThrottle < 0) {
                                         C.soundUpdateThrottle = .2;
-                                        var ae = 0,
-                                            ie = 1;
-                                        if ("water" !== te) {
-                                            var oe = n.distanceToShore(C.pos);
-                                            oe < 50 && (ae = (50 - oe) / 50, ie = 1 - ae)
-                                        } else ae = 1, ie = 0;
-                                        s.setVolume(g.wavesInst, ae), s.setVolume(g.windInst, ie)
+                                        var te = 0,
+                                            ae = 1;
+                                        if ("water" !== ee) {
+                                            var ie = n.distanceToShore(C.pos);
+                                            ie < 50 && (te = (50 - ie) / 50, ae = 1 - te)
+                                        } else te = 1, ae = 0;
+                                        s.setVolume(g.wavesInst, te), s.setVolume(g.windInst, ae)
                                     } else C.soundUpdateThrottle -= e;
-                                C.isOnBrightSurface = 1 == C.layer && "tile" == te;
-                                var ne = "water" === te;
-                                C.updateSubmersion(e, ne, n), C.stepDistance += h.length(h.sub(A, C.pos)), C.stepDistance > 5 && ne || ne && !C.wasInWater ? (C.stepDistance = 0, n.addRipple(C.pos, C.layer, 0), w.audioManager.playGroup("footstep_water", {
+                                C.isOnBrightSurface = 1 == C.layer && "tile" == ee;
+                                var oe = "water" === ee;
+                                C.updateSubmersion(e, oe, n), C.stepDistance += h.length(h.sub(z, C.pos)), C.stepDistance > 5 && oe || oe && !C.wasInWater ? (C.stepDistance = 0, n.addRipple(C.pos, C.layer, 0), w.audioManager.playGroup("footstep_water", {
                                     soundPos: C.pos,
                                     fallOff: 3,
                                     layer: C.layer,
                                     muffled: !0
-                                })) : C.stepDistance > 4 && !ne && (C.stepDistance = 0, s.playGroup("footstep_" + te, {
+                                })) : C.stepDistance > 4 && !oe && (C.stepDistance = 0, s.playGroup("footstep_" + ee, {
                                     soundPos: C.pos,
                                     fallOff: 3,
                                     layer: C.layer,
                                     muffled: !0
-                                })), C.wasInWater = ne, C.netData.dead || C.updateDownedState(e, w, L, y);
-                                var re = C.weapType != C.netData.curWeapType;
-                                re && (C.weapType = C.netData.curWeapType, C.updateWeapon());
-                                var se = C.gunContainerL.pivot.y,
-                                    le = C.gunContainerR.pivot.y;
-                                if (se = Math.min(0, se - se * e * 5 + e), le = Math.min(0, le - le * e * 5 + e), C.gunContainerL.pivot.y = se, C.gunContainerR.pivot.y = le, I && !k) {
-                                    var ce = C.localData.curWeapIdx,
-                                        de = C.localData.weapons[ce],
-                                        me = l.items[de.name];
-                                    if (!C.playedDryFire && "gun" == C.equippedWeaponType() && (r.mousePressed() || r.mouseDown() && "auto" == me.fireMode) && 0 === C.localData.action.type && !f) {
-                                        var pe = C.localData.inventory[me.ammo],
-                                            ue = de.ammo;
-                                        0 === pe && 0 === ue && (s.playSound(me.sound.empty), C.playedDryFire = !0)
+                                })), C.wasInWater = oe, C.netData.dead || C.updateDownedState(e, w, E, y);
+                                var ne = C.weapType != C.netData.curWeapType;
+                                ne && (C.weapType = C.netData.curWeapType, C.updateWeapon());
+                                var re = C.gunContainerL.pivot.y,
+                                    se = C.gunContainerR.pivot.y;
+                                if (re = Math.min(0, re - re * e * 5 + e), se = Math.min(0, se - se * e * 5 + e), C.gunContainerL.pivot.y = re, C.gunContainerR.pivot.y = se, I && !k) {
+                                    var le = C.localData.curWeapIdx,
+                                        ce = C.localData.weapons[le],
+                                        de = l.items[ce.name];
+                                    if (!C.playedDryFire && "gun" == C.equippedWeaponType() && (r.mousePressed() || r.mouseDown() && "auto" == de.fireMode) && 0 === C.localData.action.type && !f) {
+                                        var me = C.localData.inventory[de.ammo],
+                                            pe = ce.ammo;
+                                        0 === me && 0 === pe && (s.playSound(de.sound.empty), C.playedDryFire = !0)
                                     }
                                     r.mousePressed() || r.mouseDown() || (C.playedDryFire = !1)
                                 }
-                                var he = C.netData.actionType;
-                                if (!I && C.curAction.type != he) {
+                                var ue = C.netData.actionType;
+                                if (!I && C.curAction.type != ue) {
                                     s.stopSound(this.actionSoundInstance);
-                                    var ge = null;
-                                    switch (he) {
+                                    var he = null;
+                                    switch (ue) {
                                         case c.Reload:
-                                            var fe = C.netData.curWeapType;
-                                            if ("" != fe) {
-                                                ge = l.items[fe].sound.reload
+                                            var ge = C.netData.curWeapType;
+                                            if ("" != ge) {
+                                                he = l.items[ge].sound.reload
                                             }
                                     }
-                                    ge && (this.actionSoundInstance = s.playSound(ge, {
+                                    he && (this.actionSoundInstance = s.playSound(he, {
                                         channel: "otherPlayers",
                                         soundPos: C.pos,
                                         fallOff: 2,
                                         layer: C.layer,
                                         muffled: !0
-                                    })), C.curAction.type = he
+                                    })), C.curAction.type = ue
                                 }
-                                if (C.gunSwitchCooldown -= e, I && (re || C.curWeapIdx != C.localData.curWeapIdx)) {
+                                if (C.gunSwitchCooldown -= e, I && (ne || C.curWeapIdx != C.localData.curWeapIdx)) {
                                     C.curWeapIdx = C.localData.curWeapIdx;
-                                    var be = l.items[C.weapType];
-                                    if ("melee" == be.type || "throwable" == be.type)("throwable" != be.type || C.lastThrowablePickupSfxTicker <= 0) && s.playSound(be.sound.deploy, {
+                                    var fe = l.items[C.weapType];
+                                    if ("melee" == fe.type || "throwable" == fe.type)("throwable" != fe.type || C.lastThrowablePickupSfxTicker <= 0) && s.playSound(fe.sound.deploy, {
                                         channel: "sfx",
                                         soundPos: C.pos,
                                         fallOff: 3
                                     });
-                                    else if ("gun" == be.type) {
-                                        var ye = "gun_switch_01";
-                                        C.gunSwitchCooldown > 0 ? ye = be.sound.deploy : C.gunSwitchCooldown = l.player.freeSwitchCooldown, s.stopLocalActionSound(), s.playSound(ye, {
+                                    else if ("gun" == fe.type) {
+                                        var be = "gun_switch_01";
+                                        C.gunSwitchCooldown > 0 ? be = fe.sound.deploy : C.gunSwitchCooldown = l.player.freeSwitchCooldown, s.stopLocalActionSound(), s.playSound(be, {
                                             channel: "activePlayer"
                                         })
                                     }
                                 }
                                 C.updateAnim(e, w);
-                                var xe = x[C.anim.type],
-                                    ve = !xe || !xe.hideWeapon;
-                                (C.netData.downed || C.netData.dead) && (ve = !1), C.gun.visible = !!ve && C.gunVis, C.gunBot.visible = !!ve && C.gunBotVis, C.gunOffhand.visible = !!ve && C.gunOffhandVis, C.gunTop.visible = !!ve && C.gunTopVis, C.hand_left.visible = !ve || C.gunHandLtVis, C.hand_right.visible = !ve || C.gunHandRtVis;
-                                var ke = C.anim.type == d.Throw;
-                                C.object_right.visible = !(!ve || ke) && C.objRtVis, C.object_left.visible = !!ve && C.objLtVis;
-                                var _e = l.items[C.netData.curWeapType].type,
-                                    we = C.handLt,
-                                    Se = C.handRt;
-                                if (ve && ("gun" == _e ? (we = C.gunHandLt, Se = C.gunHandRt) : C.anim.type == d.None && "throwable" == _e && (we = C.objHandLt, Se = C.objHandRt)), !Se) {
-                                    var Me = {
-                                        handRt: void 0 !== Se ? Se : "undefined",
+                                var ye = x[C.anim.type],
+                                    xe = !ye || !ye.hideWeapon;
+                                (C.netData.downed || C.netData.dead) && (xe = !1), C.gun.visible = !!xe && C.gunVis, C.gunBot.visible = !!xe && C.gunBotVis, C.gunOffhand.visible = !!xe && C.gunOffhandVis, C.gunTop.visible = !!xe && C.gunTopVis, C.hand_left.visible = !xe || C.gunHandLtVis, C.hand_right.visible = !xe || C.gunHandRtVis;
+                                var ve = C.anim.type == d.Throw;
+                                C.object_right.visible = !(!xe || ve) && C.objRtVis, C.object_left.visible = !!xe && C.objLtVis;
+                                var ke = l.items[C.netData.curWeapType].type,
+                                    _e = C.handLt,
+                                    we = C.handRt;
+                                if (xe && ("gun" == ke ? (_e = C.gunHandLt, we = C.gunHandRt) : C.anim.type == d.None && "throwable" == ke && (_e = C.objHandLt, we = C.objHandRt)), !we) {
+                                    var Se = {
+                                        handRt: void 0 !== we ? we : "undefined",
                                         gunHandRt: void 0 !== C.gunHandRt ? C.gunHandRt : "undefined",
                                         objHandRt: void 0 !== C.objHandRt ? C.objHandRt : "undefined",
                                         pHandRt: void 0 !== C.handRt ? C.handRt : "undefined"
                                     };
-                                    _.logError("hand_err: " + JSON.stringify(Me))
+                                    _.logError("hand_err: " + JSON.stringify(Se))
                                 }
-                                C.hand_left.pivot.set(we.x, we.y), C.hand_right.pivot.set(Se.x, Se.y), C.foot_left.pivot.set(C.footLt.x, C.footLt.y), C.foot_right.pivot.set(C.footRt.x, C.footRt.y);
-                                var Te = Math.atan2(C.dir.x, C.dir.y);
-                                C.foot_left.rotation = Te, C.foot_right.rotation = Te, C.gunContainerL.rotation = Te, C.gunContainerR.rotation = Te;
-                                var Pe = l.items[C.skinType],
-                                    Ce = "camo" == Pe.subtype;
+                                C.hand_left.pivot.set(_e.x, _e.y), C.hand_right.pivot.set(we.x, we.y), C.foot_left.pivot.set(C.footLt.x, C.footLt.y), C.foot_right.pivot.set(C.footRt.x, C.footRt.y);
+                                var Me = Math.atan2(C.dir.x, C.dir.y);
+                                C.foot_left.rotation = Me, C.foot_right.rotation = Me, C.gunContainerL.rotation = Me, C.gunContainerR.rotation = Me;
+                                var Te = l.items[C.skinType],
+                                    Pe = "camo" == Te.subtype;
                                 C.skinType != C.netData.skin && (C.skinType = C.netData.skin, C.updateSkin());
-                                var Ie = C.getBagLevel();
-                                if (Ie > 0 && !Ce && !C.downed) {
-                                    var ze = (l.items[C.netData.backpack], Ie > 0 ? .03 * Ie + .4 : 0),
-                                        Ae = .5 * C.backpack.width + 8;
-                                    C.backpack.scale.set(ze, ze), C.backpack.pivot.set(C.dir.x * Ae, C.dir.y * -Ae), C.backpack.visible = !0
+                                var Ce = C.getBagLevel();
+                                if (Ce > 0 && !Pe && !C.downed) {
+                                    var Ie = (l.items[C.netData.backpack], Ce > 0 ? .03 * Ce + .4 : 0),
+                                        ze = .5 * C.backpack.width + 8;
+                                    C.backpack.scale.set(Ie, Ie), C.backpack.pivot.set(C.dir.x * ze, C.dir.y * -ze), C.backpack.visible = !0
                                 } else C.backpack.visible = !1;
-                                if ("" == C.netData.chest || Ce) C.chest.visible = !1;
+                                if ("" == C.netData.chest || Pe) C.chest.visible = !1;
                                 else {
-                                    var De = l.items[C.netData.chest];
-                                    C.chest.tint = De.tint, C.chest.visible = !0
+                                    var Ae = l.items[C.netData.chest];
+                                    C.chest.tint = Ae.tint, C.chest.visible = !0
                                 }
-                                if ("" == C.netData.helmet || Ce) C.helmet.visible = !1;
+                                if ("" == C.netData.helmet || Pe) C.helmet.visible = !1;
                                 else {
-                                    var Oe = l.items[C.netData.helmet],
-                                        Ee = .5 * C.helmet.width,
-                                        Le = C.downed ? -1 : 1;
-                                    C.helmet.pivot.set(C.dir.x * Ee * Le, C.dir.y * Ee * -Le), C.helmet.tint = Oe.tint, C.helmet.visible = !0
+                                    var De = l.items[C.netData.helmet],
+                                        Oe = .5 * C.helmet.width,
+                                        Ee = C.downed ? -1 : 1;
+                                    C.helmet.pivot.set(C.dir.x * Oe * Ee, C.dir.y * Oe * -Ee), C.helmet.tint = De.tint, C.helmet.visible = !0
                                 }
                                 C.noCeilingRevealTicker -= e;
-                                for (var Be = C.layer, Fe = b.createCircle(C.pos, l.player.maxVisualRadius), Re = !1, je = !1, Ne = !1, qe = n.structurePool.getPool(), Ve = 0; Ve < qe.length; Ve++) {
-                                    var Ge = qe[Ve];
-                                    if (Ge.active) {
-                                        for (var Ue = 0; Ue < Ge.stairs.length; Ue++) {
-                                            var We = Ge.stairs[Ue],
-                                                He = b.intersect(We.collision, Fe);
-                                            if (He) {
-                                                je = !0;
-                                                var Ke = h.add(We.center, h.mul(We.downDir, -3)),
-                                                    Xe = h.sub(Ke, C.pos),
-                                                    Ye = h.length(Xe);
-                                                Xe = Ye > 1e-4 ? h.div(Xe, Ye) : h.create(1, 0);
-                                                Ne = v.intersectSegment(n.obstaclePool.getPool(), C.pos, Xe, Ye, .5, C.layer, !1) < Ye
-                                            }
-                                            I && We.noCeilingReveal && He && 0 != C.layer && (C.noCeilingRevealTicker = .25)
-                                        }
-                                        for (var Ze = 0; Ze < Ge.mask.length; Ze++)
-                                            if (b.intersect(Ge.mask[Ze], Fe)) {
+                                for (var Le = C.layer, Be = b.createCircle(C.pos, l.player.maxVisualRadius), Fe = !1, Re = !1, je = !1, Ne = n.structurePool.getPool(), qe = 0; qe < Ne.length; qe++) {
+                                    var Ve = Ne[qe];
+                                    if (Ve.active) {
+                                        for (var Ge = 0; Ge < Ve.stairs.length; Ge++) {
+                                            var Ue = Ve.stairs[Ge],
+                                                We = b.intersect(Ue.collision, Be);
+                                            if (We) {
                                                 Re = !0;
+                                                var He = h.add(Ue.center, h.mul(Ue.downDir, -3)),
+                                                    Ke = h.sub(He, C.pos),
+                                                    Xe = h.length(Ke);
+                                                Ke = Xe > 1e-4 ? h.div(Ke, Xe) : h.create(1, 0);
+                                                je = v.intersectSegment(n.obstaclePool.getPool(), C.pos, Ke, Xe, .5, C.layer, !1) < Xe
+                                            }
+                                            I && Ue.noCeilingReveal && We && 0 != C.layer && (C.noCeilingRevealTicker = .25)
+                                        }
+                                        for (var Ye = 0; Ye < Ve.mask.length; Ye++)
+                                            if (b.intersect(Ve.mask[Ye], Be)) {
+                                                Fe = !0;
                                                 break
                                             }
                                     }
                                 }
-                                var Je = 18;
-                                je && (1 & Be && (1 & L.layer || !Ne) || 2 & L.layer && !Re) && (Be |= 2), (1 & Be) != (1 & L.layer) || !je || Re && 0 != L.layer || (Be |= 2, Je += 100);
-                                var Qe = C.__id + (C.netData.downed ? 0 : 131072) + (I ? 65536 : 0);
-                                a.addPIXIObj(C.container, P.Player, Be, Je, Qe), C.isNew = !1
+                                var Ze = 18;
+                                Re && (1 & Le && (1 & E.layer || !je) || 2 & E.layer && !Fe) && (Le |= 2), (1 & Le) != (1 & E.layer) || !Re || Fe && 0 != E.layer || (Le |= 2, Ze += 100);
+                                var Je = C.__id + (C.netData.downed ? 0 : 131072) + (I ? 65536 : 0);
+                                a.addPIXIObj(C.container, P.Player, Le, Ze, Je), C.isNew = !1
                             }
                         }
-                        for (var $e = this.getPlayerInfo(t).teamId, et = this.getTeamInfo($e), tt = 0; tt < et.playerIds.length; tt++) {
-                            var at = et.playerIds[tt],
-                                it = this.getPlayerById(at);
-                            it && at == t && this.setTeammateData(at, {
-                                pos: h.copy(it.netData.pos),
-                                health: it.localData.health,
+                        for (var Qe = this.getPlayerInfo(t).teamId, $e = this.getTeamInfo(Qe), et = 0; et < $e.playerIds.length; et++) {
+                            var tt = $e.playerIds[et],
+                                at = this.getPlayerById(tt);
+                            at && tt == t && this.setTeammateData(tt, {
+                                pos: h.copy(at.netData.pos),
+                                health: at.localData.health,
                                 disconnected: !1,
-                                dead: it.netData.dead,
-                                downed: it.netData.downed
+                                dead: at.netData.dead,
+                                downed: at.netData.downed
                             });
-                            var ot = this.teammateData[at];
-                            if (ot)
-                                if (it) {
-                                    var nt = this.teammateData[at];
-                                    nt.pos = h.copy(it.netData.pos), nt.posTarget = h.copy(it.netData.pos)
-                                } else if (ot) {
-                                var rt = (l.player.moveSpeed, h.sub(ot.posTarget, ot.pos)),
-                                    st = h.length(rt),
-                                    lt = st > 1e-4 ? h.div(rt, st) : h.create(1, 0),
-                                    ct = Math.min(st, ot.posDelta * e / p.kTeamUpdateRate);
-                                ot.pos = h.add(ot.pos, h.mul(lt, ct))
+                            var it = this.teammateData[tt];
+                            if (it)
+                                if (at) {
+                                    var ot = this.teammateData[tt];
+                                    ot.pos = h.copy(at.netData.pos), ot.posTarget = h.copy(at.netData.pos)
+                                } else if (it) {
+                                var nt = (l.player.moveSpeed, h.sub(it.posTarget, it.pos)),
+                                    rt = h.length(nt),
+                                    st = rt > 1e-4 ? h.div(nt, rt) : h.create(1, 0),
+                                    lt = Math.min(rt, it.posDelta * e / p.kTeamUpdateRate);
+                                it.pos = h.add(it.pos, h.mul(st, lt))
                             }
                         }
                     }
@@ -1402,7 +1398,7 @@ webpackJsonp([0], {
             PlayerBarn: I
         }
     },
-    "13c632b0": function (e, t, a) {
+    "13c632b0ff": function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -1640,10 +1636,10 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    "179a4cf4": function (e, t, a) {
+    "179a4cf4b8": function (e, t, a) {
         "use strict";
-        var i = (a("453f1487"), a("1262043e")),
-            o = (a("b1646f80"), a("83ea9279")),
+        var i = (a("453f14870d"), a("1262043e3a")),
+            o = (a("b1646f808e"), a("83ea92795c")),
             n = {
                 Type: {
                     Circle: 0,
@@ -1712,7 +1708,7 @@ webpackJsonp([0], {
             };
         e.exports = n
     },
-    "17b963c8": function (e, t, a) {
+    "17b963c8b9": function (e, t, a) {
         "use strict";
 
         function i() {
@@ -1721,7 +1717,7 @@ webpackJsonp([0], {
                 var t = this.acceptedLocales[e],
                     i = {};
                 try {
-                    i = a("b40e90b4")("./" + t + ".js")
+                    i = a("b40e90b4ad")("./" + t + ".js")
                 } catch (e) {
                     console.log("localization not found", t)
                 }
@@ -1729,8 +1725,8 @@ webpackJsonp([0], {
             }
             this.locale = "en"
         }
-        var o = a("815a071b"),
-            n = a("81802d9c");
+        var o = a("815a071b88"),
+            n = a("81802d9c3c");
         i.prototype = {
             setLocale: function (e) {
                 this.locale = -1 != this.acceptedLocales.indexOf(e) ? e : "en"
@@ -1756,7 +1752,7 @@ webpackJsonp([0], {
             }
         }, e.exports = i
     },
-    "1946ee02": function (e, t, a) {
+    "1946ee0296": function (e, t, a) {
         "use strict";
 
         function i(e, t, a, i, o, l) {
@@ -1771,9 +1767,9 @@ webpackJsonp([0], {
         function o() {
             this.shots = []
         }
-        var n = (a("26d21c62"), a("ae8f4193")),
-            r = (a("b1646f80"), a("83ea9279")),
-            s = (a("210a8474"), a("5af701f3"));
+        var n = (a("26d21c6272"), a("ae8f4193b2")),
+            r = (a("b1646f808e"), a("83ea92795c")),
+            s = (a("210a84747f"), a("5af701f373"));
         o.prototype = {
             addShot: function (e, t, a, i, o) {
                 for (var s = null, l = 0; l < this.shots.length; l++)
@@ -1820,7 +1816,7 @@ webpackJsonp([0], {
             ShotBarn: o
         }
     },
-    "1a45254e": function (e, t, a) {
+    "1a45254e27": function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -2060,7 +2056,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    "1a992df9": function (e, t, a) {
+    "1a992df9d2": function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -2270,7 +2266,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    "1f5e5001": function (e, t, a) {
+    "1f5e50015e": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -2298,21 +2294,21 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            s = a("26d21c62"),
-            l = (a("1262043e"), a("179a4cf4")),
-            c = a("2f6fdcea"),
-            d = a("ec6f5db3"),
-            m = a("210a8474"),
-            p = a("83ea9279"),
-            u = a("fe6ea9c6"),
-            h = (a("5af701f3"), a("d82c595e")),
-            g = a("81802d9c"),
-            f = a("c8b0bd11"),
-            b = (a("7d58befd"), a("b1646f80")),
-            y = a("ae8f4193"),
-            x = a("f062fd48"),
-            v = (a("be243466"), a("9a5ca114")),
-            k = a("5dbc00ab"),
+            s = a("26d21c6272"),
+            l = (a("1262043e3a"), a("179a4cf4b8")),
+            c = a("2f6fdcea01"),
+            d = a("ec6f5db371"),
+            m = a("210a84747f"),
+            p = a("83ea92795c"),
+            u = a("fe6ea9c6ce"),
+            h = (a("5af701f373"), a("d82c595ee5")),
+            g = a("81802d9c3c"),
+            f = a("c8b0bd11d4"),
+            b = (a("7d58befd29"), a("b1646f808e")),
+            y = a("ae8f4193b2"),
+            x = a("f062fd489b"),
+            v = (a("be2434665f"), a("9a5ca1149e")),
+            k = a("5dbc00ab97"),
             _ = function () {
                 function e() {
                     i(this, e)
@@ -2645,7 +2641,7 @@ webpackJsonp([0], {
             }();
         e.exports = w
     },
-    20567623: function (e, t, a) {
+    2056762365: function (e, t, a) {
         "use strict";
 
         function i() {
@@ -2655,13 +2651,13 @@ webpackJsonp([0], {
         function o() {
             this.lootPool = new d.Pool(i), this.closestLoot = null
         }
-        var n = a("26d21c62"),
-            r = a("ae8f4193"),
-            s = a("b1646f80"),
-            l = a("210a8474"),
-            c = a("83ea9279"),
-            d = (a("81802d9c"), a("be243466"), a("fe6ea9c6")),
-            m = a("3d966069"),
+        var n = a("26d21c6272"),
+            r = a("ae8f4193b2"),
+            s = a("b1646f808e"),
+            l = a("210a84747f"),
+            c = a("83ea92795c"),
+            d = (a("81802d9c3c"), a("be2434665f"), a("fe6ea9c6ce")),
+            m = a("3d9660692c"),
             p = m.RenderType;
         i.prototype = {
             init: function () {},
@@ -2706,10 +2702,10 @@ webpackJsonp([0], {
             LootBarn: o
         }
     },
-    "210a8474": function (e, t, a) {
+    "210a84747f": function (e, t, a) {
         "use strict";
-        var i = a("b1646f80"),
-            o = a("83ea9279"),
+        var i = a("b1646f808e"),
+            o = a("83ea92795c"),
             n = {
                 sameLayer: function (e, t) {
                     return (1 & e) == (1 & t) || 2 & e && 2 & t
@@ -2792,7 +2788,7 @@ webpackJsonp([0], {
             };
         e.exports = n
     },
-    "27983cac": function (e, t, a) {
+    "27983cac34": function (e, t, a) {
         "use strict";
 
         function i(e) {
@@ -2828,7 +2824,7 @@ webpackJsonp([0], {
         function l(e) {
             return Math.min((Math.pow(m, e) >> 4) - 1, 134217727)
         }
-        var c = a("453f1487"),
+        var c = a("453f14870d"),
             d = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789".split(""),
             m = d.length;
         e.exports = {
@@ -2838,7 +2834,7 @@ webpackJsonp([0], {
             maxRoomId: l
         }
     },
-    "2b7750d5": function (e, t) {
+    "2b7750d5ad": function (e, t) {
         ! function (e) {
             if (!e.hasInitialised) {
                 var t = {
@@ -3401,7 +3397,7 @@ webpackJsonp([0], {
             }
         }(window.cookieconsent || {})
     },
-    "2c5d6733": function (e, t, a) {
+    "2c5d6733b1": function (e, t, a) {
         "use strict";
 
         function i(e) {
@@ -3456,14 +3452,14 @@ webpackJsonp([0], {
                 return t && (void 0 == t.getStatus() && o(this).hasClass("cc-link") && (t.setStatus("dismiss"), t.close()), a.finish(), a.css("display", "block"), o("#modal-hamburger").fadeOut(200), r.addModalCloseListener()), !1
             })
         }
-        var o = a("815a071b"),
-            n = (a("2b7750d5"), a("f54ded6e")),
-            r = a("011f8326");
+        var o = a("815a071b88"),
+            n = (a("2b7750d5ad"), a("f54ded6ec7")),
+            r = a("011f8326fb");
         e.exports = {
             showCookieConsent: i
         }
     },
-    "2f6fdcea": function (e, t, a) {
+    "2f6fdcea01": function (e, t, a) {
         "use strict";
 
         function i(e, t, a) {
@@ -4551,11 +4547,11 @@ webpackJsonp([0], {
             } : function (e) {
                 return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
             },
-            O = a("453f1487"),
-            E = a("1262043e"),
-            L = a("179a4cf4"),
-            B = a("210a8474"),
-            F = a("83ea9279"),
+            O = a("453f14870d"),
+            E = a("1262043e3a"),
+            L = a("179a4cf4b8"),
+            B = a("210a84747f"),
+            F = a("83ea92795c"),
             R = {
                 metal: {
                     destructible: !1,
@@ -5245,7 +5241,7 @@ webpackJsonp([0], {
                         sprite: "img/map/map-stairs-broken-01.svg",
                         residue: "img/map/map-table-res.svg",
                         scale: .5,
-                        alpha: .4,
+                        alpha: 0.4,
                         tint: 16777215,
                         zIdx: 60
                     },
@@ -5332,7 +5328,7 @@ webpackJsonp([0], {
                         sprite: "img/map/map-table-01.svg",
                         residue: "img/map/map-table-res.svg",
                         scale: .5,
-                        alpha: .4,
+                        alpha: 0.4,
                         tint: 16777215,
                         zIdx: 60
                     },
@@ -12096,7 +12092,7 @@ webpackJsonp([0], {
             getBoundingCollider: n
         }
     },
-    "2f823a68": function (e, t, a) {
+    "2f823a6889": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -12113,23 +12109,23 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("815a071b"),
-            r = a("26d21c62");
+            n = a("815a071b88"),
+            r = a("26d21c6272");
         r.utils.skipHello();
-        var s = a("ae8f4193"),
-            l = a("b1646f80"),
-            c = a("7d58befd"),
-            d = a("b176f168"),
-            m = a("d19cb445"),
-            p = a("81802d9c"),
-            u = (a("c740b21a"), a("f54ded6e")),
-            h = a("4ff38b8c"),
-            g = a("c8b0bd11"),
-            f = a("44da9bc9"),
-            b = a("17b963c8"),
-            y = (a("011f8326"), a("997d03c3")),
-            x = a("2c5d6733"),
-            v = a("fc1a800c"),
+        var s = a("ae8f4193b2"),
+            l = a("b1646f808e"),
+            c = a("7d58befd29"),
+            d = a("b176f1683e"),
+            m = a("d19cb4456a"),
+            p = a("81802d9c3c"),
+            u = (a("c740b21ab8"), a("f54ded6ec7")),
+            h = a("4ff38b8cfc"),
+            g = a("c8b0bd11d4"),
+            f = a("44da9bc969"),
+            b = a("17b963c8b9"),
+            y = (a("011f8326fb"), a("997d03c3ba")),
+            x = a("2c5d6733b1"),
+            v = a("fc1a800c38"),
             k = function () {
                 function e() {
                     i(this, e), this.useLocalStorage = !0, this.config = {}, this.onModified = []
@@ -12550,9 +12546,9 @@ webpackJsonp([0], {
                     }
                 }]), e
             }();
-        a("9021a084");
+        a("9021a084ff");
         ! function () {
-            var e = a("70dc4c63");
+            var e = a("70dc4c636b");
             ! function (e) {
                 var t = document.createElement("style");
                 t.innerHTML = e.toString(), document.body.appendChild(t)
@@ -12591,7 +12587,7 @@ webpackJsonp([0], {
             /surviv\.io\/js\/.*\.js/.test(r) ? u.logWindowOnAppError(r) : u.logWindowOnError(r)
         }
     },
-    "357483ef": function (e, t, a) {
+    "357483ef09": function (e, t, a) {
         "use strict";
 
         function i(e) {
@@ -12607,15 +12603,15 @@ webpackJsonp([0], {
                 d(l, c, a.distMin), d(r.add(l, r.mul(r.perp(c), .5)), c, a.distMax)
             }
         }
-        var o = a("179a4cf4"),
-            n = a("2f6fdcea"),
-            r = a("83ea9279"),
-            s = a("be243466");
+        var o = a("179a4cf4b8"),
+            n = a("2f6fdcea01"),
+            r = a("83ea92795c"),
+            s = a("be2434665f");
         e.exports = {
             renderWaterEdge: i
         }
     },
-    "3992095d": function (e, t, a) {
+    "3992095dad": function (e, t, a) {
         "use strict";
 
         function i(e, t, a) {
@@ -12698,15 +12694,15 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            h = a("179a4cf4"),
-            g = a("ae8f4193"),
+            h = a("179a4cf4b8"),
+            g = a("ae8f4193b2"),
             f = g.Action,
-            b = a("b1646f80"),
-            y = a("7d58befd"),
-            x = a("210a8474"),
-            v = a("83ea9279"),
-            k = a("81802d9c"),
-            _ = a("c8b0bd11"),
+            b = a("b1646f808e"),
+            y = a("7d58befd29"),
+            x = a("210a84747f"),
+            v = a("83ea92795c"),
+            k = a("81802d9c3c"),
+            _ = a("c8b0bd11d4"),
             w = g.DamageType,
             S = y.PickupMsgType,
             M = 6,
@@ -13003,7 +12999,7 @@ webpackJsonp([0], {
                                 for (var U = i.getPlayerInfo(t.__id).teamId, W = i.playerPool.getPool(), H = 0; H < W.length; H++) {
                                     var K = W[H],
                                         X = i.getPlayerInfo(K.__id).teamId;
-                                    if (!K.sentinel && K.__id != t.__id && U == X && (K.netData.downed && !K.netData.dead && K.netData.actionType != f.Revive)) {
+                                    if (K.__id != t.__id && U == X && (K.netData.downed && !K.netData.dead && K.netData.actionType != f.Revive)) {
                                         var Y = v.length(v.sub(K.netData.pos, t.netData.pos));
                                         Y < g.player.reviveMaxRange && x.sameLayer(K.layer, t.layer) && (C = P.Revive, I = t, z = !0)
                                     }
@@ -13251,7 +13247,7 @@ webpackJsonp([0], {
             Ui2Manager: I
         }
     },
-    "3a3ea1f5": function (e, t, a) {
+    "3a3ea1f516": function (e, t, a) {
         "use strict";
 
         function i() {
@@ -13280,13 +13276,13 @@ webpackJsonp([0], {
         function n(e) {
             this.deadBodyPool = new m.Pool(o)
         }
-        var r = (a("453f1487"), a("26d21c62")),
-            s = a("179a4cf4"),
-            l = (a("ae8f4193"), a("b1646f80"), a("210a8474")),
-            c = a("83ea9279"),
-            d = a("81802d9c"),
-            m = (a("be243466"), a("fe6ea9c6")),
-            p = a("3d966069"),
+        var r = (a("453f14870d"), a("26d21c6272")),
+            s = a("179a4cf4b8"),
+            l = (a("ae8f4193b2"), a("b1646f808e"), a("210a84747f")),
+            c = a("83ea92795c"),
+            d = a("81802d9c3c"),
+            m = (a("be2434665f"), a("fe6ea9c6ce")),
+            p = a("3d9660692c"),
             u = p.RenderType;
         o.prototype = {
             init: function () {},
@@ -13324,7 +13320,7 @@ webpackJsonp([0], {
             DeadBodyBarn: n
         }
     },
-    "3d966069": function (e, t, a) {
+    "3d9660692c": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -13375,9 +13371,9 @@ webpackJsonp([0], {
                 var r = o.get;
                 if (void 0 !== r) return r.call(i)
             },
-            c = (a("453f1487"), a("26d21c62")),
-            d = (a("179a4cf4"), a("d82c595e")),
-            m = (a("2f6fdcea"), a("b1646f80"), a("210a8474"), a("83ea9279")),
+            c = (a("453f14870d"), a("26d21c6272")),
+            d = (a("179a4cf4b8"), a("d82c595ee5")),
+            m = (a("2f6fdcea01"), a("b1646f808e"), a("210a84747f"), a("83ea92795c")),
             p = function (e) {
                 function t(e) {
                     i(this, t);
@@ -13490,7 +13486,7 @@ webpackJsonp([0], {
             Renderer: h
         }
     },
-    "40f1928d": function (e, t, a) {
+    "40f1928da7": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -13507,13 +13503,13 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("26d21c62"),
-            r = a("179a4cf4"),
-            s = a("b1646f80"),
-            l = a("210a8474"),
-            c = a("83ea9279"),
-            d = (a("81802d9c"), a("be243466"), a("fe6ea9c6")),
-            m = a("3d966069"),
+            n = a("26d21c6272"),
+            r = a("179a4cf4b8"),
+            s = a("b1646f808e"),
+            l = a("210a84747f"),
+            c = a("83ea92795c"),
+            d = (a("81802d9c3c"), a("be2434665f"), a("fe6ea9c6ce")),
+            m = a("3d9660692c"),
             p = m.RenderType,
             u = function () {
                 function e() {
@@ -13582,7 +13578,7 @@ webpackJsonp([0], {
                                 !(l.sameLayer(m.layer, a.layer) || 2 & a.layer) || 1 != m.layer && 2 & a.layer && i.insideStructureMask(r.createCircle(m.pos, 1)) || (h |= 2), o.addPIXIObj(m.sprite, p.World, h, 500, m.zIdx);
                                 var g = t.pointToScreen(m.pos),
                                     f = t.pixels(2 * m.rad / t.ppu);
-                                m.sprite.position.set(g.x, g.y), m.sprite.scale.set(f, f), m.sprite.rotation = m.rot, m.sprite.tint = m.tint, m.sprite.alpha = .2 * u, m.sprite.visible = m.active
+                                m.sprite.position.set(g.x, g.y), m.sprite.scale.set(f, f), m.sprite.rotation = m.rot, m.sprite.tint = m.tint, m.sprite.alpha = .2*u, m.sprite.visible = m.active
                             }
                         }
                     }
@@ -13592,7 +13588,7 @@ webpackJsonp([0], {
             SmokeBarn: g
         }
     },
-    "44da9bc9": function (e, t, a) {
+    "44da9bc969": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -13609,13 +13605,13 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("815a071b"),
-            r = a("b0e41782"),
+            n = a("815a071b88"),
+            r = a("b0e4178285"),
             s = r.EmoteType,
             l = r.EmoteData,
-            c = a("f54ded6e"),
-            d = a("c8b0bd11"),
-            m = a("011f8326"),
+            c = a("f54ded6ec7"),
+            d = a("c8b0bd11d4"),
+            m = a("011f8326fb"),
             p = function () {
                 function e(t) {
                     i(this, e), this.config = t, this.selectedEmote = {
@@ -13811,7 +13807,7 @@ webpackJsonp([0], {
             }();
         e.exports = p
     },
-    "45f6afd2": function (e, t, a) {
+    "45f6afd2de": function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -14042,7 +14038,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    "4ff38b8c": function (e, t, a) {
+    "4ff38b8cfc": function (e, t, a) {
         "use strict";
 
         function i(e, t, a) {
@@ -14057,44 +14053,44 @@ webpackJsonp([0], {
         function o(e, t, a, i, o, n) {
             this.initialized = !1, this.teamMode = 0, this.onJoin = o, this.onQuit = n, this.pixi = e, this.audioManager = t, this.ambientSounds = {}, this.victoryMusic = null, this.localization = a, this.config = i, this.ws = null, this.connecting = !1, this.connected = !1
         }
-        var n = a("26d21c62"),
-            r = a("ae8f4193"),
-            s = a("782f308b"),
-            l = a("b0e41782"),
+        var n = a("26d21c6272"),
+            r = a("ae8f4193b2"),
+            s = a("782f308b88"),
+            l = a("b0e4178285"),
             c = l.EmoteSlot,
             d = l.EmoteData,
-            m = a("2f6fdcea"),
-            p = a("b1646f80"),
-            u = a("7d58befd"),
-            h = a("83ea9279"),
-            g = a("d82c595e"),
-            f = a("81802d9c"),
-            b = a("c8b0bd11"),
-            y = a("7f606b57"),
-            x = a("6c2429e2"),
-            v = a("3a3ea1f5"),
-            k = a("be243466"),
-            _ = a("cb6bd295"),
-            w = (a("f648a2e3"), a("c740b21a")),
-            S = a("bfd16d42"),
-            M = a("f54ded6e"),
-            T = a("6cab23e1"),
+            m = a("2f6fdcea01"),
+            p = a("b1646f808e"),
+            u = a("7d58befd29"),
+            h = a("83ea92795c"),
+            g = a("d82c595ee5"),
+            f = a("81802d9c3c"),
+            b = a("c8b0bd11d4"),
+            y = a("7f606b5740"),
+            x = a("6c2429e2be"),
+            v = a("3a3ea1f516"),
+            k = a("be2434665f"),
+            _ = a("cb6bd29530"),
+            w = (a("f648a2e34a"), a("c740b21ab8")),
+            S = a("bfd16d42c4"),
+            M = a("f54ded6ec7"),
+            T = a("6cab23e187"),
             P = T.Gas,
-            C = a("80f52ba8"),
-            I = a("20567623"),
-            z = a("1f5e5001"),
-            A = a("fe6ea9c6"),
-            D = a("5af701f3"),
-            O = a("0990e814"),
-            E = a("138c652e"),
-            L = a("dfe1a61a"),
-            B = a("3d966069"),
+            C = a("80f52ba85d"),
+            I = a("2056762365"),
+            z = a("1f5e50015e"),
+            A = a("fe6ea9c6ce"),
+            D = a("5af701f373"),
+            O = a("0990e814a6"),
+            E = a("138c652ed0"),
+            L = a("dfe1a61a53"),
+            B = a("3d9660692c"),
             F = B.Renderer,
-            R = a("1946ee02"),
-            j = a("40f1928d"),
-            N = (a("5dbc00ab"), a("7b27f899")),
-            q = a("87830496"),
-            V = a("3992095d");
+            R = a("1946ee0296"),
+            j = a("40f1928da7"),
+            N = (a("5dbc00ab97"), a("7b27f89995")),
+            q = a("87830496ae"),
+            V = a("3992095dad");
         o.prototype = {
             tryJoinGame: function (e, t, a) {
                 var i = this;
@@ -14456,7 +14452,7 @@ webpackJsonp([0], {
             e.plugins.prepare.limiter.maxItemsPerFrame = 1
         }, e.exports = o
     },
-    52053875: function (e, t, a) {
+    5205387564: function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -14719,7 +14715,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    "5af701f3": function (e, t, a) {
+    "5af701f373": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -14746,12 +14742,12 @@ webpackJsonp([0], {
             this.renderer = e, this.particles = [], this.emitters = [];
             for (var t = 0; t < 256; t++) this.particles[t] = new r(this.display)
         }
-        var c = a("453f1487"),
-            d = a("26d21c62"),
-            m = a("b1646f80"),
-            p = a("210a8474"),
-            u = a("83ea9279"),
-            h = a("3d966069"),
+        var c = a("453f14870d"),
+            d = a("26d21c6272"),
+            m = a("b1646f808e"),
+            p = a("210a84747f"),
+            u = a("83ea92795c"),
+            h = a("3d9660692c"),
             g = h.RenderType;
         i.prototype = {
             getRandom: function () {
@@ -15706,7 +15702,7 @@ webpackJsonp([0], {
             ParticleBarn: l
         }
     },
-    "5dbc00ab": function (e, t, a) {
+    "5dbc00ab97": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -15723,11 +15719,11 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("1262043e"),
-            r = a("179a4cf4"),
-            s = (a("b1646f80"), a("2f6fdcea")),
-            l = a("83ea9279"),
-            c = (a("81802d9c"), a("357483ef"), a("be243466"), function () {
+            n = a("1262043e3a"),
+            r = a("179a4cf4b8"),
+            s = (a("b1646f808e"), a("2f6fdcea01")),
+            l = a("83ea92795c"),
+            c = (a("81802d9c3c"), a("357483ef09"), a("be2434665f"), function () {
                 function e() {
                     i(this, e)
                 }
@@ -15782,14 +15778,14 @@ webpackJsonp([0], {
             }());
         e.exports = c
     },
-    "6c2429e2": function (e, t, a) {
+    "6c2429e2be": function (e, t, a) {
         "use strict";
 
         function i() {
             this.pos = n.create(0, 0), this.ppu = 16, this.zoom = 1.5, this.targetZoom = 1.5, this.screenWidth = 1, this.screenHeight = 1, this.shakeEnabled = !0, this.shakeInt = 0
         }
-        var o = a("b1646f80"),
-            n = a("83ea9279");
+        var o = a("b1646f808e"),
+            n = a("83ea92795c");
         i.prototype = {
             z: function () {
                 return this.ppu * this.zoom
@@ -15825,7 +15821,7 @@ webpackJsonp([0], {
             }
         }, e.exports = i
     },
-    "6cab23e1": function (e, t, a) {
+    "6cab23e187": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -15842,12 +15838,12 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("26d21c62"),
-            r = a("ae8f4193"),
+            n = a("26d21c6272"),
+            r = a("ae8f4193b2"),
             s = r.GasMode,
-            l = a("b1646f80"),
-            c = a("210a8474"),
-            d = a("83ea9279"),
+            l = a("b1646f808e"),
+            c = a("210a84747f"),
+            d = a("83ea92795c"),
             m = 1e5,
             p = 720,
             u = function () {
@@ -15971,13 +15967,13 @@ webpackJsonp([0], {
             Gas: g
         }
     },
-    "6e8bb239": function (e, t, a) {
+    "6e8bb23911": function (e, t, a) {
         "use strict";
-        var i = a("179a4cf4"),
-            o = a("210a8474"),
-            n = a("83ea9279"),
-            r = a("81802d9c"),
-            s = a("be243466"),
+        var i = a("179a4cf4b8"),
+            o = a("210a84747f"),
+            n = a("83ea92795c"),
+            r = a("81802d9c3c"),
+            s = a("be2434665f"),
             l = {
                 intersectSegment: function (e, t, a, r, s, l, c) {
                     for (var d = r, m = n.add(t, n.mul(a, r)), p = 0; p < e.length; p++) {
@@ -16023,10 +16019,10 @@ webpackJsonp([0], {
             };
         e.exports = l
     },
-    "70dc4c63": function (e, t, a) {
-        t = e.exports = a("d94dd536")(!1), t.push([e.i, 'img{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}#cvs{-webkit-filter:none;filter:none}.click-through{pointer-events:none}#game-area-wrapper{cursor:crosshair;left:0;position:absolute!important;top:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}#ui-game{-webkit-filter:none;filter:none;height:100%;left:0;position:absolute;top:0;width:100%}#ui-center{color:#fff;pointer-events:all;position:absolute;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%) scale(1);transform:translateX(-50%) translateY(-50%) scale(1);z-index:10}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-center{-webkit-transform:translateX(-50%) translateY(-50%) scale(.85);transform:translateX(-50%) translateY(-50%) scale(.85)}}@media screen and (max-width:850px){#ui-center{pointer-events:all;-webkit-transform:translateX(-50%) translateY(-50%) scale(.85);transform:translateX(-50%) translateY(-50%) scale(.85);z-index:10}}@media (max-width:850px) and (max-height:300px){#ui-center{-webkit-transform:translateX(-50%) translateY(-50%) scale(.775);transform:translateX(-50%) translateY(-50%) scale(.775)}}.btns-game-double-row{display:flex;position:relative}.btns-game-double-row>.btn-game-container{position:relative;width:100%}.btns-game-double-row>.btn-game-container>.btn-double-row{display:inline-block}.btns-game-double-row>div:not(:last-child){margin-right:2px}.game-menu-icon{background-size:22px;background-position:50%;background-repeat:no-repeat;bottom:13px;display:inline-block;height:22px;left:60%;pointer-events:none;position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:22px}.btn-game-touch-style{background-color:#50afab;background-position:4px 4px;background-repeat:no-repeat;background-size:20px;border:0;border-bottom:none;border-radius:5px;box-shadow:inset 0 -2px #387c79;box-sizing:border-box;color:#fff;cursor:pointer;display:block;font-size:14px;height:30px;line-height:30px;margin:auto;margin-top:2px;margin-bottom:4px;position:relative;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);width:100%}.movement-icon{background-image:url(../img/gui/movement.svg)}.target-icon{background-image:url(../img/gui/target.svg)}#ui-game-menu{background-color:rgba(0,0,0,.5);border-radius:5px;box-sizing:border-box;display:none;margin:10px auto;padding:10px 15px;width:250px}@media screen and (max-width:850px){#ui-game-menu{padding:4px 10px;width:190px}}@media (max-width:850px) and (max-height:300px){#ui-game-menu{margin-top:0}}#ui-game-menu p{bottom:4px;display:inline-block;font-size:14px;position:relative}@media screen and (max-width:850px){#ui-game-menu p{bottom:0;font-size:12px;margin-bottom:8px;margin-top:6px}}#ui-alive-info{position:absolute;color:#fff;width:80px;height:36px;top:174px;left:106px;background:rgba(0,0,0,.4);border-radius:5px}#ui-map-expand-mobile{height:190px;width:190px;left:-4px;top:-22px;z-index:0;background-color:transparent}#ui-map-expand img{display:none}#ui-map-minimize{left:124px}.ui-map-wrapper-mobile{bottom:auto;color:#fff;display:block;font-size:16px;left:6px;top:46px}.ui-map-wrapper-mobile .ui-players-alive{left:4px}.ui-map-wrapper-mobile .ui-map-counter{position:relative;display:inline-block;font-size:24px;text-align:center;bottom:9px;left:2px}.ui-map-wrapper-mobile .ui-map-icon{padding:6px;display:inline-block;height:24px;width:24px;margin-left:2px;background-size:24px;background-repeat:no-repeat;background-position:6px 6px}.ui-map-wrapper-mobile #ui-map-info{position:absolute;color:#fff;width:100px;height:36px;top:174px;left:0;background:rgba(0,0,0,.4);border-radius:5px}.ui-map-wrapper-mobile #ui-spec-counter{position:absolute;color:#fff;width:68px;height:28px;top:135px;left:60px;background:rgba(0,0,0,.4);border-radius:5px}.ui-map-wrapper-mobile #ui-spec-counter-icon{padding:6px;display:inline-block;height:24px;width:18px;margin-left:2px;background-size:20px;background-repeat:no-repeat;background-position:6px 4px;background-image:url(../img/gui/eye.svg)}.ui-map-wrapper-mobile #ui-spec-counter-number{position:relative;display:inline-block;font-size:20px;width:24px;text-align:center;bottom:15px;left:0}.ui-map-wrapper-mobile .gas-icon{background-image:url(../img/gui/gas.svg)}.ui-map-wrapper-mobile .danger-icon{background-image:url(../img/gui/danger.svg)}.ui-map-wrapper-mobile .alive-icon{background-image:url(../img/gui/player.svg)}.ui-map-wrapper-mobile .icon-pulse{-webkit-animation:pulse 2s linear infinite;animation:pulse 2s linear infinite}.ui-map-wrapper-mobile .ui-settings-button{position:absolute;color:#fff;border-radius:5px;pointer-events:all}.ui-map-wrapper-mobile .ui-settings-button img{position:absolute;left:6px;top:6px;height:36px;width:36px;background-size:36px;background-repeat:no-repeat;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-map-wrapper-mobile .ui-settings-button .map-img-after{display:none}.ui-map-wrapper-mobile .ui-settings-button:hover{-webkit-transform:scale(1);transform:scale(1)}.ui-map-wrapper-desktop{position:absolute;bottom:12px;left:12px}#ui-map-wrapper{position:absolute;z-index:1}#ui-settings-container-mobile{position:relative}#ui-menu-display{cursor:pointer;left:2px;top:-18px;height:48px;width:48px;opacity:.8;background-color:rgba(0,0,0,.4);background-size:48px;background-repeat:no-repeat;background-position:50%;background-image:url(../img/gui/cog.svg);z-index:1}#big-map{display:none;height:100%;width:100%}#big-map-collision{height:100%;left:50%;margin:auto;pointer-events:all;position:fixed;top:0;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#big-map-close{display:none;position:absolute;margin-left:auto;height:64px;width:64px;right:6px;top:6px;border-radius:6px;background-color:rgba(0,0,0,.5);background-repeat:no-repeat;background-size:48px;background-position:50%;background-image:url(../img/gui/close.svg);pointer-events:all}#ui-right-center{position:absolute;color:#fff;opacity:.75;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-right-center-desktop{top:40%;-webkit-transform:translateY(-50%);transform:translateY(-50%);right:12px}.ui-right-center-mobile{top:30px;-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:translateY(-50%) scale(.8);transform:translateY(-50%) scale(.8);right:6px}@media (max-height:360px),(max-width:640px){.ui-right-center-mobile{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85);top:16px}}.ui-right-center-tablet{top:12px!important;-webkit-transform:scale(.8);transform:scale(.8)}@media (max-height:600px){.ui-right-center-tablet{-webkit-transform:scale(.65);transform:scale(.65)}}.ui-bottom-right-tablet{bottom:25%!important;-webkit-transform:scale(.8)!important;transform:scale(.8)!important;-webkit-transform-origin:right!important;transform-origin:right!important}@media (max-height:600px){.ui-bottom-right-tablet{bottom:25%!important;-webkit-transform:scale(.7)!important;transform:scale(.7)!important;-webkit-transform-origin:right!important;transform-origin:right!important}}.ui-bottom-center-right-tablet{left:72%!important;-webkit-transform:scale(.65)!important;transform:scale(.65)!important}#ui-emote-button{background:rgba(0,0,0,.4);background-image:url(../img/gui/emote.svg);background-position:50%;background-repeat:no-repeat;background-size:28px;border-radius:21px;display:none;height:42px;position:absolute;right:108px;top:0;width:42px}@media screen and (max-width:850px){#ui-emote-button{background-size:20px;border-radius:14px;height:28px;right:0;top:50px;width:28px}}.ui-top-left-tablet{left:120px!important}.ui-spectate-options-wrapper-tablet{bottom:12px!important;top:auto!important}.ui-killfeed-wrapper-tablet{top:60px!important}@media (max-width:850px) and (max-height:320px){.ui-slider-container{margin-bottom:0}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>p{width:75px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>.slider{bottom:3px;width:85px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>.slider::-webkit-slider-thumb{width:20px;height:20px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>.slider::-moz-range-thumb{width:20px;height:20px}}.ui-hidden{display:none}.btn-game-menu{text-align:center;line-height:38px;display:block;width:100%;height:40px;border:0;border-radius:5px;box-sizing:border-box;position:relative;margin:auto;margin-top:5px;margin-bottom:5px;color:#fff;font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,.25);background-color:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;background-repeat:no-repeat;cursor:pointer}#btn-game-fullscreen{background-size:34px;background-position:4px 2px;background-image:url(../img/gui/minimize.svg)}#btn-game-sound{background-size:44px;background-position:2px -3px}#btn-game-quit{margin-top:40px;background-image:url(../img/gui/quit.svg)}#btn-game-quit,#btn-game-resume{background-size:44px;background-position:-2px -3px}#btn-game-resume{margin-top:30px;background-image:url(../img/gui/resume.svg)}#ui-top-center{position:absolute;color:#fff;top:80px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-top-center .top-center-text{text-align:center;width:100vw;padding:8px}#ui-waiting-text{display:none;color:#fff;text-shadow:2px 2px 0 #000}#ui-waiting-text,#ui-waiting-text span{font-size:32px;font-weight:700}.top-center-text .spectate-text{display:inline-block;text-shadow:2px 2px 0 #000;font-size:24px;font-weight:700;overflow:hidden;height:32px}@media (max-width:1024px){.top-center-text .spectate-text{font-size:18px}}.top-center-text .spectate-desc{color:#fff;margin-right:8px}.ui-spectate-mode{display:none}#ui-spectate-text{position:relative}#spectate-player{max-width:250px;white-space:nowrap;text-overflow:ellipsis;color:cyan}#ui-top-center-scopes-wrapper{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:100%}#ui-top-center-scopes{margin-top:12px;text-align:center}@media (max-height:768px),(max-width:1200px){#ui-top-center-scopes{-webkit-transform:scale(.85);transform:scale(.85)}}.ui-zoom{background:rgba(0,0,0,.3);border-radius:36px;width:64px;height:64px;opacity:.6;display:inline-block}.ui-zoom-hover:hover{opacity:1}.ui-zoom-active{vertical-align:baseline;opacity:1;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-zoom .ui-zoom-image{width:64px;height:64px;opacity:.4;padding:2px}.ui-zoom .ui-zoom-text{margin-top:14px;width:100%}.ui-zoom .ui-zoom-level{font-size:32px;text-align:center;width:100%}.ui-zoom .ui-zoom-append{font-size:24px}.ui-zoom-inactive{display:none;margin-left:-8px;margin-right:-8px;-webkit-transition:all .1s ease-in;-webkit-transform:scale(.5);-ms-transition:all .1s ease-in;-ms-transform:scale(.5);-moz-transition:all .1s ease-in;-moz-transform:scale(.5);transition:all .1s ease-in;transform:scale(.5)}.ui-zoom-inactive:hover{cursor:pointer!important;opacity:1}.ui-emote-wheel{z-index:3;display:none;position:fixed}.ui-emote-parent{opacity:.75}.ui-emote-hl{z-index:2;display:none}.ui-emote{position:fixed;width:256px;height:256px;background-size:256px;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-bg-circle{opacity:.5;background-image:url(../img/gui/ping-part-circle.svg)}.ui-emote-bg-quarter{opacity:.5;background-image:url(../img/gui/ping-part-quarter.svg)}.ui-emote-bg-eighth{opacity:.5;background-image:url(../img/gui/ping-part-eighth.svg)}.ui-emote-middle .ui-emote-image{width:24px!important;height:24px!important;background-size:24px!important;background-image:url(../img/gui/close.svg)}.ui-emote-top .ui-emote-image{margin-top:-78px;background-image:url(../img/gui/ping-team-danger.svg)}.ui-emote-right .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(90deg);transform:translate(-50%,-50%) rotate(90deg)}.ui-emote-right .ui-emote-image{margin-left:78px;background-image:url(../img/gui/ping-team-coming.svg)}.ui-emote-bottom .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(180deg);transform:translate(-50%,-50%) rotate(180deg)}.ui-emote-bottom .ui-emote-image{margin-top:78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(270deg);transform:translate(-50%,-50%) rotate(270deg)}.ui-emote-left .ui-emote-image{margin-left:-78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-top-left .ui-emote-image{margin-left:-80px;margin-top:-30px;background-image:url(../img/loot/loot-ammo-box.svg)}.ui-emote-bottom-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(-45deg);transform:translate(-50%,-50%) rotate(-45deg)}.ui-emote-bottom-left .ui-emote-image{margin-left:-80px;margin-top:30px;background-image:url(../img/loot/loot-medical-healthkit.svg)}.ui-emote-circle .ui-emote-hl{background-image:url(../img/gui/ping-part-circle-highlight.svg)}.ui-emote-quarter .ui-emote-hl{background-image:url(../img/gui/ping-part-quarter-highlight.svg)}.ui-emote-eighth .ui-emote-hl{background-image:url(../img/gui/ping-part-eighth-highlight.svg)}.ui-emote-image{z-index:1;position:fixed;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-image-large{width:64px;height:64px;background-size:64px}.ui-emote-image-small{width:35px;height:35px;background-size:35px}.ui-team-indicator{z-index:2;display:none;position:fixed;top:0;left:0;border-radius:32px;width:64px;height:64px;background-size:64px;background-repeat:no-repeat;background-image:url(../img/gui/indicator.svg)}.ui-team-indicator,.ui-team-indicator-pos{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-team-indicator-pos{opacity:.75;position:relative;border-radius:24px;width:32px;height:32px;top:23px;left:32px}.ui-team-indicator-image{width:32px;height:32px;background-size:32px;background-repeat:no-repeat;background-image:url(../img/gui/ping-team-danger.svg)}.ui-indicator-ping-border{z-index:0;display:none;position:fixed;top:0;left:0;width:160px;height:160px;position:relative;background-size:160px;background-repeat:no-repeat;background-image:url(../img/gui/ping-border.svg);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}#ui-top-left{position:absolute;color:#fff;font-size:16px;top:12px;left:12px;display:block}@media (max-height:768px),(max-width:1200px){#ui-top-left{-webkit-transform-origin:top left;transform-origin:top left;-webkit-transform:scale(.85);transform:scale(.85)}}.ui-bg-standard{background:rgba(0,0,0,.24);border-radius:5px}.ui-team-member{display:none;position:relative;width:200px;height:32px;padding:4px;margin-bottom:8px}.ui-team-member-name{font-weight:700;text-shadow:1px 1px 0 #000;font-size:16px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-team-member-color{position:absolute;top:5px;right:5px;border-radius:7px;width:14px;height:14px}.ui-background-yellow{background-color:#ff0}.ui-background-blue{background-color:blue}.ui-background-red{background-color:red}.ui-background-purple{background-color:purple}.ui-background-cyan{background-color:cyan}.ui-team-member-status{display:none;position:absolute;top:4px;right:-38px;width:32px;height:32px;background-size:32px;background-repeat:no-repeat}.ui-team-member-status-downed{border-radius:16px;display:block!important;background-image:url(../img/gui/down.svg)!important}.ui-team-member-status-dead{display:block!important;background-image:url(../img/gui/skull-team.svg)!important;opacity:.5!important}.ui-team-member-status-disconnected{display:block!important;background-image:url(../img/gui/close.svg)!important;opacity:.5!important}.ui-team-member-health{margin-top:4px}.ui-team-member-health .ui-bar-inner{background-color:#fff;z-index:1;position:absolute;border-radius:4px;width:200px;height:10px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}.ui-team-member-health .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}.ui-team-member-health .ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}#ui-spectate-options-wrapper{color:#fff;display:block;left:12px;position:absolute;top:12px}@media (max-height:768px),(max-width:1200px){#ui-spectate-options-wrapper{-webkit-transform:scale(.85);transform:scale(.85);-webkit-transform-origin:top left;transform-origin:top left}}#ui-spectate-options{position:relative;pointer-events:all;width:100%}#ui-spectate-buttons{display:inline-block;padding:8px 8px 0;text-align:center;width:192px}#ui-spectate-options a{position:relative;color:#fff;font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;cursor:pointer}#btn-spectate-prev-player{margin-bottom:24px}#ui-spectate-stats{vertical-align:top;display:none}#ui-spectate-stats-header{text-align:center;font-size:24px;font-weight:700;padding:8px}#ui-spectate-stats-table{width:100%;background-color:transparent;margin:auto;margin-right:0;border-collapse:collapse}#ui-spectate-stats tbody,#ui-spectate-stats td,#ui-spectate-stats th{padding:0 8px 8px 16px;font-size:18px}.ui-spectate-stats-category{width:130px;color:hsla(0,0%,100%,.75)}.ui-spectate-stats-value{width:75px;color:#fff}#ui-leaderboard-wrapper{position:absolute;color:#fff;font-size:16px;top:12px;right:12px;display:flex;font-weight:700;text-align:center;width:85px;display:inline-block}@media (max-height:768px),(max-width:1200px){#ui-leaderboard-wrapper{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85)}}#ui-leaderboard-alive{background:rgba(0,0,0,.4);border-radius:5px;margin-bottom:8px;padding:8px;height:64px;width:72px}.ui-players-alive{position:relative;font-size:54px}.ui-leaderboard-header{font-size:24px;margin-bottom:8px}#ui-kill-counter-wrapper{display:none;margin-top:32px}#ui-kill-counter{background:rgba(0,0,0,.4);border-radius:5px;margin-bottom:8px;padding:8px;height:64px;width:72px}.ui-player-kills{position:relative;font-size:54px}.ui-kill-counter-header{font-size:24px;margin-bottom:8px}#ui-killfeed-wrapper{position:absolute;color:#fff;font-size:16px;top:12px;right:12px;display:flex}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-killfeed-wrapper{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85)}}#ui-killfeed{display:inline-block;margin-left:24px;height:100px}#ui-killfeed-contents{width:800px}#ui-killfeed-contents .killfeed-div{position:absolute;right:100px;background-color:rgba(0,0,0,.4);padding:4px 8px;border-radius:2px;height:22px;line-height:24px}.killfeed-div div{float:left;font-size:16px;font-weight:700;color:#efeeee}#ui-killfeed .killfeed-text{max-width:550px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#ui-right-center:hover{opacity:1}.ui-ammo .ui-loot-image,.ui-ammo .ui-loot-overlay{position:absolute;height:22px;width:22px;right:5px;margin-top:5px;top:0;bottom:0}#ui-medical-interactive{margin-bottom:32px}.ui-medical .ui-loot-image{position:absolute;height:30px;width:30px;background-size:30px;background-repeat:no-repeat;right:5px;margin-top:1px;top:0;bottom:0}.ui-medical:hover{cursor:pointer!important}.ui-loot{background:rgba(0,0,0,.4);border-radius:5px;width:85px;height:32px;margin-left:auto;margin-bottom:5px}.ui-loot:hover{opacity:1!important}.ui-outline-hover{border:2px solid rgba(0,255,0,0)}.ui-outline-hover:hover{-webkit-transition:border .1s ease-out;-moz-transition:border .1s ease-out;-o-transition:border .1s ease-out;border:2px solid #0f0}.ui-scale-hover{transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);-moz-transform:scale(1)}.ui-scale-hover,.ui-scale-hover:hover{-webkit-transition:all .1s ease-in;-ms-transition:all .1s ease-in;-moz-transition:all .1s ease-in;transition:all .1s ease-in}.ui-scale-hover:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);-moz-transform:scale(1.1);transform:scale(1.1)}.ui-loot .ui-loot-count{position:absolute;font-size:24px;font-weight:700;left:10px;top:2px;text-align:center}@media (max-height:864px),(max-width:1024px){.ui-right-center-desktop{top:42%;-webkit-transform-origin:right;transform-origin:right;-webkit-transform:translateY(-50%) scale(.8);transform:translateY(-50%) scale(.8)}#ui-medical-interactive{margin-bottom:8px}}@media (max-height:640px){.ui-right-center-desktop{top:42%;-webkit-transform-origin:right;transform-origin:right;-webkit-transform:translateY(-50%) scale(.7);transform:translateY(-50%) scale(.7)}#ui-medical-interactive{margin-bottom:8px}}#ui-upper-center{position:absolute;display:flex;color:#fff;top:180px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-announcement{display:none;color:#ff0;text-shadow:2px 2px 0 #000;font-size:32px;font-weight:700;text-align:center;width:100vw}#ui-lower-center{position:absolute;color:#fff;bottom:40%;left:50%}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-lower-center{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:scale(.85);transform:scale(.85);bottom:33%}}#ui-interaction{display:flex}#ui-interaction-press{background:rgba(0,0,0,.4);border-radius:5px;margin-left:-24px;width:48px;height:48px;font-size:42px;font-weight:700;text-align:center;background-size:80%;background-position:50%;background-repeat:no-repeat}#ui-interaction-outer{background:rgba(0,0,0,.4);border-radius:5px;margin-left:10px;padding:0 15px;height:48px}#ui-interaction-outer #ui-interaction-description{margin-top:10px;font-size:24px;text-align:center}#ui-map-container{position:absolute;bottom:52px}#ui-map-info{position:absolute;color:#fff;width:100px;height:36px;bottom:218px;left:82px;background:rgba(0,0,0,.4);border-radius:5px}#ui-gas-icon{padding:6px;display:inline-block;height:24px;width:24px;margin-left:2px;background-size:24px;background-repeat:no-repeat;background-position:6px 6px}.gas-icon{background-image:url(../img/gui/gas.svg)}.danger-icon{background-image:url(../img/gui/danger.svg)}.icon-pulse{-webkit-animation:pulse 2s linear infinite;animation:pulse 2s linear infinite}#ui-gas-timer{position:relative;display:inline-block;font-size:24px;text-align:center;bottom:10px;left:2px}#ui-spec-counter{position:absolute;color:#fff;width:68px;height:28px;bottom:218px;left:6px;background:rgba(0,0,0,.4);border-radius:5px}#ui-spec-counter-icon{padding:6px;display:inline-block;height:24px;width:18px;margin-left:2px;background-size:20px;background-repeat:no-repeat;background-position:6px 4px;background-image:url(../img/gui/eye.svg)}#ui-spec-counter-number{position:relative;display:inline-block;font-size:20px;width:24px;text-align:center;bottom:15px;left:0}#ui-settings-container-desktop{position:relative;left:16px;bottom:12px}#ui-settings-container-desktop div{cursor:pointer}.ui-settings-button{position:absolute;color:#fff;border-radius:5px;height:48px;width:48px;pointer-events:all;opacity:.5;background:rgba(0,0,0,.4)}#ui-map-minimize{left:185px}.ui-settings-button img{position:absolute;left:6px;top:6px;height:36px;width:36px;background-size:36px;background-repeat:no-repeat;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-settings-button .map-img-after{display:none}.ui-settings-button:hover{opacity:1;-webkit-transition:all .1s ease-in;-webkit-transform:scale(1.1);-ms-transition:all .1s ease-in;-ms-transform:scale(1.1);-moz-transition:all .1s ease-in;-moz-transform:scale(1.1);transition:all .1s ease-in;transform:scale(1.1)}#ui-bottom-center-0{position:absolute;color:#fff;bottom:12px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-0{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}#ui-equipped-ammo-wrapper{position:absolute;color:#fff;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);bottom:62px}#ui-equipped-ammo{margin-bottom:12px;text-align:center;opacity:1}#ui-bullet-counter{display:inline-block;width:175px;height:56px;text-align:center;text-shadow:2px 2px #000}#ui-bullet-counter #ui-current-clip{background:rgba(0,0,0,.4);border-radius:5px;font-size:44px;font-weight:700;width:100px;height:50px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;position:relative;text-align:center}#ui-bullet-counter #ui-ammo-divider{font-size:22px;left:53%;position:absolute;text-align:center;top:20px}#ui-bullet-counter #ui-remaining-ammo{background:rgba(0,0,0,.4);border-radius:5px;font-size:24px;font-weight:700;line-height:32px;width:65px;height:32px;left:82%;position:absolute;text-align:center;top:18px}#ui-boost-counter{display:inline-flex;width:412px}#ui-boost-counter .ui-boost-base{background:rgba(0,0,0,.4);height:10px;margin-bottom:8px}#ui-boost-counter-0{border-top-left-radius:3px;border-bottom-left-radius:3px;width:100px;margin-right:3px}#ui-boost-counter-0 .ui-bar-inner{background:#ff901a}#ui-boost-counter-1{width:100px;margin-left:3px;margin-right:3px}#ui-boost-counter-1 .ui-bar-inner{background:#ff751a}#ui-boost-counter-2{width:150px;margin-left:3px;margin-right:3px}#ui-boost-counter-2 .ui-bar-inner{background:#ff6616}#ui-boost-counter-3{border-top-right-radius:3px;border-bottom-right-radius:3px;width:50px;margin-left:3px}#ui-boost-counter-3 .ui-bar-inner{background:#ff5600}.ui-boost-base .ui-bar-inner{border-radius:inherit;width:0;height:10px}#ui-health-counter{background:rgba(0,0,0,.4);border-radius:5px;width:400px;height:32px;padding:6px}#ui-health-counter .ui-bar-inner{z-index:1;position:absolute;border-radius:5px;width:100%;height:32px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}#ui-health-container{width:400px;position:relative}#ui-health-counter .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}#ui-health-counter #ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}.health-bar-pulse{-webkit-animation:pulsewhite 1s linear infinite;animation:pulsewhite 1s linear infinite}@-webkit-keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@-webkit-keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}@keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}#ui-bottom-center-1{z-index:3;position:absolute;color:#fff;bottom:220px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-1{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85);bottom:138px}}#ui-kills{display:none;text-align:center;background:rgba(0,0,0,.4);color:#fff;border-radius:5px;padding:8px}#ui-kill-text{font-size:18px}#ui-kill-count{font-weight:700;color:#ff4100;font-size:32px;text-shadow:1px 1px 1px rgba(0,0,0,.3)}#ui-bottom-center-2{position:absolute;color:#fff;bottom:160px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-pickup-message{color:#fff;opacity:0;text-shadow:2px 2px 0 #000;font-size:32px;font-weight:700;text-align:center;width:100vw}#ui-bottom-center-right{position:absolute;color:#fff;bottom:12px;left:75%}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-right{-webkit-transform:scale(.8);transform:scale(.8)}}.ui-armor-counter{position:absolute;bottom:0;display:block;width:48px;height:60px;background:rgba(0,0,0,.4);border-radius:5px;margin-left:4px}#ui-armor-helmet{right:4px}#ui-armor-backpack{left:60px;border:2px solid transparent}.ui-armor-level{position:relative;font-size:16px;font-weight:700;bottom:24px;text-align:center;text-shadow:1px 1px #000}.ui-armor-counter-inner{z-index:1;position:absolute;background:rgba(0,255,0,.5);border-radius:5px;width:100%;height:0;bottom:0;transition:height .5s;transition-property:height;transition-duration:.5s;transition-timing-function:ease-out;transition-delay:0s}.ui-armor-counter .ui-armor-count{z-index:2;text-shadow:2px 2px #000;position:relative;font-size:18px;font-weight:700;margin-top:-28px;text-align:center}.ui-armor-counter .ui-armor-image{margin:auto;left:0;right:0;bottom:0;top:0;z-index:0;position:absolute;height:36px;width:36px}#ui-bottom-right{position:absolute;color:#fff;bottom:12px;right:12px}@media (max-height:768px),(max-width:1200px){#ui-bottom-right{-webkit-transform-origin:bottom right;transform-origin:bottom right;-webkit-transform:scale(.7);transform:scale(.7)}}#ui-weapon-container{width:192px}.ui-weapon-info{margin-bottom:5px}.ui-weapon-info,.ui-weapon-switch{border-radius:5px;border:2px solid transparent}.ui-weapon-switch{position:absolute;right:0;opacity:.6;width:160px;height:60px;margin-left:auto;pointer-events:all;cursor:pointer!important}#ui-weapon-id-1{bottom:210px}#ui-weapon-id-2{bottom:140px}#ui-weapon-id-3{bottom:70px}#ui-weapon-id-4{bottom:0}.ui-weapon-name{font-size:18px;margin-top:38px}.ui-weapon-name,.ui-weapon-number{position:absolute;font-weight:700;right:8px;text-align:center}.ui-weapon-number{font-size:24px}.ui-weapon-exp{display:none;position:absolute;height:32px;width:32px;font-size:18px;font-weight:700;line-height:34px;right:78px;margin-top:26px;text-align:center}.ui-weapon-image{display:none;position:relative;height:60px;width:60px;left:4px;background-size:60px;background-repeat:no-repeat}#ui-weapon-id-4 .ui-weapon-image{height:52px;width:52px;left:4px;top:4px;background-size:52px}#ui-stats{display:none}#ui-stats-bg{display:none;opacity:0;position:absolute;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.75);pointer-events:none;z-index:2}#ui-stats-contents{position:absolute;width:100%;top:10%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;color:#fff;border-radius:5px;z-index:3}@media (max-height:860px){#ui-stats-contents{top:3%}}@media (max-width:1024px){#ui-stats-contents{-webkit-transform:translateX(-50%) scale(.8);transform:translateX(-50%) scale(.8);-webkit-transform-origin:top;transform-origin:top}}.ui-stats-header-title{font-weight:700;font-size:48px;margin:20px;color:gold}.ui-stats-header-reason{font-size:24px}.ui-stats-header-overview{display:inline;margin:10px}.ui-stats-header-overview div{display:inline;padding-bottom:12px;border-bottom:2px solid hsla(0,0%,100%,.25)}.ui-stats-header-overview div:not(:first-child){margin-left:100px}span.ui-stats-header-stat{font-size:32px}span.ui-stats-header-value{margin-left:24px;font-size:48px;font-weight:700}#ui-stats-info-box{position:relative;left:50%;margin:auto;margin-top:50px;height:190px;display:flex}@media (max-height:768px),(max-width:1200px){#ui-stats-info-box{margin-top:25px}}@media (max-width:1024px){#ui-stats-info-box{-webkit-transform-origin:left;transform-origin:left;-webkit-transform:scale(.85);transform:scale(.85)}}.ui-stats-info-player{position:relative;width:250px;background-color:rgba(0,0,0,.75);border-radius:4px;border:2px solid #000;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.ui-stats-info-status:after{content:"";display:block;position:absolute;top:15%;left:25%;background-image:url(../img/gui/skull.svg);background-repeat:no-repeat;background-size:128px;width:100%;height:100%;opacity:.1;z-index:-1}.ui-stats-info-player-name{color:gold;font-size:24px;font-weight:700;font-style:italic;margin:8px auto;max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-stats-info{display:flex;height:36px;margin:auto}.ui-stats-info>div{padding:8px;font-size:18px;line-height:12px;text-align:left;font-weight:700}.ui-stats-info>div:first-child{width:55%;margin-right:4px;text-align:right;font-weight:400}.ui-stats-reason{display:flex;height:72px;margin:auto}.ui-stats-reason div{padding:8px;margin:auto;width:100%;text-align:center;font-size:16px}.ui-stats-reason .ui-stats-reason-dead{color:red}.ui-stats-reason .ui-stats-reason-alive{color:#7cfc00}#ui-stats-options{position:absolute;left:50%;margin-top:20px;min-height:60px;z-index:1}.ui-stats-restart{width:200px;margin:auto;margin-bottom:20px}#ui-stats-spectate,.ui-stats-restart{position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-stats-spectate{left:102px;width:125px;background:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79}.ui-stats-ad-container{display:none;margin-top:80px}#ui-spec-ad-container{z-index:1;position:absolute;top:0;left:50%}.tooltip{position:relative}.tooltip .tooltip-text{visibility:hidden;width:240px;background-color:#000;color:#fff;text-align:center;padding:5px 0;border-radius:6px;position:absolute;z-index:1;right:110%;opacity:.75;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.tooltip .tooltip-text:after{content:" ";position:absolute;top:50%;left:100%;margin-top:-5px;border-width:5px;border-style:solid;border-color:transparent transparent transparent #000}.tooltip-title{font-size:18px;font-weight:700;padding:4px;color:#ff0}.tooltip-description{font-size:16px;padding:4px}.tooltip-description span{font-size:16px}.tooltip:hover .tooltip-text{visibility:visible}#ui-editor-top-center{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-editor-top-right{position:absolute;color:#fff;font-size:16px;top:12px;right:12px}.ui-editor-header{text-align:center;font-weight:700;font-size:16px;padding:8px}.ui-editor-info{background:rgba(0,0,0,.4);border-radius:5px;font-size:36px;margin-bottom:8px;padding:8px}.ui-editor-list{margin:0;padding:0;list-style:none}.ui-editor-list li div{font-family:monospace;font-size:14px}#ui-profiler-top-left{position:absolute;color:#fff;font-size:16px;top:12px;left:12px;text-align:center;display:flex}.ui-profiler-list{background:rgba(0,0,0,.4);border-radius:5px;margin-right:16px;padding:8px}.ui-profiler-list-header{font-size:16px;font-weight:700;margin-bottom:8px}.ui-profiler-list ul{list-style:none;text-align:left;padding:0;margin:0}.ui-profiler-list li{display:flex}.kv{font-family:monospace;font-size:14px;font-weight:400}.kv:last-child{width:100%;text-align:right}#ui-settings-container-mobile{display:none}@media screen and (max-width:850px){*{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.ui-touch-down{display:none;position:fixed;background-color:rgba(0,0,0,.5);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-touch-down-landscape{width:112px;height:112px;border-radius:56px}.ui-touch-down-portrait{width:96px;height:96px;border-radius:48px}.ui-touch-pos{display:none;position:fixed;background-color:rgba(0,0,0,.5);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-touch-pos-landscape{width:64px;height:64px;border-radius:32px}.ui-touch-pos-portrait{width:48px;height:48px;border-radius:24px}.btn-game-menu{position:relative;margin:auto;margin-top:2px;margin-bottom:4px;color:#fff;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,.25);background-color:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;background-repeat:no-repeat;cursor:pointer;text-align:center;line-height:30px;display:block;width:100%;height:30px;border:0;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-sizing:border-box}#btn-game-fullscreen{background-size:22px;background-position:4px 2px;background-image:url(../img/gui/minimize.svg)}#btn-game-sound{background-size:30px;background-position:3px 0;margin-bottom:8px}#btn-game-quit{background-position:-2px -3px;background-image:url(../img/gui/quit.svg)}#btn-game-quit,#btn-game-resume{margin-top:20px;background-size:34px}#btn-game-resume{background-position:-1px -1px;background-image:url(../img/gui/resume.svg)}#ui-top-center{position:absolute;color:#fff;top:15%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-top-center .top-center-text{text-align:center;width:100vw;padding:4px}#ui-waiting-text{display:none;color:#fff;text-shadow:1px 1px 0 #000}#ui-waiting-text,#ui-waiting-text span{font-size:16px;font-weight:700}.top-center-text .spectate-text{display:inline-block;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;overflow:hidden;height:32px}.top-center-text .spectate-desc{color:#fff;margin-right:8px}.ui-spectate-mode{display:none}#ui-spectate-text{position:relative}#spectate-player{max-width:250px;white-space:nowrap;text-overflow:ellipsis;color:cyan}#ui-top-center-scopes{margin-top:6px;text-align:center;color:#fff}.ui-zoom{display:inline-block;margin-left:-12px;margin-right:-12px;-webkit-transform:scale(.6);transform:scale(.6);background:rgba(0,0,0,.3);border-radius:32px;width:42px;height:42px;opacity:.6;pointer-events:all}.ui-zoom-active{vertical-align:baseline;opacity:1;margin-left:0;margin-right:0;-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-zoom .ui-zoom-image{width:48px;height:48px;opacity:.4;padding:2px}.ui-zoom .ui-zoom-text{margin-top:14px;width:100%}.ui-zoom .ui-zoom-level{font-size:24px;line-height:16px;text-align:center;width:100%}.ui-zoom .ui-zoom-append{font-size:24px}.ui-zoom-inactive{display:none;margin-left:-8px;margin-right:-8px;transition:all .1s ease-in;-webkit-transform:scale(.6);transform:scale(.6)}.ui-emote-wheel{z-index:3;display:none;position:fixed}.ui-emote-parent{opacity:1}.ui-emote-hl{z-index:2;display:none}.ui-emote{position:fixed;width:256px;height:256px;background-size:256px;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-bg-circle{opacity:.65;background-image:url(../img/gui/ping-part-circle.svg)}.ui-emote-bg-quarter{opacity:.65;background-image:url(../img/gui/ping-part-quarter.svg)}.ui-emote-bg-eighth{opacity:.65;background-image:url(../img/gui/ping-part-eighth.svg)}.ui-emote-middle .ui-emote-image{width:24px!important;height:24px!important;background-size:24px!important;background-image:none!important}.ui-emote-top .ui-emote-image{margin-top:-78px;background-image:url(../img/gui/ping-team-danger.svg)}.ui-emote-right .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(90deg);transform:translate(-50%,-50%) rotate(90deg)}.ui-emote-right .ui-emote-image{margin-left:78px;background-image:url(../img/gui/ping-team-coming.svg)}.ui-emote-bottom .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(180deg);transform:translate(-50%,-50%) rotate(180deg)}.ui-emote-bottom .ui-emote-image{margin-top:78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(270deg);transform:translate(-50%,-50%) rotate(270deg)}.ui-emote-left .ui-emote-image{margin-left:-78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-top-left .ui-emote-image{margin-left:-80px;margin-top:-30px;background-image:url(../img/loot/loot-ammo-box.svg)}.ui-emote-bottom-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(-45deg);transform:translate(-50%,-50%) rotate(-45deg)}.ui-emote-bottom-left .ui-emote-image{margin-left:-80px;margin-top:30px;background-image:url(../img/loot/loot-medical-healthkit.svg)}.ui-emote-circle .ui-emote-hl{background-image:url(../img/gui/ping-part-circle-highlight.svg)}.ui-emote-quarter .ui-emote-hl{background-image:url(../img/gui/ping-part-quarter-highlight.svg)}.ui-emote-eighth .ui-emote-hl{background-image:url(../img/gui/ping-part-eighth-highlight.svg)}.ui-emote-image{z-index:1;position:fixed;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-image-large{width:80px;height:80px;background-size:64px;background-position:50%}.ui-emote-image-small{width:35px;height:35px;background-size:35px}.ui-team-indicator{z-index:2;display:none;position:fixed;top:0;left:0;border-radius:32px;width:64px;height:64px;background-size:64px;background-repeat:no-repeat;background-image:url(../img/gui/indicator.svg)}.ui-team-indicator,.ui-team-indicator-pos{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-team-indicator-pos{opacity:.75;position:relative;border-radius:24px;width:32px;height:32px;top:23px;left:32px}.ui-team-indicator-image{width:32px;height:32px;background-size:32px;background-repeat:no-repeat;background-image:url(../img/gui/ping-team-danger.svg)}.ui-indicator-ping-border{z-index:0;display:none;position:fixed;top:0;left:0;width:160px;height:160px;position:relative;background-size:160px;background-repeat:no-repeat;background-image:url(../img/gui/ping-border.svg);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}#ui-top-left{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;display:block}.ui-bg-standard{background:rgba(0,0,0,.24);border-radius:5px}#ui-team{position:fixed;left:128px}.ui-team-member{display:none;position:relative;width:110px;height:20px;padding:4px;margin-bottom:4px}.ui-team-member-name{font-weight:700;text-shadow:1px 1px 0 #000;font-size:10px;max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-team-member-color{position:absolute;top:4px;right:4px;border-radius:9px;width:9px;height:9px}.ui-background-yellow{background-color:#ff0}.ui-background-blue{background-color:blue}.ui-background-red{background-color:red}.ui-background-purple{background-color:purple}.ui-background-cyan{background-color:cyan}.ui-team-member-status{display:none;position:absolute;top:2px;right:-24px;width:20px;height:20px;background-size:20px;background-repeat:no-repeat}.ui-team-member-status-downed{border-radius:16px;display:block!important;background-image:url(../img/gui/down.svg)!important}.ui-team-member-status-dead{display:block!important;background-image:url(../img/gui/skull-team.svg)!important;opacity:.5!important}.ui-team-member-status-disconnected{display:block!important;background-image:url(../img/gui/close.svg)!important;opacity:.5!important}.ui-team-member-health{margin-top:2px}.ui-team-member-health .ui-bar-inner{background-color:#fff;z-index:1;position:absolute;border-radius:4px;width:110px;height:5px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}.ui-team-member-health .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}.ui-team-member-health .ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}#ui-spectate-options-wrapper{bottom:6px;position:fixed;left:6px;top:auto!important}#ui-spectate-options{bottom:0;z-index:1;position:absolute;pointer-events:all;width:100%}#ui-spectate-buttons{display:inline-block;width:124px;padding:8px 8px 4px;text-align:center}#ui-spectate-options a{position:relative;color:#fff;height:24px;margin-bottom:2px;line-height:22px;font-size:12px;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#50afab;border-bottom:2px solid #387c79;box-shadow:none;cursor:pointer}#btn-spectate-prev-player,#btn-spectate-view-stats{margin-bottom:12px!important}#ui-spectate-stats{position:absolute;top:0;left:146px;width:160px;display:none}#ui-spectate-stats-header{text-align:center;font-size:16px;font-weight:700;padding:6px;color:#fff}#ui-spectate-stats-table{width:100%;background-color:transparent;margin:auto;margin-right:0;margin-bottom:4px;border-collapse:collapse}#ui-spectate-stats tbody,#ui-spectate-stats td,#ui-spectate-stats th{padding:0 2px 2px 14px;font-size:10px}.ui-spectate-stats-category{width:75px;color:hsla(0,0%,100%,.75)}.ui-spectate-stats-value{width:75px;color:#fff}#ui-top-right{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;display:flex}#ui-leaderboard{font-weight:700;text-align:center;width:56px;display:inline-block}#ui-leaderboard-alive{background:rgba(0,0,0,.4);border-radius:5px;margin-bottom:-16px;padding:8px;height:32px;width:40px}.ui-players-alive-pulse{-webkit-animation-name:pulseAlive;animation-name:pulseAlive;-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}@keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}.ui-leaderboard-header{font-size:12px}#ui-killfeed-wrapper{top:24px;left:6px;right:auto}#ui-killfeed{position:absolute;margin:initial;top:135px}#ui-killfeed-contents{width:800px}#ui-killfeed-contents .killfeed-div{position:absolute;background-color:rgba(0,0,0,.4);padding:3px;border-radius:2px;height:8px;line-height:8px;right:auto}.killfeed-div div,.killfeed-div span{float:left;font-size:8px;line-height:8px;font-weight:700;color:#efeeee}.killfeed-red div,.killfeed-red span{color:#d1777c!important}.killfeed-blue div,.killfeed-blue span{color:#00bfff!important}#ui-killfeed-contents .killfeed-red{color:#d1777c}#ui-killfeed-contents .killfeed-blue{color:#00bfff}#ui-killfeed .killfeed-name{max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-ammo .ui-loot-image,.ui-ammo .ui-loot-overlay{position:absolute;height:11px;width:11px;right:2px;margin-top:2px}#ui-ammo-interactive{position:absolute;right:0;top:25px}#ui-ammo-interactive .ui-loot{display:inline-block;background:rgba(0,0,0,.4);border-radius:5px;width:38px;height:14px;margin-left:auto;margin-bottom:2px}.ui-ammo .ui-loot-count{position:absolute;font-size:12px;font-weight:700;width:16px;left:3px;margin-top:-1px;text-align:center}#ui-medical-interactive .ui-loot{display:inline-block;background:rgba(0,0,0,.4);border-radius:5px;width:44px;height:16px;margin-left:auto;margin-bottom:2px}.ui-medical .ui-loot-image{position:absolute;height:16px;width:16px;background-size:16px;background-repeat:no-repeat;right:2px;margin-top:0}.ui-medical .ui-loot-count{position:absolute;font-size:16px;font-weight:700;left:4px;width:16px;margin-top:-3px;text-align:center}.ui-loot{background:rgba(0,0,0,.4);border-radius:5px;width:85px;height:32px;margin-left:auto;margin-bottom:5px}.ui-loot:hover{opacity:1!important}.ui-outline-hover,.ui-outline-hover:hover{border:2px solid rgba(0,255,0,0)}.ui-outline-hover:hover{-webkit-transition:border .1s ease-out;-moz-transition:border .1s ease-out;-o-transition:border .1s ease-out}.ui-scale-hover{transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);-moz-transform:scale(1)}.ui-scale-hover,.ui-scale-hover:hover{-webkit-transition:all .1s ease-in;-ms-transition:all .1s ease-in;-moz-transition:all .1s ease-in;transition:all .1s ease-in}.ui-scale-hover:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);-moz-transform:scale(1.1);transform:scale(1.1)}#ui-debug-button{display:none;background:rgba(0,0,0,.4);position:absolute;border-radius:13px;height:26px;width:26px;background-size:18px;bottom:4px;right:4px;background-position:50%;background-image:url(../img/gui/mag-glass.svg);background-repeat:no-repeat;pointer-events:auto;z-index:1}#ui-upper-center{position:absolute;display:flex;color:#fff;top:84px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-announcement{display:none;color:#ff0;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;text-align:center;width:100vw}#ui-lower-center{position:absolute;color:#fff;bottom:44%;left:60%}#ui-interaction{display:flex}#ui-interaction-press{background:rgba(0,0,0,.4);border-radius:5px;margin-left:-20px;font-size:34px;width:44px;height:44px;background-size:36px;background-position:50%;background-repeat:no-repeat}#ui-interaction-outer{background:rgba(0,0,0,.4);border-radius:5px;margin-left:6px;padding:0 6px;height:28px}#ui-interaction-outer #ui-interaction-description{margin-top:5px;font-size:16px;text-align:center}#ui-bottom-center-0{bottom:6px}#ui-bottom-center-0,#ui-equipped-ammo-wrapper{position:absolute;color:#fff;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-equipped-ammo-wrapper{bottom:78px}#ui-equipped-ammo{position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;opacity:1}#ui-bullet-counter{display:inline-block;width:175px;height:28px;text-align:center;text-shadow:1px 1px #000}#ui-bullet-counter #ui-current-clip{background:rgba(0,0,0,.4);border-radius:5px;font-size:28px;font-weight:700;line-height:30px;width:60px;height:32px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;position:relative;text-align:center}#ui-bullet-counter #ui-ammo-divider{font-size:22px;left:53%;position:absolute;text-align:center;top:20px}#ui-bullet-counter #ui-remaining-ammo{background:rgba(0,0,0,.4);border-radius:5px;font-size:16px;font-weight:700;line-height:22px;width:44px;height:22px;left:122px;position:absolute;text-align:center;top:10px}#ui-bullet-counter #ui-reload-button{background:rgba(0,0,0,.4);position:absolute;border-radius:11px;height:22px;width:22px;background-size:14px;top:10px;left:170px;background-position:4px 3px;background-image:url(../img/gui/bullets.svg);background-repeat:no-repeat}#ui-boost-counter{display:inline-flex;width:206px}#ui-boost-counter .ui-boost-base{background:rgba(0,0,0,.4);height:6px;margin-bottom:0}#ui-boost-counter-0{border-top-left-radius:3px;border-bottom-left-radius:3px;width:50px;margin-right:3px}#ui-boost-counter-0 .ui-bar-inner{background:#ff901a}#ui-boost-counter-1{width:50px;margin-left:3px;margin-right:3px}#ui-boost-counter-1 .ui-bar-inner{background:#ff751a}#ui-boost-counter-2{width:75px;margin-left:3px;margin-right:3px}#ui-boost-counter-2 .ui-bar-inner{background:#ff6616}#ui-boost-counter-3{border-top-right-radius:3px;border-bottom-right-radius:3px;width:25px;margin-left:3px}#ui-boost-counter-3 .ui-bar-inner{background:#ff5600}.ui-boost-base .ui-bar-inner{border-radius:inherit;width:0;height:6px}#ui-health-counter{background:rgba(0,0,0,.4);border-radius:5px;width:200px;height:18px;padding:4px}#ui-health-counter .ui-bar-inner{z-index:1;position:absolute;border-radius:5px;width:100%;height:18px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}#ui-health-container{width:200px;position:relative}#ui-health-counter .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}#ui-health-counter #ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}.health-bar-pulse{-webkit-animation:pulsewhite 1s linear infinite;animation:pulsewhite 1s linear infinite}@-webkit-keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@-webkit-keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}@keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}#ui-bottom-center-1{z-index:3;position:absolute;color:#fff;bottom:23%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-kills{display:none;text-align:center;background:rgba(0,0,0,.4);color:#fff;border-radius:5px;padding:6px}#ui-kill-text{font-size:10px}#ui-kill-count{font-weight:700;color:#ff4100;font-size:18px;margin-bottom:-3px;text-shadow:1px 1px 1px rgba(0,0,0,.3)}#ui-bottom-center-2{position:absolute;color:#fff;bottom:82px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-pickup-message{color:#fff;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;text-align:center;width:100vw}#ui-bottom-center-right{position:absolute;color:#fff;bottom:6px;left:75%}.ui-armor-counter{position:absolute;bottom:0;display:block;width:20px;height:24px;background:rgba(0,0,0,.4);border-radius:5px;margin-left:2px}#ui-armor-helmet{right:0}#ui-armor-backpack{left:26px}.ui-armor-level{position:relative;font-size:8px;font-weight:700;bottom:12px;text-align:center;text-shadow:1px 1px #000}.ui-armor-counter-inner{z-index:1;position:absolute;background:rgba(0,255,0,.5);border-radius:5px;width:100%;height:0;bottom:0;transition:height .5s;transition-property:height;transition-duration:.5s;transition-timing-function:ease-out;transition-delay:0s}.ui-armor-counter .ui-armor-count{z-index:2;text-shadow:1px 1px #000;position:relative;font-size:18px;font-weight:700;margin-top:-28px;text-align:center}.ui-armor-counter .ui-armor-image{margin:auto;left:0;right:0;bottom:0;top:0;z-index:0;position:absolute;height:18px;width:18px}#ui-bottom-right{bottom:auto;color:#fff;position:absolute;right:6px;top:55%;-webkit-transform-origin:bottom right;transform-origin:bottom right;-webkit-transform:scale(1);transform:scale(1)}#ui-weapon-container{width:84px}.ui-weapon-info{margin-bottom:5px}.ui-weapon-info,.ui-weapon-switch{border-radius:5px;border:2px solid transparent}.ui-weapon-switch{position:absolute;right:0;opacity:.6;width:68px;height:24px;margin-left:auto;pointer-events:all}#ui-weapon-id-1{bottom:90px}#ui-weapon-id-2{bottom:60px}#ui-weapon-id-3{bottom:30px}#ui-weapon-id-4{bottom:0}.ui-weapon-name{position:absolute;font-size:10px;font-weight:700;right:4px;width:48px;margin-top:12px;text-align:right;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.ui-weapon-number{font-size:24px;right:8px}.ui-weapon-exp,.ui-weapon-number{display:none;position:absolute;font-weight:700;text-align:center}.ui-weapon-exp{height:16px;width:16px;font-size:8px;line-height:18px;right:34px;margin-top:10px}.ui-weapon-image{display:none;position:relative;height:28px;width:28px;left:0;bottom:3px;-webkit-transform:rotate(10deg);transform:rotate(10deg)}#ui-weapon-id-4 .ui-weapon-image{height:24px;width:24px;left:0;top:0;background-size:24px}#ui-stats-contents{position:absolute;width:100%;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;color:#fff;border-radius:5px}#ui-stats-header{margin-top:14px}.ui-stats-header-title{font-weight:700;font-size:24px;margin:6px;color:gold}.ui-stats-header-reason{font-size:12px}.ui-stats-header-overview{position:fixed;top:4px;right:12px;margin:5px}.ui-stats-header-overview div{display:block;padding-bottom:6px;border-bottom:2px solid hsla(0,0%,100%,.25)}.ui-stats-header-overview div:not(:first-child){margin:initial}span.ui-stats-header-stat{font-size:22px}span.ui-stats-header-value{margin-left:12px;font-size:28px;font-weight:700}#ui-stats-info-box{position:relative;left:50%;margin:auto;margin-top:0;height:100px;display:flex}.ui-stats-info-player{position:relative;width:125px;background-color:rgba(0,0,0,.75);border-radius:4px;border:2px solid #000;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.ui-stats-info-status:after{background-image:url(../img/gui/skull.svg);background-position:50%;background-repeat:no-repeat;background-size:70px;content:"";display:block;height:100%;left:auto;opacity:.1;position:absolute;top:0;width:100%;z-index:-1}.ui-stats-info-player-name{color:gold;font-size:12px;font-weight:700;font-style:italic;margin:4px auto;max-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-stats-info{display:flex;height:18px;margin:auto}.ui-stats-info>div{padding:4px;font-size:9px;line-height:6px;text-align:left;font-weight:700}.ui-stats-info>div:first-child{width:55%;margin-right:4px;text-align:right;font-weight:400}.ui-stats-reason{display:flex;height:72px;margin:auto}.ui-stats-reason div{padding:8px;margin:auto;width:100%;text-align:center;font-size:16px}.ui-stats-reason .ui-stats-reason-dead{color:red}.ui-stats-reason .ui-stats-reason-alive{color:#7cfc00}#ui-stats-options{position:absolute;left:50%;margin-top:10px;min-height:30px;z-index:1}.ui-stats-restart{width:130px;margin:auto;margin-bottom:20px}#ui-stats-spectate,.ui-stats-restart{position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-stats-spectate{left:68px;width:88px;background:#50afab;border-bottom:2px solid #387c79;box-shadow:none}.ui-stats-ad-container{display:none;margin-top:8px;-webkit-transform:scale(.7);transform:scale(.7)}#ui-spec-ad-container{z-index:1;position:absolute;top:0;left:50%}#ad-block-stats-bottom{-webkit-transform:scale(.6);transform:scale(.6);-webkit-transform-origin:center;transform-origin:center;position:static}.tooltip{position:relative}.tooltip .tooltip-text{visibility:hidden!important;width:240px;background-color:#000;color:#fff;text-align:center;padding:5px 0;border-radius:6px;position:absolute;z-index:1;right:110%;opacity:.75;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.tooltip .tooltip-text:after{content:" ";position:absolute;top:50%;left:100%;margin-top:-5px;border-width:5px;border-style:solid;border-color:transparent transparent transparent #000}.tooltip-title{font-size:18px;font-weight:700;padding:4px;color:#ff0}.tooltip-description{font-size:16px;padding:4px}.tooltip-description span{font-size:16px}#ui-editor-top-center{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-editor-top-right{position:absolute;color:#fff;font-size:16px;top:6px;right:6px}.ui-editor-header{text-align:center;font-weight:700;font-size:16px;padding:8px}.ui-editor-info{background:rgba(0,0,0,.4);border-radius:5px;font-size:36px;margin-bottom:8px;padding:8px}.ui-editor-list{margin:0;padding:0;list-style:none}.ui-editor-list li div{font-family:monospace;font-size:14px}#ui-profiler-top-left{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;text-align:center;display:flex}.ui-profiler-list{background:rgba(0,0,0,.4);border-radius:5px;margin-right:16px;padding:8px}.ui-profiler-list-header{font-size:16px;font-weight:700;margin-bottom:8px}.ui-profiler-list ul{list-style:none;text-align:left;padding:0;margin:0}.ui-profiler-list li{display:flex}.kv{font-family:monospace;font-size:14px;font-weight:400}.kv:last-child{width:100%;text-align:right}#ui-leaderboard-wrapper,#ui-settings-container-desktop{display:none}#ui-settings-container-mobile{display:block}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-top-center{-webkit-transform-origin:top;transform-origin:top;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}@media screen and (max-width:850px) and screen and (max-width:850px){#ui-lower-center{-webkit-transform:scale(1);transform:scale(1)}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-bottom-center-0{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-bottom-right{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.8);transform:scale(.8)}}@media screen and (max-width:850px) and (max-width:850px) and (orientation:landscape){.ui-stats-header-overview .ui-stats-header-left{position:fixed;top:6px;left:12px}.ui-stats-header-overview .ui-stats-header-right{position:fixed;top:6px;right:12px}}@media screen and (max-width:850px) and (max-height:360px) and (max-width:640px){.ui-stats-ad-container{margin-top:0;-webkit-transform:scale(.6);transform:scale(.6)}}@media screen and (max-width:850px) and (max-width:850px) and (max-height:320px){.ui-stats-ad-container{position:fixed;right:10px;top:24px;-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:bottom right;transform-origin:bottom right}}@media screen and (max-width:850px) and (orientation:portrait){#ui-stats-contents{margin-top:32px;margin-bottom:16px}#ui-stats-header-overview{position:static}#ui-stats-info-box{display:inline-block;left:auto;-webkit-transform:scale(.9);transform:scale(.9);-webkit-transform-origin:initial;transform-origin:initial;margin-top:2px;width:100%}.ui-stats-ad-container{width:100%}.ui-stats-info-player{display:inline-block;left:auto!important;margin:8px;-webkit-transform:none;transform:none}.ui-stats-header-overview{display:inline-block;position:static;width:175px}.ui-stats-header-overview div{position:static;margin-bottom:8px}#ui-top-center{top:134px;left:50%}#ui-top-center-scopes-wrapper{display:none;bottom:42px;top:auto}#ui-team{top:40px}.ui-team-member{height:18px;margin-bottom:4px}#ui-upper-center{top:180px}#ui-bottom-center-0{top:-15px;bottom:auto;left:100px;-webkit-transform:scale(.85);transform:scale(.85)}#ui-bottom-center-1{bottom:28%}#ui-bottom-center-2{bottom:218px}#ui-lower-center{bottom:38%;left:38%}#ui-boost-counter{position:relative;top:40px;left:2px}#ui-bottom-right{bottom:20px;right:6px;top:auto}#ui-weapon-id-1{right:240px;bottom:auto}#ui-weapon-id-2{right:160px;bottom:auto}#ui-weapon-id-3{right:80px;bottom:auto}#ui-weapon-id-4{bottom:auto}.ui-weapon-info{display:inline-block}#ui-bottom-center-right{bottom:9px;left:30px}.ui-right-center-mobile{top:6px}#ui-emote-button{top:200px}#ui-debug-button{top:210px}#ui-ammo-interactive{left:8px;margin-top:4px;top:88px}#ui-ammo-interactive .ui-loot,#ui-medical-interactive .ui-loot{display:block}#ui-equipped-ammo{position:static}#ui-equipped-ammo,#ui-equipped-ammo-wrapper{left:auto;-webkit-transform:none;transform:none}#ui-equipped-ammo-wrapper{bottom:auto;color:#fff;position:absolute;right:6px;top:44%}#ui-bullet-counter{width:auto}#ui-bullet-counter #ui-current-clip{left:50%}#ui-bullet-counter #ui-remaining-ammo{left:auto;right:0;top:36px}#ui-bullet-counter #ui-reload-button{left:auto;right:0;top:62px}#big-map-collision{left:auto;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}#big-map-close{bottom:auto;top:12px}#ui-spectate-options-wrapper{bottom:42px;-webkit-transform:scale(.7);transform:scale(.7)}#ui-spectate-options{position:absolute;bottom:12px}#ui-spectate-stats{bottom:0;top:auto}}@media screen and (max-width:850px) and (orientation:portrait) and (min-height:668px){#ui-stats-contents{margin-top:32px}#ui-stats-info-box,.ui-stats-ad-container{-webkit-transform:scale(1);transform:scale(1)}.ui-stats-ad-container{margin-top:20px}#ui-stats-options{display:block;left:auto;position:static;margin:auto;margin-top:24px;width:100%}.ui-stats-restart{margin-bottom:0}#ui-stats-spectate,.ui-stats-restart{display:block;position:static;-webkit-transform:initial;transform:none}#ui-stats-spectate{margin:auto;margin-top:6px}}@media screen and (max-width:850px) and (orientation:portrait) and (max-height:667px){#ui-stats-contents{margin-top:0;-webkit-transform:translateX(-50%) scale(.9);transform:translateX(-50%) scale(.9);-webkit-transform-origin:top;transform-origin:top}.ui-stats-ad-container{margin-top:20px}}@media screen and (max-width:850px) and (orientation:portrait) and (max-height:568px) and (max-width:375px){#ui-bottom-center-right{left:22px;-webkit-transform:scale(.8);transform:scale(.8)}#ui-bottom-right{right:0}#ui-bottom-center-0{top:-20px;left:84px;-webkit-transform:scale(.7);transform:scale(.7)}}', ""])
+    "70dc4c636b": function (e, t, a) {
+        t = e.exports = a("d94dd53695")(!1), t.push([e.i, 'img{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}#cvs{-webkit-filter:none;filter:none}.click-through{pointer-events:none}#game-area-wrapper{cursor:crosshair;left:0;position:absolute!important;top:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}#ui-game{-webkit-filter:none;filter:none;height:100%;left:0;position:absolute;top:0;width:100%}#ui-center{color:#fff;pointer-events:all;position:absolute;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%) scale(1);transform:translateX(-50%) translateY(-50%) scale(1);z-index:10}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-center{-webkit-transform:translateX(-50%) translateY(-50%) scale(.85);transform:translateX(-50%) translateY(-50%) scale(.85)}}@media screen and (max-width:850px){#ui-center{pointer-events:all;-webkit-transform:translateX(-50%) translateY(-50%) scale(.85);transform:translateX(-50%) translateY(-50%) scale(.85);z-index:10}}@media (max-width:850px) and (max-height:300px){#ui-center{-webkit-transform:translateX(-50%) translateY(-50%) scale(.775);transform:translateX(-50%) translateY(-50%) scale(.775)}}.btns-game-double-row{display:flex;position:relative}.btns-game-double-row>.btn-game-container{position:relative;width:100%}.btns-game-double-row>.btn-game-container>.btn-double-row{display:inline-block}.btns-game-double-row>div:not(:last-child){margin-right:2px}.game-menu-icon{background-size:22px;background-position:50%;background-repeat:no-repeat;bottom:13px;display:inline-block;height:22px;left:60%;pointer-events:none;position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:22px}.btn-game-touch-style{background-color:#50afab;background-position:4px 4px;background-repeat:no-repeat;background-size:20px;border:0;border-bottom:none;border-radius:5px;box-shadow:inset 0 -2px #387c79;box-sizing:border-box;color:#fff;cursor:pointer;display:block;font-size:14px;height:30px;line-height:30px;margin:auto;margin-top:2px;margin-bottom:4px;position:relative;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);width:100%}.movement-icon{background-image:url(../img/gui/movement.svg)}.target-icon{background-image:url(../img/gui/target.svg)}#ui-game-menu{background-color:rgba(0,0,0,.5);border-radius:5px;box-sizing:border-box;display:none;margin:10px auto;padding:10px 15px;width:250px}@media screen and (max-width:850px){#ui-game-menu{padding:4px 10px;width:190px}}@media (max-width:850px) and (max-height:300px){#ui-game-menu{margin-top:0}}#ui-game-menu p{bottom:4px;display:inline-block;font-size:14px;position:relative}@media screen and (max-width:850px){#ui-game-menu p{bottom:0;font-size:12px;margin-bottom:8px;margin-top:6px}}#ui-alive-info{position:absolute;color:#fff;width:80px;height:36px;top:174px;left:106px;background:rgba(0,0,0,.4);border-radius:5px}#ui-map-expand-mobile{height:190px;width:190px;left:-4px;top:-22px;z-index:0;background-color:transparent}#ui-map-expand img{display:none}#ui-map-minimize{left:124px}.ui-map-wrapper-mobile{bottom:auto;color:#fff;display:block;font-size:16px;left:6px;top:46px}.ui-map-wrapper-mobile .ui-players-alive{left:4px}.ui-map-wrapper-mobile .ui-map-counter{position:relative;display:inline-block;font-size:24px;text-align:center;bottom:9px;left:2px}.ui-map-wrapper-mobile .ui-map-icon{padding:6px;display:inline-block;height:24px;width:24px;margin-left:2px;background-size:24px;background-repeat:no-repeat;background-position:6px 6px}.ui-map-wrapper-mobile #ui-map-info{position:absolute;color:#fff;width:100px;height:36px;top:174px;left:0;background:rgba(0,0,0,.4);border-radius:5px}.ui-map-wrapper-mobile #ui-spec-counter{position:absolute;color:#fff;width:68px;height:28px;top:135px;left:60px;background:rgba(0,0,0,.4);border-radius:5px}.ui-map-wrapper-mobile #ui-spec-counter-icon{padding:6px;display:inline-block;height:24px;width:18px;margin-left:2px;background-size:20px;background-repeat:no-repeat;background-position:6px 4px;background-image:url(../img/gui/eye.svg)}.ui-map-wrapper-mobile #ui-spec-counter-number{position:relative;display:inline-block;font-size:20px;width:24px;text-align:center;bottom:15px;left:0}.ui-map-wrapper-mobile .gas-icon{background-image:url(../img/gui/gas.svg)}.ui-map-wrapper-mobile .danger-icon{background-image:url(../img/gui/danger.svg)}.ui-map-wrapper-mobile .alive-icon{background-image:url(../img/gui/player.svg)}.ui-map-wrapper-mobile .icon-pulse{-webkit-animation:pulse 2s linear infinite;animation:pulse 2s linear infinite}.ui-map-wrapper-mobile .ui-settings-button{position:absolute;color:#fff;border-radius:5px;pointer-events:all}.ui-map-wrapper-mobile .ui-settings-button img{position:absolute;left:6px;top:6px;height:36px;width:36px;background-size:36px;background-repeat:no-repeat;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-map-wrapper-mobile .ui-settings-button .map-img-after{display:none}.ui-map-wrapper-mobile .ui-settings-button:hover{-webkit-transform:scale(1);transform:scale(1)}.ui-map-wrapper-desktop{position:absolute;bottom:12px;left:12px}#ui-map-wrapper{position:absolute;z-index:1}#ui-settings-container-mobile{position:relative}#ui-menu-display{cursor:pointer;left:2px;top:-18px;height:48px;width:48px;opacity:.8;background-color:rgba(0,0,0,.4);background-size:48px;background-repeat:no-repeat;background-position:50%;background-image:url(../img/gui/cog.svg);z-index:1}#big-map{display:none;height:100%;width:100%}#big-map-collision{height:100%;left:50%;margin:auto;pointer-events:all;position:fixed;top:0;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#big-map-close{display:none;position:absolute;margin-left:auto;height:64px;width:64px;right:6px;top:6px;border-radius:6px;background-color:rgba(0,0,0,.5);background-repeat:no-repeat;background-size:48px;background-position:50%;background-image:url(../img/gui/close.svg);pointer-events:all}#ui-right-center{position:absolute;color:#fff;opacity:.75;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-right-center-desktop{top:40%;-webkit-transform:translateY(-50%);transform:translateY(-50%);right:12px}.ui-right-center-mobile{top:30px;-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:translateY(-50%) scale(.8);transform:translateY(-50%) scale(.8);right:6px}@media (max-height:360px),(max-width:640px){.ui-right-center-mobile{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85);top:16px}}.ui-right-center-tablet{top:12px!important;-webkit-transform:scale(.8);transform:scale(.8)}@media (max-height:600px){.ui-right-center-tablet{-webkit-transform:scale(.65);transform:scale(.65)}}.ui-bottom-right-tablet{bottom:25%!important;-webkit-transform:scale(.8)!important;transform:scale(.8)!important;-webkit-transform-origin:right!important;transform-origin:right!important}@media (max-height:600px){.ui-bottom-right-tablet{bottom:25%!important;-webkit-transform:scale(.7)!important;transform:scale(.7)!important;-webkit-transform-origin:right!important;transform-origin:right!important}}.ui-bottom-center-right-tablet{left:72%!important;-webkit-transform:scale(.65)!important;transform:scale(.65)!important}#ui-emote-button{background:rgba(0,0,0,.4);background-image:url(../img/gui/emote.svg);background-position:50%;background-repeat:no-repeat;background-size:28px;border-radius:21px;display:none;height:42px;position:absolute;right:108px;top:0;width:42px}@media screen and (max-width:850px){#ui-emote-button{background-size:20px;border-radius:14px;height:28px;right:0;top:50px;width:28px}}.ui-top-left-tablet{left:120px!important}.ui-spectate-options-wrapper-tablet{bottom:12px!important;top:auto!important}.ui-killfeed-wrapper-tablet{top:60px!important}@media (max-width:850px) and (max-height:320px){.ui-slider-container{margin-bottom:0}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>p{width:75px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>.slider{bottom:3px;width:85px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>.slider::-webkit-slider-thumb{width:20px;height:20px}}@media (max-width:850px) and (max-height:320px){.ui-slider-container>.slider::-moz-range-thumb{width:20px;height:20px}}.ui-hidden{display:none}.btn-game-menu{text-align:center;line-height:38px;display:block;width:100%;height:40px;border:0;border-radius:5px;box-sizing:border-box;position:relative;margin:auto;margin-top:5px;margin-bottom:5px;color:#fff;font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,.25);background-color:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;background-repeat:no-repeat;cursor:pointer}#btn-game-fullscreen{background-size:34px;background-position:4px 2px;background-image:url(../img/gui/minimize.svg)}#btn-game-sound{background-size:44px;background-position:2px -3px}#btn-game-quit{margin-top:40px;background-image:url(../img/gui/quit.svg)}#btn-game-quit,#btn-game-resume{background-size:44px;background-position:-2px -3px}#btn-game-resume{margin-top:30px;background-image:url(../img/gui/resume.svg)}#ui-top-center{position:absolute;color:#fff;top:80px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-top-center .top-center-text{text-align:center;width:100vw;padding:8px}#ui-waiting-text{display:none;color:#fff;text-shadow:2px 2px 0 #000}#ui-waiting-text,#ui-waiting-text span{font-size:32px;font-weight:700}.top-center-text .spectate-text{display:inline-block;text-shadow:2px 2px 0 #000;font-size:24px;font-weight:700;overflow:hidden;height:32px}@media (max-width:1024px){.top-center-text .spectate-text{font-size:18px}}.top-center-text .spectate-desc{color:#fff;margin-right:8px}.ui-spectate-mode{display:none}#ui-spectate-text{position:relative}#spectate-player{max-width:250px;white-space:nowrap;text-overflow:ellipsis;color:cyan}#ui-top-center-scopes-wrapper{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:100%}#ui-top-center-scopes{margin-top:12px;text-align:center}@media (max-height:768px),(max-width:1200px){#ui-top-center-scopes{-webkit-transform:scale(.85);transform:scale(.85)}}.ui-zoom{background:rgba(0,0,0,.3);border-radius:36px;width:64px;height:64px;opacity:.6;display:inline-block}.ui-zoom-hover:hover{opacity:1}.ui-zoom-active{vertical-align:baseline;opacity:1;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-zoom .ui-zoom-image{width:64px;height:64px;opacity:.4;padding:2px}.ui-zoom .ui-zoom-text{margin-top:14px;width:100%}.ui-zoom .ui-zoom-level{font-size:32px;text-align:center;width:100%}.ui-zoom .ui-zoom-append{font-size:24px}.ui-zoom-inactive{display:none;margin-left:-8px;margin-right:-8px;-webkit-transition:all .1s ease-in;-webkit-transform:scale(.5);-ms-transition:all .1s ease-in;-ms-transform:scale(.5);-moz-transition:all .1s ease-in;-moz-transform:scale(.5);transition:all .1s ease-in;transform:scale(.5)}.ui-zoom-inactive:hover{cursor:pointer!important;opacity:1}.ui-emote-wheel{z-index:3;display:none;position:fixed}.ui-emote-parent{opacity:.75}.ui-emote-hl{z-index:2;display:none}.ui-emote{position:fixed;width:256px;height:256px;background-size:256px;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-bg-circle{opacity:.5;background-image:url(../img/gui/ping-part-circle.svg)}.ui-emote-bg-quarter{opacity:.5;background-image:url(../img/gui/ping-part-quarter.svg)}.ui-emote-bg-eighth{opacity:.5;background-image:url(../img/gui/ping-part-eighth.svg)}.ui-emote-middle .ui-emote-image{width:24px!important;height:24px!important;background-size:24px!important;background-image:url(../img/gui/close.svg)}.ui-emote-top .ui-emote-image{margin-top:-78px;background-image:url(../img/gui/ping-team-danger.svg)}.ui-emote-right .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(90deg);transform:translate(-50%,-50%) rotate(90deg)}.ui-emote-right .ui-emote-image{margin-left:78px;background-image:url(../img/gui/ping-team-coming.svg)}.ui-emote-bottom .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(180deg);transform:translate(-50%,-50%) rotate(180deg)}.ui-emote-bottom .ui-emote-image{margin-top:78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(270deg);transform:translate(-50%,-50%) rotate(270deg)}.ui-emote-left .ui-emote-image{margin-left:-78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-top-left .ui-emote-image{margin-left:-80px;margin-top:-30px;background-image:url(../img/loot/loot-ammo-box.svg)}.ui-emote-bottom-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(-45deg);transform:translate(-50%,-50%) rotate(-45deg)}.ui-emote-bottom-left .ui-emote-image{margin-left:-80px;margin-top:30px;background-image:url(../img/loot/loot-medical-healthkit.svg)}.ui-emote-circle .ui-emote-hl{background-image:url(../img/gui/ping-part-circle-highlight.svg)}.ui-emote-quarter .ui-emote-hl{background-image:url(../img/gui/ping-part-quarter-highlight.svg)}.ui-emote-eighth .ui-emote-hl{background-image:url(../img/gui/ping-part-eighth-highlight.svg)}.ui-emote-image{z-index:1;position:fixed;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-image-large{width:64px;height:64px;background-size:64px}.ui-emote-image-small{width:35px;height:35px;background-size:35px}.ui-team-indicator{z-index:2;display:none;position:fixed;top:0;left:0;border-radius:32px;width:64px;height:64px;background-size:64px;background-repeat:no-repeat;background-image:url(../img/gui/indicator.svg)}.ui-team-indicator,.ui-team-indicator-pos{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-team-indicator-pos{opacity:.75;position:relative;border-radius:24px;width:32px;height:32px;top:23px;left:32px}.ui-team-indicator-image{width:32px;height:32px;background-size:32px;background-repeat:no-repeat;background-image:url(../img/gui/ping-team-danger.svg)}.ui-indicator-ping-border{z-index:0;display:none;position:fixed;top:0;left:0;width:160px;height:160px;position:relative;background-size:160px;background-repeat:no-repeat;background-image:url(../img/gui/ping-border.svg);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}#ui-top-left{position:absolute;color:#fff;font-size:16px;top:12px;left:12px;display:block}@media (max-height:768px),(max-width:1200px){#ui-top-left{-webkit-transform-origin:top left;transform-origin:top left;-webkit-transform:scale(.85);transform:scale(.85)}}.ui-bg-standard{background:rgba(0,0,0,.24);border-radius:5px}.ui-team-member{display:none;position:relative;width:200px;height:32px;padding:4px;margin-bottom:8px}.ui-team-member-name{font-weight:700;text-shadow:1px 1px 0 #000;font-size:16px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-team-member-color{position:absolute;top:5px;right:5px;border-radius:7px;width:14px;height:14px}.ui-background-yellow{background-color:#ff0}.ui-background-blue{background-color:blue}.ui-background-red{background-color:red}.ui-background-purple{background-color:purple}.ui-background-cyan{background-color:cyan}.ui-team-member-status{display:none;position:absolute;top:4px;right:-38px;width:32px;height:32px;background-size:32px;background-repeat:no-repeat}.ui-team-member-status-downed{border-radius:16px;display:block!important;background-image:url(../img/gui/down.svg)!important}.ui-team-member-status-dead{display:block!important;background-image:url(../img/gui/skull-team.svg)!important;opacity:.5!important}.ui-team-member-status-disconnected{display:block!important;background-image:url(../img/gui/close.svg)!important;opacity:.5!important}.ui-team-member-health{margin-top:4px}.ui-team-member-health .ui-bar-inner{background-color:#fff;z-index:1;position:absolute;border-radius:4px;width:200px;height:10px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}.ui-team-member-health .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}.ui-team-member-health .ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}#ui-spectate-options-wrapper{color:#fff;display:block;left:12px;position:absolute;top:12px}@media (max-height:768px),(max-width:1200px){#ui-spectate-options-wrapper{-webkit-transform:scale(.85);transform:scale(.85);-webkit-transform-origin:top left;transform-origin:top left}}#ui-spectate-options{position:relative;pointer-events:all;width:100%}#ui-spectate-buttons{display:inline-block;padding:8px 8px 0;text-align:center;width:192px}#ui-spectate-options a{position:relative;color:#fff;font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;cursor:pointer}#btn-spectate-prev-player{margin-bottom:24px}#ui-spectate-stats{vertical-align:top;display:none}#ui-spectate-stats-header{text-align:center;font-size:24px;font-weight:700;padding:8px}#ui-spectate-stats-table{width:100%;background-color:transparent;margin:auto;margin-right:0;border-collapse:collapse}#ui-spectate-stats tbody,#ui-spectate-stats td,#ui-spectate-stats th{padding:0 8px 8px 16px;font-size:18px}.ui-spectate-stats-category{width:130px;color:hsla(0,0%,100%,.75)}.ui-spectate-stats-value{width:75px;color:#fff}#ui-leaderboard-wrapper{position:absolute;color:#fff;font-size:16px;top:12px;right:12px;display:flex;font-weight:700;text-align:center;width:85px;display:inline-block}@media (max-height:768px),(max-width:1200px){#ui-leaderboard-wrapper{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85)}}#ui-leaderboard-alive{background:rgba(0,0,0,.4);border-radius:5px;margin-bottom:8px;padding:8px;height:64px;width:72px}.ui-players-alive{position:relative;font-size:54px}.ui-leaderboard-header{font-size:24px;margin-bottom:8px}#ui-kill-counter-wrapper{display:none;margin-top:32px}#ui-kill-counter{background:rgba(0,0,0,.4);border-radius:5px;margin-bottom:8px;padding:8px;height:64px;width:72px}.ui-player-kills{position:relative;font-size:54px}.ui-kill-counter-header{font-size:24px;margin-bottom:8px}#ui-killfeed-wrapper{position:absolute;color:#fff;font-size:16px;top:12px;right:12px;display:flex}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-killfeed-wrapper{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.85);transform:scale(.85)}}#ui-killfeed{display:inline-block;margin-left:24px;height:100px}#ui-killfeed-contents{width:800px}#ui-killfeed-contents .killfeed-div{position:absolute;right:100px;background-color:rgba(0,0,0,.4);padding:4px 8px;border-radius:2px;height:22px;line-height:24px}.killfeed-div div{float:left;font-size:16px;font-weight:700;color:#efeeee}#ui-killfeed .killfeed-text{max-width:550px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#ui-right-center:hover{opacity:1}.ui-ammo .ui-loot-image,.ui-ammo .ui-loot-overlay{position:absolute;height:22px;width:22px;right:5px;margin-top:5px;top:0;bottom:0}#ui-medical-interactive{margin-bottom:32px}.ui-medical .ui-loot-image{position:absolute;height:30px;width:30px;background-size:30px;background-repeat:no-repeat;right:5px;margin-top:1px;top:0;bottom:0}.ui-medical:hover{cursor:pointer!important}.ui-loot{background:rgba(0,0,0,.4);border-radius:5px;width:85px;height:32px;margin-left:auto;margin-bottom:5px}.ui-loot:hover{opacity:1!important}.ui-outline-hover{border:2px solid rgba(0,255,0,0)}.ui-outline-hover:hover{-webkit-transition:border .1s ease-out;-moz-transition:border .1s ease-out;-o-transition:border .1s ease-out;border:2px solid #0f0}.ui-scale-hover{transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);-moz-transform:scale(1)}.ui-scale-hover,.ui-scale-hover:hover{-webkit-transition:all .1s ease-in;-ms-transition:all .1s ease-in;-moz-transition:all .1s ease-in;transition:all .1s ease-in}.ui-scale-hover:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);-moz-transform:scale(1.1);transform:scale(1.1)}.ui-loot .ui-loot-count{position:absolute;font-size:24px;font-weight:700;left:10px;top:2px;text-align:center}@media (max-height:864px),(max-width:1024px){.ui-right-center-desktop{top:42%;-webkit-transform-origin:right;transform-origin:right;-webkit-transform:translateY(-50%) scale(.8);transform:translateY(-50%) scale(.8)}#ui-medical-interactive{margin-bottom:8px}}@media (max-height:640px){.ui-right-center-desktop{top:42%;-webkit-transform-origin:right;transform-origin:right;-webkit-transform:translateY(-50%) scale(.7);transform:translateY(-50%) scale(.7)}#ui-medical-interactive{margin-bottom:8px}}#ui-upper-center{position:absolute;display:flex;color:#fff;top:180px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-announcement{display:none;color:#ff0;text-shadow:2px 2px 0 #000;font-size:32px;font-weight:700;text-align:center;width:100vw}#ui-lower-center{position:absolute;color:#fff;bottom:40%;left:50%}@media (max-width:1200px),screen and (min-width:851px) and (max-height:768px){#ui-lower-center{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:scale(.85);transform:scale(.85);bottom:33%}}#ui-interaction{display:flex}#ui-interaction-press{background:rgba(0,0,0,.4);border-radius:5px;margin-left:-24px;width:48px;height:48px;font-size:42px;font-weight:700;text-align:center;background-size:80%;background-position:50%;background-repeat:no-repeat}#ui-interaction-outer{background:rgba(0,0,0,.4);border-radius:5px;margin-left:10px;padding:0 15px;height:48px}#ui-interaction-outer #ui-interaction-description{margin-top:10px;font-size:24px;text-align:center}#ui-map-container{position:absolute;bottom:52px}#ui-map-info{position:absolute;color:#fff;width:100px;height:36px;bottom:218px;left:82px;background:rgba(0,0,0,.4);border-radius:5px}#ui-gas-icon{padding:6px;display:inline-block;height:24px;width:24px;margin-left:2px;background-size:24px;background-repeat:no-repeat;background-position:6px 6px}.gas-icon{background-image:url(../img/gui/gas.svg)}.danger-icon{background-image:url(../img/gui/danger.svg)}.icon-pulse{-webkit-animation:pulse 2s linear infinite;animation:pulse 2s linear infinite}#ui-gas-timer{position:relative;display:inline-block;font-size:24px;text-align:center;bottom:10px;left:2px}#ui-spec-counter{position:absolute;color:#fff;width:68px;height:28px;bottom:218px;left:6px;background:rgba(0,0,0,.4);border-radius:5px}#ui-spec-counter-icon{padding:6px;display:inline-block;height:24px;width:18px;margin-left:2px;background-size:20px;background-repeat:no-repeat;background-position:6px 4px;background-image:url(../img/gui/eye.svg)}#ui-spec-counter-number{position:relative;display:inline-block;font-size:20px;width:24px;text-align:center;bottom:15px;left:0}#ui-settings-container-desktop{position:relative;left:16px;bottom:12px}#ui-settings-container-desktop div{cursor:pointer}.ui-settings-button{position:absolute;color:#fff;border-radius:5px;height:48px;width:48px;pointer-events:all;opacity:.5;background:rgba(0,0,0,.4)}#ui-map-minimize{left:185px}.ui-settings-button img{position:absolute;left:6px;top:6px;height:36px;width:36px;background-size:36px;background-repeat:no-repeat;transform:scale(1);-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-settings-button .map-img-after{display:none}.ui-settings-button:hover{opacity:1;-webkit-transition:all .1s ease-in;-webkit-transform:scale(1.1);-ms-transition:all .1s ease-in;-ms-transform:scale(1.1);-moz-transition:all .1s ease-in;-moz-transform:scale(1.1);transition:all .1s ease-in;transform:scale(1.1)}#ui-bottom-center-0{position:absolute;color:#fff;bottom:12px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-0{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}#ui-equipped-ammo-wrapper{position:absolute;color:#fff;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);bottom:62px}#ui-equipped-ammo{margin-bottom:12px;text-align:center;opacity:1}#ui-bullet-counter{display:inline-block;width:175px;height:56px;text-align:center;text-shadow:2px 2px #000}#ui-bullet-counter #ui-current-clip{background:rgba(0,0,0,.4);border-radius:5px;font-size:44px;font-weight:700;width:100px;height:50px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;position:relative;text-align:center}#ui-bullet-counter #ui-ammo-divider{font-size:22px;left:53%;position:absolute;text-align:center;top:20px}#ui-bullet-counter #ui-remaining-ammo{background:rgba(0,0,0,.4);border-radius:5px;font-size:24px;font-weight:700;line-height:32px;width:65px;height:32px;left:82%;position:absolute;text-align:center;top:18px}#ui-boost-counter{display:inline-flex;width:412px}#ui-boost-counter .ui-boost-base{background:rgba(0,0,0,.4);height:10px;margin-bottom:8px}#ui-boost-counter-0{border-top-left-radius:3px;border-bottom-left-radius:3px;width:100px;margin-right:3px}#ui-boost-counter-0 .ui-bar-inner{background:#ff901a}#ui-boost-counter-1{width:100px;margin-left:3px;margin-right:3px}#ui-boost-counter-1 .ui-bar-inner{background:#ff751a}#ui-boost-counter-2{width:150px;margin-left:3px;margin-right:3px}#ui-boost-counter-2 .ui-bar-inner{background:#ff6616}#ui-boost-counter-3{border-top-right-radius:3px;border-bottom-right-radius:3px;width:50px;margin-left:3px}#ui-boost-counter-3 .ui-bar-inner{background:#ff5600}.ui-boost-base .ui-bar-inner{border-radius:inherit;width:0;height:10px}#ui-health-counter{background:rgba(0,0,0,.4);border-radius:5px;width:400px;height:32px;padding:6px}#ui-health-counter .ui-bar-inner{z-index:1;position:absolute;border-radius:5px;width:100%;height:32px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}#ui-health-container{width:400px;position:relative}#ui-health-counter .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}#ui-health-counter #ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}.health-bar-pulse{-webkit-animation:pulsewhite 1s linear infinite;animation:pulsewhite 1s linear infinite}@-webkit-keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@-webkit-keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}@keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}#ui-bottom-center-1{z-index:3;position:absolute;color:#fff;bottom:220px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-1{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85);bottom:138px}}#ui-kills{display:none;text-align:center;background:rgba(0,0,0,.4);color:#fff;border-radius:5px;padding:8px}#ui-kill-text{font-size:18px}#ui-kill-count{font-weight:700;color:#ff4100;font-size:32px;text-shadow:1px 1px 1px rgba(0,0,0,.3)}#ui-bottom-center-2{position:absolute;color:#fff;bottom:160px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-pickup-message{color:#fff;opacity:0;text-shadow:2px 2px 0 #000;font-size:32px;font-weight:700;text-align:center;width:100vw}#ui-bottom-center-right{position:absolute;color:#fff;bottom:12px;left:75%}@media (max-height:768px),(max-width:1200px){#ui-bottom-center-right{-webkit-transform:scale(.8);transform:scale(.8)}}.ui-armor-counter{position:absolute;bottom:0;display:block;width:48px;height:60px;background:rgba(0,0,0,.4);border-radius:5px;margin-left:4px}#ui-armor-helmet{right:4px}#ui-armor-backpack{left:60px;border:2px solid transparent}.ui-armor-level{position:relative;font-size:16px;font-weight:700;bottom:24px;text-align:center;text-shadow:1px 1px #000}.ui-armor-counter-inner{z-index:1;position:absolute;background:rgba(0,255,0,.5);border-radius:5px;width:100%;height:0;bottom:0;transition:height .5s;transition-property:height;transition-duration:.5s;transition-timing-function:ease-out;transition-delay:0s}.ui-armor-counter .ui-armor-count{z-index:2;text-shadow:2px 2px #000;position:relative;font-size:18px;font-weight:700;margin-top:-28px;text-align:center}.ui-armor-counter .ui-armor-image{margin:auto;left:0;right:0;bottom:0;top:0;z-index:0;position:absolute;height:36px;width:36px}#ui-bottom-right{position:absolute;color:#fff;bottom:12px;right:12px}@media (max-height:768px),(max-width:1200px){#ui-bottom-right{-webkit-transform-origin:bottom right;transform-origin:bottom right;-webkit-transform:scale(.7);transform:scale(.7)}}#ui-weapon-container{width:192px}.ui-weapon-info{margin-bottom:5px}.ui-weapon-info,.ui-weapon-switch{border-radius:5px;border:2px solid transparent}.ui-weapon-switch{position:absolute;right:0;opacity:.6;width:160px;height:60px;margin-left:auto;pointer-events:all;cursor:pointer!important}#ui-weapon-id-1{bottom:210px}#ui-weapon-id-2{bottom:140px}#ui-weapon-id-3{bottom:70px}#ui-weapon-id-4{bottom:0}.ui-weapon-name{font-size:18px;margin-top:38px}.ui-weapon-name,.ui-weapon-number{position:absolute;font-weight:700;right:8px;text-align:center}.ui-weapon-number{font-size:24px}.ui-weapon-exp{display:none;position:absolute;height:32px;width:32px;font-size:18px;font-weight:700;line-height:34px;right:78px;margin-top:26px;text-align:center}.ui-weapon-image{display:none;position:relative;height:60px;width:60px;left:4px;background-size:60px;background-repeat:no-repeat}#ui-weapon-id-4 .ui-weapon-image{height:52px;width:52px;left:4px;top:4px;background-size:52px}#ui-stats{display:none}#ui-stats-bg{display:none;opacity:0;position:absolute;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.75);pointer-events:none;z-index:2}#ui-stats-contents{position:absolute;width:100%;top:10%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;color:#fff;border-radius:5px;z-index:3}@media (max-height:860px){#ui-stats-contents{top:3%}}@media (max-width:1024px){#ui-stats-contents{-webkit-transform:translateX(-50%) scale(.8);transform:translateX(-50%) scale(.8);-webkit-transform-origin:top;transform-origin:top}}.ui-stats-header-title{font-weight:700;font-size:48px;margin:20px;color:gold}.ui-stats-header-reason{font-size:24px}.ui-stats-header-overview{display:inline;margin:10px}.ui-stats-header-overview div{display:inline;padding-bottom:12px;border-bottom:2px solid hsla(0,0%,100%,.25)}.ui-stats-header-overview div:not(:first-child){margin-left:100px}span.ui-stats-header-stat{font-size:32px}span.ui-stats-header-value{margin-left:24px;font-size:48px;font-weight:700}#ui-stats-info-box{position:relative;left:50%;margin:auto;margin-top:50px;height:190px;display:flex}@media (max-height:768px),(max-width:1200px){#ui-stats-info-box{margin-top:25px}}@media (max-width:1024px){#ui-stats-info-box{-webkit-transform-origin:left;transform-origin:left;-webkit-transform:scale(.85);transform:scale(.85)}}.ui-stats-info-player{position:relative;width:250px;background-color:rgba(0,0,0,.75);border-radius:4px;border:2px solid #000;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.ui-stats-info-status:after{content:"";display:block;position:absolute;top:15%;left:25%;background-image:url(../img/gui/skull.svg);background-repeat:no-repeat;background-size:128px;width:100%;height:100%;opacity:.1;z-index:-1}.ui-stats-info-player-name{color:gold;font-size:24px;font-weight:700;font-style:italic;margin:8px auto;max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-stats-info{display:flex;height:36px;margin:auto}.ui-stats-info>div{padding:8px;font-size:18px;line-height:12px;text-align:left;font-weight:700}.ui-stats-info>div:first-child{width:55%;margin-right:4px;text-align:right;font-weight:400}.ui-stats-reason{display:flex;height:72px;margin:auto}.ui-stats-reason div{padding:8px;margin:auto;width:100%;text-align:center;font-size:16px}.ui-stats-reason .ui-stats-reason-dead{color:red}.ui-stats-reason .ui-stats-reason-alive{color:#7cfc00}#ui-stats-options{position:absolute;left:50%;margin-top:20px;min-height:60px;z-index:1}.ui-stats-restart{width:200px;margin:auto;margin-bottom:20px}#ui-stats-spectate,.ui-stats-restart{position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-stats-spectate{left:102px;width:125px;background:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79}.ui-stats-ad-container{display:none;margin-top:80px}#ui-spec-ad-container{z-index:1;position:absolute;top:0;left:50%}.tooltip{position:relative}.tooltip .tooltip-text{visibility:hidden;width:240px;background-color:#000;color:#fff;text-align:center;padding:5px 0;border-radius:6px;position:absolute;z-index:1;right:110%;opacity:.75;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.tooltip .tooltip-text:after{content:" ";position:absolute;top:50%;left:100%;margin-top:-5px;border-width:5px;border-style:solid;border-color:transparent transparent transparent #000}.tooltip-title{font-size:18px;font-weight:700;padding:4px;color:#ff0}.tooltip-description{font-size:16px;padding:4px}.tooltip-description span{font-size:16px}.tooltip:hover .tooltip-text{visibility:visible}#ui-editor-top-center{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-editor-top-right{position:absolute;color:#fff;font-size:16px;top:12px;right:12px}.ui-editor-header{text-align:center;font-weight:700;font-size:16px;padding:8px}.ui-editor-info{background:rgba(0,0,0,.4);border-radius:5px;font-size:36px;margin-bottom:8px;padding:8px}.ui-editor-list{margin:0;padding:0;list-style:none}.ui-editor-list li div{font-family:monospace;font-size:14px}#ui-profiler-top-left{position:absolute;color:#fff;font-size:16px;top:12px;left:12px;text-align:center;display:flex}.ui-profiler-list{background:rgba(0,0,0,.4);border-radius:5px;margin-right:16px;padding:8px}.ui-profiler-list-header{font-size:16px;font-weight:700;margin-bottom:8px}.ui-profiler-list ul{list-style:none;text-align:left;padding:0;margin:0}.ui-profiler-list li{display:flex}.kv{font-family:monospace;font-size:14px;font-weight:400}.kv:last-child{width:100%;text-align:right}#ui-settings-container-mobile{display:none}@media screen and (max-width:850px){*{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.ui-touch-down{display:none;position:fixed;background-color:rgba(0,0,0,.5);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-touch-down-landscape{width:112px;height:112px;border-radius:56px}.ui-touch-down-portrait{width:96px;height:96px;border-radius:48px}.ui-touch-pos{display:none;position:fixed;background-color:rgba(0,0,0,.5);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-touch-pos-landscape{width:64px;height:64px;border-radius:32px}.ui-touch-pos-portrait{width:48px;height:48px;border-radius:24px}.btn-game-menu{position:relative;margin:auto;margin-top:2px;margin-bottom:4px;color:#fff;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,.25);background-color:#50afab;border-bottom:2px solid #387c79;box-shadow:inset 0 -2px #387c79;background-repeat:no-repeat;cursor:pointer;text-align:center;line-height:30px;display:block;width:100%;height:30px;border:0;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-sizing:border-box}#btn-game-fullscreen{background-size:22px;background-position:4px 2px;background-image:url(../img/gui/minimize.svg)}#btn-game-sound{background-size:30px;background-position:3px 0;margin-bottom:8px}#btn-game-quit{background-position:-2px -3px;background-image:url(../img/gui/quit.svg)}#btn-game-quit,#btn-game-resume{margin-top:20px;background-size:34px}#btn-game-resume{background-position:-1px -1px;background-image:url(../img/gui/resume.svg)}#ui-top-center{position:absolute;color:#fff;top:15%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-top-center .top-center-text{text-align:center;width:100vw;padding:4px}#ui-waiting-text{display:none;color:#fff;text-shadow:1px 1px 0 #000}#ui-waiting-text,#ui-waiting-text span{font-size:16px;font-weight:700}.top-center-text .spectate-text{display:inline-block;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;overflow:hidden;height:32px}.top-center-text .spectate-desc{color:#fff;margin-right:8px}.ui-spectate-mode{display:none}#ui-spectate-text{position:relative}#spectate-player{max-width:250px;white-space:nowrap;text-overflow:ellipsis;color:cyan}#ui-top-center-scopes{margin-top:6px;text-align:center;color:#fff}.ui-zoom{display:inline-block;margin-left:-12px;margin-right:-12px;-webkit-transform:scale(.6);transform:scale(.6);background:rgba(0,0,0,.3);border-radius:32px;width:42px;height:42px;opacity:.6;pointer-events:all}.ui-zoom-active{vertical-align:baseline;opacity:1;margin-left:0;margin-right:0;-webkit-transition:all .1s ease-in;-webkit-transform:scale(1);-ms-transition:all .1s ease-in;-ms-transform:scale(1);-moz-transition:all .1s ease-in;-moz-transform:scale(1);transition:all .1s ease-in;transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out}.ui-zoom .ui-zoom-image{width:48px;height:48px;opacity:.4;padding:2px}.ui-zoom .ui-zoom-text{margin-top:14px;width:100%}.ui-zoom .ui-zoom-level{font-size:24px;line-height:16px;text-align:center;width:100%}.ui-zoom .ui-zoom-append{font-size:24px}.ui-zoom-inactive{display:none;margin-left:-8px;margin-right:-8px;transition:all .1s ease-in;-webkit-transform:scale(.6);transform:scale(.6)}.ui-emote-wheel{z-index:3;display:none;position:fixed}.ui-emote-parent{opacity:1}.ui-emote-hl{z-index:2;display:none}.ui-emote{position:fixed;width:256px;height:256px;background-size:256px;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-bg-circle{opacity:.65;background-image:url(../img/gui/ping-part-circle.svg)}.ui-emote-bg-quarter{opacity:.65;background-image:url(../img/gui/ping-part-quarter.svg)}.ui-emote-bg-eighth{opacity:.65;background-image:url(../img/gui/ping-part-eighth.svg)}.ui-emote-middle .ui-emote-image{width:24px!important;height:24px!important;background-size:24px!important;background-image:none!important}.ui-emote-top .ui-emote-image{margin-top:-78px;background-image:url(../img/gui/ping-team-danger.svg)}.ui-emote-right .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(90deg);transform:translate(-50%,-50%) rotate(90deg)}.ui-emote-right .ui-emote-image{margin-left:78px;background-image:url(../img/gui/ping-team-coming.svg)}.ui-emote-bottom .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(180deg);transform:translate(-50%,-50%) rotate(180deg)}.ui-emote-bottom .ui-emote-image{margin-top:78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(270deg);transform:translate(-50%,-50%) rotate(270deg)}.ui-emote-left .ui-emote-image{margin-left:-78px;background-image:url(../img/gui/ping-team-help.svg)}.ui-emote-top-left .ui-emote-image{margin-left:-80px;margin-top:-30px;background-image:url(../img/loot/loot-ammo-box.svg)}.ui-emote-bottom-left .ui-emote{-webkit-transform:translate(-50%,-50%) rotate(-45deg);transform:translate(-50%,-50%) rotate(-45deg)}.ui-emote-bottom-left .ui-emote-image{margin-left:-80px;margin-top:30px;background-image:url(../img/loot/loot-medical-healthkit.svg)}.ui-emote-circle .ui-emote-hl{background-image:url(../img/gui/ping-part-circle-highlight.svg)}.ui-emote-quarter .ui-emote-hl{background-image:url(../img/gui/ping-part-quarter-highlight.svg)}.ui-emote-eighth .ui-emote-hl{background-image:url(../img/gui/ping-part-eighth-highlight.svg)}.ui-emote-image{z-index:1;position:fixed;background-repeat:no-repeat;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-emote-image-large{width:80px;height:80px;background-size:64px;background-position:50%}.ui-emote-image-small{width:35px;height:35px;background-size:35px}.ui-team-indicator{z-index:2;display:none;position:fixed;top:0;left:0;border-radius:32px;width:64px;height:64px;background-size:64px;background-repeat:no-repeat;background-image:url(../img/gui/indicator.svg)}.ui-team-indicator,.ui-team-indicator-pos{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.ui-team-indicator-pos{opacity:.75;position:relative;border-radius:24px;width:32px;height:32px;top:23px;left:32px}.ui-team-indicator-image{width:32px;height:32px;background-size:32px;background-repeat:no-repeat;background-image:url(../img/gui/ping-team-danger.svg)}.ui-indicator-ping-border{z-index:0;display:none;position:fixed;top:0;left:0;width:160px;height:160px;position:relative;background-size:160px;background-repeat:no-repeat;background-image:url(../img/gui/ping-border.svg);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}#ui-top-left{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;display:block}.ui-bg-standard{background:rgba(0,0,0,.24);border-radius:5px}#ui-team{position:fixed;left:128px}.ui-team-member{display:none;position:relative;width:110px;height:20px;padding:4px;margin-bottom:4px}.ui-team-member-name{font-weight:700;text-shadow:1px 1px 0 #000;font-size:10px;max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-team-member-color{position:absolute;top:4px;right:4px;border-radius:9px;width:9px;height:9px}.ui-background-yellow{background-color:#ff0}.ui-background-blue{background-color:blue}.ui-background-red{background-color:red}.ui-background-purple{background-color:purple}.ui-background-cyan{background-color:cyan}.ui-team-member-status{display:none;position:absolute;top:2px;right:-24px;width:20px;height:20px;background-size:20px;background-repeat:no-repeat}.ui-team-member-status-downed{border-radius:16px;display:block!important;background-image:url(../img/gui/down.svg)!important}.ui-team-member-status-dead{display:block!important;background-image:url(../img/gui/skull-team.svg)!important;opacity:.5!important}.ui-team-member-status-disconnected{display:block!important;background-image:url(../img/gui/close.svg)!important;opacity:.5!important}.ui-team-member-health{margin-top:2px}.ui-team-member-health .ui-bar-inner{background-color:#fff;z-index:1;position:absolute;border-radius:4px;width:110px;height:5px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}.ui-team-member-health .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}.ui-team-member-health .ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}#ui-spectate-options-wrapper{bottom:6px;position:fixed;left:6px;top:auto!important}#ui-spectate-options{bottom:0;z-index:1;position:absolute;pointer-events:all;width:100%}#ui-spectate-buttons{display:inline-block;width:124px;padding:8px 8px 4px;text-align:center}#ui-spectate-options a{position:relative;color:#fff;height:24px;margin-bottom:2px;line-height:22px;font-size:12px;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#50afab;border-bottom:2px solid #387c79;box-shadow:none;cursor:pointer}#btn-spectate-prev-player,#btn-spectate-view-stats{margin-bottom:12px!important}#ui-spectate-stats{position:absolute;top:0;left:146px;width:160px;display:none}#ui-spectate-stats-header{text-align:center;font-size:16px;font-weight:700;padding:6px;color:#fff}#ui-spectate-stats-table{width:100%;background-color:transparent;margin:auto;margin-right:0;margin-bottom:4px;border-collapse:collapse}#ui-spectate-stats tbody,#ui-spectate-stats td,#ui-spectate-stats th{padding:0 2px 2px 14px;font-size:10px}.ui-spectate-stats-category{width:75px;color:hsla(0,0%,100%,.75)}.ui-spectate-stats-value{width:75px;color:#fff}#ui-top-right{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;display:flex}#ui-leaderboard{font-weight:700;text-align:center;width:56px;display:inline-block}#ui-leaderboard-alive{background:rgba(0,0,0,.4);border-radius:5px;margin-bottom:-16px;padding:8px;height:32px;width:40px}.ui-players-alive-pulse{-webkit-animation-name:pulseAlive;animation-name:pulseAlive;-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}@keyframes pulseAlive{0%{color:#fff}20%{color:red}40%{color:#fff}to{color:#fff}}.ui-leaderboard-header{font-size:12px}#ui-killfeed-wrapper{top:24px;left:6px;right:auto}#ui-killfeed{position:absolute;margin:initial;top:135px}#ui-killfeed-contents{width:800px}#ui-killfeed-contents .killfeed-div{position:absolute;background-color:rgba(0,0,0,.4);padding:3px;border-radius:2px;height:8px;line-height:8px;right:auto}.killfeed-div div,.killfeed-div span{float:left;font-size:8px;line-height:8px;font-weight:700;color:#efeeee}.killfeed-red div,.killfeed-red span{color:#d1777c!important}.killfeed-blue div,.killfeed-blue span{color:#00bfff!important}#ui-killfeed-contents .killfeed-red{color:#d1777c}#ui-killfeed-contents .killfeed-blue{color:#00bfff}#ui-killfeed .killfeed-name{max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-ammo .ui-loot-image,.ui-ammo .ui-loot-overlay{position:absolute;height:11px;width:11px;right:2px;margin-top:2px}#ui-ammo-interactive{position:absolute;right:0;top:25px}#ui-ammo-interactive .ui-loot{display:inline-block;background:rgba(0,0,0,.4);border-radius:5px;width:38px;height:14px;margin-left:auto;margin-bottom:2px}.ui-ammo .ui-loot-count{position:absolute;font-size:12px;font-weight:700;width:16px;left:3px;margin-top:-1px;text-align:center}#ui-medical-interactive .ui-loot{display:inline-block;background:rgba(0,0,0,.4);border-radius:5px;width:44px;height:16px;margin-left:auto;margin-bottom:2px}.ui-medical .ui-loot-image{position:absolute;height:16px;width:16px;background-size:16px;background-repeat:no-repeat;right:2px;margin-top:0}.ui-medical .ui-loot-count{position:absolute;font-size:16px;font-weight:700;left:4px;width:16px;margin-top:-3px;text-align:center}.ui-loot{background:rgba(0,0,0,.4);border-radius:5px;width:85px;height:32px;margin-left:auto;margin-bottom:5px}.ui-loot:hover{opacity:1!important}.ui-outline-hover,.ui-outline-hover:hover{border:2px solid rgba(0,255,0,0)}.ui-outline-hover:hover{-webkit-transition:border .1s ease-out;-moz-transition:border .1s ease-out;-o-transition:border .1s ease-out}.ui-scale-hover{transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);-moz-transform:scale(1)}.ui-scale-hover,.ui-scale-hover:hover{-webkit-transition:all .1s ease-in;-ms-transition:all .1s ease-in;-moz-transition:all .1s ease-in;transition:all .1s ease-in}.ui-scale-hover:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);-moz-transform:scale(1.1);transform:scale(1.1)}#ui-debug-button{display:none;background:rgba(0,0,0,.4);position:absolute;border-radius:13px;height:26px;width:26px;background-size:18px;bottom:4px;right:4px;background-position:50%;background-image:url(../img/gui/mag-glass.svg);background-repeat:no-repeat;pointer-events:auto;z-index:1}#ui-upper-center{position:absolute;display:flex;color:#fff;top:84px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-announcement{display:none;color:#ff0;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;text-align:center;width:100vw}#ui-lower-center{position:absolute;color:#fff;bottom:44%;left:60%}#ui-interaction{display:flex}#ui-interaction-press{background:rgba(0,0,0,.4);border-radius:5px;margin-left:-20px;font-size:34px;width:44px;height:44px;background-size:36px;background-position:50%;background-repeat:no-repeat}#ui-interaction-outer{background:rgba(0,0,0,.4);border-radius:5px;margin-left:6px;padding:0 6px;height:28px}#ui-interaction-outer #ui-interaction-description{margin-top:5px;font-size:16px;text-align:center}#ui-bottom-center-0{bottom:6px}#ui-bottom-center-0,#ui-equipped-ammo-wrapper{position:absolute;color:#fff;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-equipped-ammo-wrapper{bottom:78px}#ui-equipped-ammo{position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;opacity:1}#ui-bullet-counter{display:inline-block;width:175px;height:28px;text-align:center;text-shadow:1px 1px #000}#ui-bullet-counter #ui-current-clip{background:rgba(0,0,0,.4);border-radius:5px;font-size:28px;font-weight:700;line-height:30px;width:60px;height:32px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;position:relative;text-align:center}#ui-bullet-counter #ui-ammo-divider{font-size:22px;left:53%;position:absolute;text-align:center;top:20px}#ui-bullet-counter #ui-remaining-ammo{background:rgba(0,0,0,.4);border-radius:5px;font-size:16px;font-weight:700;line-height:22px;width:44px;height:22px;left:122px;position:absolute;text-align:center;top:10px}#ui-bullet-counter #ui-reload-button{background:rgba(0,0,0,.4);position:absolute;border-radius:11px;height:22px;width:22px;background-size:14px;top:10px;left:170px;background-position:4px 3px;background-image:url(../img/gui/bullets.svg);background-repeat:no-repeat}#ui-boost-counter{display:inline-flex;width:206px}#ui-boost-counter .ui-boost-base{background:rgba(0,0,0,.4);height:6px;margin-bottom:0}#ui-boost-counter-0{border-top-left-radius:3px;border-bottom-left-radius:3px;width:50px;margin-right:3px}#ui-boost-counter-0 .ui-bar-inner{background:#ff901a}#ui-boost-counter-1{width:50px;margin-left:3px;margin-right:3px}#ui-boost-counter-1 .ui-bar-inner{background:#ff751a}#ui-boost-counter-2{width:75px;margin-left:3px;margin-right:3px}#ui-boost-counter-2 .ui-bar-inner{background:#ff6616}#ui-boost-counter-3{border-top-right-radius:3px;border-bottom-right-radius:3px;width:25px;margin-left:3px}#ui-boost-counter-3 .ui-bar-inner{background:#ff5600}.ui-boost-base .ui-bar-inner{border-radius:inherit;width:0;height:6px}#ui-health-counter{background:rgba(0,0,0,.4);border-radius:5px;width:200px;height:18px;padding:4px}#ui-health-counter .ui-bar-inner{z-index:1;position:absolute;border-radius:5px;width:100%;height:18px;transition:width 0s;transition-property:width;transition-duration:0s;transition-timing-function:ease-out;transition-delay:0s}#ui-health-container{width:200px;position:relative}#ui-health-counter .ui-bar-danger{background:rgba(255,0,0,.8);-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;-webkit-animation-delay:0;animation-delay:0;-webkit-animation-direction:alternate;animation-direction:alternate;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none;-webkit-animation-play-state:running;animation-play-state:running}#ui-health-counter #ui-health-depleted{z-index:0;background:#fff;transition:width 1s;transition-property:width;transition-duration:1s;transition-timing-function:ease-out;transition-delay:0s}.health-bar-pulse{-webkit-animation:pulsewhite 1s linear infinite;animation:pulsewhite 1s linear infinite}@-webkit-keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@keyframes pulsewhite{0%{background-color:rgba(0,0,0,.6)}50%{background-color:hsla(0,0%,100%,.6)}to{background-color:rgba(0,0,0,.6)}}@-webkit-keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}@keyframes pulse{0%{background-color:rgba(0,0,0,.8)}50%{background-color:rgba(255,0,0,.8)}to{background-color:rgba(0,0,0,.8)}}#ui-bottom-center-1{z-index:3;position:absolute;color:#fff;bottom:23%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-kills{display:none;text-align:center;background:rgba(0,0,0,.4);color:#fff;border-radius:5px;padding:6px}#ui-kill-text{font-size:10px}#ui-kill-count{font-weight:700;color:#ff4100;font-size:18px;margin-bottom:-3px;text-shadow:1px 1px 1px rgba(0,0,0,.3)}#ui-bottom-center-2{position:absolute;color:#fff;bottom:82px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-pickup-message{color:#fff;text-shadow:1px 1px 0 #000;font-size:16px;font-weight:700;text-align:center;width:100vw}#ui-bottom-center-right{position:absolute;color:#fff;bottom:6px;left:75%}.ui-armor-counter{position:absolute;bottom:0;display:block;width:20px;height:24px;background:rgba(0,0,0,.4);border-radius:5px;margin-left:2px}#ui-armor-helmet{right:0}#ui-armor-backpack{left:26px}.ui-armor-level{position:relative;font-size:8px;font-weight:700;bottom:12px;text-align:center;text-shadow:1px 1px #000}.ui-armor-counter-inner{z-index:1;position:absolute;background:rgba(0,255,0,.5);border-radius:5px;width:100%;height:0;bottom:0;transition:height .5s;transition-property:height;transition-duration:.5s;transition-timing-function:ease-out;transition-delay:0s}.ui-armor-counter .ui-armor-count{z-index:2;text-shadow:1px 1px #000;position:relative;font-size:18px;font-weight:700;margin-top:-28px;text-align:center}.ui-armor-counter .ui-armor-image{margin:auto;left:0;right:0;bottom:0;top:0;z-index:0;position:absolute;height:18px;width:18px}#ui-bottom-right{bottom:auto;color:#fff;position:absolute;right:6px;top:55%;-webkit-transform-origin:bottom right;transform-origin:bottom right;-webkit-transform:scale(1);transform:scale(1)}#ui-weapon-container{width:84px}.ui-weapon-info{margin-bottom:5px}.ui-weapon-info,.ui-weapon-switch{border-radius:5px;border:2px solid transparent}.ui-weapon-switch{position:absolute;right:0;opacity:.6;width:68px;height:24px;margin-left:auto;pointer-events:all}#ui-weapon-id-1{bottom:90px}#ui-weapon-id-2{bottom:60px}#ui-weapon-id-3{bottom:30px}#ui-weapon-id-4{bottom:0}.ui-weapon-name{position:absolute;font-size:10px;font-weight:700;right:4px;width:48px;margin-top:12px;text-align:right;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.ui-weapon-number{font-size:24px;right:8px}.ui-weapon-exp,.ui-weapon-number{display:none;position:absolute;font-weight:700;text-align:center}.ui-weapon-exp{height:16px;width:16px;font-size:8px;line-height:18px;right:34px;margin-top:10px}.ui-weapon-image{display:none;position:relative;height:28px;width:28px;left:0;bottom:3px;-webkit-transform:rotate(10deg);transform:rotate(10deg)}#ui-weapon-id-4 .ui-weapon-image{height:24px;width:24px;left:0;top:0;background-size:24px}#ui-stats-contents{position:absolute;width:100%;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;color:#fff;border-radius:5px}#ui-stats-header{margin-top:14px}.ui-stats-header-title{font-weight:700;font-size:24px;margin:6px;color:gold}.ui-stats-header-reason{font-size:12px}.ui-stats-header-overview{position:fixed;top:4px;right:12px;margin:5px}.ui-stats-header-overview div{display:block;padding-bottom:6px;border-bottom:2px solid hsla(0,0%,100%,.25)}.ui-stats-header-overview div:not(:first-child){margin:initial}span.ui-stats-header-stat{font-size:22px}span.ui-stats-header-value{margin-left:12px;font-size:28px;font-weight:700}#ui-stats-info-box{position:relative;left:50%;margin:auto;margin-top:0;height:100px;display:flex}.ui-stats-info-player{position:relative;width:125px;background-color:rgba(0,0,0,.75);border-radius:4px;border:2px solid #000;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.ui-stats-info-status:after{background-image:url(../img/gui/skull.svg);background-position:50%;background-repeat:no-repeat;background-size:70px;content:"";display:block;height:100%;left:auto;opacity:.1;position:absolute;top:0;width:100%;z-index:-1}.ui-stats-info-player-name{color:gold;font-size:12px;font-weight:700;font-style:italic;margin:4px auto;max-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-stats-info{display:flex;height:18px;margin:auto}.ui-stats-info>div{padding:4px;font-size:9px;line-height:6px;text-align:left;font-weight:700}.ui-stats-info>div:first-child{width:55%;margin-right:4px;text-align:right;font-weight:400}.ui-stats-reason{display:flex;height:72px;margin:auto}.ui-stats-reason div{padding:8px;margin:auto;width:100%;text-align:center;font-size:16px}.ui-stats-reason .ui-stats-reason-dead{color:red}.ui-stats-reason .ui-stats-reason-alive{color:#7cfc00}#ui-stats-options{position:absolute;left:50%;margin-top:10px;min-height:30px;z-index:1}.ui-stats-restart{width:130px;margin:auto;margin-bottom:20px}#ui-stats-spectate,.ui-stats-restart{position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-stats-spectate{left:68px;width:88px;background:#50afab;border-bottom:2px solid #387c79;box-shadow:none}.ui-stats-ad-container{display:none;margin-top:8px;-webkit-transform:scale(.7);transform:scale(.7)}#ui-spec-ad-container{z-index:1;position:absolute;top:0;left:50%}#ad-block-stats-bottom{-webkit-transform:scale(.6);transform:scale(.6);-webkit-transform-origin:center;transform-origin:center;position:static}.tooltip{position:relative}.tooltip .tooltip-text{visibility:hidden!important;width:240px;background-color:#000;color:#fff;text-align:center;padding:5px 0;border-radius:6px;position:absolute;z-index:1;right:110%;opacity:.75;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.tooltip .tooltip-text:after{content:" ";position:absolute;top:50%;left:100%;margin-top:-5px;border-width:5px;border-style:solid;border-color:transparent transparent transparent #000}.tooltip-title{font-size:18px;font-weight:700;padding:4px;color:#ff0}.tooltip-description{font-size:16px;padding:4px}.tooltip-description span{font-size:16px}#ui-editor-top-center{position:absolute;color:#fff;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}#ui-editor-top-right{position:absolute;color:#fff;font-size:16px;top:6px;right:6px}.ui-editor-header{text-align:center;font-weight:700;font-size:16px;padding:8px}.ui-editor-info{background:rgba(0,0,0,.4);border-radius:5px;font-size:36px;margin-bottom:8px;padding:8px}.ui-editor-list{margin:0;padding:0;list-style:none}.ui-editor-list li div{font-family:monospace;font-size:14px}#ui-profiler-top-left{position:absolute;color:#fff;font-size:16px;top:6px;left:6px;text-align:center;display:flex}.ui-profiler-list{background:rgba(0,0,0,.4);border-radius:5px;margin-right:16px;padding:8px}.ui-profiler-list-header{font-size:16px;font-weight:700;margin-bottom:8px}.ui-profiler-list ul{list-style:none;text-align:left;padding:0;margin:0}.ui-profiler-list li{display:flex}.kv{font-family:monospace;font-size:14px;font-weight:400}.kv:last-child{width:100%;text-align:right}#ui-leaderboard-wrapper,#ui-settings-container-desktop{display:none}#ui-settings-container-mobile{display:block}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-top-center{-webkit-transform-origin:top;transform-origin:top;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}@media screen and (max-width:850px) and screen and (max-width:850px){#ui-lower-center{-webkit-transform:scale(1);transform:scale(1)}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-bottom-center-0{-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transform:translateX(-50%) scale(.85);transform:translateX(-50%) scale(.85)}}@media screen and (max-width:850px) and (max-height:360px),screen and (max-width:850px) and (max-width:640px){#ui-bottom-right{-webkit-transform-origin:top right;transform-origin:top right;-webkit-transform:scale(.8);transform:scale(.8)}}@media screen and (max-width:850px) and (max-width:850px) and (orientation:landscape){.ui-stats-header-overview .ui-stats-header-left{position:fixed;top:6px;left:12px}.ui-stats-header-overview .ui-stats-header-right{position:fixed;top:6px;right:12px}}@media screen and (max-width:850px) and (max-height:360px) and (max-width:640px){.ui-stats-ad-container{margin-top:0;-webkit-transform:scale(.6);transform:scale(.6)}}@media screen and (max-width:850px) and (max-width:850px) and (max-height:320px){.ui-stats-ad-container{position:fixed;right:10px;top:24px;-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:bottom right;transform-origin:bottom right}}@media screen and (max-width:850px) and (orientation:portrait){#ui-stats-contents{margin-top:32px;margin-bottom:16px}#ui-stats-header-overview{position:static}#ui-stats-info-box{display:inline-block;left:auto;-webkit-transform:scale(.9);transform:scale(.9);-webkit-transform-origin:initial;transform-origin:initial;margin-top:2px;width:100%}.ui-stats-ad-container{width:100%}.ui-stats-info-player{display:inline-block;left:auto!important;margin:8px;-webkit-transform:none;transform:none}.ui-stats-header-overview{display:inline-block;position:static;width:175px}.ui-stats-header-overview div{position:static;margin-bottom:8px}#ui-top-center{top:134px;left:50%}#ui-top-center-scopes-wrapper{display:none;bottom:42px;top:auto}#ui-team{top:40px}.ui-team-member{height:18px;margin-bottom:4px}#ui-upper-center{top:180px}#ui-bottom-center-0{top:-15px;bottom:auto;left:100px;-webkit-transform:scale(.85);transform:scale(.85)}#ui-bottom-center-1{bottom:28%}#ui-bottom-center-2{bottom:218px}#ui-lower-center{bottom:38%;left:38%}#ui-boost-counter{position:relative;top:40px;left:2px}#ui-bottom-right{bottom:20px;right:6px;top:auto}#ui-weapon-id-1{right:240px;bottom:auto}#ui-weapon-id-2{right:160px;bottom:auto}#ui-weapon-id-3{right:80px;bottom:auto}#ui-weapon-id-4{bottom:auto}.ui-weapon-info{display:inline-block}#ui-bottom-center-right{bottom:9px;left:30px}.ui-right-center-mobile{top:6px}#ui-emote-button{top:200px}#ui-debug-button{top:210px}#ui-ammo-interactive{left:8px;margin-top:4px;top:88px}#ui-ammo-interactive .ui-loot,#ui-medical-interactive .ui-loot{display:block}#ui-equipped-ammo{position:static}#ui-equipped-ammo,#ui-equipped-ammo-wrapper{left:auto;-webkit-transform:none;transform:none}#ui-equipped-ammo-wrapper{bottom:auto;color:#fff;position:absolute;right:6px;top:44%}#ui-bullet-counter{width:auto}#ui-bullet-counter #ui-current-clip{left:50%}#ui-bullet-counter #ui-remaining-ammo{left:auto;right:0;top:36px}#ui-bullet-counter #ui-reload-button{left:auto;right:0;top:62px}#big-map-collision{left:auto;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}#big-map-close{bottom:auto;top:12px}#ui-spectate-options-wrapper{bottom:42px;-webkit-transform:scale(.7);transform:scale(.7)}#ui-spectate-options{position:absolute;bottom:12px}#ui-spectate-stats{bottom:0;top:auto}}@media screen and (max-width:850px) and (orientation:portrait) and (min-height:668px){#ui-stats-contents{margin-top:32px}#ui-stats-info-box,.ui-stats-ad-container{-webkit-transform:scale(1);transform:scale(1)}.ui-stats-ad-container{margin-top:20px}#ui-stats-options{display:block;left:auto;position:static;margin:auto;margin-top:24px;width:100%}.ui-stats-restart{margin-bottom:0}#ui-stats-spectate,.ui-stats-restart{display:block;position:static;-webkit-transform:initial;transform:none}#ui-stats-spectate{margin:auto;margin-top:6px}}@media screen and (max-width:850px) and (orientation:portrait) and (max-height:667px){#ui-stats-contents{margin-top:0;-webkit-transform:translateX(-50%) scale(.9);transform:translateX(-50%) scale(.9);-webkit-transform-origin:top;transform-origin:top}.ui-stats-ad-container{margin-top:20px}}@media screen and (max-width:850px) and (orientation:portrait) and (max-height:568px) and (max-width:375px){#ui-bottom-center-right{left:22px;-webkit-transform:scale(.8);transform:scale(.8)}#ui-bottom-right{right:0}#ui-bottom-center-0{top:-20px;left:84px;-webkit-transform:scale(.7);transform:scale(.7)}}', ""])
     },
-    "782f308b": function (e, t, a) {
+    "782f308b88": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -16043,7 +16039,7 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("453f1487"),
+            n = a("453f14870d"),
             r = {
                 Invalid: 0,
                 Player: 1,
@@ -16101,7 +16097,7 @@ webpackJsonp([0], {
             Registrar: l
         }
     },
-    "7b27f899": function (e, t, a) {
+    "7b27f89995": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -16118,11 +16114,11 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("815a071b"),
-            r = a("26d21c62"),
-            s = (a("b1646f80"), a("210a8474"), a("83ea9279")),
-            l = a("c8b0bd11"),
-            c = a("81802d9c"),
+            n = a("815a071b88"),
+            r = a("26d21c6272"),
+            s = (a("b1646f808e"), a("210a84747f"), a("83ea92795c")),
+            l = a("c8b0bd11d4"),
+            c = a("81802d9c3c"),
             d = function () {
                 function e(t, a) {
                     var o = this;
@@ -16389,7 +16385,7 @@ webpackJsonp([0], {
             Touch: d
         }
     },
-    "7d58befd": function (e, t, a) {
+    "7d58befd29": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -16467,14 +16463,14 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            g = a("453f1487"),
-            f = (a("1262043e"), a("179a4cf4"), a("b0e41782")),
+            g = a("453f14870d"),
+            f = (a("1262043e3a"), a("179a4cf4b8"), a("b0e4178285")),
             b = f.EmoteSlot,
-            y = a("ae8f4193"),
-            x = a("782f308b"),
-            v = (y.Action, a("2f6fdcea")),
-            k = a("b1646f80"),
-            _ = a("83ea9279"),
+            y = a("ae8f4193b2"),
+            x = a("782f308b88"),
+            v = (y.Action, a("2f6fdcea01")),
+            k = a("b1646f808e"),
+            _ = a("83ea92795c"),
             w = function () {
                 function e(t) {
                     i(this, e), this._typeToId = {}, this._idToType = {}, this.nextId = 0, this.maxId = Math.pow(2, t) - 1, this.addType("")
@@ -16506,7 +16502,7 @@ webpackJsonp([0], {
             for (var o = Object.keys(y.bullets), n = 0; n < o.length; n++) S.addType(o[n]);
             for (var r = Object.keys(v.Defs), s = 0; s < r.length; s++) M.addType(r[s])
         }();
-        var T = a("f47a1c8d");
+        var T = a("f47a1c8d8a");
         T.BitStream.prototype.writeBytes = function (e, t, a) {
             g(this._index % 8 == 0);
             var i = new Uint8Array(e._view._view.buffer, t, a);
@@ -17032,7 +17028,7 @@ webpackJsonp([0], {
             EmoteMsg: L
         }
     },
-    "7e4d3531": function (e, t, a) {
+    "7e4d3531d4": function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -17356,22 +17352,22 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    "7f606b57": function (e, t, a) {
+    "7f606b5740": function (e, t, a) {
         "use strict";
 
         function i() {
             this.bullets = []
         }
-        var o = a("26d21c62"),
-            n = a("ae8f4193"),
-            r = a("782f308b"),
-            s = a("1262043e"),
-            l = a("179a4cf4"),
-            c = a("b1646f80"),
-            d = a("210a8474"),
-            m = a("83ea9279"),
-            p = (a("81802d9c"), a("be243466"), a("5af701f3")),
-            u = a("3d966069"),
+        var o = a("26d21c6272"),
+            n = a("ae8f4193b2"),
+            r = a("782f308b88"),
+            s = a("1262043e3a"),
+            l = a("179a4cf4b8"),
+            c = a("b1646f808e"),
+            d = a("210a84747f"),
+            m = a("83ea92795c"),
+            p = (a("81802d9c3c"), a("be2434665f"), a("5af701f373")),
+            u = a("3d9660692c"),
             h = u.RenderType;
         i.prototype = {
             addBullet: function (e, t, a) {
@@ -17510,7 +17506,7 @@ webpackJsonp([0], {
             BulletBarn: i
         }
     },
-    "80f52ba8": function (e, t, a) {
+    "80f52ba85d": function (e, t, a) {
         "use strict";
 
         function i() {
@@ -17561,7 +17557,7 @@ webpackJsonp([0], {
                 passive: !0
             }), this.elem.addEventListener("touchmove", this.bOnTouchMove, !1), this.elem.addEventListener("touchstart", this.bOnTouchStart, !1), this.elem.addEventListener("touchend", this.bOnTouchEnd, !1), this.elem.addEventListener("touchcancel", this.bOnTouchCancel, !1)
         }
-        var n = (a("83ea9279"), Object.freeze({
+        var n = (a("83ea92795c"), Object.freeze({
                 Enter: 13,
                 Escape: 27,
                 Space: 32,
@@ -17696,7 +17692,7 @@ webpackJsonp([0], {
             Touch: i
         }
     },
-    "817cb577": function (e, t, a) {
+    "817cb57717": function (e, t, a) {
         "use strict";
         var i = {
                 players: {
@@ -18709,7 +18705,7 @@ webpackJsonp([0], {
             Reverbs: r
         }
     },
-    "81802d9c": function (e, t, a) {
+    "81802d9c3c": function (e, t, a) {
         "use strict";
         var i = function () {
                 var e = !1;
@@ -18740,7 +18736,7 @@ webpackJsonp([0], {
             };
         e.exports = r
     },
-    83180451: function (e, t, a) {
+    "831804519c": function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -18995,7 +18991,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    "83ea9279": function (e, t, a) {
+    "83ea92795c": function (e, t, a) {
         "use strict";
         var i = {
             create: function (e, t) {
@@ -19121,7 +19117,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    87830496: function (e, t, a) {
+    "87830496ae": function (e, t, a) {
         "use strict";
 
         function i(e, t, a) {
@@ -19324,22 +19320,22 @@ webpackJsonp([0], {
                 }
             }
         }
-        var l = a("815a071b"),
-            c = a("26d21c62"),
-            d = a("1262043e"),
-            m = (a("179a4cf4"), a("ae8f4193")),
+        var l = a("815a071b88"),
+            c = a("26d21c6272"),
+            d = a("1262043e3a"),
+            m = (a("179a4cf4b8"), a("ae8f4193b2")),
             p = m.Action,
             u = m.GasMode,
-            h = (a("7d58befd"), a("83ea9279")),
-            g = a("b1646f80"),
-            f = (a("210a8474"), a("d82c595e"), a("81802d9c")),
-            b = a("f54ded6e"),
-            y = a("6cab23e1"),
+            h = (a("7d58befd29"), a("83ea92795c")),
+            g = a("b1646f808e"),
+            f = (a("210a84747f"), a("d82c595ee5"), a("81802d9c3c")),
+            b = a("f54ded6ec7"),
+            y = a("6cab23e187"),
             x = y.GasRenderer,
             v = y.GasSafeZoneRenderer,
-            k = a("c8b0bd11"),
-            _ = (a("5af701f3"), a("e9bd5e00").Ping),
-            w = a("1946ee02");
+            k = a("c8b0bd11d4"),
+            _ = (a("5af701f373"), a("e9bd5e00bc").Ping),
+            w = a("1946ee0296");
         n.prototype = {
             free: function () {
                 this.clearUI(), l(document).off("keyup"), l(".ui-map-expand").off("mousedown"), l(".ui-map-expand").off("click"), l("#ui-map-minimize").off("mousedown"), l("#ui-map-minimize").off("click"), l("#ui-menu-display").off("click"), this.muteButton.off("mousedown"), this.muteButton.off("click"), this.fullScreenButton.off("mousedown"), this.fullScreenButton.off("click"), this.resumeButton.off("mousedown"), this.resumeButton.off("click"), l("#btn-spectate-quit").off("click"), l("#btn-game-quit").off("mousedown"), l("#btn-game-quit").off("click"), this.specStatsButton.off("click"), this.specPrevButton.off("click"), this.specNextButton.off("click"), this.bigmapClose.off("mousedown"), this.bigmapClose.off("click"), this.moveStyleButton.off("touchstart"), this.interactionElems.off("touchstart"), this.reloadElems.off("touchstart"), this.bigmapClose.off("touchend"), l(document).off("touchstart", this.onTouchScreen), l(".ui-team-member-health").find(".ui-bar-inner").css("width", this.teamMemberHealthBarWidth), this.init()
@@ -19972,7 +19968,7 @@ webpackJsonp([0], {
             UiManager: n
         }
     },
-    "8888a81e": function (e, t, a) {
+    "8888a81e7f": function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -20205,7 +20201,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    "8c83370e": function (e, t, a) {
+    "8c83370e70": function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -20419,8 +20415,8 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    "9021a084": function (e, t) {},
-    90320893: function (e, t, a) {
+    "9021a084ff": function (e, t) {},
+    "90320893c8": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -20437,8 +20433,8 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("1262043e"),
-            r = a("83ea9279"),
+            n = a("1262043e3a"),
+            r = a("83ea92795c"),
             s = function () {
                 function e() {
                     i(this, e), this.type = e.Type.Aabb, this.min = r.create(0, 0), this.max = r.create(0, 0), this.height = 0
@@ -20570,7 +20566,7 @@ webpackJsonp([0], {
             Body: l
         }
     },
-    "997d03c3": function (e, t, a) {
+    "997d03c3ba": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -20587,7 +20583,7 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("c8b0bd11"),
+            n = a("c8b0bd11d4"),
             r = [{
                 region: "na",
                 zone: "sfo",
@@ -20697,7 +20693,7 @@ webpackJsonp([0], {
             }();
         e.exports = s
     },
-    "99ed4161": function (e, t, a) {
+    "99ed4161ca": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -21066,7 +21062,7 @@ webpackJsonp([0], {
             };
         e.exports = f
     },
-    "9a5ca114": function (e, t, a) {
+    "9a5ca1149e": function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -21083,14 +21079,14 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("26d21c62"),
-            r = (a("1262043e"), a("179a4cf4")),
-            s = a("2f6fdcea"),
-            l = a("b1646f80"),
-            c = a("210a8474"),
-            d = a("83ea9279"),
-            m = (a("81802d9c"), a("be243466"), a("5af701f3")),
-            p = a("3d966069"),
+            n = a("26d21c6272"),
+            r = (a("1262043e3a"), a("179a4cf4b8")),
+            s = a("2f6fdcea01"),
+            l = a("b1646f808e"),
+            c = a("210a84747f"),
+            d = a("83ea92795c"),
+            m = (a("81802d9c3c"), a("be2434665f"), a("5af701f373")),
+            p = a("3d9660692c"),
             u = p.RenderType,
             h = function () {
                 function e() {
@@ -21275,7 +21271,7 @@ webpackJsonp([0], {
             }();
         e.exports = h
     },
-    "9cd7d3b2": function (e, t, a) {
+    "9cd7d3b214": function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -21559,7 +21555,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    ae8f4193: function (e, t, a) {
+    ae8f4193b2: function (e, t, a) {
         "use strict";
         e.exports = {
             Action: {
@@ -24511,8 +24507,8 @@ webpackJsonp([0], {
             },
             scopeZoomRadius: {
                 "1xscope": 32,
-                "2xscope": 42,
-                "4xscope": 58,
+                "2xscope": 48,
+                "4xscope": 56,
                 "8xscope": 86,
                 "15xscope": 104
             },
@@ -24536,7 +24532,7 @@ webpackJsonp([0], {
             }
         }
     },
-    b0409342: function (e, t, a) {
+    b040934220: function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -24769,7 +24765,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    b0e41782: function (e, t, a) {
+    b0e4178285: function (e, t, a) {
         "use strict";
 
         function i(e, t, a) {
@@ -25532,10 +25528,10 @@ webpackJsonp([0], {
             EmoteData: l
         }
     },
-    b1646f80: function (e, t, a) {
+    b1646f808e: function (e, t, a) {
         "use strict";
-        var i = a("453f1487"),
-            o = a("83ea9279"),
+        var i = a("453f14870d"),
+            o = a("83ea92795c"),
             n = {
                 clamp: function (e, t, a) {
                     return e < a ? e > t ? e : t : a
@@ -25666,7 +25662,7 @@ webpackJsonp([0], {
             };
         e.exports = n
     },
-    b176f168: function (e, t, a) {
+    b176f1683e: function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -25700,13 +25696,13 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            r = a("815a071b"),
-            s = a("81802d9c"),
-            l = a("b0e41782"),
+            r = a("815a071b88"),
+            s = a("81802d9c3c"),
+            l = a("b0e4178285"),
             c = (l.EmoteType, l.EmoteData),
-            d = a("c8b0bd11"),
-            m = a("f54ded6e"),
-            p = a("011f8326"),
+            d = a("c8b0bd11d4"),
+            m = a("f54ded6ec7"),
+            p = a("011f8326fb"),
             u = function () {
                 function e(t) {
                     i(this, e), this.selector = t, this.enabled = !0, this.onToggle = function () {}
@@ -25948,7 +25944,7 @@ webpackJsonp([0], {
             }();
         e.exports = f
     },
-    b40e90b4: function (e, t, a) {
+    b40e90b4ad: function (e, t, a) {
         function i(e) {
             return a(o(e))
         }
@@ -25959,30 +25955,30 @@ webpackJsonp([0], {
             return t
         }
         var n = {
-            "./da.js": "1a45254e",
-            "./de.js": "8c83370e",
-            "./en.js": "7e4d3531",
-            "./es.js": "da212648",
-            "./fr.js": "13c632b0",
-            "./it.js": "b0409342",
-            "./jp.js": "52053875",
-            "./ko.js": "83180451",
-            "./nl.js": "b8a73ac3",
-            "./pl.js": "45f6afd2",
-            "./pt.js": "ca0303d3",
-            "./ru.js": "ca0666ef",
-            "./sv.js": "8888a81e",
-            "./th.js": "1a992df9",
-            "./tr.js": "cf184e96",
-            "./vn.js": "9cd7d3b2",
-            "./zh-cn.js": "ea77f234",
-            "./zh-tw.js": "0792bdc5"
+            "./da.js": "1a45254e27",
+            "./de.js": "8c83370e70",
+            "./en.js": "7e4d3531d4",
+            "./es.js": "da2126483d",
+            "./fr.js": "13c632b0ff",
+            "./it.js": "b040934220",
+            "./jp.js": "5205387564",
+            "./ko.js": "831804519c",
+            "./nl.js": "b8a73ac30a",
+            "./pl.js": "45f6afd2de",
+            "./pt.js": "ca0303d30c",
+            "./ru.js": "ca0666efa3",
+            "./sv.js": "8888a81e7f",
+            "./th.js": "1a992df9d2",
+            "./tr.js": "cf184e96d7",
+            "./vn.js": "9cd7d3b214",
+            "./zh-cn.js": "ea77f2346b",
+            "./zh-tw.js": "0792bdc565"
         };
         i.keys = function () {
             return Object.keys(n)
-        }, i.resolve = o, e.exports = i, i.id = "b40e90b4"
+        }, i.resolve = o, e.exports = i, i.id = "b40e90b4ad"
     },
-    b8a73ac3: function (e, t, a) {
+    b8a73ac30a: function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -26235,7 +26231,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    be243466: function (e, t, a) {
+    be2434665f: function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -26252,10 +26248,10 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("179a4cf4"),
-            r = a("90320893"),
+            n = a("179a4cf4b8"),
+            r = a("90320893c8"),
             s = r.Shape,
-            l = (a("b1646f80"), a("83ea9279")),
+            l = (a("b1646f808e"), a("83ea92795c")),
             c = {
                 Line: 0,
                 Ray: 1,
@@ -26334,7 +26330,7 @@ webpackJsonp([0], {
             m = new d;
         e.exports = m
     },
-    bfd16d42: function (e, t, a) {
+    bfd16d42c4: function (e, t, a) {
         "use strict";
 
         function i(e) {
@@ -26344,11 +26340,11 @@ webpackJsonp([0], {
         function o() {
             this.explosions = []
         }
-        var n = (a("26d21c62"), a("ae8f4193")),
-            r = (a("1262043e"), a("b1646f80")),
-            s = a("210a8474"),
-            l = a("83ea9279"),
-            c = (a("81802d9c"), a("be243466"), a("5af701f3")),
+        var n = (a("26d21c6272"), a("ae8f4193b2")),
+            r = (a("1262043e3a"), a("b1646f808e")),
+            s = a("210a84747f"),
+            l = a("83ea92795c"),
+            c = (a("81802d9c3c"), a("be2434665f"), a("5af701f373")),
             d = {
                 frag: {
                     burst: {
@@ -26450,7 +26446,7 @@ webpackJsonp([0], {
             ExplosionBarn: o
         }
     },
-    c740b21a: function (e, t, a) {
+    c740b21ab8: function (e, t, a) {
         "use strict";
 
         function i(e) {
@@ -26684,21 +26680,21 @@ webpackJsonp([0], {
             }
             this.emoteLifeIn = .75, this.emoteLife = 1, this.emoteLifeOut = .1, this.pingFadeIn = .5, this.pingLife = 4.25, this.pingFadeOut = .1, this.wedgeOpacityReset = f.touch ? 1 : .75, this.teamEmoteOpacityReset = .2, this.emotes = [], this.newPings = [], this.newEmotes = []
         }
-        var n = a("815a071b"),
-            r = a("ae8f4193"),
-            s = a("b0e41782"),
+        var n = a("815a071b88"),
+            r = a("ae8f4193b2"),
+            s = a("b0e4178285"),
             l = s.EmoteSlot,
             c = s.EmoteType,
             d = s.EmoteData,
-            m = a("26d21c62"),
-            p = a("1262043e"),
-            u = a("83ea9279"),
-            h = a("b1646f80"),
-            g = a("210a8474"),
-            f = a("81802d9c"),
-            b = (a("5af701f3"), a("e9bd5e00").kPings),
-            y = a("e9bd5e00").Ping,
-            x = (a("80f52ba8"), a("3d966069")),
+            m = a("26d21c6272"),
+            p = a("1262043e3a"),
+            u = a("83ea92795c"),
+            h = a("b1646f808e"),
+            g = a("210a84747f"),
+            f = a("81802d9c3c"),
+            b = (a("5af701f373"), a("e9bd5e00bc").kPings),
+            y = a("e9bd5e00bc").Ping,
+            x = (a("80f52ba85d"), a("3d9660692c")),
             v = x.RenderType;
         o.prototype = {
             free: function () {
@@ -26955,7 +26951,7 @@ webpackJsonp([0], {
             EmoteManager: o
         }
     },
-    c8b0bd11: function (e, t, a) {
+    c8b0bd11d4: function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -27119,10 +27115,10 @@ webpackJsonp([0], {
                 } else a()
             }(r)
         }
-        var _ = a("815a071b"),
-            w = a("7d58befd"),
-            S = a("81802d9c"),
-            M = (a("f54ded6e"), document.createElement("canvas"));
+        var _ = a("815a071b88"),
+            w = a("7d58befd29"),
+            S = a("81802d9c3c"),
+            M = (a("f54ded6ec7"), document.createElement("canvas"));
         e.exports = {
             getParameterByName: i,
             getCookie: o,
@@ -27145,7 +27141,7 @@ webpackJsonp([0], {
             joinGame: k
         }
     },
-    ca0303d3: function (e, t, a) {
+    ca0303d30c: function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -27363,7 +27359,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    ca0666ef: function (e, t, a) {
+    ca0666efa3: function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -27613,7 +27609,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    cb6bd295: function (e, t, a) {
+    cb6bd29530: function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -27630,12 +27626,12 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("26d21c62"),
-            r = a("179a4cf4"),
-            s = a("2f6fdcea"),
-            l = a("83ea9279"),
-            c = (a("be243466"), a("81802d9c"), a("fe6ea9c6")),
-            d = a("3d966069"),
+            n = a("26d21c6272"),
+            r = a("179a4cf4b8"),
+            s = a("2f6fdcea01"),
+            l = a("83ea92795c"),
+            c = (a("be2434665f"), a("81802d9c3c"), a("fe6ea9c6ce")),
+            d = a("3d9660692c"),
             m = d.RenderType,
             p = function () {
                 function e() {
@@ -27688,7 +27684,7 @@ webpackJsonp([0], {
             DecalBarn: u
         }
     },
-    cf184e96: function (e, t, a) {
+    cf184e96d7: function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -27928,17 +27924,17 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    d19cb445: function (e, t, a) {
+    d19cb4456a: function (e, t, a) {
         "use strict";
 
         function i(e) {
             this.mute = !1, this.masterVolume = 1, this.soundVolume = 1, this.musicVolume = 1, this.baseVolume = .5, this.audioChannels = s.Channels, this.reverbs = s.Reverbs, this.totalSounds = 0, this.totalSoundsLoaded = 0, this.loadComplete = !1, this.cameraPos = n.create(0, 0), this.activeLayer = 0, this.fadeInSounds = [], this.queuedSounds = [], this.queuedInstances = [], this.localActionSoundInstance = null, this.soundInstances = [], this.musicInstances = [], o.Sound.initializeDefaultPlugins(), o.Sound.defaultInterruptBehavior = o.Sound.INTERRUPT_LATE, o.Sound.volume = .5, o.Sound.on("fileload", this.loadHandler, this)
         }
-        var o = a("99ed4161"),
-            n = a("83ea9279"),
-            r = a("b1646f80"),
-            s = a("817cb577"),
-            l = a("210a8474");
+        var o = a("99ed4161ca"),
+            n = a("83ea92795c"),
+            r = a("b1646f808e"),
+            s = a("817cb57717"),
+            l = a("210a84747f");
         i.prototype = {
             preloadSounds: function () {
                 for (var e in this.audioChannels)
@@ -28150,7 +28146,7 @@ webpackJsonp([0], {
             }
         }, e.exports = i
     },
-    d82c595e: function (e, t, a) {
+    d82c595ee5: function (e, t, a) {
         "use strict";
         e.exports = {
             background: 2118510,
@@ -28160,7 +28156,7 @@ webpackJsonp([0], {
             underground: 1772803
         }
     },
-    da212648: function (e, t, a) {
+    da2126483d: function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -28419,7 +28415,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    dfe1a61a: function (e, t, a) {
+    dfe1a61a53: function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -28436,15 +28432,15 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            n = a("26d21c62"),
-            r = a("ae8f4193"),
-            s = a("2f6fdcea"),
-            l = a("179a4cf4"),
-            c = a("b1646f80"),
-            d = a("210a8474"),
-            m = a("83ea9279"),
-            p = (a("81802d9c"), a("be243466"), a("fe6ea9c6")),
-            u = a("3d966069"),
+            n = a("26d21c6272"),
+            r = a("ae8f4193b2"),
+            s = a("2f6fdcea01"),
+            l = a("179a4cf4b8"),
+            c = a("b1646f808e"),
+            d = a("210a84747f"),
+            m = a("83ea92795c"),
+            p = (a("81802d9c3c"), a("be2434665f"), a("fe6ea9c6ce")),
+            u = a("3d9660692c"),
             h = u.RenderType,
             g = {
                 grass: "frag_grass",
@@ -28556,7 +28552,7 @@ webpackJsonp([0], {
             ProjectileBarn: b
         }
     },
-    e9bd5e00: function (e, t, a) {
+    e9bd5e00bc: function (e, t, a) {
         "use strict";
 
         function i(e, t, a) {
@@ -28596,7 +28592,7 @@ webpackJsonp([0], {
             kPings: r
         }
     },
-    ea77f234: function (e, t, a) {
+    ea77f2346b: function (e, t, a) {
         "use strict";
         var i = {
             "@metadata": {
@@ -28810,7 +28806,7 @@ webpackJsonp([0], {
         };
         e.exports = i
     },
-    ec6f5db3: function (e, t, a) {
+    ec6f5db371: function (e, t, a) {
         "use strict";
 
         function i(e, t, a) {
@@ -28860,14 +28856,14 @@ webpackJsonp([0], {
                 })
             }
         }
-        var o = a("ae8f4193"),
-            n = a("b1646f80"),
-            r = (a("210a8474"), a("83ea9279"));
+        var o = a("ae8f4193b2"),
+            n = a("b1646f808e"),
+            r = (a("210a84747f"), a("83ea92795c"));
         e.exports = {
             generateTerrain: i
         }
     },
-    f062fd48: function (e, t, a) {
+    f062fd489b: function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -28890,14 +28886,14 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            r = (a("453f1487"), a("26d21c62")),
-            s = a("179a4cf4"),
-            l = (a("b1646f80"), a("2f6fdcea")),
-            c = a("210a8474"),
-            d = a("83ea9279"),
-            m = (a("81802d9c"), a("6e8bb239")),
-            p = (a("357483ef"), a("be243466"), a("5af701f3")),
-            u = a("3d966069"),
+            r = (a("453f14870d"), a("26d21c6272")),
+            s = a("179a4cf4b8"),
+            l = (a("b1646f808e"), a("2f6fdcea01")),
+            c = a("210a84747f"),
+            d = a("83ea92795c"),
+            m = (a("81802d9c3c"), a("6e8bb23911")),
+            p = (a("357483ef09"), a("be2434665f"), a("5af701f373")),
+            u = a("3d9660692c"),
             h = u.RenderType,
             g = function () {
                 function e() {
@@ -29042,7 +29038,7 @@ webpackJsonp([0], {
             }();
         e.exports = g
     },
-    f47a1c8d: function (e, t, a) {
+    f47a1c8d8a: function (e, t, a) {
         "use strict";
         (function (t) {
             ! function (a) {
@@ -29248,9 +29244,9 @@ webpackJsonp([0], {
                     BitStream: p
                 }
             }()
-        }).call(t, a("ec247fce").Buffer)
+        }).call(t, a("ec247fcea0").Buffer)
     },
-    f54ded6e: function (e, t, a) {
+    f54ded6ec7: function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -29274,7 +29270,7 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            r = a("815a071b"),
+            r = a("815a071b88"),
             s = function () {
                 function e() {
                     i(this, e), this.instanceId = o(), this.requests = 0, this.enabled = !0, this.throttle = !1, this.throttleTimeout = 0
@@ -29355,7 +29351,7 @@ webpackJsonp([0], {
             l.update()
         }, 1e3), e.exports = l
     },
-    f648a2e3: function (e, t, a) {
+    f648a2e34a: function (e, t, a) {
         "use strict";
 
         function i() {
@@ -29375,10 +29371,10 @@ webpackJsonp([0], {
         function r() {
             this.enabled = !1, this.zoom = l.scopeZoomRadius["1xscope"], this.cull = o("cull", !1), this.debug = o("debug", !0), this.setEnabled(!1)
         }
-        var s = a("815a071b"),
-            l = (a("26d21c62"), a("ae8f4193")),
-            c = a("b1646f80"),
-            d = (a("83ea9279"), a("be243466"), a("80f52ba8")),
+        var s = a("815a071b88"),
+            l = (a("26d21c6272"), a("ae8f4193b2")),
+            c = a("b1646f808e"),
+            d = (a("83ea92795c"), a("be2434665f"), a("80f52ba85d")),
             m = "surviv_editor";
         r.prototype = {
             free: function () {},
@@ -29416,7 +29412,7 @@ webpackJsonp([0], {
             renderCamera: function (e) {}
         }, e.exports = r
     },
-    fc1a800c: function (e, t, a) {
+    fc1a800c38: function (e, t, a) {
         "use strict";
 
         function i(e, t) {
@@ -29449,11 +29445,11 @@ webpackJsonp([0], {
                     return a && e(t.prototype, a), i && e(t, i), t
                 }
             }(),
-            r = a("815a071b"),
-            s = a("ae8f4193"),
-            l = (a("b1646f80"), a("27983cac")),
-            c = (a("f54ded6e"), a("c8b0bd11")),
-            d = (a("81802d9c"), function () {
+            r = a("815a071b88"),
+            s = a("ae8f4193b2"),
+            l = (a("b1646f808e"), a("27983cac34")),
+            c = (a("f54ded6ec7"), a("c8b0bd11d4")),
+            d = (a("81802d9c3c"), function () {
                 function e(t, a, o, n, s) {
                     var l = this;
                     i(this, e), this.audioManager = s, this.playBtn = r("#btn-start-team"), this.serverWarning = r("#server-warning"), this.teamOptions = r("#btn-team-queue-duo, #btn-team-fill-auto, #btn-team-fill-none"), this.serverSelect = r("#team-server-select"), this.queueDuo = r("#btn-team-queue-duo"), this.queueSquad = r("#btn-team-queue-squad"), this.fillAuto = r("#btn-team-fill-auto"), this.fillNone = r("#btn-team-fill-none"), this.onLeave = null, this.config = t, this.pingTest = a, this.localization = o, this.joinGameFn = n, this.active = !1, this.joined = !1, this.create = !1, this.joiningGame = !1, this.ws = null, this.keepAliveTimeout = 0, this.siteInfo = {}, this.playerData = {}, this.roomData = {}, this.players = [], this.prevPlayerCount = 0, this.localPlayerId = 0, this.isLeader = !0, this.serverSelect.change(function () {
@@ -29741,7 +29737,7 @@ webpackJsonp([0], {
             }());
         e.exports = d
     },
-    fe6ea9c6: function (e, t, a) {
+    fe6ea9c6ce: function (e, t, a) {
         "use strict";
 
         function i(e) {
@@ -29753,8 +29749,8 @@ webpackJsonp([0], {
         function o(e) {
             this.idToObj = {}, this.types = {}, this.seenCount = 0
         }
-        var n = a("453f1487"),
-            r = a("f54ded6e");
+        var n = a("453f14870d"),
+            r = a("f54ded6ec7");
         i.prototype = {
             alloc: function () {
                 for (var e = null, t = 0; t < this.pool.length; t++)
@@ -29811,5 +29807,5 @@ webpackJsonp([0], {
             Creator: o
         }
     }
-}, ["2f823a68"]);
-//# sourceMappingURL=app.a16a3ea6.js.map
+}, ["2f823a6889"]);
+//# sourceMappingURL=app.2a2deb77.js.map
