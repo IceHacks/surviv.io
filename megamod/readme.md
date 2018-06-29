@@ -1,3 +1,5 @@
+# I AM NOT MAKING THIS ANYMORE SINCE SURVIV PATCHED IT FOR 75% OF USERS. THANKS FOR 1000+ USERS.
+
 # MegaMod (Log & Load)
 This update has everything it had before but it works with the Surviv.io "Suns out, Guns out" update. I still plan to add...
 
